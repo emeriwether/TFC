@@ -29,9 +29,9 @@
 		066DB6371FAE8F1500C68B36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		066DB6391FAE8F1500C68B36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		066DB63F1FAE8F8900C68B36 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
-		06812DB91FBD05AF00F965E8 /* duckQuack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = duckQuack.mp3; path = Images/duckQuack.mp3; sourceTree = "<group>"; };
+		06812DB91FBD05AF00F965E8 /* duckQuack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = duckQuack.mp3; sourceTree = "<group>"; };
 		06B3C6E41FBCD46C00252DB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		06B3C6E61FBCFAD200252DB6 /* Instructions.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Instructions.mp3; path = Images/Instructions.mp3; sourceTree = "<group>"; };
+		06B3C6E61FBCFAD200252DB6 /* Instructions.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Instructions.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,13 +45,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0657C65F1FC1F7F3002FC12D /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				06B3C6E61FBCFAD200252DB6 /* Instructions.mp3 */,
+				06812DB91FBD05AF00F965E8 /* duckQuack.mp3 */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
 		066DB61B1FAE8F1400C68B36 = {
 			isa = PBXGroup;
 			children = (
 				066DB6261FAE8F1500C68B36 /* DuckColoringGame */,
 				066DB6251FAE8F1500C68B36 /* Products */,
-				06B3C6E61FBCFAD200252DB6 /* Instructions.mp3 */,
-				06812DB91FBD05AF00F965E8 /* duckQuack.mp3 */,
+				0657C65F1FC1F7F3002FC12D /* Audio */,
 				066DB63F1FAE8F8900C68B36 /* Images */,
 			);
 			sourceTree = "<group>";
