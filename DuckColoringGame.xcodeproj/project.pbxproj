@@ -7,28 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		062510D01FC917EA00A8114D /* StartScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 062510CF1FC917EA00A8114D /* StartScene.sks */; };
+		062510D21FC9184200A8114D /* StartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062510D11FC9184200A8114D /* StartScene.swift */; };
+		06476DC31FC93F3E00B55906 /* CookieScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06476DC21FC93F3E00B55906 /* CookieScene.sks */; };
+		06476DC51FC93F4C00B55906 /* CookieScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06476DC41FC93F4C00B55906 /* CookieScene.swift */; };
+		06476DD21FC9434800B55906 /* CookieInstructions.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06476DD11FC9434800B55906 /* CookieInstructions.mp3 */; };
+		06476DD41FC9458E00B55906 /* ScoreScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06476DD31FC9458E00B55906 /* ScoreScene.sks */; };
+		06476DD61FC945F200B55906 /* ScoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06476DD51FC945F200B55906 /* ScoreScene.swift */; };
 		066DB6281FAE8F1500C68B36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066DB6271FAE8F1500C68B36 /* AppDelegate.swift */; };
-		066DB62A1FAE8F1500C68B36 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 066DB6291FAE8F1500C68B36 /* GameScene.sks */; };
-		066DB62E1FAE8F1500C68B36 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066DB62D1FAE8F1500C68B36 /* GameScene.swift */; };
+		066DB62A1FAE8F1500C68B36 /* DuckScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 066DB6291FAE8F1500C68B36 /* DuckScene.sks */; };
+		066DB62E1FAE8F1500C68B36 /* DuckScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066DB62D1FAE8F1500C68B36 /* DuckScene.swift */; };
 		066DB6301FAE8F1500C68B36 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066DB62F1FAE8F1500C68B36 /* GameViewController.swift */; };
 		066DB6331FAE8F1500C68B36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 066DB6311FAE8F1500C68B36 /* Main.storyboard */; };
 		066DB6381FAE8F1500C68B36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 066DB6361FAE8F1500C68B36 /* LaunchScreen.storyboard */; };
-		066DB6401FAE8F8900C68B36 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 066DB63F1FAE8F8900C68B36 /* Images */; };
 		06812DBA1FBD05AF00F965E8 /* duckQuack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06812DB91FBD05AF00F965E8 /* duckQuack.mp3 */; };
 		06B3C6E51FBCD46C00252DB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06B3C6E41FBCD46C00252DB6 /* Assets.xcassets */; };
 		06B3C6E71FBCFAD200252DB6 /* Instructions.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06B3C6E61FBCFAD200252DB6 /* Instructions.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		062510CF1FC917EA00A8114D /* StartScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StartScene.sks; sourceTree = "<group>"; };
+		062510D11FC9184200A8114D /* StartScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScene.swift; sourceTree = "<group>"; };
+		06476DC21FC93F3E00B55906 /* CookieScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CookieScene.sks; sourceTree = "<group>"; };
+		06476DC41FC93F4C00B55906 /* CookieScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieScene.swift; sourceTree = "<group>"; };
+		06476DD11FC9434800B55906 /* CookieInstructions.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CookieInstructions.mp3; sourceTree = "<group>"; };
+		06476DD31FC9458E00B55906 /* ScoreScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ScoreScene.sks; sourceTree = "<group>"; };
+		06476DD51FC945F200B55906 /* ScoreScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreScene.swift; sourceTree = "<group>"; };
 		066DB6241FAE8F1500C68B36 /* DuckColoringGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuckColoringGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		066DB6271FAE8F1500C68B36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		066DB6291FAE8F1500C68B36 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		066DB62D1FAE8F1500C68B36 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		066DB6291FAE8F1500C68B36 /* DuckScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DuckScene.sks; sourceTree = "<group>"; };
+		066DB62D1FAE8F1500C68B36 /* DuckScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckScene.swift; sourceTree = "<group>"; };
 		066DB62F1FAE8F1500C68B36 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		066DB6321FAE8F1500C68B36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		066DB6371FAE8F1500C68B36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		066DB6391FAE8F1500C68B36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		066DB63F1FAE8F8900C68B36 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		06812DB91FBD05AF00F965E8 /* duckQuack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = duckQuack.mp3; sourceTree = "<group>"; };
 		06B3C6E41FBCD46C00252DB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06B3C6E61FBCFAD200252DB6 /* Instructions.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Instructions.mp3; sourceTree = "<group>"; };
@@ -45,11 +57,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06476DC01FC93C6100B55906 /* DuckScene */ = {
+			isa = PBXGroup;
+			children = (
+				066DB62D1FAE8F1500C68B36 /* DuckScene.swift */,
+				066DB6291FAE8F1500C68B36 /* DuckScene.sks */,
+			);
+			name = DuckScene;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		06476DC11FC93C7100B55906 /* StartScene */ = {
+			isa = PBXGroup;
+			children = (
+				062510D11FC9184200A8114D /* StartScene.swift */,
+				062510CF1FC917EA00A8114D /* StartScene.sks */,
+			);
+			path = StartScene;
+			sourceTree = "<group>";
+		};
+		06476DC61FC93F5C00B55906 /* CookieScene */ = {
+			isa = PBXGroup;
+			children = (
+				06476DC21FC93F3E00B55906 /* CookieScene.sks */,
+				06476DC41FC93F4C00B55906 /* CookieScene.swift */,
+			);
+			path = CookieScene;
+			sourceTree = "<group>";
+		};
+		06476DD71FC945F600B55906 /* ScoreScene */ = {
+			isa = PBXGroup;
+			children = (
+				06476DD31FC9458E00B55906 /* ScoreScene.sks */,
+				06476DD51FC945F200B55906 /* ScoreScene.swift */,
+			);
+			path = ScoreScene;
+			sourceTree = "<group>";
+		};
 		0657C65F1FC1F7F3002FC12D /* Audio */ = {
 			isa = PBXGroup;
 			children = (
 				06B3C6E61FBCFAD200252DB6 /* Instructions.mp3 */,
 				06812DB91FBD05AF00F965E8 /* duckQuack.mp3 */,
+				06476DD11FC9434800B55906 /* CookieInstructions.mp3 */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -59,8 +109,6 @@
 			children = (
 				066DB6261FAE8F1500C68B36 /* DuckColoringGame */,
 				066DB6251FAE8F1500C68B36 /* Products */,
-				0657C65F1FC1F7F3002FC12D /* Audio */,
-				066DB63F1FAE8F8900C68B36 /* Images */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,10 +124,13 @@
 			isa = PBXGroup;
 			children = (
 				066DB6271FAE8F1500C68B36 /* AppDelegate.swift */,
-				066DB6291FAE8F1500C68B36 /* GameScene.sks */,
-				066DB62D1FAE8F1500C68B36 /* GameScene.swift */,
 				066DB62F1FAE8F1500C68B36 /* GameViewController.swift */,
 				066DB6311FAE8F1500C68B36 /* Main.storyboard */,
+				06476DD71FC945F600B55906 /* ScoreScene */,
+				06476DC61FC93F5C00B55906 /* CookieScene */,
+				06476DC01FC93C6100B55906 /* DuckScene */,
+				06476DC11FC93C7100B55906 /* StartScene */,
+				0657C65F1FC1F7F3002FC12D /* Audio */,
 				06B3C6E41FBCD46C00252DB6 /* Assets.xcassets */,
 				066DB6361FAE8F1500C68B36 /* LaunchScreen.storyboard */,
 				066DB6391FAE8F1500C68B36 /* Info.plist */,
@@ -149,10 +200,13 @@
 			files = (
 				06812DBA1FBD05AF00F965E8 /* duckQuack.mp3 in Resources */,
 				066DB6331FAE8F1500C68B36 /* Main.storyboard in Resources */,
+				06476DD41FC9458E00B55906 /* ScoreScene.sks in Resources */,
+				06476DD21FC9434800B55906 /* CookieInstructions.mp3 in Resources */,
 				06B3C6E71FBCFAD200252DB6 /* Instructions.mp3 in Resources */,
-				066DB62A1FAE8F1500C68B36 /* GameScene.sks in Resources */,
+				066DB62A1FAE8F1500C68B36 /* DuckScene.sks in Resources */,
 				066DB6381FAE8F1500C68B36 /* LaunchScreen.storyboard in Resources */,
-				066DB6401FAE8F8900C68B36 /* Images in Resources */,
+				062510D01FC917EA00A8114D /* StartScene.sks in Resources */,
+				06476DC31FC93F3E00B55906 /* CookieScene.sks in Resources */,
 				06B3C6E51FBCD46C00252DB6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,9 +218,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				066DB62E1FAE8F1500C68B36 /* GameScene.swift in Sources */,
+				066DB62E1FAE8F1500C68B36 /* DuckScene.swift in Sources */,
 				066DB6301FAE8F1500C68B36 /* GameViewController.swift in Sources */,
+				062510D21FC9184200A8114D /* StartScene.swift in Sources */,
+				06476DD61FC945F200B55906 /* ScoreScene.swift in Sources */,
 				066DB6281FAE8F1500C68B36 /* AppDelegate.swift in Sources */,
+				06476DC51FC93F4C00B55906 /* CookieScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +236,7 @@
 				066DB6321FAE8F1500C68B36 /* Base */,
 			);
 			name = Main.storyboard;
+			path = Duck;
 			sourceTree = "<group>";
 		};
 		066DB6361FAE8F1500C68B36 /* LaunchScreen.storyboard */ = {
@@ -291,7 +349,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U4CECW6YBS;
 				INFOPLIST_FILE = DuckColoringGame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.DuckColoringGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -306,7 +364,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U4CECW6YBS;
 				INFOPLIST_FILE = DuckColoringGame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.DuckColoringGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";

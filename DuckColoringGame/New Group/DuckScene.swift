@@ -9,26 +9,32 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+var incorrectTouches = 0
+var correctTouches = 0
+
+class DuckScene: SKScene {
     
-    var duck:SKSpriteNode?
-    var incorrectTouches = 0
-    var correctTouches = 0
+    let duck = SKSpriteNode(imageNamed: "Duck_BW")
     
     override func didMove(to view: SKView) {
-        //Attach "bw" sprite in GUI to object "duck" in script
-        duck = self.childNode(withName: "bw") as! SKSpriteNode
+        duck.position = CGPoint(x: -304.245, y: 115)
+        duck.setScale(2)
+        duck.zPosition = -1
+        self.addChild(duck)
+        
+        let instructions = SKAction.playSoundFileNamed("Instructions", waitForCompletion: false)
+        run(instructions)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
         
         //If duck sprite is touched...
-        if duck!.contains(touch.location(in: self)) {
+        if duck.contains(touch.location(in: self)) {
             correctTouches += 1
             
             //Change sprite to colored duck
-            duck?.texture = SKTexture(imageNamed: "Duck.png")
+            duck.texture = SKTexture(imageNamed: "Duck.png")
             
             //Variables for open mouth animation
             let openMouth:SKTexture = SKTexture(imageNamed: "Duck_OpenMouth")
@@ -40,14 +46,25 @@ class GameScene: SKScene {
             //Variables for move animation
             let move = SKAction.moveTo(x: 900, duration: 3.0)
             //Variable to wait
-            let wait = SKAction.wait(forDuration: 1)
+            let wait1 = SKAction.wait(forDuration: 1)
             //Sequence for wait, then move
-            let sequence = SKAction.sequence([wait, move])
+            let sequenceDuck = SKAction.sequence([wait1, move])
             
             //Run all actions
-            duck?.run(openMouthAction)
-            duck?.run(quack)
-            duck?.run(sequence)
+            duck.run(openMouthAction)
+            duck.run(quack)
+            duck.run(sequenceDuck)
+            
+            //Variables to switch screens
+            let fadeOut = SKAction.fadeOut(withDuration:2)
+            let wait2 = SKAction.wait(forDuration: 2)
+            let sequenceFade = SKAction.sequence([wait2, fadeOut])
+            run(sequenceFade) {
+                let cookieScene = SKScene(fileNamed: "CookieScene")
+                cookieScene?.scaleMode = SKSceneScaleMode.aspectFill
+                self.scene!.view?.presentScene(cookieScene!)
+            }
+            
         }
         else {
             incorrectTouches += 1
