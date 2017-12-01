@@ -8,6 +8,9 @@
 
 import SpriteKit
 
+var incorrectTouches = 0
+var correctTouches = 0
+
 class StartScene: SKScene {
     
     let start = SKSpriteNode(imageNamed: "startButton")
@@ -28,6 +31,5 @@ class StartScene: SKScene {
             self.scene!.view?.presentScene(duckScene!, transition: fade)
         }
     }
-
 }
 

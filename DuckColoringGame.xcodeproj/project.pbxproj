@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		062510D01FC917EA00A8114D /* StartScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 062510CF1FC917EA00A8114D /* StartScene.sks */; };
 		062510D21FC9184200A8114D /* StartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062510D11FC9184200A8114D /* StartScene.swift */; };
+		062D7D2B1FD11E0100575A5B /* listenCarefully_Duck.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 062D7D2A1FD11E0100575A5B /* listenCarefully_Duck.mp3 */; };
+		062D7D2D1FD11E3700575A5B /* listenCarefully_Cookie.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 062D7D2C1FD11E3700575A5B /* listenCarefully_Cookie.mp3 */; };
+		062D7D2F1FD11E4C00575A5B /* crunch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 062D7D2E1FD11E4C00575A5B /* crunch.wav */; };
+		062D7D481FD125B600575A5B /* instructions_airplane in Resources */ = {isa = PBXBuildFile; fileRef = 062D7D461FD125B500575A5B /* instructions_airplane */; };
+		062D7D491FD125B600575A5B /* reminder_airplane.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 062D7D471FD125B500575A5B /* reminder_airplane.mp3 */; };
+		062D7D4B1FD125E600575A5B /* AirplaneScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 062D7D4A1FD125E600575A5B /* AirplaneScene.sks */; };
+		062D7D4D1FD125FB00575A5B /* AirplaneScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062D7D4C1FD125FB00575A5B /* AirplaneScene.swift */; };
+		062D7D521FD12C2F00575A5B /* airplane.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 062D7D511FD12C2E00575A5B /* airplane.mp3 */; };
 		06476DC31FC93F3E00B55906 /* CookieScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06476DC21FC93F3E00B55906 /* CookieScene.sks */; };
 		06476DC51FC93F4C00B55906 /* CookieScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06476DC41FC93F4C00B55906 /* CookieScene.swift */; };
 		06476DD21FC9434800B55906 /* CookieInstructions.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06476DD11FC9434800B55906 /* CookieInstructions.mp3 */; };
@@ -28,6 +36,14 @@
 /* Begin PBXFileReference section */
 		062510CF1FC917EA00A8114D /* StartScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StartScene.sks; sourceTree = "<group>"; };
 		062510D11FC9184200A8114D /* StartScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScene.swift; sourceTree = "<group>"; };
+		062D7D2A1FD11E0100575A5B /* listenCarefully_Duck.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = listenCarefully_Duck.mp3; sourceTree = "<group>"; };
+		062D7D2C1FD11E3700575A5B /* listenCarefully_Cookie.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = listenCarefully_Cookie.mp3; sourceTree = "<group>"; };
+		062D7D2E1FD11E4C00575A5B /* crunch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = crunch.wav; sourceTree = "<group>"; };
+		062D7D461FD125B500575A5B /* instructions_airplane */ = {isa = PBXFileReference; lastKnownFileType = file; path = instructions_airplane; sourceTree = "<group>"; };
+		062D7D471FD125B500575A5B /* reminder_airplane.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = reminder_airplane.mp3; sourceTree = "<group>"; };
+		062D7D4A1FD125E600575A5B /* AirplaneScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AirplaneScene.sks; sourceTree = "<group>"; };
+		062D7D4C1FD125FB00575A5B /* AirplaneScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirplaneScene.swift; sourceTree = "<group>"; };
+		062D7D511FD12C2E00575A5B /* airplane.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = airplane.mp3; sourceTree = "<group>"; };
 		06476DC21FC93F3E00B55906 /* CookieScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CookieScene.sks; sourceTree = "<group>"; };
 		06476DC41FC93F4C00B55906 /* CookieScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieScene.swift; sourceTree = "<group>"; };
 		06476DD11FC9434800B55906 /* CookieInstructions.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CookieInstructions.mp3; sourceTree = "<group>"; };
@@ -57,6 +73,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		062D7D4E1FD1260A00575A5B /* AirplaneScene */ = {
+			isa = PBXGroup;
+			children = (
+				062D7D4C1FD125FB00575A5B /* AirplaneScene.swift */,
+				062D7D4A1FD125E600575A5B /* AirplaneScene.sks */,
+			);
+			path = AirplaneScene;
+			sourceTree = "<group>";
+		};
 		06476DC01FC93C6100B55906 /* DuckScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +122,12 @@
 		0657C65F1FC1F7F3002FC12D /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				062D7D511FD12C2E00575A5B /* airplane.mp3 */,
+				062D7D461FD125B500575A5B /* instructions_airplane */,
+				062D7D471FD125B500575A5B /* reminder_airplane.mp3 */,
+				062D7D2C1FD11E3700575A5B /* listenCarefully_Cookie.mp3 */,
+				062D7D2E1FD11E4C00575A5B /* crunch.wav */,
+				062D7D2A1FD11E0100575A5B /* listenCarefully_Duck.mp3 */,
 				06B3C6E61FBCFAD200252DB6 /* Instructions.mp3 */,
 				06812DB91FBD05AF00F965E8 /* duckQuack.mp3 */,
 				06476DD11FC9434800B55906 /* CookieInstructions.mp3 */,
@@ -127,6 +158,7 @@
 				066DB62F1FAE8F1500C68B36 /* GameViewController.swift */,
 				066DB6311FAE8F1500C68B36 /* Main.storyboard */,
 				06476DD71FC945F600B55906 /* ScoreScene */,
+				062D7D4E1FD1260A00575A5B /* AirplaneScene */,
 				06476DC61FC93F5C00B55906 /* CookieScene */,
 				06476DC01FC93C6100B55906 /* DuckScene */,
 				06476DC11FC93C7100B55906 /* StartScene */,
@@ -198,14 +230,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				062D7D2B1FD11E0100575A5B /* listenCarefully_Duck.mp3 in Resources */,
 				06812DBA1FBD05AF00F965E8 /* duckQuack.mp3 in Resources */,
 				066DB6331FAE8F1500C68B36 /* Main.storyboard in Resources */,
 				06476DD41FC9458E00B55906 /* ScoreScene.sks in Resources */,
+				062D7D2D1FD11E3700575A5B /* listenCarefully_Cookie.mp3 in Resources */,
+				062D7D491FD125B600575A5B /* reminder_airplane.mp3 in Resources */,
+				062D7D2F1FD11E4C00575A5B /* crunch.wav in Resources */,
 				06476DD21FC9434800B55906 /* CookieInstructions.mp3 in Resources */,
 				06B3C6E71FBCFAD200252DB6 /* Instructions.mp3 in Resources */,
+				062D7D481FD125B600575A5B /* instructions_airplane in Resources */,
+				062D7D4B1FD125E600575A5B /* AirplaneScene.sks in Resources */,
 				066DB62A1FAE8F1500C68B36 /* DuckScene.sks in Resources */,
 				066DB6381FAE8F1500C68B36 /* LaunchScreen.storyboard in Resources */,
 				062510D01FC917EA00A8114D /* StartScene.sks in Resources */,
+				062D7D521FD12C2F00575A5B /* airplane.mp3 in Resources */,
 				06476DC31FC93F3E00B55906 /* CookieScene.sks in Resources */,
 				06B3C6E51FBCD46C00252DB6 /* Assets.xcassets in Resources */,
 			);
@@ -220,6 +259,7 @@
 			files = (
 				066DB62E1FAE8F1500C68B36 /* DuckScene.swift in Sources */,
 				066DB6301FAE8F1500C68B36 /* GameViewController.swift in Sources */,
+				062D7D4D1FD125FB00575A5B /* AirplaneScene.swift in Sources */,
 				062510D21FC9184200A8114D /* StartScene.swift in Sources */,
 				06476DD61FC945F200B55906 /* ScoreScene.swift in Sources */,
 				066DB6281FAE8F1500C68B36 /* AppDelegate.swift in Sources */,
@@ -290,7 +330,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -334,7 +374,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
