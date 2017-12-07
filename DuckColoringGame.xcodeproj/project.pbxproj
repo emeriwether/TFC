@@ -33,6 +33,24 @@
 		06427EDF1FD9F2B4009C07ED /* Find the shovel.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06427ECF1FD9F2B3009C07ED /* Find the shovel.wav */; };
 		06427EE01FD9F2B4009C07ED /* melody 4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06427ED01FD9F2B3009C07ED /* melody 4.wav */; };
 		06427EE31FD9F30E009C07ED /* instructions_airplane.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06427EE21FD9F30E009C07ED /* instructions_airplane.mp3 */; };
+		06427EFC1FD9F421009C07ED /* PianoScene1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06427EFA1FD9F421009C07ED /* PianoScene1.sks */; };
+		06427EFD1FD9F421009C07ED /* PianoScene1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06427EFB1FD9F421009C07ED /* PianoScene1.swift */; };
+		06427F0B1FD9F868009C07ED /* PianoScene2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06427F091FD9F867009C07ED /* PianoScene2.swift */; };
+		06427F0C1FD9F868009C07ED /* PianoScene2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06427F0A1FD9F868009C07ED /* PianoScene2.sks */; };
+		06427F0F1FD9F876009C07ED /* PianoScene3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06427F0D1FD9F875009C07ED /* PianoScene3.swift */; };
+		06427F101FD9F876009C07ED /* PianoScene3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06427F0E1FD9F876009C07ED /* PianoScene3.sks */; };
+		06427F131FD9F880009C07ED /* PianoScene4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06427F111FD9F880009C07ED /* PianoScene4.swift */; };
+		06427F141FD9F880009C07ED /* PianoScene4.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06427F121FD9F880009C07ED /* PianoScene4.sks */; };
+		06427F171FD9F88E009C07ED /* PianoScene5.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06427F151FD9F88D009C07ED /* PianoScene5.sks */; };
+		06427F181FD9F88E009C07ED /* PianoScene5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06427F161FD9F88D009C07ED /* PianoScene5.swift */; };
+		06427F1B1FD9F898009C07ED /* PianoScene6.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06427F191FD9F897009C07ED /* PianoScene6.sks */; };
+		06427F1C1FD9F898009C07ED /* PianoScene6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06427F1A1FD9F898009C07ED /* PianoScene6.swift */; };
+		06427F1F1FD9F8A0009C07ED /* PianoScene7.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06427F1D1FD9F8A0009C07ED /* PianoScene7.swift */; };
+		06427F201FD9F8A0009C07ED /* PianoScene7.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06427F1E1FD9F8A0009C07ED /* PianoScene7.sks */; };
+		06427F231FD9F8AD009C07ED /* PianoScene8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06427F211FD9F8AD009C07ED /* PianoScene8.swift */; };
+		06427F241FD9F8AD009C07ED /* PianoScene8.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06427F221FD9F8AD009C07ED /* PianoScene8.sks */; };
+		06427F271FD9F8BA009C07ED /* PianoScene9.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06427F251FD9F8B9009C07ED /* PianoScene9.swift */; };
+		06427F281FD9F8BA009C07ED /* PianoScene9.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06427F261FD9F8BA009C07ED /* PianoScene9.sks */; };
 		06476DC31FC93F3E00B55906 /* CookieScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06476DC21FC93F3E00B55906 /* CookieScene.sks */; };
 		06476DC51FC93F4C00B55906 /* CookieScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06476DC41FC93F4C00B55906 /* CookieScene.swift */; };
 		06476DD21FC9434800B55906 /* CookieInstructions.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06476DD11FC9434800B55906 /* CookieInstructions.mp3 */; };
@@ -76,6 +94,24 @@
 		06427ECF1FD9F2B3009C07ED /* Find the shovel.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Find the shovel.wav"; sourceTree = "<group>"; };
 		06427ED01FD9F2B3009C07ED /* melody 4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melody 4.wav"; sourceTree = "<group>"; };
 		06427EE21FD9F30E009C07ED /* instructions_airplane.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_airplane.mp3; sourceTree = "<group>"; };
+		06427EFA1FD9F421009C07ED /* PianoScene1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PianoScene1.sks; sourceTree = "<group>"; };
+		06427EFB1FD9F421009C07ED /* PianoScene1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoScene1.swift; sourceTree = "<group>"; };
+		06427F091FD9F867009C07ED /* PianoScene2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoScene2.swift; sourceTree = "<group>"; };
+		06427F0A1FD9F868009C07ED /* PianoScene2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PianoScene2.sks; sourceTree = "<group>"; };
+		06427F0D1FD9F875009C07ED /* PianoScene3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoScene3.swift; sourceTree = "<group>"; };
+		06427F0E1FD9F876009C07ED /* PianoScene3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PianoScene3.sks; sourceTree = "<group>"; };
+		06427F111FD9F880009C07ED /* PianoScene4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoScene4.swift; sourceTree = "<group>"; };
+		06427F121FD9F880009C07ED /* PianoScene4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PianoScene4.sks; sourceTree = "<group>"; };
+		06427F151FD9F88D009C07ED /* PianoScene5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PianoScene5.sks; sourceTree = "<group>"; };
+		06427F161FD9F88D009C07ED /* PianoScene5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoScene5.swift; sourceTree = "<group>"; };
+		06427F191FD9F897009C07ED /* PianoScene6.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PianoScene6.sks; sourceTree = "<group>"; };
+		06427F1A1FD9F898009C07ED /* PianoScene6.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoScene6.swift; sourceTree = "<group>"; };
+		06427F1D1FD9F8A0009C07ED /* PianoScene7.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoScene7.swift; sourceTree = "<group>"; };
+		06427F1E1FD9F8A0009C07ED /* PianoScene7.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PianoScene7.sks; sourceTree = "<group>"; };
+		06427F211FD9F8AD009C07ED /* PianoScene8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoScene8.swift; sourceTree = "<group>"; };
+		06427F221FD9F8AD009C07ED /* PianoScene8.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PianoScene8.sks; sourceTree = "<group>"; };
+		06427F251FD9F8B9009C07ED /* PianoScene9.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoScene9.swift; sourceTree = "<group>"; };
+		06427F261FD9F8BA009C07ED /* PianoScene9.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PianoScene9.sks; sourceTree = "<group>"; };
 		06476DC21FC93F3E00B55906 /* CookieScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CookieScene.sks; sourceTree = "<group>"; };
 		06476DC41FC93F4C00B55906 /* CookieScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieScene.swift; sourceTree = "<group>"; };
 		06476DD11FC9434800B55906 /* CookieInstructions.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CookieInstructions.mp3; sourceTree = "<group>"; };
@@ -177,6 +213,113 @@
 			path = Duck;
 			sourceTree = "<group>";
 		};
+		06427EFE1FD9F43B009C07ED /* Scene1 */ = {
+			isa = PBXGroup;
+			children = (
+				06427EFA1FD9F421009C07ED /* PianoScene1.sks */,
+				06427EFB1FD9F421009C07ED /* PianoScene1.swift */,
+			);
+			path = Scene1;
+			sourceTree = "<group>";
+		};
+		06427EFF1FD9F453009C07ED /* ColoringGame */ = {
+			isa = PBXGroup;
+			children = (
+				062D7D4E1FD1260A00575A5B /* AirplaneScene */,
+				06476DC61FC93F5C00B55906 /* CookieScene */,
+				06476DC01FC93C6100B55906 /* DuckScene */,
+			);
+			path = ColoringGame;
+			sourceTree = "<group>";
+		};
+		06427F001FD9F461009C07ED /* PianoGame */ = {
+			isa = PBXGroup;
+			children = (
+				06427F081FD9F85C009C07ED /* Scene9 */,
+				06427F071FD9F857009C07ED /* Scene8 */,
+				06427F061FD9F852009C07ED /* Scene7 */,
+				06427F051FD9F84A009C07ED /* Scene6 */,
+				06427F041FD9F844009C07ED /* Scene5 */,
+				06427F031FD9F83C009C07ED /* Scene4 */,
+				06427F021FD9F837009C07ED /* Scene3 */,
+				06427F011FD9F82B009C07ED /* Scene2 */,
+				06427EFE1FD9F43B009C07ED /* Scene1 */,
+			);
+			path = PianoGame;
+			sourceTree = "<group>";
+		};
+		06427F011FD9F82B009C07ED /* Scene2 */ = {
+			isa = PBXGroup;
+			children = (
+				06427F0A1FD9F868009C07ED /* PianoScene2.sks */,
+				06427F091FD9F867009C07ED /* PianoScene2.swift */,
+			);
+			path = Scene2;
+			sourceTree = "<group>";
+		};
+		06427F021FD9F837009C07ED /* Scene3 */ = {
+			isa = PBXGroup;
+			children = (
+				06427F0E1FD9F876009C07ED /* PianoScene3.sks */,
+				06427F0D1FD9F875009C07ED /* PianoScene3.swift */,
+			);
+			path = Scene3;
+			sourceTree = "<group>";
+		};
+		06427F031FD9F83C009C07ED /* Scene4 */ = {
+			isa = PBXGroup;
+			children = (
+				06427F121FD9F880009C07ED /* PianoScene4.sks */,
+				06427F111FD9F880009C07ED /* PianoScene4.swift */,
+			);
+			path = Scene4;
+			sourceTree = "<group>";
+		};
+		06427F041FD9F844009C07ED /* Scene5 */ = {
+			isa = PBXGroup;
+			children = (
+				06427F151FD9F88D009C07ED /* PianoScene5.sks */,
+				06427F161FD9F88D009C07ED /* PianoScene5.swift */,
+			);
+			path = Scene5;
+			sourceTree = "<group>";
+		};
+		06427F051FD9F84A009C07ED /* Scene6 */ = {
+			isa = PBXGroup;
+			children = (
+				06427F191FD9F897009C07ED /* PianoScene6.sks */,
+				06427F1A1FD9F898009C07ED /* PianoScene6.swift */,
+			);
+			path = Scene6;
+			sourceTree = "<group>";
+		};
+		06427F061FD9F852009C07ED /* Scene7 */ = {
+			isa = PBXGroup;
+			children = (
+				06427F1E1FD9F8A0009C07ED /* PianoScene7.sks */,
+				06427F1D1FD9F8A0009C07ED /* PianoScene7.swift */,
+			);
+			path = Scene7;
+			sourceTree = "<group>";
+		};
+		06427F071FD9F857009C07ED /* Scene8 */ = {
+			isa = PBXGroup;
+			children = (
+				06427F221FD9F8AD009C07ED /* PianoScene8.sks */,
+				06427F211FD9F8AD009C07ED /* PianoScene8.swift */,
+			);
+			path = Scene8;
+			sourceTree = "<group>";
+		};
+		06427F081FD9F85C009C07ED /* Scene9 */ = {
+			isa = PBXGroup;
+			children = (
+				06427F261FD9F8BA009C07ED /* PianoScene9.sks */,
+				06427F251FD9F8B9009C07ED /* PianoScene9.swift */,
+			);
+			path = Scene9;
+			sourceTree = "<group>";
+		};
 		06476DC01FC93C6100B55906 /* DuckScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,9 +389,8 @@
 				066DB62F1FAE8F1500C68B36 /* GameViewController.swift */,
 				066DB6311FAE8F1500C68B36 /* Main.storyboard */,
 				06476DD71FC945F600B55906 /* ScoreScene */,
-				062D7D4E1FD1260A00575A5B /* AirplaneScene */,
-				06476DC61FC93F5C00B55906 /* CookieScene */,
-				06476DC01FC93C6100B55906 /* DuckScene */,
+				06427F001FD9F461009C07ED /* PianoGame */,
+				06427EFF1FD9F453009C07ED /* ColoringGame */,
 				06476DC11FC93C7100B55906 /* StartScene */,
 				0657C65F1FC1F7F3002FC12D /* Audio */,
 				06B3C6E41FBCD46C00252DB6 /* Assets.xcassets */,
@@ -320,12 +462,15 @@
 			files = (
 				062D7D2B1FD11E0100575A5B /* listenCarefully_Duck.mp3 in Resources */,
 				06812DBA1FBD05AF00F965E8 /* duckQuack.mp3 in Resources */,
+				06427F201FD9F8A0009C07ED /* PianoScene7.sks in Resources */,
+				06427F171FD9F88E009C07ED /* PianoScene5.sks in Resources */,
 				06427EDF1FD9F2B4009C07ED /* Find the shovel.wav in Resources */,
 				06427ED31FD9F2B3009C07ED /* find the cat.wav in Resources */,
 				06427EDD1FD9F2B3009C07ED /* Are you ready for more Now find the bathtub.wav in Resources */,
 				06427EE01FD9F2B4009C07ED /* melody 4.wav in Resources */,
 				06427ED11FD9F2B3009C07ED /* find the giraffe.wav in Resources */,
 				066DB6331FAE8F1500C68B36 /* Main.storyboard in Resources */,
+				06427F281FD9F8BA009C07ED /* PianoScene9.sks in Resources */,
 				06476DD41FC9458E00B55906 /* ScoreScene.sks in Resources */,
 				062D7D2D1FD11E3700575A5B /* listenCarefully_Cookie.mp3 in Resources */,
 				06427EDB1FD9F2B3009C07ED /* melody 1.wav in Resources */,
@@ -333,8 +478,11 @@
 				062D7D2F1FD11E4C00575A5B /* crunch.wav in Resources */,
 				06427EDE1FD9F2B3009C07ED /* G.wav in Resources */,
 				06427EDC1FD9F2B3009C07ED /* D.wav in Resources */,
+				06427F1B1FD9F898009C07ED /* PianoScene6.sks in Resources */,
+				06427F141FD9F880009C07ED /* PianoScene4.sks in Resources */,
 				06476DD21FC9434800B55906 /* CookieInstructions.mp3 in Resources */,
 				06B3C6E71FBCFAD200252DB6 /* Instructions.mp3 in Resources */,
+				06427F0C1FD9F868009C07ED /* PianoScene2.sks in Resources */,
 				062D7D4B1FD125E600575A5B /* AirplaneScene.sks in Resources */,
 				06427EE31FD9F30E009C07ED /* instructions_airplane.mp3 in Resources */,
 				06427ED41FD9F2B3009C07ED /* Find the glass.wav in Resources */,
@@ -346,11 +494,14 @@
 				066DB6381FAE8F1500C68B36 /* LaunchScreen.storyboard in Resources */,
 				06427ED21FD9F2B3009C07ED /* find the jacket.wav in Resources */,
 				062510D01FC917EA00A8114D /* StartScene.sks in Resources */,
+				06427EFC1FD9F421009C07ED /* PianoScene1.sks in Resources */,
 				062D7D521FD12C2F00575A5B /* airplane.mp3 in Resources */,
 				06427ED91FD9F2B3009C07ED /* melody 2.wav in Resources */,
 				06476DC31FC93F3E00B55906 /* CookieScene.sks in Resources */,
 				06427ED71FD9F2B3009C07ED /* Now it's time to play some music touch the yellow key.wav in Resources */,
+				06427F101FD9F876009C07ED /* PianoScene3.sks in Resources */,
 				06B3C6E51FBCD46C00252DB6 /* Assets.xcassets in Resources */,
+				06427F241FD9F8AD009C07ED /* PianoScene8.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,13 +512,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06427F1F1FD9F8A0009C07ED /* PianoScene7.swift in Sources */,
+				06427F0F1FD9F876009C07ED /* PianoScene3.swift in Sources */,
 				066DB62E1FAE8F1500C68B36 /* DuckScene.swift in Sources */,
+				06427F181FD9F88E009C07ED /* PianoScene5.swift in Sources */,
 				066DB6301FAE8F1500C68B36 /* GameViewController.swift in Sources */,
+				06427F131FD9F880009C07ED /* PianoScene4.swift in Sources */,
+				06427EFD1FD9F421009C07ED /* PianoScene1.swift in Sources */,
+				06427F0B1FD9F868009C07ED /* PianoScene2.swift in Sources */,
 				062D7D4D1FD125FB00575A5B /* AirplaneScene.swift in Sources */,
 				062510D21FC9184200A8114D /* StartScene.swift in Sources */,
+				06427F271FD9F8BA009C07ED /* PianoScene9.swift in Sources */,
 				06476DD61FC945F200B55906 /* ScoreScene.swift in Sources */,
 				066DB6281FAE8F1500C68B36 /* AppDelegate.swift in Sources */,
 				06476DC51FC93F4C00B55906 /* CookieScene.swift in Sources */,
+				06427F1C1FD9F898009C07ED /* PianoScene6.swift in Sources */,
+				06427F231FD9F8AD009C07ED /* PianoScene8.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

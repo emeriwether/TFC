@@ -1,8 +1,8 @@
 //
-//  GameScene.swift
-//  DuckColoringGame
+//  DuckScene.swift
+//  TimeForChildrenGame
 //
-//  Created by Eleanor Meriwether on 11/4/17.
+//  Created by Eleanor Meriwether on 12/7/17.
 //  Copyright © 2017 Eleanor Meriwether. All rights reserved.
 //
 
