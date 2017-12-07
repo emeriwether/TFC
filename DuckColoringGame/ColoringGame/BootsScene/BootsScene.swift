@@ -10,7 +10,7 @@ import SpriteKit
 
 class BootsScene: SKScene {
     // local variable for boots sprite
-    let boots = SKSpriteNode(imageNamed: "boots_bw")
+    let boots = SKSpriteNode(imageNamed: "bootsScene_boots_bw")
     
     // local variables to keep track of whether instructions are playing
     var instructionsComplete:Bool = false
@@ -57,7 +57,7 @@ class BootsScene: SKScene {
                 correctTouches += 1
                 
                 // Color boots, play boots noise, and walk boots off screen
-                boots.texture = SKTexture(imageNamed: "boots_colored")
+                boots.texture = SKTexture(imageNamed: "bootsScene_boots_colored")
                 let bootsNoise = SKAction.playSoundFileNamed("boots", waitForCompletion: true)
                 let moveLeft = SKAction.moveTo(x: -1000, duration: 3.0)
                 boots.run(bootsNoise)

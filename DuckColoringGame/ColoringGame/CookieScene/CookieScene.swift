@@ -10,7 +10,7 @@ import SpriteKit
 
 class CookieScene: SKScene {
     // local variable for cookie sprite
-    let cookie = SKSpriteNode(imageNamed: "Chocolate-Chip_BW")
+    let cookie = SKSpriteNode(imageNamed: "cookieScene_cookie_bw")
     
     // local variables to keep track of whether instructions are playing
     var instructionsComplete:Bool = false
@@ -29,7 +29,7 @@ class CookieScene: SKScene {
         self.addChild(cookie)
         
         // run the introductory instructions
-        let instructions = SKAction.playSoundFileNamed("CookieInstructions", waitForCompletion: true)
+        let instructions = SKAction.playSoundFileNamed("instructions_cookie", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
         
         // if the scene has not been touched for 10 seconds, play the reminder instructions; repeat forever
@@ -37,7 +37,7 @@ class CookieScene: SKScene {
         let reminderIfIdle = SKAction.run {
             if self.cookie_correctTouches == 0 && self.cookie_incorrectTouches == 0 {
                 self.reminderComplete = false
-                let cookie_reminder = SKAction.playSoundFileNamed("listenCarefully_Cookie", waitForCompletion: true)
+                let cookie_reminder = SKAction.playSoundFileNamed("reminder_cookie", waitForCompletion: true)
                 self.run(cookie_reminder, completion: { self.reminderComplete = true} )
             }
         }
@@ -57,7 +57,7 @@ class CookieScene: SKScene {
                 correctTouches += 1
             
                 // Color cookie, play crunch noise
-                cookie.texture = SKTexture(imageNamed: "Chocolate-Chip")
+                cookie.texture = SKTexture(imageNamed: "cookieScene_cookie_colored")
                 let crunch = SKAction.playSoundFileNamed("crunch", waitForCompletion: true)
                 cookie.run(crunch)
 
@@ -79,7 +79,7 @@ class CookieScene: SKScene {
             // play reminder instructions if user has touched screen 3 times incorrectly
             if cookie_incorrectTouches == 3 && cookie_correctTouches < 1 {
                 reminderComplete = false
-                let cookie_reminder = SKAction.playSoundFileNamed("listenCarefully_Cookie", waitForCompletion: true)
+                let cookie_reminder = SKAction.playSoundFileNamed("reminder_cookie", waitForCompletion: true)
                 run(cookie_reminder, completion: { self.reminderComplete = true} )
             }
         }

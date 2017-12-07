@@ -10,7 +10,7 @@ import SpriteKit
 
 class DuckScene: SKScene {
     // local variable for airplane sprite
-    let duck = SKSpriteNode(imageNamed: "Duck_BW")
+    let duck = SKSpriteNode(imageNamed: "duckScene_duck_bw")
     
     // local variables to keep track of whether instructions are playing
     var instructionsComplete:Bool = false
@@ -29,7 +29,7 @@ class DuckScene: SKScene {
         self.addChild(duck)
         
         // run the introductory instructions
-        let instructions = SKAction.playSoundFileNamed("Instructions", waitForCompletion: true)
+        let instructions = SKAction.playSoundFileNamed("instructions_duck", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
         
         // if the scene has not been touched for 10 seconds, play the reminder instructions; repeat forever
@@ -37,7 +37,7 @@ class DuckScene: SKScene {
         let reminderIfIdle = SKAction.run {
             if self.duck_correctTouches == 0 && self.duck_incorrectTouches == 0 {
                 self.reminderComplete = false
-                let duck_reminder = SKAction.playSoundFileNamed("listenCarefully_Duck", waitForCompletion: true)
+                let duck_reminder = SKAction.playSoundFileNamed("reminder_duck", waitForCompletion: true)
                 self.run(duck_reminder, completion: { self.reminderComplete = true} )
             }
         }
@@ -57,15 +57,15 @@ class DuckScene: SKScene {
                 correctTouches += 1
             
                 // Change sprite to colored duck
-                duck.texture = SKTexture(imageNamed: "Duck.png")
+                duck.texture = SKTexture(imageNamed: "duckScene_duck_colored_mouthClosed")
             
                 //Variables for open mouth animation
-                let openMouth:SKTexture = SKTexture(imageNamed: "Duck_OpenMouth")
-                let closedMouth:SKTexture = SKTexture(imageNamed: "Duck")
+                let openMouth:SKTexture = SKTexture(imageNamed: "duckScene_duck_colored_mouthOpen")
+                let closedMouth:SKTexture = SKTexture(imageNamed: "duckScene_duck_colored_mouthClosed")
                 let animation:SKAction = SKAction.animate(with: [openMouth, closedMouth], timePerFrame: 0.1)
                 let openMouthAction = SKAction.repeat(animation, count: 5)
                 //Variables for Quack audio
-                let quack = SKAction.playSoundFileNamed("duckQuack", waitForCompletion: true)
+                let quack = SKAction.playSoundFileNamed("quack", waitForCompletion: true)
                 //Variables for move animation
                 let move = SKAction.moveTo(x: 900, duration: 3.0)
                 //Variable to wait
@@ -97,7 +97,7 @@ class DuckScene: SKScene {
             // play reminder instructions if user has touched screen 3 times incorrectly
             if duck_incorrectTouches == 3 && duck_correctTouches < 1 {
                 reminderComplete = false
-                let duck_reminder = SKAction.playSoundFileNamed("listenCarefully_Duck", waitForCompletion: true)
+                let duck_reminder = SKAction.playSoundFileNamed("reminder_duck", waitForCompletion: true)
                 run(duck_reminder, completion: { self.reminderComplete = true} )
             }
         }

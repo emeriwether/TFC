@@ -10,7 +10,7 @@ import SpriteKit
 
 class AirplaneScene: SKScene {
     // local variable for airplane sprite
-    let airplane = SKSpriteNode(imageNamed: "Plane2_BW")
+    let airplane = SKSpriteNode(imageNamed: "airplaneScene_airplane_bw")
     
     // local variables to keep track of whether instructions are playing
     var instructionsComplete:Bool = false
@@ -57,7 +57,7 @@ class AirplaneScene: SKScene {
                 correctTouches += 1
                 
                 // Color airplane, play airplane noise, and fly airplane off screen
-                airplane.texture = SKTexture(imageNamed: "Plane2")
+                airplane.texture = SKTexture(imageNamed: "airplaneScene_airplane_colored")
                 let airplaneNoise = SKAction.playSoundFileNamed("airplane", waitForCompletion: true)
                 let moveRight = SKAction.moveTo(x: 320, duration: 3.0)
                 let moveUp = SKAction.moveTo(y: 700, duration: 3.0)

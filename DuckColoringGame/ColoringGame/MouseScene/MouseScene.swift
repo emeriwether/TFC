@@ -59,9 +59,9 @@ class MouseScene: SKScene {
                 // Color airplane, play airplane noise, and fly airplane off screen
                 mouse.texture = SKTexture(imageNamed: "mouseScene_mouse_colored")
                 let mouseNoise = SKAction.playSoundFileNamed("mouse", waitForCompletion: true)
-                let moveRight = SKAction.moveTo(x: 1000, duration: 3.0)
+                let moveDown = SKAction.moveTo(y: -700, duration: 3.0)
                 mouse.run(mouseNoise)
-                mouse.run(moveRight)
+                mouse.run(moveDown)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
