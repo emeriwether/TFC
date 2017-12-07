@@ -13,6 +13,7 @@ class AirplaneScene: SKScene {
     
     let airplane = SKSpriteNode(imageNamed: "Plane2_BW")
     var instructionsComplete:Bool = false
+    var reminderComplete:Bool = true
     
     var airplane_incorrectTouches = 0
     var airplane_correctTouches = 0
@@ -28,7 +29,7 @@ class AirplaneScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if instructionsComplete == true {
+        if (instructionsComplete == true) && (reminderComplete == true) {
             let touch = touches.first!
             
             //If airplane sprite is touched...
@@ -61,8 +62,9 @@ class AirplaneScene: SKScene {
                 incorrectTouches += 1
             }
             if airplane_incorrectTouches == 3 && airplane_correctTouches < 1 {
+                reminderComplete = false
                 let airplaneReminder = SKAction.playSoundFileNamed("reminder_airplane", waitForCompletion: true)
-                run(airplaneReminder)
+                run(airplaneReminder, completion: { self.reminderComplete = true} )
             }
         }
     }

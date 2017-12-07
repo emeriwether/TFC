@@ -13,6 +13,7 @@ class DuckScene: SKScene {
     
     let duck = SKSpriteNode(imageNamed: "Duck_BW")
     var instructionsComplete:Bool = false
+    var reminderComplete:Bool = true
     
     var duck_incorrectTouches = 0
     var duck_correctTouches = 0
@@ -28,7 +29,7 @@ class DuckScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if instructionsComplete == true {
+        if (instructionsComplete == true) && (reminderComplete == true) {
             let touch = touches.first!
         
             //If duck sprite is touched...
@@ -74,8 +75,9 @@ class DuckScene: SKScene {
                 incorrectTouches += 1
             }
             if duck_incorrectTouches == 3 && duck_correctTouches < 1 {
+                reminderComplete = false
                 let duck_reminder = SKAction.playSoundFileNamed("listenCarefully_Duck", waitForCompletion: true)
-                run(duck_reminder)
+                run(duck_reminder, completion: { self.reminderComplete = true} )
             }
         }
     }

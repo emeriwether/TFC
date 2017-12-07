@@ -13,6 +13,7 @@ class CookieScene: SKScene {
     
     let cookie = SKSpriteNode(imageNamed: "Chocolate-Chip_BW")
     var instructionsComplete:Bool = false
+    var reminderComplete:Bool = true
     
     var cookie_incorrectTouches = 0
     var cookie_correctTouches = 0
@@ -28,7 +29,7 @@ class CookieScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if instructionsComplete == true {
+        if (instructionsComplete == true) && (reminderComplete == true) {
             let touch = touches.first!
         
             //If duck sprite is touched...
@@ -56,8 +57,9 @@ class CookieScene: SKScene {
                 incorrectTouches += 1
             }
             if cookie_incorrectTouches == 3 && cookie_correctTouches < 1 {
+                reminderComplete = false
                 let cookie_reminder = SKAction.playSoundFileNamed("listenCarefully_Cookie", waitForCompletion: true)
-                run(cookie_reminder)
+                run(cookie_reminder, completion: { self.reminderComplete = true} )
             }
         }
     }
