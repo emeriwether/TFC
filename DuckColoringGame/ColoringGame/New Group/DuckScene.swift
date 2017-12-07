@@ -7,7 +7,6 @@
 //
 
 import SpriteKit
-import GameplayKit
 
 class DuckScene: SKScene {
     // local variable for airplane sprite

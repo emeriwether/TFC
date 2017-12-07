@@ -7,7 +7,6 @@
 //
 
 import SpriteKit
-import GameplayKit
 
 class CookieScene: SKScene {
     // local variable for cookie sprite
