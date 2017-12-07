@@ -1,5 +1,5 @@
 //
-//  BootsScene.swift
+//  MouseScene.swift
 //  TimeForChildrenGame
 //
 //  Created by Eleanor Meriwether on 12/7/17.
@@ -8,37 +8,37 @@
 
 import SpriteKit
 
-class BootsScene: SKScene {
-    // local variable for boots sprite
-    let boots = SKSpriteNode(imageNamed: "boots_bw")
+class MouseScene: SKScene {
+    // local variable for mouse sprite
+    let mouse = SKSpriteNode(imageNamed: "mouseScene_mouse_bw")
     
     // local variables to keep track of whether instructions are playing
     var instructionsComplete:Bool = false
     var reminderComplete:Bool = true
     
     // local variables to keep track of touches for this scene
-    var boots_incorrectTouches = 0
-    var boots_correctTouches = 0
+    var mouse_incorrectTouches = 0
+    var mouse_correctTouches = 0
     
     
     override func didMove(to view: SKView) {
-        // place the boots sprite on the page
-        boots.position = CGPoint(x: -340, y: -345)
-        boots.setScale(1.8)
-        boots.zPosition = 2
-        self.addChild(boots)
+        // place the mouse sprite on the page
+        mouse.position = CGPoint(x: 440, y: -200)
+        mouse.setScale(1.8)
+        mouse.zPosition = 2
+        self.addChild(mouse)
         
         // run the introductory instructions
-        let instructions = SKAction.playSoundFileNamed("instructions_boots", waitForCompletion: true)
+        let instructions = SKAction.playSoundFileNamed("instructions_mouse", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
         
         // if the scene has not been touched for 10 seconds, play the reminder instructions; repeat forever
         let timer = SKAction.wait(forDuration: 10.0)
         let reminderIfIdle = SKAction.run {
-            if self.boots_correctTouches == 0 && self.boots_incorrectTouches == 0 {
+            if self.mouse_correctTouches == 0 && self.mouse_incorrectTouches == 0 {
                 self.reminderComplete = false
-                let boots_reminder = SKAction.playSoundFileNamed("reminder_boots", waitForCompletion: true)
-                self.run(boots_reminder, completion: { self.reminderComplete = true} )
+                let mouse_reminder = SKAction.playSoundFileNamed("reminder_mouse", waitForCompletion: true)
+                self.run(mouse_reminder, completion: { self.reminderComplete = true} )
             }
         }
         let idleSequence = SKAction.sequence([timer, reminderIfIdle])
@@ -51,43 +51,44 @@ class BootsScene: SKScene {
         if (instructionsComplete == true) && (reminderComplete == true) {
             let touch = touches.first!
             
-            //If boots sprite is touched...
-            if boots.contains(touch.location(in: self)) {
-                boots_correctTouches += 1
+            //If mouse sprite is touched...
+            if mouse.contains(touch.location(in: self)) {
+                mouse_correctTouches += 1
                 correctTouches += 1
                 
-                // Color boots, play boots noise, and walk boots off screen
-                boots.texture = SKTexture(imageNamed: "boots_colored")
-                let bootsNoise = SKAction.playSoundFileNamed("boots", waitForCompletion: true)
-                let moveLeft = SKAction.moveTo(x: -1000, duration: 3.0)
-                boots.run(bootsNoise)
-                boots.run(moveLeft)
+                // Color airplane, play airplane noise, and fly airplane off screen
+                mouse.texture = SKTexture(imageNamed: "mouseScene_mouse_colored")
+                let mouseNoise = SKAction.playSoundFileNamed("mouse", waitForCompletion: true)
+                let moveRight = SKAction.moveTo(x: 1000, duration: 3.0)
+                mouse.run(mouseNoise)
+                mouse.run(moveRight)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
                 let wait2 = SKAction.wait(forDuration: 2)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let scoreScene = SKScene(fileNamed: "MouseScene")
+                    let scoreScene = SKScene(fileNamed: "ScoreScene")
                     scoreScene?.scaleMode = SKSceneScaleMode.aspectFill
                     self.scene!.view?.presentScene(scoreScene!)
                 }
             }
             else {
-                boots_incorrectTouches += 1
+                mouse_incorrectTouches += 1
                 incorrectTouches += 1
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly
-            if boots_incorrectTouches == 3 && boots_correctTouches < 1 {
+            if mouse_incorrectTouches == 3 && mouse_correctTouches < 1 {
                 reminderComplete = false
-                let bootsReminder = SKAction.playSoundFileNamed("reminder_boots", waitForCompletion: true)
-                run(bootsReminder, completion: { self.reminderComplete = true} )
+                let mouseReminder = SKAction.playSoundFileNamed("reminder_mouse", waitForCompletion: true)
+                run(mouseReminder, completion: { self.reminderComplete = true} )
             }
         }
     }
     
 }
+
 
 
 
