@@ -56,7 +56,7 @@ class MouseScene: SKScene {
                 mouse_correctTouches += 1
                 correctTouches += 1
                 
-                // Color airplane, play airplane noise, and fly airplane off screen
+                // Color mouse, play mouse noise, and move mouse off screen
                 mouse.texture = SKTexture(imageNamed: "mouseScene_mouse_colored")
                 let mouseNoise = SKAction.playSoundFileNamed("mouse", waitForCompletion: true)
                 let moveDown = SKAction.moveTo(y: -700, duration: 3.0)
@@ -68,9 +68,9 @@ class MouseScene: SKScene {
                 let wait2 = SKAction.wait(forDuration: 2)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let scoreScene = SKScene(fileNamed: "ScoreScene")
-                    scoreScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(scoreScene!)
+                    let trashScene = SKScene(fileNamed: "TrashScene")
+                    trashScene?.scaleMode = SKSceneScaleMode.aspectFill
+                    self.scene!.view?.presentScene(trashScene!)
                 }
             }
             else {
