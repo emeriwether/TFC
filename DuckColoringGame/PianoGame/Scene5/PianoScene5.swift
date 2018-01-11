@@ -1,50 +1,82 @@
+// ******PLEASE INSERT HEADER HERE (SEE PIANO 1 & 2 FOR EXAMPLE)
+
 import SpriteKit
 import GameplayKit
 import AVFoundation
 
-class PianoScene5: SKScene, AVAudioPlayerDelegate {
+class PianoScene5: SKScene {
     
-    private var instructionAudio:AVAudioPlayer?
     private var correctAudio: AVAudioPlayer?
     private var targetItem:SKSpriteNode?
     
+    // local variables to keep track of whether instructions are playing
+    var instructionsComplete:Bool = false
+    var reminderComplete:Bool = true
+    
+    // local variables to keep track of touches for this scene
+    var duck_incorrectTouches = 0
+    var duck_correctTouches = 0
+    
     override func didMove(to view: SKView) {
+        //Add the SpriteNode for instruction item
         self.targetItem = self.childNode(withName: "targetItem") as? SKSpriteNode
         
-        let instructionPath = Bundle.main.path(forResource: "Find the shovel", ofType:"wav")!
-        let correctPath = Bundle.main.path(forResource: "G", ofType:".wav")!
-        let InstructionUrl = URL(fileURLWithPath: instructionPath)
-        let correctUrl = URL(fileURLWithPath: correctPath)
+        // run the introductory instructions
+        let instructions = SKAction.playSoundFileNamed("Find the shovel", waitForCompletion: true)
+        run(instructions, completion: { self.instructionsComplete = true })
         
-        do {
-            instructionAudio = try AVAudioPlayer(contentsOf: InstructionUrl)
-            correctAudio = try AVAudioPlayer(contentsOf: correctUrl)
-        } catch {
-            print("Error with the audio.")
+        // if the scene has not been touched for 10 seconds, play the reminder instructions; repeat forever
+        let timer = SKAction.wait(forDuration: 10.0)
+        let reminderIfIdle = SKAction.run {
+            if self.duck_correctTouches == 0 && self.duck_incorrectTouches == 0 {
+                //May not run if 1 touch is made and may not loop.
+                self.reminderComplete = false
+                let reminder = SKAction.playSoundFileNamed("Find the shovel", waitForCompletion: true)
+                self.run(reminder, completion: { self.reminderComplete = true} )
+            }
         }
-        instructionAudio?.delegate = self
-        self.view?.isUserInteractionEnabled = false
-        instructionAudio?.play()
+        let idleSequence = SKAction.sequence([timer, reminderIfIdle])
+        let repeatIdleSequence = SKAction.repeatForever(idleSequence)
+        run(repeatIdleSequence)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first
-        let position = touch?.location(in: self)
-        correctAudio?.delegate = self
-        if (targetItem?.contains((position)!))!{
-            correctAudio?.play()
+        if (instructionsComplete == true) && (reminderComplete == true) {
+            let touch = touches.first!
+            
+            //If duck sprite is touched...
+            if (targetItem?.contains(touch.location(in: self)))! {
+                duck_correctTouches += 1
+                correctTouches += 1
+                
+                //Add correct press audio sound
+                
+                //Variables to switch screens
+                let fadeOut = SKAction.fadeOut(withDuration:2)
+                let wait2 = SKAction.wait(forDuration: 2)
+                let sequenceFade = SKAction.sequence([wait2, fadeOut])
+                run(sequenceFade) {
+                    let cookieScene = SKScene(fileNamed: "PianoScene6")
+                    cookieScene?.scaleMode = SKSceneScaleMode.aspectFill
+                    self.scene!.view?.presentScene(cookieScene!)
+                }
+                
+            }
+            else {
+                duck_incorrectTouches += 1
+                incorrectTouches += 1
+            }
+            
+            // play reminder instructions if user has touched screen 3 times incorrectly
+            if duck_incorrectTouches == 3 && duck_correctTouches < 1 {
+                reminderComplete = false
+                let duck_reminder = SKAction.playSoundFileNamed("Find the shovel", waitForCompletion: true)
+                run(duck_reminder, completion: { self.reminderComplete = true} )
+            }
+            
         }
-    }
-    
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        if player == instructionAudio{
-            self.view?.isUserInteractionEnabled = true
-        }
-        if player == correctAudio{
-            let nextScene = SKScene(fileNamed: "PianoScene6")
-            let fade = SKTransition.crossFade(withDuration: 0.7)
-            self.scene?.view?.presentScene(nextScene!, transition: fade)
-        }
+        
     }
 }
+
 

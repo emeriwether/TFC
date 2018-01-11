@@ -222,22 +222,22 @@
 		06427EE11FD9F2BD009C07ED /* PianoGame */ = {
 			isa = PBXGroup;
 			children = (
-				06427ECD1FD9F2B2009C07ED /* Are you ready for more Now find the bathtub.wav */,
 				06427EC61FD9F2AC009C07ED /* B.wav */,
 				06427ECC1FD9F2B1009C07ED /* D.wav */,
-				06427EC31FD9F2AA009C07ED /* find the cat.wav */,
-				06427EC51FD9F2AC009C07ED /* find the dress.wav */,
-				06427EC11FD9F2A9009C07ED /* find the giraffe.wav */,
-				06427EC41FD9F2AB009C07ED /* Find the glass.wav */,
-				06427EC21FD9F2AA009C07ED /* find the jacket.wav */,
-				06427ECA1FD9F2AF009C07ED /* Find the plate.wav */,
-				06427ECF1FD9F2B3009C07ED /* Find the shovel.wav */,
 				06427ECE1FD9F2B2009C07ED /* G.wav */,
+				06427EC71FD9F2AD009C07ED /* Now it's time to play some music touch the yellow key.wav */,
+				06427ECD1FD9F2B2009C07ED /* Are you ready for more Now find the bathtub.wav */,
+				06427ECA1FD9F2AF009C07ED /* Find the plate.wav */,
+				06427EC41FD9F2AB009C07ED /* Find the glass.wav */,
+				06427ECF1FD9F2B3009C07ED /* Find the shovel.wav */,
+				06427EC21FD9F2AA009C07ED /* find the jacket.wav */,
+				06427EC11FD9F2A9009C07ED /* find the giraffe.wav */,
+				06427EC51FD9F2AC009C07ED /* find the dress.wav */,
+				06427EC31FD9F2AA009C07ED /* find the cat.wav */,
 				06427ECB1FD9F2B0009C07ED /* melody 1.wav */,
 				06427EC91FD9F2AE009C07ED /* melody 2.wav */,
 				06427EC81FD9F2AE009C07ED /* melody 3.wav */,
 				06427ED01FD9F2B3009C07ED /* melody 4.wav */,
-				06427EC71FD9F2AD009C07ED /* Now it's time to play some music touch the yellow key.wav */,
 			);
 			path = PianoGame;
 			sourceTree = "<group>";
