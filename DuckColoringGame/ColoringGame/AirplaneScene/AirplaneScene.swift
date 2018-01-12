@@ -3,7 +3,7 @@
 //  TimeForChildrenGame
 //
 //  Created by Eleanor Meriwether on 12/7/17.
-//  Copyright © 2017 Eleanor Meriwether. All rights reserved.
+//  Copyright © 2018 Eleanor Meriwether. All rights reserved.
 //
 
 import SpriteKit
@@ -90,7 +90,6 @@ class AirplaneScene: SKScene {
             }
         }
     }
-    
 }
 
 

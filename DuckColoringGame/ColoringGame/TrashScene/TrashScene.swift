@@ -2,8 +2,8 @@
 //  TrashScene.swift
 //  TimeForChildrenGame
 //
-//  Created by Eleanor Meriwether on 12/23/17.
-//  Copyright © 2017 Eleanor Meriwether. All rights reserved.
+//  Created by Eleanor Meriwether on 1/8/18.
+//  Copyright © 2018 Eleanor Meriwether. All rights reserved.
 //
 
 import SpriteKit
@@ -31,7 +31,7 @@ class TrashScene: SKScene {
         self.addChild(trash)
         
         // run the introductory instructions
-        let instructions = SKAction.playSoundFileNamed("trash_instructions_Placeholder", waitForCompletion: true)
+        let instructions = SKAction.playSoundFileNamed("instructions_trash", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
         
         // if the scene has not been touched for 10 seconds, play the reminder instructions; repeat forever
@@ -39,7 +39,7 @@ class TrashScene: SKScene {
         let reminderIfIdle = SKAction.run {
             if self.trash_correctTouches == 0 && self.trash_incorrectTouches == 0 {
                 self.reminderComplete = false
-                let trash_reminder = SKAction.playSoundFileNamed("trash_reminder_Placeholder", waitForCompletion: true)
+                let trash_reminder = SKAction.playSoundFileNamed("reminder_trash", waitForCompletion: true)
                 self.run(trash_reminder, completion: { self.reminderComplete = true} )
             }
         }
@@ -60,7 +60,7 @@ class TrashScene: SKScene {
                 
                 // Color trash, play trash noise, and move trash off screen
                 trash.texture = SKTexture(imageNamed: "trashScene_trash_colored")
-                let trashNoise = SKAction.playSoundFileNamed("trash_Placeholder", waitForCompletion: true)
+                let trashNoise = SKAction.playSoundFileNamed("trash", waitForCompletion: true)
                 let moveLeft = SKAction.moveTo(x: -1000, duration: 3.0)
                 trash.run(trashNoise)
                 trash.run(moveLeft)
@@ -83,12 +83,11 @@ class TrashScene: SKScene {
             // play reminder instructions if user has touched screen 3 times incorrectly
             if trash_incorrectTouches == 3 && trash_correctTouches < 1 {
                 reminderComplete = false
-                let trashReminder = SKAction.playSoundFileNamed("trash_reminder_Placeholder", waitForCompletion: true)
+                let trashReminder = SKAction.playSoundFileNamed("reminder_trash", waitForCompletion: true)
                 run(trashReminder, completion: { self.reminderComplete = true} )
             }
         }
     }
-    
 }
 
 

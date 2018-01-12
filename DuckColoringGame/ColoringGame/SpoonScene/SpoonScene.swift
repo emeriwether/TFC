@@ -2,8 +2,8 @@
 //  SpoonScene.swift
 //  TimeForChildrenGame
 //
-//  Created by Eleanor Meriwether on 12/23/17.
-//  Copyright © 2017 Eleanor Meriwether. All rights reserved.
+//  Created by Eleanor Meriwether on 1/8/18.
+//  Copyright © 2018 Eleanor Meriwether. All rights reserved.
 //
 
 import SpriteKit
@@ -31,7 +31,7 @@ class SpoonScene: SKScene {
         self.addChild(spoon)
         
         // run the introductory instructions
-        let instructions = SKAction.playSoundFileNamed("spoon_instructions_Placeholder", waitForCompletion: true)
+        let instructions = SKAction.playSoundFileNamed("instructions_spoon", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
         
         // if the scene has not been touched for 10 seconds, play the reminder instructions; repeat forever
@@ -39,7 +39,7 @@ class SpoonScene: SKScene {
         let reminderIfIdle = SKAction.run {
             if self.spoon_correctTouches == 0 && self.spoon_incorrectTouches == 0 {
                 self.reminderComplete = false
-                let spoon_reminder = SKAction.playSoundFileNamed("spoon_reminder_Placeholder", waitForCompletion: true)
+                let spoon_reminder = SKAction.playSoundFileNamed("reminder_spoon", waitForCompletion: true)
                 self.run(spoon_reminder, completion: { self.reminderComplete = true} )
             }
         }
@@ -60,7 +60,7 @@ class SpoonScene: SKScene {
                 
                 // Color spoon, play spoon noise, and move spoon off screen
                 spoon.texture = SKTexture(imageNamed: "spoonScene_spoon_colored")
-                let spoonNoise = SKAction.playSoundFileNamed("spoon_Placeholder", waitForCompletion: true)
+                let spoonNoise = SKAction.playSoundFileNamed("spoon", waitForCompletion: true)
                 let moveRight = SKAction.moveTo(x: 1000, duration: 3.0)
                 spoon.run(spoonNoise)
                 spoon.run(moveRight)
@@ -83,12 +83,11 @@ class SpoonScene: SKScene {
             // play reminder instructions if user has touched screen 3 times incorrectly
             if spoon_incorrectTouches == 3 && spoon_correctTouches < 1 {
                 reminderComplete = false
-                let spoonReminder = SKAction.playSoundFileNamed("spoon_reminder_Placeholder", waitForCompletion: true)
+                let spoonReminder = SKAction.playSoundFileNamed("reminder_spoon", waitForCompletion: true)
                 run(spoonReminder, completion: { self.reminderComplete = true} )
             }
         }
     }
-    
 }
 
 
