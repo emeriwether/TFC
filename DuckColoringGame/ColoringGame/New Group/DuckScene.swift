@@ -9,7 +9,7 @@
 import SpriteKit
 
 class DuckScene: SKScene {
-    // local variable for airplane sprite
+    // local variable for duck sprite
     let duck = SKSpriteNode(imageNamed: "duckScene_duck_bw")
     
     // local variables to keep track of whether instructions are playing
@@ -26,6 +26,8 @@ class DuckScene: SKScene {
         duck.position = CGPoint(x: 400, y: 100)
         duck.setScale(2)
         duck.zPosition = -1
+        duck.physicsBody = SKPhysicsBody(texture: duck.texture!, size: duck.texture!.size())
+        duck.physicsBody?.affectedByGravity = false
         self.addChild(duck)
         
         // run the introductory instructions

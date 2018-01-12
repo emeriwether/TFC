@@ -26,6 +26,8 @@ class CowScene: SKScene {
         cow.position = CGPoint(x: 400, y: -160)
         cow.setScale(1.5)
         cow.zPosition = 2
+        cow.physicsBody = SKPhysicsBody(texture: cow.texture!, size: cow.texture!.size())
+        cow.physicsBody?.affectedByGravity = false
         self.addChild(cow)
         
         // run the introductory instructions
@@ -58,7 +60,7 @@ class CowScene: SKScene {
                 
                 // Color cow, play cow noise, and walk cow off screen
                 cow.texture = SKTexture(imageNamed: "cowScene_cow_colored")
-                let cowNoise = SKAction.playSoundFileNamed("cow_Placeholder", waitForCompletion: true)
+                let cowNoise = SKAction.playSoundFileNamed("cow", waitForCompletion: true)
                 let moveRight = SKAction.moveTo(x: 1000, duration: 3.0)
                 cow.run(cowNoise)
                 cow.run(moveRight)

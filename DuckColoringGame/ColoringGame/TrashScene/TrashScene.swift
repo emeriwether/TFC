@@ -26,6 +26,8 @@ class TrashScene: SKScene {
         trash.position = CGPoint(x: -413, y: -93)
         trash.setScale(1.8)
         trash.zPosition = 3
+        trash.physicsBody = SKPhysicsBody(texture: trash.texture!, size: trash.texture!.size())
+        trash.physicsBody?.affectedByGravity = false
         self.addChild(trash)
         
         // run the introductory instructions

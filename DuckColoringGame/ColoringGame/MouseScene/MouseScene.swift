@@ -26,6 +26,8 @@ class MouseScene: SKScene {
         mouse.position = CGPoint(x: 440, y: -200)
         mouse.setScale(1.8)
         mouse.zPosition = 2
+        mouse.physicsBody = SKPhysicsBody(texture: mouse.texture!, size: mouse.texture!.size())
+        mouse.physicsBody?.affectedByGravity = false
         self.addChild(mouse)
         
         // run the introductory instructions

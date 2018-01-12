@@ -26,6 +26,8 @@ class BootsScene: SKScene {
         boots.position = CGPoint(x: -340, y: -345)
         boots.setScale(1.8)
         boots.zPosition = 2
+        boots.physicsBody = SKPhysicsBody(texture: boots.texture!, size: boots.texture!.size())
+        boots.physicsBody?.affectedByGravity = false
         self.addChild(boots)
         
         // run the introductory instructions

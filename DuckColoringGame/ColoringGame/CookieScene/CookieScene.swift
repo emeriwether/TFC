@@ -26,6 +26,8 @@ class CookieScene: SKScene {
         cookie.position = CGPoint(x: -320, y: 160)
         cookie.setScale(2)
         cookie.zPosition = 2
+        cookie.physicsBody = SKPhysicsBody(texture: cookie.texture!, size: cookie.texture!.size())
+        cookie.physicsBody?.affectedByGravity = false
         self.addChild(cookie)
         
         // run the introductory instructions

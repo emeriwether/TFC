@@ -26,6 +26,8 @@ class AirplaneScene: SKScene {
         airplane.position = CGPoint(x: -320, y: 250)
         airplane.setScale(2)
         airplane.zPosition = 2
+        airplane.physicsBody = SKPhysicsBody(texture: airplane.texture!, size: airplane.texture!.size())
+        airplane.physicsBody?.affectedByGravity = false
         self.addChild(airplane)
         
         // run the introductory instructions

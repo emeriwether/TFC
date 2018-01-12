@@ -10,7 +10,6 @@
 		061F1BD52004884000A05E8E /* CowScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061F1BD42004884000A05E8E /* CowScene.swift */; };
 		061F1BD72004885500A05E8E /* CowScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 061F1BD62004885500A05E8E /* CowScene.sks */; };
 		061F1BDC20048A6900A05E8E /* cow_instructions_Placeholder.wav in Resources */ = {isa = PBXBuildFile; fileRef = 061F1BD920048A6800A05E8E /* cow_instructions_Placeholder.wav */; };
-		061F1BDD20048A6900A05E8E /* cow_Placeholder.wav in Resources */ = {isa = PBXBuildFile; fileRef = 061F1BDA20048A6800A05E8E /* cow_Placeholder.wav */; };
 		061F1BDE20048A6900A05E8E /* cow_reminder_Placeholder.wav in Resources */ = {isa = PBXBuildFile; fileRef = 061F1BDB20048A6800A05E8E /* cow_reminder_Placeholder.wav */; };
 		062510D01FC917EA00A8114D /* StartScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 062510CF1FC917EA00A8114D /* StartScene.sks */; };
 		062510D21FC9184200A8114D /* StartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062510D11FC9184200A8114D /* StartScene.swift */; };
@@ -76,6 +75,7 @@
 		0669B9012004083B002D8CAC /* trash_instructions_Placeholder.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0669B8FE2004083A002D8CAC /* trash_instructions_Placeholder.wav */; };
 		0669B9022004083B002D8CAC /* trash_Placeholder.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0669B8FF2004083B002D8CAC /* trash_Placeholder.wav */; };
 		0669B9032004083B002D8CAC /* trash_reminder_Placeholder.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0669B9002004083B002D8CAC /* trash_reminder_Placeholder.wav */; };
+		066C1B5120095C70002CE81D /* cow.wav in Resources */ = {isa = PBXBuildFile; fileRef = 066C1B5020095C6F002CE81D /* cow.wav */; };
 		066DB6281FAE8F1500C68B36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066DB6271FAE8F1500C68B36 /* AppDelegate.swift */; };
 		066DB62A1FAE8F1500C68B36 /* DuckScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 066DB6291FAE8F1500C68B36 /* DuckScene.sks */; };
 		066DB62E1FAE8F1500C68B36 /* DuckScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066DB62D1FAE8F1500C68B36 /* DuckScene.swift */; };
@@ -96,7 +96,6 @@
 		061F1BD42004884000A05E8E /* CowScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CowScene.swift; sourceTree = "<group>"; };
 		061F1BD62004885500A05E8E /* CowScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CowScene.sks; sourceTree = "<group>"; };
 		061F1BD920048A6800A05E8E /* cow_instructions_Placeholder.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cow_instructions_Placeholder.wav; sourceTree = "<group>"; };
-		061F1BDA20048A6800A05E8E /* cow_Placeholder.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cow_Placeholder.wav; sourceTree = "<group>"; };
 		061F1BDB20048A6800A05E8E /* cow_reminder_Placeholder.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cow_reminder_Placeholder.wav; sourceTree = "<group>"; };
 		062510CF1FC917EA00A8114D /* StartScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StartScene.sks; sourceTree = "<group>"; };
 		062510D11FC9184200A8114D /* StartScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScene.swift; sourceTree = "<group>"; };
@@ -162,6 +161,7 @@
 		0669B8FE2004083A002D8CAC /* trash_instructions_Placeholder.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = trash_instructions_Placeholder.wav; sourceTree = "<group>"; };
 		0669B8FF2004083B002D8CAC /* trash_Placeholder.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = trash_Placeholder.wav; sourceTree = "<group>"; };
 		0669B9002004083B002D8CAC /* trash_reminder_Placeholder.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = trash_reminder_Placeholder.wav; sourceTree = "<group>"; };
+		066C1B5020095C6F002CE81D /* cow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cow.wav; sourceTree = "<group>"; };
 		066DB6241FAE8F1500C68B36 /* DuckColoringGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuckColoringGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		066DB6271FAE8F1500C68B36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		066DB6291FAE8F1500C68B36 /* DuckScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DuckScene.sks; sourceTree = "<group>"; };
@@ -203,8 +203,8 @@
 		061F1BDF20048A7F00A05E8E /* Cow */ = {
 			isa = PBXGroup;
 			children = (
+				066C1B5020095C6F002CE81D /* cow.wav */,
 				061F1BDB20048A6800A05E8E /* cow_reminder_Placeholder.wav */,
-				061F1BDA20048A6800A05E8E /* cow_Placeholder.wav */,
 				061F1BD920048A6800A05E8E /* cow_instructions_Placeholder.wav */,
 			);
 			path = Cow;
@@ -626,7 +626,6 @@
 				06427F371FDA01AC009C07ED /* mouse.wav in Resources */,
 				06427F2B1FD9FCFE009C07ED /* reminder_boots.wav in Resources */,
 				06427EDD1FD9F2B3009C07ED /* Are you ready for more Now find the bathtub.wav in Resources */,
-				061F1BDD20048A6900A05E8E /* cow_Placeholder.wav in Resources */,
 				06427EE01FD9F2B4009C07ED /* melody 4.wav in Resources */,
 				06427ED11FD9F2B3009C07ED /* find the giraffe.wav in Resources */,
 				06427F2D1FD9FD06009C07ED /* instructions_boots.wav in Resources */,
@@ -642,6 +641,7 @@
 				062D7D491FD125B600575A5B /* reminder_airplane.mp3 in Resources */,
 				062D7D2F1FD11E4C00575A5B /* crunch.wav in Resources */,
 				06427EDE1FD9F2B3009C07ED /* G.wav in Resources */,
+				066C1B5120095C70002CE81D /* cow.wav in Resources */,
 				06427EDC1FD9F2B3009C07ED /* D.wav in Resources */,
 				06427F1B1FD9F898009C07ED /* PianoScene6.sks in Resources */,
 				06427F141FD9F880009C07ED /* PianoScene4.sks in Resources */,

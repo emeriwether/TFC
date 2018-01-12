@@ -26,6 +26,8 @@ class SpoonScene: SKScene {
         spoon.position = CGPoint(x: 525, y: 0)
         spoon.setScale(5)
         spoon.zPosition = 3
+        spoon.physicsBody = SKPhysicsBody(texture: spoon.texture!, size: spoon.texture!.size())
+        spoon.physicsBody?.affectedByGravity = false
         self.addChild(spoon)
         
         // run the introductory instructions
