@@ -54,7 +54,7 @@ class CookieScene: SKScene {
             let touch = touches.first!
         
             //If duck sprite is touched...
-            if cookie.contains(touch.location(in: self)) {
+            if physicsWorld.body(at: touch.location(in: self)) != nil {
                 cookie_correctTouches += 1
                 correctTouches += 1
             

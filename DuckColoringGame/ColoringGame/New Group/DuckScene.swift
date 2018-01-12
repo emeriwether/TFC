@@ -26,7 +26,7 @@ class DuckScene: SKScene {
         duck.position = CGPoint(x: 400, y: 100)
         duck.setScale(2)
         duck.zPosition = -1
-        duck.physicsBody = SKPhysicsBody(texture: duck.texture!, size: duck.texture!.size())
+        duck.physicsBody = SKPhysicsBody(texture: duck.texture!, alphaThreshold: 0.9, size: duck.texture!.size())
         duck.physicsBody?.affectedByGravity = false
         self.addChild(duck)
         
@@ -52,9 +52,10 @@ class DuckScene: SKScene {
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) {
             let touch = touches.first!
-        
+            
             //If duck sprite is touched...
-            if duck.contains(touch.location(in: self)) {
+            //if duck.contains(touch.location(in: self)) {
+            if physicsWorld.body(at: touch.location(in: self)) != nil {
                 duck_correctTouches += 1
                 correctTouches += 1
             
