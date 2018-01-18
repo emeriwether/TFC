@@ -24,7 +24,6 @@ class MouseScene: SKScene {
     override func didMove(to view: SKView) {
         // place the mouse sprite on the page
         mouse.position = CGPoint(x: 440, y: -200)
-        mouse.setScale(1.8)
         mouse.zPosition = 2
         mouse.physicsBody = SKPhysicsBody(texture: mouse.texture!, size: mouse.texture!.size())
         mouse.physicsBody?.affectedByGravity = false

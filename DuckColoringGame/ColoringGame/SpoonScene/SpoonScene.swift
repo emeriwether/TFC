@@ -24,7 +24,6 @@ class SpoonScene: SKScene {
     override func didMove(to view: SKView) {
         // place the spoon sprite on the page
         spoon.position = CGPoint(x: 525, y: 0)
-        spoon.setScale(5)
         spoon.zPosition = 3
         spoon.physicsBody = SKPhysicsBody(texture: spoon.texture!, size: spoon.texture!.size())
         spoon.physicsBody?.affectedByGravity = false

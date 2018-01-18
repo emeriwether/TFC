@@ -440,8 +440,8 @@
 		06476DC01FC93C6100B55906 /* DuckScene */ = {
 			isa = PBXGroup;
 			children = (
-				066DB62D1FAE8F1500C68B36 /* DuckScene.swift */,
 				066DB6291FAE8F1500C68B36 /* DuckScene.sks */,
+				066DB62D1FAE8F1500C68B36 /* DuckScene.swift */,
 			);
 			name = DuckScene;
 			path = "New Group";
