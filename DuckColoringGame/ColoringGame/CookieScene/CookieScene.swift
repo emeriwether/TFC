@@ -24,7 +24,6 @@ class CookieScene: SKScene {
     override func didMove(to view: SKView) {
         // place the cookie sprite on the page
         cookie.position = CGPoint(x: -320, y: 160)
-        cookie.setScale(2)
         cookie.zPosition = 2
         cookie.physicsBody = SKPhysicsBody(texture: cookie.texture!, size: cookie.texture!.size())
         cookie.physicsBody?.affectedByGravity = false

@@ -24,7 +24,6 @@ class CowScene: SKScene {
     override func didMove(to view: SKView) {
         // place the cow sprite on the page
         cow.position = CGPoint(x: 400, y: -160)
-        cow.setScale(1.5)
         cow.zPosition = 2
         cow.physicsBody = SKPhysicsBody(texture: cow.texture!, size: cow.texture!.size())
         cow.physicsBody?.affectedByGravity = false

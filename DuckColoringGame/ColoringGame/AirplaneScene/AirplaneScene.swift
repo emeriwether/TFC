@@ -24,7 +24,6 @@ class AirplaneScene: SKScene {
     override func didMove(to view: SKView) {
         // place the airplane sprite on the page
         airplane.position = CGPoint(x: -320, y: 250)
-        airplane.setScale(2)
         airplane.zPosition = 2
         airplane.physicsBody = SKPhysicsBody(texture: airplane.texture!, size: airplane.texture!.size())
         airplane.physicsBody?.affectedByGravity = false
