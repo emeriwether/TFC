@@ -90,6 +90,13 @@
 		069DE7C620045B0F00465399 /* SpoonScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 069DE7C520045B0F00465399 /* SpoonScene.sks */; };
 		06B3C6E51FBCD46C00252DB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06B3C6E41FBCD46C00252DB6 /* Assets.xcassets */; };
 		06B3C6E71FBCFAD200252DB6 /* instructions_duck.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06B3C6E61FBCFAD200252DB6 /* instructions_duck.mp3 */; };
+		0B28BEE2200C8A8900B1D01E /* Trainer_Egg.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0B28BEE1200C8A8900B1D01E /* Trainer_Egg.sks */; };
+		0B28BEE5200C8AB300B1D01E /* Trainer_Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B28BEE4200C8AB300B1D01E /* Trainer_Egg.swift */; };
+		0B57F948200CAED400244947 /* Touch the egg.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0B57F944200CAED400244947 /* Touch the egg.wav */; };
+		0B57F949200CAED400244947 /* Touch the bread.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0B57F945200CAED400244947 /* Touch the bread.wav */; };
+		0B57F94A200CAED400244947 /* Touch the hamburger.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0B57F946200CAED400244947 /* Touch the hamburger.wav */; };
+		0B57F94B200CAED400244947 /* Touch the pizza.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0B57F947200CAED400244947 /* Touch the pizza.wav */; };
+		0B6D9CE32011E5FB002C9D52 /* Correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0B6D9CE22011E5FB002C9D52 /* Correct.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -178,6 +185,13 @@
 		069DE7C520045B0F00465399 /* SpoonScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SpoonScene.sks; sourceTree = "<group>"; };
 		06B3C6E41FBCD46C00252DB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06B3C6E61FBCFAD200252DB6 /* instructions_duck.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_duck.mp3; sourceTree = "<group>"; };
+		0B28BEE1200C8A8900B1D01E /* Trainer_Egg.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Trainer_Egg.sks; sourceTree = "<group>"; };
+		0B28BEE4200C8AB300B1D01E /* Trainer_Egg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trainer_Egg.swift; sourceTree = "<group>"; };
+		0B57F944200CAED400244947 /* Touch the egg.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Touch the egg.wav"; sourceTree = "<group>"; };
+		0B57F945200CAED400244947 /* Touch the bread.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Touch the bread.wav"; sourceTree = "<group>"; };
+		0B57F946200CAED400244947 /* Touch the hamburger.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Touch the hamburger.wav"; sourceTree = "<group>"; };
+		0B57F947200CAED400244947 /* Touch the pizza.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Touch the pizza.wav"; sourceTree = "<group>"; };
+		0B6D9CE22011E5FB002C9D52 /* Correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Correct.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -477,6 +491,7 @@
 		0657C65F1FC1F7F3002FC12D /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				0B57F943200CAEB200244947 /* ColoringGame_Training */,
 				06427EE41FD9F320009C07ED /* ColoringGame */,
 				06427EE11FD9F2BD009C07ED /* PianoGame */,
 			);
@@ -524,6 +539,7 @@
 				066DB6271FAE8F1500C68B36 /* AppDelegate.swift */,
 				066DB62F1FAE8F1500C68B36 /* GameViewController.swift */,
 				066DB6311FAE8F1500C68B36 /* Main.storyboard */,
+				0B28BEE0200C895D00B1D01E /* ColoringGame_Trainer */,
 				06476DD71FC945F600B55906 /* ScoreScene */,
 				06427F001FD9F461009C07ED /* PianoGame */,
 				06427EFF1FD9F453009C07ED /* ColoringGame */,
@@ -553,6 +569,35 @@
 				066C1B5C200960F7002CE81D /* spoon.wav */,
 			);
 			path = Spoon;
+			sourceTree = "<group>";
+		};
+		0B28BEE0200C895D00B1D01E /* ColoringGame_Trainer */ = {
+			isa = PBXGroup;
+			children = (
+				0B28BEE3200C8A9500B1D01E /* Egg */,
+			);
+			path = ColoringGame_Trainer;
+			sourceTree = "<group>";
+		};
+		0B28BEE3200C8A9500B1D01E /* Egg */ = {
+			isa = PBXGroup;
+			children = (
+				0B28BEE1200C8A8900B1D01E /* Trainer_Egg.sks */,
+				0B28BEE4200C8AB300B1D01E /* Trainer_Egg.swift */,
+			);
+			path = Egg;
+			sourceTree = "<group>";
+		};
+		0B57F943200CAEB200244947 /* ColoringGame_Training */ = {
+			isa = PBXGroup;
+			children = (
+				0B6D9CE22011E5FB002C9D52 /* Correct.wav */,
+				0B57F945200CAED400244947 /* Touch the bread.wav */,
+				0B57F944200CAED400244947 /* Touch the egg.wav */,
+				0B57F946200CAED400244947 /* Touch the hamburger.wav */,
+				0B57F947200CAED400244947 /* Touch the pizza.wav */,
+			);
+			path = ColoringGame_Training;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -587,7 +632,8 @@
 				TargetAttributes = {
 					066DB6231FAE8F1500C68B36 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = U4CECW6YBS;
+						DevelopmentTeam = 2A6YQM3SZ4;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -619,6 +665,7 @@
 				062D7D2B1FD11E0100575A5B /* reminder_duck.mp3 in Resources */,
 				061F1BD72004885500A05E8E /* CowScene.sks in Resources */,
 				06812DBA1FBD05AF00F965E8 /* quack.mp3 in Resources */,
+				0B57F948200CAED400244947 /* Touch the egg.wav in Resources */,
 				06427F201FD9F8A0009C07ED /* PianoScene7.sks in Resources */,
 				06427F171FD9F88E009C07ED /* PianoScene5.sks in Resources */,
 				06427EDF1FD9F2B4009C07ED /* Find the shovel.wav in Resources */,
@@ -627,6 +674,7 @@
 				06427F2B1FD9FCFE009C07ED /* reminder_boots.wav in Resources */,
 				06427EDD1FD9F2B3009C07ED /* Are you ready for more Now find the bathtub.wav in Resources */,
 				066C1B5D200960F7002CE81D /* reminder_spoon.wav in Resources */,
+				0B6D9CE32011E5FB002C9D52 /* Correct.wav in Resources */,
 				06427EE01FD9F2B4009C07ED /* melody 4.wav in Resources */,
 				06427ED11FD9F2B3009C07ED /* find the giraffe.wav in Resources */,
 				06427F2D1FD9FD06009C07ED /* instructions_boots.wav in Resources */,
@@ -641,6 +689,7 @@
 				062D7D491FD125B600575A5B /* reminder_airplane.mp3 in Resources */,
 				062D7D2F1FD11E4C00575A5B /* crunch.wav in Resources */,
 				06427EDE1FD9F2B3009C07ED /* G.wav in Resources */,
+				0B28BEE2200C8A8900B1D01E /* Trainer_Egg.sks in Resources */,
 				066C1B6320096118002CE81D /* instructions_trash.wav in Resources */,
 				066C1B5120095C70002CE81D /* cow.wav in Resources */,
 				06427EDC1FD9F2B3009C07ED /* D.wav in Resources */,
@@ -649,6 +698,7 @@
 				066C1B5E200960F7002CE81D /* instructions_spoon.wav in Resources */,
 				06476DD21FC9434800B55906 /* instructions_cookie.mp3 in Resources */,
 				06B3C6E71FBCFAD200252DB6 /* instructions_duck.mp3 in Resources */,
+				0B57F949200CAED400244947 /* Touch the bread.wav in Resources */,
 				06427F0C1FD9F868009C07ED /* PianoScene2.sks in Resources */,
 				066C1B552009607E002CE81D /* instructions_cow.wav in Resources */,
 				066C1B6420096118002CE81D /* reminder_trash.wav in Resources */,
@@ -668,9 +718,11 @@
 				06427ED21FD9F2B3009C07ED /* find the jacket.wav in Resources */,
 				062510D01FC917EA00A8114D /* StartScene.sks in Resources */,
 				06427EFC1FD9F421009C07ED /* PianoScene1.sks in Resources */,
+				0B57F94A200CAED400244947 /* Touch the hamburger.wav in Resources */,
 				062D7D521FD12C2F00575A5B /* airplane.mp3 in Resources */,
 				06427ED91FD9F2B3009C07ED /* melody 2.wav in Resources */,
 				06427F311FD9FD59009C07ED /* BootsScene.sks in Resources */,
+				0B57F94B200CAED400244947 /* Touch the pizza.wav in Resources */,
 				06476DC31FC93F3E00B55906 /* CookieScene.sks in Resources */,
 				06427ED71FD9F2B3009C07ED /* Now it's time to play some music touch the yellow key.wav in Resources */,
 				06427F101FD9F876009C07ED /* PianoScene3.sks in Resources */,
@@ -698,6 +750,7 @@
 				06427F0B1FD9F868009C07ED /* PianoScene2.swift in Sources */,
 				062D7D4D1FD125FB00575A5B /* AirplaneScene.swift in Sources */,
 				062510D21FC9184200A8114D /* StartScene.swift in Sources */,
+				0B28BEE5200C8AB300B1D01E /* Trainer_Egg.swift in Sources */,
 				06427F271FD9F8BA009C07ED /* PianoScene9.swift in Sources */,
 				069DE7C420045B0100465399 /* SpoonScene.swift in Sources */,
 				06476DD61FC945F200B55906 /* ScoreScene.swift in Sources */,
@@ -831,13 +884,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U4CECW6YBS;
+				DEVELOPMENT_TEAM = 2A6YQM3SZ4;
 				INFOPLIST_FILE = DuckColoringGame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.DuckColoringGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -846,13 +900,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U4CECW6YBS;
+				DEVELOPMENT_TEAM = 2A6YQM3SZ4;
 				INFOPLIST_FILE = DuckColoringGame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.DuckColoringGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
