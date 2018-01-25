@@ -565,8 +565,11 @@
 				066DB62F1FAE8F1500C68B36 /* GameViewController.swift */,
 				066DB6311FAE8F1500C68B36 /* Main.storyboard */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 				0BBECA2E2015BD5200A291CB /* MonsterGame_Trainer */,
 				0B28BEE0200C895D00B1D01E /* ColoringGame_Trainer */,
+=======
+>>>>>>> 3adeb217c5f4ce64215835f5ed66713ac61e509d
 =======
 >>>>>>> 3adeb217c5f4ce64215835f5ed66713ac61e509d
 				06476DD71FC945F600B55906 /* ScoreScene */,
@@ -752,6 +755,9 @@
 =======
 				06427ED31FD9F2B3009C07ED /* find the cat.wav in Resources */,
 				062C80552016655500EE0F91 /* reminder_cookie.wav in Resources */,
+<<<<<<< HEAD
+>>>>>>> 3adeb217c5f4ce64215835f5ed66713ac61e509d
+=======
 >>>>>>> 3adeb217c5f4ce64215835f5ed66713ac61e509d
 				06427F371FDA01AC009C07ED /* mouse.wav in Resources */,
 				06427F2B1FD9FCFE009C07ED /* reminder_boots.wav in Resources */,
@@ -772,11 +778,14 @@
 				06427F3F1FDA0213009C07ED /* MouseScene.sks in Resources */,
 				06427EDB1FD9F2B3009C07ED /* melody 1.wav in Resources */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 				0B90721F2019B04E0073957B /* instructions_pizza.wav in Resources */,
 				0B90722D2019B3D80073957B /* Trainer_Hamburger.sks in Resources */,
 				062D7D491FD125B600575A5B /* reminder_airplane.mp3 in Resources */,
 				0B9072212019B0540073957B /* instructions_bread.wav in Resources */,
 				0B90721E2019B04E0073957B /* instructions_hamburger.wav in Resources */,
+=======
+>>>>>>> 3adeb217c5f4ce64215835f5ed66713ac61e509d
 =======
 >>>>>>> 3adeb217c5f4ce64215835f5ed66713ac61e509d
 				062D7D2F1FD11E4C00575A5B /* crunch.wav in Resources */,
@@ -792,10 +801,13 @@
 				06427F141FD9F880009C07ED /* PianoScene4.sks in Resources */,
 				066C1B5E200960F7002CE81D /* instructions_spoon.wav in Resources */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 				06476DD21FC9434800B55906 /* instructions_cookie.mp3 in Resources */,
 				06B3C6E71FBCFAD200252DB6 /* instructions_duck.mp3 in Resources */,
 				0BBECA3D2015D1F700A291CB /* Monster_T3.sks in Resources */,
 =======
+=======
+>>>>>>> 3adeb217c5f4ce64215835f5ed66713ac61e509d
 				0B57F949200CAED400244947 /* Touch the bread.wav in Resources */,
 >>>>>>> 3adeb217c5f4ce64215835f5ed66713ac61e509d
 				06427F0C1FD9F868009C07ED /* PianoScene2.sks in Resources */,
