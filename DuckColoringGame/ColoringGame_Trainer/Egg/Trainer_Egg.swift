@@ -12,7 +12,7 @@ class Trainer_Egg: SKScene {
     //local variable for SpriteNode that will be over the training object
     private var egg:SKSpriteNode?
     // local variable for background sprite
-    private var background:SKSpriteNode?
+    //private var background:SKSpriteNode?
     
     // local variables to keep track of whether instructions are playing
     var instructionsComplete:Bool = false
@@ -25,10 +25,10 @@ class Trainer_Egg: SKScene {
     override func didMove(to view: SKView) {
         //Connect variable with .sks file
         self.egg = self.childNode(withName: "trainingItem") as? SKSpriteNode
-        self.background = self.childNode(withName: "background") as? SKSpriteNode
+        //self.background = self.childNode(withName: "background") as? SKSpriteNode
         
         // run the introductory instructions
-        let instructions = SKAction.playSoundFileNamed("Touch the egg", waitForCompletion: true)
+        let instructions = SKAction.playSoundFileNamed("instructions_egg", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
         
         // if the scene has not been touched for 10 seconds, play the reminder instructions; repeat forever
@@ -36,7 +36,7 @@ class Trainer_Egg: SKScene {
         let reminderIfIdle = SKAction.run {
             if self.egg_correctTouches == 0 && self.egg_incorrectTouches == 0 {
                 self.reminderComplete = false
-                let egg_reminder = SKAction.playSoundFileNamed("Touch the egg", waitForCompletion: true)
+                let egg_reminder = SKAction.playSoundFileNamed("instructions_egg", waitForCompletion: true)
                 self.run(egg_reminder, completion: { self.reminderComplete = true} )
             }
         }
@@ -56,8 +56,8 @@ class Trainer_Egg: SKScene {
                 correctTouches += 1
                 
                 // Color egg, play crunch noise
-                background?.texture = SKTexture(imageNamed: "trainerScene_eggBW")
-                egg?.texture = SKTexture(imageNamed: "eggcolored")
+                //background?.texture = SKTexture(imageNamed: "trainerScene_eggBW")
+                egg?.texture = SKTexture(imageNamed: "eggColored")
                 let correct = SKAction.playSoundFileNamed("Correct", waitForCompletion: true)
                 egg?.run(correct)
                 
@@ -66,7 +66,7 @@ class Trainer_Egg: SKScene {
                 let wait2 = SKAction.wait(forDuration: 2)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let airplaneScene = SKScene(fileNamed: "AirplaneScene")
+                    let airplaneScene = SKScene(fileNamed: "Trainer_Bread")
                     airplaneScene?.scaleMode = SKSceneScaleMode.aspectFill
                     self.scene!.view?.presentScene(airplaneScene!)
                 }
@@ -79,7 +79,7 @@ class Trainer_Egg: SKScene {
             // play reminder instructions if user has touched screen 3 times incorrectly
             if egg_incorrectTouches == 3 && egg_correctTouches < 1 {
                 reminderComplete = false
-                let egg_reminder = SKAction.playSoundFileNamed("Touch the egg", waitForCompletion: true)
+                let egg_reminder = SKAction.playSoundFileNamed("instructions_egg", waitForCompletion: true)
                 run(egg_reminder, completion: { self.reminderComplete = true} )
             }
         }
