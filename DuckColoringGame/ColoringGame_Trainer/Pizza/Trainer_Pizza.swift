@@ -3,29 +3,26 @@
 //  DuckColoringGame
 //
 //  Created by Gustavo C Figueroa on 1/14/18.
-//  Copyright © 2018 Eleanor Meriwether. All rights reserved.
+//  Copyright © 2018 Gustavo C Figueroa. All rights reserved.
 //
 
 import SpriteKit
 
 class Trainer_Pizza: SKScene {
     //local variable for SpriteNode that will be over the training object
-    private var egg:SKSpriteNode?
-    // local variable for background sprite
-    //private var background:SKSpriteNode?
+    private var pizza:SKSpriteNode?
     
     // local variables to keep track of whether instructions are playing
     var instructionsComplete:Bool = false
     var reminderComplete:Bool = true
     
     // local variables to keep track of touches for this scene
-    var egg_incorrectTouches = 0
-    var egg_correctTouches = 0
+    var pizza_incorrectTouches = 0
+    var pizza_correctTouches = 0
     
     override func didMove(to view: SKView) {
         //Connect variable with .sks file
-        self.egg = self.childNode(withName: "trainingItem") as? SKSpriteNode
-        //self.background = self.childNode(withName: "background") as? SKSpriteNode
+        self.pizza = self.childNode(withName: "pizza") as? SKSpriteNode
         
         // run the introductory instructions
         let instructions = SKAction.playSoundFileNamed("instructions_pizza", waitForCompletion: true)
@@ -34,10 +31,10 @@ class Trainer_Pizza: SKScene {
         // if the scene has not been touched for 10 seconds, play the reminder instructions; repeat forever
         let timer = SKAction.wait(forDuration: 10.0)
         let reminderIfIdle = SKAction.run {
-            if self.egg_correctTouches == 0 && self.egg_incorrectTouches == 0 {
+            if self.pizza_correctTouches == 0 && self.pizza_incorrectTouches == 0 {
                 self.reminderComplete = false
-                let egg_reminder = SKAction.playSoundFileNamed("instructions_pizza", waitForCompletion: true)
-                self.run(egg_reminder, completion: { self.reminderComplete = true} )
+                let pizza_reminder = SKAction.playSoundFileNamed("instructions_pizza", waitForCompletion: true)
+                self.run(pizza_reminder, completion: { self.reminderComplete = true} )
             }
         }
         let idleSequence = SKAction.sequence([timer, reminderIfIdle])
@@ -50,37 +47,38 @@ class Trainer_Pizza: SKScene {
         if (instructionsComplete == true) && (reminderComplete == true) {
             let touch = touches.first!
             
-            //If egg sprite is touched...
-            if (egg?.contains(touch.location(in: self)))! {
-                egg_correctTouches += 1
+            //If pizza sprite is touched...
+            if (pizza?.contains(touch.location(in: self)))! {
+                pizza_correctTouches += 1
                 correctTouches += 1
                 
-                // Color egg, play crunch noise
-                //background?.texture = SKTexture(imageNamed: "trainerScene_eggBW")
-                egg?.texture = SKTexture(imageNamed: "pizzaColored")
-                let correct = SKAction.playSoundFileNamed("Correct", waitForCompletion: true)
-                egg?.run(correct)
+                // Color pizza
+                pizza?.texture = SKTexture(imageNamed: "colorTrainer_pizza_colored")
+                
+                // Play crunch noise
+                let correct = SKAction.playSoundFileNamed("correct", waitForCompletion: true)
+                pizza?.run(correct)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:1)
                 let wait2 = SKAction.wait(forDuration: 2)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let airplaneScene = SKScene(fileNamed: "Trainer_Hamburger")
-                    airplaneScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(airplaneScene!)
+                    let hamburgerScene = SKScene(fileNamed: "Trainer_Hamburger")
+                    hamburgerScene?.scaleMode = SKSceneScaleMode.aspectFill
+                    self.scene!.view?.presentScene(hamburgerScene!)
                 }
             }
             else {
-                egg_incorrectTouches += 1
+                pizza_incorrectTouches += 1
                 incorrectTouches += 1
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly
-            if egg_incorrectTouches == 3 && egg_correctTouches < 1 {
+            if pizza_incorrectTouches == 3 && pizza_correctTouches < 1 {
                 reminderComplete = false
-                let egg_reminder = SKAction.playSoundFileNamed("instructions_pizza", waitForCompletion: true)
-                run(egg_reminder, completion: { self.reminderComplete = true} )
+                let pizza_reminder = SKAction.playSoundFileNamed("instructions_pizza", waitForCompletion: true)
+                run(pizza_reminder, completion: { self.reminderComplete = true} )
             }
         }
     }

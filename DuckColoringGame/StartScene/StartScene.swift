@@ -17,7 +17,7 @@ class StartScene: SKScene {
     let startColor = SKSpriteNode(imageNamed: "ColorStartButton")
     
     // local variable for piano game button
-    let startPiano = SKSpriteNode(imageNamed: "PianoStartButton")
+    let startMonster = SKSpriteNode(imageNamed: "FeedMonsterButton")
     
     override func didMove(to view: SKView) {
         // place start button on screen
@@ -26,9 +26,9 @@ class StartScene: SKScene {
         self.addChild(startColor)
         
         // place piano button on screen
-        startPiano.position = CGPoint(x:0, y: -100)
-        startPiano.setScale(0.5)
-        self.addChild(startPiano)
+        startMonster.position = CGPoint(x:0, y: -100)
+        startMonster.setScale(0.5)
+        self.addChild(startMonster)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -43,10 +43,10 @@ class StartScene: SKScene {
             self.scene!.view?.presentScene(duckScene!, transition: fade)
         }
         
-        if startPiano.contains(touch.location(in:self)) {
-            let pianoScene1 = SKScene(fileNamed: "Monster_T1")
-            pianoScene1?.scaleMode = SKSceneScaleMode.aspectFill
-            self.scene!.view?.presentScene(pianoScene1!, transition: fade)
+        if startMonster.contains(touch.location(in:self)) {
+            let monsterScene1 = SKScene(fileNamed: "Monster_T1")
+            monsterScene1?.scaleMode = SKSceneScaleMode.aspectFill
+            self.scene!.view?.presentScene(monsterScene1!, transition: fade)
         }
     }
 }
