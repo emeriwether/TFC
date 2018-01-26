@@ -61,7 +61,7 @@ class Trainer_Bread: SKScene {
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:1)
-                let wait2 = SKAction.wait(forDuration: 2)
+                let wait2 = SKAction.wait(forDuration: 1)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
                     let pizzaScene = SKScene(fileNamed: "Trainer_Pizza")

@@ -11,8 +11,6 @@ import SpriteKit
 class Trainer_Egg: SKScene {
     //local variable for SpriteNode that will be over the training object
     private var egg:SKSpriteNode?
-    // local variable for background sprite
-    private var background:SKSpriteNode?
     
     // local variables to keep track of whether instructions are playing
     var instructionsComplete:Bool = false
@@ -25,7 +23,6 @@ class Trainer_Egg: SKScene {
     override func didMove(to view: SKView) {
         //Connect variable with .sks file
         self.egg = self.childNode(withName: "egg") as? SKSpriteNode
-        self.background = self.childNode(withName: "background") as? SKSpriteNode
         
         // run the introductory instructions
         let instructions = SKAction.playSoundFileNamed("instructions_egg", waitForCompletion: true)
@@ -64,7 +61,7 @@ class Trainer_Egg: SKScene {
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:1)
-                let wait2 = SKAction.wait(forDuration: 2)
+                let wait2 = SKAction.wait(forDuration: 1)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
                     let breadScene = SKScene(fileNamed: "Trainer_Bread")

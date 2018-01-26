@@ -26,8 +26,8 @@ class StartScene: SKScene {
         self.addChild(startColor)
         
         // place piano button on screen
-        startMonster.position = CGPoint(x:0, y: -100)
-        startMonster.setScale(0.5)
+        startMonster.position = CGPoint(x:0, y: -250)
+        startMonster.setScale(1.5)
         self.addChild(startMonster)
     }
 
@@ -36,13 +36,14 @@ class StartScene: SKScene {
         
         let fade = SKTransition.fade(withDuration: 0.5)
         
-        // if the start button is touched, move to duck scene
+        // if the start color button is touched, move to egg trainer scene
         if startColor.contains(touch.location(in: self)) {
-            let duckScene = SKScene(fileNamed: "Trainer_Egg")
-            duckScene?.scaleMode = SKSceneScaleMode.aspectFill
-            self.scene!.view?.presentScene(duckScene!, transition: fade)
+            let colorTrainer1 = SKScene(fileNamed: "Trainer_Egg")
+            colorTrainer1?.scaleMode = SKSceneScaleMode.aspectFill
+            self.scene!.view?.presentScene(colorTrainer1!, transition: fade)
         }
         
+        // if the start monster button is touched, move to monster scene 1
         if startMonster.contains(touch.location(in:self)) {
             let monsterScene1 = SKScene(fileNamed: "Monster_T1")
             monsterScene1?.scaleMode = SKSceneScaleMode.aspectFill
