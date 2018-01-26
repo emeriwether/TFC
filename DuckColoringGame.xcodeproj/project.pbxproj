@@ -94,8 +94,6 @@
 		0BCA0A9A201BCC2100488E8E /* Trainer_Hamburger.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA0A8F201BCC2100488E8E /* Trainer_Hamburger.sks */; };
 		0BCA0A9B201BCC2100488E8E /* Trainer_Bread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA0A91201BCC2100488E8E /* Trainer_Bread.swift */; };
 		0BCA0A9C201BCC2100488E8E /* Trainer_Bread.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA0A92201BCC2100488E8E /* Trainer_Bread.sks */; };
-		0BCA0A9D201BCC2100488E8E /* Trainer_Egg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA0A94201BCC2100488E8E /* Trainer_Egg.swift */; };
-		0BCA0A9E201BCC2100488E8E /* Trainer_Egg.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA0A95201BCC2100488E8E /* Trainer_Egg.sks */; };
 		0BCA0A9F201BCC2100488E8E /* Trainer_Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA0A97201BCC2100488E8E /* Trainer_Pizza.swift */; };
 		0BCA0AA0201BCC2100488E8E /* Trainer_Pizza.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA0A98201BCC2100488E8E /* Trainer_Pizza.sks */; };
 		0BCA0AA9201BCE0000488E8E /* Monster_T2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA0AA2201BCE0000488E8E /* Monster_T2.sks */; };
@@ -201,8 +199,6 @@
 		0BCA0A8F201BCC2100488E8E /* Trainer_Hamburger.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Trainer_Hamburger.sks; sourceTree = "<group>"; };
 		0BCA0A91201BCC2100488E8E /* Trainer_Bread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trainer_Bread.swift; sourceTree = "<group>"; };
 		0BCA0A92201BCC2100488E8E /* Trainer_Bread.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Trainer_Bread.sks; sourceTree = "<group>"; };
-		0BCA0A94201BCC2100488E8E /* Trainer_Egg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trainer_Egg.swift; sourceTree = "<group>"; };
-		0BCA0A95201BCC2100488E8E /* Trainer_Egg.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Trainer_Egg.sks; sourceTree = "<group>"; };
 		0BCA0A97201BCC2100488E8E /* Trainer_Pizza.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trainer_Pizza.swift; sourceTree = "<group>"; };
 		0BCA0A98201BCC2100488E8E /* Trainer_Pizza.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Trainer_Pizza.sks; sourceTree = "<group>"; };
 		0BCA0AA2201BCE0000488E8E /* Monster_T2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Monster_T2.sks; sourceTree = "<group>"; };
@@ -607,7 +603,6 @@
 		0B28BEE0200C895D00B1D01E /* ColoringGame_Trainer */ = {
 			isa = PBXGroup;
 			children = (
-				0BCA0A93201BCC2100488E8E /* Egg */,
 				0BCA0A90201BCC2100488E8E /* Bread */,
 				0BCA0A96201BCC2100488E8E /* Pizza */,
 				0BCA0A8D201BCC2100488E8E /* Burger */,
@@ -631,16 +626,6 @@
 				0BCA0A92201BCC2100488E8E /* Trainer_Bread.sks */,
 			);
 			path = Bread;
-			sourceTree = "<group>";
-		};
-		0BCA0A93201BCC2100488E8E /* Egg */ = {
-			isa = PBXGroup;
-			children = (
-				0BCA0A94201BCC2100488E8E /* Trainer_Egg.swift */,
-				0BCA0A95201BCC2100488E8E /* Trainer_Egg.sks */,
-			);
-			name = Egg;
-			path = ../../../../ColoringGame_Trainer/Egg;
 			sourceTree = "<group>";
 		};
 		0BCA0A96201BCC2100488E8E /* Pizza */ = {
@@ -768,7 +753,6 @@
 				069DE7C620045B0F00465399 /* SpoonScene.sks in Resources */,
 				06427ED41FD9F2B3009C07ED /* Find the glass.wav in Resources */,
 				0654FCE2201BDAB60056AAAB /* instructions_duck.wav in Resources */,
-				0BCA0A9E201BCC2100488E8E /* Trainer_Egg.sks in Resources */,
 				0669B8EE20040486002D8CAC /* TrashScene.sks in Resources */,
 				066DB62A1FAE8F1500C68B36 /* DuckScene.sks in Resources */,
 				06427F2F1FD9FD37009C07ED /* boots.wav in Resources */,
@@ -819,7 +803,6 @@
 				06427EFD1FD9F421009C07ED /* PianoScene1.swift in Sources */,
 				06427F0B1FD9F868009C07ED /* PianoScene2.swift in Sources */,
 				062D7D4D1FD125FB00575A5B /* AirplaneScene.swift in Sources */,
-				0BCA0A9D201BCC2100488E8E /* Trainer_Egg.swift in Sources */,
 				062510D21FC9184200A8114D /* StartScene.swift in Sources */,
 				06427F271FD9F8BA009C07ED /* PianoScene9.swift in Sources */,
 				069DE7C420045B0100465399 /* SpoonScene.swift in Sources */,
