@@ -103,6 +103,12 @@
 		0BCA0A9E201BCC2100488E8E /* Trainer_Egg.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA0A95201BCC2100488E8E /* Trainer_Egg.sks */; };
 		0BCA0A9F201BCC2100488E8E /* Trainer_Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA0A97201BCC2100488E8E /* Trainer_Pizza.swift */; };
 		0BCA0AA0201BCC2100488E8E /* Trainer_Pizza.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA0A98201BCC2100488E8E /* Trainer_Pizza.sks */; };
+		0BCA0AA9201BCE0000488E8E /* Monster_T2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA0AA2201BCE0000488E8E /* Monster_T2.sks */; };
+		0BCA0AAA201BCE0000488E8E /* Monster_T3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA0AA3201BCE0000488E8E /* Monster_T3.sks */; };
+		0BCA0AAB201BCE0000488E8E /* Monster_T1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA0AA4201BCE0000488E8E /* Monster_T1.sks */; };
+		0BCA0AAD201BCE0000488E8E /* Monster_T2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA0AA6201BCE0000488E8E /* Monster_T2.swift */; };
+		0BCA0AAE201BCE0000488E8E /* Monster_T3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA0AA7201BCE0000488E8E /* Monster_T3.swift */; };
+		0BCA0AAF201BCE0000488E8E /* Monster_T1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA0AA8201BCE0000488E8E /* Monster_T1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -204,6 +210,12 @@
 		0BCA0A95201BCC2100488E8E /* Trainer_Egg.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Trainer_Egg.sks; sourceTree = "<group>"; };
 		0BCA0A97201BCC2100488E8E /* Trainer_Pizza.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trainer_Pizza.swift; sourceTree = "<group>"; };
 		0BCA0A98201BCC2100488E8E /* Trainer_Pizza.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Trainer_Pizza.sks; sourceTree = "<group>"; };
+		0BCA0AA2201BCE0000488E8E /* Monster_T2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Monster_T2.sks; sourceTree = "<group>"; };
+		0BCA0AA3201BCE0000488E8E /* Monster_T3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Monster_T3.sks; sourceTree = "<group>"; };
+		0BCA0AA4201BCE0000488E8E /* Monster_T1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Monster_T1.sks; sourceTree = "<group>"; };
+		0BCA0AA6201BCE0000488E8E /* Monster_T2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monster_T2.swift; sourceTree = "<group>"; };
+		0BCA0AA7201BCE0000488E8E /* Monster_T3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monster_T3.swift; sourceTree = "<group>"; };
+		0BCA0AA8201BCE0000488E8E /* Monster_T1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monster_T1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -551,11 +563,12 @@
 				066DB6271FAE8F1500C68B36 /* AppDelegate.swift */,
 				066DB62F1FAE8F1500C68B36 /* GameViewController.swift */,
 				066DB6311FAE8F1500C68B36 /* Main.storyboard */,
+				06476DC11FC93C7100B55906 /* StartScene */,
 				0B28BEE0200C895D00B1D01E /* ColoringGame_Trainer */,
+				06427EFF1FD9F453009C07ED /* ColoringGame */,
+				0BCA0AA1201BCE0000488E8E /* MonsterGame_Trainer */,
 				06476DD71FC945F600B55906 /* ScoreScene */,
 				06427F001FD9F461009C07ED /* PianoGame */,
-				06427EFF1FD9F453009C07ED /* ColoringGame */,
-				06476DC11FC93C7100B55906 /* StartScene */,
 				0657C65F1FC1F7F3002FC12D /* Audio */,
 				06B3C6E41FBCD46C00252DB6 /* Assets.xcassets */,
 				066DB6361FAE8F1500C68B36 /* LaunchScreen.storyboard */,
@@ -644,6 +657,19 @@
 			path = Pizza;
 			sourceTree = "<group>";
 		};
+		0BCA0AA1201BCE0000488E8E /* MonsterGame_Trainer */ = {
+			isa = PBXGroup;
+			children = (
+				0BCA0AA8201BCE0000488E8E /* Monster_T1.swift */,
+				0BCA0AA4201BCE0000488E8E /* Monster_T1.sks */,
+				0BCA0AA6201BCE0000488E8E /* Monster_T2.swift */,
+				0BCA0AA2201BCE0000488E8E /* Monster_T2.sks */,
+				0BCA0AA7201BCE0000488E8E /* Monster_T3.swift */,
+				0BCA0AA3201BCE0000488E8E /* Monster_T3.sks */,
+			);
+			path = MonsterGame_Trainer;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -714,7 +740,9 @@
 				06427EDF1FD9F2B4009C07ED /* Find the shovel.wav in Resources */,
 				06427ED31FD9F2B3009C07ED /* find the cat.wav in Resources */,
 				06427F371FDA01AC009C07ED /* mouse.wav in Resources */,
+				0BCA0AAB201BCE0000488E8E /* Monster_T1.sks in Resources */,
 				06427F2B1FD9FCFE009C07ED /* reminder_boots.wav in Resources */,
+				0BCA0AA9201BCE0000488E8E /* Monster_T2.sks in Resources */,
 				06427EDD1FD9F2B3009C07ED /* Are you ready for more Now find the bathtub.wav in Resources */,
 				066C1B5D200960F7002CE81D /* reminder_spoon.wav in Resources */,
 				06427EE01FD9F2B4009C07ED /* melody 4.wav in Resources */,
@@ -767,6 +795,7 @@
 				062510D01FC917EA00A8114D /* StartScene.sks in Resources */,
 				06427EFC1FD9F421009C07ED /* PianoScene1.sks in Resources */,
 				062D7D521FD12C2F00575A5B /* airplane.mp3 in Resources */,
+				0BCA0AAA201BCE0000488E8E /* Monster_T3.sks in Resources */,
 				06427ED91FD9F2B3009C07ED /* melody 2.wav in Resources */,
 				06427F311FD9FD59009C07ED /* BootsScene.sks in Resources */,
 				0BCA0A9A201BCC2100488E8E /* Trainer_Hamburger.sks in Resources */,
@@ -786,7 +815,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BCA0AAD201BCE0000488E8E /* Monster_T2.swift in Sources */,
 				0BCA0A9B201BCC2100488E8E /* Trainer_Bread.swift in Sources */,
+				0BCA0AAF201BCE0000488E8E /* Monster_T1.swift in Sources */,
 				06427F1F1FD9F8A0009C07ED /* PianoScene7.swift in Sources */,
 				06427F0F1FD9F876009C07ED /* PianoScene3.swift in Sources */,
 				066DB62E1FAE8F1500C68B36 /* DuckScene.swift in Sources */,
@@ -802,6 +833,7 @@
 				062510D21FC9184200A8114D /* StartScene.swift in Sources */,
 				06427F271FD9F8BA009C07ED /* PianoScene9.swift in Sources */,
 				069DE7C420045B0100465399 /* SpoonScene.swift in Sources */,
+				0BCA0AAE201BCE0000488E8E /* Monster_T3.swift in Sources */,
 				06476DD61FC945F200B55906 /* ScoreScene.swift in Sources */,
 				0669B8EC2004046E002D8CAC /* TrashScene.swift in Sources */,
 				061F1BD52004884000A05E8E /* CowScene.swift in Sources */,

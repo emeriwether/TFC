@@ -44,7 +44,7 @@ class StartScene: SKScene {
         }
         
         if startPiano.contains(touch.location(in:self)) {
-            let pianoScene1 = SKScene(fileNamed: "PianoScene1")
+            let pianoScene1 = SKScene(fileNamed: "Monster_T1")
             pianoScene1?.scaleMode = SKSceneScaleMode.aspectFill
             self.scene!.view?.presentScene(pianoScene1!, transition: fade)
         }
