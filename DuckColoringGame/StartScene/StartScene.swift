@@ -38,13 +38,13 @@ class StartScene: SKScene {
         
         // if the start button is touched, move to duck scene
         if startColor.contains(touch.location(in: self)) {
-            let duckScene = SKScene(fileNamed: "Trainer_Egg")
+            let duckScene = SKScene(fileNamed: "DuckScene")
             duckScene?.scaleMode = SKSceneScaleMode.aspectFill
             self.scene!.view?.presentScene(duckScene!, transition: fade)
         }
         
         if startPiano.contains(touch.location(in:self)) {
-            let pianoScene1 = SKScene(fileNamed: "Monster_T1")
+            let pianoScene1 = SKScene(fileNamed: "PianoScene1")
             pianoScene1?.scaleMode = SKSceneScaleMode.aspectFill
             self.scene!.view?.presentScene(pianoScene1!, transition: fade)
         }

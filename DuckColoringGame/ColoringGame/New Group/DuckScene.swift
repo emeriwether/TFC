@@ -54,7 +54,7 @@ class DuckScene: SKScene {
             
             //If duck sprite is touched...
             //if duck.contains(touch.location(in: self)) {
-            if (physicsWorld.body(at: touch.location(in: self)) == duck.physicsBody) {
+            if (physicsWorld.body(at: touch.location(in: self)) != nil) {
                 duck_correctTouches += 1
                 correctTouches += 1
             
