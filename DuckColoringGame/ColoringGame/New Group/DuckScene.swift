@@ -9,9 +9,6 @@
 import SpriteKit
 
 class DuckScene: SKScene {
-    // local variable for duck sprite
-    let duck = SKSpriteNode(imageNamed: "duckScene_duck_bw")
-    
     // local variables to keep track of whether instructions are playing
     var instructionsComplete:Bool = false
     var reminderComplete:Bool = true
@@ -20,14 +17,9 @@ class DuckScene: SKScene {
     var duck_incorrectTouches = 0
     var duck_correctTouches = 0
     
-    
     override func didMove(to view: SKView) {
-        // place the duck sprite on the page
-        duck.position = CGPoint(x: 400, y: 100)
-        duck.zPosition = -1
-        duck.physicsBody = SKPhysicsBody(texture: duck.texture!, size: duck.texture!.size())
-        duck.physicsBody?.affectedByGravity = false
-        self.addChild(duck)
+        // remove scene's physics body
+        self.physicsBody = nil
         
         // run the introductory instructions
         let instructions = SKAction.playSoundFileNamed("instructions_duck", waitForCompletion: true)
@@ -48,19 +40,23 @@ class DuckScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // local variable for duck sprite
+        let duck = self.childNode(withName: "duck_bw")
+        
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) {
             let touch = touches.first!
             
-            //If duck sprite is touched...
-            //if duck.contains(touch.location(in: self)) {
-            if (physicsWorld.body(at: touch.location(in: self)) != nil) {
+            //If duck sprite's alpha mask is touched...
+            if (physicsWorld.body(at: touch.location(in: self)) == duck?.physicsBody) {
                 duck_correctTouches += 1
                 correctTouches += 1
             
                 // Change sprite to colored duck
-                duck.texture = SKTexture(imageNamed: "duckScene_duck_colored_mouthClosed")
-            
+                let coloredDuck:SKTexture = SKTexture(imageNamed: "duckScene_duck_colored_mouthClosed")
+                let changeToColored:SKAction = SKAction.animate(with: [coloredDuck], timePerFrame: 0.0001)
+                duck!.run(changeToColored)
+                
                 //Variables for open mouth animation
                 let openMouth:SKTexture = SKTexture(imageNamed: "duckScene_duck_colored_mouthOpen")
                 let closedMouth:SKTexture = SKTexture(imageNamed: "duckScene_duck_colored_mouthClosed")
@@ -76,9 +72,9 @@ class DuckScene: SKScene {
                 let sequenceDuck = SKAction.sequence([wait1, move])
             
                 //Run all actions
-                duck.run(openMouthAction)
-                duck.run(quack)
-                duck.run(sequenceDuck)
+                duck!.run(openMouthAction)
+                duck!.run(quack)
+                duck!.run(sequenceDuck)
             
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
@@ -89,7 +85,6 @@ class DuckScene: SKScene {
                     cookieScene?.scaleMode = SKSceneScaleMode.aspectFill
                     self.scene!.view?.presentScene(cookieScene!)
                 }
-            
             }
             else {
                 duck_incorrectTouches += 1

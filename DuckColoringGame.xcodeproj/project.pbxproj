@@ -454,8 +454,8 @@
 		06476DC01FC93C6100B55906 /* DuckScene */ = {
 			isa = PBXGroup;
 			children = (
-				066DB6291FAE8F1500C68B36 /* DuckScene.sks */,
 				066DB62D1FAE8F1500C68B36 /* DuckScene.swift */,
+				066DB6291FAE8F1500C68B36 /* DuckScene.sks */,
 			);
 			name = DuckScene;
 			path = "New Group";
@@ -473,8 +473,8 @@
 		06476DC61FC93F5C00B55906 /* CookieScene */ = {
 			isa = PBXGroup;
 			children = (
-				06476DC21FC93F3E00B55906 /* CookieScene.sks */,
 				06476DC41FC93F4C00B55906 /* CookieScene.swift */,
+				06476DC21FC93F3E00B55906 /* CookieScene.sks */,
 			);
 			path = CookieScene;
 			sourceTree = "<group>";
@@ -632,7 +632,7 @@
 				TargetAttributes = {
 					066DB6231FAE8F1500C68B36 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 2A6YQM3SZ4;
+						DevelopmentTeam = U4CECW6YBS;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
@@ -884,11 +884,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2A6YQM3SZ4;
+				DEVELOPMENT_TEAM = U4CECW6YBS;
 				INFOPLIST_FILE = DuckColoringGame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = test.DuckColoringGame;
+				PRODUCT_BUNDLE_IDENTIFIER = DuckColoringGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -900,11 +900,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2A6YQM3SZ4;
+				DEVELOPMENT_TEAM = U4CECW6YBS;
 				INFOPLIST_FILE = DuckColoringGame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = test.DuckColoringGame;
+				PRODUCT_BUNDLE_IDENTIFIER = DuckColoringGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;

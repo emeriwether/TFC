@@ -9,9 +9,6 @@
 import SpriteKit
 
 class BootsScene: SKScene {
-    // local variable for boots sprite
-    let boots = SKSpriteNode(imageNamed: "bootsScene_boots_bw")
-    
     // local variables to keep track of whether instructions are playing
     var instructionsComplete:Bool = false
     var reminderComplete:Bool = true
@@ -22,13 +19,9 @@ class BootsScene: SKScene {
     
     
     override func didMove(to view: SKView) {
-        // place the boots sprite on the page
-        boots.position = CGPoint(x: -340, y: -345)
-        boots.zPosition = 2
-        boots.physicsBody = SKPhysicsBody(texture: boots.texture!, size: boots.texture!.size())
-        boots.physicsBody?.affectedByGravity = false
-        self.addChild(boots)
-        
+        // remove scene's physics body
+        self.physicsBody = nil
+
         // run the introductory instructions
         let instructions = SKAction.playSoundFileNamed("instructions_boots", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
@@ -48,21 +41,28 @@ class BootsScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // local variable for boots sprite
+        let boots = self.childNode(withName: "boots_bw")
+        
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) {
             let touch = touches.first!
             
             //If boots sprite is touched...
-            if boots.contains(touch.location(in: self)) {
+            if physicsWorld.body(at: touch.location(in: self)) == boots?.physicsBody {
                 boots_correctTouches += 1
                 correctTouches += 1
                 
-                // Color boots, play boots noise, and walk boots off screen
-                boots.texture = SKTexture(imageNamed: "bootsScene_boots_colored")
+                // Color boots
+                let coloredBoots:SKTexture = SKTexture(imageNamed: "bootsScene_boots_colored")
+                let changeToColored:SKAction = SKAction.animate(with: [coloredBoots], timePerFrame: 0.0001)
+                boots!.run(changeToColored)
+                
+                // Play boots noise, and walk boots off screen
                 let bootsNoise = SKAction.playSoundFileNamed("boots", waitForCompletion: true)
                 let moveLeft = SKAction.moveTo(x: -1000, duration: 3.0)
-                boots.run(bootsNoise)
-                boots.run(moveLeft)
+                boots!.run(bootsNoise)
+                boots!.run(moveLeft)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)

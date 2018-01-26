@@ -9,9 +9,6 @@
 import SpriteKit
 
 class CookieScene: SKScene {
-    // local variable for cookie sprite
-    let cookie = SKSpriteNode(imageNamed: "cookieScene_cookie_bw")
-    
     // local variables to keep track of whether instructions are playing
     var instructionsComplete:Bool = false
     var reminderComplete:Bool = true
@@ -20,14 +17,9 @@ class CookieScene: SKScene {
     var cookie_incorrectTouches = 0
     var cookie_correctTouches = 0
     
-    
     override func didMove(to view: SKView) {
-        // place the cookie sprite on the page
-        cookie.position = CGPoint(x: -320, y: 160)
-        cookie.zPosition = 2
-        cookie.physicsBody = SKPhysicsBody(texture: cookie.texture!, size: cookie.texture!.size())
-        cookie.physicsBody?.affectedByGravity = false
-        self.addChild(cookie)
+        // remove scene's physics body
+        self.physicsBody = nil
         
         // run the introductory instructions
         let instructions = SKAction.playSoundFileNamed("instructions_cookie", waitForCompletion: true)
@@ -48,19 +40,26 @@ class CookieScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // local variable for cookie sprite
+        let cookie = self.childNode(withName: "cookie_bw")
+        
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) {
             let touch = touches.first!
         
-            //If duck sprite is touched...
-            if physicsWorld.body(at: touch.location(in: self)) != nil {
+            //If cookie sprite is touched...
+            if physicsWorld.body(at: touch.location(in: self)) == cookie?.physicsBody {
                 cookie_correctTouches += 1
                 correctTouches += 1
             
-                // Color cookie, play crunch noise
-                cookie.texture = SKTexture(imageNamed: "cookieScene_cookie_colored")
+                // Change sprite to colored cookie
+                let coloredCookie:SKTexture = SKTexture(imageNamed: "cookieScene_cookie_colored")
+                let changeToColored:SKAction = SKAction.animate(with: [coloredCookie], timePerFrame: 0.0001)
+                cookie!.run(changeToColored)
+               
+                // Play crunch noise
                 let crunch = SKAction.playSoundFileNamed("crunch", waitForCompletion: true)
-                cookie.run(crunch)
+                cookie!.run(crunch)
 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)

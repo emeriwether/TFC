@@ -9,9 +9,6 @@
 import SpriteKit
 
 class CowScene: SKScene {
-    // local variable for cow sprite
-    let cow = SKSpriteNode(imageNamed: "cowScene_cow_bw")
-    
     // local variables to keep track of whether instructions are playing
     var instructionsComplete:Bool = false
     var reminderComplete:Bool = true
@@ -20,15 +17,10 @@ class CowScene: SKScene {
     var cow_incorrectTouches = 0
     var cow_correctTouches = 0
     
-    
     override func didMove(to view: SKView) {
-        // place the cow sprite on the page
-        cow.position = CGPoint(x: 400, y: -160)
-        cow.zPosition = 2
-        cow.physicsBody = SKPhysicsBody(texture: cow.texture!, size: cow.texture!.size())
-        cow.physicsBody?.affectedByGravity = false
-        self.addChild(cow)
-        
+        // remove scene's physics body
+        self.physicsBody = nil
+
         // run the introductory instructions
         let instructions = SKAction.playSoundFileNamed("instructions_cow", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
@@ -48,21 +40,28 @@ class CowScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // local variable for cow sprite
+        let cow = self.childNode(withName: "cow_bw")
+        
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) {
             let touch = touches.first!
             
             //If cow sprite is touched...
-            if cow.contains(touch.location(in: self)) {
+            if physicsWorld.body(at: touch.location(in: self)) == cow?.physicsBody {
                 cow_correctTouches += 1
                 correctTouches += 1
                 
-                // Color cow, play cow noise, and walk cow off screen
-                cow.texture = SKTexture(imageNamed: "cowScene_cow_colored")
+                // Color cow
+                let coloredCow:SKTexture = SKTexture(imageNamed: "cowScene_cow_colored")
+                let changeToColored:SKAction = SKAction.animate(with: [coloredCow], timePerFrame: 0.0001)
+                cow!.run(changeToColored)
+                
+                // Play cow noise, and walk cow off screen
                 let cowNoise = SKAction.playSoundFileNamed("cow", waitForCompletion: true)
                 let moveRight = SKAction.moveTo(x: 1000, duration: 3.0)
-                cow.run(cowNoise)
-                cow.run(moveRight)
+                cow!.run(cowNoise)
+                cow!.run(moveRight)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)

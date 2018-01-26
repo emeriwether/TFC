@@ -9,9 +9,6 @@
 import SpriteKit
 
 class TrashScene: SKScene {
-    // local variable for trash sprite
-    let trash = SKSpriteNode(imageNamed: "trashScene_trash_bw")
-    
     // local variables to keep track of whether instructions are playing
     var instructionsComplete:Bool = false
     var reminderComplete:Bool = true
@@ -22,13 +19,9 @@ class TrashScene: SKScene {
     
     
     override func didMove(to view: SKView) {
-        // place the trash sprite on the page
-        trash.position = CGPoint(x: -413, y: -93)
-        trash.zPosition = 3
-        trash.physicsBody = SKPhysicsBody(texture: trash.texture!, size: trash.texture!.size())
-        trash.physicsBody?.affectedByGravity = false
-        self.addChild(trash)
-        
+        // remove scene's physics body
+        self.physicsBody = nil
+
         // run the introductory instructions
         let instructions = SKAction.playSoundFileNamed("instructions_trash", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
@@ -48,21 +41,28 @@ class TrashScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // local variable for trash sprite
+        let trash = self.childNode(withName: "trash_bw")
+        
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) {
             let touch = touches.first!
             
             //If trash sprite is touched...
-            if trash.contains(touch.location(in: self)) {
+            if physicsWorld.body(at: touch.location(in: self)) == trash?.physicsBody {
                 trash_correctTouches += 1
                 correctTouches += 1
                 
-                // Color trash, play trash noise, and move trash off screen
-                trash.texture = SKTexture(imageNamed: "trashScene_trash_colored")
+                // Color trash
+                let coloredTrash:SKTexture = SKTexture(imageNamed: "trashScene_trash_colored")
+                let changeToColored:SKAction = SKAction.animate(with: [coloredTrash], timePerFrame: 0.0001)
+                trash!.run(changeToColored)
+                
+                // Play trash noise, and move trash off screen
                 let trashNoise = SKAction.playSoundFileNamed("trash", waitForCompletion: true)
                 let moveLeft = SKAction.moveTo(x: -1000, duration: 3.0)
-                trash.run(trashNoise)
-                trash.run(moveLeft)
+                trash!.run(trashNoise)
+                trash!.run(moveLeft)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)

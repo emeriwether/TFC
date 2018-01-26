@@ -9,9 +9,6 @@
 import SpriteKit
 
 class MouseScene: SKScene {
-    // local variable for mouse sprite
-    let mouse = SKSpriteNode(imageNamed: "mouseScene_mouse_bw")
-    
     // local variables to keep track of whether instructions are playing
     var instructionsComplete:Bool = false
     var reminderComplete:Bool = true
@@ -22,12 +19,8 @@ class MouseScene: SKScene {
     
     
     override func didMove(to view: SKView) {
-        // place the mouse sprite on the page
-        mouse.position = CGPoint(x: 440, y: -200)
-        mouse.zPosition = 2
-        mouse.physicsBody = SKPhysicsBody(texture: mouse.texture!, size: mouse.texture!.size())
-        mouse.physicsBody?.affectedByGravity = false
-        self.addChild(mouse)
+        // remove scene's physics body
+        self.physicsBody = nil
         
         // run the introductory instructions
         let instructions = SKAction.playSoundFileNamed("instructions_mouse", waitForCompletion: true)
@@ -48,21 +41,28 @@ class MouseScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // local variable for mouse sprite
+        let mouse = self.childNode(withName: "mouse_bw")
+        
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) {
             let touch = touches.first!
             
             //If mouse sprite is touched...
-            if mouse.contains(touch.location(in: self)) {
+            if physicsWorld.body(at: touch.location(in: self)) == mouse?.physicsBody {
                 mouse_correctTouches += 1
                 correctTouches += 1
                 
-                // Color mouse, play mouse noise, and move mouse off screen
-                mouse.texture = SKTexture(imageNamed: "mouseScene_mouse_colored")
+                // Color mouse
+                let coloredMouse:SKTexture = SKTexture(imageNamed: "mouseScene_mouse_colored")
+                let changeToColored:SKAction = SKAction.animate(with: [coloredMouse], timePerFrame: 0.0001)
+                mouse!.run(changeToColored)
+                
+                // Play mouse noise, and move mouse off screen
                 let mouseNoise = SKAction.playSoundFileNamed("mouse", waitForCompletion: true)
                 let moveDown = SKAction.moveTo(y: -700, duration: 3.0)
-                mouse.run(mouseNoise)
-                mouse.run(moveDown)
+                mouse!.run(mouseNoise)
+                mouse!.run(moveDown)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)

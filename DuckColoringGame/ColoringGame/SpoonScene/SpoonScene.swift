@@ -9,9 +9,6 @@
 import SpriteKit
 
 class SpoonScene: SKScene {
-    // local variable for spoon sprite
-    let spoon = SKSpriteNode(imageNamed: "spoonScene_spoon_bw")
-    
     // local variables to keep track of whether instructions are playing
     var instructionsComplete:Bool = false
     var reminderComplete:Bool = true
@@ -20,14 +17,9 @@ class SpoonScene: SKScene {
     var spoon_incorrectTouches = 0
     var spoon_correctTouches = 0
     
-    
     override func didMove(to view: SKView) {
-        // place the spoon sprite on the page
-        spoon.position = CGPoint(x: 525, y: 0)
-        spoon.zPosition = 3
-        spoon.physicsBody = SKPhysicsBody(texture: spoon.texture!, size: spoon.texture!.size())
-        spoon.physicsBody?.affectedByGravity = false
-        self.addChild(spoon)
+        // remove scene's physics body
+        self.physicsBody = nil
         
         // run the introductory instructions
         let instructions = SKAction.playSoundFileNamed("instructions_spoon", waitForCompletion: true)
@@ -48,21 +40,28 @@ class SpoonScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // local variable for spoon sprite
+        let spoon = self.childNode(withName: "spoon_bw")
+        
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) {
             let touch = touches.first!
             
             //If spoon sprite is touched...
-            if spoon.contains(touch.location(in: self)) {
+            if physicsWorld.body(at: touch.location(in: self)) == spoon?.physicsBody {
                 spoon_correctTouches += 1
                 correctTouches += 1
                 
-                // Color spoon, play spoon noise, and move spoon off screen
-                spoon.texture = SKTexture(imageNamed: "spoonScene_spoon_colored")
+                // Color spoon
+                let coloredSpoon:SKTexture = SKTexture(imageNamed: "spoonScene_spoon_colored")
+                let changeToColored:SKAction = SKAction.animate(with: [coloredSpoon], timePerFrame: 0.0001)
+                spoon!.run(changeToColored)
+                
+                // Play spoon noise, and move spoon off screen
                 let spoonNoise = SKAction.playSoundFileNamed("spoon", waitForCompletion: true)
                 let moveRight = SKAction.moveTo(x: 1000, duration: 3.0)
-                spoon.run(spoonNoise)
-                spoon.run(moveRight)
+                spoon!.run(spoonNoise)
+                spoon!.run(moveRight)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
