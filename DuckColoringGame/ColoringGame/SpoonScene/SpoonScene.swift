@@ -107,7 +107,7 @@ class SpoonScene: SKScene {
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly
-            if spoon_incorrectTouches == 3 && spoon_correctTouches < 1 {
+            if (spoon_incorrectTouches & 3 == 0) && spoon_correctTouches < 1 {
                 reminderComplete = false
                 let spoonReminder = SKAction.playSoundFileNamed("reminder_spoon", waitForCompletion: true)
                 run(spoonReminder, completion: { self.reminderComplete = true} )

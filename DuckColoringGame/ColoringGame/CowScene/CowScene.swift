@@ -107,7 +107,7 @@ class CowScene: SKScene {
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly
-            if cow_incorrectTouches == 3 && cow_correctTouches < 1 {
+            if (cow_incorrectTouches % 3 == 0) && cow_correctTouches < 1 {
                 reminderComplete = false
                 let cowReminder = SKAction.playSoundFileNamed("reminder_cow", waitForCompletion: true)
                 run(cowReminder, completion: { self.reminderComplete = true} )

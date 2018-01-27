@@ -108,7 +108,7 @@ class BootsScene: SKScene {
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly
-            if boots_incorrectTouches == 3 && boots_correctTouches < 1 {
+            if (boots_incorrectTouches % 3 == 0) && boots_correctTouches < 1 {
                 reminderComplete = false
                 let bootsReminder = SKAction.playSoundFileNamed("reminder_boots", waitForCompletion: true)
                 run(bootsReminder, completion: { self.reminderComplete = true} )

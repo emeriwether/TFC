@@ -108,7 +108,7 @@ class MouseScene: SKScene {
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly
-            if mouse_incorrectTouches == 3 && mouse_correctTouches < 1 {
+            if (mouse_incorrectTouches % 3 == 0) && mouse_correctTouches < 1 {
                 reminderComplete = false
                 let mouseReminder = SKAction.playSoundFileNamed("reminder_mouse", waitForCompletion: true)
                 run(mouseReminder, completion: { self.reminderComplete = true} )

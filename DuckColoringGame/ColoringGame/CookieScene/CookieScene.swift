@@ -106,7 +106,7 @@ class CookieScene: SKScene {
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly
-            if cookie_incorrectTouches == 3 && cookie_correctTouches < 1 {
+            if (cookie_incorrectTouches % 3 == 0) && cookie_correctTouches < 1 {
                 reminderComplete = false
                 let cookie_reminder = SKAction.playSoundFileNamed("reminder_cookie", waitForCompletion: true)
                 run(cookie_reminder, completion: { self.reminderComplete = true} )

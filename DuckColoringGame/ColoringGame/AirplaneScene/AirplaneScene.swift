@@ -109,7 +109,7 @@ class AirplaneScene: SKScene {
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly
-            if airplane_incorrectTouches == 3 && airplane_correctTouches < 1 {
+            if (airplane_incorrectTouches % 3 == 0) && airplane_correctTouches < 1 {
                 reminderComplete = false
                 let airplaneReminder = SKAction.playSoundFileNamed("reminder_airplane", waitForCompletion: true)
                 run(airplaneReminder, completion: { self.reminderComplete = true} )

@@ -108,7 +108,7 @@ class TrashScene: SKScene {
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly
-            if trash_incorrectTouches == 3 && trash_correctTouches < 1 {
+            if (trash_incorrectTouches % 3 == 0) && trash_correctTouches < 1 {
                 reminderComplete = false
                 let trashReminder = SKAction.playSoundFileNamed("reminder_trash", waitForCompletion: true)
                 run(trashReminder, completion: { self.reminderComplete = true} )

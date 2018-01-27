@@ -120,7 +120,7 @@ class DuckScene: SKScene {
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly
-            if duck_incorrectTouches == 3 && duck_correctTouches < 1 {
+            if (duck_incorrectTouches % 3 == 0) && duck_correctTouches < 1 {
                 reminderComplete = false
                 let duck_reminder = SKAction.playSoundFileNamed("reminder_duck", waitForCompletion: true)
                 run(duck_reminder, completion: { self.reminderComplete = true} )
