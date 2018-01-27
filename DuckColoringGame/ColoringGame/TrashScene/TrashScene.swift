@@ -16,7 +16,7 @@ class TrashScene: SKScene {
     // local variables to keep track of touches for this scene
     var trash_incorrectTouches = 0
     var trash_correctTouches = 0
-    
+    var totalTouches = 0
     
     override func didMove(to view: SKView) {
         // remove scene's physics body
@@ -26,18 +26,46 @@ class TrashScene: SKScene {
         let instructions = SKAction.playSoundFileNamed("instructions_trash", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
         
-        // if the scene has not been touched for 10 seconds, play the reminder instructions; repeat forever
-        let timer = SKAction.wait(forDuration: 10.0)
+        
+        /////////////////////////////////
+        ////// IDLE REMINDER TIMER //////
+        /////////////////////////////////
+        let oneSecTimer = SKAction.wait(forDuration: 1.0)
+        var timerCount = 1
+        var currentTouches = 0
+        
+        // set up sequence for if the scene has not been touched for 10 seconds: play the idle reminder
         let reminderIfIdle = SKAction.run {
-            if self.trash_correctTouches == 0 && self.trash_incorrectTouches == 0 {
-                self.reminderComplete = false
-                let trash_reminder = SKAction.playSoundFileNamed("reminder_trash", waitForCompletion: true)
-                self.run(trash_reminder, completion: { self.reminderComplete = true} )
+            self.reminderComplete = false
+            let trash_reminder = SKAction.playSoundFileNamed("reminder_trash", waitForCompletion: true)
+            self.run(trash_reminder, completion: { self.reminderComplete = true} )
+        }
+        
+        // for every one second, do this action:
+        let timerAction = SKAction.run {
+            // if no touch...
+            if (self.totalTouches - currentTouches == 0) {
+                // ...timer progresses one second...
+                timerCount += 1
+            }
+                // ... else if a touch...
+            else {
+                // ... increase touch count...
+                currentTouches += 1
+                // ... and start timer over...
+                timerCount = 1
+            }
+            // if timer seconds are divisable by 10 ...
+            if (timerCount % 10 == 0) {
+                // ... play the reminder.
+                self.run(reminderIfIdle)
             }
         }
-        let idleSequence = SKAction.sequence([timer, reminderIfIdle])
-        let repeatIdleSequence = SKAction.repeatForever(idleSequence)
-        run(repeatIdleSequence)
+        // set up sequence: run 1s timer, then play action
+        let timerActionSequence = SKAction.sequence([oneSecTimer, timerAction])
+        // repeat the timer forever
+        let repeatTimerActionSequence = SKAction.repeatForever(timerActionSequence)
+        run(repeatTimerActionSequence)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -86,6 +114,8 @@ class TrashScene: SKScene {
                 run(trashReminder, completion: { self.reminderComplete = true} )
             }
         }
+        // update totalTouches variable for idle reminder
+        totalTouches = trash_correctTouches + trash_incorrectTouches
     }
 }
 
