@@ -10,8 +10,11 @@ import SpriteKit
 
 class AirplaneScene: SKScene {
     // local variables to keep track of whether instructions are playing
-    var instructionsComplete:Bool = false
-    var reminderComplete:Bool = true
+    var instructionsComplete = false
+    var reminderComplete = true
+    
+    // local variable to keep track of whether correct sprite has been touched
+    var sceneOver = false
     
     // local variables to keep track of touches for this scene
     var airplane_incorrectTouches = 0
@@ -72,11 +75,12 @@ class AirplaneScene: SKScene {
         let airplane = self.childNode(withName: "airplane_bw")
         
         // if no instructions are playing
-        if (instructionsComplete == true) && (reminderComplete == true) {
+        if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false) {
             let touch = touches.first!
             
             //If airplane sprite is touched...   
-            if physicsWorld.body(at: touch.location(in: self)) == airplane?.physicsBody {
+            if (physicsWorld.body(at: touch.location(in: self)) == airplane?.physicsBody) && (sceneOver == false) {
+                sceneOver = true
                 airplane_correctTouches += 1
                 correctTouches += 1
                 

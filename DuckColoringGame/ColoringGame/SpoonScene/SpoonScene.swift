@@ -10,8 +10,11 @@ import SpriteKit
 
 class SpoonScene: SKScene {
     // local variables to keep track of whether instructions are playing
-    var instructionsComplete:Bool = false
-    var reminderComplete:Bool = true
+    var instructionsComplete = false
+    var reminderComplete = true
+    
+    // local variable to keep track of whether correct sprite has been touched
+    var sceneOver = false
     
     // local variables to keep track of touches for this scene
     var spoon_incorrectTouches = 0
@@ -72,11 +75,12 @@ class SpoonScene: SKScene {
         let spoon = self.childNode(withName: "spoon_bw")
         
         // if no instructions are playing
-        if (instructionsComplete == true) && (reminderComplete == true) {
+        if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false) {
             let touch = touches.first!
             
             //If spoon sprite is touched...
-            if physicsWorld.body(at: touch.location(in: self)) == spoon?.physicsBody {
+            if (physicsWorld.body(at: touch.location(in: self)) == spoon?.physicsBody) && (sceneOver == false) {
+                sceneOver = true
                 spoon_correctTouches += 1
                 correctTouches += 1
                 

@@ -10,8 +10,11 @@ import SpriteKit
 
 class BootsScene: SKScene {
     // local variables to keep track of whether instructions are playing
-    var instructionsComplete:Bool = false
-    var reminderComplete:Bool = true
+    var instructionsComplete = false
+    var reminderComplete = true
+    
+    // local variable to keep track of whether correct sprite has been touched
+    var sceneOver = false
     
     // local variables to keep track of touches for this scene
     var boots_incorrectTouches = 0
@@ -73,11 +76,12 @@ class BootsScene: SKScene {
         let boots = self.childNode(withName: "boots_bw")
         
         // if no instructions are playing
-        if (instructionsComplete == true) && (reminderComplete == true) {
+        if (instructionsComplete == true) && (reminderComplete == true)  && (sceneOver == false) {
             let touch = touches.first!
             
             //If boots sprite is touched...
-            if physicsWorld.body(at: touch.location(in: self)) == boots?.physicsBody {
+            if (physicsWorld.body(at: touch.location(in: self)) == boots?.physicsBody)  && (sceneOver == false) {
+                sceneOver = true
                 boots_correctTouches += 1
                 correctTouches += 1
                 

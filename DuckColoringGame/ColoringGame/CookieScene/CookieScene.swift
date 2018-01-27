@@ -10,8 +10,11 @@ import SpriteKit
 
 class CookieScene: SKScene {
     // local variables to keep track of whether instructions are playing
-    var instructionsComplete:Bool = false
-    var reminderComplete:Bool = true
+    var instructionsComplete = false
+    var reminderComplete = true
+
+    // local variable to keep track of whether correct sprite has been touched
+    var sceneOver = false
     
     // local variables to keep track of touches for this scene
     var cookie_incorrectTouches = 0
@@ -22,11 +25,10 @@ class CookieScene: SKScene {
         // remove scene's physics body
         self.physicsBody = nil
         
-        // run the introductory instructions
+        // run the introductory instructions, then flag instructionsComplete as true
         let instructions = SKAction.playSoundFileNamed("instructions_cookie", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
         
-
         /////////////////////////////////
         ////// IDLE REMINDER TIMER //////
         /////////////////////////////////
@@ -73,14 +75,15 @@ class CookieScene: SKScene {
         let cookie = self.childNode(withName: "cookie_bw")
         
         // if no instructions are playing
-        if (instructionsComplete == true) && (reminderComplete == true) {
+        if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false)  {
             let touch = touches.first!
         
             //If cookie sprite is touched...
-            if physicsWorld.body(at: touch.location(in: self)) == cookie?.physicsBody {
+            if (physicsWorld.body(at: touch.location(in: self)) == cookie?.physicsBody) && (sceneOver == false) {
+                sceneOver = true
                 cookie_correctTouches += 1
                 correctTouches += 1
-            
+
                 // Change sprite to colored cookie
                 let coloredCookie:SKTexture = SKTexture(imageNamed: "cookieScene_cookie_colored")
                 let changeToColored:SKAction = SKAction.animate(with: [coloredCookie], timePerFrame: 0.0001)

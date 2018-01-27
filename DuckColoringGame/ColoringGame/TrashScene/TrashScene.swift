@@ -10,8 +10,11 @@ import SpriteKit
 
 class TrashScene: SKScene {
     // local variables to keep track of whether instructions are playing
-    var instructionsComplete:Bool = false
-    var reminderComplete:Bool = true
+    var instructionsComplete = false
+    var reminderComplete = true
+    
+    // local variable to keep track of whether correct sprite has been touched
+    var sceneOver = false
     
     // local variables to keep track of touches for this scene
     var trash_incorrectTouches = 0
@@ -25,7 +28,6 @@ class TrashScene: SKScene {
         // run the introductory instructions
         let instructions = SKAction.playSoundFileNamed("instructions_trash", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
-        
         
         /////////////////////////////////
         ////// IDLE REMINDER TIMER //////
@@ -73,11 +75,12 @@ class TrashScene: SKScene {
         let trash = self.childNode(withName: "trash_bw")
         
         // if no instructions are playing
-        if (instructionsComplete == true) && (reminderComplete == true) {
+        if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false) {
             let touch = touches.first!
             
             //If trash sprite is touched...
-            if physicsWorld.body(at: touch.location(in: self)) == trash?.physicsBody {
+            if (physicsWorld.body(at: touch.location(in: self)) == trash?.physicsBody) && (sceneOver == false) {
+                sceneOver = true
                 trash_correctTouches += 1
                 correctTouches += 1
                 

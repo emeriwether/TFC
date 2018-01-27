@@ -13,6 +13,9 @@ class DuckScene: SKScene {
     var instructionsComplete = false
     var reminderComplete = true
     
+    // local variable to keep track of whether correct sprite has been touched
+    var sceneOver = false
+    
     // local variables to keep track of touches for this scene
     var duck_incorrectTouches = 0
     var duck_correctTouches = 0
@@ -26,8 +29,8 @@ class DuckScene: SKScene {
         let instructions = SKAction.playSoundFileNamed("instructions_duck", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
         
-          /////////////////////////////////
-         ////// IDLE REMINDER TIMER //////
+        /////////////////////////////////
+        ////// IDLE REMINDER TIMER //////
         /////////////////////////////////
         let oneSecTimer = SKAction.wait(forDuration: 1.0)
         var timerCount = 1
@@ -72,14 +75,16 @@ class DuckScene: SKScene {
         let duck = self.childNode(withName: "duck_bw")
         
         // if no instructions are playing
-        if (instructionsComplete == true) && (reminderComplete == true) {
+        if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false){
             let touch = touches.first!
             
             //If duck sprite's alpha mask is touched...
-            if (physicsWorld.body(at: touch.location(in: self)) == duck?.physicsBody) {
+            if (physicsWorld.body(at: touch.location(in: self)) == duck?.physicsBody) && (sceneOver == false) {
+                sceneOver = true
                 duck_correctTouches += 1
                 correctTouches += 1
-            
+                print("duck touched")
+                
                 // Change sprite to colored duck
                 let coloredDuck:SKTexture = SKTexture(imageNamed: "duckScene_duck_colored_mouthClosed")
                 let changeToColored:SKAction = SKAction.animate(with: [coloredDuck], timePerFrame: 0.0001)
@@ -119,11 +124,15 @@ class DuckScene: SKScene {
                 incorrectTouches += 1
             }
             
+            // test print
+            print("duck_incorrectTouches: ", duck_incorrectTouches, " duck_correctTouches: ", duck_correctTouches, " incorrectTouches: ", incorrectTouches, " correctTouches: ", correctTouches)
+            
             // play reminder instructions if user has touched screen 3 times incorrectly
             if (duck_incorrectTouches % 3 == 0) && duck_correctTouches < 1 {
                 reminderComplete = false
                 let duck_reminder = SKAction.playSoundFileNamed("reminder_duck", waitForCompletion: true)
                 run(duck_reminder, completion: { self.reminderComplete = true} )
+                print("run reminder")
             }
         }
         // update totalTouches variable for idle reminder
