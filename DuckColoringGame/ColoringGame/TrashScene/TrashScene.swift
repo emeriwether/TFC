@@ -89,11 +89,18 @@ class TrashScene: SKScene {
                 let changeToColored:SKAction = SKAction.animate(with: [coloredTrash], timePerFrame: 0.0001)
                 trash!.run(changeToColored)
                 
-                // Play trash noise, and move trash off screen
+                // Variable for trash noise
                 let trashNoise = SKAction.playSoundFileNamed("trash", waitForCompletion: true)
-                let moveLeft = SKAction.moveTo(x: -1000, duration: 3.0)
+                
+                // Variables for trash animation
+                let lidOne = SKTexture(imageNamed: "trashScene_trash_colored_lid1")
+                let lidTwo = SKTexture(imageNamed: "trashScene_trash_colored_lid2")
+                let animationLid = SKAction.animate(with: [lidOne, coloredTrash, lidTwo], timePerFrame: 0.1)
+                let animationLidRepeat = SKAction.repeat(animationLid, count: 6)
+                
+                // Run all actions
+                trash!.run(animationLidRepeat)
                 trash!.run(trashNoise)
-                trash!.run(moveLeft)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)

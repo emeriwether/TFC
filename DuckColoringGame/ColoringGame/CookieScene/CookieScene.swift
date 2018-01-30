@@ -88,9 +88,17 @@ class CookieScene: SKScene {
                 let coloredCookie:SKTexture = SKTexture(imageNamed: "cookieScene_cookie_colored")
                 let changeToColored:SKAction = SKAction.animate(with: [coloredCookie], timePerFrame: 0.0001)
                 cookie!.run(changeToColored)
-               
-                // Play crunch noise
+                
+                // Variable for crunch noise
                 let crunch = SKAction.playSoundFileNamed("crunch", waitForCompletion: true)
+                
+                // Variables for bite action
+                let biteOne = SKTexture(imageNamed: "cookieScene_cookie_colored_bite1")
+                let biteTwo = SKTexture(imageNamed: "cookieScene_cookie_colored_bite2")
+                let animationBite = SKAction.animate(with: [biteOne, biteTwo], timePerFrame: 0.5)
+                
+                // Run all actions
+                cookie!.run(animationBite)
                 cookie!.run(crunch)
 
                 //Variables to switch screens

@@ -91,9 +91,9 @@ class DuckScene: SKScene {
                 duck!.run(changeToColored)
                 
                 //Variables for open mouth animation
-                let openMouth:SKTexture = SKTexture(imageNamed: "duckScene_duck_colored_mouthOpen")
-                let closedMouth:SKTexture = SKTexture(imageNamed: "duckScene_duck_colored_mouthClosed")
-                let animation:SKAction = SKAction.animate(with: [openMouth, closedMouth], timePerFrame: 0.1)
+                let openMouth = SKTexture(imageNamed: "duckScene_duck_colored_mouthOpen")
+                let closedMouth = SKTexture(imageNamed: "duckScene_duck_colored_mouthClosed")
+                let animation = SKAction.animate(with: [openMouth, closedMouth], timePerFrame: 0.1)
                 let openMouthAction = SKAction.repeat(animation, count: 5)
                 //Variables for Quack audio
                 let quack = SKAction.playSoundFileNamed("quack", waitForCompletion: true)

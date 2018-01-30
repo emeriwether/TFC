@@ -86,14 +86,24 @@ class BootsScene: SKScene {
                 correctTouches += 1
                 
                 // Color boots
-                let coloredBoots:SKTexture = SKTexture(imageNamed: "bootsScene_boots_colored")
-                let changeToColored:SKAction = SKAction.animate(with: [coloredBoots], timePerFrame: 0.0001)
+                let coloredBoots = SKTexture(imageNamed: "bootsScene_boots_colored")
+                
+                let changeToColored = SKAction.animate(with: [coloredBoots], timePerFrame: 0.0001)
                 boots!.run(changeToColored)
                 
-                // Play boots noise, and walk boots off screen
+                // Variable for play boots noise
                 let bootsNoise = SKAction.playSoundFileNamed("boots", waitForCompletion: true)
+                
+                // Variables to animate boots and walk boots off screen
+                let rightStep = SKTexture(imageNamed: "bootsScene_boots_colored_rightStep")
+                let leftStep = SKTexture(imageNamed: "bootsScene_boots_colored_leftStep")
+                let animationWalk = SKAction.animate(with: [rightStep, coloredBoots, leftStep], timePerFrame: 0.1)
+                let animationWalkRepeat = SKAction.repeat(animationWalk, count: 8)
                 let moveLeft = SKAction.moveTo(x: -1000, duration: 3.0)
+                
+                // Run all actions
                 boots!.run(bootsNoise)
+                boots!.run(animationWalkRepeat)
                 boots!.run(moveLeft)
                 
                 //Variables to switch screens
