@@ -1,11 +1,3 @@
-//
-//  Monster_T1.swift
-//  DuckColoringGame
-//
-//  Created by Gustavo C Figueroa on 1/21/18.
-//  Copyright © 2018 Eleanor Meriwether. All rights reserved.
-//
-
 import SpriteKit
 import GameplayKit
 
@@ -13,8 +5,6 @@ class Monster_T1: SKScene {
     
     //Create SpriteNode for dragging object
     private var dragObject:SKSpriteNode?
-//    //Create background SpriteNode
-//    private var backgroundObject:SKSpriteNode?
     //Create Drop Zone Node
     private var targetZone:SKSpriteNode?
     //Variable to store original location of dragging
@@ -58,7 +48,9 @@ class Monster_T1: SKScene {
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         //As the screen detects that
-        if (dragObject?.contains((touches.first?.location(in: self))!))!{
+//        print(touches.first?.location(in: self))
+//        print(self.atPoint((touches.first?.location(in: self))!))
+        if self.atPoint((touches.first?.location(in: self))!).name == "appleObject"{
             for touch in touches{
                 let location = touch.location(in: self)
                 dragObject?.position.x = location.x
@@ -68,6 +60,7 @@ class Monster_T1: SKScene {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
         if (targetZone?.contains((dragObject?.position)!))!{
             apple_correctTouches += 1
             correctTouches += 1
