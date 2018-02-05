@@ -98,6 +98,7 @@
 		06E0603E201BE85800FBE6E0 /* instructions_bread.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06E0603A201BE85800FBE6E0 /* instructions_bread.wav */; };
 		06E0603F201BE85800FBE6E0 /* instructions_pizza.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06E0603B201BE85800FBE6E0 /* instructions_pizza.wav */; };
 		06E06041201BE99B00FBE6E0 /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06E06040201BE99B00FBE6E0 /* correct.wav */; };
+		0BC417D62028F2C9001C0F80 /* instructions_drink.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BC417D52028F2C9001C0F80 /* instructions_drink.mp3 */; };
 		0BC6445E20208A2300B330FA /* DrinkScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC6445D20208A2300B330FA /* DrinkScene.swift */; };
 		0BC6446020208ABC00B330FA /* DrinkScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BC6445F20208ABC00B330FA /* DrinkScene.sks */; };
 		0BCA0A99201BCC2100488E8E /* Trainer_Hamburger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA0A8E201BCC2100488E8E /* Trainer_Hamburger.swift */; };
@@ -210,6 +211,7 @@
 		06E0603A201BE85800FBE6E0 /* instructions_bread.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = instructions_bread.wav; sourceTree = "<group>"; };
 		06E0603B201BE85800FBE6E0 /* instructions_pizza.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = instructions_pizza.wav; sourceTree = "<group>"; };
 		06E06040201BE99B00FBE6E0 /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correct.wav; sourceTree = "<group>"; };
+		0BC417D52028F2C9001C0F80 /* instructions_drink.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_drink.mp3; sourceTree = "<group>"; };
 		0BC6445D20208A2300B330FA /* DrinkScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkScene.swift; sourceTree = "<group>"; };
 		0BC6445F20208ABC00B330FA /* DrinkScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DrinkScene.sks; sourceTree = "<group>"; };
 		0BCA0A8E201BCC2100488E8E /* Trainer_Hamburger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trainer_Hamburger.swift; sourceTree = "<group>"; };
@@ -547,6 +549,7 @@
 		0657C65F1FC1F7F3002FC12D /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				0BC417D42028F2C9001C0F80 /* MonsterGame */,
 				0654FCF8201BDBEA0056AAAB /* ColoringGame_Training */,
 				06427EE41FD9F320009C07ED /* ColoringGame */,
 				06427EE11FD9F2BD009C07ED /* PianoGame */,
@@ -640,6 +643,14 @@
 				0BCA0AB2201BDFB300488E8E /* Egg */,
 			);
 			path = ColoringGame_Trainer;
+			sourceTree = "<group>";
+		};
+		0BC417D42028F2C9001C0F80 /* MonsterGame */ = {
+			isa = PBXGroup;
+			children = (
+				0BC417D52028F2C9001C0F80 /* instructions_drink.mp3 */,
+			);
+			path = MonsterGame;
 			sourceTree = "<group>";
 		};
 		0BC6445C202087E700B330FA /* MonsterGame */ = {
@@ -779,6 +790,7 @@
 				06427F281FD9F8BA009C07ED /* PianoScene9.sks in Resources */,
 				06476DD41FC9458E00B55906 /* ScoreScene.sks in Resources */,
 				0654FCD5201BDA7E0056AAAB /* instructions_boots.wav in Resources */,
+				0BC417D62028F2C9001C0F80 /* instructions_drink.mp3 in Resources */,
 				0654FCE1201BDAB60056AAAB /* reminder_duck.wav in Resources */,
 				06427F3F1FDA0213009C07ED /* MouseScene.sks in Resources */,
 				06E0603E201BE85800FBE6E0 /* instructions_bread.wav in Resources */,
