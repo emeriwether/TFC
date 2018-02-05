@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0615341A20222F6300E6C2DE /* CloseButton.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0615341920222F6300E6C2DE /* CloseButton.sks */; };
+		06153420202233C400E6C2DE /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0615341E202233C300E6C2DE /* GameScene.sks */; };
+		06153421202233C400E6C2DE /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615341F202233C300E6C2DE /* GameScene.swift */; };
 		061F1BD52004884000A05E8E /* CowScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061F1BD42004884000A05E8E /* CowScene.swift */; };
 		061F1BD72004885500A05E8E /* CowScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 061F1BD62004885500A05E8E /* CowScene.sks */; };
 		062510D01FC917EA00A8114D /* StartScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 062510CF1FC917EA00A8114D /* StartScene.sks */; };
@@ -112,6 +115,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0615341920222F6300E6C2DE /* CloseButton.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CloseButton.sks; sourceTree = "<group>"; };
+		0615341E202233C300E6C2DE /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		0615341F202233C300E6C2DE /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		061F1BD42004884000A05E8E /* CowScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CowScene.swift; sourceTree = "<group>"; };
 		061F1BD62004885500A05E8E /* CowScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CowScene.sks; sourceTree = "<group>"; };
 		062510CF1FC917EA00A8114D /* StartScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StartScene.sks; sourceTree = "<group>"; };
@@ -229,6 +235,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06153422202233CB00E6C2DE /* GameScene */ = {
+			isa = PBXGroup;
+			children = (
+				0615341E202233C300E6C2DE /* GameScene.sks */,
+				0615341F202233C300E6C2DE /* GameScene.swift */,
+			);
+			path = GameScene;
+			sourceTree = "<group>";
+		};
 		061F1BD82004885B00A05E8E /* CowScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,8 +521,8 @@
 		06476DD71FC945F600B55906 /* ScoreScene */ = {
 			isa = PBXGroup;
 			children = (
-				06476DD31FC9458E00B55906 /* ScoreScene.sks */,
 				06476DD51FC945F200B55906 /* ScoreScene.swift */,
+				06476DD31FC9458E00B55906 /* ScoreScene.sks */,
 			);
 			path = ScoreScene;
 			sourceTree = "<group>";
@@ -575,6 +590,8 @@
 			children = (
 				066DB6271FAE8F1500C68B36 /* AppDelegate.swift */,
 				066DB62F1FAE8F1500C68B36 /* GameViewController.swift */,
+				06153422202233CB00E6C2DE /* GameScene */,
+				0615341920222F6300E6C2DE /* CloseButton.sks */,
 				066DB6311FAE8F1500C68B36 /* Main.storyboard */,
 				06476DC11FC93C7100B55906 /* StartScene */,
 				0B28BEE0200C895D00B1D01E /* ColoringGame_Trainer */,
@@ -754,11 +771,13 @@
 				0BCA0AB6201BDFB300488E8E /* Trainer_Egg.sks in Resources */,
 				06427EDB1FD9F2B3009C07ED /* melody 1.wav in Resources */,
 				0654FCD1201BDA700056AAAB /* reminder_mouse.wav in Resources */,
+				06153420202233C400E6C2DE /* GameScene.sks in Resources */,
 				0654FCCE201BDA620056AAAB /* reminder_trash.wav in Resources */,
 				062D7D2F1FD11E4C00575A5B /* crunch.wav in Resources */,
 				06E0603C201BE85800FBE6E0 /* instructions_hamburger.wav in Resources */,
 				0BCA0AA0201BCC2100488E8E /* Trainer_Pizza.sks in Resources */,
 				06427EDE1FD9F2B3009C07ED /* G.wav in Resources */,
+				0615341A20222F6300E6C2DE /* CloseButton.sks in Resources */,
 				066C1B5120095C70002CE81D /* cow.wav in Resources */,
 				06427EDC1FD9F2B3009C07ED /* D.wav in Resources */,
 				06427F1B1FD9F898009C07ED /* PianoScene6.sks in Resources */,
@@ -817,6 +836,7 @@
 				0BCA0AAD201BCE0000488E8E /* Monster_T2.swift in Sources */,
 				0BCA0A9B201BCC2100488E8E /* Trainer_Bread.swift in Sources */,
 				0BCA0AAF201BCE0000488E8E /* Monster_T1.swift in Sources */,
+				06153421202233C400E6C2DE /* GameScene.swift in Sources */,
 				06427F1F1FD9F8A0009C07ED /* PianoScene7.swift in Sources */,
 				06427F0F1FD9F876009C07ED /* PianoScene3.swift in Sources */,
 				066DB62E1FAE8F1500C68B36 /* DuckScene.swift in Sources */,

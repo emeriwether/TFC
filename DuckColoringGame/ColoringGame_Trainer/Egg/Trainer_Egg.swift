@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class Trainer_Egg: SKScene {
+class Trainer_Egg: GameScene {
     //local variable for SpriteNode that will be over the training object
     private var egg:SKSpriteNode?
     

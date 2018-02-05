@@ -12,7 +12,7 @@ import SpriteKit
 var incorrectTouches = 0
 var correctTouches = 0
 
-class StartScene: SKScene {
+class StartScene: GameScene {
     // local variable for coloring game button
     let startColor = SKSpriteNode(imageNamed: "ColorStartButton")
     
