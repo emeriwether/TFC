@@ -45,7 +45,6 @@ class GameScene: SKScene {
         let fade = SKTransition.fade(withDuration: 0.5)
         
         if closeButton.contains(touchLocation) {
-            print("touched x")
             let startScene = SKScene(fileNamed: "StartScene")
             startScene?.scaleMode = SKSceneScaleMode.aspectFill
             self.scene!.view?.presentScene(startScene!, transition: fade)

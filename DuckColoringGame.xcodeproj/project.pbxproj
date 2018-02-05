@@ -18,14 +18,6 @@
 		062D7D4B1FD125E600575A5B /* AirplaneScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 062D7D4A1FD125E600575A5B /* AirplaneScene.sks */; };
 		062D7D4D1FD125FB00575A5B /* AirplaneScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062D7D4C1FD125FB00575A5B /* AirplaneScene.swift */; };
 		062D7D521FD12C2F00575A5B /* airplane.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 062D7D511FD12C2E00575A5B /* airplane.mp3 */; };
-		063F49872028CDDB00982433 /* SlideScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063F49862028CDDB00982433 /* SlideScene.swift */; };
-		063F49892028CDE800982433 /* SlideScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 063F49882028CDE800982433 /* SlideScene.sks */; };
-		063F498C2028CFAC00982433 /* CakeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063F498B2028CFAC00982433 /* CakeScene.swift */; };
-		063F498E2028CFBC00982433 /* CakeScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 063F498D2028CFBC00982433 /* CakeScene.sks */; };
-		063F49912028E24900982433 /* TrainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063F49902028E24900982433 /* TrainScene.swift */; };
-		063F49932028E2D000982433 /* TrainScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 063F49922028E2D000982433 /* TrainScene.sks */; };
-		063F49962028E53900982433 /* HatScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063F49952028E53900982433 /* HatScene.swift */; };
-		063F49982028E54500982433 /* HatScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 063F49972028E54500982433 /* HatScene.sks */; };
 		06427ED11FD9F2B3009C07ED /* find the giraffe.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06427EC11FD9F2A9009C07ED /* find the giraffe.wav */; };
 		06427ED21FD9F2B3009C07ED /* find the jacket.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06427EC21FD9F2AA009C07ED /* find the jacket.wav */; };
 		06427ED31FD9F2B3009C07ED /* find the cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06427EC31FD9F2AA009C07ED /* find the cat.wav */; };
@@ -136,14 +128,6 @@
 		062D7D4A1FD125E600575A5B /* AirplaneScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AirplaneScene.sks; sourceTree = "<group>"; };
 		062D7D4C1FD125FB00575A5B /* AirplaneScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirplaneScene.swift; sourceTree = "<group>"; };
 		062D7D511FD12C2E00575A5B /* airplane.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = airplane.mp3; sourceTree = "<group>"; };
-		063F49862028CDDB00982433 /* SlideScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideScene.swift; sourceTree = "<group>"; };
-		063F49882028CDE800982433 /* SlideScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SlideScene.sks; sourceTree = "<group>"; };
-		063F498B2028CFAC00982433 /* CakeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeScene.swift; sourceTree = "<group>"; };
-		063F498D2028CFBC00982433 /* CakeScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CakeScene.sks; sourceTree = "<group>"; };
-		063F49902028E24900982433 /* TrainScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainScene.swift; sourceTree = "<group>"; };
-		063F49922028E2D000982433 /* TrainScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TrainScene.sks; sourceTree = "<group>"; };
-		063F49952028E53900982433 /* HatScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatScene.swift; sourceTree = "<group>"; };
-		063F49972028E54500982433 /* HatScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HatScene.sks; sourceTree = "<group>"; };
 		06427EC11FD9F2A9009C07ED /* find the giraffe.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "find the giraffe.wav"; sourceTree = "<group>"; };
 		06427EC21FD9F2AA009C07ED /* find the jacket.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "find the jacket.wav"; sourceTree = "<group>"; };
 		06427EC31FD9F2AA009C07ED /* find the cat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "find the cat.wav"; sourceTree = "<group>"; };
@@ -258,8 +242,8 @@
 		06153422202233CB00E6C2DE /* GameScene */ = {
 			isa = PBXGroup;
 			children = (
-				0615341F202233C300E6C2DE /* GameScene.swift */,
 				0615341E202233C300E6C2DE /* GameScene.sks */,
+				0615341F202233C300E6C2DE /* GameScene.swift */,
 			);
 			path = GameScene;
 			sourceTree = "<group>";
@@ -290,42 +274,6 @@
 				062D7D4A1FD125E600575A5B /* AirplaneScene.sks */,
 			);
 			path = AirplaneScene;
-			sourceTree = "<group>";
-		};
-		063F498A2028CDED00982433 /* SlideScene */ = {
-			isa = PBXGroup;
-			children = (
-				063F49862028CDDB00982433 /* SlideScene.swift */,
-				063F49882028CDE800982433 /* SlideScene.sks */,
-			);
-			path = SlideScene;
-			sourceTree = "<group>";
-		};
-		063F498F2028CFC300982433 /* CakeScene */ = {
-			isa = PBXGroup;
-			children = (
-				063F498B2028CFAC00982433 /* CakeScene.swift */,
-				063F498D2028CFBC00982433 /* CakeScene.sks */,
-			);
-			path = CakeScene;
-			sourceTree = "<group>";
-		};
-		063F49942028E2D500982433 /* TrainScene */ = {
-			isa = PBXGroup;
-			children = (
-				063F49902028E24900982433 /* TrainScene.swift */,
-				063F49922028E2D000982433 /* TrainScene.sks */,
-			);
-			path = TrainScene;
-			sourceTree = "<group>";
-		};
-		063F49992028E54D00982433 /* HatScene */ = {
-			isa = PBXGroup;
-			children = (
-				063F49952028E53900982433 /* HatScene.swift */,
-				063F49972028E54500982433 /* HatScene.sks */,
-			);
-			path = HatScene;
 			sourceTree = "<group>";
 		};
 		06427EE11FD9F2BD009C07ED /* PianoGame */ = {
@@ -408,10 +356,6 @@
 		06427EFF1FD9F453009C07ED /* ColoringGame */ = {
 			isa = PBXGroup;
 			children = (
-				063F49992028E54D00982433 /* HatScene */,
-				063F49942028E2D500982433 /* TrainScene */,
-				063F498F2028CFC300982433 /* CakeScene */,
-				063F498A2028CDED00982433 /* SlideScene */,
 				061F1BD82004885B00A05E8E /* CowScene */,
 				069DE7C720045B1500465399 /* SpoonScene */,
 				0669B8EF20040494002D8CAC /* TrashScene */,
@@ -788,7 +732,7 @@
 				TargetAttributes = {
 					066DB6231FAE8F1500C68B36 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = U4CECW6YBS;
+						DevelopmentTeam = 2A6YQM3SZ4;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
@@ -826,7 +770,6 @@
 				06427EDF1FD9F2B4009C07ED /* Find the shovel.wav in Resources */,
 				06427ED31FD9F2B3009C07ED /* find the cat.wav in Resources */,
 				06427F371FDA01AC009C07ED /* mouse.wav in Resources */,
-				063F49932028E2D000982433 /* TrainScene.sks in Resources */,
 				0BCA0AAB201BCE0000488E8E /* Monster_T1.sks in Resources */,
 				0BCA0AA9201BCE0000488E8E /* Monster_T2.sks in Resources */,
 				06427EDD1FD9F2B3009C07ED /* Are you ready for more Now find the bathtub.wav in Resources */,
@@ -851,7 +794,6 @@
 				06427EDE1FD9F2B3009C07ED /* G.wav in Resources */,
 				0615341A20222F6300E6C2DE /* CloseButton.sks in Resources */,
 				066C1B5120095C70002CE81D /* cow.wav in Resources */,
-				063F49982028E54500982433 /* HatScene.sks in Resources */,
 				06427EDC1FD9F2B3009C07ED /* D.wav in Resources */,
 				06427F1B1FD9F898009C07ED /* PianoScene6.sks in Resources */,
 				06427F141FD9F880009C07ED /* PianoScene4.sks in Resources */,
@@ -862,9 +804,7 @@
 				0654FCCD201BDA620056AAAB /* instructions_trash.wav in Resources */,
 				0654FCDA201BDA980056AAAB /* reminder_airplane.wav in Resources */,
 				0654FCDE201BDAA70056AAAB /* reminder_cookie.wav in Resources */,
-				063F498E2028CFBC00982433 /* CakeScene.sks in Resources */,
 				0654FCCA201BDA520056AAAB /* reminder_spoon.wav in Resources */,
-				063F49892028CDE800982433 /* SlideScene.sks in Resources */,
 				062D7D4B1FD125E600575A5B /* AirplaneScene.sks in Resources */,
 				069DE7C620045B0F00465399 /* SpoonScene.sks in Resources */,
 				06427ED41FD9F2B3009C07ED /* Find the glass.wav in Resources */,
@@ -916,12 +856,10 @@
 				06427F0F1FD9F876009C07ED /* PianoScene3.swift in Sources */,
 				066DB62E1FAE8F1500C68B36 /* DuckScene.swift in Sources */,
 				0BCA0A9F201BCC2100488E8E /* Trainer_Pizza.swift in Sources */,
-				063F49912028E24900982433 /* TrainScene.swift in Sources */,
 				06427F181FD9F88E009C07ED /* PianoScene5.swift in Sources */,
 				066DB6301FAE8F1500C68B36 /* GameViewController.swift in Sources */,
 				06427F131FD9F880009C07ED /* PianoScene4.swift in Sources */,
 				06427F3D1FDA0206009C07ED /* MouseScene.swift in Sources */,
-				063F498C2028CFAC00982433 /* CakeScene.swift in Sources */,
 				06427EFD1FD9F421009C07ED /* PianoScene1.swift in Sources */,
 				06427F0B1FD9F868009C07ED /* PianoScene2.swift in Sources */,
 				062D7D4D1FD125FB00575A5B /* AirplaneScene.swift in Sources */,
@@ -932,7 +870,6 @@
 				06476DD61FC945F200B55906 /* ScoreScene.swift in Sources */,
 				0669B8EC2004046E002D8CAC /* TrashScene.swift in Sources */,
 				061F1BD52004884000A05E8E /* CowScene.swift in Sources */,
-				063F49962028E53900982433 /* HatScene.swift in Sources */,
 				0BC6445E20208A2300B330FA /* DrinkScene.swift in Sources */,
 				066DB6281FAE8F1500C68B36 /* AppDelegate.swift in Sources */,
 				0BCA0A99201BCC2100488E8E /* Trainer_Hamburger.swift in Sources */,
@@ -940,7 +877,6 @@
 				06427F1C1FD9F898009C07ED /* PianoScene6.swift in Sources */,
 				06427F331FD9FD6B009C07ED /* BootsScene.swift in Sources */,
 				06427F231FD9F8AD009C07ED /* PianoScene8.swift in Sources */,
-				063F49872028CDDB00982433 /* SlideScene.swift in Sources */,
 				0BCA0AB5201BDFB300488E8E /* Trainer_Egg.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1079,11 +1015,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U4CECW6YBS;
+				DEVELOPMENT_TEAM = 2A6YQM3SZ4;
 				INFOPLIST_FILE = DuckColoringGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = DuckColoringGame;
+				PRODUCT_BUNDLE_IDENTIFIER = DuckColoring;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
@@ -1098,11 +1034,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = U4CECW6YBS;
+				DEVELOPMENT_TEAM = 2A6YQM3SZ4;
 				INFOPLIST_FILE = DuckColoringGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = DuckColoringGame;
+				PRODUCT_BUNDLE_IDENTIFIER = DuckColoring;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;

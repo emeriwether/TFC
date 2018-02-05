@@ -1,5 +1,5 @@
 //
-//  CowScene.swift
+//  SpoonScene.swift
 //  TimeForChildrenGame
 //
 //  Created by Eleanor Meriwether on 12/23/17.
@@ -100,9 +100,9 @@ class CowScene: GameScene {
                 let wait2 = SKAction.wait(forDuration: 2)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let slideScene = SKScene(fileNamed: "SlideScene")
-                    slideScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(slideScene!)
+                    let scoreScene = SKScene(fileNamed: "ScoreScene")
+                    scoreScene?.scaleMode = SKSceneScaleMode.aspectFill
+                    self.scene!.view?.presentScene(scoreScene!)
                 }
             }
             else {
