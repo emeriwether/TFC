@@ -11,6 +11,11 @@
 		060A67AB202A9FD0005F7323 /* reminder_boots.wav in Resources */ = {isa = PBXBuildFile; fileRef = 060A67A8202A9FCF005F7323 /* reminder_boots.wav */; };
 		060A67AC202A9FD0005F7323 /* boots.wav in Resources */ = {isa = PBXBuildFile; fileRef = 060A67A9202A9FD0005F7323 /* boots.wav */; };
 		060A67AD202A9FD0005F7323 /* instructions_boots.wav in Resources */ = {isa = PBXBuildFile; fileRef = 060A67AA202A9FD0005F7323 /* instructions_boots.wav */; };
+		060A67D0202AA0AB005F7323 /* Touch the pizza.wav in Resources */ = {isa = PBXBuildFile; fileRef = 060A67CB202AA0A9005F7323 /* Touch the pizza.wav */; };
+		060A67D1202AA0AB005F7323 /* Correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 060A67CC202AA0A9005F7323 /* Correct.wav */; };
+		060A67D2202AA0AB005F7323 /* Touch the hamburger.wav in Resources */ = {isa = PBXBuildFile; fileRef = 060A67CD202AA0AA005F7323 /* Touch the hamburger.wav */; };
+		060A67D3202AA0AB005F7323 /* Touch the bread.wav in Resources */ = {isa = PBXBuildFile; fileRef = 060A67CE202AA0AB005F7323 /* Touch the bread.wav */; };
+		060A67D4202AA0AB005F7323 /* Touch the egg.wav in Resources */ = {isa = PBXBuildFile; fileRef = 060A67CF202AA0AB005F7323 /* Touch the egg.wav */; };
 		0615341A20222F6300E6C2DE /* CloseButton.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0615341920222F6300E6C2DE /* CloseButton.sks */; };
 		06153420202233C400E6C2DE /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0615341E202233C300E6C2DE /* GameScene.sks */; };
 		06153421202233C400E6C2DE /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615341F202233C300E6C2DE /* GameScene.swift */; };
@@ -103,6 +108,11 @@
 		060A67C6202AA062005F7323 /* instructions_trash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = instructions_trash.wav; sourceTree = "<group>"; };
 		060A67C7202AA062005F7323 /* trash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = trash.wav; sourceTree = "<group>"; };
 		060A67C8202AA062005F7323 /* reminder_trash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = reminder_trash.wav; sourceTree = "<group>"; };
+		060A67CB202AA0A9005F7323 /* Touch the pizza.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Touch the pizza.wav"; sourceTree = "<group>"; };
+		060A67CC202AA0A9005F7323 /* Correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Correct.wav; sourceTree = "<group>"; };
+		060A67CD202AA0AA005F7323 /* Touch the hamburger.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Touch the hamburger.wav"; sourceTree = "<group>"; };
+		060A67CE202AA0AB005F7323 /* Touch the bread.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Touch the bread.wav"; sourceTree = "<group>"; };
+		060A67CF202AA0AB005F7323 /* Touch the egg.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Touch the egg.wav"; sourceTree = "<group>"; };
 		0615341920222F6300E6C2DE /* CloseButton.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CloseButton.sks; sourceTree = "<group>"; };
 		0615341E202233C300E6C2DE /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		0615341F202233C300E6C2DE /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -262,7 +272,7 @@
 			path = Trash;
 			sourceTree = "<group>";
 		};
-		060A67CA202AA07A005F7323 /* Coloring Game */ = {
+		060A67CA202AA07A005F7323 /* ColoringGame */ = {
 			isa = PBXGroup;
 			children = (
 				060A67A7202A9FBE005F7323 /* Airplane */,
@@ -274,7 +284,19 @@
 				060A67C5202AA03F005F7323 /* Spoon */,
 				060A67C9202AA066005F7323 /* Trash */,
 			);
-			path = "Coloring Game";
+			path = ColoringGame;
+			sourceTree = "<group>";
+		};
+		060A67D5202AA0B0005F7323 /* ColoringGameTrainer */ = {
+			isa = PBXGroup;
+			children = (
+				060A67CC202AA0A9005F7323 /* Correct.wav */,
+				060A67CE202AA0AB005F7323 /* Touch the bread.wav */,
+				060A67CF202AA0AB005F7323 /* Touch the egg.wav */,
+				060A67CD202AA0AA005F7323 /* Touch the hamburger.wav */,
+				060A67CB202AA0A9005F7323 /* Touch the pizza.wav */,
+			);
+			path = ColoringGameTrainer;
 			sourceTree = "<group>";
 		};
 		06153422202233CB00E6C2DE /* GameScene */ = {
@@ -474,7 +496,8 @@
 		0657C65F1FC1F7F3002FC12D /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				060A67CA202AA07A005F7323 /* Coloring Game */,
+				060A67D5202AA0B0005F7323 /* ColoringGameTrainer */,
+				060A67CA202AA07A005F7323 /* ColoringGame */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -666,15 +689,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				060A67D2202AA0AB005F7323 /* Touch the hamburger.wav in Resources */,
 				060A67A1202A9EB5005F7323 /* DrinkScene.sks in Resources */,
 				061F1BD72004885500A05E8E /* CowScene.sks in Resources */,
 				060A67AB202A9FD0005F7323 /* reminder_boots.wav in Resources */,
 				06427F201FD9F8A0009C07ED /* PianoScene7.sks in Resources */,
+				060A67D1202AA0AB005F7323 /* Correct.wav in Resources */,
 				060A67AC202A9FD0005F7323 /* boots.wav in Resources */,
 				06427F171FD9F88E009C07ED /* PianoScene5.sks in Resources */,
 				0BCA0AAB201BCE0000488E8E /* Monster_T1.sks in Resources */,
 				0BCA0AA9201BCE0000488E8E /* Monster_T2.sks in Resources */,
+				060A67D3202AA0AB005F7323 /* Touch the bread.wav in Resources */,
 				066DB6331FAE8F1500C68B36 /* Main.storyboard in Resources */,
+				060A67D0202AA0AB005F7323 /* Touch the pizza.wav in Resources */,
 				06427F281FD9F8BA009C07ED /* PianoScene9.sks in Resources */,
 				06476DD41FC9458E00B55906 /* ScoreScene.sks in Resources */,
 				06427F3F1FDA0213009C07ED /* MouseScene.sks in Resources */,
@@ -690,6 +717,7 @@
 				062D7D4B1FD125E600575A5B /* AirplaneScene.sks in Resources */,
 				069DE7C620045B0F00465399 /* SpoonScene.sks in Resources */,
 				0669B8EE20040486002D8CAC /* TrashScene.sks in Resources */,
+				060A67D4202AA0AB005F7323 /* Touch the egg.wav in Resources */,
 				066DB62A1FAE8F1500C68B36 /* DuckScene.sks in Resources */,
 				066DB6381FAE8F1500C68B36 /* LaunchScreen.storyboard in Resources */,
 				062510D01FC917EA00A8114D /* StartScene.sks in Resources */,
