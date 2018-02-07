@@ -33,6 +33,7 @@
 		060A67FF202AA123005F7323 /* find the jacket.wav in Resources */ = {isa = PBXBuildFile; fileRef = 060A67EF202AA122005F7323 /* find the jacket.wav */; };
 		060A6800202AA123005F7323 /* Find the shovel.wav in Resources */ = {isa = PBXBuildFile; fileRef = 060A67F0202AA123005F7323 /* Find the shovel.wav */; };
 		060A6801202AA123005F7323 /* melody 4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 060A67F1202AA123005F7323 /* melody 4.wav */; };
+		060A6807202AA249005F7323 /* stillmonster.png in Resources */ = {isa = PBXBuildFile; fileRef = 060A6806202AA249005F7323 /* stillmonster.png */; };
 		0615341A20222F6300E6C2DE /* CloseButton.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0615341920222F6300E6C2DE /* CloseButton.sks */; };
 		06153420202233C400E6C2DE /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0615341E202233C300E6C2DE /* GameScene.sks */; };
 		06153421202233C400E6C2DE /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615341F202233C300E6C2DE /* GameScene.swift */; };
@@ -147,6 +148,7 @@
 		060A67EF202AA122005F7323 /* find the jacket.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "find the jacket.wav"; sourceTree = "<group>"; };
 		060A67F0202AA123005F7323 /* Find the shovel.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Find the shovel.wav"; sourceTree = "<group>"; };
 		060A67F1202AA123005F7323 /* melody 4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melody 4.wav"; sourceTree = "<group>"; };
+		060A6806202AA249005F7323 /* stillmonster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stillmonster.png; sourceTree = "<group>"; };
 		0615341920222F6300E6C2DE /* CloseButton.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CloseButton.sks; sourceTree = "<group>"; };
 		0615341E202233C300E6C2DE /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		0615341F202233C300E6C2DE /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -611,6 +613,7 @@
 				06427F001FD9F461009C07ED /* PianoGame */,
 				0657C65F1FC1F7F3002FC12D /* Audio */,
 				06B3C6E41FBCD46C00252DB6 /* Assets.xcassets */,
+				060A6806202AA249005F7323 /* stillmonster.png */,
 				066DB6361FAE8F1500C68B36 /* LaunchScreen.storyboard */,
 				066DB6391FAE8F1500C68B36 /* Info.plist */,
 			);
@@ -777,6 +780,7 @@
 				060A6800202AA123005F7323 /* Find the shovel.wav in Resources */,
 				06427F3F1FDA0213009C07ED /* MouseScene.sks in Resources */,
 				0BCA0AB6201BDFB300488E8E /* Trainer_Egg.sks in Resources */,
+				060A6807202AA249005F7323 /* stillmonster.png in Resources */,
 				060A67FA202AA123005F7323 /* Find the plate.wav in Resources */,
 				060A67FE202AA123005F7323 /* find the giraffe.wav in Resources */,
 				06153420202233C400E6C2DE /* GameScene.sks in Resources */,
