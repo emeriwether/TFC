@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060A67A1202A9EB5005F7323 /* DrinkScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 060A67A0202A9EB5005F7323 /* DrinkScene.sks */; };
 		0615341A20222F6300E6C2DE /* CloseButton.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0615341920222F6300E6C2DE /* CloseButton.sks */; };
 		06153420202233C400E6C2DE /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0615341E202233C300E6C2DE /* GameScene.sks */; };
 		06153421202233C400E6C2DE /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615341F202233C300E6C2DE /* GameScene.swift */; };
@@ -116,6 +117,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		060A67A0202A9EB5005F7323 /* DrinkScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DrinkScene.sks; sourceTree = "<group>"; };
 		0615341920222F6300E6C2DE /* CloseButton.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CloseButton.sks; sourceTree = "<group>"; };
 		0615341E202233C300E6C2DE /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		0615341F202233C300E6C2DE /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -632,6 +634,7 @@
 		0B22CE97202A9C9D00B14CCA /* MonsterGame */ = {
 			isa = PBXGroup;
 			children = (
+				060A67A0202A9EB5005F7323 /* DrinkScene.sks */,
 				0B22CE98202A9C9D00B14CCA /* DrinkScene.swift */,
 			);
 			path = MonsterGame;
@@ -758,6 +761,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				060A67A1202A9EB5005F7323 /* DrinkScene.sks in Resources */,
 				066C1B5F200960F7002CE81D /* spoon.wav in Resources */,
 				0654FCD9201BDA980056AAAB /* instructions_airplane.wav in Resources */,
 				061F1BD72004885500A05E8E /* CowScene.sks in Resources */,
