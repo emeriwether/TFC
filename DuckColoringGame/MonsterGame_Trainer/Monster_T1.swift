@@ -11,14 +11,17 @@ import GameplayKit
 
 class Monster_T1: SKScene {
     
-    //Create SpriteNode for dragging object
     private var dragObject:SKSpriteNode?
+<<<<<<< HEAD
 //    //Create background SpriteNode
 //    private var backgroundObject:SKSpriteNode?
     //Create Drop Zone Node
+=======
+    private var backgroundObject:SKSpriteNode?
+>>>>>>> de8457e2c55bd84343e3e66185fd730257f2d38c
     private var targetZone:SKSpriteNode?
-    //Variable to store original location of dragging
     private var defaultPosition:CGPoint?
+    //private var defaultY:CGFloat?
     
     // local variables to keep track of whether instructions are playing
     var instructionsComplete:Bool = false
@@ -29,13 +32,11 @@ class Monster_T1: SKScene {
     var apple_correctTouches = 0
     
     override func didMove(to view: SKView) {
-        //Add the SpriteNode for dragging item
+        //Add the SpriteNode for instruction item
         self.dragObject = self.childNode(withName: "appleObject") as? SKSpriteNode
-        //Store the initial position of the dragging object
         defaultPosition = dragObject?.position
-//        //Add background node
-//        self.backgroundObject = self.childNode(withName: "background") as? SKSpriteNode
-        //Add drop zone node
+        //defaultY = dragObject?.position.y
+        self.backgroundObject = self.childNode(withName: "background") as? SKSpriteNode
         self.targetZone = self.childNode(withName: "boundry") as? SKSpriteNode
         
         // run the introductory instructions
@@ -46,6 +47,7 @@ class Monster_T1: SKScene {
         let timer = SKAction.wait(forDuration: 10.0)
         let reminderIfIdle = SKAction.run {
             if self.apple_correctTouches == 0 && self.apple_incorrectTouches == 0 {
+                //May not run if 1 touch is made and may not loop.
                 self.reminderComplete = false
                 let reminder = SKAction.playSoundFileNamed("find the dress", waitForCompletion: true)
                 self.run(reminder, completion: { self.reminderComplete = true} )
@@ -57,6 +59,7 @@ class Monster_T1: SKScene {
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+<<<<<<< HEAD
         //As the screen detects that
         if (dragObject?.contains((touches.first?.location(in: self))!))!{
             for touch in touches{
@@ -64,6 +67,12 @@ class Monster_T1: SKScene {
                 dragObject?.position.x = location.x
                 dragObject?.position.y = location.y
             }
+=======
+        for touch in touches{
+            let location = touch.location(in: self)
+            dragObject?.position.x = location.x
+            dragObject?.position.y = location.y
+>>>>>>> de8457e2c55bd84343e3e66185fd730257f2d38c
         }
     }
     
@@ -75,12 +84,12 @@ class Monster_T1: SKScene {
             targetZone?.texture = SKTexture(imageNamed: "BasketApple")
             
             let fadeOut = SKAction.fadeOut(withDuration:1)
-                let wait2 = SKAction.wait(forDuration: 1)
-                let sequenceFade = SKAction.sequence([wait2, fadeOut])
-                run(sequenceFade) {
-                    let monsterSceneT2 = SKScene(fileNamed: "Monster_T2")
-                    monsterSceneT2?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(monsterSceneT2!)}
+            let wait2 = SKAction.wait(forDuration: 1)
+            let sequenceFade = SKAction.sequence([wait2, fadeOut])
+            run(sequenceFade) {
+                let monsterSceneT3 = SKScene(fileNamed: "Monster_T2")
+                monsterSceneT3?.scaleMode = SKSceneScaleMode.aspectFill
+                self.scene!.view?.presentScene(monsterSceneT3!)}
         }
         else{
             dragObject?.position = defaultPosition!
@@ -89,6 +98,7 @@ class Monster_T1: SKScene {
         }
     }
 }
+
 
 
 
