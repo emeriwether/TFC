@@ -55,7 +55,7 @@
 		060A6835202AA966005F7323 /* trash.wav in Resources */ = {isa = PBXBuildFile; fileRef = 060A6832202AA965005F7323 /* trash.wav */; };
 		060A6836202AA966005F7323 /* instructions_trash.wav in Resources */ = {isa = PBXBuildFile; fileRef = 060A6833202AA965005F7323 /* instructions_trash.wav */; };
 		060A6837202AA966005F7323 /* reminder_trash.wav in Resources */ = {isa = PBXBuildFile; fileRef = 060A6834202AA965005F7323 /* reminder_trash.wav */; };
-		0615341A20222F6300E6C2DE /* CloseButton.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0615341920222F6300E6C2DE /* CloseButton.sks */; };
+		0615341A20222F6300E6C2DE /* Navigation.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0615341920222F6300E6C2DE /* Navigation.sks */; };
 		06153420202233C400E6C2DE /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0615341E202233C300E6C2DE /* GameScene.sks */; };
 		06153421202233C400E6C2DE /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615341F202233C300E6C2DE /* GameScene.swift */; };
 		061F1BD52004884000A05E8E /* CowScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061F1BD42004884000A05E8E /* CowScene.swift */; };
@@ -167,7 +167,7 @@
 		060A6832202AA965005F7323 /* trash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = trash.wav; sourceTree = "<group>"; };
 		060A6833202AA965005F7323 /* instructions_trash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = instructions_trash.wav; sourceTree = "<group>"; };
 		060A6834202AA965005F7323 /* reminder_trash.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = reminder_trash.wav; sourceTree = "<group>"; };
-		0615341920222F6300E6C2DE /* CloseButton.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CloseButton.sks; sourceTree = "<group>"; };
+		0615341920222F6300E6C2DE /* Navigation.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Navigation.sks; sourceTree = "<group>"; };
 		0615341E202233C300E6C2DE /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		0615341F202233C300E6C2DE /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		061F1BD42004884000A05E8E /* CowScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CowScene.swift; sourceTree = "<group>"; };
@@ -617,15 +617,9 @@
 				066DB6271FAE8F1500C68B36 /* AppDelegate.swift */,
 				066DB62F1FAE8F1500C68B36 /* GameViewController.swift */,
 				06153422202233CB00E6C2DE /* GameScene */,
-				0615341920222F6300E6C2DE /* CloseButton.sks */,
+				0615341920222F6300E6C2DE /* Navigation.sks */,
 				066DB6311FAE8F1500C68B36 /* Main.storyboard */,
-				06476DC11FC93C7100B55906 /* StartScene */,
-				0B28BEE0200C895D00B1D01E /* ColoringGame_Trainer */,
-				06427EFF1FD9F453009C07ED /* ColoringGame */,
-				0BCA0AA1201BCE0000488E8E /* MonsterGame_Trainer */,
-				0B22CE97202A9C9D00B14CCA /* MonsterGame */,
-				06476DD71FC945F600B55906 /* ScoreScene */,
-				06427F001FD9F461009C07ED /* PianoGame */,
+				06BD2F3C202BC37E00AC0A54 /* Scenes */,
 				0657C65F1FC1F7F3002FC12D /* Audio */,
 				06B3C6E41FBCD46C00252DB6 /* Assets.xcassets */,
 				060A6806202AA249005F7323 /* stillmonster.png */,
@@ -642,6 +636,20 @@
 				069DE7C520045B0F00465399 /* SpoonScene.sks */,
 			);
 			path = SpoonScene;
+			sourceTree = "<group>";
+		};
+		06BD2F3C202BC37E00AC0A54 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				06476DC11FC93C7100B55906 /* StartScene */,
+				0B28BEE0200C895D00B1D01E /* ColoringGame_Trainer */,
+				06427EFF1FD9F453009C07ED /* ColoringGame */,
+				0BCA0AA1201BCE0000488E8E /* MonsterGame_Trainer */,
+				0B22CE97202A9C9D00B14CCA /* MonsterGame */,
+				06476DD71FC945F600B55906 /* ScoreScene */,
+				06427F001FD9F461009C07ED /* PianoGame */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		0B22CE97202A9C9D00B14CCA /* MonsterGame */ = {
@@ -810,7 +818,7 @@
 				060A67FE202AA123005F7323 /* find the giraffe.wav in Resources */,
 				06153420202233C400E6C2DE /* GameScene.sks in Resources */,
 				0BCA0AA0201BCC2100488E8E /* Trainer_Pizza.sks in Resources */,
-				0615341A20222F6300E6C2DE /* CloseButton.sks in Resources */,
+				0615341A20222F6300E6C2DE /* Navigation.sks in Resources */,
 				060A67F8202AA123005F7323 /* D.wav in Resources */,
 				06427F1B1FD9F898009C07ED /* PianoScene6.sks in Resources */,
 				060A67DF202AA10B005F7323 /* instructions_hamburger.wav in Resources */,
