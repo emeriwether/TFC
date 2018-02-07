@@ -67,11 +67,11 @@ class Monster_T3: SKScene {
             dragObject?.removeFromParent()
             targetZone?.texture = SKTexture(imageNamed: "BasketApple")
             
-            let fadeOut = SKAction.fadeOut(withDuration:1)
-            let wait2 = SKAction.wait(forDuration: 1)
+            let fadeOut = SKAction.fadeOut(withDuration:2)
+            let wait2 = SKAction.wait(forDuration: 2)
             let sequenceFade = SKAction.sequence([wait2, fadeOut])
             run(sequenceFade) {
-                let monsterScene1 = SKScene(fileNamed: "DrinkScene")
+                let monsterScene1 = SKScene(fileNamed: "ScoreScene")
                 monsterScene1?.scaleMode = SKSceneScaleMode.aspectFill
                 self.scene!.view?.presentScene(monsterScene1!)}
         }
