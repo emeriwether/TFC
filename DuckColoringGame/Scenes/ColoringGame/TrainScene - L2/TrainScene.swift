@@ -1,5 +1,5 @@
 //
-//  DuckScene.swift
+//  TrainScene.swift
 //  TimeForChildrenGame
 //
 //  Created by Eleanor Meriwether on 12/7/17.
@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class DuckScene: SKScene {
+class TrainScene: SKScene {
     // local variables to keep track of whether instructions are playing
     var instructionsComplete = false
     var reminderComplete = true
@@ -17,8 +17,8 @@ class DuckScene: SKScene {
     var sceneOver = false
     
     // local variables to keep track of touches for this scene
-    var duck_incorrectTouches = 0
-    var duck_correctTouches = 0
+    var train_incorrectTouches = 0
+    var train_correctTouches = 0
     var totalTouches = 0
     
     override func didMove(to view: SKView) {
@@ -35,12 +35,12 @@ class DuckScene: SKScene {
         let oneSecTimer = SKAction.wait(forDuration: 1.0)
         var timerCount = 1
         var currentTouches = 0
-
+        
         // set up sequence for if the scene has not been touched for 10 seconds: play the idle reminder
         let reminderIfIdle = SKAction.run {
-                self.reminderComplete = false
-                let duck_reminder = SKAction.playSoundFileNamed("reminder_duck", waitForCompletion: true)
-                self.run(duck_reminder, completion: { self.reminderComplete = true} )
+            self.reminderComplete = false
+            let train_reminder = SKAction.playSoundFileNamed("reminder_duck", waitForCompletion: true)
+            self.run(train_reminder, completion: { self.reminderComplete = true} )
         }
         
         // for every one second, do this action:
@@ -50,7 +50,7 @@ class DuckScene: SKScene {
                 // ...timer progresses one second...
                 timerCount += 1
             }
-            // ... else if a touch...
+                // ... else if a touch...
             else {
                 // ... increase touch count...
                 currentTouches += 1
@@ -71,66 +71,57 @@ class DuckScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // local variable for duck sprite
-        let duck = self.childNode(withName: "duck_bw")
+        // local variable for train sprite
+        let train = self.childNode(withName: "train_bw")
         
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false){
             let touch = touches.first!
             
-            //If duck sprite's alpha mask is touched...
-            if (physicsWorld.body(at: touch.location(in: self)) == duck?.physicsBody) && (sceneOver == false) {
+            //If train sprite's alpha mask is touched...
+            if (physicsWorld.body(at: touch.location(in: self)) == train?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
-                duck_correctTouches += 1
+                train_correctTouches += 1
                 correctTouches += 1
                 
                 // Change sprite to colored duck
-                let coloredDuck:SKTexture = SKTexture(imageNamed: "duckScene_duck_colored_openMouth")
-                let changeToColored:SKAction = SKAction.animate(with: [coloredDuck], timePerFrame: 0.0001)
-                duck!.run(changeToColored)
-                
-                //Variables for open mouth animation
-                let openMouth = SKTexture(imageNamed: "duckScene_duck_colored_openMouth")
-                let closedMouth = SKTexture(imageNamed: "duckScene_duck_colored_closedMouth")
-                let animation = SKAction.animate(with: [openMouth, closedMouth], timePerFrame: 0.1)
-                let openMouthAction = SKAction.repeat(animation, count: 5)
-                //Variables for Quack audio
-                let quack = SKAction.playSoundFileNamed("quack", waitForCompletion: true)
+                let coloredTrain:SKTexture = SKTexture(imageNamed: "trainScene_train_colored")
+                let changeToColored:SKAction = SKAction.animate(with: [coloredTrain], timePerFrame: 0.0001)
+                train!.run(changeToColored)
+            
+                //Variables for Train audio
+                let chooChoo = SKAction.playSoundFileNamed("quack", waitForCompletion: true)
                 //Variables for move animation
                 let move = SKAction.moveTo(x: 900, duration: 3.0)
-                //Variable to wait
-                let wait1 = SKAction.wait(forDuration: 1)
-                //Sequence for wait, then move
-                let sequenceDuck = SKAction.sequence([wait1, move])
-            
+
                 //Run all actions
-                duck!.run(openMouthAction)
-                duck!.run(quack)
-                duck!.run(sequenceDuck)
-            
+                train!.run(chooChoo)
+                train!.run(move)
+                
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
                 let wait2 = SKAction.wait(forDuration: 2)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let cookieScene = SKScene(fileNamed: "CookieScene")
-                    cookieScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(cookieScene!)
+                    let scoreScene = SKScene(fileNamed: "ScoreScene")
+                    scoreScene?.scaleMode = SKSceneScaleMode.aspectFill
+                    self.scene!.view?.presentScene(scoreScene!)
                 }
             }
             else {
-                duck_incorrectTouches += 1
+                train_incorrectTouches += 1
                 incorrectTouches += 1
             }
 
             // play reminder instructions if user has touched screen 3 times incorrectly
-            if (duck_incorrectTouches % 3 == 0) && duck_correctTouches < 1 {
+            if (train_incorrectTouches % 3 == 0) && train_correctTouches < 1 {
                 reminderComplete = false
-                let duck_reminder = SKAction.playSoundFileNamed("reminder_duck", waitForCompletion: true)
-                run(duck_reminder, completion: { self.reminderComplete = true} )
+                let train_reminder = SKAction.playSoundFileNamed("reminder_duck", waitForCompletion: true)
+                run(train_reminder, completion: { self.reminderComplete = true} )
             }
         }
         // update totalTouches variable for idle reminder
-        totalTouches = duck_correctTouches + duck_incorrectTouches
+        totalTouches = train_correctTouches + train_incorrectTouches
     }
 }
+

@@ -97,6 +97,8 @@
 		069DE7C420045B0100465399 /* SpoonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069DE7C320045B0100465399 /* SpoonScene.swift */; };
 		069DE7C620045B0F00465399 /* SpoonScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 069DE7C520045B0F00465399 /* SpoonScene.sks */; };
 		06B3C6E51FBCD46C00252DB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06B3C6E41FBCD46C00252DB6 /* Assets.xcassets */; };
+		06BD2F4A202BE6C100AC0A54 /* TrainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BD2F49202BE6C100AC0A54 /* TrainScene.swift */; };
+		06BD2F4C202BE6D200AC0A54 /* TrainScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06BD2F4B202BE6D200AC0A54 /* TrainScene.sks */; };
 		0B22CE99202A9C9D00B14CCA /* DrinkScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B22CE98202A9C9D00B14CCA /* DrinkScene.swift */; };
 		0BCA0A99201BCC2100488E8E /* Trainer_Hamburger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA0A8E201BCC2100488E8E /* Trainer_Hamburger.swift */; };
 		0BCA0A9A201BCC2100488E8E /* Trainer_Hamburger.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA0A8F201BCC2100488E8E /* Trainer_Hamburger.sks */; };
@@ -207,6 +209,8 @@
 		069DE7C320045B0100465399 /* SpoonScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoonScene.swift; sourceTree = "<group>"; };
 		069DE7C520045B0F00465399 /* SpoonScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SpoonScene.sks; sourceTree = "<group>"; };
 		06B3C6E41FBCD46C00252DB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		06BD2F49202BE6C100AC0A54 /* TrainScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainScene.swift; sourceTree = "<group>"; };
+		06BD2F4B202BE6D200AC0A54 /* TrainScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TrainScene.sks; sourceTree = "<group>"; };
 		0B22CE98202A9C9D00B14CCA /* DrinkScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkScene.swift; sourceTree = "<group>"; };
 		0BCA0A8E201BCC2100488E8E /* Trainer_Hamburger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trainer_Hamburger.swift; sourceTree = "<group>"; };
 		0BCA0A8F201BCC2100488E8E /* Trainer_Hamburger.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Trainer_Hamburger.sks; sourceTree = "<group>"; };
@@ -373,22 +377,22 @@
 			path = PianoGame;
 			sourceTree = "<group>";
 		};
-		061F1BD82004885B00A05E8E /* CowScene - L3 */ = {
+		061F1BD82004885B00A05E8E /* *CowScene - L3 */ = {
 			isa = PBXGroup;
 			children = (
 				061F1BD42004884000A05E8E /* CowScene.swift */,
 				061F1BD62004885500A05E8E /* CowScene.sks */,
 			);
-			path = "CowScene - L3";
+			path = "*CowScene - L3";
 			sourceTree = "<group>";
 		};
-		062D7D4E1FD1260A00575A5B /* AirplaneScene */ = {
+		062D7D4E1FD1260A00575A5B /* *AirplaneScene - L4 */ = {
 			isa = PBXGroup;
 			children = (
 				062D7D4C1FD125FB00575A5B /* AirplaneScene.swift */,
 				062D7D4A1FD125E600575A5B /* AirplaneScene.sks */,
 			);
-			path = AirplaneScene;
+			path = "*AirplaneScene - L4";
 			sourceTree = "<group>";
 		};
 		06427EFE1FD9F43B009C07ED /* Scene1 */ = {
@@ -403,14 +407,15 @@
 		06427EFF1FD9F453009C07ED /* ColoringGame */ = {
 			isa = PBXGroup;
 			children = (
-				06476DC01FC93C6100B55906 /* DuckScene - L2 */,
-				0669B8EF20040494002D8CAC /* TrashScene - L3 */,
-				061F1BD82004885B00A05E8E /* CowScene - L3 */,
-				062D7D4E1FD1260A00575A5B /* AirplaneScene */,
-				06427F341FD9FD73009C07ED /* BootsScene */,
-				069DE7C720045B1500465399 /* SpoonScene */,
+				06476DC01FC93C6100B55906 /* *DuckScene - L2 */,
 				06476DC61FC93F5C00B55906 /* CookieScene */,
+				062D7D4E1FD1260A00575A5B /* *AirplaneScene - L4 */,
+				06427F341FD9FD73009C07ED /* BootsScene */,
 				06427F401FDA0218009C07ED /* MouseScene */,
+				069DE7C720045B1500465399 /* SpoonScene */,
+				0669B8EF20040494002D8CAC /* *TrashScene - L3 */,
+				061F1BD82004885B00A05E8E /* *CowScene - L3 */,
+				06BD2F4D202BE71A00AC0A54 /* TrainScene - L2 */,
 			);
 			path = ColoringGame;
 			sourceTree = "<group>";
@@ -521,13 +526,13 @@
 			path = MouseScene;
 			sourceTree = "<group>";
 		};
-		06476DC01FC93C6100B55906 /* DuckScene - L2 */ = {
+		06476DC01FC93C6100B55906 /* *DuckScene - L2 */ = {
 			isa = PBXGroup;
 			children = (
 				066DB62D1FAE8F1500C68B36 /* DuckScene.swift */,
 				066DB6291FAE8F1500C68B36 /* DuckScene.sks */,
 			);
-			name = "DuckScene - L2";
+			name = "*DuckScene - L2";
 			path = "New Group";
 			sourceTree = "<group>";
 		};
@@ -569,13 +574,13 @@
 			path = Audio;
 			sourceTree = "<group>";
 		};
-		0669B8EF20040494002D8CAC /* TrashScene - L3 */ = {
+		0669B8EF20040494002D8CAC /* *TrashScene - L3 */ = {
 			isa = PBXGroup;
 			children = (
 				0669B8EB2004046E002D8CAC /* TrashScene.swift */,
 				0669B8ED20040486002D8CAC /* TrashScene.sks */,
 			);
-			path = "TrashScene - L3";
+			path = "*TrashScene - L3";
 			sourceTree = "<group>";
 		};
 		066DB61B1FAE8F1400C68B36 = {
@@ -632,6 +637,15 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
+		06BD2F4D202BE71A00AC0A54 /* TrainScene - L2 */ = {
+			isa = PBXGroup;
+			children = (
+				06BD2F49202BE6C100AC0A54 /* TrainScene.swift */,
+				06BD2F4B202BE6D200AC0A54 /* TrainScene.sks */,
+			);
+			path = "TrainScene - L2";
+			sourceTree = "<group>";
+		};
 		0B22CE97202A9C9D00B14CCA /* MonsterGame */ = {
 			isa = PBXGroup;
 			children = (
@@ -644,10 +658,10 @@
 		0B28BEE0200C895D00B1D01E /* ColoringGame_Trainer */ = {
 			isa = PBXGroup;
 			children = (
-				0BCA0A8D201BCC2100488E8E /* Burger */,
-				0BCA0A96201BCC2100488E8E /* Pizza */,
-				0BCA0A90201BCC2100488E8E /* Bread */,
 				0BCA0AB2201BDFB300488E8E /* Egg */,
+				0BCA0A90201BCC2100488E8E /* Bread */,
+				0BCA0A96201BCC2100488E8E /* Pizza */,
+				0BCA0A8D201BCC2100488E8E /* Burger */,
 			);
 			path = ColoringGame_Trainer;
 			sourceTree = "<group>";
@@ -830,6 +844,7 @@
 				060A6809202AA763005F7323 /* instructions_duck.wav in Resources */,
 				06476DC31FC93F3E00B55906 /* CookieScene.sks in Resources */,
 				060A6825202AA8A9005F7323 /* cow.wav in Resources */,
+				06BD2F4C202BE6D200AC0A54 /* TrainScene.sks in Resources */,
 				060A67DD202AA10B005F7323 /* correct.wav in Resources */,
 				06427F101FD9F876009C07ED /* PianoScene3.sks in Resources */,
 				060A67E0202AA10B005F7323 /* instructions_pizza.wav in Resources */,
@@ -859,6 +874,7 @@
 				066DB6301FAE8F1500C68B36 /* GameViewController.swift in Sources */,
 				06427F131FD9F880009C07ED /* PianoScene4.swift in Sources */,
 				06427F3D1FDA0206009C07ED /* MouseScene.swift in Sources */,
+				06BD2F4A202BE6C100AC0A54 /* TrainScene.swift in Sources */,
 				06427EFD1FD9F421009C07ED /* PianoScene1.swift in Sources */,
 				06427F0B1FD9F868009C07ED /* PianoScene2.swift in Sources */,
 				062D7D4D1FD125FB00575A5B /* AirplaneScene.swift in Sources */,
