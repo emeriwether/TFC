@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class TrashScene: GameScene {
+class TrashScene: SKScene {
     // local variables to keep track of whether instructions are playing
     var instructionsComplete = false
     var reminderComplete = true

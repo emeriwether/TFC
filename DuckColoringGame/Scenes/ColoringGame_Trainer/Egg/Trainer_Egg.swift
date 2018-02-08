@@ -8,9 +8,10 @@
 
 import SpriteKit
 
-class Trainer_Egg: GameScene {
+class Trainer_Egg: SKScene {
     //local variable for SpriteNode that will be over the training object
     private var egg:SKSpriteNode?
+    var closeButton:SKSpriteNode?
     
     // local variables to keep track of whether instructions are playing
     var instructionsComplete:Bool = false

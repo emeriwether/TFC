@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class ScoreScene: GameScene {
+class ScoreScene: SKScene {
     // local variable for retry button
     let retry = SKSpriteNode(imageNamed: "retryButton")
     

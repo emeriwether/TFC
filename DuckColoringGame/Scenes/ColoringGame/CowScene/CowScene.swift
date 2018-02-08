@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class CowScene: GameScene {
+class CowScene: SKScene {
     // local variables to keep track of whether instructions are playing
     var instructionsComplete = false
     var reminderComplete = true

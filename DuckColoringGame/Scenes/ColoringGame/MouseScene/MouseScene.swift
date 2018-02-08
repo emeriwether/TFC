@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class MouseScene: GameScene {
+class MouseScene: SKScene {
     // local variables to keep track of whether instructions are playing
     var instructionsComplete = false
     var reminderComplete = true

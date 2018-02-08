@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class CookieScene: GameScene {
+class CookieScene: SKScene {
     // local variables to keep track of whether instructions are playing
     var instructionsComplete = false
     var reminderComplete = true

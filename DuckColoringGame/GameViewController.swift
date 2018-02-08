@@ -6,9 +6,7 @@
 //  Copyright © 2017 Eleanor Meriwether. All rights reserved.
 //
 
-import UIKit
 import SpriteKit
-import GameplayKit
 
 class GameViewController: UIViewController {
 
