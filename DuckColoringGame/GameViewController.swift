@@ -3,7 +3,7 @@
 //  DuckColoringGame
 //
 //  Created by Eleanor Meriwether on 11/4/17.
-//  Copyright © 2017 Eleanor Meriwether. All rights reserved.
+//  Copyright © 2018 Eleanor Meriwether and Gustavo Figueroa. All rights reserved.
 //
 
 import SpriteKit

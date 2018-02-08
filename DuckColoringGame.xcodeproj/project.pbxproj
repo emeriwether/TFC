@@ -403,14 +403,14 @@
 		06427EFF1FD9F453009C07ED /* ColoringGame */ = {
 			isa = PBXGroup;
 			children = (
-				061F1BD82004885B00A05E8E /* CowScene */,
-				069DE7C720045B1500465399 /* SpoonScene */,
-				0669B8EF20040494002D8CAC /* TrashScene */,
-				06427F401FDA0218009C07ED /* MouseScene */,
-				06427F341FD9FD73009C07ED /* BootsScene */,
-				062D7D4E1FD1260A00575A5B /* AirplaneScene */,
-				06476DC61FC93F5C00B55906 /* CookieScene */,
 				06476DC01FC93C6100B55906 /* DuckScene */,
+				0669B8EF20040494002D8CAC /* TrashScene */,
+				061F1BD82004885B00A05E8E /* CowScene */,
+				062D7D4E1FD1260A00575A5B /* AirplaneScene */,
+				06427F341FD9FD73009C07ED /* BootsScene */,
+				069DE7C720045B1500465399 /* SpoonScene */,
+				06476DC61FC93F5C00B55906 /* CookieScene */,
+				06427F401FDA0218009C07ED /* MouseScene */,
 			);
 			path = ColoringGame;
 			sourceTree = "<group>";
