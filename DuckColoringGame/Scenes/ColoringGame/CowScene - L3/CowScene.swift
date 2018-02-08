@@ -84,16 +84,27 @@ class CowScene: SKScene {
                 cow_correctTouches += 1
                 correctTouches += 1
                 
-                // Color cow
+                // Change sprite to colored cow
                 let coloredCow:SKTexture = SKTexture(imageNamed: "cowScene_cow_colored")
                 let changeToColored:SKAction = SKAction.animate(with: [coloredCow], timePerFrame: 0.0001)
                 cow!.run(changeToColored)
                 
-                // Play cow noise, and walk cow off screen
-                let cowNoise = SKAction.playSoundFileNamed("cow", waitForCompletion: true)
-                let moveRight = SKAction.moveTo(x: 1000, duration: 3.0)
-                cow!.run(cowNoise)
-                cow!.run(moveRight)
+                //Variable for moo audio
+                let moo = SKAction.playSoundFileNamed("cow", waitForCompletion: true)
+                
+                //Variables for move animation
+                let move = SKAction.moveTo(x: 900, duration: 3.0)
+                
+                //Variables for walking animation
+                let rightStep = SKTexture(imageNamed: "cowScene_cow_colored_right")
+                let leftStep = SKTexture(imageNamed: "cowScene_cow_colored_left")
+                let animationWalk = SKAction.animate(with: [rightStep, coloredCow, leftStep], timePerFrame: 0.1)
+                let animationWalkRepeat = SKAction.repeat(animationWalk, count: 8)
+                
+                //Run all actions
+                cow!.run(moo)
+                cow!.run(move)
+                cow!.run(animationWalkRepeat)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
