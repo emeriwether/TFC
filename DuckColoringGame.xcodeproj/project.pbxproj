@@ -410,9 +410,9 @@
 				06476DC01FC93C6100B55906 /* *DuckScene - L2 */,
 				06476DC61FC93F5C00B55906 /* CookieScene */,
 				062D7D4E1FD1260A00575A5B /* *AirplaneScene - L4 */,
-				06427F341FD9FD73009C07ED /* BootsScene */,
+				06427F341FD9FD73009C07ED /* *BootsScene - L4 */,
 				06427F401FDA0218009C07ED /* MouseScene */,
-				069DE7C720045B1500465399 /* SpoonScene */,
+				069DE7C720045B1500465399 /* *SpoonScene - S3 */,
 				0669B8EF20040494002D8CAC /* *TrashScene - L3 */,
 				061F1BD82004885B00A05E8E /* *CowScene - L3 */,
 				06BD2F4D202BE71A00AC0A54 /* TrainScene - L2 */,
@@ -508,13 +508,13 @@
 			path = Scene9;
 			sourceTree = "<group>";
 		};
-		06427F341FD9FD73009C07ED /* BootsScene */ = {
+		06427F341FD9FD73009C07ED /* *BootsScene - L4 */ = {
 			isa = PBXGroup;
 			children = (
 				06427F321FD9FD6B009C07ED /* BootsScene.swift */,
 				06427F301FD9FD59009C07ED /* BootsScene.sks */,
 			);
-			path = BootsScene;
+			path = "*BootsScene - L4";
 			sourceTree = "<group>";
 		};
 		06427F401FDA0218009C07ED /* MouseScene */ = {
@@ -614,13 +614,13 @@
 			path = DuckColoringGame;
 			sourceTree = "<group>";
 		};
-		069DE7C720045B1500465399 /* SpoonScene */ = {
+		069DE7C720045B1500465399 /* *SpoonScene - S3 */ = {
 			isa = PBXGroup;
 			children = (
 				069DE7C320045B0100465399 /* SpoonScene.swift */,
 				069DE7C520045B0F00465399 /* SpoonScene.sks */,
 			);
-			path = SpoonScene;
+			path = "*SpoonScene - S3";
 			sourceTree = "<group>";
 		};
 		06BD2F3C202BC37E00AC0A54 /* Scenes */ = {
