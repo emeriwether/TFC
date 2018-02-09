@@ -1,5 +1,5 @@
 //
-//  CakeScene.swift
+//  SlideScene.swift
 //  TimeForChildrenGame
 //
 //  Created by Eleanor Meriwether on 12/7/17.
@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class CakeScene: SKScene {
+class SlideScene: SKScene {
     // local variables to keep track of whether instructions are playing
     var instructionsComplete = false
     var reminderComplete = true
@@ -17,8 +17,8 @@ class CakeScene: SKScene {
     var sceneOver = false
     
     // local variables to keep track of touches for this scene
-    var cake_incorrectTouches = 0
-    var cake_correctTouches = 0
+    var slide_incorrectTouches = 0
+    var slide_correctTouches = 0
     var totalTouches = 0
     
     override func didMove(to view: SKView) {
@@ -39,8 +39,8 @@ class CakeScene: SKScene {
         // set up sequence for if the scene has not been touched for 10 seconds: play the idle reminder
         let reminderIfIdle = SKAction.run {
             self.reminderComplete = false
-            let cake_reminder = SKAction.playSoundFileNamed("reminder_duck", waitForCompletion: true)
-            self.run(cake_reminder, completion: { self.reminderComplete = true} )
+            let slide_reminder = SKAction.playSoundFileNamed("reminder_duck", waitForCompletion: true)
+            self.run(slide_reminder, completion: { self.reminderComplete = true} )
         }
         
         // for every one second, do this action:
@@ -71,58 +71,59 @@ class CakeScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // local variable for cake sprite
-        let cake = self.childNode(withName: "cake_bw")
+        // local variable for slide sprite
+        let slide = self.childNode(withName: "slide_bw")
         
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false){
             let touch = touches.first!
             
-            //If cake sprite's alpha mask is touched...
-            if (physicsWorld.body(at: touch.location(in: self)) == cake?.physicsBody) && (sceneOver == false) {
+            //If slide sprite's alpha mask is touched...
+            if (physicsWorld.body(at: touch.location(in: self)) == slide?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
-                cake_correctTouches += 1
+                slide_correctTouches += 1
                 correctTouches += 1
                 
-                // Change sprite to colored cake
-                let coloredCake:SKTexture = SKTexture(imageNamed: "cakeScene_cake_colored")
-                let changeToColored:SKAction = SKAction.animate(with: [coloredCake], timePerFrame: 0.0001)
-                cake!.run(changeToColored)
+                // Change sprite to colored slide
+                let coloredSlide:SKTexture = SKTexture(imageNamed: "slideScene_slide_colored")
+                let changeToColored:SKAction = SKAction.animate(with: [coloredSlide], timePerFrame: 0.0001)
+                slide!.run(changeToColored)
                 
-                //Variables for cake audio
+                //Variables for slide audio
                 let western = SKAction.playSoundFileNamed("quack", waitForCompletion: true)
                 //Variables for move animation
                 let move = SKAction.moveTo(x: 900, duration: 3.0)
                 
                 //Run all actions
-                cake!.run(western)
-                cake!.run(move)
+                slide!.run(western)
+                slide!.run(move)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
                 let wait2 = SKAction.wait(forDuration: 2)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let slideScene = SKScene(fileNamed: "SlideScene")
-                    slideScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(slideScene!)
+                    let scoreScene = SKScene(fileNamed: "ScoreScene")
+                    scoreScene?.scaleMode = SKSceneScaleMode.aspectFill
+                    self.scene!.view?.presentScene(scoreScene!)
                 }
             }
             else {
-                cake_incorrectTouches += 1
+                slide_incorrectTouches += 1
                 incorrectTouches += 1
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly
-            if (cake_incorrectTouches % 3 == 0) && cake_correctTouches < 1 {
+            if (slide_incorrectTouches % 3 == 0) && slide_correctTouches < 1 {
                 reminderComplete = false
-                let cake_reminder = SKAction.playSoundFileNamed("reminder_duck", waitForCompletion: true)
-                run(cake_reminder, completion: { self.reminderComplete = true} )
+                let slide_reminder = SKAction.playSoundFileNamed("reminder_duck", waitForCompletion: true)
+                run(slide_reminder, completion: { self.reminderComplete = true} )
             }
         }
         // update totalTouches variable for idle reminder
-        totalTouches = cake_correctTouches + cake_incorrectTouches
+        totalTouches = slide_correctTouches + slide_incorrectTouches
     }
 }
+
 
 
