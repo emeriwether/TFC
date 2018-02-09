@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class Trainer_Hamburger: SKScene {
+class BurgerScene: SKScene {
     //local variable for SpriteNode that will be over the training object
     private var hamburger:SKSpriteNode?
     
