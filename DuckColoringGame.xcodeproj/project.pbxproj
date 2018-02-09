@@ -389,49 +389,49 @@
 			path = PianoGame;
 			sourceTree = "<group>";
 		};
-		061F1BD82004885B00A05E8E /* CowScene - L3 */ = {
+		061F1BD82004885B00A05E8E /* CowScene */ = {
 			isa = PBXGroup;
 			children = (
 				061F1BD42004884000A05E8E /* CowScene.swift */,
 				061F1BD62004885500A05E8E /* CowScene.sks */,
 			);
-			path = "CowScene - L3";
+			path = CowScene;
 			sourceTree = "<group>";
 		};
-		062B1BFA202D185F002DECBB /* HatScene - S3 */ = {
+		062B1BFA202D185F002DECBB /* HatScene */ = {
 			isa = PBXGroup;
 			children = (
 				062B1BF8202D1859002DECBB /* HatScene.swift */,
 				062B1BF6202D1847002DECBB /* HatScene.sks */,
 			);
-			path = "HatScene - S3";
+			path = HatScene;
 			sourceTree = "<group>";
 		};
-		062B1BFF202D1DDF002DECBB /* CakeScene - S2 */ = {
+		062B1BFF202D1DDF002DECBB /* CakeScene */ = {
 			isa = PBXGroup;
 			children = (
 				062B1BFB202D1DCD002DECBB /* CakeScene.swift */,
 				062B1BFD202D1DD9002DECBB /* CakeScene.sks */,
 			);
-			path = "CakeScene - S2";
+			path = CakeScene;
 			sourceTree = "<group>";
 		};
-		062B1C04202D216E002DECBB /* SlideScene - S2 */ = {
+		062B1C04202D216E002DECBB /* SlideScene */ = {
 			isa = PBXGroup;
 			children = (
 				062B1C00202D2158002DECBB /* SlideScene.swift */,
 				062B1C02202D2169002DECBB /* SlideScene.sks */,
 			);
-			path = "SlideScene - S2";
+			path = SlideScene;
 			sourceTree = "<group>";
 		};
-		062D7D4E1FD1260A00575A5B /* AirplaneScene - L4 */ = {
+		062D7D4E1FD1260A00575A5B /* AirplaneScene */ = {
 			isa = PBXGroup;
 			children = (
 				062D7D4C1FD125FB00575A5B /* AirplaneScene.swift */,
 				062D7D4A1FD125E600575A5B /* AirplaneScene.sks */,
 			);
-			path = "AirplaneScene - L4";
+			path = AirplaneScene;
 			sourceTree = "<group>";
 		};
 		06427EFE1FD9F43B009C07ED /* Scene1 */ = {
@@ -447,19 +447,19 @@
 			isa = PBXGroup;
 			children = (
 				0643D699202E210B000FA53D /* PizzaScene */,
-				0BCA0A8D201BCC2100488E8E /* HamburgerScene - B2 */,
+				0BCA0A8D201BCC2100488E8E /* HamburgerScene */,
 				0643D694202E1C01000FA53D /* DuckScene */,
-				06BD2F4D202BE71A00AC0A54 /* TrainScene - L2 */,
-				061F1BD82004885B00A05E8E /* CowScene - L3 */,
-				0669B8EF20040494002D8CAC /* TrashScene - L3 */,
-				062D7D4E1FD1260A00575A5B /* AirplaneScene - L4 */,
-				06427F341FD9FD73009C07ED /* BootsScene - L4 */,
-				062B1BFF202D1DDF002DECBB /* CakeScene - S2 */,
-				062B1C04202D216E002DECBB /* SlideScene - S2 */,
-				069DE7C720045B1500465399 /* SpoonScene - S3 */,
-				062B1BFA202D185F002DECBB /* HatScene - S3 */,
-				06476DC61FC93F5C00B55906 /* CookieScene - S4 */,
-				06427F401FDA0218009C07ED /* MouseScene - S4 */,
+				06BD2F4D202BE71A00AC0A54 /* TrainScene */,
+				061F1BD82004885B00A05E8E /* CowScene */,
+				0669B8EF20040494002D8CAC /* TrashScene */,
+				062D7D4E1FD1260A00575A5B /* AirplaneScene */,
+				06427F341FD9FD73009C07ED /* BootsScene */,
+				062B1BFF202D1DDF002DECBB /* CakeScene */,
+				062B1C04202D216E002DECBB /* SlideScene */,
+				069DE7C720045B1500465399 /* SpoonScene */,
+				062B1BFA202D185F002DECBB /* HatScene */,
+				06476DC61FC93F5C00B55906 /* CookieScene */,
+				06427F401FDA0218009C07ED /* MouseScene */,
 			);
 			path = ColoringGame;
 			sourceTree = "<group>";
@@ -552,22 +552,22 @@
 			path = Scene9;
 			sourceTree = "<group>";
 		};
-		06427F341FD9FD73009C07ED /* BootsScene - L4 */ = {
+		06427F341FD9FD73009C07ED /* BootsScene */ = {
 			isa = PBXGroup;
 			children = (
 				06427F321FD9FD6B009C07ED /* BootsScene.swift */,
 				06427F301FD9FD59009C07ED /* BootsScene.sks */,
 			);
-			path = "BootsScene - L4";
+			path = BootsScene;
 			sourceTree = "<group>";
 		};
-		06427F401FDA0218009C07ED /* MouseScene - S4 */ = {
+		06427F401FDA0218009C07ED /* MouseScene */ = {
 			isa = PBXGroup;
 			children = (
 				06427F3C1FDA0206009C07ED /* MouseScene.swift */,
 				06427F3E1FDA0213009C07ED /* MouseScene.sks */,
 			);
-			path = "MouseScene - S4";
+			path = MouseScene;
 			sourceTree = "<group>";
 		};
 		0643D694202E1C01000FA53D /* DuckScene */ = {
@@ -597,13 +597,13 @@
 			path = StartScene;
 			sourceTree = "<group>";
 		};
-		06476DC61FC93F5C00B55906 /* CookieScene - S4 */ = {
+		06476DC61FC93F5C00B55906 /* CookieScene */ = {
 			isa = PBXGroup;
 			children = (
 				06476DC41FC93F4C00B55906 /* CookieScene.swift */,
 				06476DC21FC93F3E00B55906 /* CookieScene.sks */,
 			);
-			path = "CookieScene - S4";
+			path = CookieScene;
 			sourceTree = "<group>";
 		};
 		06476DD71FC945F600B55906 /* ScoreScene */ = {
@@ -626,13 +626,13 @@
 			path = Audio;
 			sourceTree = "<group>";
 		};
-		0669B8EF20040494002D8CAC /* TrashScene - L3 */ = {
+		0669B8EF20040494002D8CAC /* TrashScene */ = {
 			isa = PBXGroup;
 			children = (
 				0669B8EB2004046E002D8CAC /* TrashScene.swift */,
 				0669B8ED20040486002D8CAC /* TrashScene.sks */,
 			);
-			path = "TrashScene - L3";
+			path = TrashScene;
 			sourceTree = "<group>";
 		};
 		066DB61B1FAE8F1400C68B36 = {
@@ -666,13 +666,13 @@
 			path = DuckColoringGame;
 			sourceTree = "<group>";
 		};
-		069DE7C720045B1500465399 /* SpoonScene - S3 */ = {
+		069DE7C720045B1500465399 /* SpoonScene */ = {
 			isa = PBXGroup;
 			children = (
 				069DE7C320045B0100465399 /* SpoonScene.swift */,
 				069DE7C520045B0F00465399 /* SpoonScene.sks */,
 			);
-			path = "SpoonScene - S3";
+			path = SpoonScene;
 			sourceTree = "<group>";
 		};
 		06BD2F3C202BC37E00AC0A54 /* Scenes */ = {
@@ -689,13 +689,13 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		06BD2F4D202BE71A00AC0A54 /* TrainScene - L2 */ = {
+		06BD2F4D202BE71A00AC0A54 /* TrainScene */ = {
 			isa = PBXGroup;
 			children = (
 				06BD2F49202BE6C100AC0A54 /* TrainScene.swift */,
 				06BD2F4B202BE6D200AC0A54 /* TrainScene.sks */,
 			);
-			path = "TrainScene - L2";
+			path = TrainScene;
 			sourceTree = "<group>";
 		};
 		0B22CE97202A9C9D00B14CCA /* MonsterGame */ = {
@@ -716,13 +716,13 @@
 			path = ColoringGame_Trainer;
 			sourceTree = "<group>";
 		};
-		0BCA0A8D201BCC2100488E8E /* HamburgerScene - B2 */ = {
+		0BCA0A8D201BCC2100488E8E /* HamburgerScene */ = {
 			isa = PBXGroup;
 			children = (
 				0BCA0A8E201BCC2100488E8E /* HamburgerScene.swift */,
 				0BCA0A8F201BCC2100488E8E /* HamburgerScene.sks */,
 			);
-			path = "HamburgerScene - B2";
+			path = HamburgerScene;
 			sourceTree = "<group>";
 		};
 		0BCA0A90201BCC2100488E8E /* Bread */ = {
