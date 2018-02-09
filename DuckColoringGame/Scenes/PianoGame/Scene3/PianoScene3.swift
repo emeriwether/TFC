@@ -35,7 +35,6 @@ class PianoScene3: SKScene {
             if self.piano3_correctTouches == 0 && self.piano3_incorrectTouches == 0 {
                 //May not run if 1 touch is made and may not loop.
                 self.reminderComplete = false
-                // ********CAN WE RENAME THE AUDIO TO SOMETHING THAT CONNECTS WITH THIS GAME & SCENE? LIKE "reminder_piano1"
                 // ********ALSO, THIS AUDIO JUST REPEATS ORIGINAL INSTRUCTIONS, INSTEAD OF REPHRASING. PLEASE REQUEST A REMINDER AUDIO FROM YAO
                 let reminder_piano3 = SKAction.playSoundFileNamed("instructions_piano3", waitForCompletion: true)
                 self.run(reminder_piano3, completion: { self.reminderComplete = true} )
