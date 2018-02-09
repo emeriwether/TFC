@@ -106,8 +106,8 @@
 		06BD2F4A202BE6C100AC0A54 /* TrainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BD2F49202BE6C100AC0A54 /* TrainScene.swift */; };
 		06BD2F4C202BE6D200AC0A54 /* TrainScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06BD2F4B202BE6D200AC0A54 /* TrainScene.sks */; };
 		0B22CE99202A9C9D00B14CCA /* DrinkScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B22CE98202A9C9D00B14CCA /* DrinkScene.swift */; };
-		0BCA0A99201BCC2100488E8E /* BurgerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA0A8E201BCC2100488E8E /* BurgerScene.swift */; };
-		0BCA0A9A201BCC2100488E8E /* BurgerScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA0A8F201BCC2100488E8E /* BurgerScene.sks */; };
+		0BCA0A99201BCC2100488E8E /* HamburgerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA0A8E201BCC2100488E8E /* HamburgerScene.swift */; };
+		0BCA0A9A201BCC2100488E8E /* HamburgerScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA0A8F201BCC2100488E8E /* HamburgerScene.sks */; };
 		0BCA0A9B201BCC2100488E8E /* Trainer_Bread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA0A91201BCC2100488E8E /* Trainer_Bread.swift */; };
 		0BCA0A9C201BCC2100488E8E /* Trainer_Bread.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA0A92201BCC2100488E8E /* Trainer_Bread.sks */; };
 		0BCA0A9F201BCC2100488E8E /* PizzaScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA0A97201BCC2100488E8E /* PizzaScene.swift */; };
@@ -224,8 +224,8 @@
 		06BD2F49202BE6C100AC0A54 /* TrainScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainScene.swift; sourceTree = "<group>"; };
 		06BD2F4B202BE6D200AC0A54 /* TrainScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TrainScene.sks; sourceTree = "<group>"; };
 		0B22CE98202A9C9D00B14CCA /* DrinkScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkScene.swift; sourceTree = "<group>"; };
-		0BCA0A8E201BCC2100488E8E /* BurgerScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BurgerScene.swift; sourceTree = "<group>"; };
-		0BCA0A8F201BCC2100488E8E /* BurgerScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BurgerScene.sks; sourceTree = "<group>"; };
+		0BCA0A8E201BCC2100488E8E /* HamburgerScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerScene.swift; sourceTree = "<group>"; };
+		0BCA0A8F201BCC2100488E8E /* HamburgerScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HamburgerScene.sks; sourceTree = "<group>"; };
 		0BCA0A91201BCC2100488E8E /* Trainer_Bread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trainer_Bread.swift; sourceTree = "<group>"; };
 		0BCA0A92201BCC2100488E8E /* Trainer_Bread.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Trainer_Bread.sks; sourceTree = "<group>"; };
 		0BCA0A97201BCC2100488E8E /* PizzaScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PizzaScene.swift; sourceTree = "<group>"; };
@@ -459,7 +459,7 @@
 				062B1BFF202D1DDF002DECBB /* CakeScene - S2 */,
 				062B1C04202D216E002DECBB /* SlideScene - S2 */,
 				0BCA0A96201BCC2100488E8E /* PizzaScene - B2 */,
-				0BCA0A8D201BCC2100488E8E /* BurgerScene - B2 */,
+				0BCA0A8D201BCC2100488E8E /* HamburgerScene - B2 */,
 			);
 			path = ColoringGame;
 			sourceTree = "<group>";
@@ -708,13 +708,13 @@
 			path = ColoringGame_Trainer;
 			sourceTree = "<group>";
 		};
-		0BCA0A8D201BCC2100488E8E /* BurgerScene - B2 */ = {
+		0BCA0A8D201BCC2100488E8E /* HamburgerScene - B2 */ = {
 			isa = PBXGroup;
 			children = (
-				0BCA0A8E201BCC2100488E8E /* BurgerScene.swift */,
-				0BCA0A8F201BCC2100488E8E /* BurgerScene.sks */,
+				0BCA0A8E201BCC2100488E8E /* HamburgerScene.swift */,
+				0BCA0A8F201BCC2100488E8E /* HamburgerScene.sks */,
 			);
-			path = "BurgerScene - B2";
+			path = "HamburgerScene - B2";
 			sourceTree = "<group>";
 		};
 		0BCA0A90201BCC2100488E8E /* Bread */ = {
@@ -878,7 +878,7 @@
 				060A67FD202AA123005F7323 /* melody 3.wav in Resources */,
 				06427F311FD9FD59009C07ED /* BootsScene.sks in Resources */,
 				060A681F202AA895005F7323 /* reminder_boots.wav in Resources */,
-				0BCA0A9A201BCC2100488E8E /* BurgerScene.sks in Resources */,
+				0BCA0A9A201BCC2100488E8E /* HamburgerScene.sks in Resources */,
 				060A67F9202AA123005F7323 /* G.wav in Resources */,
 				060A6836202AA966005F7323 /* instructions_trash.wav in Resources */,
 				060A6812202AA81D005F7323 /* instructions_cookie.wav in Resources */,
@@ -934,7 +934,7 @@
 				0669B8EC2004046E002D8CAC /* TrashScene.swift in Sources */,
 				061F1BD52004884000A05E8E /* CowScene.swift in Sources */,
 				066DB6281FAE8F1500C68B36 /* AppDelegate.swift in Sources */,
-				0BCA0A99201BCC2100488E8E /* BurgerScene.swift in Sources */,
+				0BCA0A99201BCC2100488E8E /* HamburgerScene.swift in Sources */,
 				06476DC51FC93F4C00B55906 /* CookieScene.swift in Sources */,
 				06427F1C1FD9F898009C07ED /* PianoScene6.swift in Sources */,
 				062B1BF9202D1859002DECBB /* HatScene.swift in Sources */,
