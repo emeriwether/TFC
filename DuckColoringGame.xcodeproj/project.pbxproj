@@ -443,8 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				0BCA0A8D201BCC2100488E8E /* HamburgerScene - B2 */,
-				0643D690202E13F4000FA53D /* DuckScene.swift */,
-				0643D692202E140A000FA53D /* DuckScene.sks */,
+				0643D694202E1C01000FA53D /* DuckScene */,
 				06BD2F4D202BE71A00AC0A54 /* TrainScene - L2 */,
 				061F1BD82004885B00A05E8E /* CowScene - L3 */,
 				0669B8EF20040494002D8CAC /* TrashScene - L3 */,
@@ -564,6 +563,15 @@
 				06427F3E1FDA0213009C07ED /* MouseScene.sks */,
 			);
 			path = "MouseScene - S4";
+			sourceTree = "<group>";
+		};
+		0643D694202E1C01000FA53D /* DuckScene */ = {
+			isa = PBXGroup;
+			children = (
+				0643D690202E13F4000FA53D /* DuckScene.swift */,
+				0643D692202E140A000FA53D /* DuckScene.sks */,
+			);
+			path = DuckScene;
 			sourceTree = "<group>";
 		};
 		06476DC11FC93C7100B55906 /* StartScene */ = {
