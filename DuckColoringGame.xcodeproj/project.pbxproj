@@ -60,6 +60,8 @@
 		062510D21FC9184200A8114D /* StartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062510D11FC9184200A8114D /* StartScene.swift */; };
 		062B1BF7202D1847002DECBB /* HatScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 062B1BF6202D1847002DECBB /* HatScene.sks */; };
 		062B1BF9202D1859002DECBB /* HatScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062B1BF8202D1859002DECBB /* HatScene.swift */; };
+		062B1BFC202D1DCD002DECBB /* CakeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062B1BFB202D1DCD002DECBB /* CakeScene.swift */; };
+		062B1BFE202D1DD9002DECBB /* CakeScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 062B1BFD202D1DD9002DECBB /* CakeScene.sks */; };
 		062D7D4B1FD125E600575A5B /* AirplaneScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 062D7D4A1FD125E600575A5B /* AirplaneScene.sks */; };
 		062D7D4D1FD125FB00575A5B /* AirplaneScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062D7D4C1FD125FB00575A5B /* AirplaneScene.swift */; };
 		06427EFC1FD9F421009C07ED /* PianoScene1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06427EFA1FD9F421009C07ED /* PianoScene1.sks */; };
@@ -172,6 +174,8 @@
 		062510D11FC9184200A8114D /* StartScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScene.swift; sourceTree = "<group>"; };
 		062B1BF6202D1847002DECBB /* HatScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HatScene.sks; sourceTree = "<group>"; };
 		062B1BF8202D1859002DECBB /* HatScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HatScene.swift; sourceTree = "<group>"; };
+		062B1BFB202D1DCD002DECBB /* CakeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeScene.swift; sourceTree = "<group>"; };
+		062B1BFD202D1DD9002DECBB /* CakeScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CakeScene.sks; sourceTree = "<group>"; };
 		062D7D4A1FD125E600575A5B /* AirplaneScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AirplaneScene.sks; sourceTree = "<group>"; };
 		062D7D4C1FD125FB00575A5B /* AirplaneScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirplaneScene.swift; sourceTree = "<group>"; };
 		06427EFA1FD9F421009C07ED /* PianoScene1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PianoScene1.sks; sourceTree = "<group>"; };
@@ -399,6 +403,15 @@
 			path = "HatScene - S3";
 			sourceTree = "<group>";
 		};
+		062B1BFF202D1DDF002DECBB /* CakeScene - S2 */ = {
+			isa = PBXGroup;
+			children = (
+				062B1BFB202D1DCD002DECBB /* CakeScene.swift */,
+				062B1BFD202D1DD9002DECBB /* CakeScene.sks */,
+			);
+			path = "CakeScene - S2";
+			sourceTree = "<group>";
+		};
 		062D7D4E1FD1260A00575A5B /* AirplaneScene - L4 */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,6 +443,7 @@
 				061F1BD82004885B00A05E8E /* CowScene - L3 */,
 				06BD2F4D202BE71A00AC0A54 /* TrainScene - L2 */,
 				062B1BFA202D185F002DECBB /* HatScene - S3 */,
+				062B1BFF202D1DDF002DECBB /* CakeScene - S2 */,
 			);
 			path = ColoringGame;
 			sourceTree = "<group>";
@@ -833,6 +847,7 @@
 				06427F0C1FD9F868009C07ED /* PianoScene2.sks in Resources */,
 				060A6823202AA8A9005F7323 /* instructions_cow.wav in Resources */,
 				060A67F7202AA123005F7323 /* find the dress.wav in Resources */,
+				062B1BFE202D1DD9002DECBB /* CakeScene.sks in Resources */,
 				060A6831202AA954005F7323 /* spoon.wav in Resources */,
 				062D7D4B1FD125E600575A5B /* AirplaneScene.sks in Resources */,
 				069DE7C620045B0F00465399 /* SpoonScene.sks in Resources */,
@@ -890,6 +905,7 @@
 				06427F131FD9F880009C07ED /* PianoScene4.swift in Sources */,
 				06427F3D1FDA0206009C07ED /* MouseScene.swift in Sources */,
 				06BD2F4A202BE6C100AC0A54 /* TrainScene.swift in Sources */,
+				062B1BFC202D1DCD002DECBB /* CakeScene.swift in Sources */,
 				06427EFD1FD9F421009C07ED /* PianoScene1.swift in Sources */,
 				06427F0B1FD9F868009C07ED /* PianoScene2.swift in Sources */,
 				062D7D4D1FD125FB00575A5B /* AirplaneScene.swift in Sources */,
