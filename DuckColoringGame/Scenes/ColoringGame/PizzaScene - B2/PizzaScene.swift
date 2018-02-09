@@ -103,9 +103,9 @@ class PizzaScene: SKScene {
                 let wait2 = SKAction.wait(forDuration: 2)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let pizzaScene = SKScene(fileNamed: "PizzaScene")
-                    pizzaScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(pizzaScene!)
+                    let hamburgerScene = SKScene(fileNamed: "HamburgerScene")
+                    hamburgerScene?.scaleMode = SKSceneScaleMode.aspectFill
+                    self.scene!.view?.presentScene(hamburgerScene!)
                 }
             }
             else {
