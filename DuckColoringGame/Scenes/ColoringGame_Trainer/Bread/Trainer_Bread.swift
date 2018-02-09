@@ -64,7 +64,7 @@ class Trainer_Bread: SKScene {
                 let wait2 = SKAction.wait(forDuration: 1)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let pizzaScene = SKScene(fileNamed: "Trainer_Pizza")
+                    let pizzaScene = SKScene(fileNamed: "PizzaScene")
                     pizzaScene?.scaleMode = SKSceneScaleMode.aspectFill
                     self.scene!.view?.presentScene(pizzaScene!)
                 }

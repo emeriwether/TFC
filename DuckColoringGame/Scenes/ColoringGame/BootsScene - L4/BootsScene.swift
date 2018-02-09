@@ -1,14 +1,14 @@
 //
-//  TrainScene.swift
+//  BootsScene.swift
 //  TimeForChildrenGame
 //
 //  Created by Eleanor Meriwether on 12/7/17.
-//  Copyright © 2017 Eleanor Meriwether. All rights reserved.
+//  Copyright © 2018 Eleanor Meriwether. All rights reserved.
 //
 
 import SpriteKit
 
-class TrainScene: SKScene {
+class BootsScene: SKScene {
     // local variables to keep track of whether instructions are playing
     var instructionsComplete = false
     var reminderComplete = true
@@ -17,17 +17,18 @@ class TrainScene: SKScene {
     var sceneOver = false
     
     // local variables to keep track of touches for this scene
-    var train_incorrectTouches = 0
-    var train_correctTouches = 0
+    var boots_incorrectTouches = 0
+    var boots_correctTouches = 0
     var totalTouches = 0
     
     override func didMove(to view: SKView) {
-        // remove scene's physics body, so alpha mask on target sprite is accessible
+        // remove scene's physics body
         self.physicsBody = nil
-        
-        // run the introductory instructions, then flag instructionsComplete as true
-        let instructions = SKAction.playSoundFileNamed("instructions_duck", waitForCompletion: true)
+
+        // run the introductory instructions
+        let instructions = SKAction.playSoundFileNamed("instructions_boots", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
+        
         
         /////////////////////////////////
         ////// IDLE REMINDER TIMER //////
@@ -39,8 +40,8 @@ class TrainScene: SKScene {
         // set up sequence for if the scene has not been touched for 10 seconds: play the idle reminder
         let reminderIfIdle = SKAction.run {
             self.reminderComplete = false
-            let train_reminder = SKAction.playSoundFileNamed("reminder_duck", waitForCompletion: true)
-            self.run(train_reminder, completion: { self.reminderComplete = true} )
+            let boots_reminder = SKAction.playSoundFileNamed("reminder_boots", waitForCompletion: true)
+            self.run(boots_reminder, completion: { self.reminderComplete = true} )
         }
         
         // for every one second, do this action:
@@ -71,57 +72,67 @@ class TrainScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // local variable for train sprite
-        let train = self.childNode(withName: "train_bw")
+        // local variable for boots sprite
+        let boots = self.childNode(withName: "boots_bw")
         
         // if no instructions are playing
-        if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false){
+        if (instructionsComplete == true) && (reminderComplete == true)  && (sceneOver == false) {
             let touch = touches.first!
             
-            //If train sprite's alpha mask is touched...
-            if (physicsWorld.body(at: touch.location(in: self)) == train?.physicsBody) && (sceneOver == false) {
+            //If boots sprite is touched...
+            if (physicsWorld.body(at: touch.location(in: self)) == boots?.physicsBody)  && (sceneOver == false) {
                 sceneOver = true
-                train_correctTouches += 1
+                boots_correctTouches += 1
                 correctTouches += 1
                 
-                // Change sprite to colored duck
-                let coloredTrain:SKTexture = SKTexture(imageNamed: "trainScene_train_colored")
-                let changeToColored:SKAction = SKAction.animate(with: [coloredTrain], timePerFrame: 0.0001)
-                train!.run(changeToColored)
-            
-                //Variables for Train audio
-                let chooChoo = SKAction.playSoundFileNamed("quack", waitForCompletion: true)
-                //Variables for move animation
-                let move = SKAction.moveTo(x: 900, duration: 3.0)
+                // Color boots
+                let coloredBoots = SKTexture(imageNamed: "bootsScene_boots_colored")
+                let changeToColored = SKAction.animate(with: [coloredBoots], timePerFrame: 0.0001)
+                boots!.run(changeToColored)
+                
+                // Variable for play boots noise
+                let bootsNoise = SKAction.playSoundFileNamed("boots", waitForCompletion: true)
 
-                //Run all actions
-                train!.run(chooChoo)
-                train!.run(move)
+                //Variables for move animation
+                let moveLeft = SKAction.moveTo(x: -1000, duration: 3.0)
+                
+                // Variables to animate boots and walk boots off screen
+                let rightStep = SKTexture(imageNamed: "bootsScene_boots_colored_rightStep")
+                let leftStep = SKTexture(imageNamed: "bootsScene_boots_colored_leftStep")
+                let animationWalk = SKAction.animate(with: [rightStep, coloredBoots, leftStep], timePerFrame: 0.1)
+                let animationWalkRepeat = SKAction.repeat(animationWalk, count: 8)
+                
+                // Run all actions
+                boots!.run(bootsNoise)
+                boots!.run(animationWalkRepeat)
+                boots!.run(moveLeft)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
                 let wait2 = SKAction.wait(forDuration: 2)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let cowScene = SKScene(fileNamed: "CowScene")
-                    cowScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(cowScene!)
+                    let cakeScene = SKScene(fileNamed: "CakeScene")
+                    cakeScene?.scaleMode = SKSceneScaleMode.aspectFill
+                    self.scene!.view?.presentScene(cakeScene!)
                 }
             }
             else {
-                train_incorrectTouches += 1
+                boots_incorrectTouches += 1
                 incorrectTouches += 1
             }
-
+            
             // play reminder instructions if user has touched screen 3 times incorrectly
-            if (train_incorrectTouches % 3 == 0) && train_correctTouches < 1 {
+            if (boots_incorrectTouches % 3 == 0) && boots_correctTouches < 1 {
                 reminderComplete = false
-                let train_reminder = SKAction.playSoundFileNamed("reminder_duck", waitForCompletion: true)
-                run(train_reminder, completion: { self.reminderComplete = true} )
+                let bootsReminder = SKAction.playSoundFileNamed("reminder_boots", waitForCompletion: true)
+                run(bootsReminder, completion: { self.reminderComplete = true} )
             }
         }
         // update totalTouches variable for idle reminder
-        totalTouches = train_correctTouches + train_incorrectTouches
+        totalTouches = boots_correctTouches + boots_incorrectTouches
     }
 }
+
+
 

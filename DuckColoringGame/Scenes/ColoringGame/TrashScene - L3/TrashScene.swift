@@ -1,14 +1,14 @@
 //
-//  TrainScene.swift
+//  TrashScene.swift
 //  TimeForChildrenGame
 //
-//  Created by Eleanor Meriwether on 12/7/17.
-//  Copyright © 2017 Eleanor Meriwether. All rights reserved.
+//  Created by Eleanor Meriwether on 1/8/18.
+//  Copyright © 2018 Eleanor Meriwether. All rights reserved.
 //
 
 import SpriteKit
 
-class TrainScene: SKScene {
+class TrashScene: SKScene {
     // local variables to keep track of whether instructions are playing
     var instructionsComplete = false
     var reminderComplete = true
@@ -17,16 +17,16 @@ class TrainScene: SKScene {
     var sceneOver = false
     
     // local variables to keep track of touches for this scene
-    var train_incorrectTouches = 0
-    var train_correctTouches = 0
+    var trash_incorrectTouches = 0
+    var trash_correctTouches = 0
     var totalTouches = 0
     
     override func didMove(to view: SKView) {
-        // remove scene's physics body, so alpha mask on target sprite is accessible
+        // remove scene's physics body
         self.physicsBody = nil
-        
-        // run the introductory instructions, then flag instructionsComplete as true
-        let instructions = SKAction.playSoundFileNamed("instructions_duck", waitForCompletion: true)
+
+        // run the introductory instructions
+        let instructions = SKAction.playSoundFileNamed("instructions_trash", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
         
         /////////////////////////////////
@@ -39,8 +39,8 @@ class TrainScene: SKScene {
         // set up sequence for if the scene has not been touched for 10 seconds: play the idle reminder
         let reminderIfIdle = SKAction.run {
             self.reminderComplete = false
-            let train_reminder = SKAction.playSoundFileNamed("reminder_duck", waitForCompletion: true)
-            self.run(train_reminder, completion: { self.reminderComplete = true} )
+            let trash_reminder = SKAction.playSoundFileNamed("reminder_trash", waitForCompletion: true)
+            self.run(trash_reminder, completion: { self.reminderComplete = true} )
         }
         
         // for every one second, do this action:
@@ -71,57 +71,63 @@ class TrainScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // local variable for train sprite
-        let train = self.childNode(withName: "train_bw")
+        // local variable for trash sprite
+        let trash = self.childNode(withName: "trash_bw")
         
         // if no instructions are playing
-        if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false){
+        if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false) {
             let touch = touches.first!
             
-            //If train sprite's alpha mask is touched...
-            if (physicsWorld.body(at: touch.location(in: self)) == train?.physicsBody) && (sceneOver == false) {
+            //If trash sprite is touched...
+            if (physicsWorld.body(at: touch.location(in: self)) == trash?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
-                train_correctTouches += 1
+                trash_correctTouches += 1
                 correctTouches += 1
                 
-                // Change sprite to colored duck
-                let coloredTrain:SKTexture = SKTexture(imageNamed: "trainScene_train_colored")
-                let changeToColored:SKAction = SKAction.animate(with: [coloredTrain], timePerFrame: 0.0001)
-                train!.run(changeToColored)
-            
-                //Variables for Train audio
-                let chooChoo = SKAction.playSoundFileNamed("quack", waitForCompletion: true)
-                //Variables for move animation
-                let move = SKAction.moveTo(x: 900, duration: 3.0)
-
-                //Run all actions
-                train!.run(chooChoo)
-                train!.run(move)
+                // Color trash
+                let coloredTrash:SKTexture = SKTexture(imageNamed: "trashScene_trash_colored")
+                let changeToColored:SKAction = SKAction.animate(with: [coloredTrash], timePerFrame: 0.0001)
+                trash!.run(changeToColored)
+                
+                // Variable for trash noise
+                let trashNoise = SKAction.playSoundFileNamed("trash", waitForCompletion: true)
+                
+                // Variables for trash animation
+                let lidOne = SKTexture(imageNamed: "trashScene_trash_colored_lid1")
+                let lidTwo = SKTexture(imageNamed: "trashScene_trash_colored_lid2")
+                let animationLid = SKAction.animate(with: [lidOne, coloredTrash, lidTwo], timePerFrame: 0.1)
+                let animationLidRepeat = SKAction.repeat(animationLid, count: 6)
+                
+                // Run all actions
+                trash!.run(animationLidRepeat)
+                trash!.run(trashNoise)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
                 let wait2 = SKAction.wait(forDuration: 2)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let cowScene = SKScene(fileNamed: "CowScene")
-                    cowScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(cowScene!)
+                    let airplaneScene = SKScene(fileNamed: "AirplaneScene")
+                    airplaneScene?.scaleMode = SKSceneScaleMode.aspectFill
+                    self.scene!.view?.presentScene(airplaneScene!)
                 }
             }
             else {
-                train_incorrectTouches += 1
+                trash_incorrectTouches += 1
                 incorrectTouches += 1
             }
-
+            
             // play reminder instructions if user has touched screen 3 times incorrectly
-            if (train_incorrectTouches % 3 == 0) && train_correctTouches < 1 {
+            if (trash_incorrectTouches % 3 == 0) && trash_correctTouches < 1 {
                 reminderComplete = false
-                let train_reminder = SKAction.playSoundFileNamed("reminder_duck", waitForCompletion: true)
-                run(train_reminder, completion: { self.reminderComplete = true} )
+                let trashReminder = SKAction.playSoundFileNamed("reminder_trash", waitForCompletion: true)
+                run(trashReminder, completion: { self.reminderComplete = true} )
             }
         }
         // update totalTouches variable for idle reminder
-        totalTouches = train_correctTouches + train_incorrectTouches
+        totalTouches = trash_correctTouches + trash_incorrectTouches
     }
 }
+
+
 
