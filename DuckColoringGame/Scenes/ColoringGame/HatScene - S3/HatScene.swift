@@ -103,9 +103,9 @@ class HatScene: SKScene {
                 let wait2 = SKAction.wait(forDuration: 2)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let cakeScene = SKScene(fileNamed: "CakeScene")
-                    cakeScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(cakeScene!)
+                    let cookieScene = SKScene(fileNamed: "CookieScene")
+                    cookieScene?.scaleMode = SKSceneScaleMode.aspectFill
+                    self.scene!.view?.presentScene(cookieScene!)
                 }
             }
             else {

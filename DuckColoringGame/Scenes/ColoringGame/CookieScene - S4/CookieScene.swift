@@ -106,9 +106,9 @@ class CookieScene: SKScene {
                 let wait2 = SKAction.wait(forDuration: 2)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let airplaneScene = SKScene(fileNamed: "AirplaneScene")
-                    airplaneScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(airplaneScene!)
+                    let mouseScene = SKScene(fileNamed: "MouseScene")
+                    mouseScene?.scaleMode = SKSceneScaleMode.aspectFill
+                    self.scene!.view?.presentScene(mouseScene!)
                 }
             }
             else {

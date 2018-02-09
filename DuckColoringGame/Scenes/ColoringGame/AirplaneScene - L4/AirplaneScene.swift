@@ -102,9 +102,9 @@ class AirplaneScene: SKScene {
                 let wait2 = SKAction.wait(forDuration: 2)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let scoreScene = SKScene(fileNamed: "BootsScene")
-                    scoreScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(scoreScene!)
+                    let bootsScene = SKScene(fileNamed: "BootsScene")
+                    bootsScene?.scaleMode = SKSceneScaleMode.aspectFill
+                    self.scene!.view?.presentScene(bootsScene!)
                 }
             }
             else {

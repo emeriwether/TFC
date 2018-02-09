@@ -107,9 +107,9 @@ class TrashScene: SKScene {
                 let wait2 = SKAction.wait(forDuration: 2)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let spoonScene = SKScene(fileNamed: "SpoonScene")
-                    spoonScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(spoonScene!)
+                    let airplaneScene = SKScene(fileNamed: "AirplaneScene")
+                    airplaneScene?.scaleMode = SKSceneScaleMode.aspectFill
+                    self.scene!.view?.presentScene(airplaneScene!)
                 }
             }
             else {

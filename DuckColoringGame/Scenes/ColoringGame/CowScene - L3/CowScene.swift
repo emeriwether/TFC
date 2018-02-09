@@ -111,9 +111,9 @@ class CowScene: SKScene {
                 let wait2 = SKAction.wait(forDuration: 2)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let trainScene = SKScene(fileNamed: "TrainScene")
-                    trainScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(trainScene!)
+                    let trashScene = SKScene(fileNamed: "TrashScene")
+                    trashScene?.scaleMode = SKSceneScaleMode.aspectFill
+                    self.scene!.view?.presentScene(trashScene!)
                 }
             }
             else {

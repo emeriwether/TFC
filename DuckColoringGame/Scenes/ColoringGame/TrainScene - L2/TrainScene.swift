@@ -103,9 +103,9 @@ class TrainScene: SKScene {
                 let wait2 = SKAction.wait(forDuration: 2)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let hatScene = SKScene(fileNamed: "HatScene")
-                    hatScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(hatScene!)
+                    let cowScene = SKScene(fileNamed: "CowScene")
+                    cowScene?.scaleMode = SKSceneScaleMode.aspectFill
+                    self.scene!.view?.presentScene(cowScene!)
                 }
             }
             else {
