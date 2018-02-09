@@ -90,6 +90,8 @@
 		0643D68F202E133C000FA53D /* Now it's time to play some music touch the yellow key.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0643D689202E133C000FA53D /* Now it's time to play some music touch the yellow key.wav */; };
 		0643D691202E13F4000FA53D /* DuckScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0643D690202E13F4000FA53D /* DuckScene.swift */; };
 		0643D693202E140A000FA53D /* DuckScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0643D692202E140A000FA53D /* DuckScene.sks */; };
+		0643D696202E1F7B000FA53D /* PizzaScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0643D695202E1F7B000FA53D /* PizzaScene.swift */; };
+		0643D698202E1F8C000FA53D /* PizzaScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0643D697202E1F8C000FA53D /* PizzaScene.sks */; };
 		06476DC31FC93F3E00B55906 /* CookieScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06476DC21FC93F3E00B55906 /* CookieScene.sks */; };
 		06476DC51FC93F4C00B55906 /* CookieScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06476DC41FC93F4C00B55906 /* CookieScene.swift */; };
 		06476DD41FC9458E00B55906 /* ScoreScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06476DD31FC9458E00B55906 /* ScoreScene.sks */; };
@@ -204,6 +206,8 @@
 		0643D689202E133C000FA53D /* Now it's time to play some music touch the yellow key.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Now it's time to play some music touch the yellow key.wav"; sourceTree = "<group>"; };
 		0643D690202E13F4000FA53D /* DuckScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckScene.swift; sourceTree = "<group>"; };
 		0643D692202E140A000FA53D /* DuckScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DuckScene.sks; sourceTree = "<group>"; };
+		0643D695202E1F7B000FA53D /* PizzaScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaScene.swift; sourceTree = "<group>"; };
+		0643D697202E1F8C000FA53D /* PizzaScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PizzaScene.sks; sourceTree = "<group>"; };
 		06476DC21FC93F3E00B55906 /* CookieScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CookieScene.sks; sourceTree = "<group>"; };
 		06476DC41FC93F4C00B55906 /* CookieScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieScene.swift; sourceTree = "<group>"; };
 		06476DD31FC9458E00B55906 /* ScoreScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ScoreScene.sks; sourceTree = "<group>"; };
@@ -442,6 +446,8 @@
 		06427EFF1FD9F453009C07ED /* ColoringGame */ = {
 			isa = PBXGroup;
 			children = (
+				0643D695202E1F7B000FA53D /* PizzaScene.swift */,
+				0643D697202E1F8C000FA53D /* PizzaScene.sks */,
 				0BCA0A8D201BCC2100488E8E /* HamburgerScene - B2 */,
 				0643D694202E1C01000FA53D /* DuckScene */,
 				06BD2F4D202BE71A00AC0A54 /* TrainScene - L2 */,
@@ -812,6 +818,7 @@
 				0643D67F202E131D000FA53D /* D.wav in Resources */,
 				06427F201FD9F8A0009C07ED /* PianoScene7.sks in Resources */,
 				060A6830202AA954005F7323 /* reminder_spoon.wav in Resources */,
+				0643D698202E1F8C000FA53D /* PizzaScene.sks in Resources */,
 				060A6829202AA8BA005F7323 /* mouse.wav in Resources */,
 				0643D68F202E133C000FA53D /* Now it's time to play some music touch the yellow key.wav in Resources */,
 				0643D68D202E133C000FA53D /* melody 4.wav in Resources */,
@@ -912,6 +919,7 @@
 				069DE7C420045B0100465399 /* SpoonScene.swift in Sources */,
 				0BCA0AAE201BCE0000488E8E /* Monster_T3.swift in Sources */,
 				062B1C01202D2158002DECBB /* SlideScene.swift in Sources */,
+				0643D696202E1F7B000FA53D /* PizzaScene.swift in Sources */,
 				06476DD61FC945F200B55906 /* ScoreScene.swift in Sources */,
 				0669B8EC2004046E002D8CAC /* TrashScene.swift in Sources */,
 				061F1BD52004884000A05E8E /* CowScene.swift in Sources */,
