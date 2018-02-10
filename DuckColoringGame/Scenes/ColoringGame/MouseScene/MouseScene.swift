@@ -108,9 +108,9 @@ class MouseScene: SKScene {
                 let wait2 = SKAction.wait(forDuration: 2)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let scoreScene = SKScene(fileNamed: "ScoreScene")
-                    scoreScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(scoreScene!)
+                    let allDoneScene = SKScene(fileNamed: "AllDoneScene")
+                    allDoneScene?.scaleMode = SKSceneScaleMode.aspectFill
+                    self.scene!.view?.presentScene(allDoneScene!)
                 }
             }
             else {

@@ -107,6 +107,8 @@
 		06C819D8202E2B43002F838E /* instructions_egg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C819D6202E2B43002F838E /* instructions_egg.mp3 */; };
 		06C819DB202E2B62002F838E /* instructions_hamburger.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C819D9202E2B61002F838E /* instructions_hamburger.mp3 */; };
 		06C819DC202E2B62002F838E /* instructions_pizza.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C819DA202E2B62002F838E /* instructions_pizza.mp3 */; };
+		06C819DE202F6D15002F838E /* AllDoneScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C819DD202F6D15002F838E /* AllDoneScene.swift */; };
+		06C819E0202F6D21002F838E /* AllDoneScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06C819DF202F6D21002F838E /* AllDoneScene.sks */; };
 		0B22CE99202A9C9D00B14CCA /* DrinkScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B22CE98202A9C9D00B14CCA /* DrinkScene.swift */; };
 		0BCA0A99201BCC2100488E8E /* HamburgerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA0A8E201BCC2100488E8E /* HamburgerScene.swift */; };
 		0BCA0A9A201BCC2100488E8E /* HamburgerScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA0A8F201BCC2100488E8E /* HamburgerScene.sks */; };
@@ -225,6 +227,8 @@
 		06C819D6202E2B43002F838E /* instructions_egg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_egg.mp3; sourceTree = "<group>"; };
 		06C819D9202E2B61002F838E /* instructions_hamburger.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_hamburger.mp3; sourceTree = "<group>"; };
 		06C819DA202E2B62002F838E /* instructions_pizza.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_pizza.mp3; sourceTree = "<group>"; };
+		06C819DD202F6D15002F838E /* AllDoneScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDoneScene.swift; sourceTree = "<group>"; };
+		06C819DF202F6D21002F838E /* AllDoneScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AllDoneScene.sks; sourceTree = "<group>"; };
 		0B22CE98202A9C9D00B14CCA /* DrinkScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkScene.swift; sourceTree = "<group>"; };
 		0BCA0A8E201BCC2100488E8E /* HamburgerScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerScene.swift; sourceTree = "<group>"; };
 		0BCA0A8F201BCC2100488E8E /* HamburgerScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HamburgerScene.sks; sourceTree = "<group>"; };
@@ -683,7 +687,7 @@
 				06427EFF1FD9F453009C07ED /* ColoringGame */,
 				0BCA0AA1201BCE0000488E8E /* MonsterGame_Trainer */,
 				0B22CE97202A9C9D00B14CCA /* MonsterGame */,
-				06476DD71FC945F600B55906 /* ScoreScene */,
+				06C819E3202F7276002F838E /* EndGameScenes */,
 				06427F001FD9F461009C07ED /* PianoGame */,
 			);
 			path = Scenes;
@@ -696,6 +700,24 @@
 				06BD2F4B202BE6D200AC0A54 /* TrainScene.sks */,
 			);
 			path = TrainScene;
+			sourceTree = "<group>";
+		};
+		06C819E1202F6DBA002F838E /* AllDone */ = {
+			isa = PBXGroup;
+			children = (
+				06C819DD202F6D15002F838E /* AllDoneScene.swift */,
+				06C819DF202F6D21002F838E /* AllDoneScene.sks */,
+			);
+			path = AllDone;
+			sourceTree = "<group>";
+		};
+		06C819E3202F7276002F838E /* EndGameScenes */ = {
+			isa = PBXGroup;
+			children = (
+				06C819E1202F6DBA002F838E /* AllDone */,
+				06476DD71FC945F600B55906 /* ScoreScene */,
+			);
+			path = EndGameScenes;
 			sourceTree = "<group>";
 		};
 		0B22CE97202A9C9D00B14CCA /* MonsterGame */ = {
@@ -840,6 +862,7 @@
 				060A6835202AA966005F7323 /* trash.wav in Resources */,
 				060A6818202AA883005F7323 /* airplane.mp3 in Resources */,
 				0BCA0AAB201BCE0000488E8E /* Monster_T1.sks in Resources */,
+				06C819E0202F6D21002F838E /* AllDoneScene.sks in Resources */,
 				0BCA0AA9201BCE0000488E8E /* Monster_T2.sks in Resources */,
 				060A6817202AA883005F7323 /* reminder_airplane.wav in Resources */,
 				0643D68C202E133C000FA53D /* melody 1.wav in Resources */,
@@ -908,6 +931,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BCA0AAD201BCE0000488E8E /* Monster_T2.swift in Sources */,
+				06C819DE202F6D15002F838E /* AllDoneScene.swift in Sources */,
 				0BCA0A9B201BCC2100488E8E /* Trainer_Bread.swift in Sources */,
 				0BCA0AAF201BCE0000488E8E /* Monster_T1.swift in Sources */,
 				06427F1F1FD9F8A0009C07ED /* PianoScene7.swift in Sources */,

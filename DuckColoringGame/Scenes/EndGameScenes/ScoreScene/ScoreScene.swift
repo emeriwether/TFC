@@ -7,7 +7,6 @@
 //
 
 import SpriteKit
-import GameplayKit
 
 // public variables to keep track of statistics
 var numOfCorrectFirstTry = 0
@@ -21,9 +20,6 @@ var incorrectTouches = 0
 var correctTouches = 0
 
 class ScoreScene: SKScene {
-    // local variable for retry button
-    let retry = SKSpriteNode(imageNamed: "retryButton")
-
     // local variables
     let correctFirstTryLabel = SKLabelNode(fontNamed:"Arial")
     let incorrectScoreLabel = SKLabelNode(fontNamed: "Arial")
@@ -34,16 +30,11 @@ class ScoreScene: SKScene {
     let simpleBGLabel = SKLabelNode(fontNamed: "Arial")
     let lineBGLabel = SKLabelNode(fontNamed: "Arial")
     let sceneBGLabel = SKLabelNode(fontNamed: "Arial")
-    
+
     override func didMove(to view: SKView) {
         
-        // place retry button on screen
-        retry.position = CGPoint(x: 0, y: 0)
-        retry.setScale(2)
-        self.addChild(retry)
-        
         // place correct first try screens  
-        correctFirstTryLabel.text = "Number of screens with correct first try: \(numOfCorrectFirstTry)"
+        correctFirstTryLabel.text = "Number of screens with correct first try: \(numOfCorrectFirstTry) /16"
         correctFirstTryLabel.fontSize = 20
         correctFirstTryLabel.position = CGPoint(x: -480, y: -200)
         self.addChild(correctFirstTryLabel)
@@ -55,56 +46,67 @@ class ScoreScene: SKScene {
         self.addChild(incorrectScoreLabel)
         
         // place correct score on screen
-        correctScoreLabel.text = "Total correct touches: \(correctTouches)"
+        correctScoreLabel.text = "Total correct touches: \(correctTouches) /16"
         correctScoreLabel.fontSize = 20
         correctScoreLabel.position = CGPoint(x: -480, y: -280)
         self.addChild(correctScoreLabel)
         
         // place correct score in set size 2 on screen
-        setSize2Label.text = "Total correct touches in set size 2: \(numOfCorrectSetSize2)"
+        setSize2Label.text = "Total correct touches in set size 2: \(numOfCorrectSetSize2) /6"
         setSize2Label.fontSize = 20
         setSize2Label.position = CGPoint(x: -480, y: -320)
         self.addChild(setSize2Label)
         
         // place correct score in set size 3 on screen
-        setSize3Label.text = "Total correct touches in set size 3: \(numOfCorrectSetSize3)"
+        setSize3Label.text = "Total correct touches in set size 3: \(numOfCorrectSetSize3) /4"
         setSize3Label.fontSize = 20
         setSize3Label.position = CGPoint(x: -480, y: -360)
         self.addChild(setSize3Label)
 
         // place correct score in set size 4 on screen
-        setSize4Label.text = "Total correct touches in set size 4: \(numOfCorrectSetSize4)"
+        setSize4Label.text = "Total correct touches in set size 4: \(numOfCorrectSetSize4) /4"
         setSize4Label.fontSize = 20
         setSize4Label.position = CGPoint(x: -480, y: -400)
         self.addChild(setSize4Label)
         
         // place correct score in simple bg type
-        simpleBGLabel.text = "Total correct touches in simple bg type: \(numOfCorrectSimpleBG)"
+        simpleBGLabel.text = "Total correct touches in simple bg type: \(numOfCorrectSimpleBG) /2"
         simpleBGLabel.fontSize = 20
         simpleBGLabel.position = CGPoint(x: 160, y: -200)
         self.addChild(simpleBGLabel)
         
         // place correct score in line bg type
-        lineBGLabel.text = "Total correct touches in line bg type: \(numOfCorrectLineBG)"
+        lineBGLabel.text = "Total correct touches in line bg type: \(numOfCorrectLineBG) /4"
         lineBGLabel.fontSize = 20
         lineBGLabel.position = CGPoint(x: 160, y: -240)
         self.addChild(lineBGLabel)
         
         // place correct score in scene bg type
-        sceneBGLabel.text = "Total correct touches in scene bg type: \(numOfCorrectSceneBG)"
+        sceneBGLabel.text = "Total correct touches in scene bg type: \(numOfCorrectSceneBG) /4"
         sceneBGLabel.fontSize = 20
         sceneBGLabel.position = CGPoint(x: 160, y: -280)
         self.addChild(sceneBGLabel)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // variable for play again button
+        let playAgainButton = self.childNode(withName: "play again button")
+        
+        // variable to keep track of touch
         let touch = touches.first!
         
         // if retry button is touched
-        if retry.contains(touch.location(in: self)) {
-            // when restarting the game, reset touches scores
-            correctTouches = 0
+        if playAgainButton!.contains(touch.location(in: self)) {
+            
+            // reset all game-wide stats
+            numOfCorrectSetSize2 = 0
+            numOfCorrectSetSize3 = 0
+            numOfCorrectSetSize4 = 0
+            numOfCorrectSimpleBG = 0
+            numOfCorrectLineBG = 0
+            numOfCorrectSceneBG = 0
             incorrectTouches = 0
+            correctTouches = 0
             
             // transition scene back to start
             let startScene = SKScene(fileNamed: "StartScene")
