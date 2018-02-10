@@ -84,6 +84,11 @@ class TrashScene: SKScene {
                 trash_correctTouches += 1
                 correctTouches += 1
                 
+                // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
+                if (trash_incorrectTouches == 0) {
+                    numOfCorrectFirstTry += 1
+                }
+                
                 // Color trash
                 let coloredTrash:SKTexture = SKTexture(imageNamed: "trashScene_trash_colored")
                 let changeToColored:SKAction = SKAction.animate(with: [coloredTrash], timePerFrame: 0.0001)

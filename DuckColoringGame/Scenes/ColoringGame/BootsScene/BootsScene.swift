@@ -85,6 +85,11 @@ class BootsScene: SKScene {
                 boots_correctTouches += 1
                 correctTouches += 1
                 
+                // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
+                if (boots_incorrectTouches == 0) {
+                    numOfCorrectFirstTry += 1
+                }
+                
                 // Color boots
                 let coloredBoots = SKTexture(imageNamed: "bootsScene_boots_colored")
                 let changeToColored = SKAction.animate(with: [coloredBoots], timePerFrame: 0.0001)

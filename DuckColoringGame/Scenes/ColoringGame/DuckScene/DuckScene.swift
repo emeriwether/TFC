@@ -84,6 +84,11 @@ class DuckScene: SKScene {
                 duck_correctTouches += 1
                 correctTouches += 1
                 
+                // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
+                if (duck_incorrectTouches == 0) {
+                    numOfCorrectFirstTry += 1
+                }
+                
                 // Change sprite to colored duck
                 let coloredDuck:SKTexture = SKTexture(imageNamed: "duckScene_duck_colored_openMouth")
                 let changeToColored:SKAction = SKAction.animate(with: [coloredDuck], timePerFrame: 0.0001)

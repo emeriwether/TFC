@@ -84,6 +84,11 @@ class SpoonScene: SKScene {
                 spoon_correctTouches += 1
                 correctTouches += 1
                 
+                // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
+                if (spoon_incorrectTouches == 0) {
+                    numOfCorrectFirstTry += 1
+                }
+                
                 // Color spoon
                 let coloredSpoon:SKTexture = SKTexture(imageNamed: "spoonScene_spoon_colored")
                 let changeToColored:SKAction = SKAction.animate(with: [coloredSpoon], timePerFrame: 0.0001)

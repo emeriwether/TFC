@@ -84,6 +84,11 @@ class AirplaneScene: SKScene {
                 airplane_correctTouches += 1
                 correctTouches += 1
                 
+                // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
+                if (airplane_incorrectTouches == 0) {
+                    numOfCorrectFirstTry += 1
+                }
+                
                 // Color airplane
                 let coloredAirplane:SKTexture = SKTexture(imageNamed: "airplaneScene_airplane_colored")
                 let changeToColored:SKAction = SKAction.animate(with: [coloredAirplane], timePerFrame: 0.0001)

@@ -84,6 +84,11 @@ class TrainScene: SKScene {
                 train_correctTouches += 1
                 correctTouches += 1
                 
+                // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
+                if (train_incorrectTouches == 0) {
+                    numOfCorrectFirstTry += 1
+                }
+                
                 // Change sprite to colored duck
                 let coloredTrain:SKTexture = SKTexture(imageNamed: "trainScene_train_colored")
                 let changeToColored:SKAction = SKAction.animate(with: [coloredTrain], timePerFrame: 0.0001)

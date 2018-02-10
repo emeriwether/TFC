@@ -84,6 +84,11 @@ class CookieScene: SKScene {
                 cookie_correctTouches += 1
                 correctTouches += 1
 
+                // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
+                if (cookie_incorrectTouches == 0) {
+                    numOfCorrectFirstTry += 1
+                }
+                
                 // Change sprite to colored cookie
                 let coloredCookie:SKTexture = SKTexture(imageNamed: "cookieScene_cookie_colored")
                 let changeToColored:SKAction = SKAction.animate(with: [coloredCookie], timePerFrame: 0.0001)

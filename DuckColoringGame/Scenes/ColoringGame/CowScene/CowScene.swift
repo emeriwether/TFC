@@ -84,6 +84,11 @@ class CowScene: SKScene {
                 cow_correctTouches += 1
                 correctTouches += 1
                 
+                // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
+                if (cow_incorrectTouches == 0) {
+                    numOfCorrectFirstTry += 1
+                }
+                
                 // Change sprite to colored cow
                 let coloredCow:SKTexture = SKTexture(imageNamed: "cowScene_cow_colored")
                 let changeToColored:SKAction = SKAction.animate(with: [coloredCow], timePerFrame: 0.0001)

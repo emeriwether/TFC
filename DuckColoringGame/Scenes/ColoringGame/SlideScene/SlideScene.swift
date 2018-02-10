@@ -84,6 +84,11 @@ class SlideScene: SKScene {
                 slide_correctTouches += 1
                 correctTouches += 1
                 
+                // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
+                if (slide_incorrectTouches == 0) {
+                    numOfCorrectFirstTry += 1
+                }
+                
                 // Change sprite to colored slide
                 let coloredSlide:SKTexture = SKTexture(imageNamed: "slideScene_slide_colored")
                 let changeToColored:SKAction = SKAction.animate(with: [coloredSlide], timePerFrame: 0.0001)

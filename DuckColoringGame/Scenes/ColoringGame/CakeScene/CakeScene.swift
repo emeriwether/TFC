@@ -84,6 +84,11 @@ class CakeScene: SKScene {
                 cake_correctTouches += 1
                 correctTouches += 1
                 
+                // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
+                if (cake_incorrectTouches == 0) {
+                    numOfCorrectFirstTry += 1
+                }
+                
                 // Change sprite to colored cake
                 let coloredCake:SKTexture = SKTexture(imageNamed: "cakeScene_cake_colored")
                 let changeToColored:SKAction = SKAction.animate(with: [coloredCake], timePerFrame: 0.0001)

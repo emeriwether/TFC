@@ -12,7 +12,7 @@ class PizzaScene: SKScene {
     // local variables to keep track of touches for this scene
     var pizza_incorrectTouches = 0
     var pizza_correctTouches = 0
-    var pizza_totalTouches = 0
+    var totalTouches = 0
     
     // local variables to keep track of whether instructions are playing
     var instructionsComplete = false
@@ -46,7 +46,7 @@ class PizzaScene: SKScene {
         // for every one second, do this action:
         let timerAction = SKAction.run {
             // if no touch...
-            if (self.pizza_totalTouches - currentTouches == 0) {
+            if (self.totalTouches - currentTouches == 0) {
                 // ...timer progresses one second...
                 timerCount += 1
             }
@@ -84,6 +84,7 @@ class PizzaScene: SKScene {
                 pizza_correctTouches += 1
                 correctTouches += 1
                 
+                // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (pizza_incorrectTouches == 0) {
                     numOfCorrectFirstTry += 1
                 }
@@ -124,8 +125,8 @@ class PizzaScene: SKScene {
                 run(pizza_reminder, completion: { self.reminderComplete = true} )
             }
         }
-        // update pizza_totalTouches variable for idle reminder
-        pizza_totalTouches = pizza_correctTouches + pizza_incorrectTouches
+        // update totalTouches variable for idle reminder
+        totalTouches = pizza_correctTouches + pizza_incorrectTouches
     }
 }
 

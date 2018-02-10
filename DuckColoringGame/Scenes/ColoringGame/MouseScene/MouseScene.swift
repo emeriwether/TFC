@@ -85,6 +85,11 @@ class MouseScene: SKScene {
                 mouse_correctTouches += 1
                 correctTouches += 1
                 
+                // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
+                if (mouse_incorrectTouches == 0) {
+                    numOfCorrectFirstTry += 1
+                }
+                
                 // Color mouse
                 let coloredMouse:SKTexture = SKTexture(imageNamed: "mouseScene_mouse_colored")
                 let changeToColored:SKAction = SKAction.animate(with: [coloredMouse], timePerFrame: 0.0001)
