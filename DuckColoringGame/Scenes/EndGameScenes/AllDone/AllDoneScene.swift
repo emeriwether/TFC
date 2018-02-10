@@ -40,6 +40,10 @@ class AllDoneScene: SKScene {
         
         // if stats button is touched
         if viewStatsButton!.contains(touch.location(in: self)) {
+            let passwordBox = SKSpriteNode(imageNamed: "passwordBox")
+            passwordBox.position = CGPoint(x: 0, y: 0)
+            addChild(passwordBox)
+            
             let scoreScene = SKScene(fileNamed: "ScoreScene")
             scoreScene?.scaleMode = SKSceneScaleMode.aspectFill
             let fade = SKTransition.fade(withDuration: 0.5)
