@@ -93,7 +93,7 @@ class ScoreScene: SKScene {
         // place correct score in scene bg type
         sceneBGLabel.text = "Total correct touches in scene bg type: \(numOfCorrectSceneBG)"
         sceneBGLabel.fontSize = 20
-        sceneBGLabel.position = CGPoint(x: 160, y: -240)
+        sceneBGLabel.position = CGPoint(x: 160, y: -280)
         self.addChild(sceneBGLabel)
     }
     
