@@ -10,10 +10,6 @@
 		060A67A1202A9EB5005F7323 /* DrinkScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 060A67A0202A9EB5005F7323 /* DrinkScene.sks */; };
 		060A67D7202AA0DD005F7323 /* instructions_drink.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 060A67D6202AA0DD005F7323 /* instructions_drink.mp3 */; };
 		060A67DD202AA10B005F7323 /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = 060A67D8202AA109005F7323 /* correct.wav */; };
-		060A67DE202AA10B005F7323 /* instructions_bread.wav in Resources */ = {isa = PBXBuildFile; fileRef = 060A67D9202AA109005F7323 /* instructions_bread.wav */; };
-		060A67DF202AA10B005F7323 /* instructions_hamburger.wav in Resources */ = {isa = PBXBuildFile; fileRef = 060A67DA202AA10A005F7323 /* instructions_hamburger.wav */; };
-		060A67E0202AA10B005F7323 /* instructions_pizza.wav in Resources */ = {isa = PBXBuildFile; fileRef = 060A67DB202AA10A005F7323 /* instructions_pizza.wav */; };
-		060A67E1202AA10B005F7323 /* instructions_egg.wav in Resources */ = {isa = PBXBuildFile; fileRef = 060A67DC202AA10A005F7323 /* instructions_egg.wav */; };
 		060A67F2202AA123005F7323 /* Find the glass.wav in Resources */ = {isa = PBXBuildFile; fileRef = 060A67E2202AA11F005F7323 /* Find the glass.wav */; };
 		060A67F5202AA123005F7323 /* find the cat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 060A67E5202AA120005F7323 /* find the cat.wav */; };
 		060A67F7202AA123005F7323 /* find the dress.wav in Resources */ = {isa = PBXBuildFile; fileRef = 060A67E7202AA120005F7323 /* find the dress.wav */; };
@@ -107,6 +103,10 @@
 		06B3C6E51FBCD46C00252DB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06B3C6E41FBCD46C00252DB6 /* Assets.xcassets */; };
 		06BD2F4A202BE6C100AC0A54 /* TrainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BD2F49202BE6C100AC0A54 /* TrainScene.swift */; };
 		06BD2F4C202BE6D200AC0A54 /* TrainScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06BD2F4B202BE6D200AC0A54 /* TrainScene.sks */; };
+		06C819D7202E2B43002F838E /* instructions_bread.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C819D5202E2B42002F838E /* instructions_bread.mp3 */; };
+		06C819D8202E2B43002F838E /* instructions_egg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C819D6202E2B43002F838E /* instructions_egg.mp3 */; };
+		06C819DB202E2B62002F838E /* instructions_hamburger.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C819D9202E2B61002F838E /* instructions_hamburger.mp3 */; };
+		06C819DC202E2B62002F838E /* instructions_pizza.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C819DA202E2B62002F838E /* instructions_pizza.mp3 */; };
 		0B22CE99202A9C9D00B14CCA /* DrinkScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B22CE98202A9C9D00B14CCA /* DrinkScene.swift */; };
 		0BCA0A99201BCC2100488E8E /* HamburgerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA0A8E201BCC2100488E8E /* HamburgerScene.swift */; };
 		0BCA0A9A201BCC2100488E8E /* HamburgerScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA0A8F201BCC2100488E8E /* HamburgerScene.sks */; };
@@ -126,10 +126,6 @@
 		060A67A0202A9EB5005F7323 /* DrinkScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DrinkScene.sks; sourceTree = "<group>"; };
 		060A67D6202AA0DD005F7323 /* instructions_drink.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_drink.mp3; sourceTree = "<group>"; };
 		060A67D8202AA109005F7323 /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correct.wav; sourceTree = "<group>"; };
-		060A67D9202AA109005F7323 /* instructions_bread.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = instructions_bread.wav; sourceTree = "<group>"; };
-		060A67DA202AA10A005F7323 /* instructions_hamburger.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = instructions_hamburger.wav; sourceTree = "<group>"; };
-		060A67DB202AA10A005F7323 /* instructions_pizza.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = instructions_pizza.wav; sourceTree = "<group>"; };
-		060A67DC202AA10A005F7323 /* instructions_egg.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = instructions_egg.wav; sourceTree = "<group>"; };
 		060A67E2202AA11F005F7323 /* Find the glass.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Find the glass.wav"; sourceTree = "<group>"; };
 		060A67E5202AA120005F7323 /* find the cat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "find the cat.wav"; sourceTree = "<group>"; };
 		060A67E7202AA120005F7323 /* find the dress.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "find the dress.wav"; sourceTree = "<group>"; };
@@ -225,6 +221,10 @@
 		06B3C6E41FBCD46C00252DB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06BD2F49202BE6C100AC0A54 /* TrainScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainScene.swift; sourceTree = "<group>"; };
 		06BD2F4B202BE6D200AC0A54 /* TrainScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TrainScene.sks; sourceTree = "<group>"; };
+		06C819D5202E2B42002F838E /* instructions_bread.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_bread.mp3; sourceTree = "<group>"; };
+		06C819D6202E2B43002F838E /* instructions_egg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_egg.mp3; sourceTree = "<group>"; };
+		06C819D9202E2B61002F838E /* instructions_hamburger.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_hamburger.mp3; sourceTree = "<group>"; };
+		06C819DA202E2B62002F838E /* instructions_pizza.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_pizza.mp3; sourceTree = "<group>"; };
 		0B22CE98202A9C9D00B14CCA /* DrinkScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkScene.swift; sourceTree = "<group>"; };
 		0BCA0A8E201BCC2100488E8E /* HamburgerScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerScene.swift; sourceTree = "<group>"; };
 		0BCA0A8F201BCC2100488E8E /* HamburgerScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HamburgerScene.sks; sourceTree = "<group>"; };
@@ -334,8 +334,8 @@
 		060A67CA202AA07A005F7323 /* ColoringGame */ = {
 			isa = PBXGroup;
 			children = (
-				060A67DB202AA10A005F7323 /* instructions_pizza.wav */,
-				060A67DA202AA10A005F7323 /* instructions_hamburger.wav */,
+				06C819D9202E2B61002F838E /* instructions_hamburger.mp3 */,
+				06C819DA202E2B62002F838E /* instructions_pizza.mp3 */,
 				060A67A7202A9FBE005F7323 /* Airplane */,
 				060A67B1202A9FDB005F7323 /* Boots */,
 				060A67B5202A9FEF005F7323 /* Cookie */,
@@ -351,9 +351,9 @@
 		060A67D5202AA0B0005F7323 /* ColoringGameTrainer */ = {
 			isa = PBXGroup;
 			children = (
+				06C819D5202E2B42002F838E /* instructions_bread.mp3 */,
+				06C819D6202E2B43002F838E /* instructions_egg.mp3 */,
 				060A67D8202AA109005F7323 /* correct.wav */,
-				060A67D9202AA109005F7323 /* instructions_bread.wav */,
-				060A67DC202AA10A005F7323 /* instructions_egg.wav */,
 			);
 			path = ColoringGameTrainer;
 			sourceTree = "<group>";
@@ -618,10 +618,10 @@
 		0657C65F1FC1F7F3002FC12D /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				060A6802202AA127005F7323 /* MonsterGame */,
-				060A6803202AA132005F7323 /* PianoGame */,
 				060A67D5202AA0B0005F7323 /* ColoringGameTrainer */,
 				060A67CA202AA07A005F7323 /* ColoringGame */,
+				060A6802202AA127005F7323 /* MonsterGame */,
+				060A6803202AA132005F7323 /* PianoGame */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -817,14 +817,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				060A67DE202AA10B005F7323 /* instructions_bread.wav in Resources */,
+				06C819DB202E2B62002F838E /* instructions_hamburger.mp3 in Resources */,
 				060A67A1202A9EB5005F7323 /* DrinkScene.sks in Resources */,
 				061F1BD72004885500A05E8E /* CowScene.sks in Resources */,
 				060A682F202AA954005F7323 /* instructions_spoon.wav in Resources */,
 				060A6824202AA8A9005F7323 /* reminder_cow.wav in Resources */,
 				060A67FF202AA123005F7323 /* find the jacket.wav in Resources */,
+				06C819DC202E2B62002F838E /* instructions_pizza.mp3 in Resources */,
 				0643D67F202E131D000FA53D /* D.wav in Resources */,
 				06427F201FD9F8A0009C07ED /* PianoScene7.sks in Resources */,
+				06C819D7202E2B43002F838E /* instructions_bread.mp3 in Resources */,
 				060A6830202AA954005F7323 /* reminder_spoon.wav in Resources */,
 				0643D698202E1F8C000FA53D /* PizzaScene.sks in Resources */,
 				060A6829202AA8BA005F7323 /* mouse.wav in Resources */,
@@ -835,7 +837,6 @@
 				060A681D202AA895005F7323 /* boots.wav in Resources */,
 				06427F171FD9F88E009C07ED /* PianoScene5.sks in Resources */,
 				0643D680202E131D000FA53D /* Are you ready for more Now find the bathtub.wav in Resources */,
-				060A67E1202AA10B005F7323 /* instructions_egg.wav in Resources */,
 				060A6835202AA966005F7323 /* trash.wav in Resources */,
 				060A6818202AA883005F7323 /* airplane.mp3 in Resources */,
 				0BCA0AAB201BCE0000488E8E /* Monster_T1.sks in Resources */,
@@ -854,7 +855,6 @@
 				060A6837202AA966005F7323 /* reminder_trash.wav in Resources */,
 				060A67FE202AA123005F7323 /* find the giraffe.wav in Resources */,
 				06427F1B1FD9F898009C07ED /* PianoScene6.sks in Resources */,
-				060A67DF202AA10B005F7323 /* instructions_hamburger.wav in Resources */,
 				06427F141FD9F880009C07ED /* PianoScene4.sks in Resources */,
 				0BCA0A9C201BCC2100488E8E /* Trainer_Bread.sks in Resources */,
 				06427F0C1FD9F868009C07ED /* PianoScene2.sks in Resources */,
@@ -875,6 +875,7 @@
 				0BCA0AAA201BCE0000488E8E /* Monster_T3.sks in Resources */,
 				060A681E202AA895005F7323 /* instructions_boots.wav in Resources */,
 				060A680D202AA7DB005F7323 /* quack.mp3 in Resources */,
+				06C819D8202E2B43002F838E /* instructions_egg.mp3 in Resources */,
 				06427F311FD9FD59009C07ED /* BootsScene.sks in Resources */,
 				060A681F202AA895005F7323 /* reminder_boots.wav in Resources */,
 				0BCA0A9A201BCC2100488E8E /* HamburgerScene.sks in Resources */,
@@ -890,7 +891,6 @@
 				060A67DD202AA10B005F7323 /* correct.wav in Resources */,
 				062B1BF7202D1847002DECBB /* HatScene.sks in Resources */,
 				06427F101FD9F876009C07ED /* PianoScene3.sks in Resources */,
-				060A67E0202AA10B005F7323 /* instructions_pizza.wav in Resources */,
 				06B3C6E51FBCD46C00252DB6 /* Assets.xcassets in Resources */,
 				060A682A202AA8BA005F7323 /* reminder_mouse.wav in Resources */,
 				0643D68A202E133C000FA53D /* melody 2.wav in Resources */,

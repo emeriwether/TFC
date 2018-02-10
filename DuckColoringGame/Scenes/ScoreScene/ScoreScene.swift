@@ -13,15 +13,42 @@ class ScoreScene: SKScene {
     // local variable for retry button
     let retry = SKSpriteNode(imageNamed: "retryButton")
     
-    // local variables for labels for touches scores
+    // local variables
+    let coloringScenes = ["PizzaScene", "HamburgerScene", "DuckScene", "TrainScene", "CowScene", "TrashScene", "AirplaneScene", "BootsScene", "CakeScene", "SlideScene", "SpoonScene", "HatScene", "CookieScene", "MouseScene"]
+    
+    var numOfCorrectFirstTry = 0
+    let correctFirstTryLabel = SKLabelNode(fontNamed:"Arial")
+    
     let correctScoreLabel = SKLabelNode(fontNamed: "Arial")
     let incorrectScoreLabel = SKLabelNode(fontNamed: "Arial")
     
+    
     override func didMove(to view: SKView) {
+        
+        
+        
         // place retry button on screen
         retry.position = CGPoint(x: 0, y: 0)
         retry.setScale(2)
         self.addChild(retry)
+        
+        // place correct first try screens
+        
+        for item in coloringScenes {
+            let scene = SKScene(fileNamed: item)
+            let sceneVariable = item + "_incorrectTouches"
+            if (scene.sceneVariable == 0) {
+                numOfCorrectFirstTry += 1
+            }
+            if (pizza_incorrectTouches == 0) {
+                numOfCorrectFirstTry += 1
+
+            }
+        }
+        
+        
+        correctFirstTryLabel.text = "Screens with correct first try: \()"
+        
         
         // place correct score on screen
         correctScoreLabel.text = "Correct touches: \(correctTouches)"
