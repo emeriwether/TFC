@@ -8,10 +8,12 @@
 
 import SpriteKit
 
-class PasswordScene: SKScene {
+class PasswordScene: SKScene, UITextFieldDelegate {
     
+    var myLabel:SKLabelNode?
     var passwordInput:UITextField?
-    
+    var correctPassword = false
+
     override func didMove(to view: SKView) {
         passwordInput = UITextField(frame: CGRect(x:200, y:300, width:635, height: 50))
         passwordInput!.borderStyle = UITextBorderStyle.roundedRect
@@ -22,6 +24,23 @@ class PasswordScene: SKScene {
         passwordInput!.adjustsFontSizeToFitWidth = true
         self.view?.addSubview(passwordInput!)
     
+        passwordInput!.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        passwordInput!.resignFirstResponder()
+        saveText()
+        return true
+    }
+    
+    func saveText() {
+        if (passwordInput!.text != "") {
+            print(passwordInput!.text)
+            passwordInput!.text = ""
+        }
+        if (passwordInput!.text == "password") {
+            correctPassword = true
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -30,9 +49,10 @@ class PasswordScene: SKScene {
         let cancelButton = childNode(withName: "cancel")
         
         passwordInput?.endEditing(true)
-        print(passwordInput!.text)
+        saveText()
         
         if okButton!.contains(touch.location(in:self)) {
+            print("touched ok")
             let scoreScene = SKScene(fileNamed: "ScoreScene")
             scoreScene?.scaleMode = SKSceneScaleMode.aspectFill
             let fade = SKTransition.fade(withDuration: 0.5)
@@ -40,10 +60,12 @@ class PasswordScene: SKScene {
         }
         
         if cancelButton!.contains(touch.location(in: self)) {
+            print("touched cancel")
             let allDoneScene = SKScene(fileNamed: "AllDoneScene")
             allDoneScene?.scaleMode = SKSceneScaleMode.aspectFill
             let fade = SKTransition.fade(withDuration: 0.5)
             self.scene!.view?.presentScene(allDoneScene!, transition: fade)
+            passwordInput?.removeFromSuperview()
         }
     }
 }
