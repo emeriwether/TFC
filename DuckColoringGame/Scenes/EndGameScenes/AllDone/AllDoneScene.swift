@@ -46,14 +46,27 @@ class AllDoneScene: SKScene {
             addChild(passwordBox)
             
             let passwordBox_okButton = SKSpriteNode(imageNamed: "passwordBox_okButton")
-            passwordBox.position = CGPoint(x: 0, y: 0)
-            passwordBox.zPosition = 3
+            passwordBox_okButton.position = CGPoint(x: -105, y: -115)
+            passwordBox_okButton.zPosition = 3
             addChild(passwordBox_okButton)
             
-            let scoreScene = SKScene(fileNamed: "ScoreScene")
-            scoreScene?.scaleMode = SKSceneScaleMode.aspectFill
-            let fade = SKTransition.fade(withDuration: 0.5)
-            //self.scene!.view?.presentScene(scoreScene!, transition: fade)
+            let passwordBox_cancelButton = SKSpriteNode(imageNamed: "passwordBox_cancelButton")
+            passwordBox_cancelButton.position = CGPoint(x: 115, y: -115)
+            passwordBox_cancelButton.zPosition = 3
+            addChild(passwordBox_cancelButton)
+            
+            if passwordBox_cancelButton.contains(touch.location(in: self)) {
+                passwordBox.removeFromParent()
+                passwordBox_okButton.removeFromParent()
+                passwordBox_cancelButton.removeFromParent()
+            }
+            
+            if passwordBox_okButton.contains(touch.location(in: self)) {
+                let scoreScene = SKScene(fileNamed: "ScoreScene")
+                scoreScene?.scaleMode = SKSceneScaleMode.aspectFill
+                let fade = SKTransition.fade(withDuration: 0.5)
+                self.scene!.view?.presentScene(scoreScene!, transition: fade)
+            }
         }
     }
 }
