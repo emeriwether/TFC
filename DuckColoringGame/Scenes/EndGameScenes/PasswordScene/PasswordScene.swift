@@ -10,10 +10,10 @@ import SpriteKit
 
 class PasswordScene: SKScene, UITextFieldDelegate {
     
-    var myLabel:SKLabelNode?
     var passwordInput:UITextField?
     var correctPassword = false
-
+    var wrongPW:SKLabelNode?
+    
     override func didMove(to view: SKView) {
         passwordInput = UITextField(frame: CGRect(x:200, y:300, width:635, height: 50))
         passwordInput!.borderStyle = UITextBorderStyle.roundedRect
@@ -34,11 +34,7 @@ class PasswordScene: SKScene, UITextFieldDelegate {
     }
     
     func saveText() {
-        if (passwordInput!.text != "") {
-            print(passwordInput!.text)
-            passwordInput!.text = ""
-        }
-        if (passwordInput!.text == "password") {
+        if (passwordInput!.text == "Password") {
             correctPassword = true
         }
     }
@@ -51,16 +47,20 @@ class PasswordScene: SKScene, UITextFieldDelegate {
         passwordInput?.endEditing(true)
         saveText()
         
-        if okButton!.contains(touch.location(in:self)) {
-            print("touched ok")
+        if (okButton!.contains(touch.location(in:self))) && (correctPassword == true) {
             let scoreScene = SKScene(fileNamed: "ScoreScene")
             scoreScene?.scaleMode = SKSceneScaleMode.aspectFill
             let fade = SKTransition.fade(withDuration: 0.5)
             self.scene!.view?.presentScene(scoreScene!, transition: fade)
+            passwordInput?.removeFromSuperview()
+        }
+        else if (okButton!.contains(touch.location(in:self))) && (correctPassword == true) {
+            wrongPW = SKLabelNode(fontNamed: "Arial")
+            wrongPW!.text = "Incorrect password, try again."
+            wrongPW!
         }
         
         if cancelButton!.contains(touch.location(in: self)) {
-            print("touched cancel")
             let allDoneScene = SKScene(fileNamed: "AllDoneScene")
             allDoneScene?.scaleMode = SKSceneScaleMode.aspectFill
             let fade = SKTransition.fade(withDuration: 0.5)
