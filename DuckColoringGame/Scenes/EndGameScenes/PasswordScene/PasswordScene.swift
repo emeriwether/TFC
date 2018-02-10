@@ -13,6 +13,7 @@ class PasswordScene: SKScene, UITextFieldDelegate {
     var passwordInput:UITextField?
     var correctPassword = false
     var wrongPW:SKLabelNode?
+    var wrongPWShowing = false
     
     override func didMove(to view: SKView) {
         passwordInput = UITextField(frame: CGRect(x:200, y:300, width:635, height: 50))
@@ -34,6 +35,10 @@ class PasswordScene: SKScene, UITextFieldDelegate {
     }
     
     func saveText() {
+        if (wrongPWShowing == true) {
+            wrongPW!.text = ""
+            wrongPWShowing = false
+        }
         if (passwordInput!.text == "Password") {
             correctPassword = true
         }
@@ -54,10 +59,15 @@ class PasswordScene: SKScene, UITextFieldDelegate {
             self.scene!.view?.presentScene(scoreScene!, transition: fade)
             passwordInput?.removeFromSuperview()
         }
-        else if (okButton!.contains(touch.location(in:self))) && (correctPassword == true) {
+        else if (okButton!.contains(touch.location(in:self))) && (correctPassword == false) {
             wrongPW = SKLabelNode(fontNamed: "Arial")
             wrongPW!.text = "Incorrect password, try again."
-            wrongPW!
+            wrongPW!.fontSize = 30
+            wrongPW!.fontColor = UIColor.red
+            wrongPW!.position = CGPoint (x:0, y:0)
+            self.addChild(wrongPW!)
+            
+            wrongPWShowing = true
         }
         
         if cancelButton!.contains(touch.location(in: self)) {
