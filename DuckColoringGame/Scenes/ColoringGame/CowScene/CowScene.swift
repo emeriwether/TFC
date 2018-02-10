@@ -87,6 +87,8 @@ class CowScene: SKScene {
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (cow_incorrectTouches == 0) {
                     numOfCorrectFirstTry += 1
+                    numOfCorrectLineBG += 1
+                    numOfCorrectSetSize3 += 1
                 }
                 
                 // Change sprite to colored cow

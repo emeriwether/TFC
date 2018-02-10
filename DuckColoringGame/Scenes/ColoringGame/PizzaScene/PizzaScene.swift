@@ -87,6 +87,8 @@ class PizzaScene: SKScene {
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (pizza_incorrectTouches == 0) {
                     numOfCorrectFirstTry += 1
+                    numOfCorrectSimpleBG += 1
+                    numOfCorrectSetSize2 += 1
                 }
                 
                 // Change sprite to colored pizza

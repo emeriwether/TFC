@@ -87,6 +87,8 @@ class AirplaneScene: SKScene {
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (airplane_incorrectTouches == 0) {
                     numOfCorrectFirstTry += 1
+                    numOfCorrectLineBG += 1
+                    numOfCorrectSetSize4 += 1
                 }
                 
                 // Color airplane

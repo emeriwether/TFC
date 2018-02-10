@@ -87,6 +87,8 @@ class SlideScene: SKScene {
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (slide_incorrectTouches == 0) {
                     numOfCorrectFirstTry += 1
+                    numOfCorrectSceneBG += 1
+                    numOfCorrectSetSize2 += 1
                 }
                 
                 // Change sprite to colored slide

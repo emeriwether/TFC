@@ -8,10 +8,6 @@
 
 import SpriteKit
 
-// Global variables to keep track of touches for the whole game
-var incorrectTouches = 0
-var correctTouches = 0
-
 class StartScene: SKScene {
     // local variable for coloring game button
     let startColor = SKSpriteNode(imageNamed: "ColorStartButton")

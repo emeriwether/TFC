@@ -87,6 +87,8 @@ class SpoonScene: SKScene {
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (spoon_incorrectTouches == 0) {
                     numOfCorrectFirstTry += 1
+                    numOfCorrectSceneBG += 1
+                    numOfCorrectSetSize3 += 1
                 }
                 
                 // Color spoon
