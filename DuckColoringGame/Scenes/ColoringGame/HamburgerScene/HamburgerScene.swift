@@ -19,7 +19,7 @@ class HamburgerScene: SKScene {
     // local variables to keep track of touches for this scene
     var hamburger_incorrectTouches = 0
     var hamburger_correctTouches = 0
-    var totalTouches = 0
+    var hamburger_totalTouches = 0
     
     override func didMove(to view: SKView) {
         // remove scene's physics body, so alpha mask on target sprite is accessible
@@ -46,7 +46,7 @@ class HamburgerScene: SKScene {
         // for every one second, do this action:
         let timerAction = SKAction.run {
             // if no touch...
-            if (self.totalTouches - currentTouches == 0) {
+            if (self.hamburger_totalTouches - currentTouches == 0) {
                 // ...timer progresses one second...
                 timerCount += 1
             }
@@ -84,6 +84,10 @@ class HamburgerScene: SKScene {
                 hamburger_correctTouches += 1
                 correctTouches += 1
                 
+                if (hamburger_incorrectTouches == 0) {
+                    numOfCorrectFirstTry += 1
+                }
+                
                 // Change sprite to colored hamburger
                 let coloredhamburger:SKTexture = SKTexture(imageNamed: "hamburgerScene_hamburger_colored")
                 let changeToColored:SKAction = SKAction.animate(with: [coloredhamburger], timePerFrame: 0.0001)
@@ -120,8 +124,8 @@ class HamburgerScene: SKScene {
                 run(hamburger_reminder, completion: { self.reminderComplete = true} )
             }
         }
-        // update totalTouches variable for idle reminder
-        totalTouches = hamburger_correctTouches + hamburger_incorrectTouches
+        // update hamburger_totalTouches variable for idle reminder
+        hamburger_totalTouches = hamburger_correctTouches + hamburger_incorrectTouches
     }
 }
 
