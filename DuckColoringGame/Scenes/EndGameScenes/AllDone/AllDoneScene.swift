@@ -42,12 +42,18 @@ class AllDoneScene: SKScene {
         if viewStatsButton!.contains(touch.location(in: self)) {
             let passwordBox = SKSpriteNode(imageNamed: "passwordBox")
             passwordBox.position = CGPoint(x: 0, y: 0)
+            passwordBox.zPosition = 2
             addChild(passwordBox)
+            
+            let passwordBox_okButton = SKSpriteNode(imageNamed: "passwordBox_okButton")
+            passwordBox.position = CGPoint(x: 0, y: 0)
+            passwordBox.zPosition = 3
+            addChild(passwordBox_okButton)
             
             let scoreScene = SKScene(fileNamed: "ScoreScene")
             scoreScene?.scaleMode = SKSceneScaleMode.aspectFill
             let fade = SKTransition.fade(withDuration: 0.5)
-            self.scene!.view?.presentScene(scoreScene!, transition: fade)
+            //self.scene!.view?.presentScene(scoreScene!, transition: fade)
         }
     }
 }
