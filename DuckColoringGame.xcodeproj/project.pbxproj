@@ -54,6 +54,7 @@
 		062D7D4D1FD125FB00575A5B /* AirplaneScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062D7D4C1FD125FB00575A5B /* AirplaneScene.swift */; };
 		06303568202F92E90003CAE9 /* PasswordScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06303567202F92E90003CAE9 /* PasswordScene.swift */; };
 		0630356A202F93020003CAE9 /* PasswordScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06303569202F93020003CAE9 /* PasswordScene.sks */; };
+		0630356E202FD3A30003CAE9 /* Calibri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0630356C202FD0810003CAE9 /* Calibri.ttf */; };
 		06427EFC1FD9F421009C07ED /* PianoScene1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06427EFA1FD9F421009C07ED /* PianoScene1.sks */; };
 		06427EFD1FD9F421009C07ED /* PianoScene1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06427EFB1FD9F421009C07ED /* PianoScene1.swift */; };
 		06427F0B1FD9F868009C07ED /* PianoScene2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06427F091FD9F867009C07ED /* PianoScene2.swift */; };
@@ -891,6 +892,7 @@
 				060A6817202AA883005F7323 /* reminder_airplane.wav in Resources */,
 				0643D68C202E133C000FA53D /* melody 1.wav in Resources */,
 				066DB6331FAE8F1500C68B36 /* Main.storyboard in Resources */,
+				0630356E202FD3A30003CAE9 /* Calibri.ttf in Resources */,
 				06427F281FD9F8BA009C07ED /* PianoScene9.sks in Resources */,
 				060A682B202AA8BA005F7323 /* instructions_mouse.wav in Resources */,
 				060A680C202AA7DB005F7323 /* reminder_duck.wav in Resources */,

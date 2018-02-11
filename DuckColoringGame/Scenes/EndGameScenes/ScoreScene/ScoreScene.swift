@@ -64,7 +64,7 @@ class ScoreScene: SKScene {
         // place correct score on screen
         correctScoreLabel.text = " \(correctTouches) / 16"
         correctScoreLabel.fontSize = 20
-        correctScoreLabel.position = CGPoint(x: -125.047, y: 305)
+        correctScoreLabel.position = CGPoint(x: -123.047, y: 306)
         correctScoreLabel.zPosition = 10
         correctScoreLabel.fontColor = UIColor.black
         self.addChild(correctScoreLabel)
@@ -72,7 +72,7 @@ class ScoreScene: SKScene {
         // place incorrect score on screen
         incorrectScoreLabel.text = " \(incorrectTouches)"
         incorrectScoreLabel.fontSize = 20
-        incorrectScoreLabel.position = CGPoint(x: -93.999, y: 280.113)
+        incorrectScoreLabel.position = CGPoint(x: -90.999, y: 280.113)
         incorrectScoreLabel.zPosition = 10
         incorrectScoreLabel.fontColor = UIColor.black
         self.addChild(incorrectScoreLabel)
@@ -138,6 +138,104 @@ class ScoreScene: SKScene {
         correctFirstTriesArrayLabel.zPosition = 10
         correctFirstTriesArrayLabel.fontColor = UIColor.black
         self.addChild(correctFirstTriesArrayLabel)
+        
+        // place list of scenes correct
+        let correctJoined = correctTouchesArray.joined(separator: ", ")
+        if correctTouchesArray.count > 0 {
+            correctTouchesArrayLabel.text = "\(correctJoined)"
+        }
+        else {
+            correctTouchesArrayLabel.text = "n/a"
+        }
+        correctTouchesArrayLabel.fontSize = 20
+        correctTouchesArrayLabel.position = CGPoint(x: -210, y: -157)
+        correctTouchesArrayLabel.zPosition = 10
+        correctTouchesArrayLabel.fontColor = UIColor.black
+        self.addChild(correctTouchesArrayLabel)
+        
+        // place list of size 2 correct
+        let size2Joined = correctSetSize2.joined(separator: ", ")
+        if correctSetSize2.count > 0 {
+            correctSetSize2Label.text = "\(size2Joined)"
+        }
+        else {
+            correctSetSize2Label.text = "n/a"
+        }
+        correctSetSize2Label.fontSize = 20
+        correctSetSize2Label.position = CGPoint(x: -310, y: -296.176)
+        correctSetSize2Label.zPosition = 10
+        correctSetSize2Label.fontColor = UIColor.black
+        self.addChild(correctSetSize2Label)
+        
+        // place list of size 3 correct
+        let size3Joined = correctSetSize3.joined(separator: ", ")
+        if correctSetSize3.count > 0 {
+            correctSetSize3Label.text = "\(size3Joined)"
+        }
+        else {
+            correctSetSize3Label.text = "n/a"
+        }
+        correctSetSize3Label.fontSize = 20
+        correctSetSize3Label.position = CGPoint(x: -310, y: -323)
+        correctSetSize3Label.zPosition = 10
+        correctSetSize3Label.fontColor = UIColor.black
+        self.addChild(correctSetSize3Label)
+        
+        // place list of size 4 correct
+        let size4Joined = correctSetSize4.joined(separator: ", ")
+        if correctSetSize4.count > 0 {
+            correctSetSize4Label.text = "\(size4Joined)"
+        }
+        else {
+            correctSetSize4Label.text = "n/a"
+        }
+        correctSetSize4Label.fontSize = 20
+        correctSetSize4Label.position = CGPoint(x: -310, y: -347.575)
+        correctSetSize4Label.zPosition = 10
+        correctSetSize4Label.fontColor = UIColor.black
+        self.addChild(correctSetSize4Label)
+        
+        // place list of bg simple correct
+        let bgSimpleJoined = correctBGSimple.joined(separator: ", ")
+        if correctBGSimple.count > 0 {
+            correctBGSimpleLabel.text = "\(bgSimpleJoined)"
+        }
+        else {
+            correctBGSimpleLabel.text = "n/a"
+        }
+        correctBGSimpleLabel.fontSize = 20
+        correctBGSimpleLabel.position = CGPoint(x: 194.438, y: -295.762)
+        correctBGSimpleLabel.zPosition = 10
+        correctBGSimpleLabel.fontColor = UIColor.black
+        self.addChild(correctBGSimpleLabel)
+        
+        // place list of bg line correct
+        let bgLineJoined = correctBGLine.joined(separator: ", ")
+        if correctBGLine.count > 0 {
+            correctBGLineLabel.text = "\(bgLineJoined)"
+        }
+        else {
+            correctBGLineLabel.text = "n/a"
+        }
+        correctBGLineLabel.fontSize = 20
+        correctBGLineLabel.position = CGPoint(x: 194.438, y: -324)
+        correctBGLineLabel.zPosition = 10
+        correctBGLineLabel.fontColor = UIColor.black
+        self.addChild(correctBGLineLabel)
+        
+        // place list of bg scene correct
+        let bgSceneJoined = correctBGScene.joined(separator: ", ")
+        if correctBGScene.count > 0 {
+            correctBGSceneLabel.text = "\(bgSceneJoined)"
+        }
+        else {
+            correctBGSceneLabel.text = "n/a"
+        }
+        correctBGSceneLabel.fontSize = 20
+        correctBGSceneLabel.position = CGPoint(x: 205.438, y: -351.505)
+        correctBGSceneLabel.zPosition = 10
+        correctBGSceneLabel.fontColor = UIColor.black
+        self.addChild(correctBGSceneLabel)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
