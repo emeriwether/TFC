@@ -118,6 +118,8 @@
 		06E34BC3203102800027CE82 /* CatScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E34BC2203102800027CE82 /* CatScene.swift */; };
 		06E34BC52031028E0027CE82 /* CatScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BC42031028E0027CE82 /* CatScene.sks */; };
 		06E34BCA203105870027CE82 /* cat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BC9203105870027CE82 /* cat.mp3 */; };
+		06E34BCD203106980027CE82 /* LionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E34BCC203106980027CE82 /* LionScene.swift */; };
+		06E34BCF203106A60027CE82 /* LionScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BCE203106A50027CE82 /* LionScene.sks */; };
 		0B22CE99202A9C9D00B14CCA /* DrinkScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B22CE98202A9C9D00B14CCA /* DrinkScene.swift */; };
 		0BCA0A99201BCC2100488E8E /* LampScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA0A8E201BCC2100488E8E /* LampScene.swift */; };
 		0BCA0A9A201BCC2100488E8E /* LampScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA0A8F201BCC2100488E8E /* LampScene.sks */; };
@@ -247,6 +249,8 @@
 		06E34BC2203102800027CE82 /* CatScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatScene.swift; sourceTree = "<group>"; };
 		06E34BC42031028E0027CE82 /* CatScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CatScene.sks; sourceTree = "<group>"; };
 		06E34BC9203105870027CE82 /* cat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cat.mp3; sourceTree = "<group>"; };
+		06E34BCC203106980027CE82 /* LionScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LionScene.swift; sourceTree = "<group>"; };
+		06E34BCE203106A50027CE82 /* LionScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LionScene.sks; sourceTree = "<group>"; };
 		0B22CE98202A9C9D00B14CCA /* DrinkScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkScene.swift; sourceTree = "<group>"; };
 		0BCA0A8E201BCC2100488E8E /* LampScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LampScene.swift; sourceTree = "<group>"; };
 		0BCA0A8F201BCC2100488E8E /* LampScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LampScene.sks; sourceTree = "<group>"; };
@@ -491,6 +495,7 @@
 				0643D699202E210B000FA53D /* RockScene */,
 				0BCA0A8D201BCC2100488E8E /* LampScene */,
 				06E34BC6203102940027CE82 /* CatScene */,
+				06E34BD0203106AC0027CE82 /* LionScene */,
 				0643D694202E1C01000FA53D /* DuckScene */,
 				06BD2F4D202BE71A00AC0A54 /* TrainScene */,
 				061F1BD82004885B00A05E8E /* CowScene */,
@@ -795,6 +800,15 @@
 			path = Cat;
 			sourceTree = "<group>";
 		};
+		06E34BD0203106AC0027CE82 /* LionScene */ = {
+			isa = PBXGroup;
+			children = (
+				06E34BCC203106980027CE82 /* LionScene.swift */,
+				06E34BCE203106A50027CE82 /* LionScene.sks */,
+			);
+			path = LionScene;
+			sourceTree = "<group>";
+		};
 		0B22CE97202A9C9D00B14CCA /* MonsterGame */ = {
 			isa = PBXGroup;
 			children = (
@@ -929,6 +943,7 @@
 				0643D698202E1F8C000FA53D /* RockScene.sks in Resources */,
 				06E34BCA203105870027CE82 /* cat.mp3 in Resources */,
 				060A6829202AA8BA005F7323 /* mouse.wav in Resources */,
+				06E34BCF203106A60027CE82 /* LionScene.sks in Resources */,
 				0643D68F202E133C000FA53D /* Now it's time to play some music touch the yellow key.wav in Resources */,
 				0643D68D202E133C000FA53D /* melody 4.wav in Resources */,
 				0643D68E202E133C000FA53D /* G.wav in Resources */,
@@ -1019,6 +1034,7 @@
 				06427F1F1FD9F8A0009C07ED /* PianoScene7.swift in Sources */,
 				06427F0F1FD9F876009C07ED /* PianoScene3.swift in Sources */,
 				06427F181FD9F88E009C07ED /* PianoScene5.swift in Sources */,
+				06E34BCD203106980027CE82 /* LionScene.swift in Sources */,
 				066DB6301FAE8F1500C68B36 /* GameViewController.swift in Sources */,
 				06427F131FD9F880009C07ED /* PianoScene4.swift in Sources */,
 				06427F3D1FDA0206009C07ED /* MouseScene.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  CatScene.swift
+//  LionScene.swift
 //  TimeForChildrenGame
 //
 //  Created by Eleanor Meriwether on 12/7/17.
@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class CatScene: SKScene {
+class LionScene: SKScene {
     // local variables to keep track of whether instructions are playing
     var instructionsComplete = false
     var reminderComplete = true
@@ -17,8 +17,8 @@ class CatScene: SKScene {
     var sceneOver = false
     
     // local variables to keep track of touches for this scene
-    var cat_incorrectTouches = 0
-    var cat_correctTouches = 0
+    var lion_incorrectTouches = 0
+    var lion_correctTouches = 0
     var totalTouches = 0
     
     override func didMove(to view: SKView) {
@@ -39,8 +39,8 @@ class CatScene: SKScene {
         // set up sequence for if the scene has not been touched for 10 seconds: play the idle reminder
         let reminderIfIdle = SKAction.run {
             self.reminderComplete = false
-            let cat_reminder = SKAction.playSoundFileNamed("instructions_hamburger", waitForCompletion: true)
-            self.run(cat_reminder, completion: { self.reminderComplete = true} )
+            let lion_reminder = SKAction.playSoundFileNamed("instructions_hamburger", waitForCompletion: true)
+            self.run(lion_reminder, completion: { self.reminderComplete = true} )
         }
         
         // for every one second, do this action:
@@ -71,72 +71,73 @@ class CatScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // local variable for cat sprite
-        let cat = self.childNode(withName: "cat_bw")
+        // local variable for lion sprite
+        let lion = self.childNode(withName: "lion_bw")
         
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false){
             let touch = touches.first!
             
-            //If cat sprite's alpha mask is touched...
-            if (physicsWorld.body(at: touch.location(in: self)) == cat?.physicsBody) && (sceneOver == false) {
+            //If lion sprite's alpha mask is touched...
+            if (physicsWorld.body(at: touch.location(in: self)) == lion?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
-                cat_correctTouches += 1
+                lion_correctTouches += 1
                 correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
-                if (cat_incorrectTouches == 0) {
+                if (lion_incorrectTouches == 0) {
                     numOfCorrectFirstTry += 1
                     numOfCorrectSimpleBG += 1
                     numOfCorrectSetSize3 += 1
                     
-                    correctFirstTriesArray.append("cat")
-                    correctTouchesArray.append("cat")
-                    correctSetSize3.append("cat")
-                    correctBGSimple.append("cat")
+                    correctFirstTriesArray.append("lion")
+                    correctTouchesArray.append("lion")
+                    correctSetSize3.append("lion")
+                    correctBGSimple.append("lion")
                 }
                 
-                // Change sprite to colored cat
-                let coloredcat:SKTexture = SKTexture(imageNamed: "catScene_cat_colored")
-                let changeToColored:SKAction = SKAction.animate(with: [coloredcat], timePerFrame: 0.0001)
-                cat!.run(changeToColored)
+                // Change sprite to colored lion
+                let coloredlion:SKTexture = SKTexture(imageNamed: "lionScene_lion_colored")
+                let changeToColored:SKAction = SKAction.animate(with: [coloredlion], timePerFrame: 0.0001)
+                lion!.run(changeToColored)
                 
-                //Variables for cat audio
+                //Variables for lion audio
                 let meow = SKAction.playSoundFileNamed("cat", waitForCompletion: true)
                 
                 //Run all actions
-                cat!.run(meow)
+                lion!.run(meow)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
                 let wait2 = SKAction.wait(forDuration: 2)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let lionScene = SKScene(fileNamed: "LionScene")
-                    lionScene?.scaleMode = SKSceneScaleMode.aspectFill
+                    let duckScene = SKScene(fileNamed: "DuckScene")
+                    duckScene?.scaleMode = SKSceneScaleMode.aspectFill
                     self.scene!.view?.presentScene(duckScene!)
                 }
             }
             else {
-                cat_incorrectTouches += 1
+                lion_incorrectTouches += 1
                 incorrectTouches += 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)
-                cat?.run(wrong)
+                lion?.run(wrong)
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly
-            if (cat_incorrectTouches % 3 == 0) && cat_correctTouches < 1 {
+            if (lion_incorrectTouches % 3 == 0) && lion_correctTouches < 1 {
                 reminderComplete = false
-                let cat_reminder = SKAction.playSoundFileNamed("instructions_hamburger", waitForCompletion: true)
-                run(cat_reminder, completion: { self.reminderComplete = true} )
+                let lion_reminder = SKAction.playSoundFileNamed("instructions_hamburger", waitForCompletion: true)
+                run(lion_reminder, completion: { self.reminderComplete = true} )
             }
         }
         // update totalTouches variable for idle reminder
-        totalTouches = cat_correctTouches + cat_incorrectTouches
+        totalTouches = lion_correctTouches + lion_incorrectTouches
     }
 }
+
 
 
 
