@@ -39,7 +39,7 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
-		<string></string>
+		<string>CooperBlack</string>
 		<string>Calibri.ttf</string>
 	</array>
 </dict>

@@ -101,6 +101,7 @@
 		066DB6301FAE8F1500C68B36 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066DB62F1FAE8F1500C68B36 /* GameViewController.swift */; };
 		066DB6331FAE8F1500C68B36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 066DB6311FAE8F1500C68B36 /* Main.storyboard */; };
 		066DB6381FAE8F1500C68B36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 066DB6361FAE8F1500C68B36 /* LaunchScreen.storyboard */; };
+		06884BB12030BCA4009C6E1D /* CooperBlack in Resources */ = {isa = PBXBuildFile; fileRef = 06884BB02030BCA4009C6E1D /* CooperBlack */; };
 		069DE7C420045B0100465399 /* SpoonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069DE7C320045B0100465399 /* SpoonScene.swift */; };
 		069DE7C620045B0F00465399 /* SpoonScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 069DE7C520045B0F00465399 /* SpoonScene.sks */; };
 		06B3C6E51FBCD46C00252DB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06B3C6E41FBCD46C00252DB6 /* Assets.xcassets */; };
@@ -224,6 +225,7 @@
 		066DB6321FAE8F1500C68B36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		066DB6371FAE8F1500C68B36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		066DB6391FAE8F1500C68B36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06884BB02030BCA4009C6E1D /* CooperBlack */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CooperBlack; sourceTree = "<group>"; };
 		069DE7C320045B0100465399 /* SpoonScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoonScene.swift; sourceTree = "<group>"; };
 		069DE7C520045B0F00465399 /* SpoonScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SpoonScene.sks; sourceTree = "<group>"; };
 		06B3C6E41FBCD46C00252DB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 		0630356D202FD0850003CAE9 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				06884BB02030BCA4009C6E1D /* CooperBlack */,
 				0630356C202FD0810003CAE9 /* Calibri.ttf */,
 			);
 			path = Fonts;
@@ -904,6 +907,7 @@
 				060A6837202AA966005F7323 /* reminder_trash.wav in Resources */,
 				060A67FE202AA123005F7323 /* find the giraffe.wav in Resources */,
 				06427F1B1FD9F898009C07ED /* PianoScene6.sks in Resources */,
+				06884BB12030BCA4009C6E1D /* CooperBlack in Resources */,
 				06427F141FD9F880009C07ED /* PianoScene4.sks in Resources */,
 				0BCA0A9C201BCC2100488E8E /* Trainer_Bread.sks in Resources */,
 				06427F0C1FD9F868009C07ED /* PianoScene2.sks in Resources */,
