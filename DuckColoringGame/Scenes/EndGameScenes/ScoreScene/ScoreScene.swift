@@ -34,57 +34,57 @@ class ScoreScene: SKScene {
     override func didMove(to view: SKView) {
         
         // place correct first try screens  
-        correctFirstTryLabel.text = "Number of screens with correct first try: \(numOfCorrectFirstTry) /16"
+        correctFirstTryLabel.text = "\(numOfCorrectFirstTry) /16"
         correctFirstTryLabel.fontSize = 20
-        correctFirstTryLabel.position = CGPoint(x: -480, y: -200)
+        correctFirstTryLabel.position = CGPoint(x: 12, y: 332.037)
         self.addChild(correctFirstTryLabel)
-        
-        // place incorrect score on screen
-        incorrectScoreLabel.text = "Total incorrect touches: \(incorrectTouches)"
-        incorrectScoreLabel.fontSize = 20
-        incorrectScoreLabel.position = CGPoint(x: -480, y: -240)
-        self.addChild(incorrectScoreLabel)
-        
+
         // place correct score on screen
-        correctScoreLabel.text = "Total correct touches: \(correctTouches) /16"
+        correctScoreLabel.text = "\(correctTouches) /16"
         correctScoreLabel.fontSize = 20
-        correctScoreLabel.position = CGPoint(x: -480, y: -280)
+        correctScoreLabel.position = CGPoint(x: -124.047, y: 305)
         self.addChild(correctScoreLabel)
         
+        // place incorrect score on screen
+        incorrectScoreLabel.text = "\(incorrectTouches)"
+        incorrectScoreLabel.fontSize = 20
+        incorrectScoreLabel.position = CGPoint(x: -91.999, y: 280.113)
+        self.addChild(incorrectScoreLabel)
+        
         // place correct score in set size 2 on screen
-        setSize2Label.text = "Total correct touches in set size 2: \(numOfCorrectSetSize2) /6"
+        setSize2Label.text = "\(numOfCorrectSetSize2) /6"
         setSize2Label.fontSize = 20
-        setSize2Label.position = CGPoint(x: -480, y: -320)
+        setSize2Label.position = CGPoint(x: -320, y: 161)
         self.addChild(setSize2Label)
         
         // place correct score in set size 3 on screen
-        setSize3Label.text = "Total correct touches in set size 3: \(numOfCorrectSetSize3) /4"
+        setSize3Label.text = "\(numOfCorrectSetSize3) /4"
         setSize3Label.fontSize = 20
-        setSize3Label.position = CGPoint(x: -480, y: -360)
+        setSize3Label.position = CGPoint(x: -320, y: 136)
         self.addChild(setSize3Label)
 
         // place correct score in set size 4 on screen
-        setSize4Label.text = "Total correct touches in set size 4: \(numOfCorrectSetSize4) /4"
+        setSize4Label.text = "\(numOfCorrectSetSize4) /4"
         setSize4Label.fontSize = 20
-        setSize4Label.position = CGPoint(x: -480, y: -400)
+        setSize4Label.position = CGPoint(x: -320, y: 108.545)
         self.addChild(setSize4Label)
         
         // place correct score in simple bg type
-        simpleBGLabel.text = "Total correct touches in simple bg type: \(numOfCorrectSimpleBG) /2"
+        simpleBGLabel.text = "\(numOfCorrectSimpleBG) /2"
         simpleBGLabel.fontSize = 20
-        simpleBGLabel.position = CGPoint(x: 160, y: -200)
+        simpleBGLabel.position = CGPoint(x: 196.013, y: 161)
         self.addChild(simpleBGLabel)
         
         // place correct score in line bg type
-        lineBGLabel.text = "Total correct touches in line bg type: \(numOfCorrectLineBG) /4"
+        lineBGLabel.text = "\(numOfCorrectLineBG) /4"
         lineBGLabel.fontSize = 20
-        lineBGLabel.position = CGPoint(x: 160, y: -240)
+        lineBGLabel.position = CGPoint(x: 196.013, y: 132.553)
         self.addChild(lineBGLabel)
         
         // place correct score in scene bg type
-        sceneBGLabel.text = "Total correct touches in scene bg type: \(numOfCorrectSceneBG) /4"
+        sceneBGLabel.text = "\(numOfCorrectSceneBG) /4"
         sceneBGLabel.fontSize = 20
-        sceneBGLabel.position = CGPoint(x: 160, y: -280)
+        sceneBGLabel.position = CGPoint(x: 196.013, y: 107.541)
         self.addChild(sceneBGLabel)
     }
     
