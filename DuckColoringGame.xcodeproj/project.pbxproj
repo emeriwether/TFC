@@ -113,9 +113,9 @@
 		06C819DE202F6D15002F838E /* AllDoneScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C819DD202F6D15002F838E /* AllDoneScene.swift */; };
 		06C819E0202F6D21002F838E /* AllDoneScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06C819DF202F6D21002F838E /* AllDoneScene.sks */; };
 		06C90F6420310BB600F318AD /* lion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F6320310BB600F318AD /* lion.wav */; };
-		06C90F6620310D6900F318AD /* hand.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F6520310D6900F318AD /* hand.wav */; };
 		06C90F6920310DC600F318AD /* HandScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C90F6820310DC600F318AD /* HandScene.swift */; };
 		06C90F6B20310DD200F318AD /* HandScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F6A20310DD200F318AD /* HandScene.sks */; };
+		06C90F6E20310FC800F318AD /* hand.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F6D20310FC700F318AD /* hand.wav */; };
 		06E34BB82030F7400027CE82 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BB72030F7400027CE82 /* correct.mp3 */; };
 		06E34BBA2030F8490027CE82 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BB92030F8490027CE82 /* wrong.wav */; };
 		06E34BC12030FB420027CE82 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BC02030FB420027CE82 /* correct.mp3 */; };
@@ -248,9 +248,9 @@
 		06C819DD202F6D15002F838E /* AllDoneScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDoneScene.swift; sourceTree = "<group>"; };
 		06C819DF202F6D21002F838E /* AllDoneScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AllDoneScene.sks; sourceTree = "<group>"; };
 		06C90F6320310BB600F318AD /* lion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lion.wav; sourceTree = "<group>"; };
-		06C90F6520310D6900F318AD /* hand.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hand.wav; sourceTree = "<group>"; };
 		06C90F6820310DC600F318AD /* HandScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandScene.swift; sourceTree = "<group>"; };
 		06C90F6A20310DD200F318AD /* HandScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HandScene.sks; sourceTree = "<group>"; };
+		06C90F6D20310FC700F318AD /* hand.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hand.wav; sourceTree = "<group>"; };
 		06E34BB72030F7400027CE82 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
 		06E34BB92030F8490027CE82 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrong.wav; sourceTree = "<group>"; };
 		06E34BC02030FB420027CE82 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
@@ -781,7 +781,7 @@
 		06C90F6720310D7100F318AD /* Hand */ = {
 			isa = PBXGroup;
 			children = (
-				06C90F6520310D6900F318AD /* hand.wav */,
+				06C90F6D20310FC700F318AD /* hand.wav */,
 			);
 			path = Hand;
 			sourceTree = "<group>";
@@ -1027,7 +1027,6 @@
 				06427EFC1FD9F421009C07ED /* PianoScene1.sks in Resources */,
 				06C90F6420310BB600F318AD /* lion.wav in Resources */,
 				060A6811202AA81D005F7323 /* reminder_cookie.wav in Resources */,
-				06C90F6620310D6900F318AD /* hand.wav in Resources */,
 				0643D681202E131D000FA53D /* B.wav in Resources */,
 				0BCA0AAA201BCE0000488E8E /* Monster_T3.sks in Resources */,
 				060A681E202AA895005F7323 /* instructions_boots.wav in Resources */,
@@ -1052,6 +1051,7 @@
 				06E34BC52031028E0027CE82 /* CatScene.sks in Resources */,
 				06B3C6E51FBCD46C00252DB6 /* Assets.xcassets in Resources */,
 				060A682A202AA8BA005F7323 /* reminder_mouse.wav in Resources */,
+				06C90F6E20310FC800F318AD /* hand.wav in Resources */,
 				0643D68A202E133C000FA53D /* melody 2.wav in Resources */,
 				060A67F5202AA123005F7323 /* find the cat.wav in Resources */,
 				06427F241FD9F8AD009C07ED /* PianoScene8.sks in Resources */,
