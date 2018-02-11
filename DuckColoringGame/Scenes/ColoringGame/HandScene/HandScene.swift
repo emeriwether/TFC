@@ -1,5 +1,5 @@
 //
-//  LionScene.swift
+//  HandScene.swift
 //  TimeForChildrenGame
 //
 //  Created by Eleanor Meriwether on 12/7/17.
@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class LionScene: SKScene {
+class HandScene: SKScene {
     // local variables to keep track of whether instructions are playing
     var instructionsComplete = false
     var reminderComplete = true
@@ -17,8 +17,8 @@ class LionScene: SKScene {
     var sceneOver = false
     
     // local variables to keep track of touches for this scene
-    var lion_incorrectTouches = 0
-    var lion_correctTouches = 0
+    var hand_incorrectTouches = 0
+    var hand_correctTouches = 0
     var totalTouches = 0
     
     override func didMove(to view: SKView) {
@@ -39,8 +39,8 @@ class LionScene: SKScene {
         // set up sequence for if the scene has not been touched for 10 seconds: play the idle reminder
         let reminderIfIdle = SKAction.run {
             self.reminderComplete = false
-            let lion_reminder = SKAction.playSoundFileNamed("instructions_hamburger", waitForCompletion: true)
-            self.run(lion_reminder, completion: { self.reminderComplete = true} )
+            let hand_reminder = SKAction.playSoundFileNamed("instructions_hamburger", waitForCompletion: true)
+            self.run(hand_reminder, completion: { self.reminderComplete = true} )
         }
         
         // for every one second, do this action:
@@ -71,72 +71,73 @@ class LionScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // local variable for lion sprite
-        let lion = self.childNode(withName: "lion_bw")
+        // local variable for hand sprite
+        let hand = self.childNode(withName: "hand_bw")
         
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false){
             let touch = touches.first!
             
-            //If lion sprite's alpha mask is touched...
-            if (physicsWorld.body(at: touch.location(in: self)) == lion?.physicsBody) && (sceneOver == false) {
+            //If hand sprite's alpha mask is touched...
+            if (physicsWorld.body(at: touch.location(in: self)) == hand?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
-                lion_correctTouches += 1
+                hand_correctTouches += 1
                 correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
-                if (lion_incorrectTouches == 0) {
+                if (hand_incorrectTouches == 0) {
                     numOfCorrectFirstTry += 1
                     numOfCorrectSimpleBG += 1
-                    numOfCorrectSetSize3 += 1
+                    numOfCorrectSetSize4 += 1
                     
-                    correctFirstTriesArray.append("lion")
-                    correctTouchesArray.append("lion")
-                    correctSetSize3.append("lion")
-                    correctBGSimple.append("lion")
+                    correctFirstTriesArray.append("hand")
+                    correctTouchesArray.append("hand")
+                    correctSetSize4.append("hand")
+                    correctBGSimple.append("hand")
                 }
                 
-                // Change sprite to colored lion
-                let coloredlion:SKTexture = SKTexture(imageNamed: "lionScene_lion_colored")
-                let changeToColored:SKAction = SKAction.animate(with: [coloredlion], timePerFrame: 0.0001)
-                lion!.run(changeToColored)
+                // Change sprite to colored hand
+                let coloredhand:SKTexture = SKTexture(imageNamed: "handScene_hand_colored")
+                let changeToColored:SKAction = SKAction.animate(with: [coloredhand], timePerFrame: 0.0001)
+                hand!.run(changeToColored)
                 
-                //Variables for lion audio
-                let roar = SKAction.playSoundFileNamed("lion", waitForCompletion: true)
+                //Variables for hand audio
+                let clap = SKAction.playSoundFileNamed("hand", waitForCompletion: true)
                 
                 //Run all actions
-                lion!.run(roar)
+                hand!.run(clap)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
                 let wait2 = SKAction.wait(forDuration: 2)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let handScene = SKScene(fileNamed: "HandScene")
-                    handScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(handScene!)
+                    let duckScene = SKScene(fileNamed: "DuckScene")
+                    duckScene?.scaleMode = SKSceneScaleMode.aspectFill
+                    self.scene!.view?.presentScene(duckScene!)
                 }
             }
             else {
-                lion_incorrectTouches += 1
+                hand_incorrectTouches += 1
                 incorrectTouches += 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)
-                lion?.run(wrong)
+                hand?.run(wrong)
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly
-            if (lion_incorrectTouches % 3 == 0) && lion_correctTouches < 1 {
+            if (hand_incorrectTouches % 3 == 0) && hand_correctTouches < 1 {
                 reminderComplete = false
-                let lion_reminder = SKAction.playSoundFileNamed("instructions_hamburger", waitForCompletion: true)
-                run(lion_reminder, completion: { self.reminderComplete = true} )
+                let hand_reminder = SKAction.playSoundFileNamed("instructions_hamburger", waitForCompletion: true)
+                run(hand_reminder, completion: { self.reminderComplete = true} )
             }
         }
         // update totalTouches variable for idle reminder
-        totalTouches = lion_correctTouches + lion_incorrectTouches
+        totalTouches = hand_correctTouches + hand_incorrectTouches
     }
 }
+
 
 
 
