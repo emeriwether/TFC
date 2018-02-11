@@ -89,6 +89,9 @@ class CakeScene: SKScene {
                     numOfCorrectFirstTry += 1
                     numOfCorrectSceneBG += 1
                     numOfCorrectSetSize2 += 1
+                    
+                    correctFirstTriesArray.append("cake")
+                    correctTouchesArray.append("cake")
                     correctSetSize2.append("cake")
                     correctBGScene.append("cake")
                 }

@@ -39,6 +39,16 @@ class AllDoneScene: SKScene {
             incorrectTouches = 0
             correctTouches = 0
             
+            correctFirstTriesArray.removeAll()
+            correctTouchesArray.removeAll()
+            numIncorrectPerScene.removeAll()
+            correctSetSize2.removeAll()
+            correctSetSize3.removeAll()
+            correctSetSize4.removeAll()
+            correctBGSimple.removeAll()
+            correctBGLine.removeAll()
+            correctBGScene.removeAll()
+            
             // transition scene back to start
             let startScene = SKScene(fileNamed: "StartScene")
             startScene?.scaleMode = SKSceneScaleMode.aspectFill

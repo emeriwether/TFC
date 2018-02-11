@@ -89,6 +89,9 @@ class AirplaneScene: SKScene {
                     numOfCorrectFirstTry += 1
                     numOfCorrectLineBG += 1
                     numOfCorrectSetSize4 += 1
+                    
+                    correctFirstTriesArray.append("airplane")
+                    correctTouchesArray.append("airplane")
                     correctSetSize4.append("airplane")
                     correctBGLine.append("airplane")
                 }

@@ -89,6 +89,9 @@ class SlideScene: SKScene {
                     numOfCorrectFirstTry += 1
                     numOfCorrectSceneBG += 1
                     numOfCorrectSetSize2 += 1
+                    
+                    correctFirstTriesArray.append("slide")
+                    correctTouchesArray.append("slide")
                     correctSetSize2.append("slide")
                     correctBGScene.append("slide")
                 }

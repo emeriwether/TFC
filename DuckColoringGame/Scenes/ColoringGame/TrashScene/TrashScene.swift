@@ -89,6 +89,9 @@ class TrashScene: SKScene {
                     numOfCorrectFirstTry += 1
                     numOfCorrectLineBG += 1
                     numOfCorrectSetSize3 += 1
+                    
+                    correctFirstTriesArray.append("trash")
+                    correctTouchesArray.append("trash")
                     correctSetSize3.append("trash")
                     correctBGLine.append("trash")
                 }

@@ -174,6 +174,7 @@
 		062D7D4C1FD125FB00575A5B /* AirplaneScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirplaneScene.swift; sourceTree = "<group>"; };
 		06303567202F92E90003CAE9 /* PasswordScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordScene.swift; sourceTree = "<group>"; };
 		06303569202F93020003CAE9 /* PasswordScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PasswordScene.sks; sourceTree = "<group>"; };
+		0630356C202FD0810003CAE9 /* Calibri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Calibri.ttf; sourceTree = "<group>"; };
 		06427EFA1FD9F421009C07ED /* PianoScene1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PianoScene1.sks; sourceTree = "<group>"; };
 		06427EFB1FD9F421009C07ED /* PianoScene1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoScene1.swift; sourceTree = "<group>"; };
 		06427F091FD9F867009C07ED /* PianoScene2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoScene2.swift; sourceTree = "<group>"; };
@@ -451,6 +452,14 @@
 			path = PasswordScene;
 			sourceTree = "<group>";
 		};
+		0630356D202FD0850003CAE9 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0630356C202FD0810003CAE9 /* Calibri.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		06427EFE1FD9F43B009C07ED /* Scene1 */ = {
 			isa = PBXGroup;
 			children = (
@@ -676,6 +685,7 @@
 				066DB6311FAE8F1500C68B36 /* Main.storyboard */,
 				06BD2F3C202BC37E00AC0A54 /* Scenes */,
 				0657C65F1FC1F7F3002FC12D /* Audio */,
+				0630356D202FD0850003CAE9 /* Fonts */,
 				06B3C6E41FBCD46C00252DB6 /* Assets.xcassets */,
 				066DB6361FAE8F1500C68B36 /* LaunchScreen.storyboard */,
 				066DB6391FAE8F1500C68B36 /* Info.plist */,

@@ -89,6 +89,9 @@ class SpoonScene: SKScene {
                     numOfCorrectFirstTry += 1
                     numOfCorrectSceneBG += 1
                     numOfCorrectSetSize3 += 1
+                    
+                    correctFirstTriesArray.append("spoon")
+                    correctTouchesArray.append("spoon")
                     correctSetSize3.append("spoon")
                     correctBGScene.append("spoon")
                 }

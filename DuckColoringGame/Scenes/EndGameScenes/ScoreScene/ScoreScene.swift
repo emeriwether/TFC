@@ -40,6 +40,16 @@ class ScoreScene: SKScene {
     let simpleBGLabel = SKLabelNode(fontNamed: "Calibri")
     let lineBGLabel = SKLabelNode(fontNamed: "Calibri")
     let sceneBGLabel = SKLabelNode(fontNamed: "Calibri")
+    
+    let correctFirstTriesArrayLabel = SKLabelNode(fontNamed:"Calibri")
+    let correctTouchesArrayLabel = SKLabelNode(fontNamed: "Calibri")
+    let numIncorrectPerSceneLabel = SKLabelNode(fontNamed: "Calibri")
+    let correctSetSize2Label = SKLabelNode(fontNamed: "Calibri")
+    let correctSetSize3Label = SKLabelNode(fontNamed: "Calibri")
+    let correctSetSize4Label = SKLabelNode(fontNamed: "Calibri")
+    let correctBGSimpleLabel = SKLabelNode(fontNamed: "Calibri")
+    let correctBGLineLabel = SKLabelNode(fontNamed: "Calibri")
+    let correctBGSceneLabel = SKLabelNode(fontNamed: "Calibri")
 
     override func didMove(to view: SKView) {
         
@@ -54,7 +64,7 @@ class ScoreScene: SKScene {
         // place correct score on screen
         correctScoreLabel.text = " \(correctTouches) / 16"
         correctScoreLabel.fontSize = 20
-        correctScoreLabel.position = CGPoint(x: -127.047, y: 305)
+        correctScoreLabel.position = CGPoint(x: -125.047, y: 305)
         correctScoreLabel.zPosition = 10
         correctScoreLabel.fontColor = UIColor.black
         self.addChild(correctScoreLabel)
@@ -62,31 +72,31 @@ class ScoreScene: SKScene {
         // place incorrect score on screen
         incorrectScoreLabel.text = " \(incorrectTouches)"
         incorrectScoreLabel.fontSize = 20
-        incorrectScoreLabel.position = CGPoint(x: -90.999, y: 280.113)
+        incorrectScoreLabel.position = CGPoint(x: -93.999, y: 280.113)
         incorrectScoreLabel.zPosition = 10
         incorrectScoreLabel.fontColor = UIColor.black
         self.addChild(incorrectScoreLabel)
         
         // place correct score in set size 2 on screen
-        setSize2Label.text = " \(numOfCorrectSetSize2) / 6"
+        setSize2Label.text = "  \(numOfCorrectSetSize2) / 6"
         setSize2Label.fontSize = 20
-        setSize2Label.position = CGPoint(x: -320, y: 161)
+        setSize2Label.position = CGPoint(x: -318, y: 161)
         setSize2Label.zPosition = 10
         setSize2Label.fontColor = UIColor.black
         self.addChild(setSize2Label)
         
         // place correct score in set size 3 on screen
-        setSize3Label.text = " \(numOfCorrectSetSize3) / 4"
+        setSize3Label.text = "  \(numOfCorrectSetSize3) / 4"
         setSize3Label.fontSize = 20
-        setSize3Label.position = CGPoint(x: -320, y: 136)
+        setSize3Label.position = CGPoint(x: -318, y: 136)
         setSize3Label.zPosition = 10
         setSize3Label.fontColor = UIColor.black
         self.addChild(setSize3Label)
 
         // place correct score in set size 4 on screen
-        setSize4Label.text = " \(numOfCorrectSetSize4) / 4"
+        setSize4Label.text = "  \(numOfCorrectSetSize4) / 4"
         setSize4Label.fontSize = 20
-        setSize4Label.position = CGPoint(x: -320, y: 108.545)
+        setSize4Label.position = CGPoint(x: -318, y: 108.545)
         setSize4Label.zPosition = 10
         setSize4Label.fontColor = UIColor.black
         self.addChild(setSize4Label)
@@ -114,6 +124,20 @@ class ScoreScene: SKScene {
         sceneBGLabel.zPosition = 10
         sceneBGLabel.fontColor = UIColor.black
         self.addChild(sceneBGLabel)
+        
+        // place list of scenes with correct first time
+        let correctFTjoined = correctFirstTriesArray.joined(separator: ", ")
+        if correctFirstTriesArray.count > 0 {
+            correctFirstTriesArrayLabel.text = "\(correctFTjoined)"
+        }
+        else {
+            correctFirstTriesArrayLabel.text = "n/a"
+        }
+        correctFirstTriesArrayLabel.fontSize = 20
+        correctFirstTriesArrayLabel.position = CGPoint(x: -60.999, y: -129.757)
+        correctFirstTriesArrayLabel.zPosition = 10
+        correctFirstTriesArrayLabel.fontColor = UIColor.black
+        self.addChild(correctFirstTriesArrayLabel)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -135,6 +159,16 @@ class ScoreScene: SKScene {
             numOfCorrectSceneBG = 0
             incorrectTouches = 0
             correctTouches = 0
+            
+            correctFirstTriesArray.removeAll()
+            correctTouchesArray.removeAll()
+            numIncorrectPerScene.removeAll()
+            correctSetSize2.removeAll()
+            correctSetSize3.removeAll()
+            correctSetSize4.removeAll()
+            correctBGSimple.removeAll()
+            correctBGLine.removeAll()
+            correctBGScene.removeAll()
             
             // transition scene back to start
             let startScene = SKScene(fileNamed: "StartScene")

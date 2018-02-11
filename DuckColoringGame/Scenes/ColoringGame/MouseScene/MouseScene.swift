@@ -90,6 +90,9 @@ class MouseScene: SKScene {
                     numOfCorrectFirstTry += 1
                     numOfCorrectSceneBG += 1
                     numOfCorrectSetSize4 += 1
+                    
+                    correctFirstTriesArray.append("mouse")
+                    correctTouchesArray.append("mouse")
                     correctSetSize3.append("mouse")
                     correctBGScene.append("mouse")
                 }

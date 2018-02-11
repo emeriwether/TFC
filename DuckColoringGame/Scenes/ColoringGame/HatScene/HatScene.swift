@@ -89,6 +89,9 @@ class HatScene: SKScene {
                     numOfCorrectFirstTry += 1
                     numOfCorrectSceneBG += 1
                     numOfCorrectSetSize3 += 1
+                    
+                    correctFirstTriesArray.append("hat")
+                    correctTouchesArray.append("hat")
                     correctSetSize3.append("hat")
                     correctBGScene.append("hat")
                 }

@@ -89,6 +89,9 @@ class CookieScene: SKScene {
                     numOfCorrectFirstTry += 1
                     numOfCorrectSceneBG += 1
                     numOfCorrectSetSize4 += 1
+                    
+                    correctFirstTriesArray.append("cookie")
+                    correctTouchesArray.append("cookie")
                     correctSetSize4.append("cookie")
                     correctBGScene.append("cookie")
                 }
