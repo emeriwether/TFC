@@ -1,5 +1,5 @@
 //
-//  HamburgerScene.swift
+//  LampScene.swift
 //  TimeForChildrenGame
 //
 //  Created by Eleanor Meriwether on 12/7/17.
@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class HamburgerScene: SKScene {
+class LampScene: SKScene {
     // local variables to keep track of whether instructions are playing
     var instructionsComplete = false
     var reminderComplete = true
@@ -17,8 +17,8 @@ class HamburgerScene: SKScene {
     var sceneOver = false
     
     // local variables to keep track of touches for this scene
-    var hamburger_incorrectTouches = 0
-    var hamburger_correctTouches = 0
+    var lamp_incorrectTouches = 0
+    var lamp_correctTouches = 0
     var totalTouches = 0
     
     override func didMove(to view: SKView) {
@@ -39,8 +39,8 @@ class HamburgerScene: SKScene {
         // set up sequence for if the scene has not been touched for 10 seconds: play the idle reminder
         let reminderIfIdle = SKAction.run {
             self.reminderComplete = false
-            let hamburger_reminder = SKAction.playSoundFileNamed("instructions_hamburger", waitForCompletion: true)
-            self.run(hamburger_reminder, completion: { self.reminderComplete = true} )
+            let lamp_reminder = SKAction.playSoundFileNamed("instructions_hamburger", waitForCompletion: true)
+            self.run(lamp_reminder, completion: { self.reminderComplete = true} )
         }
         
         // for every one second, do this action:
@@ -71,44 +71,41 @@ class HamburgerScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // local variable for hamburger sprite
-        let hamburger = self.childNode(withName: "hamburger_bw")
+        // local variable for lamp sprite
+        let lamp = self.childNode(withName: "lamp_bw")
         
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false){
             let touch = touches.first!
             
-            //If hamburger sprite's alpha mask is touched...
-            if (physicsWorld.body(at: touch.location(in: self)) == hamburger?.physicsBody) && (sceneOver == false) {
+            //If lamp sprite's alpha mask is touched...
+            if (physicsWorld.body(at: touch.location(in: self)) == lamp?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
-                hamburger_correctTouches += 1
+                lamp_correctTouches += 1
                 correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
-                if (hamburger_incorrectTouches == 0) {
+                if (lamp_incorrectTouches == 0) {
                     numOfCorrectFirstTry += 1
                     numOfCorrectSimpleBG += 1
                     numOfCorrectSetSize2 += 1
                     
-                    correctFirstTriesArray.append("hamburger")
-                    correctTouchesArray.append("hamburger")
-                    correctSetSize2.append("hamburger")
-                    correctBGSimple.append("hamburger")
+                    correctFirstTriesArray.append("lamp")
+                    correctTouchesArray.append("lamp")
+                    correctSetSize2.append("lamp")
+                    correctBGSimple.append("lamp")
                 }
                 
-                // Change sprite to colored hamburger
-                let coloredhamburger:SKTexture = SKTexture(imageNamed: "hamburgerScene_hamburger_colored")
-                let changeToColored:SKAction = SKAction.animate(with: [coloredhamburger], timePerFrame: 0.0001)
-                hamburger!.run(changeToColored)
+                // Change sprite to colored lamp
+                let coloredlamp:SKTexture = SKTexture(imageNamed: "lampScene_lamp_colored")
+                let changeToColored:SKAction = SKAction.animate(with: [coloredlamp], timePerFrame: 0.0001)
+                lamp!.run(changeToColored)
                 
-                //Variables for hamburger audio
-                let western = SKAction.playSoundFileNamed("quack", waitForCompletion: true)
-                //Variables for move animation
-                let move = SKAction.moveTo(x: 900, duration: 3.0)
+                //Variables for lamp audio
+                let correct = SKAction.playSoundFileNamed("correct", waitForCompletion: true)
                 
                 //Run all actions
-                hamburger!.run(western)
-                hamburger!.run(move)
+                lamp!.run(correct)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
@@ -121,19 +118,23 @@ class HamburgerScene: SKScene {
                 }
             }
             else {
-                hamburger_incorrectTouches += 1
+                lamp_incorrectTouches += 1
                 incorrectTouches += 1
+                
+                // Play wrong noise
+                let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)
+                rock?.run(wrong)
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly
-            if (hamburger_incorrectTouches % 3 == 0) && hamburger_correctTouches < 1 {
+            if (lamp_incorrectTouches % 3 == 0) && lamp_correctTouches < 1 {
                 reminderComplete = false
-                let hamburger_reminder = SKAction.playSoundFileNamed("instructions_hamburger", waitForCompletion: true)
-                run(hamburger_reminder, completion: { self.reminderComplete = true} )
+                let lamp_reminder = SKAction.playSoundFileNamed("instructions_hamburger", waitForCompletion: true)
+                run(lamp_reminder, completion: { self.reminderComplete = true} )
             }
         }
         // update totalTouches variable for idle reminder
-        totalTouches = hamburger_correctTouches + hamburger_incorrectTouches
+        totalTouches = lamp_correctTouches + lamp_incorrectTouches
     }
 }
 

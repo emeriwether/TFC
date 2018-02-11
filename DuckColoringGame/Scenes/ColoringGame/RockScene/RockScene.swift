@@ -101,23 +101,20 @@ class RockScene: SKScene {
                 let changeToColored:SKAction = SKAction.animate(with: [coloredrock], timePerFrame: 0.0001)
                 rock!.run(changeToColored)
                 
-                //Variables for rock audio
-                let western = SKAction.playSoundFileNamed("quack", waitForCompletion: true)
-                //Variables for move animation
-                let move = SKAction.moveTo(x: 900, duration: 3.0)
+                //Variables for correct audio
+                let correct = SKAction.playSoundFileNamed("correct", waitForCompletion: true)
                 
                 //Run all actions
-                rock!.run(western)
-                rock!.run(move)
+                rock!.run(correct)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
                 let wait2 = SKAction.wait(forDuration: 2)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let hamburgerScene = SKScene(fileNamed: "HamburgerScene")
-                    hamburgerScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(hamburgerScene!)
+                    let lampScene = SKScene(fileNamed: "LampScene")
+                    lampScene?.scaleMode = SKSceneScaleMode.aspectFill
+                    self.scene!.view?.presentScene(lampScene!)
                 }
             }
             else {
