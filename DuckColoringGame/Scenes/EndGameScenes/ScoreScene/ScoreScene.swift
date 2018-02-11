@@ -148,7 +148,7 @@ class ScoreScene: SKScene {
             correctTouchesArrayLabel.text = "n/a"
         }
         correctTouchesArrayLabel.fontSize = 20
-        correctTouchesArrayLabel.position = CGPoint(x: -210, y: -157)
+        correctTouchesArrayLabel.position = CGPoint(x: -182, y: -157)
         correctTouchesArrayLabel.zPosition = 10
         correctTouchesArrayLabel.fontColor = UIColor.black
         self.addChild(correctTouchesArrayLabel)
@@ -232,7 +232,7 @@ class ScoreScene: SKScene {
             correctBGSceneLabel.text = "n/a"
         }
         correctBGSceneLabel.fontSize = 20
-        correctBGSceneLabel.position = CGPoint(x: 205.438, y: -351.505)
+        correctBGSceneLabel.position = CGPoint(x: 228.438, y: -350.5)
         correctBGSceneLabel.zPosition = 10
         correctBGSceneLabel.fontColor = UIColor.black
         self.addChild(correctBGSceneLabel)

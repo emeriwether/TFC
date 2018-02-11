@@ -34,7 +34,7 @@ class StartScene: SKScene {
         
         // if the start color button is touched, move to egg trainer scene
         if startColor.contains(touch.location(in: self)) {
-            let colorTrainer1 = SKScene(fileNamed: "CookieScene")
+            let colorTrainer1 = SKScene(fileNamed: "Trainer_Egg")
             colorTrainer1?.scaleMode = SKSceneScaleMode.aspectFill
             self.scene!.view?.presentScene(colorTrainer1!, transition: fade)
         }
