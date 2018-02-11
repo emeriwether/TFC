@@ -21,70 +21,88 @@ var correctTouches = 0
 
 class ScoreScene: SKScene {
     // local variables
-    let correctFirstTryLabel = SKLabelNode(fontNamed:"Arial")
-    let incorrectScoreLabel = SKLabelNode(fontNamed: "Arial")
-    let correctScoreLabel = SKLabelNode(fontNamed: "Arial")
-    let setSize2Label = SKLabelNode(fontNamed: "Arial")
-    let setSize3Label = SKLabelNode(fontNamed: "Arial")
-    let setSize4Label = SKLabelNode(fontNamed: "Arial")
-    let simpleBGLabel = SKLabelNode(fontNamed: "Arial")
-    let lineBGLabel = SKLabelNode(fontNamed: "Arial")
-    let sceneBGLabel = SKLabelNode(fontNamed: "Arial")
+    let correctFirstTryLabel = SKLabelNode(fontNamed:"Calibri")
+    let incorrectScoreLabel = SKLabelNode(fontNamed: "Calibri")
+    let correctScoreLabel = SKLabelNode(fontNamed: "Calibri")
+    let setSize2Label = SKLabelNode(fontNamed: "Calibri")
+    let setSize3Label = SKLabelNode(fontNamed: "Calibri")
+    let setSize4Label = SKLabelNode(fontNamed: "Calibri")
+    let simpleBGLabel = SKLabelNode(fontNamed: "Calibri")
+    let lineBGLabel = SKLabelNode(fontNamed: "Calibri")
+    let sceneBGLabel = SKLabelNode(fontNamed: "Calibri")
 
     override func didMove(to view: SKView) {
         
         // place correct first try screens  
-        correctFirstTryLabel.text = "\(numOfCorrectFirstTry) /16"
+        correctFirstTryLabel.text = "\(numOfCorrectFirstTry) / 16"
         correctFirstTryLabel.fontSize = 20
         correctFirstTryLabel.position = CGPoint(x: 12, y: 332.037)
+        correctFirstTryLabel.zPosition = 10
+        correctFirstTryLabel.fontColor = UIColor.black
         self.addChild(correctFirstTryLabel)
 
         // place correct score on screen
-        correctScoreLabel.text = "\(correctTouches) /16"
+        correctScoreLabel.text = "\(correctTouches) / 16"
         correctScoreLabel.fontSize = 20
         correctScoreLabel.position = CGPoint(x: -124.047, y: 305)
+        correctScoreLabel.zPosition = 10
+        correctScoreLabel.fontColor = UIColor.black
         self.addChild(correctScoreLabel)
         
         // place incorrect score on screen
         incorrectScoreLabel.text = "\(incorrectTouches)"
         incorrectScoreLabel.fontSize = 20
         incorrectScoreLabel.position = CGPoint(x: -91.999, y: 280.113)
+        incorrectScoreLabel.zPosition = 10
+        incorrectScoreLabel.fontColor = UIColor.black
         self.addChild(incorrectScoreLabel)
         
         // place correct score in set size 2 on screen
-        setSize2Label.text = "\(numOfCorrectSetSize2) /6"
+        setSize2Label.text = "\(numOfCorrectSetSize2) / 6"
         setSize2Label.fontSize = 20
         setSize2Label.position = CGPoint(x: -320, y: 161)
+        setSize2Label.zPosition = 10
+        setSize2Label.fontColor = UIColor.black
         self.addChild(setSize2Label)
         
         // place correct score in set size 3 on screen
-        setSize3Label.text = "\(numOfCorrectSetSize3) /4"
+        setSize3Label.text = "\(numOfCorrectSetSize3) / 4"
         setSize3Label.fontSize = 20
         setSize3Label.position = CGPoint(x: -320, y: 136)
+        setSize3Label.zPosition = 10
+        setSize3Label.fontColor = UIColor.black
         self.addChild(setSize3Label)
 
         // place correct score in set size 4 on screen
-        setSize4Label.text = "\(numOfCorrectSetSize4) /4"
+        setSize4Label.text = "\(numOfCorrectSetSize4) / 4"
         setSize4Label.fontSize = 20
         setSize4Label.position = CGPoint(x: -320, y: 108.545)
+        setSize4Label.zPosition = 10
+        setSize4Label.fontColor = UIColor.black
         self.addChild(setSize4Label)
         
         // place correct score in simple bg type
-        simpleBGLabel.text = "\(numOfCorrectSimpleBG) /2"
+        simpleBGLabel.text = "\(numOfCorrectSimpleBG) / 2"
         simpleBGLabel.fontSize = 20
         simpleBGLabel.position = CGPoint(x: 196.013, y: 161)
+        simpleBGLabel.zPosition = 10
+        simpleBGLabel.fontColor = UIColor.black
         self.addChild(simpleBGLabel)
         
         // place correct score in line bg type
-        lineBGLabel.text = "\(numOfCorrectLineBG) /4"
+        lineBGLabel.text = "\(numOfCorrectLineBG) / 4"
         lineBGLabel.fontSize = 20
         lineBGLabel.position = CGPoint(x: 196.013, y: 132.553)
+        lineBGLabel.zPosition = 10
+        lineBGLabel.fontColor = UIColor.black
         self.addChild(lineBGLabel)
         
         // place correct score in scene bg type
-        sceneBGLabel.text = "\(numOfCorrectSceneBG) /4"
+        sceneBGLabel.text = "\(numOfCorrectSceneBG) / 4"
         sceneBGLabel.fontSize = 20
         sceneBGLabel.position = CGPoint(x: 196.013, y: 107.541)
+        sceneBGLabel.zPosition = 10
+        sceneBGLabel.fontColor = UIColor.black
         self.addChild(sceneBGLabel)
     }
     

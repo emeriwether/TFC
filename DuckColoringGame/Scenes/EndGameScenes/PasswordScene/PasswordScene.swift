@@ -60,7 +60,7 @@ class PasswordScene: SKScene, UITextFieldDelegate {
             passwordInput?.removeFromSuperview()
         }
         else if (okButton!.contains(touch.location(in:self))) && (correctPassword == false) {
-            wrongPW = SKLabelNode(fontNamed: "Arial")
+            wrongPW = SKLabelNode(fontNamed: "Calibri")
             wrongPW!.text = "Incorrect password, try again."
             wrongPW!.fontSize = 30
             wrongPW!.fontColor = UIColor.red
