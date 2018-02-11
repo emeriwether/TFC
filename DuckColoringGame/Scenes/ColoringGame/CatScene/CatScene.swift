@@ -102,10 +102,10 @@ class CatScene: SKScene {
                 cat!.run(changeToColored)
                 
                 //Variables for cat audio
-                let correct = SKAction.playSoundFileNamed("correct", waitForCompletion: true)
+                let meow = SKAction.playSoundFileNamed("cat", waitForCompletion: true)
                 
                 //Run all actions
-                cat!.run(correct)
+                cat!.run(meow)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)

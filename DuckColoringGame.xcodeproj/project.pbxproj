@@ -117,6 +117,7 @@
 		06E34BC12030FB420027CE82 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BC02030FB420027CE82 /* correct.mp3 */; };
 		06E34BC3203102800027CE82 /* CatScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E34BC2203102800027CE82 /* CatScene.swift */; };
 		06E34BC52031028E0027CE82 /* CatScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BC42031028E0027CE82 /* CatScene.sks */; };
+		06E34BCA203105870027CE82 /* cat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BC9203105870027CE82 /* cat.mp3 */; };
 		0B22CE99202A9C9D00B14CCA /* DrinkScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B22CE98202A9C9D00B14CCA /* DrinkScene.swift */; };
 		0BCA0A99201BCC2100488E8E /* LampScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA0A8E201BCC2100488E8E /* LampScene.swift */; };
 		0BCA0A9A201BCC2100488E8E /* LampScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA0A8F201BCC2100488E8E /* LampScene.sks */; };
@@ -245,6 +246,7 @@
 		06E34BC02030FB420027CE82 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
 		06E34BC2203102800027CE82 /* CatScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatScene.swift; sourceTree = "<group>"; };
 		06E34BC42031028E0027CE82 /* CatScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CatScene.sks; sourceTree = "<group>"; };
+		06E34BC9203105870027CE82 /* cat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cat.mp3; sourceTree = "<group>"; };
 		0B22CE98202A9C9D00B14CCA /* DrinkScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkScene.swift; sourceTree = "<group>"; };
 		0BCA0A8E201BCC2100488E8E /* LampScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LampScene.swift; sourceTree = "<group>"; };
 		0BCA0A8F201BCC2100488E8E /* LampScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LampScene.sks; sourceTree = "<group>"; };
@@ -355,13 +357,14 @@
 			isa = PBXGroup;
 			children = (
 				06E34BB72030F7400027CE82 /* correct.mp3 */,
-				06C819D9202E2B61002F838E /* instructions_hamburger.mp3 */,
-				06C819DA202E2B62002F838E /* instructions_pizza.mp3 */,
+				06E34BC7203105690027CE82 /* Rock */,
+				06E34BC8203105730027CE82 /* Lamp */,
+				06E34BCB2031058C0027CE82 /* Cat */,
+				060A67BD202AA019005F7323 /* Duck */,
 				060A67A7202A9FBE005F7323 /* Airplane */,
 				060A67B1202A9FDB005F7323 /* Boots */,
 				060A67B5202A9FEF005F7323 /* Cookie */,
 				060A67B9202AA001005F7323 /* Cow */,
-				060A67BD202AA019005F7323 /* Duck */,
 				060A67C1202AA02D005F7323 /* Mouse */,
 				060A67C5202AA03F005F7323 /* Spoon */,
 				060A67C9202AA066005F7323 /* Trash */,
@@ -768,6 +771,30 @@
 			path = CatScene;
 			sourceTree = "<group>";
 		};
+		06E34BC7203105690027CE82 /* Rock */ = {
+			isa = PBXGroup;
+			children = (
+				06C819DA202E2B62002F838E /* instructions_pizza.mp3 */,
+			);
+			path = Rock;
+			sourceTree = "<group>";
+		};
+		06E34BC8203105730027CE82 /* Lamp */ = {
+			isa = PBXGroup;
+			children = (
+				06C819D9202E2B61002F838E /* instructions_hamburger.mp3 */,
+			);
+			path = Lamp;
+			sourceTree = "<group>";
+		};
+		06E34BCB2031058C0027CE82 /* Cat */ = {
+			isa = PBXGroup;
+			children = (
+				06E34BC9203105870027CE82 /* cat.mp3 */,
+			);
+			path = Cat;
+			sourceTree = "<group>";
+		};
 		0B22CE97202A9C9D00B14CCA /* MonsterGame */ = {
 			isa = PBXGroup;
 			children = (
@@ -900,6 +927,7 @@
 				06C819D7202E2B43002F838E /* instructions_bread.mp3 in Resources */,
 				060A6830202AA954005F7323 /* reminder_spoon.wav in Resources */,
 				0643D698202E1F8C000FA53D /* RockScene.sks in Resources */,
+				06E34BCA203105870027CE82 /* cat.mp3 in Resources */,
 				060A6829202AA8BA005F7323 /* mouse.wav in Resources */,
 				0643D68F202E133C000FA53D /* Now it's time to play some music touch the yellow key.wav in Resources */,
 				0643D68D202E133C000FA53D /* melody 4.wav in Resources */,
