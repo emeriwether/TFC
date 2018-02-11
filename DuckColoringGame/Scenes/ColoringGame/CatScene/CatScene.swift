@@ -1,5 +1,5 @@
 //
-//  LampScene.swift
+//  CatScene.swift
 //  TimeForChildrenGame
 //
 //  Created by Eleanor Meriwether on 12/7/17.
@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class LampScene: SKScene {
+class CatScene: SKScene {
     // local variables to keep track of whether instructions are playing
     var instructionsComplete = false
     var reminderComplete = true
@@ -17,8 +17,8 @@ class LampScene: SKScene {
     var sceneOver = false
     
     // local variables to keep track of touches for this scene
-    var lamp_incorrectTouches = 0
-    var lamp_correctTouches = 0
+    var cat_incorrectTouches = 0
+    var cat_correctTouches = 0
     var totalTouches = 0
     
     override func didMove(to view: SKView) {
@@ -39,8 +39,8 @@ class LampScene: SKScene {
         // set up sequence for if the scene has not been touched for 10 seconds: play the idle reminder
         let reminderIfIdle = SKAction.run {
             self.reminderComplete = false
-            let lamp_reminder = SKAction.playSoundFileNamed("instructions_hamburger", waitForCompletion: true)
-            self.run(lamp_reminder, completion: { self.reminderComplete = true} )
+            let cat_reminder = SKAction.playSoundFileNamed("instructions_hamburger", waitForCompletion: true)
+            self.run(cat_reminder, completion: { self.reminderComplete = true} )
         }
         
         // for every one second, do this action:
@@ -71,72 +71,73 @@ class LampScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // local variable for lamp sprite
-        let lamp = self.childNode(withName: "lamp_bw")
+        // local variable for cat sprite
+        let cat = self.childNode(withName: "cat_bw")
         
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false){
             let touch = touches.first!
             
-            //If lamp sprite's alpha mask is touched...
-            if (physicsWorld.body(at: touch.location(in: self)) == lamp?.physicsBody) && (sceneOver == false) {
+            //If cat sprite's alpha mask is touched...
+            if (physicsWorld.body(at: touch.location(in: self)) == cat?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
-                lamp_correctTouches += 1
+                cat_correctTouches += 1
                 correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
-                if (lamp_incorrectTouches == 0) {
+                if (cat_incorrectTouches == 0) {
                     numOfCorrectFirstTry += 1
                     numOfCorrectSimpleBG += 1
-                    numOfCorrectSetSize2 += 1
+                    numOfCorrectSetSize3 += 1
                     
-                    correctFirstTriesArray.append("lamp")
-                    correctTouchesArray.append("lamp")
-                    correctSetSize2.append("lamp")
-                    correctBGSimple.append("lamp")
+                    correctFirstTriesArray.append("cat")
+                    correctTouchesArray.append("cat")
+                    correctSetSize3.append("cat")
+                    correctBGSimple.append("cat")
                 }
                 
-                // Change sprite to colored lamp
-                let coloredlamp:SKTexture = SKTexture(imageNamed: "lampScene_lamp_colored")
-                let changeToColored:SKAction = SKAction.animate(with: [coloredlamp], timePerFrame: 0.0001)
-                lamp!.run(changeToColored)
+                // Change sprite to colored cat
+                let coloredcat:SKTexture = SKTexture(imageNamed: "catScene_cat_colored")
+                let changeToColored:SKAction = SKAction.animate(with: [coloredcat], timePerFrame: 0.0001)
+                cat!.run(changeToColored)
                 
-                //Variables for lamp audio
+                //Variables for cat audio
                 let correct = SKAction.playSoundFileNamed("correct", waitForCompletion: true)
                 
                 //Run all actions
-                lamp!.run(correct)
+                cat!.run(correct)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
                 let wait2 = SKAction.wait(forDuration: 2)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let catScene = SKScene(fileNamed: "CatScene")
-                    catScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(catScene!)
+                    let duckScene = SKScene(fileNamed: "DuckScene")
+                    duckScene?.scaleMode = SKSceneScaleMode.aspectFill
+                    self.scene!.view?.presentScene(duckScene!)
                 }
             }
             else {
-                lamp_incorrectTouches += 1
+                cat_incorrectTouches += 1
                 incorrectTouches += 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)
-                lamp?.run(wrong)
+                cat?.run(wrong)
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly
-            if (lamp_incorrectTouches % 3 == 0) && lamp_correctTouches < 1 {
+            if (cat_incorrectTouches % 3 == 0) && cat_correctTouches < 1 {
                 reminderComplete = false
-                let lamp_reminder = SKAction.playSoundFileNamed("instructions_hamburger", waitForCompletion: true)
-                run(lamp_reminder, completion: { self.reminderComplete = true} )
+                let cat_reminder = SKAction.playSoundFileNamed("instructions_hamburger", waitForCompletion: true)
+                run(cat_reminder, completion: { self.reminderComplete = true} )
             }
         }
         // update totalTouches variable for idle reminder
-        totalTouches = lamp_correctTouches + lamp_incorrectTouches
+        totalTouches = cat_correctTouches + cat_incorrectTouches
     }
 }
+
 
 
 
