@@ -102,7 +102,7 @@ class HatScene: SKScene {
                 hat!.run(changeToColored)
                 
                 //Variables for hat audio
-                let western = SKAction.playSoundFileNamed("quack", waitForCompletion: true)
+                let western = SKAction.playSoundFileNamed("hat", waitForCompletion: true)
                 //Variables for move animation
                 let move = SKAction.moveTo(x: 900, duration: 3.0)
                 

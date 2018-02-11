@@ -1,5 +1,5 @@
 //
-//  PizzaScene.swift
+//  RockScene.swift
 //  TimeForChildrenGame
 //
 //  Created by Eleanor Meriwether on 12/7/17.
@@ -8,10 +8,10 @@
 
 import SpriteKit
 
-class PizzaScene: SKScene {
+class RockScene: SKScene {
     // local variables to keep track of touches for this scene
-    var pizza_incorrectTouches = 0
-    var pizza_correctTouches = 0
+    var rock_incorrectTouches = 0
+    var rock_correctTouches = 0
     var totalTouches = 0
     
     // local variables to keep track of whether instructions are playing
@@ -39,8 +39,8 @@ class PizzaScene: SKScene {
         // set up sequence for if the scene has not been touched for 10 seconds: play the idle reminder
         let reminderIfIdle = SKAction.run {
             self.reminderComplete = false
-            let pizza_reminder = SKAction.playSoundFileNamed("instructions_pizza", waitForCompletion: true)
-            self.run(pizza_reminder, completion: { self.reminderComplete = true} )
+            let rock_reminder = SKAction.playSoundFileNamed("instructions_pizza", waitForCompletion: true)
+            self.run(rock_reminder, completion: { self.reminderComplete = true} )
         }
         
         // for every one second, do this action:
@@ -71,44 +71,44 @@ class PizzaScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // local variable for pizza sprite
-        let pizza = self.childNode(withName: "pizza_bw")
+        // local variable for rock sprite
+        let rock = self.childNode(withName: "rock_bw")
         
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false){
             let touch = touches.first!
             
-            //If pizza sprite's alpha mask is touched...
-            if (physicsWorld.body(at: touch.location(in: self)) == pizza?.physicsBody) && (sceneOver == false) {
+            //If rock sprite's alpha mask is touched...
+            if (physicsWorld.body(at: touch.location(in: self)) == rock?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
-                pizza_correctTouches += 1
+                rock_correctTouches += 1
                 correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
-                if (pizza_incorrectTouches == 0) {
+                if (rock_incorrectTouches == 0) {
                     numOfCorrectFirstTry += 1
                     numOfCorrectSimpleBG += 1
                     numOfCorrectSetSize2 += 1
                     
-                    correctFirstTriesArray.append("pizza")
-                    correctTouchesArray.append("pizza")
-                    correctSetSize2.append("pizza")
-                    correctBGSimple.append("pizza")
+                    correctFirstTriesArray.append("rock")
+                    correctTouchesArray.append("rock")
+                    correctSetSize2.append("rock")
+                    correctBGSimple.append("rock")
                 }
                 
-                // Change sprite to colored pizza
-                let coloredPizza:SKTexture = SKTexture(imageNamed: "pizzaScene_pizza_colored")
-                let changeToColored:SKAction = SKAction.animate(with: [coloredPizza], timePerFrame: 0.0001)
-                pizza!.run(changeToColored)
+                // Change sprite to colored rock
+                let coloredrock:SKTexture = SKTexture(imageNamed: "rockScene_rock_colored")
+                let changeToColored:SKAction = SKAction.animate(with: [coloredrock], timePerFrame: 0.0001)
+                rock!.run(changeToColored)
                 
-                //Variables for pizza audio
+                //Variables for rock audio
                 let western = SKAction.playSoundFileNamed("quack", waitForCompletion: true)
                 //Variables for move animation
                 let move = SKAction.moveTo(x: 900, duration: 3.0)
                 
                 //Run all actions
-                pizza!.run(western)
-                pizza!.run(move)
+                rock!.run(western)
+                rock!.run(move)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
@@ -121,19 +121,23 @@ class PizzaScene: SKScene {
                 }
             }
             else {
-                pizza_incorrectTouches += 1
+                rock_incorrectTouches += 1
                 incorrectTouches += 1
+                
+                // Play wrong noise
+                let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)
+                rock?.run(wrong)
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly
-            if (pizza_incorrectTouches % 3 == 0) && pizza_correctTouches < 1 {
+            if (rock_incorrectTouches % 3 == 0) && rock_correctTouches < 1 {
                 reminderComplete = false
-                let pizza_reminder = SKAction.playSoundFileNamed("instructions_pizza", waitForCompletion: true)
-                run(pizza_reminder, completion: { self.reminderComplete = true} )
+                let rock_reminder = SKAction.playSoundFileNamed("instructions_pizza", waitForCompletion: true)
+                run(rock_reminder, completion: { self.reminderComplete = true} )
             }
         }
         // update totalTouches variable for idle reminder
-        totalTouches = pizza_correctTouches + pizza_incorrectTouches
+        totalTouches = rock_correctTouches + rock_incorrectTouches
     }
 }
 

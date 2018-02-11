@@ -1,5 +1,5 @@
 //
-//  Trainer_Egg.swift
+//  Trainer_Balloon.swift
 //  DuckColoringGame
 //
 //  Created by Gustavo C Figueroa on 1/14/18.
@@ -8,9 +8,9 @@
 
 import SpriteKit
 
-class Trainer_Egg: SKScene {
+class Trainer_Balloon: SKScene {
     //local variable for SpriteNode that will be over the training object
-    private var egg:SKSpriteNode?
+    private var balloon:SKSpriteNode?
     var closeButton:SKSpriteNode?
     
     // local variables to keep track of whether instructions are playing
@@ -18,12 +18,12 @@ class Trainer_Egg: SKScene {
     var reminderComplete:Bool = true
     
     // local variables to keep track of touches for this scene
-    var egg_incorrectTouches = 0
-    var egg_correctTouches = 0
+    var balloon_incorrectTouches = 0
+    var balloon_correctTouches = 0
     
     override func didMove(to view: SKView) {
         //Connect variable with .sks file
-        self.egg = self.childNode(withName: "egg") as? SKSpriteNode
+        self.balloon = self.childNode(withName: "balloon") as? SKSpriteNode
         
         // run the introductory instructions
         let instructions = SKAction.playSoundFileNamed("instructions_egg", waitForCompletion: true)
@@ -32,10 +32,10 @@ class Trainer_Egg: SKScene {
         // if the scene has not been touched for 10 seconds, play the reminder instructions; repeat forever
         let timer = SKAction.wait(forDuration: 10.0)
         let reminderIfIdle = SKAction.run {
-            if self.egg_correctTouches == 0 && self.egg_incorrectTouches == 0 {
+            if self.balloon_correctTouches == 0 && self.balloon_incorrectTouches == 0 {
                 self.reminderComplete = false
-                let egg_reminder = SKAction.playSoundFileNamed("instructions_egg", waitForCompletion: true)
-                self.run(egg_reminder, completion: { self.reminderComplete = true} )
+                let balloon_reminder = SKAction.playSoundFileNamed("instructions_egg", waitForCompletion: true)
+                self.run(balloon_reminder, completion: { self.reminderComplete = true} )
             }
         }
         let idleSequence = SKAction.sequence([timer, reminderIfIdle])
@@ -48,17 +48,17 @@ class Trainer_Egg: SKScene {
         if (instructionsComplete == true) && (reminderComplete == true) {
             let touch = touches.first!
             
-            //If egg sprite is touched...
-            if (egg?.contains(touch.location(in: self)))! {
-                egg_correctTouches += 1
+            //If balloon sprite is touched...
+            if (balloon?.contains(touch.location(in: self)))! {
+                balloon_correctTouches += 1
                 correctTouches += 1
                 
-                // Color egg
-                egg?.texture = SKTexture(imageNamed: "colorTrainer_egg_colored")
+                // Color balloon
+                balloon?.texture = SKTexture(imageNamed: "colorTrainer_balloon_colored")
                 
-                // Play crunch noise
+                // Play correct noise
                 let correct = SKAction.playSoundFileNamed("correct", waitForCompletion: true)
-                egg?.run(correct)
+                balloon?.run(correct)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:1)
@@ -71,15 +71,19 @@ class Trainer_Egg: SKScene {
                 }
             }
             else {
-                egg_incorrectTouches += 1
+                balloon_incorrectTouches += 1
                 incorrectTouches += 1
+                
+                // Play wrong noise
+                let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)
+                balloon?.run(wrong)
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly
-            if egg_incorrectTouches == 3 && egg_correctTouches < 1 {
+            if balloon_incorrectTouches == 3 && balloon_correctTouches < 1 {
                 reminderComplete = false
-                let egg_reminder = SKAction.playSoundFileNamed("instructions_egg", waitForCompletion: true)
-                run(egg_reminder, completion: { self.reminderComplete = true} )
+                let balloon_reminder = SKAction.playSoundFileNamed("instructions_egg", waitForCompletion: true)
+                run(balloon_reminder, completion: { self.reminderComplete = true} )
             }
         }
     }

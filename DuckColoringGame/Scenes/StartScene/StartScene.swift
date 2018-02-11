@@ -32,9 +32,9 @@ class StartScene: SKScene {
         
         let fade = SKTransition.fade(withDuration: 0.5)
         
-        // if the start color button is touched, move to egg trainer scene
+        // if the start color button is touched, move to balloon trainer scene
         if startColor.contains(touch.location(in: self)) {
-            let colorTrainer1 = SKScene(fileNamed: "Trainer_Egg")
+            let colorTrainer1 = SKScene(fileNamed: "Trainer_Balloon")
             colorTrainer1?.scaleMode = SKSceneScaleMode.aspectFill
             self.scene!.view?.presentScene(colorTrainer1!, transition: fade)
         }
