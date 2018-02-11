@@ -89,6 +89,11 @@ class DuckScene: SKScene {
                     numOfCorrectFirstTry += 1
                     numOfCorrectLineBG += 1
                     numOfCorrectSetSize2 += 1
+                    
+                    correctFirstTriesArray.append("duck")
+                    correctTouchesArray.append("duck")
+                    correctSetSize2.append("duck")
+                    correctBGLine.append("duck")
                 }
                 
                 // Change sprite to colored duck

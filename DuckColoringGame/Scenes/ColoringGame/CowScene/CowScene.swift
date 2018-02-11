@@ -89,6 +89,8 @@ class CowScene: SKScene {
                     numOfCorrectFirstTry += 1
                     numOfCorrectLineBG += 1
                     numOfCorrectSetSize3 += 1
+                    correctSetSize3.append("cow")
+                    correctBGLine.append("cow")
                 }
                 
                 // Change sprite to colored cow

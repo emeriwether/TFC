@@ -89,6 +89,11 @@ class HamburgerScene: SKScene {
                     numOfCorrectFirstTry += 1
                     numOfCorrectSimpleBG += 1
                     numOfCorrectSetSize2 += 1
+                    
+                    correctFirstTriesArray.append("hamburger")
+                    correctTouchesArray.append("hamburger")
+                    correctSetSize2.append("hamburger")
+                    correctBGSimple.append("hamburger")
                 }
                 
                 // Change sprite to colored hamburger

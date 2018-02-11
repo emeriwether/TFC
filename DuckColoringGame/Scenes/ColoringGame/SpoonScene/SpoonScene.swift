@@ -89,6 +89,8 @@ class SpoonScene: SKScene {
                     numOfCorrectFirstTry += 1
                     numOfCorrectSceneBG += 1
                     numOfCorrectSetSize3 += 1
+                    correctSetSize3.append("spoon")
+                    correctBGScene.append("spoon")
                 }
                 
                 // Color spoon

@@ -89,6 +89,8 @@ class HatScene: SKScene {
                     numOfCorrectFirstTry += 1
                     numOfCorrectSceneBG += 1
                     numOfCorrectSetSize3 += 1
+                    correctSetSize3.append("hat")
+                    correctBGScene.append("hat")
                 }
                 
                 // Change sprite to colored hat

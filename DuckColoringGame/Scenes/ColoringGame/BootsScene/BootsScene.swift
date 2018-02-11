@@ -90,6 +90,8 @@ class BootsScene: SKScene {
                     numOfCorrectFirstTry += 1
                     numOfCorrectLineBG += 1
                     numOfCorrectSetSize4 += 1
+                    correctSetSize4.append("boots")
+                    correctBGLine.append("boots")
                 }
                 
                 // Color boots

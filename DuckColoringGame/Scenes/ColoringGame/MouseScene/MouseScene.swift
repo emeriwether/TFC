@@ -90,6 +90,8 @@ class MouseScene: SKScene {
                     numOfCorrectFirstTry += 1
                     numOfCorrectSceneBG += 1
                     numOfCorrectSetSize4 += 1
+                    correctSetSize3.append("mouse")
+                    correctBGScene.append("mouse")
                 }
                 
                 // Color mouse

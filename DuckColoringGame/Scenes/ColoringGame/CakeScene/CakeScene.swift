@@ -89,6 +89,8 @@ class CakeScene: SKScene {
                     numOfCorrectFirstTry += 1
                     numOfCorrectSceneBG += 1
                     numOfCorrectSetSize2 += 1
+                    correctSetSize2.append("cake")
+                    correctBGScene.append("cake")
                 }
                 
                 // Change sprite to colored cake

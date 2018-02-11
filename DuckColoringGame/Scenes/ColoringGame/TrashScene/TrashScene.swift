@@ -89,6 +89,8 @@ class TrashScene: SKScene {
                     numOfCorrectFirstTry += 1
                     numOfCorrectLineBG += 1
                     numOfCorrectSetSize3 += 1
+                    correctSetSize3.append("trash")
+                    correctBGLine.append("trash")
                 }
                 
                 // Color trash

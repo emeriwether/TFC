@@ -89,6 +89,11 @@ class PizzaScene: SKScene {
                     numOfCorrectFirstTry += 1
                     numOfCorrectSimpleBG += 1
                     numOfCorrectSetSize2 += 1
+                    
+                    correctFirstTriesArray.append("pizza")
+                    correctTouchesArray.append("pizza")
+                    correctSetSize2.append("pizza")
+                    correctBGSimple.append("pizza")
                 }
                 
                 // Change sprite to colored pizza

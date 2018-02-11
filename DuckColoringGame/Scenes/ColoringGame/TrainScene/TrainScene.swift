@@ -89,6 +89,11 @@ class TrainScene: SKScene {
                     numOfCorrectFirstTry += 1
                     numOfCorrectLineBG += 1
                     numOfCorrectSetSize2 += 1
+                    
+                    correctFirstTriesArray.append("train")
+                    correctTouchesArray.append("train")
+                    correctSetSize2.append("train")
+                    correctBGLine.append("train")
                 }
                 
                 // Change sprite to colored duck
