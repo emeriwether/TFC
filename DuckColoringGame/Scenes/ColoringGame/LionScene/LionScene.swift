@@ -102,10 +102,10 @@ class LionScene: SKScene {
                 lion!.run(changeToColored)
                 
                 //Variables for lion audio
-                let meow = SKAction.playSoundFileNamed("cat", waitForCompletion: true)
+                let roar = SKAction.playSoundFileNamed("lion", waitForCompletion: true)
                 
                 //Run all actions
-                lion!.run(meow)
+                lion!.run(roar)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)

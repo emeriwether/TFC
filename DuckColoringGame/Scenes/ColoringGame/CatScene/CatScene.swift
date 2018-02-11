@@ -114,7 +114,7 @@ class CatScene: SKScene {
                 run(sequenceFade) {
                     let lionScene = SKScene(fileNamed: "LionScene")
                     lionScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(duckScene!)
+                    self.scene!.view?.presentScene(lionScene!)
                 }
             }
             else {

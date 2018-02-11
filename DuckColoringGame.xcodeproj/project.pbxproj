@@ -112,6 +112,7 @@
 		06C819DC202E2B62002F838E /* instructions_pizza.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C819DA202E2B62002F838E /* instructions_pizza.mp3 */; };
 		06C819DE202F6D15002F838E /* AllDoneScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C819DD202F6D15002F838E /* AllDoneScene.swift */; };
 		06C819E0202F6D21002F838E /* AllDoneScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06C819DF202F6D21002F838E /* AllDoneScene.sks */; };
+		06C90F6420310BB600F318AD /* lion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F6320310BB600F318AD /* lion.wav */; };
 		06E34BB82030F7400027CE82 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BB72030F7400027CE82 /* correct.mp3 */; };
 		06E34BBA2030F8490027CE82 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BB92030F8490027CE82 /* wrong.wav */; };
 		06E34BC12030FB420027CE82 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BC02030FB420027CE82 /* correct.mp3 */; };
@@ -243,6 +244,7 @@
 		06C819DA202E2B62002F838E /* instructions_pizza.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_pizza.mp3; sourceTree = "<group>"; };
 		06C819DD202F6D15002F838E /* AllDoneScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllDoneScene.swift; sourceTree = "<group>"; };
 		06C819DF202F6D21002F838E /* AllDoneScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = AllDoneScene.sks; sourceTree = "<group>"; };
+		06C90F6320310BB600F318AD /* lion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lion.wav; sourceTree = "<group>"; };
 		06E34BB72030F7400027CE82 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
 		06E34BB92030F8490027CE82 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrong.wav; sourceTree = "<group>"; };
 		06E34BC02030FB420027CE82 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 		060A67CA202AA07A005F7323 /* ColoringGame */ = {
 			isa = PBXGroup;
 			children = (
+				06E34BD320310A750027CE82 /* Lion */,
 				06E34BB72030F7400027CE82 /* correct.mp3 */,
 				06E34BC7203105690027CE82 /* Rock */,
 				06E34BC8203105730027CE82 /* Lamp */,
@@ -809,6 +812,14 @@
 			path = LionScene;
 			sourceTree = "<group>";
 		};
+		06E34BD320310A750027CE82 /* Lion */ = {
+			isa = PBXGroup;
+			children = (
+				06C90F6320310BB600F318AD /* lion.wav */,
+			);
+			path = Lion;
+			sourceTree = "<group>";
+		};
 		0B22CE97202A9C9D00B14CCA /* MonsterGame */ = {
 			isa = PBXGroup;
 			children = (
@@ -988,6 +999,7 @@
 				066DB6381FAE8F1500C68B36 /* LaunchScreen.storyboard in Resources */,
 				062510D01FC917EA00A8114D /* StartScene.sks in Resources */,
 				06427EFC1FD9F421009C07ED /* PianoScene1.sks in Resources */,
+				06C90F6420310BB600F318AD /* lion.wav in Resources */,
 				060A6811202AA81D005F7323 /* reminder_cookie.wav in Resources */,
 				0643D681202E131D000FA53D /* B.wav in Resources */,
 				0BCA0AAA201BCE0000488E8E /* Monster_T3.sks in Resources */,
