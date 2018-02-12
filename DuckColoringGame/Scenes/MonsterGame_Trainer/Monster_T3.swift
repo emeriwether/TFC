@@ -34,7 +34,7 @@ class Monster_T3: SKScene {
         self.targetZone = self.childNode(withName: "boundry") as? SKSpriteNode
         
         // run the introductory instructions
-        let instructions = SKAction.playSoundFileNamed("find the dress", waitForCompletion: true)
+        let instructions = SKAction.playSoundFileNamed("instructions_apple3", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
         
         // if the scene has not been touched for 10 seconds, play the reminder instructions; repeat forever
@@ -43,7 +43,7 @@ class Monster_T3: SKScene {
             if self.apple_correctTouches == 0 && self.apple_incorrectTouches == 0 {
                 //May not run if 1 touch is made and may not loop.
                 self.reminderComplete = false
-                let reminder = SKAction.playSoundFileNamed("find the dress", waitForCompletion: true)
+                let reminder = SKAction.playSoundFileNamed("reminder_apple3", waitForCompletion: true)
                 self.run(reminder, completion: { self.reminderComplete = true} )
             }
         }
@@ -71,7 +71,7 @@ class Monster_T3: SKScene {
             let wait2 = SKAction.wait(forDuration: 2)
             let sequenceFade = SKAction.sequence([wait2, fadeOut])
             run(sequenceFade) {
-                let monsterScene1 = SKScene(fileNamed: "ScoreScene")
+                let monsterScene1 = SKScene(fileNamed: "DrinkScene")
                 monsterScene1?.scaleMode = SKSceneScaleMode.aspectFill
                 self.scene!.view?.presentScene(monsterScene1!)}
         }

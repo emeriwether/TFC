@@ -132,6 +132,13 @@
 		06E34BCD203106980027CE82 /* LionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E34BCC203106980027CE82 /* LionScene.swift */; };
 		06E34BCF203106A60027CE82 /* LionScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BCE203106A50027CE82 /* LionScene.sks */; };
 		0B22CE99202A9C9D00B14CCA /* DrinkScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B22CE98202A9C9D00B14CCA /* DrinkScene.swift */; };
+		0B3B5A1620315B7E002B6805 /* instructions_apple1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3B5A1020315B7D002B6805 /* instructions_apple1.mp3 */; };
+		0B3B5A1720315B7E002B6805 /* instructions_apple2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3B5A1120315B7D002B6805 /* instructions_apple2.mp3 */; };
+		0B3B5A1820315B7E002B6805 /* reminder_apple2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3B5A1220315B7D002B6805 /* reminder_apple2.mp3 */; };
+		0B3B5A1920315B7E002B6805 /* instructions_apple3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3B5A1320315B7D002B6805 /* instructions_apple3.mp3 */; };
+		0B3B5A1A20315B7E002B6805 /* reminder_apple1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3B5A1420315B7D002B6805 /* reminder_apple1.mp3 */; };
+		0B3B5A1B20315B7E002B6805 /* reminder_apple3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3B5A1520315B7E002B6805 /* reminder_apple3.mp3 */; };
+		0B3B5A1D20315D9C002B6805 /* drinking.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3B5A1C20315D9C002B6805 /* drinking.mp3 */; };
 		0BCA0A99201BCC2100488E8E /* LampScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA0A8E201BCC2100488E8E /* LampScene.swift */; };
 		0BCA0A9A201BCC2100488E8E /* LampScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA0A8F201BCC2100488E8E /* LampScene.sks */; };
 		0BCA0A9B201BCC2100488E8E /* Trainer_Bread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA0A91201BCC2100488E8E /* Trainer_Bread.swift */; };
@@ -274,6 +281,13 @@
 		06E34BCC203106980027CE82 /* LionScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LionScene.swift; sourceTree = "<group>"; };
 		06E34BCE203106A50027CE82 /* LionScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LionScene.sks; sourceTree = "<group>"; };
 		0B22CE98202A9C9D00B14CCA /* DrinkScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkScene.swift; sourceTree = "<group>"; };
+		0B3B5A1020315B7D002B6805 /* instructions_apple1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_apple1.mp3; sourceTree = "<group>"; };
+		0B3B5A1120315B7D002B6805 /* instructions_apple2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_apple2.mp3; sourceTree = "<group>"; };
+		0B3B5A1220315B7D002B6805 /* reminder_apple2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = reminder_apple2.mp3; sourceTree = "<group>"; };
+		0B3B5A1320315B7D002B6805 /* instructions_apple3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_apple3.mp3; sourceTree = "<group>"; };
+		0B3B5A1420315B7D002B6805 /* reminder_apple1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = reminder_apple1.mp3; sourceTree = "<group>"; };
+		0B3B5A1520315B7E002B6805 /* reminder_apple3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = reminder_apple3.mp3; sourceTree = "<group>"; };
+		0B3B5A1C20315D9C002B6805 /* drinking.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = drinking.mp3; sourceTree = "<group>"; };
 		0BCA0A8E201BCC2100488E8E /* LampScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LampScene.swift; sourceTree = "<group>"; };
 		0BCA0A8F201BCC2100488E8E /* LampScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LampScene.sks; sourceTree = "<group>"; };
 		0BCA0A91201BCC2100488E8E /* Trainer_Bread.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trainer_Bread.swift; sourceTree = "<group>"; };
@@ -418,6 +432,7 @@
 		060A6802202AA127005F7323 /* MonsterGame */ = {
 			isa = PBXGroup;
 			children = (
+				0B3B5A1C20315D9C002B6805 /* drinking.mp3 */,
 				060A67D6202AA0DD005F7323 /* instructions_drink.mp3 */,
 			);
 			path = MonsterGame;
@@ -700,6 +715,7 @@
 				06E34BB92030F8490027CE82 /* wrong.wav */,
 				060A67D5202AA0B0005F7323 /* ColoringGameTrainer */,
 				060A67CA202AA07A005F7323 /* ColoringGame */,
+				0B3B5A0F203159BB002B6805 /* MonsterGameTrainer */,
 				060A6802202AA127005F7323 /* MonsterGame */,
 				060A6803202AA132005F7323 /* PianoGame */,
 			);
@@ -932,6 +948,19 @@
 			path = ColoringGame_Trainer;
 			sourceTree = "<group>";
 		};
+		0B3B5A0F203159BB002B6805 /* MonsterGameTrainer */ = {
+			isa = PBXGroup;
+			children = (
+				0B3B5A1020315B7D002B6805 /* instructions_apple1.mp3 */,
+				0B3B5A1120315B7D002B6805 /* instructions_apple2.mp3 */,
+				0B3B5A1320315B7D002B6805 /* instructions_apple3.mp3 */,
+				0B3B5A1420315B7D002B6805 /* reminder_apple1.mp3 */,
+				0B3B5A1220315B7D002B6805 /* reminder_apple2.mp3 */,
+				0B3B5A1520315B7E002B6805 /* reminder_apple3.mp3 */,
+			);
+			path = MonsterGameTrainer;
+			sourceTree = "<group>";
+		};
 		0BCA0A8D201BCC2100488E8E /* LampScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -1004,7 +1033,7 @@
 				TargetAttributes = {
 					066DB6231FAE8F1500C68B36 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = U4CECW6YBS;
+						DevelopmentTeam = 2A6YQM3SZ4;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
@@ -1047,6 +1076,7 @@
 				06427F201FD9F8A0009C07ED /* PianoScene7.sks in Resources */,
 				06C819D7202E2B43002F838E /* instructions_bread.mp3 in Resources */,
 				060A6830202AA954005F7323 /* reminder_toast.wav in Resources */,
+				0B3B5A1A20315B7E002B6805 /* reminder_apple1.mp3 in Resources */,
 				0643D698202E1F8C000FA53D /* RockScene.sks in Resources */,
 				06E34BCA203105870027CE82 /* cat.mp3 in Resources */,
 				060A6829202AA8BA005F7323 /* mouse.wav in Resources */,
@@ -1067,6 +1097,7 @@
 				0BCA0AA9201BCE0000488E8E /* Monster_T2.sks in Resources */,
 				060A6817202AA883005F7323 /* reminder_airplane.wav in Resources */,
 				0643D68C202E133C000FA53D /* melody 1.wav in Resources */,
+				0B3B5A1920315B7E002B6805 /* instructions_apple3.mp3 in Resources */,
 				066DB6331FAE8F1500C68B36 /* Main.storyboard in Resources */,
 				0630356E202FD3A30003CAE9 /* Calibri.ttf in Resources */,
 				06427F281FD9F8BA009C07ED /* PianoScene9.sks in Resources */,
@@ -1074,6 +1105,7 @@
 				060A682B202AA8BA005F7323 /* instructions_mouse.wav in Resources */,
 				060A680C202AA7DB005F7323 /* reminder_duck.wav in Resources */,
 				06476DD41FC9458E00B55906 /* ScoreScene.sks in Resources */,
+				0B3B5A1720315B7E002B6805 /* instructions_apple2.mp3 in Resources */,
 				060A6800202AA123005F7323 /* Find the shovel.wav in Resources */,
 				062B1C03202D2169002DECBB /* StrollerScene.sks in Resources */,
 				06427F3F1FDA0213009C07ED /* MouseScene.sks in Resources */,
@@ -1086,6 +1118,7 @@
 				06427F141FD9F880009C07ED /* PianoScene4.sks in Resources */,
 				0BCA0A9C201BCC2100488E8E /* Trainer_Bread.sks in Resources */,
 				06427F0C1FD9F868009C07ED /* PianoScene2.sks in Resources */,
+				0B3B5A1D20315D9C002B6805 /* drinking.mp3 in Resources */,
 				060A6823202AA8A9005F7323 /* instructions_cow.wav in Resources */,
 				060A67F7202AA123005F7323 /* find the dress.wav in Resources */,
 				062B1BFE202D1DD9002DECBB /* CakeScene.sks in Resources */,
@@ -1102,11 +1135,14 @@
 				060A6811202AA81D005F7323 /* reminder_cookie.wav in Resources */,
 				0643D681202E131D000FA53D /* B.wav in Resources */,
 				0BCA0AAA201BCE0000488E8E /* Monster_T3.sks in Resources */,
+				0B3B5A1620315B7E002B6805 /* instructions_apple1.mp3 in Resources */,
 				060A681E202AA895005F7323 /* instructions_shoes.wav in Resources */,
 				060A680D202AA7DB005F7323 /* quack.mp3 in Resources */,
+				0B3B5A1B20315B7E002B6805 /* reminder_apple3.mp3 in Resources */,
 				06C819D8202E2B43002F838E /* instructions_egg.mp3 in Resources */,
 				06427F311FD9FD59009C07ED /* ShoesScene.sks in Resources */,
 				060A681F202AA895005F7323 /* reminder_shoes.wav in Resources */,
+				0B3B5A1820315B7E002B6805 /* reminder_apple2.mp3 in Resources */,
 				0BCA0A9A201BCC2100488E8E /* LampScene.sks in Resources */,
 				060A6836202AA966005F7323 /* instructions_trash.wav in Resources */,
 				060A6812202AA81D005F7323 /* instructions_cookie.wav in Resources */,
@@ -1303,11 +1339,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U4CECW6YBS;
+				DEVELOPMENT_TEAM = 2A6YQM3SZ4;
 				INFOPLIST_FILE = DuckColoringGame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = DuckColoringGame;
+				PRODUCT_BUNDLE_IDENTIFIER = "Time-For-Children";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -1319,11 +1355,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U4CECW6YBS;
+				DEVELOPMENT_TEAM = 2A6YQM3SZ4;
 				INFOPLIST_FILE = DuckColoringGame/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = DuckColoringGame;
+				PRODUCT_BUNDLE_IDENTIFIER = "Time-For-Children";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
