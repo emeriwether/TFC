@@ -1,5 +1,5 @@
 //
-//  AirplaneScene.swift
+//  ShoesScene.swift
 //  TimeForChildrenGame
 //
 //  Created by Eleanor Meriwether on 12/7/17.
@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class AirplaneScene: SKScene {
+class ShoesScene: SKScene {
     // local variables to keep track of whether instructions are playing
     var instructionsComplete = false
     var reminderComplete = true
@@ -17,17 +17,18 @@ class AirplaneScene: SKScene {
     var sceneOver = false
     
     // local variables to keep track of touches for this scene
-    var airplane_incorrectTouches = 0
-    var airplane_correctTouches = 0
+    var shoes_incorrectTouches = 0
+    var shoes_correctTouches = 0
     var totalTouches = 0
     
     override func didMove(to view: SKView) {
         // remove scene's physics body
         self.physicsBody = nil
-        
+
         // run the introductory instructions
-        let instructions = SKAction.playSoundFileNamed("instructions_airplane", waitForCompletion: true)
+        let instructions = SKAction.playSoundFileNamed("instructions_shoes", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
+        
         
         /////////////////////////////////
         ////// IDLE REMINDER TIMER //////
@@ -39,8 +40,8 @@ class AirplaneScene: SKScene {
         // set up sequence for if the scene has not been touched for 10 seconds: play the idle reminder
         let reminderIfIdle = SKAction.run {
             self.reminderComplete = false
-            let airplane_reminder = SKAction.playSoundFileNamed("reminder_airplane", waitForCompletion: true)
-            self.run(airplane_reminder, completion: { self.reminderComplete = true} )
+            let shoes_reminder = SKAction.playSoundFileNamed("reminder_shoes", waitForCompletion: true)
+            self.run(shoes_reminder, completion: { self.reminderComplete = true} )
         }
         
         // for every one second, do this action:
@@ -71,69 +72,79 @@ class AirplaneScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // local variable for airplane sprite
-        let airplane = self.childNode(withName: "airplane_bw")
+        // local variable for shoes sprite
+        let shoes = self.childNode(withName: "shoes_bw")
         
         // if no instructions are playing
-        if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false) {
+        if (instructionsComplete == true) && (reminderComplete == true)  && (sceneOver == false) {
             let touch = touches.first!
             
-            //If airplane sprite is touched...   
-            if (physicsWorld.body(at: touch.location(in: self)) == airplane?.physicsBody) && (sceneOver == false) {
+            //If shoes sprite is touched...
+            if (physicsWorld.body(at: touch.location(in: self)) == shoes?.physicsBody)  && (sceneOver == false) {
                 sceneOver = true
-                airplane_correctTouches += 1
+                shoes_correctTouches += 1
                 correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
-                if (airplane_incorrectTouches == 0) {
+                if (shoes_incorrectTouches == 0) {
                     numOfCorrectFirstTry += 1
                     numOfCorrectLineBG += 1
                     numOfCorrectSetSize4 += 1
                     
-                    correctFirstTriesArray.append("airplane")
-                    correctTouchesArray.append("airplane")
-                    correctSetSize4.append("airplane")
-                    correctBGLine.append("airplane")
+                    correctFirstTriesArray.append("shoes")
+                    correctTouchesArray.append("shoes")
+                    correctSetSize4.append("shoes")
+                    correctBGLine.append("shoes")
                 }
                 
-                // Color airplane
-                let coloredAirplane:SKTexture = SKTexture(imageNamed: "airplaneScene_airplane_colored")
-                let changeToColored:SKAction = SKAction.animate(with: [coloredAirplane], timePerFrame: 0.0001)
-                airplane!.run(changeToColored)
+                // Color shoes
+                let coloredshoes = SKTexture(imageNamed: "shoesScene_shoes_colored")
+                let changeToColored = SKAction.animate(with: [coloredshoes], timePerFrame: 0.0001)
+                shoes!.run(changeToColored)
                 
-                // Play airplane noise, and fly airplane off screen
-                let airplaneNoise = SKAction.playSoundFileNamed("airplane", waitForCompletion: true)
-                let moveRight = SKAction.moveTo(x: 320, duration: 3.0)
-                let moveUp = SKAction.moveTo(y: 700, duration: 3.0)
-                airplane!.run(airplaneNoise)
-                airplane!.run(moveRight)
-                airplane!.run(moveUp)
+                // Variable for play shoes noise
+                let shoesNoise = SKAction.playSoundFileNamed("shoes", waitForCompletion: true)
+
+                //Variables for move animation
+                let moveLeft = SKAction.moveTo(x: -1000, duration: 3.0)
+                
+                // Variables to animate shoes and walk shoes off screen
+                let rightStep = SKTexture(imageNamed: "shoesScene_shoes_colored_rightStep")
+                let leftStep = SKTexture(imageNamed: "shoesScene_shoes_colored_leftStep")
+                let animationWalk = SKAction.animate(with: [rightStep, coloredshoes, leftStep], timePerFrame: 0.1)
+                let animationWalkRepeat = SKAction.repeat(animationWalk, count: 8)
+                
+                // Run all actions
+                shoes!.run(shoesNoise)
+                shoes!.run(animationWalkRepeat)
+                shoes!.run(moveLeft)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
                 let wait2 = SKAction.wait(forDuration: 2)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let shoesScene = SKScene(fileNamed: "ShoesScene")
-                    shoesScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(shoesScene!)
+                    let cakeScene = SKScene(fileNamed: "CakeScene")
+                    cakeScene?.scaleMode = SKSceneScaleMode.aspectFill
+                    self.scene!.view?.presentScene(cakeScene!)
                 }
             }
             else {
-                airplane_incorrectTouches += 1
+                shoes_incorrectTouches += 1
                 incorrectTouches += 1
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly
-            if (airplane_incorrectTouches % 3 == 0) && airplane_correctTouches < 1 {
+            if (shoes_incorrectTouches % 3 == 0) && shoes_correctTouches < 1 {
                 reminderComplete = false
-                let airplaneReminder = SKAction.playSoundFileNamed("reminder_airplane", waitForCompletion: true)
-                run(airplaneReminder, completion: { self.reminderComplete = true} )
+                let shoesReminder = SKAction.playSoundFileNamed("reminder_shoes", waitForCompletion: true)
+                run(shoesReminder, completion: { self.reminderComplete = true} )
             }
         }
         // update totalTouches variable for idle reminder
-        totalTouches = airplane_correctTouches + airplane_incorrectTouches
+        totalTouches = shoes_correctTouches + shoes_incorrectTouches
     }
 }
+
 
 
