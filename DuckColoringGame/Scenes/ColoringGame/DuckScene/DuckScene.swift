@@ -133,6 +133,10 @@ class DuckScene: SKScene {
             else {
                 duck_incorrectTouches += 1
                 incorrectTouches += 1
+                
+                // Play wrong noise
+                let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)
+                duck?.run(wrong)
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly

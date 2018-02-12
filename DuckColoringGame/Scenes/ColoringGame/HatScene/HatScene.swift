@@ -123,6 +123,10 @@ class HatScene: SKScene {
             else {
                 hat_incorrectTouches += 1
                 incorrectTouches += 1
+                
+                // Play wrong noise
+                let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)
+                hat?.run(wrong)
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly

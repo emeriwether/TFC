@@ -115,14 +115,18 @@ class CakeScene: SKScene {
                 let wait2 = SKAction.wait(forDuration: 2)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let slideScene = SKScene(fileNamed: "SlideScene")
-                    slideScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(slideScene!)
+                    let strollerScene = SKScene(fileNamed: "StrollerScene")
+                    strollerScene?.scaleMode = SKSceneScaleMode.aspectFill
+                    self.scene!.view?.presentScene(strollerScene!)
                 }
             }
             else {
                 cake_incorrectTouches += 1
                 incorrectTouches += 1
+                
+                // Play wrong noise
+                let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)
+                cake?.run(wrong)
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly

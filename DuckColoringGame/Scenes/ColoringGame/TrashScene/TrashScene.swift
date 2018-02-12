@@ -127,6 +127,10 @@ class TrashScene: SKScene {
             else {
                 trash_incorrectTouches += 1
                 incorrectTouches += 1
+                
+                // Play wrong noise
+                let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)
+                trash?.run(wrong)
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly
