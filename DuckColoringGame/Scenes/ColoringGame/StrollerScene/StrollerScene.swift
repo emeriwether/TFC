@@ -105,7 +105,7 @@ class StrollerScene: SKScene {
                 let lullaby = SKAction.playSoundFileNamed("stroller", waitForCompletion: true)
                 
                 //Run all actions
-                stroller!.run(western)
+                stroller!.run(lullaby)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)

@@ -102,13 +102,10 @@ class CakeScene: SKScene {
                 cake!.run(changeToColored)
                 
                 //Variables for cake audio
-                let western = SKAction.playSoundFileNamed("quack", waitForCompletion: true)
-                //Variables for move animation
-                let move = SKAction.moveTo(x: 900, duration: 3.0)
+                let happyBirthday = SKAction.playSoundFileNamed("cake", waitForCompletion: true)
                 
                 //Run all actions
-                cake!.run(western)
-                cake!.run(move)
+                cake!.run(happyBirthday)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)

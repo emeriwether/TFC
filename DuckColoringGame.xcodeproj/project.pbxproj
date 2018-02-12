@@ -121,6 +121,7 @@
 		06C90F75203111FB00F318AD /* RainScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F74203111FB00F318AD /* RainScene.sks */; };
 		06C90F782031196300F318AD /* moon.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F772031196300F318AD /* moon.wav */; };
 		06C90F7B2031238500F318AD /* stroller.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F7A2031238400F318AD /* stroller.wav */; };
+		06C90F7E2031261700F318AD /* cake.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F7D2031261600F318AD /* cake.wav */; };
 		06E34BB82030F7400027CE82 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BB72030F7400027CE82 /* correct.mp3 */; };
 		06E34BBA2030F8490027CE82 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BB92030F8490027CE82 /* wrong.wav */; };
 		06E34BC12030FB420027CE82 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BC02030FB420027CE82 /* correct.mp3 */; };
@@ -261,6 +262,7 @@
 		06C90F74203111FB00F318AD /* RainScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RainScene.sks; sourceTree = "<group>"; };
 		06C90F772031196300F318AD /* moon.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = moon.wav; sourceTree = "<group>"; };
 		06C90F7A2031238400F318AD /* stroller.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = stroller.wav; sourceTree = "<group>"; };
+		06C90F7D2031261600F318AD /* cake.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cake.wav; sourceTree = "<group>"; };
 		06E34BB72030F7400027CE82 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
 		06E34BB92030F8490027CE82 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrong.wav; sourceTree = "<group>"; };
 		06E34BC02030FB420027CE82 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
@@ -378,7 +380,6 @@
 		060A67CA202AA07A005F7323 /* ColoringGame */ = {
 			isa = PBXGroup;
 			children = (
-				06C90F7C2031238A00F318AD /* Stroller */,
 				06E34BB72030F7400027CE82 /* correct.mp3 */,
 				06E34BC7203105690027CE82 /* Rock */,
 				06E34BC8203105730027CE82 /* Lamp */,
@@ -392,6 +393,8 @@
 				060A67C9202AA066005F7323 /* Trash */,
 				060A67A7202A9FBE005F7323 /* Airplane */,
 				060A67B1202A9FDB005F7323 /* Shoes */,
+				06C90F7F2031262100F318AD /* Cake */,
+				06C90F7C2031238A00F318AD /* Stroller */,
 				060A67C5202AA03F005F7323 /* Spoon */,
 				060A67B5202A9FEF005F7323 /* Cookie */,
 				060A67C1202AA02D005F7323 /* Mouse */,
@@ -842,6 +845,14 @@
 			path = Stroller;
 			sourceTree = "<group>";
 		};
+		06C90F7F2031262100F318AD /* Cake */ = {
+			isa = PBXGroup;
+			children = (
+				06C90F7D2031261600F318AD /* cake.wav */,
+			);
+			path = Cake;
+			sourceTree = "<group>";
+		};
 		06E34BC6203102940027CE82 /* CatScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -1093,6 +1104,7 @@
 				06476DC31FC93F3E00B55906 /* CookieScene.sks in Resources */,
 				060A6825202AA8A9005F7323 /* cow.wav in Resources */,
 				06BD2F4C202BE6D200AC0A54 /* MoonScene.sks in Resources */,
+				06C90F7E2031261700F318AD /* cake.wav in Resources */,
 				0643D683202E1329000FA53D /* Find the plate.wav in Resources */,
 				06E34BB82030F7400027CE82 /* correct.mp3 in Resources */,
 				0630356A202F93020003CAE9 /* PasswordScene.sks in Resources */,
