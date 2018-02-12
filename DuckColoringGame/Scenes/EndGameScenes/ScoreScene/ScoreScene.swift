@@ -63,6 +63,7 @@ class ScoreScene: SKScene {
         correctFirstTryLabel.position = CGPoint(x: -379, y: 335.618)
         correctFirstTryLabel.zPosition = 10
         correctFirstTryLabel.fontColor = UIColor.black
+        correctFirstTryLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(correctFirstTryLabel)
 
         // place correct score on screen
@@ -71,6 +72,7 @@ class ScoreScene: SKScene {
         correctScoreLabel.position = CGPoint(x: -379, y: 295.618)
         correctScoreLabel.zPosition = 10
         correctScoreLabel.fontColor = UIColor.black
+        correctScoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(correctScoreLabel)
         
         // place incorrect score on screen
@@ -79,6 +81,7 @@ class ScoreScene: SKScene {
         incorrectScoreLabel.position = CGPoint(x: -379, y: 257.11)
         incorrectScoreLabel.zPosition = 10
         incorrectScoreLabel.fontColor = UIColor.black
+        incorrectScoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(incorrectScoreLabel)
         
         totalSetSizeLabel.text = "4. # correct by scene size"
@@ -86,6 +89,7 @@ class ScoreScene: SKScene {
         totalSetSizeLabel.position = CGPoint(x: -379, y: 208.493)
         totalSetSizeLabel.zPosition = 10
         totalSetSizeLabel.fontColor = UIColor.black
+        totalSetSizeLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(totalSetSizeLabel)
         
         // place correct score in set size 2 on screen
@@ -94,6 +98,7 @@ class ScoreScene: SKScene {
         setSize2Label.position = CGPoint(x: -336, y: 181)
         setSize2Label.zPosition = 10
         setSize2Label.fontColor = UIColor.black
+        setSize2Label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(setSize2Label)
         
         // place correct score in set size 3 on screen
@@ -102,6 +107,7 @@ class ScoreScene: SKScene {
         setSize3Label.position = CGPoint(x: -336, y: 149)
         setSize3Label.zPosition = 10
         setSize3Label.fontColor = UIColor.black
+        setSize3Label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(setSize3Label)
 
         // place correct score in set size 4 on screen
@@ -110,6 +116,7 @@ class ScoreScene: SKScene {
         setSize4Label.position = CGPoint(x: -336, y: 116.257)
         setSize4Label.zPosition = 10
         setSize4Label.fontColor = UIColor.black
+        setSize4Label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(setSize4Label)
         
         totalBGTypeLabel.text = "5. # correct by background type"
@@ -117,6 +124,7 @@ class ScoreScene: SKScene {
         totalBGTypeLabel.position = CGPoint(x: 36.039, y: 208.493)
         totalBGTypeLabel.zPosition = 10
         totalBGTypeLabel.fontColor = UIColor.black
+        totalBGTypeLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(totalBGTypeLabel)
         
         // place correct score in simple bg type
@@ -125,6 +133,7 @@ class ScoreScene: SKScene {
         simpleBGLabel.position = CGPoint(x: 79.039, y: 181)
         simpleBGLabel.zPosition = 10
         simpleBGLabel.fontColor = UIColor.black
+        simpleBGLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(simpleBGLabel)
         
         // place correct score in line bg type
@@ -133,6 +142,7 @@ class ScoreScene: SKScene {
         lineBGLabel.position = CGPoint(x: 79.039, y: 149)
         lineBGLabel.zPosition = 10
         lineBGLabel.fontColor = UIColor.black
+        lineBGLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(lineBGLabel)
         
         // place correct score in scene bg type
@@ -141,6 +151,7 @@ class ScoreScene: SKScene {
         sceneBGLabel.position = CGPoint(x: 79.039, y: 116.257)
         sceneBGLabel.zPosition = 10
         sceneBGLabel.fontColor = UIColor.black
+        sceneBGLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(sceneBGLabel)
         
         // place list of scenes with correct first time
@@ -155,6 +166,7 @@ class ScoreScene: SKScene {
         correctFirstTriesArrayLabel.position = CGPoint(x: -379, y: -87)
         correctFirstTriesArrayLabel.zPosition = 10
         correctFirstTriesArrayLabel.fontColor = UIColor.black
+        correctFirstTriesArrayLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(correctFirstTriesArrayLabel)
         
         // place list of scenes correct
@@ -169,6 +181,7 @@ class ScoreScene: SKScene {
         correctTouchesArrayLabel.position = CGPoint(x: -379, y: -124.739)
         correctTouchesArrayLabel.zPosition = 10
         correctTouchesArrayLabel.fontColor = UIColor.black
+        correctTouchesArrayLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(correctTouchesArrayLabel)
         
         // place dictionary of incorrect touches per scene
@@ -177,6 +190,7 @@ class ScoreScene: SKScene {
         numIncorrectPerSceneLabel.position = CGPoint(x: -379, y: -163)
         numIncorrectPerSceneLabel.zPosition = 10
         numIncorrectPerSceneLabel.fontColor = UIColor.black
+        numIncorrectPerSceneLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(numIncorrectPerSceneLabel)
         
         setSizeBreakdownLabel.text = "4. Correct scenes by scene size"
@@ -184,6 +198,7 @@ class ScoreScene: SKScene {
         setSizeBreakdownLabel.position = CGPoint(x: -379, y: -272.028)
         setSizeBreakdownLabel.zPosition = 10
         setSizeBreakdownLabel.fontColor = UIColor.black
+        setSizeBreakdownLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(setSizeBreakdownLabel)
         
         // place list of size 2 correct
@@ -198,6 +213,7 @@ class ScoreScene: SKScene {
         correctSetSize2Label.position = CGPoint(x: -336, y: -297.028)
         correctSetSize2Label.zPosition = 10
         correctSetSize2Label.fontColor = UIColor.black
+        correctSetSize2Label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(correctSetSize2Label)
         
         // place list of size 3 correct
@@ -212,6 +228,7 @@ class ScoreScene: SKScene {
         correctSetSize3Label.position = CGPoint(x: -336, y: -335.918)
         correctSetSize3Label.zPosition = 10
         correctSetSize3Label.fontColor = UIColor.black
+        correctSetSize3Label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(correctSetSize3Label)
         
         // place list of size 4 correct
@@ -226,6 +243,7 @@ class ScoreScene: SKScene {
         correctSetSize4Label.position = CGPoint(x: -336, y: -375.403)
         correctSetSize4Label.zPosition = 10
         correctSetSize4Label.fontColor = UIColor.black
+        correctSetSize4Label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(correctSetSize4Label)
         
         bgTypeBreakdownLabel.text = "5. Correct scenes by background type: "
@@ -233,6 +251,7 @@ class ScoreScene: SKScene {
         bgTypeBreakdownLabel.position = CGPoint(x: 36.039, y: -272.028)
         bgTypeBreakdownLabel.zPosition = 10
         bgTypeBreakdownLabel.fontColor = UIColor.black
+        bgTypeBreakdownLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(bgTypeBreakdownLabel)
         
         // place list of bg simple correct
@@ -247,6 +266,7 @@ class ScoreScene: SKScene {
         correctBGSimpleLabel.position = CGPoint(x: 79.039, y: -297.028)
         correctBGSimpleLabel.zPosition = 10
         correctBGSimpleLabel.fontColor = UIColor.black
+        correctBGSimpleLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(correctBGSimpleLabel)
         
         // place list of bg line correct
@@ -261,6 +281,7 @@ class ScoreScene: SKScene {
         correctBGLineLabel.position = CGPoint(x: 79.039, y: -335.919)
         correctBGLineLabel.zPosition = 10
         correctBGLineLabel.fontColor = UIColor.black
+        correctBGLineLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(correctBGLineLabel)
         
         // place list of bg scene correct
@@ -275,6 +296,7 @@ class ScoreScene: SKScene {
         correctBGSceneLabel.position = CGPoint(x: 79.039, y: -375.403)
         correctBGSceneLabel.zPosition = 10
         correctBGSceneLabel.fontColor = UIColor.black
+        correctBGSceneLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(correctBGSceneLabel)
     }
     
