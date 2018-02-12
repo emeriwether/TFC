@@ -34,11 +34,11 @@ class ScoreScene: SKScene {
     let correctFirstTryLabel = SKLabelNode(fontNamed:"Calibri")
     let incorrectScoreLabel = SKLabelNode(fontNamed: "Calibri")
     let correctScoreLabel = SKLabelNode(fontNamed: "Calibri")
-    let setSizeLabel = SKLabelNode(fontNamed: "Calibri")
+    let totalSetSizeLabel = SKLabelNode(fontNamed: "Calibri")
     let setSize2Label = SKLabelNode(fontNamed: "Calibri")
     let setSize3Label = SKLabelNode(fontNamed: "Calibri")
     let setSize4Label = SKLabelNode(fontNamed: "Calibri")
-    let bgTypeLabel = SKLabelNode(fontNamed: "Calibri")
+    let totalBGTypeLabel = SKLabelNode(fontNamed: "Calibri")
     let simpleBGLabel = SKLabelNode(fontNamed: "Calibri")
     let lineBGLabel = SKLabelNode(fontNamed: "Calibri")
     let sceneBGLabel = SKLabelNode(fontNamed: "Calibri")
@@ -46,9 +46,11 @@ class ScoreScene: SKScene {
     let correctFirstTriesArrayLabel = SKLabelNode(fontNamed:"Calibri")
     let correctTouchesArrayLabel = SKLabelNode(fontNamed: "Calibri")
     let numIncorrectPerSceneLabel = SKLabelNode(fontNamed: "Calibri")
+    let setSizeBreakdownLabel = SKLabelNode(fontNamed: "Calibri")
     let correctSetSize2Label = SKLabelNode(fontNamed: "Calibri")
     let correctSetSize3Label = SKLabelNode(fontNamed: "Calibri")
     let correctSetSize4Label = SKLabelNode(fontNamed: "Calibri")
+    let bgTypeBreakdownLabel = SKLabelNode(fontNamed: "Calibri")
     let correctBGSimpleLabel = SKLabelNode(fontNamed: "Calibri")
     let correctBGLineLabel = SKLabelNode(fontNamed: "Calibri")
     let correctBGSceneLabel = SKLabelNode(fontNamed: "Calibri")
@@ -56,17 +58,17 @@ class ScoreScene: SKScene {
     override func didMove(to view: SKView) {
         
         // place correct first try screens  
-        correctFirstTryLabel.text = "Number of scenes with correct first time: \(numOfCorrectFirstTry) / 16"
+        correctFirstTryLabel.text = "Number of scenes with correct first time: \(numOfCorrectFirstTry) / 18"
         correctFirstTryLabel.fontSize = 20
-        correctFirstTryLabel.position = CGPoint(x: 15, y: 332.037)
+        correctFirstTryLabel.position = CGPoint(x: -379, y: 335.618)
         correctFirstTryLabel.zPosition = 10
         correctFirstTryLabel.fontColor = UIColor.black
         self.addChild(correctFirstTryLabel)
 
         // place correct score on screen
-        correctScoreLabel.text = "Number of scenes correct: \(correctTouches) / 16"
+        correctScoreLabel.text = "Number of scenes correct: \(correctTouches) / 18"
         correctScoreLabel.fontSize = 20
-        correctScoreLabel.position = CGPoint(x: -123.047, y: 306)
+        correctScoreLabel.position = CGPoint(x: -379, y: 295.618)
         correctScoreLabel.zPosition = 10
         correctScoreLabel.fontColor = UIColor.black
         self.addChild(correctScoreLabel)
@@ -74,37 +76,51 @@ class ScoreScene: SKScene {
         // place incorrect score on screen
         incorrectScoreLabel.text = "Number of incorrect touches \(incorrectTouches)"
         incorrectScoreLabel.fontSize = 20
-        incorrectScoreLabel.position = CGPoint(x: -90.999, y: 280.113)
+        incorrectScoreLabel.position = CGPoint(x: -379, y: 257.11)
         incorrectScoreLabel.zPosition = 10
         incorrectScoreLabel.fontColor = UIColor.black
         self.addChild(incorrectScoreLabel)
         
+        totalSetSizeLabel.text = "4. # correct by scene size"
+        totalSetSizeLabel.fontSize = 20
+        totalSetSizeLabel.position = CGPoint(x: -379, y: 208.493)
+        totalSetSizeLabel.zPosition = 10
+        totalSetSizeLabel.fontColor = UIColor.black
+        self.addChild(totalSetSizeLabel)
+        
         // place correct score in set size 2 on screen
-        setSize2Label.text = "  \(numOfCorrectSetSize2) / 6"
+        setSize2Label.text = "2: \(numOfCorrectSetSize2) / 6"
         setSize2Label.fontSize = 20
-        setSize2Label.position = CGPoint(x: -318, y: 161)
+        setSize2Label.position = CGPoint(x: -336, y: 181)
         setSize2Label.zPosition = 10
         setSize2Label.fontColor = UIColor.black
         self.addChild(setSize2Label)
         
         // place correct score in set size 3 on screen
-        setSize3Label.text = "  \(numOfCorrectSetSize3) / 4"
+        setSize3Label.text = "3: \(numOfCorrectSetSize3) / 6"
         setSize3Label.fontSize = 20
-        setSize3Label.position = CGPoint(x: -318, y: 136)
+        setSize3Label.position = CGPoint(x: -336, y: 149)
         setSize3Label.zPosition = 10
         setSize3Label.fontColor = UIColor.black
         self.addChild(setSize3Label)
 
         // place correct score in set size 4 on screen
-        setSize4Label.text = "  \(numOfCorrectSetSize4) / 4"
+        setSize4Label.text = "4: \(numOfCorrectSetSize4) / 6"
         setSize4Label.fontSize = 20
-        setSize4Label.position = CGPoint(x: -318, y: 108.545)
+        setSize4Label.position = CGPoint(x: -336, y: 116.257)
         setSize4Label.zPosition = 10
         setSize4Label.fontColor = UIColor.black
         self.addChild(setSize4Label)
         
+        totalBGTypeLabel.text = "5. # correct by background type"
+        totalBGTypeLabel.fontSize = 20
+        totalBGTypeLabel.position = CGPoint(x: -90.999, y: 280.113)
+        totalBGTypeLabel.zPosition = 10
+        totalBGTypeLabel.fontColor = UIColor.black
+        self.addChild(totalBGTypeLabel)
+        
         // place correct score in simple bg type
-        simpleBGLabel.text = " \(numOfCorrectSimpleBG) / 2"
+        simpleBGLabel.text = "Simple: \(numOfCorrectSimpleBG) / 6"
         simpleBGLabel.fontSize = 20
         simpleBGLabel.position = CGPoint(x: 196.013, y: 161)
         simpleBGLabel.zPosition = 10
@@ -112,7 +128,7 @@ class ScoreScene: SKScene {
         self.addChild(simpleBGLabel)
         
         // place correct score in line bg type
-        lineBGLabel.text = " \(numOfCorrectLineBG) / 4"
+        lineBGLabel.text = "Line: \(numOfCorrectLineBG) / 6"
         lineBGLabel.fontSize = 20
         lineBGLabel.position = CGPoint(x: 196.013, y: 132.553)
         lineBGLabel.zPosition = 10
@@ -120,7 +136,7 @@ class ScoreScene: SKScene {
         self.addChild(lineBGLabel)
         
         // place correct score in scene bg type
-        sceneBGLabel.text = " \(numOfCorrectSceneBG) / 4"
+        sceneBGLabel.text = "Scene: \(numOfCorrectSceneBG) / 6"
         sceneBGLabel.fontSize = 20
         sceneBGLabel.position = CGPoint(x: 196.013, y: 107.541)
         sceneBGLabel.zPosition = 10
@@ -130,10 +146,10 @@ class ScoreScene: SKScene {
         // place list of scenes with correct first time
         let correctFTjoined = correctFirstTriesArray.joined(separator: ", ")
         if correctFirstTriesArray.count > 0 {
-            correctFirstTriesArrayLabel.text = "\(correctFTjoined)"
+            correctFirstTriesArrayLabel.text = "1. Scenes w/ correct first time: \(correctFTjoined) / 18"
         }
         else {
-            correctFirstTriesArrayLabel.text = "n/a"
+            correctFirstTriesArrayLabel.text = "Scenes w/ correct first time: n/a"
         }
         correctFirstTriesArrayLabel.fontSize = 20
         correctFirstTriesArrayLabel.position = CGPoint(x: -60.999, y: -129.757)
@@ -144,10 +160,10 @@ class ScoreScene: SKScene {
         // place list of scenes correct
         let correctJoined = correctTouchesArray.joined(separator: ", ")
         if correctTouchesArray.count > 0 {
-            correctTouchesArrayLabel.text = "\(correctJoined)"
+            correctTouchesArrayLabel.text = "2. Scenes correct: \(correctJoined) / 18"
         }
         else {
-            correctTouchesArrayLabel.text = "n/a"
+            correctTouchesArrayLabel.text = "2. Scenes correct: n/a"
         }
         correctTouchesArrayLabel.fontSize = 20
         correctTouchesArrayLabel.position = CGPoint(x: -182, y: -157)
@@ -155,13 +171,28 @@ class ScoreScene: SKScene {
         correctTouchesArrayLabel.fontColor = UIColor.black
         self.addChild(correctTouchesArrayLabel)
         
+        // place dictionary of incorrect touches per scene
+        numIncorrectPerSceneLabel.text = "3. # of incorrect touches per scene:"
+        numIncorrectPerSceneLabel.fontSize = 20
+        numIncorrectPerSceneLabel.position = CGPoint(x: -182, y: -157)
+        numIncorrectPerSceneLabel.zPosition = 10
+        numIncorrectPerSceneLabel.fontColor = UIColor.black
+        self.addChild(numIncorrectPerSceneLabel)
+        
+        setSizeBreakdownLabel.text = "4. Correct scenes by scene size"
+        setSizeBreakdownLabel.fontSize = 20
+        setSizeBreakdownLabel.position = CGPoint(x: -182, y: -157)
+        setSizeBreakdownLabel.zPosition = 10
+        setSizeBreakdownLabel.fontColor = UIColor.black
+        self.addChild(setSizeBreakdownLabel)
+        
         // place list of size 2 correct
         let size2Joined = correctSetSize2.joined(separator: ", ")
         if correctSetSize2.count > 0 {
-            correctSetSize2Label.text = "\(size2Joined)"
+            correctSetSize2Label.text = "2: \(size2Joined)"
         }
         else {
-            correctSetSize2Label.text = "n/a"
+            correctSetSize2Label.text = "2: n/a"
         }
         correctSetSize2Label.fontSize = 20
         correctSetSize2Label.position = CGPoint(x: -310, y: -296.176)
@@ -172,10 +203,10 @@ class ScoreScene: SKScene {
         // place list of size 3 correct
         let size3Joined = correctSetSize3.joined(separator: ", ")
         if correctSetSize3.count > 0 {
-            correctSetSize3Label.text = "\(size3Joined)"
+            correctSetSize3Label.text = "3: \(size3Joined)"
         }
         else {
-            correctSetSize3Label.text = "n/a"
+            correctSetSize3Label.text = "3: n/a"
         }
         correctSetSize3Label.fontSize = 20
         correctSetSize3Label.position = CGPoint(x: -310, y: -323)
@@ -186,10 +217,10 @@ class ScoreScene: SKScene {
         // place list of size 4 correct
         let size4Joined = correctSetSize4.joined(separator: ", ")
         if correctSetSize4.count > 0 {
-            correctSetSize4Label.text = "\(size4Joined)"
+            correctSetSize4Label.text = "4: \(size4Joined)"
         }
         else {
-            correctSetSize4Label.text = "n/a"
+            correctSetSize4Label.text = "4: n/a"
         }
         correctSetSize4Label.fontSize = 20
         correctSetSize4Label.position = CGPoint(x: -310, y: -347.575)
@@ -197,13 +228,20 @@ class ScoreScene: SKScene {
         correctSetSize4Label.fontColor = UIColor.black
         self.addChild(correctSetSize4Label)
         
+        bgTypeBreakdownLabel.text = "5. Correct scenes by background type: "
+        bgTypeBreakdownLabel.fontSize = 20
+        bgTypeBreakdownLabel.position = CGPoint(x: -310, y: -347.575)
+        bgTypeBreakdownLabel.zPosition = 10
+        bgTypeBreakdownLabel.fontColor = UIColor.black
+        self.addChild(bgTypeBreakdownLabel)
+        
         // place list of bg simple correct
         let bgSimpleJoined = correctBGSimple.joined(separator: ", ")
         if correctBGSimple.count > 0 {
-            correctBGSimpleLabel.text = "\(bgSimpleJoined)"
+            correctBGSimpleLabel.text = "Simple: \(bgSimpleJoined)"
         }
         else {
-            correctBGSimpleLabel.text = "n/a"
+            correctBGSimpleLabel.text = "Simple: n/a"
         }
         correctBGSimpleLabel.fontSize = 20
         correctBGSimpleLabel.position = CGPoint(x: 194.438, y: -295.762)
@@ -214,10 +252,10 @@ class ScoreScene: SKScene {
         // place list of bg line correct
         let bgLineJoined = correctBGLine.joined(separator: ", ")
         if correctBGLine.count > 0 {
-            correctBGLineLabel.text = "\(bgLineJoined)"
+            correctBGLineLabel.text = "Line: \(bgLineJoined)"
         }
         else {
-            correctBGLineLabel.text = "n/a"
+            correctBGLineLabel.text = "Line: n/a"
         }
         correctBGLineLabel.fontSize = 20
         correctBGLineLabel.position = CGPoint(x: 194.438, y: -324)
@@ -228,10 +266,10 @@ class ScoreScene: SKScene {
         // place list of bg scene correct
         let bgSceneJoined = correctBGScene.joined(separator: ", ")
         if correctBGScene.count > 0 {
-            correctBGSceneLabel.text = "\(bgSceneJoined)"
+            correctBGSceneLabel.text = "Scene: \(bgSceneJoined)"
         }
         else {
-            correctBGSceneLabel.text = "n/a"
+            correctBGSceneLabel.text = "Scene: n/a"
         }
         correctBGSceneLabel.fontSize = 20
         correctBGSceneLabel.position = CGPoint(x: 228.438, y: -350.5)
