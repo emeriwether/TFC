@@ -34,9 +34,11 @@ class ScoreScene: SKScene {
     let correctFirstTryLabel = SKLabelNode(fontNamed:"Calibri")
     let incorrectScoreLabel = SKLabelNode(fontNamed: "Calibri")
     let correctScoreLabel = SKLabelNode(fontNamed: "Calibri")
+    let setSizeLabel = SKLabelNode(fontNamed: "Calibri")
     let setSize2Label = SKLabelNode(fontNamed: "Calibri")
     let setSize3Label = SKLabelNode(fontNamed: "Calibri")
     let setSize4Label = SKLabelNode(fontNamed: "Calibri")
+    let bgTypeLabel = SKLabelNode(fontNamed: "Calibri")
     let simpleBGLabel = SKLabelNode(fontNamed: "Calibri")
     let lineBGLabel = SKLabelNode(fontNamed: "Calibri")
     let sceneBGLabel = SKLabelNode(fontNamed: "Calibri")
@@ -54,7 +56,7 @@ class ScoreScene: SKScene {
     override func didMove(to view: SKView) {
         
         // place correct first try screens  
-        correctFirstTryLabel.text = " \(numOfCorrectFirstTry) / 16"
+        correctFirstTryLabel.text = "Number of scenes with correct first time: \(numOfCorrectFirstTry) / 16"
         correctFirstTryLabel.fontSize = 20
         correctFirstTryLabel.position = CGPoint(x: 15, y: 332.037)
         correctFirstTryLabel.zPosition = 10
@@ -62,7 +64,7 @@ class ScoreScene: SKScene {
         self.addChild(correctFirstTryLabel)
 
         // place correct score on screen
-        correctScoreLabel.text = " \(correctTouches) / 16"
+        correctScoreLabel.text = "Number of scenes correct: \(correctTouches) / 16"
         correctScoreLabel.fontSize = 20
         correctScoreLabel.position = CGPoint(x: -123.047, y: 306)
         correctScoreLabel.zPosition = 10
@@ -70,7 +72,7 @@ class ScoreScene: SKScene {
         self.addChild(correctScoreLabel)
         
         // place incorrect score on screen
-        incorrectScoreLabel.text = " \(incorrectTouches)"
+        incorrectScoreLabel.text = "Number of incorrect touches \(incorrectTouches)"
         incorrectScoreLabel.fontSize = 20
         incorrectScoreLabel.position = CGPoint(x: -90.999, y: 280.113)
         incorrectScoreLabel.zPosition = 10
