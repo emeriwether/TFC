@@ -108,8 +108,8 @@ class HatScene: SKScene {
                 hat!.run(western)
                 
                 //Variables to switch screens
-                let fadeOut = SKAction.fadeOut(withDuration:2)
-                let wait2 = SKAction.wait(forDuration: 2)
+                let fadeOut = SKAction.fadeOut(withDuration:3)
+                let wait2 = SKAction.wait(forDuration: 3)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
                     let cookieScene = SKScene(fileNamed: "CookieScene")
