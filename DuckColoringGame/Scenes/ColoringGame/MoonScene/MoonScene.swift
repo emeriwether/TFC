@@ -1,5 +1,5 @@
 //
-//  TrainScene.swift
+//  MoonScene.swift
 //  TimeForChildrenGame
 //
 //  Created by Eleanor Meriwether on 12/7/17.
@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class TrainScene: SKScene {
+class MoonScene: SKScene {
     // local variables to keep track of whether instructions are playing
     var instructionsComplete = false
     var reminderComplete = true
@@ -17,8 +17,8 @@ class TrainScene: SKScene {
     var sceneOver = false
     
     // local variables to keep track of touches for this scene
-    var train_incorrectTouches = 0
-    var train_correctTouches = 0
+    var moon_incorrectTouches = 0
+    var moon_correctTouches = 0
     var totalTouches = 0
     
     override func didMove(to view: SKView) {
@@ -39,8 +39,8 @@ class TrainScene: SKScene {
         // set up sequence for if the scene has not been touched for 10 seconds: play the idle reminder
         let reminderIfIdle = SKAction.run {
             self.reminderComplete = false
-            let train_reminder = SKAction.playSoundFileNamed("reminder_duck", waitForCompletion: true)
-            self.run(train_reminder, completion: { self.reminderComplete = true} )
+            let moon_reminder = SKAction.playSoundFileNamed("reminder_duck", waitForCompletion: true)
+            self.run(moon_reminder, completion: { self.reminderComplete = true} )
         }
         
         // for every one second, do this action:
@@ -71,44 +71,41 @@ class TrainScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // local variable for train sprite
-        let train = self.childNode(withName: "train_bw")
+        // local variable for moon sprite
+        let moon = self.childNode(withName: "moon_bw")
         
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false){
             let touch = touches.first!
             
-            //If train sprite's alpha mask is touched...
-            if (physicsWorld.body(at: touch.location(in: self)) == train?.physicsBody) && (sceneOver == false) {
+            //If moon sprite's alpha mask is touched...
+            if (physicsWorld.body(at: touch.location(in: self)) == moon?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
-                train_correctTouches += 1
+                moon_correctTouches += 1
                 correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
-                if (train_incorrectTouches == 0) {
+                if (moon_incorrectTouches == 0) {
                     numOfCorrectFirstTry += 1
                     numOfCorrectLineBG += 1
                     numOfCorrectSetSize2 += 1
                     
-                    correctFirstTriesArray.append("train")
-                    correctTouchesArray.append("train")
-                    correctSetSize2.append("train")
-                    correctBGLine.append("train")
+                    correctFirstTriesArray.append("moon")
+                    correctTouchesArray.append("moon")
+                    correctSetSize2.append("moon")
+                    correctBGLine.append("moon")
                 }
                 
                 // Change sprite to colored duck
-                let coloredTrain:SKTexture = SKTexture(imageNamed: "trainScene_train_colored")
-                let changeToColored:SKAction = SKAction.animate(with: [coloredTrain], timePerFrame: 0.0001)
-                train!.run(changeToColored)
+                let coloredmoon:SKTexture = SKTexture(imageNamed: "moonScene_moon_colored")
+                let changeToColored:SKAction = SKAction.animate(with: [coloredmoon], timePerFrame: 0.0001)
+                moon!.run(changeToColored)
             
-                //Variables for Train audio
-                let chooChoo = SKAction.playSoundFileNamed("quack", waitForCompletion: true)
-                //Variables for move animation
-                let move = SKAction.moveTo(x: 900, duration: 3.0)
+                //Variables for moon audio
+                let nightTime = SKAction.playSoundFileNamed("moon", waitForCompletion: true)
 
                 //Run all actions
-                train!.run(chooChoo)
-                train!.run(move)
+                moon!.run(nightTime)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
@@ -121,19 +118,19 @@ class TrainScene: SKScene {
                 }
             }
             else {
-                train_incorrectTouches += 1
+                moon_incorrectTouches += 1
                 incorrectTouches += 1
             }
 
             // play reminder instructions if user has touched screen 3 times incorrectly
-            if (train_incorrectTouches % 3 == 0) && train_correctTouches < 1 {
+            if (moon_incorrectTouches % 3 == 0) && moon_correctTouches < 1 {
                 reminderComplete = false
-                let train_reminder = SKAction.playSoundFileNamed("reminder_duck", waitForCompletion: true)
-                run(train_reminder, completion: { self.reminderComplete = true} )
+                let moon_reminder = SKAction.playSoundFileNamed("reminder_duck", waitForCompletion: true)
+                run(moon_reminder, completion: { self.reminderComplete = true} )
             }
         }
         // update totalTouches variable for idle reminder
-        totalTouches = train_correctTouches + train_incorrectTouches
+        totalTouches = moon_correctTouches + moon_incorrectTouches
     }
 }
 

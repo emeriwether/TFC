@@ -104,8 +104,8 @@
 		069DE7C420045B0100465399 /* SpoonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069DE7C320045B0100465399 /* SpoonScene.swift */; };
 		069DE7C620045B0F00465399 /* SpoonScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 069DE7C520045B0F00465399 /* SpoonScene.sks */; };
 		06B3C6E51FBCD46C00252DB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06B3C6E41FBCD46C00252DB6 /* Assets.xcassets */; };
-		06BD2F4A202BE6C100AC0A54 /* TrainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BD2F49202BE6C100AC0A54 /* TrainScene.swift */; };
-		06BD2F4C202BE6D200AC0A54 /* TrainScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06BD2F4B202BE6D200AC0A54 /* TrainScene.sks */; };
+		06BD2F4A202BE6C100AC0A54 /* MoonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BD2F49202BE6C100AC0A54 /* MoonScene.swift */; };
+		06BD2F4C202BE6D200AC0A54 /* MoonScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06BD2F4B202BE6D200AC0A54 /* MoonScene.sks */; };
 		06C819D7202E2B43002F838E /* instructions_bread.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C819D5202E2B42002F838E /* instructions_bread.mp3 */; };
 		06C819D8202E2B43002F838E /* instructions_egg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C819D6202E2B43002F838E /* instructions_egg.mp3 */; };
 		06C819DB202E2B62002F838E /* instructions_hamburger.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C819D9202E2B61002F838E /* instructions_hamburger.mp3 */; };
@@ -119,6 +119,7 @@
 		06C90F70203111B600F318AD /* rain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F6F203111B500F318AD /* rain.wav */; };
 		06C90F73203111EE00F318AD /* RainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C90F72203111EE00F318AD /* RainScene.swift */; };
 		06C90F75203111FB00F318AD /* RainScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F74203111FB00F318AD /* RainScene.sks */; };
+		06C90F782031196300F318AD /* moon.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F772031196300F318AD /* moon.wav */; };
 		06E34BB82030F7400027CE82 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BB72030F7400027CE82 /* correct.mp3 */; };
 		06E34BBA2030F8490027CE82 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BB92030F8490027CE82 /* wrong.wav */; };
 		06E34BC12030FB420027CE82 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BC02030FB420027CE82 /* correct.mp3 */; };
@@ -242,8 +243,8 @@
 		069DE7C320045B0100465399 /* SpoonScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoonScene.swift; sourceTree = "<group>"; };
 		069DE7C520045B0F00465399 /* SpoonScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SpoonScene.sks; sourceTree = "<group>"; };
 		06B3C6E41FBCD46C00252DB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		06BD2F49202BE6C100AC0A54 /* TrainScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainScene.swift; sourceTree = "<group>"; };
-		06BD2F4B202BE6D200AC0A54 /* TrainScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TrainScene.sks; sourceTree = "<group>"; };
+		06BD2F49202BE6C100AC0A54 /* MoonScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonScene.swift; sourceTree = "<group>"; };
+		06BD2F4B202BE6D200AC0A54 /* MoonScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MoonScene.sks; sourceTree = "<group>"; };
 		06C819D5202E2B42002F838E /* instructions_bread.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_bread.mp3; sourceTree = "<group>"; };
 		06C819D6202E2B43002F838E /* instructions_egg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_egg.mp3; sourceTree = "<group>"; };
 		06C819D9202E2B61002F838E /* instructions_hamburger.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_hamburger.mp3; sourceTree = "<group>"; };
@@ -257,6 +258,7 @@
 		06C90F6F203111B500F318AD /* rain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rain.wav; sourceTree = "<group>"; };
 		06C90F72203111EE00F318AD /* RainScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainScene.swift; sourceTree = "<group>"; };
 		06C90F74203111FB00F318AD /* RainScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RainScene.sks; sourceTree = "<group>"; };
+		06C90F772031196300F318AD /* moon.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = moon.wav; sourceTree = "<group>"; };
 		06E34BB72030F7400027CE82 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
 		06E34BB92030F8490027CE82 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrong.wav; sourceTree = "<group>"; };
 		06E34BC02030FB420027CE82 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 				06C90F6720310D7100F318AD /* Hand */,
 				06C90F71203111B900F318AD /* Rain */,
 				060A67BD202AA019005F7323 /* Duck */,
+				06C90F792031196700F318AD /* Moon */,
 				060A67B9202AA001005F7323 /* Cow */,
 				060A67C9202AA066005F7323 /* Trash */,
 				060A67A7202A9FBE005F7323 /* Airplane */,
@@ -516,7 +519,7 @@
 				06C90F6C20310DD800F318AD /* HandScene */,
 				06C90F762031120100F318AD /* RainScene */,
 				0643D694202E1C01000FA53D /* DuckScene */,
-				06BD2F4D202BE71A00AC0A54 /* TrainScene */,
+				06BD2F4D202BE71A00AC0A54 /* MoonScene */,
 				061F1BD82004885B00A05E8E /* CowScene */,
 				0669B8EF20040494002D8CAC /* TrashScene */,
 				062D7D4E1FD1260A00575A5B /* AirplaneScene */,
@@ -758,13 +761,13 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		06BD2F4D202BE71A00AC0A54 /* TrainScene */ = {
+		06BD2F4D202BE71A00AC0A54 /* MoonScene */ = {
 			isa = PBXGroup;
 			children = (
-				06BD2F49202BE6C100AC0A54 /* TrainScene.swift */,
-				06BD2F4B202BE6D200AC0A54 /* TrainScene.sks */,
+				06BD2F49202BE6C100AC0A54 /* MoonScene.swift */,
+				06BD2F4B202BE6D200AC0A54 /* MoonScene.sks */,
 			);
-			path = TrainScene;
+			path = MoonScene;
 			sourceTree = "<group>";
 		};
 		06C819E1202F6DBA002F838E /* AllDoneScene */ = {
@@ -818,6 +821,14 @@
 				06C90F74203111FB00F318AD /* RainScene.sks */,
 			);
 			path = RainScene;
+			sourceTree = "<group>";
+		};
+		06C90F792031196700F318AD /* Moon */ = {
+			isa = PBXGroup;
+			children = (
+				06C90F772031196300F318AD /* moon.wav */,
+			);
+			path = Moon;
 			sourceTree = "<group>";
 		};
 		06E34BC6203102940027CE82 /* CatScene */ = {
@@ -999,6 +1010,7 @@
 				060A67FF202AA123005F7323 /* find the jacket.wav in Resources */,
 				06C819DC202E2B62002F838E /* instructions_pizza.mp3 in Resources */,
 				0643D67F202E131D000FA53D /* D.wav in Resources */,
+				06C90F782031196300F318AD /* moon.wav in Resources */,
 				06427F201FD9F8A0009C07ED /* PianoScene7.sks in Resources */,
 				06C819D7202E2B43002F838E /* instructions_bread.mp3 in Resources */,
 				060A6830202AA954005F7323 /* reminder_spoon.wav in Resources */,
@@ -1068,7 +1080,7 @@
 				060A6809202AA763005F7323 /* instructions_duck.wav in Resources */,
 				06476DC31FC93F3E00B55906 /* CookieScene.sks in Resources */,
 				060A6825202AA8A9005F7323 /* cow.wav in Resources */,
-				06BD2F4C202BE6D200AC0A54 /* TrainScene.sks in Resources */,
+				06BD2F4C202BE6D200AC0A54 /* MoonScene.sks in Resources */,
 				0643D683202E1329000FA53D /* Find the plate.wav in Resources */,
 				06E34BB82030F7400027CE82 /* correct.mp3 in Resources */,
 				0630356A202F93020003CAE9 /* PasswordScene.sks in Resources */,
@@ -1105,7 +1117,7 @@
 				06427F131FD9F880009C07ED /* PianoScene4.swift in Sources */,
 				06C90F73203111EE00F318AD /* RainScene.swift in Sources */,
 				06427F3D1FDA0206009C07ED /* MouseScene.swift in Sources */,
-				06BD2F4A202BE6C100AC0A54 /* TrainScene.swift in Sources */,
+				06BD2F4A202BE6C100AC0A54 /* MoonScene.swift in Sources */,
 				062B1BFC202D1DCD002DECBB /* CakeScene.swift in Sources */,
 				06427EFD1FD9F421009C07ED /* PianoScene1.swift in Sources */,
 				06427F0B1FD9F868009C07ED /* PianoScene2.swift in Sources */,
