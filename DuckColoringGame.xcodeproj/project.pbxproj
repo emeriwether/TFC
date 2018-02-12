@@ -116,6 +116,9 @@
 		06C90F6920310DC600F318AD /* HandScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C90F6820310DC600F318AD /* HandScene.swift */; };
 		06C90F6B20310DD200F318AD /* HandScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F6A20310DD200F318AD /* HandScene.sks */; };
 		06C90F6E20310FC800F318AD /* hand.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F6D20310FC700F318AD /* hand.wav */; };
+		06C90F70203111B600F318AD /* rain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F6F203111B500F318AD /* rain.wav */; };
+		06C90F73203111EE00F318AD /* RainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C90F72203111EE00F318AD /* RainScene.swift */; };
+		06C90F75203111FB00F318AD /* RainScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F74203111FB00F318AD /* RainScene.sks */; };
 		06E34BB82030F7400027CE82 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BB72030F7400027CE82 /* correct.mp3 */; };
 		06E34BBA2030F8490027CE82 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BB92030F8490027CE82 /* wrong.wav */; };
 		06E34BC12030FB420027CE82 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BC02030FB420027CE82 /* correct.mp3 */; };
@@ -251,6 +254,9 @@
 		06C90F6820310DC600F318AD /* HandScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandScene.swift; sourceTree = "<group>"; };
 		06C90F6A20310DD200F318AD /* HandScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HandScene.sks; sourceTree = "<group>"; };
 		06C90F6D20310FC700F318AD /* hand.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hand.wav; sourceTree = "<group>"; };
+		06C90F6F203111B500F318AD /* rain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rain.wav; sourceTree = "<group>"; };
+		06C90F72203111EE00F318AD /* RainScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainScene.swift; sourceTree = "<group>"; };
+		06C90F74203111FB00F318AD /* RainScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RainScene.sks; sourceTree = "<group>"; };
 		06E34BB72030F7400027CE82 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
 		06E34BB92030F8490027CE82 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrong.wav; sourceTree = "<group>"; };
 		06E34BC02030FB420027CE82 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
@@ -374,6 +380,7 @@
 				06E34BCB2031058C0027CE82 /* Cat */,
 				06E34BD320310A750027CE82 /* Lion */,
 				06C90F6720310D7100F318AD /* Hand */,
+				06C90F71203111B900F318AD /* Rain */,
 				060A67BD202AA019005F7323 /* Duck */,
 				060A67A7202A9FBE005F7323 /* Airplane */,
 				060A67B1202A9FDB005F7323 /* Boots */,
@@ -507,6 +514,7 @@
 				06E34BC6203102940027CE82 /* CatScene */,
 				06E34BD0203106AC0027CE82 /* LionScene */,
 				06C90F6C20310DD800F318AD /* HandScene */,
+				06C90F762031120100F318AD /* RainScene */,
 				0643D694202E1C01000FA53D /* DuckScene */,
 				06BD2F4D202BE71A00AC0A54 /* TrainScene */,
 				061F1BD82004885B00A05E8E /* CowScene */,
@@ -795,6 +803,23 @@
 			path = HandScene;
 			sourceTree = "<group>";
 		};
+		06C90F71203111B900F318AD /* Rain */ = {
+			isa = PBXGroup;
+			children = (
+				06C90F6F203111B500F318AD /* rain.wav */,
+			);
+			path = Rain;
+			sourceTree = "<group>";
+		};
+		06C90F762031120100F318AD /* RainScene */ = {
+			isa = PBXGroup;
+			children = (
+				06C90F72203111EE00F318AD /* RainScene.swift */,
+				06C90F74203111FB00F318AD /* RainScene.sks */,
+			);
+			path = RainScene;
+			sourceTree = "<group>";
+		};
 		06E34BC6203102940027CE82 /* CatScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -998,6 +1023,7 @@
 				066DB6331FAE8F1500C68B36 /* Main.storyboard in Resources */,
 				0630356E202FD3A30003CAE9 /* Calibri.ttf in Resources */,
 				06427F281FD9F8BA009C07ED /* PianoScene9.sks in Resources */,
+				06C90F75203111FB00F318AD /* RainScene.sks in Resources */,
 				060A682B202AA8BA005F7323 /* instructions_mouse.wav in Resources */,
 				060A680C202AA7DB005F7323 /* reminder_duck.wav in Resources */,
 				06476DD41FC9458E00B55906 /* ScoreScene.sks in Resources */,
@@ -1051,6 +1077,7 @@
 				06E34BC52031028E0027CE82 /* CatScene.sks in Resources */,
 				06B3C6E51FBCD46C00252DB6 /* Assets.xcassets in Resources */,
 				060A682A202AA8BA005F7323 /* reminder_mouse.wav in Resources */,
+				06C90F70203111B600F318AD /* rain.wav in Resources */,
 				06C90F6E20310FC800F318AD /* hand.wav in Resources */,
 				0643D68A202E133C000FA53D /* melody 2.wav in Resources */,
 				060A67F5202AA123005F7323 /* find the cat.wav in Resources */,
@@ -1076,6 +1103,7 @@
 				06E34BCD203106980027CE82 /* LionScene.swift in Sources */,
 				066DB6301FAE8F1500C68B36 /* GameViewController.swift in Sources */,
 				06427F131FD9F880009C07ED /* PianoScene4.swift in Sources */,
+				06C90F73203111EE00F318AD /* RainScene.swift in Sources */,
 				06427F3D1FDA0206009C07ED /* MouseScene.swift in Sources */,
 				06BD2F4A202BE6C100AC0A54 /* TrainScene.swift in Sources */,
 				062B1BFC202D1DCD002DECBB /* CakeScene.swift in Sources */,
