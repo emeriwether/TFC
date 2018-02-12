@@ -50,7 +50,6 @@ class Trainer_Bread: SKScene {
             //If bread sprite is touched...
             if (bread?.contains(touch.location(in: self)))! {
                 bread_correctTouches += 1
-                correctTouches += 1
                 
                 // Color bread
                 bread?.texture = SKTexture(imageNamed: "colorTrainer_bread_colored")
@@ -71,7 +70,6 @@ class Trainer_Bread: SKScene {
             }
             else {
                 bread_incorrectTouches += 1
-                incorrectTouches += 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

@@ -51,7 +51,6 @@ class Trainer_Balloon: SKScene {
             //If balloon sprite is touched...
             if (balloon?.contains(touch.location(in: self)))! {
                 balloon_correctTouches += 1
-                correctTouches += 1
                 
                 // Color balloon
                 balloon?.texture = SKTexture(imageNamed: "colorTrainer_balloon_colored")
@@ -72,7 +71,6 @@ class Trainer_Balloon: SKScene {
             }
             else {
                 balloon_incorrectTouches += 1
-                incorrectTouches += 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

@@ -64,6 +64,7 @@ class ScoreScene: SKScene {
         correctFirstTryLabel.zPosition = 10
         correctFirstTryLabel.fontColor = UIColor.black
         correctFirstTryLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        correctFirstTryLabel.preferredMaxLayoutWidth = 100
         self.addChild(correctFirstTryLabel)
 
         // place correct score on screen
@@ -73,15 +74,17 @@ class ScoreScene: SKScene {
         correctScoreLabel.zPosition = 10
         correctScoreLabel.fontColor = UIColor.black
         correctScoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        correctScoreLabel.preferredMaxLayoutWidth = 100
         self.addChild(correctScoreLabel)
         
         // place incorrect score on screen
-        incorrectScoreLabel.text = "Number of incorrect touches \(incorrectTouches)"
+        incorrectScoreLabel.text = "Number of incorrect touches: \(incorrectTouches)"
         incorrectScoreLabel.fontSize = 20
         incorrectScoreLabel.position = CGPoint(x: -379, y: 257.11)
         incorrectScoreLabel.zPosition = 10
         incorrectScoreLabel.fontColor = UIColor.black
         incorrectScoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        incorrectScoreLabel.preferredMaxLayoutWidth = 100
         self.addChild(incorrectScoreLabel)
         
         totalSetSizeLabel.text = "4. # correct by scene size"
@@ -90,6 +93,7 @@ class ScoreScene: SKScene {
         totalSetSizeLabel.zPosition = 10
         totalSetSizeLabel.fontColor = UIColor.black
         totalSetSizeLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        incorrectScoreLabel.preferredMaxLayoutWidth = 100
         self.addChild(totalSetSizeLabel)
         
         // place correct score in set size 2 on screen
@@ -99,6 +103,7 @@ class ScoreScene: SKScene {
         setSize2Label.zPosition = 10
         setSize2Label.fontColor = UIColor.black
         setSize2Label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        setSize2Label.preferredMaxLayoutWidth = 100
         self.addChild(setSize2Label)
         
         // place correct score in set size 3 on screen
@@ -137,7 +142,7 @@ class ScoreScene: SKScene {
         self.addChild(simpleBGLabel)
         
         // place correct score in line bg type
-        lineBGLabel.text = "Line: \(numOfCorrectLineBG) / 6"
+        lineBGLabel.text = "Line:     \(numOfCorrectLineBG) / 6"
         lineBGLabel.fontSize = 20
         lineBGLabel.position = CGPoint(x: 79.039, y: 149)
         lineBGLabel.zPosition = 10
@@ -167,6 +172,9 @@ class ScoreScene: SKScene {
         correctFirstTriesArrayLabel.zPosition = 10
         correctFirstTriesArrayLabel.fontColor = UIColor.black
         correctFirstTriesArrayLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        correctFirstTriesArrayLabel.preferredMaxLayoutWidth = 100
+        correctFirstTriesArrayLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        correctFirstTriesArrayLabel.numberOfLines = 0
         self.addChild(correctFirstTriesArrayLabel)
         
         // place list of scenes correct
