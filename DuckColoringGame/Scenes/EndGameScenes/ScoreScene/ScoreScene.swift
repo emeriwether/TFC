@@ -172,7 +172,7 @@ class ScoreScene: SKScene {
         correctFirstTriesArrayLabel.zPosition = 10
         correctFirstTriesArrayLabel.fontColor = UIColor.black
         correctFirstTriesArrayLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        correctFirstTriesArrayLabel.preferredMaxLayoutWidth = 100
+        correctFirstTriesArrayLabel.preferredMaxLayoutWidth = 900
         correctFirstTriesArrayLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         correctFirstTriesArrayLabel.numberOfLines = 0
         self.addChild(correctFirstTriesArrayLabel)
