@@ -108,8 +108,8 @@ class CakeScene: SKScene {
                 cake!.run(happyBirthday)
                 
                 //Variables to switch screens
-                let fadeOut = SKAction.fadeOut(withDuration:5)
-                let wait2 = SKAction.wait(forDuration: 5)
+                let fadeOut = SKAction.fadeOut(withDuration:4)
+                let wait2 = SKAction.wait(forDuration: 4)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
                     let strollerScene = SKScene(fileNamed: "StrollerScene")

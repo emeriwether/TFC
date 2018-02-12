@@ -64,7 +64,6 @@ class ScoreScene: SKScene {
         correctFirstTryLabel.zPosition = 10
         correctFirstTryLabel.fontColor = UIColor.black
         correctFirstTryLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        correctFirstTryLabel.preferredMaxLayoutWidth = 100
         self.addChild(correctFirstTryLabel)
 
         // place correct score on screen
@@ -74,7 +73,6 @@ class ScoreScene: SKScene {
         correctScoreLabel.zPosition = 10
         correctScoreLabel.fontColor = UIColor.black
         correctScoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        correctScoreLabel.preferredMaxLayoutWidth = 100
         self.addChild(correctScoreLabel)
         
         // place incorrect score on screen
@@ -84,7 +82,6 @@ class ScoreScene: SKScene {
         incorrectScoreLabel.zPosition = 10
         incorrectScoreLabel.fontColor = UIColor.black
         incorrectScoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        incorrectScoreLabel.preferredMaxLayoutWidth = 100
         self.addChild(incorrectScoreLabel)
         
         totalSetSizeLabel.text = "4. # correct by scene size"
@@ -93,7 +90,6 @@ class ScoreScene: SKScene {
         totalSetSizeLabel.zPosition = 10
         totalSetSizeLabel.fontColor = UIColor.black
         totalSetSizeLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        incorrectScoreLabel.preferredMaxLayoutWidth = 100
         self.addChild(totalSetSizeLabel)
         
         // place correct score in set size 2 on screen
@@ -103,7 +99,6 @@ class ScoreScene: SKScene {
         setSize2Label.zPosition = 10
         setSize2Label.fontColor = UIColor.black
         setSize2Label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        setSize2Label.preferredMaxLayoutWidth = 100
         self.addChild(setSize2Label)
         
         // place correct score in set size 3 on screen
@@ -162,7 +157,7 @@ class ScoreScene: SKScene {
         // place list of scenes with correct first time
         let correctFTjoined = correctFirstTriesArray.joined(separator: ", ")
         if correctFirstTriesArray.count > 0 {
-            correctFirstTriesArrayLabel.text = "1. Scenes w/ correct first time: \(correctFTjoined) / 18"
+            correctFirstTriesArrayLabel.text = "1. Scenes w/ correct first time: \(correctFTjoined)"
         }
         else {
             correctFirstTriesArrayLabel.text = "Scenes w/ correct first time: n/a"
@@ -172,21 +167,22 @@ class ScoreScene: SKScene {
         correctFirstTriesArrayLabel.zPosition = 10
         correctFirstTriesArrayLabel.fontColor = UIColor.black
         correctFirstTriesArrayLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        correctFirstTriesArrayLabel.preferredMaxLayoutWidth = 900
+        correctFirstTriesArrayLabel.preferredMaxLayoutWidth = 850
         correctFirstTriesArrayLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         correctFirstTriesArrayLabel.numberOfLines = 0
+        correctFirstTriesArrayLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.top
         self.addChild(correctFirstTriesArrayLabel)
         
         // place list of scenes correct
         let correctJoined = correctTouchesArray.joined(separator: ", ")
         if correctTouchesArray.count > 0 {
-            correctTouchesArrayLabel.text = "2. Scenes correct: \(correctJoined) / 18"
+            correctTouchesArrayLabel.text = "2. Scenes correct: \(correctJoined)"
         }
         else {
             correctTouchesArrayLabel.text = "2. Scenes correct: n/a"
         }
         correctTouchesArrayLabel.fontSize = 20
-        correctTouchesArrayLabel.position = CGPoint(x: -379, y: -124.739)
+        correctTouchesArrayLabel.position = CGPoint(x: -379, y: -150.739)
         correctTouchesArrayLabel.zPosition = 10
         correctTouchesArrayLabel.fontColor = UIColor.black
         correctTouchesArrayLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -195,7 +191,7 @@ class ScoreScene: SKScene {
         // place dictionary of incorrect touches per scene
         numIncorrectPerSceneLabel.text = "3. # of incorrect touches per scene:"
         numIncorrectPerSceneLabel.fontSize = 20
-        numIncorrectPerSceneLabel.position = CGPoint(x: -379, y: -163)
+        numIncorrectPerSceneLabel.position = CGPoint(x: -379, y: -189)
         numIncorrectPerSceneLabel.zPosition = 10
         numIncorrectPerSceneLabel.fontColor = UIColor.black
         numIncorrectPerSceneLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
