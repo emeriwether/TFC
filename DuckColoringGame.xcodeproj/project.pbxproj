@@ -122,6 +122,7 @@
 		06C90F782031196300F318AD /* moon.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F772031196300F318AD /* moon.wav */; };
 		06C90F7B2031238500F318AD /* stroller.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F7A2031238400F318AD /* stroller.wav */; };
 		06C90F7E2031261700F318AD /* cake.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F7D2031261600F318AD /* cake.wav */; };
+		06C90F812031275400F318AD /* hat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F802031275300F318AD /* hat.mp3 */; };
 		06E34BB82030F7400027CE82 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BB72030F7400027CE82 /* correct.mp3 */; };
 		06E34BBA2030F8490027CE82 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BB92030F8490027CE82 /* wrong.wav */; };
 		06E34BC12030FB420027CE82 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BC02030FB420027CE82 /* correct.mp3 */; };
@@ -263,6 +264,7 @@
 		06C90F772031196300F318AD /* moon.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = moon.wav; sourceTree = "<group>"; };
 		06C90F7A2031238400F318AD /* stroller.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = stroller.wav; sourceTree = "<group>"; };
 		06C90F7D2031261600F318AD /* cake.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cake.wav; sourceTree = "<group>"; };
+		06C90F802031275300F318AD /* hat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hat.mp3; sourceTree = "<group>"; };
 		06E34BB72030F7400027CE82 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
 		06E34BB92030F8490027CE82 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrong.wav; sourceTree = "<group>"; };
 		06E34BC02030FB420027CE82 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 				06C90F7F2031262100F318AD /* Cake */,
 				06C90F7C2031238A00F318AD /* Stroller */,
 				060A67C5202AA03F005F7323 /* Spoon */,
+				06C90F822031275800F318AD /* Hat */,
 				060A67B5202A9FEF005F7323 /* Cookie */,
 				060A67C1202AA02D005F7323 /* Mouse */,
 			);
@@ -853,6 +856,14 @@
 			path = Cake;
 			sourceTree = "<group>";
 		};
+		06C90F822031275800F318AD /* Hat */ = {
+			isa = PBXGroup;
+			children = (
+				06C90F802031275300F318AD /* hat.mp3 */,
+			);
+			path = Hat;
+			sourceTree = "<group>";
+		};
 		06E34BC6203102940027CE82 /* CatScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -1048,6 +1059,7 @@
 				06427F171FD9F88E009C07ED /* PianoScene5.sks in Resources */,
 				0643D680202E131D000FA53D /* Are you ready for more Now find the bathtub.wav in Resources */,
 				060A6835202AA966005F7323 /* trash.wav in Resources */,
+				06C90F812031275400F318AD /* hat.mp3 in Resources */,
 				060A6818202AA883005F7323 /* airplane.mp3 in Resources */,
 				0BCA0AAB201BCE0000488E8E /* Monster_T1.sks in Resources */,
 				06C819E0202F6D21002F838E /* AllDoneScene.sks in Resources */,

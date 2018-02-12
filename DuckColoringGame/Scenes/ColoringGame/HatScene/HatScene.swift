@@ -103,12 +103,9 @@ class HatScene: SKScene {
                 
                 //Variables for hat audio
                 let western = SKAction.playSoundFileNamed("hat", waitForCompletion: true)
-                //Variables for move animation
-                let move = SKAction.moveTo(x: 900, duration: 3.0)
                 
                 //Run all actions
                 hat!.run(western)
-                hat!.run(move)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
