@@ -55,7 +55,7 @@ class Trainer_Bread: SKScene {
                 // Color bread
                 bread?.texture = SKTexture(imageNamed: "colorTrainer_bread_colored")
                 
-                // Play crunch noise
+                // Play correct noise
                 let correct = SKAction.playSoundFileNamed("correct", waitForCompletion: true)
                 bread?.run(correct)
                 
@@ -64,14 +64,18 @@ class Trainer_Bread: SKScene {
                 let wait2 = SKAction.wait(forDuration: 1)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let pizzaScene = SKScene(fileNamed: "PizzaScene")
-                    pizzaScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(pizzaScene!)
+                    let rockScene = SKScene(fileNamed: "RockScene")
+                    rockScene?.scaleMode = SKSceneScaleMode.aspectFill
+                    self.scene!.view?.presentScene(rockScene!)
                 }
             }
             else {
                 bread_incorrectTouches += 1
                 incorrectTouches += 1
+                
+                // Play wrong noise
+                let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)
+                bread?.run(wrong)
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly
