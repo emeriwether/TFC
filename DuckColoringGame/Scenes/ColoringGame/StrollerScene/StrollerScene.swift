@@ -112,9 +112,9 @@ class StrollerScene: SKScene {
                 let wait2 = SKAction.wait(forDuration: 3)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let spoonScene = SKScene(fileNamed: "SpoonScene")
-                    spoonScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(spoonScene!)
+                    let toastScene = SKScene(fileNamed: "ToastScene")
+                    toastScene?.scaleMode = SKSceneScaleMode.aspectFill
+                    self.scene!.view?.presentScene(toastScene!)
                 }
             }
             else {

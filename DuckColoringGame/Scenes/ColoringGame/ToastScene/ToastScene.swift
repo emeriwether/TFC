@@ -1,5 +1,5 @@
 //
-//  SpoonScene.swift
+//  ToastScene.swift
 //  TimeForChildrenGame
 //
 //  Created by Eleanor Meriwether on 1/8/18.
@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class SpoonScene: SKScene {
+class ToastScene: SKScene {
     // local variables to keep track of whether instructions are playing
     var instructionsComplete = false
     var reminderComplete = true
@@ -17,8 +17,8 @@ class SpoonScene: SKScene {
     var sceneOver = false
     
     // local variables to keep track of touches for this scene
-    var spoon_incorrectTouches = 0
-    var spoon_correctTouches = 0
+    var toast_incorrectTouches = 0
+    var toast_correctTouches = 0
     var totalTouches = 0
     
     override func didMove(to view: SKView) {
@@ -26,7 +26,7 @@ class SpoonScene: SKScene {
         self.physicsBody = nil
         
         // run the introductory instructions, then flag instructionsComplete as true
-        let instructions = SKAction.playSoundFileNamed("instructions_spoon", waitForCompletion: true)
+        let instructions = SKAction.playSoundFileNamed("instructions_toast", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
         
         /////////////////////////////////
@@ -39,8 +39,8 @@ class SpoonScene: SKScene {
         // set up sequence for if the scene has not been touched for 10 seconds: play the idle reminder
         let reminderIfIdle = SKAction.run {
             self.reminderComplete = false
-            let spoon_reminder = SKAction.playSoundFileNamed("reminder_spoon", waitForCompletion: true)
-            self.run(spoon_reminder, completion: { self.reminderComplete = true} )
+            let toast_reminder = SKAction.playSoundFileNamed("reminder_toast", waitForCompletion: true)
+            self.run(toast_reminder, completion: { self.reminderComplete = true} )
         }
         
         // for every one second, do this action:
@@ -71,41 +71,41 @@ class SpoonScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // local variable for spoon sprite
-        let spoon = self.childNode(withName: "spoon_bw")
+        // local variable for toast sprite
+        let toast = self.childNode(withName: "toast_bw")
         
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false) {
             let touch = touches.first!
             
-            //If spoon sprite is touched...
-            if (physicsWorld.body(at: touch.location(in: self)) == spoon?.physicsBody) && (sceneOver == false) {
+            //If toast sprite is touched...
+            if (physicsWorld.body(at: touch.location(in: self)) == toast?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
-                spoon_correctTouches += 1
+                toast_correctTouches += 1
                 correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
-                if (spoon_incorrectTouches == 0) {
+                if (toast_incorrectTouches == 0) {
                     numOfCorrectFirstTry += 1
                     numOfCorrectSceneBG += 1
                     numOfCorrectSetSize3 += 1
                     
-                    correctFirstTriesArray.append("spoon")
-                    correctTouchesArray.append("spoon")
-                    correctSetSize3.append("spoon")
-                    correctBGScene.append("spoon")
+                    correctFirstTriesArray.append("toast")
+                    correctTouchesArray.append("toast")
+                    correctSetSize3.append("toast")
+                    correctBGScene.append("toast")
                 }
                 
-                // Color spoon
-                let coloredSpoon:SKTexture = SKTexture(imageNamed: "spoonScene_spoon_colored")
-                let changeToColored:SKAction = SKAction.animate(with: [coloredSpoon], timePerFrame: 0.0001)
-                spoon!.run(changeToColored)
+                // Color toast
+                let coloredtoast:SKTexture = SKTexture(imageNamed: "toastScene_toast_colored")
+                let changeToColored:SKAction = SKAction.animate(with: [coloredtoast], timePerFrame: 0.0001)
+                toast!.run(changeToColored)
                 
-                // Play spoon noise, and move spoon off screen
-                let spoonNoise = SKAction.playSoundFileNamed("spoon", waitForCompletion: true)
-                let moveRight = SKAction.moveTo(x: 1000, duration: 3.0)
-                spoon!.run(spoonNoise)
-                spoon!.run(moveRight)
+                // Play toast noise
+                let crunch = SKAction.playSoundFileNamed("crunch", waitForCompletion: true)
+
+                toast!.run(crunch)
+
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
@@ -118,23 +118,23 @@ class SpoonScene: SKScene {
                 }
             }
             else {
-                spoon_incorrectTouches += 1
+                toast_incorrectTouches += 1
                 incorrectTouches += 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)
-                spoon?.run(wrong)
+                toast?.run(wrong)
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly
-            if (spoon_incorrectTouches & 3 == 0) && spoon_correctTouches < 1 {
+            if (toast_incorrectTouches & 3 == 0) && toast_correctTouches < 1 {
                 reminderComplete = false
-                let spoonReminder = SKAction.playSoundFileNamed("reminder_spoon", waitForCompletion: true)
-                run(spoonReminder, completion: { self.reminderComplete = true} )
+                let toastReminder = SKAction.playSoundFileNamed("reminder_toast", waitForCompletion: true)
+                run(toastReminder, completion: { self.reminderComplete = true} )
             }
         }
         // update totalTouches variable for idle reminder
-        totalTouches = spoon_correctTouches + spoon_incorrectTouches
+        totalTouches = toast_correctTouches + toast_incorrectTouches
     }
 }
 
