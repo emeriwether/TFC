@@ -119,10 +119,10 @@
 		06C90F73203111EE00F318AD /* RainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C90F72203111EE00F318AD /* RainScene.swift */; };
 		06C90F75203111FB00F318AD /* RainScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F74203111FB00F318AD /* RainScene.sks */; };
 		06C90F782031196300F318AD /* moon.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F772031196300F318AD /* moon.wav */; };
-		06C90F7B2031238500F318AD /* stroller.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F7A2031238400F318AD /* stroller.wav */; };
 		06C90F7E2031261700F318AD /* cake.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F7D2031261600F318AD /* cake.wav */; };
 		06C90F812031275400F318AD /* hat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F802031275300F318AD /* hat.mp3 */; };
 		06C90F84203129A800F318AD /* crunch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F83203129A800F318AD /* crunch.wav */; };
+		06CD961120334DD70097D766 /* stroller.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06CD961020334DD60097D766 /* stroller.wav */; };
 		06E34BB82030F7400027CE82 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BB72030F7400027CE82 /* correct.mp3 */; };
 		06E34BBA2030F8490027CE82 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BB92030F8490027CE82 /* wrong.wav */; };
 		06E34BC12030FB420027CE82 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BC02030FB420027CE82 /* correct.mp3 */; };
@@ -268,10 +268,10 @@
 		06C90F72203111EE00F318AD /* RainScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainScene.swift; sourceTree = "<group>"; };
 		06C90F74203111FB00F318AD /* RainScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RainScene.sks; sourceTree = "<group>"; };
 		06C90F772031196300F318AD /* moon.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = moon.wav; sourceTree = "<group>"; };
-		06C90F7A2031238400F318AD /* stroller.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = stroller.wav; sourceTree = "<group>"; };
 		06C90F7D2031261600F318AD /* cake.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cake.wav; sourceTree = "<group>"; };
 		06C90F802031275300F318AD /* hat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hat.mp3; sourceTree = "<group>"; };
 		06C90F83203129A800F318AD /* crunch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = crunch.wav; sourceTree = "<group>"; };
+		06CD961020334DD60097D766 /* stroller.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = stroller.wav; sourceTree = "<group>"; };
 		06E34BB72030F7400027CE82 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
 		06E34BB92030F8490027CE82 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrong.wav; sourceTree = "<group>"; };
 		06E34BC02030FB420027CE82 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
@@ -859,7 +859,7 @@
 		06C90F7C2031238A00F318AD /* Stroller */ = {
 			isa = PBXGroup;
 			children = (
-				06C90F7A2031238400F318AD /* stroller.wav */,
+				06CD961020334DD60097D766 /* stroller.wav */,
 			);
 			path = Stroller;
 			sourceTree = "<group>";
@@ -1033,7 +1033,7 @@
 				TargetAttributes = {
 					066DB6231FAE8F1500C68B36 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 2A6YQM3SZ4;
+						DevelopmentTeam = U4CECW6YBS;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
@@ -1062,6 +1062,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06CD961120334DD70097D766 /* stroller.wav in Resources */,
 				06C819DB202E2B62002F838E /* instructions_hamburger.mp3 in Resources */,
 				06C90F6B20310DD200F318AD /* HandScene.sks in Resources */,
 				060A67A1202A9EB5005F7323 /* DrinkScene.sks in Resources */,
@@ -1130,7 +1131,6 @@
 				066DB6381FAE8F1500C68B36 /* LaunchScreen.storyboard in Resources */,
 				062510D01FC917EA00A8114D /* StartScene.sks in Resources */,
 				06427EFC1FD9F421009C07ED /* PianoScene1.sks in Resources */,
-				06C90F7B2031238500F318AD /* stroller.wav in Resources */,
 				06C90F6420310BB600F318AD /* lion.wav in Resources */,
 				060A6811202AA81D005F7323 /* reminder_cookie.wav in Resources */,
 				0643D681202E131D000FA53D /* B.wav in Resources */,
@@ -1339,11 +1339,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2A6YQM3SZ4;
+				DEVELOPMENT_TEAM = U4CECW6YBS;
 				INFOPLIST_FILE = DuckColoringGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Time-For-Children";
+				PRODUCT_BUNDLE_IDENTIFIER = DuckColoringGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -1355,11 +1355,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2A6YQM3SZ4;
+				DEVELOPMENT_TEAM = U4CECW6YBS;
 				INFOPLIST_FILE = DuckColoringGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Time-For-Children";
+				PRODUCT_BUNDLE_IDENTIFIER = DuckColoringGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
