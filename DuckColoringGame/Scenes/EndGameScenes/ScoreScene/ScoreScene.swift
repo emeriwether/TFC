@@ -327,6 +327,7 @@ class ScoreScene: SKScene {
             numOfCorrectSceneBG = 0
             incorrectTouches = 0
             correctTouches = 0
+            numOfCorrectFirstTry = 0
             
             correctFirstTriesArray.removeAll()
             correctTouchesArray.removeAll()
