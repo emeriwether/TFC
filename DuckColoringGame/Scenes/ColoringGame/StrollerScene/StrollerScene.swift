@@ -102,11 +102,13 @@ class StrollerScene: SKScene {
                 stroller!.run(changeToColored)
                 
                 //Variables for stroller audio
-                let lullaby = SKAction.playSoundFileNamed("stroller", waitForCompletion: true)
+                let giggles = SKAction.playSoundFileNamed("stroller", waitForCompletion: true)
+                let birds = SKAction.playSoundFileNamed("stroller2", waitForCompletion: true)
                 
                 //Run all actions
-                stroller!.run(lullaby)
-                
+                stroller!.run(giggles)
+                stroller!.run(birds)
+
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:3)
                 let wait2 = SKAction.wait(forDuration: 3)

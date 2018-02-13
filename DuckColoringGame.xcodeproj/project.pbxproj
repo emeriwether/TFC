@@ -123,6 +123,7 @@
 		06C90F812031275400F318AD /* hat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F802031275300F318AD /* hat.mp3 */; };
 		06C90F84203129A800F318AD /* crunch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F83203129A800F318AD /* crunch.wav */; };
 		06CD961120334DD70097D766 /* stroller.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06CD961020334DD60097D766 /* stroller.wav */; };
+		06CD961320334FEF0097D766 /* stroller2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06CD961220334FEF0097D766 /* stroller2.wav */; };
 		06E34BB82030F7400027CE82 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BB72030F7400027CE82 /* correct.mp3 */; };
 		06E34BBA2030F8490027CE82 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BB92030F8490027CE82 /* wrong.wav */; };
 		06E34BC12030FB420027CE82 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BC02030FB420027CE82 /* correct.mp3 */; };
@@ -272,6 +273,7 @@
 		06C90F802031275300F318AD /* hat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hat.mp3; sourceTree = "<group>"; };
 		06C90F83203129A800F318AD /* crunch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = crunch.wav; sourceTree = "<group>"; };
 		06CD961020334DD60097D766 /* stroller.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = stroller.wav; sourceTree = "<group>"; };
+		06CD961220334FEF0097D766 /* stroller2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = stroller2.wav; sourceTree = "<group>"; };
 		06E34BB72030F7400027CE82 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
 		06E34BB92030F8490027CE82 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrong.wav; sourceTree = "<group>"; };
 		06E34BC02030FB420027CE82 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
@@ -859,6 +861,7 @@
 		06C90F7C2031238A00F318AD /* Stroller */ = {
 			isa = PBXGroup;
 			children = (
+				06CD961220334FEF0097D766 /* stroller2.wav */,
 				06CD961020334DD60097D766 /* stroller.wav */,
 			);
 			path = Stroller;
@@ -1126,6 +1129,7 @@
 				062D7D4B1FD125E600575A5B /* AirplaneScene.sks in Resources */,
 				0643D68B202E133C000FA53D /* melody 3.wav in Resources */,
 				069DE7C620045B0F00465399 /* ToastScene.sks in Resources */,
+				06CD961320334FEF0097D766 /* stroller2.wav in Resources */,
 				0669B8EE20040486002D8CAC /* TrashScene.sks in Resources */,
 				0643D693202E140A000FA53D /* DuckScene.sks in Resources */,
 				066DB6381FAE8F1500C68B36 /* LaunchScreen.storyboard in Resources */,
