@@ -182,7 +182,7 @@ class ScoreScene: SKScene {
             correctTouchesArrayLabel.text = "2. Scenes correct: n/a"
         }
         correctTouchesArrayLabel.fontSize = 20
-        correctTouchesArrayLabel.position = CGPoint(x: -379, y: -130.739)
+        correctTouchesArrayLabel.position = CGPoint(x: -379, y: -125.739)
         correctTouchesArrayLabel.zPosition = 10
         correctTouchesArrayLabel.fontColor = UIColor.black
         correctTouchesArrayLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -327,6 +327,7 @@ class ScoreScene: SKScene {
             numOfCorrectSceneBG = 0
             incorrectTouches = 0
             correctTouches = 0
+            numOfCorrectFirstTry = 0
             
             correctFirstTriesArray.removeAll()
             correctTouchesArray.removeAll()
