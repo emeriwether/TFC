@@ -9,6 +9,10 @@
 import SpriteKit
 import GameplayKit
 
+// I added these two vars in here, because I deleted them from the score scene, because we don't need to track them for the coloring game, but I didn't want to mess up your code. -EM (2/18)
+var correctTouches = 0
+var incorrectTouches = 0
+
 class DrinkScene: SKScene {
     
     // Variables for tracking nodes on screen
