@@ -73,7 +73,7 @@ class ScoreScene: SKScene {
         // place correct score in set size 2 on screen
         setSize2Label.text = "2: \(twoItemCorrectFT) / 6"
         setSize2Label.fontSize = 20
-        setSize2Label.position = CGPoint(x: -336, y: 181)
+        setSize2Label.position = CGPoint(x: -410, y: 244.874)
         setSize2Label.zPosition = 10
         setSize2Label.fontColor = UIColor.black
         setSize2Label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -82,7 +82,7 @@ class ScoreScene: SKScene {
         // place correct score in set size 3 on screen
         setSize3Label.text = "3: \(threeItemCorrectFT) / 6"
         setSize3Label.fontSize = 20
-        setSize3Label.position = CGPoint(x: -336, y: 149)
+        setSize3Label.position = CGPoint(x: -410, y: 211.611)
         setSize3Label.zPosition = 10
         setSize3Label.fontColor = UIColor.black
         setSize3Label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -91,7 +91,7 @@ class ScoreScene: SKScene {
         // place correct score in set size 4 on screen
         setSize4Label.text = "4: \(fourItemCorrectFT) / 6"
         setSize4Label.fontSize = 20
-        setSize4Label.position = CGPoint(x: -336, y: 116.257)
+        setSize4Label.position = CGPoint(x: -410, y: 173)
         setSize4Label.zPosition = 10
         setSize4Label.fontColor = UIColor.black
         setSize4Label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -99,7 +99,7 @@ class ScoreScene: SKScene {
         
         totalCorrectByBgTypeLabel.text = "5. # correct by background type"
         totalCorrectByBgTypeLabel.fontSize = 20
-        totalCorrectByBgTypeLabel.position = CGPoint(x: 36.039, y: 208.493)
+        totalCorrectByBgTypeLabel.position = CGPoint(x: -457, y: 143.56)
         totalCorrectByBgTypeLabel.zPosition = 10
         totalCorrectByBgTypeLabel.fontColor = UIColor.black
         totalCorrectByBgTypeLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -108,7 +108,7 @@ class ScoreScene: SKScene {
         // place correct score in simple bg type
         simpleBGLabel.text = "Simple: \(simpleCorrectFT) / 6"
         simpleBGLabel.fontSize = 20
-        simpleBGLabel.position = CGPoint(x: 79.039, y: 181)
+        simpleBGLabel.position = CGPoint(x: -410, y: 117.56)
         simpleBGLabel.zPosition = 10
         simpleBGLabel.fontColor = UIColor.black
         simpleBGLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -117,7 +117,7 @@ class ScoreScene: SKScene {
         // place correct score in line bg type
         lineBGLabel.text = "Line:     \(lineCorrectFT) / 6"
         lineBGLabel.fontSize = 20
-        lineBGLabel.position = CGPoint(x: 79.039, y: 149)
+        lineBGLabel.position = CGPoint(x: -410, y: 80.676)
         lineBGLabel.zPosition = 10
         lineBGLabel.fontColor = UIColor.black
         lineBGLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -126,7 +126,7 @@ class ScoreScene: SKScene {
         // place correct score in scene bg type
         sceneBGLabel.text = "Scene: \(sceneCorrectFT) / 6"
         sceneBGLabel.fontSize = 20
-        sceneBGLabel.position = CGPoint(x: 79.039, y: 116.257)
+        sceneBGLabel.position = CGPoint(x: -410, y: 42)
         sceneBGLabel.zPosition = 10
         sceneBGLabel.fontColor = UIColor.black
         sceneBGLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -141,7 +141,7 @@ class ScoreScene: SKScene {
             totalCorrectFTLabel.text = "1. Scenes w/ correct first time: n/a"
         }
         totalCorrectFTLabel.fontSize = 20
-        totalCorrectFTLabel.position = CGPoint(x: -379, y: -67)
+        totalCorrectFTLabel.position = CGPoint(x: -457, y: -78.049)
         totalCorrectFTLabel.zPosition = 10
         totalCorrectFTLabel.fontColor = UIColor.black
         totalCorrectFTLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -151,29 +151,61 @@ class ScoreScene: SKScene {
         totalCorrectFTLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.top
         self.addChild(totalCorrectFTLabel)
         
+        // place dictionary of correct touches per scene
+        var correctDictionary = "3. # of incorrect touches per scene: "
+        correctDictionary.append("rock: \(numCorrectPerScene["rock"]!), ")
+        correctDictionary.append("lamp: \(numCorrectPerScene["lamp"]!), ")
+        correctDictionary.append("cat: \(numCorrectPerScene["cat"]!), ")
+        correctDictionary.append("lion: \(numCorrectPerScene["lion"]!), ")
+        correctDictionary.append("hand: \(numCorrectPerScene["hand"]!), ")
+        correctDictionary.append("rain: \(numCorrectPerScene["rain"]!), ")
+        correctDictionary.append("duck: \(numCorrectPerScene["duck"]!), ")
+        correctDictionary.append("moon: \(numCorrectPerScene["moon"]!), ")
+        correctDictionary.append("cow: \(numCorrectPerScene["cow"]!), ")
+        correctDictionary.append("trash: \(numCorrectPerScene["trash"]!), ")
+        correctDictionary.append("airplane: \(numCorrectPerScene["airplane"]!), ")
+        correctDictionary.append("shoes: \(numCorrectPerScene["shoes"]!), ")
+        correctDictionary.append("cake: \(numCorrectPerScene["cake"]!), ")
+        correctDictionary.append("stroller: \(numCorrectPerScene["stroller"]!), ")
+        correctDictionary.append("toast: \(numCorrectPerScene["toast"]!), ")
+        correctDictionary.append("hat: \(numCorrectPerScene["hat"]!), ")
+        correctDictionary.append("cookie: \(numCorrectPerScene["cookie"]!), ")
+        correctDictionary.append("mouse: \(numCorrectPerScene["mouse"]!), ")
+        numCorrectPerSceneLabel.text = correctDictionary
+        numCorrectPerSceneLabel.fontSize = 20
+        numCorrectPerSceneLabel.position = CGPoint(x: -457, y: -176)
+        numCorrectPerSceneLabel.zPosition = 10
+        numCorrectPerSceneLabel.fontColor = UIColor.black
+        numCorrectPerSceneLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        numCorrectPerSceneLabel.preferredMaxLayoutWidth = 850
+        numCorrectPerSceneLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        numCorrectPerSceneLabel.numberOfLines = 0
+        numCorrectPerSceneLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.top
+        self.addChild(numCorrectPerSceneLabel)
+        
         // place dictionary of incorrect touches per scene
-        var printedDictionary = "3. # of incorrect touches per scene: "
-        printedDictionary.append("rock: \(numIncorrectPerScene["rock"]!), ")
-        printedDictionary.append("lamp: \(numIncorrectPerScene["lamp"]!), ")
-        printedDictionary.append("cat: \(numIncorrectPerScene["cat"]!), ")
-        printedDictionary.append("lion: \(numIncorrectPerScene["lion"]!), ")
-        printedDictionary.append("hand: \(numIncorrectPerScene["hand"]!), ")
-        printedDictionary.append("rain: \(numIncorrectPerScene["rain"]!), ")
-        printedDictionary.append("duck: \(numIncorrectPerScene["duck"]!), ")
-        printedDictionary.append("moon: \(numIncorrectPerScene["moon"]!), ")
-        printedDictionary.append("cow: \(numIncorrectPerScene["cow"]!), ")
-        printedDictionary.append("trash: \(numIncorrectPerScene["trash"]!), ")
-        printedDictionary.append("airplane: \(numIncorrectPerScene["airplane"]!), ")
-        printedDictionary.append("shoes: \(numIncorrectPerScene["shoes"]!), ")
-        printedDictionary.append("cake: \(numIncorrectPerScene["cake"]!), ")
-        printedDictionary.append("stroller: \(numIncorrectPerScene["stroller"]!), ")
-        printedDictionary.append("toast: \(numIncorrectPerScene["toast"]!), ")
-        printedDictionary.append("hat: \(numIncorrectPerScene["hat"]!), ")
-        printedDictionary.append("cookie: \(numIncorrectPerScene["cookie"]!), ")
-        printedDictionary.append("mouse: \(numIncorrectPerScene["mouse"]!), ")
-        numIncorrectPerSceneLabel.text = printedDictionary
+        var incorrectDictionary = "3. # of incorrect touches per scene: "
+        incorrectDictionary.append("rock: \(numIncorrectPerScene["rock"]!), ")
+        incorrectDictionary.append("lamp: \(numIncorrectPerScene["lamp"]!), ")
+        incorrectDictionary.append("cat: \(numIncorrectPerScene["cat"]!), ")
+        incorrectDictionary.append("lion: \(numIncorrectPerScene["lion"]!), ")
+        incorrectDictionary.append("hand: \(numIncorrectPerScene["hand"]!), ")
+        incorrectDictionary.append("rain: \(numIncorrectPerScene["rain"]!), ")
+        incorrectDictionary.append("duck: \(numIncorrectPerScene["duck"]!), ")
+        incorrectDictionary.append("moon: \(numIncorrectPerScene["moon"]!), ")
+        incorrectDictionary.append("cow: \(numIncorrectPerScene["cow"]!), ")
+        incorrectDictionary.append("trash: \(numIncorrectPerScene["trash"]!), ")
+        incorrectDictionary.append("airplane: \(numIncorrectPerScene["airplane"]!), ")
+        incorrectDictionary.append("shoes: \(numIncorrectPerScene["shoes"]!), ")
+        incorrectDictionary.append("cake: \(numIncorrectPerScene["cake"]!), ")
+        incorrectDictionary.append("stroller: \(numIncorrectPerScene["stroller"]!), ")
+        incorrectDictionary.append("toast: \(numIncorrectPerScene["toast"]!), ")
+        incorrectDictionary.append("hat: \(numIncorrectPerScene["hat"]!), ")
+        incorrectDictionary.append("cookie: \(numIncorrectPerScene["cookie"]!), ")
+        incorrectDictionary.append("mouse: \(numIncorrectPerScene["mouse"]!), ")
+        numIncorrectPerSceneLabel.text = incorrectDictionary
         numIncorrectPerSceneLabel.fontSize = 20
-        numIncorrectPerSceneLabel.position = CGPoint(x: -379, y: -180)
+        numIncorrectPerSceneLabel.position = CGPoint(x: -457, y: -266.579)
         numIncorrectPerSceneLabel.zPosition = 10
         numIncorrectPerSceneLabel.fontColor = UIColor.black
         numIncorrectPerSceneLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
