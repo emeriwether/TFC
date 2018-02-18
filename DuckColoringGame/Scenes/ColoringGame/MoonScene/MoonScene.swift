@@ -120,6 +120,7 @@ class MoonScene: SKScene {
             else {
                 moon_incorrectTouches += 1
                 incorrectTouches += 1
+                numIncorrectPerScene["moon"] = numIncorrectPerScene["moon"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

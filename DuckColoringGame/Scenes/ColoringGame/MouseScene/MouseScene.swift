@@ -121,6 +121,7 @@ class MouseScene: SKScene {
             else {
                 mouse_incorrectTouches += 1
                 incorrectTouches += 1
+                numIncorrectPerScene["mouse"] = numIncorrectPerScene["mouse"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

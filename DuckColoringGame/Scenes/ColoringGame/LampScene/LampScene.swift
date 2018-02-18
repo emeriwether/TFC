@@ -120,6 +120,7 @@ class LampScene: SKScene {
             else {
                 lamp_incorrectTouches += 1
                 incorrectTouches += 1
+                numIncorrectPerScene["lamp"] = numIncorrectPerScene["lamp"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

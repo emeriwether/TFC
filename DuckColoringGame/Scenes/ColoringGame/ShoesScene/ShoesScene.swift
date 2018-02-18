@@ -132,6 +132,7 @@ class ShoesScene: SKScene {
             else {
                 shoes_incorrectTouches += 1
                 incorrectTouches += 1
+                numIncorrectPerScene["shoes"] = numIncorrectPerScene["shoes"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

@@ -120,6 +120,7 @@ class HandScene: SKScene {
             else {
                 hand_incorrectTouches += 1
                 incorrectTouches += 1
+                numIncorrectPerScene["hand"] = numIncorrectPerScene["hand"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

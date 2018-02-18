@@ -122,6 +122,7 @@ class AirplaneScene: SKScene {
             else {
                 airplane_incorrectTouches += 1
                 incorrectTouches += 1
+                numIncorrectPerScene["airplane"] = numIncorrectPerScene["airplane"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

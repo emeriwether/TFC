@@ -122,6 +122,7 @@ class StrollerScene: SKScene {
             else {
                 stroller_incorrectTouches += 1
                 incorrectTouches += 1
+                numIncorrectPerScene["stroller"] = numIncorrectPerScene["stroller"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

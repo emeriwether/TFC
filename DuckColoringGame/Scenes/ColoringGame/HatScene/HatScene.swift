@@ -120,6 +120,7 @@ class HatScene: SKScene {
             else {
                 hat_incorrectTouches += 1
                 incorrectTouches += 1
+                numIncorrectPerScene["hat"] = numIncorrectPerScene["hat"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

@@ -120,6 +120,7 @@ class CakeScene: SKScene {
             else {
                 cake_incorrectTouches += 1
                 incorrectTouches += 1
+                numIncorrectPerScene["cake"] = numIncorrectPerScene["cake"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

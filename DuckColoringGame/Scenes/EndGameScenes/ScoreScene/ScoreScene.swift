@@ -21,7 +21,7 @@ var numOfCorrectSceneBG = 0
 
 var correctFirstTriesArray = [String]()
 var correctTouchesArray = [String]()
-var numIncorrectPerScene = [String:Int]()
+var numIncorrectPerScene: [String:Int] = ["rock": 0, "lamp": 0, "cat": 0, "lion": 0, "hand": 0, "rain": 0, "duck": 0, "moon": 0, "cow": 0, "trash": 0, "airplane": 0, "shoes": 0, "cake": 0, "stroller": 0, "toast": 0, "hat": 0, "cookie": 0, "mouse": 0]
 var correctSetSize2 = [String]()
 var correctSetSize3 = [String]()
 var correctSetSize4 = [String]()
@@ -193,12 +193,20 @@ class ScoreScene: SKScene {
         self.addChild(correctTouchesArrayLabel)
         
         // place dictionary of incorrect touches per scene
-        numIncorrectPerSceneLabel.text = "3. # of incorrect touches per scene:"
+        var printedDictionary = "3. # of incorrect touches per scene: "
+        for (scene, numIncorrectTouches) in numIncorrectPerScene {
+            printedDictionary.append("\(scene): \(numIncorrectTouches), ")
+        }
+        numIncorrectPerSceneLabel.text = printedDictionary
         numIncorrectPerSceneLabel.fontSize = 20
         numIncorrectPerSceneLabel.position = CGPoint(x: -379, y: -205)
         numIncorrectPerSceneLabel.zPosition = 10
         numIncorrectPerSceneLabel.fontColor = UIColor.black
         numIncorrectPerSceneLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        numIncorrectPerSceneLabel.preferredMaxLayoutWidth = 850
+        numIncorrectPerSceneLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        numIncorrectPerSceneLabel.numberOfLines = 0
+        numIncorrectPerSceneLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.top
         self.addChild(numIncorrectPerSceneLabel)
         
         setSizeBreakdownLabel.text = "4. Correct scenes by scene size"
@@ -331,7 +339,9 @@ class ScoreScene: SKScene {
             
             correctFirstTriesArray.removeAll()
             correctTouchesArray.removeAll()
-            numIncorrectPerScene.removeAll()
+            for (scene, numIncorrect) in numIncorrectPerScene {
+                numIncorrect = 0
+            }
             correctSetSize2.removeAll()
             correctSetSize3.removeAll()
             correctSetSize4.removeAll()

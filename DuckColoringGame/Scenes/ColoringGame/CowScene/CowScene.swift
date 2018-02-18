@@ -131,6 +131,7 @@ class CowScene: SKScene {
             else {
                 cow_incorrectTouches += 1
                 incorrectTouches += 1
+                numIncorrectPerScene["cow"] = numIncorrectPerScene["cow"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

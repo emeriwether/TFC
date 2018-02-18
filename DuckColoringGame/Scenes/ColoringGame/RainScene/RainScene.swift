@@ -120,6 +120,7 @@ class RainScene: SKScene {
             else {
                 rain_incorrectTouches += 1
                 incorrectTouches += 1
+                numIncorrectPerScene["rain"] = numIncorrectPerScene["rain"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

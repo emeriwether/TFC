@@ -120,6 +120,7 @@ class LionScene: SKScene {
             else {
                 lion_incorrectTouches += 1
                 incorrectTouches += 1
+                numIncorrectPerScene["lion"] = numIncorrectPerScene["lion"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

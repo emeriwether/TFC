@@ -127,6 +127,7 @@ class TrashScene: SKScene {
             else {
                 trash_incorrectTouches += 1
                 incorrectTouches += 1
+                numIncorrectPerScene["trash"] = numIncorrectPerScene["trash"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

@@ -120,6 +120,7 @@ class ToastScene: SKScene {
             else {
                 toast_incorrectTouches += 1
                 incorrectTouches += 1
+                numIncorrectPerScene["toast"] = numIncorrectPerScene["toast"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

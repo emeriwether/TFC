@@ -120,6 +120,7 @@ class CatScene: SKScene {
             else {
                 cat_incorrectTouches += 1
                 incorrectTouches += 1
+                numIncorrectPerScene["cat"] = numIncorrectPerScene["cat"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)
