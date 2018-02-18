@@ -194,24 +194,24 @@ class ScoreScene: SKScene {
         
         // place dictionary of incorrect touches per scene
         var printedDictionary = "3. # of incorrect touches per scene: "
-        printedDictionary.append("rock: \(numIncorrectPerScene["rock"]), ")
-        printedDictionary.append("lamp: \(numIncorrectPerScene["lamp"]), ")
-        printedDictionary.append("cat: \(numIncorrectPerScene["cat"]), ")
-        printedDictionary.append("lion: \(numIncorrectPerScene["lion"]), ")
-        printedDictionary.append("hand: \(numIncorrectPerScene["hand"]), ")
-        printedDictionary.append("rain: \(numIncorrectPerScene["rain"]), ")
-        printedDictionary.append("duck: \(numIncorrectPerScene["duck"]), ")
-        printedDictionary.append("moon: \(numIncorrectPerScene["moon"]), ")
-        printedDictionary.append("cow: \(numIncorrectPerScene["cow"]), ")
-        printedDictionary.append("trash: \(numIncorrectPerScene["trash"]), ")
-        printedDictionary.append("airplane: \(numIncorrectPerScene["airplane"]), ")
-        printedDictionary.append("shoes: \(numIncorrectPerScene["shoes"]), ")
-        printedDictionary.append("cake: \(numIncorrectPerScene["cake"]), ")
-        printedDictionary.append("stroller: \(numIncorrectPerScene["stroller"]), ")
-        printedDictionary.append("toast: \(numIncorrectPerScene["toast"]), ")
-        printedDictionary.append("hat: \(numIncorrectPerScene["hat"]), ")
-        printedDictionary.append("cookie: \(numIncorrectPerScene["cookie"]), ")
-        printedDictionary.append("mouse: \(numIncorrectPerScene["mouse"]), ")
+        printedDictionary.append("rock: \(numIncorrectPerScene["rock"]!), ")
+        printedDictionary.append("lamp: \(numIncorrectPerScene["lamp"]!), ")
+        printedDictionary.append("cat: \(numIncorrectPerScene["cat"]!), ")
+        printedDictionary.append("lion: \(numIncorrectPerScene["lion"]!), ")
+        printedDictionary.append("hand: \(numIncorrectPerScene["hand"]!), ")
+        printedDictionary.append("rain: \(numIncorrectPerScene["rain"]!), ")
+        printedDictionary.append("duck: \(numIncorrectPerScene["duck"]!), ")
+        printedDictionary.append("moon: \(numIncorrectPerScene["moon"]!), ")
+        printedDictionary.append("cow: \(numIncorrectPerScene["cow"]!), ")
+        printedDictionary.append("trash: \(numIncorrectPerScene["trash"]!), ")
+        printedDictionary.append("airplane: \(numIncorrectPerScene["airplane"]!), ")
+        printedDictionary.append("shoes: \(numIncorrectPerScene["shoes"]!), ")
+        printedDictionary.append("cake: \(numIncorrectPerScene["cake"]!), ")
+        printedDictionary.append("stroller: \(numIncorrectPerScene["stroller"]!), ")
+        printedDictionary.append("toast: \(numIncorrectPerScene["toast"]!), ")
+        printedDictionary.append("hat: \(numIncorrectPerScene["hat"]!), ")
+        printedDictionary.append("cookie: \(numIncorrectPerScene["cookie"]!), ")
+        printedDictionary.append("mouse: \(numIncorrectPerScene["mouse"]!), ")
         numIncorrectPerSceneLabel.text = printedDictionary
         numIncorrectPerSceneLabel.fontSize = 20
         numIncorrectPerSceneLabel.position = CGPoint(x: -379, y: -205)
@@ -355,7 +355,7 @@ class ScoreScene: SKScene {
             correctFirstTriesArray.removeAll()
             correctTouchesArray.removeAll()
             for (scene, numIncorrect) in numIncorrectPerScene {
-                numIncorrect = 0
+                numIncorrectPerScene[scene] = 0
             }
             correctSetSize2.removeAll()
             correctSetSize3.removeAll()
