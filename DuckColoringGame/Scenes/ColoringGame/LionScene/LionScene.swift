@@ -82,17 +82,14 @@ class LionScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == lion?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 lion_correctTouches += 1
+                numCorrectPerScene["lion"] = numCorrectPerScene["lion"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (lion_incorrectTouches == 0) {
                     totalCorrectFT += 1
                     simpleCorrectFT += 1
                     threeItemCorrectFT += 1
-                    
                     correctFirstTriesArray.append("lion")
-                    correctTouchesArray.append("lion")
-                    correctSetSize3.append("lion")
-                    correctBGSimple.append("lion")
                 }
                 
                 // Change sprite to colored lion
@@ -118,7 +115,6 @@ class LionScene: SKScene {
             }
             else {
                 lion_incorrectTouches += 1
-                incorrectTouches += 1
                 numIncorrectPerScene["lion"] = numIncorrectPerScene["lion"]! + 1
                 
                 // Play wrong noise

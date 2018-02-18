@@ -82,17 +82,14 @@ class DuckScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == duck?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 duck_correctTouches += 1
+                numCorrectPerScene["duck"] = numCorrectPerScene["duck"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (duck_incorrectTouches == 0) {
                     totalCorrectFT += 1
                     lineCorrectFT += 1
                     twoItemCorrectFT += 1
-                    
                     correctFirstTriesArray.append("duck")
-                    correctTouchesArray.append("duck")
-                    correctSetSize2.append("duck")
-                    correctBGLine.append("duck")
                 }
                 
                 // Change sprite to colored duck
