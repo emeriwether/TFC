@@ -128,7 +128,6 @@ class DuckScene: SKScene {
             }
             else {
                 duck_incorrectTouches += 1
-                incorrectTouches += 1
                 numIncorrectPerScene["duck"] = numIncorrectPerScene["duck"]! + 1
                 
                 // Play wrong noise

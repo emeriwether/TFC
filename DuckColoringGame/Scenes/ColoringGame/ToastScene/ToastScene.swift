@@ -82,17 +82,14 @@ class ToastScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == toast?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 toast_correctTouches += 1
+                numCorrectPerScene["toast"] = numCorrectPerScene["toast"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (toast_incorrectTouches == 0) {
                     totalCorrectFT += 1
                     sceneCorrectFT += 1
                     threeItemCorrectFT += 1
-                    
                     correctFirstTriesArray.append("toast")
-                    correctTouchesArray.append("toast")
-                    correctSetSize3.append("toast")
-                    correctBGScene.append("toast")
                 }
                 
                 // Color toast
@@ -118,7 +115,6 @@ class ToastScene: SKScene {
             }
             else {
                 toast_incorrectTouches += 1
-                incorrectTouches += 1
                 numIncorrectPerScene["toast"] = numIncorrectPerScene["toast"]! + 1
                 
                 // Play wrong noise

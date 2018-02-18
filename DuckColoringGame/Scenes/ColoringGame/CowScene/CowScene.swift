@@ -82,17 +82,14 @@ class CowScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == cow?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 cow_correctTouches += 1
+                numCorrectPerScene["cow"] = numCorrectPerScene["cow"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (cow_incorrectTouches == 0) {
                     totalCorrectFT += 1
                     lineCorrectFT += 1
                     threeItemCorrectFT += 1
-                    
                     correctFirstTriesArray.append("cow")
-                    correctTouchesArray.append("cow")
-                    correctSetSize3.append("cow")
-                    correctBGLine.append("cow")
                 }
                 
                 // Change sprite to colored cow
@@ -129,7 +126,6 @@ class CowScene: SKScene {
             }
             else {
                 cow_incorrectTouches += 1
-                incorrectTouches += 1
                 numIncorrectPerScene["cow"] = numIncorrectPerScene["cow"]! + 1
                 
                 // Play wrong noise

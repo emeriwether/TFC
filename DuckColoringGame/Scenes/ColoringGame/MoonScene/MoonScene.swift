@@ -82,17 +82,14 @@ class MoonScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == moon?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 moon_correctTouches += 1
+                numCorrectPerScene["moon"] = numCorrectPerScene["moon"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (moon_incorrectTouches == 0) {
                     totalCorrectFT += 1
                     lineCorrectFT += 1
                     twoItemCorrectFT += 1
-                    
                     correctFirstTriesArray.append("moon")
-                    correctTouchesArray.append("moon")
-                    correctSetSize2.append("moon")
-                    correctBGLine.append("moon")
                 }
                 
                 // Change sprite to colored duck
@@ -118,7 +115,6 @@ class MoonScene: SKScene {
             }
             else {
                 moon_incorrectTouches += 1
-                incorrectTouches += 1
                 numIncorrectPerScene["moon"] = numIncorrectPerScene["moon"]! + 1
                 
                 // Play wrong noise

@@ -82,17 +82,14 @@ class HatScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == hat?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 hat_correctTouches += 1
+                numCorrectPerScene["hat"] = numCorrectPerScene["hat"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (hat_incorrectTouches == 0) {
                     totalCorrectFT += 1
                     sceneCorrectFT += 1
                     threeItemCorrectFT += 1
-                    
                     correctFirstTriesArray.append("hat")
-                    correctTouchesArray.append("hat")
-                    correctSetSize3.append("hat")
-                    correctBGScene.append("hat")
                 }
                 
                 // Change sprite to colored hat
@@ -118,7 +115,6 @@ class HatScene: SKScene {
             }
             else {
                 hat_incorrectTouches += 1
-                incorrectTouches += 1
                 numIncorrectPerScene["hat"] = numIncorrectPerScene["hat"]! + 1
                 
                 // Play wrong noise
