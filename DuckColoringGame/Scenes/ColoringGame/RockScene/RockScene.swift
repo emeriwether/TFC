@@ -102,7 +102,7 @@ class RockScene: SKScene {
                 rock!.run(changeToColored)
                 
                 //Variables for correct audio
-                let correct = SKAction.playSoundFileNamed("correct", waitForCompletion: true)
+                let correct = SKAction.playSoundFileNamed("correct2", waitForCompletion: true)
                 
                 //Run all actions
                 rock!.run(correct)

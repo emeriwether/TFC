@@ -102,7 +102,7 @@ class LampScene: SKScene {
                 lamp!.run(changeToColored)
                 
                 //Variables for lamp audio
-                let correct = SKAction.playSoundFileNamed("correct", waitForCompletion: true)
+                let correct = SKAction.playSoundFileNamed("correct2", waitForCompletion: true)
                 
                 //Run all actions
                 lamp!.run(correct)
