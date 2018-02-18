@@ -11,7 +11,7 @@ import SpriteKit
 /////////////////////////////////////////////////////////////////
 //********PUBLIC VARIABLES TO KEEP TRACK OF STATISTICS*********//
 /////////////////////////////////////////////////////////////////
-    ///// Totals ////////////////
+    ///// Totals ///////////
     var totalCorrectFT = 0
     var twoItemCorrectFT = 0
     var threeItemCorrectFT = 0
@@ -29,39 +29,46 @@ import SpriteKit
 /////////////////////////////////////////////////////////////////
 
 class ScoreScene: SKScene {
-    // local variables
-    let correctFirstTryLabel = SKLabelNode(fontNamed:"Calibri")
-    let totalSetSizeLabel = SKLabelNode(fontNamed: "Calibri")
-    let setSize2Label = SKLabelNode(fontNamed: "Calibri")
-    let setSize3Label = SKLabelNode(fontNamed: "Calibri")
-    let setSize4Label = SKLabelNode(fontNamed: "Calibri")
-    let totalBGTypeLabel = SKLabelNode(fontNamed: "Calibri")
-    let simpleBGLabel = SKLabelNode(fontNamed: "Calibri")
-    let lineBGLabel = SKLabelNode(fontNamed: "Calibri")
-    let sceneBGLabel = SKLabelNode(fontNamed: "Calibri")
+    /////////////////////////////////////////////////////////////////
+    //////////********LOCAL VARIABLES FOR LABELS*********////////////
+    /////////////////////////////////////////////////////////////////
+        ///// Totals ///////////
+        let totalCorrectFTLabel = SKLabelNode(fontNamed:"Calibri")
+        let totalCorrectBySetSizeLabel = SKLabelNode(fontNamed: "Calibri")
+        let setSize2Label = SKLabelNode(fontNamed: "Calibri")
+        let setSize3Label = SKLabelNode(fontNamed: "Calibri")
+        let setSize4Label = SKLabelNode(fontNamed: "Calibri")
+        let totalCorrectByBgTypeLabel = SKLabelNode(fontNamed: "Calibri")
+        let simpleBGLabel = SKLabelNode(fontNamed: "Calibri")
+        let lineBGLabel = SKLabelNode(fontNamed: "Calibri")
+        let sceneBGLabel = SKLabelNode(fontNamed: "Calibri")
     
-    let correctFirstTriesArrayLabel = SKLabelNode(fontNamed:"Calibri")
-    let numCorrectPerSceneLabel = SKLabelNode(fontNamed: "Calibri")
-    let numIncorrectPerSceneLabel = SKLabelNode(fontNamed: "Calibri")
+        ////// Scene Breakdowns ////////////////
+        let listCorrectFTLabel = SKLabelNode(fontNamed:"Calibri")
+        let numCorrectPerSceneLabel = SKLabelNode(fontNamed: "Calibri")
+        let numIncorrectPerSceneLabel = SKLabelNode(fontNamed: "Calibri")
+    /////////////////////////////////////////////////////////////////
+    //////////////////////********END*********///////////////////////
+    /////////////////////////////////////////////////////////////////
 
     override func didMove(to view: SKView) {
         
-        // place correct first try screens  
-        correctFirstTryLabel.text = "1. Number of scenes with correct first time: \(totalCorrectFT) / 18"
-        correctFirstTryLabel.fontSize = 20
-        correctFirstTryLabel.position = CGPoint(x: -379, y: 335.618)
-        correctFirstTryLabel.zPosition = 10
-        correctFirstTryLabel.fontColor = UIColor.black
-        correctFirstTryLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        self.addChild(correctFirstTryLabel)
+        // place label for total scenes with correct first try
+        totalCorrectFTLabel.text = "1. Number of scenes with correct first time: \(totalCorrectFT) / 18"
+        totalCorrectFTLabel.fontSize = 20
+        totalCorrectFTLabel.position = CGPoint(x: -457, y: 321)
+        totalCorrectFTLabel.zPosition = 10
+        totalCorrectFTLabel.fontColor = UIColor.black
+        totalCorrectFTLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        self.addChild(totalCorrectFTLabel)
         
-        totalSetSizeLabel.text = "2. # correct by scene size"
-        totalSetSizeLabel.fontSize = 20
-        totalSetSizeLabel.position = CGPoint(x: -379, y: 208.493)
-        totalSetSizeLabel.zPosition = 10
-        totalSetSizeLabel.fontColor = UIColor.black
-        totalSetSizeLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        self.addChild(totalSetSizeLabel)
+        totalCorrectBySetSizeLabel.text = "2. # correct by scene size"
+        totalCorrectBySetSizeLabel.fontSize = 20
+        totalCorrectBySetSizeLabel.position = CGPoint(x: -457, y: 271.343)
+        totalCorrectBySetSizeLabel.zPosition = 10
+        totalCorrectBySetSizeLabel.fontColor = UIColor.black
+        totalCorrectBySetSizeLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        self.addChild(totalCorrectBySetSizeLabel)
         
         // place correct score in set size 2 on screen
         setSize2Label.text = "2: \(twoItemCorrectFT) / 6"
@@ -90,13 +97,13 @@ class ScoreScene: SKScene {
         setSize4Label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(setSize4Label)
         
-        totalBGTypeLabel.text = "5. # correct by background type"
-        totalBGTypeLabel.fontSize = 20
-        totalBGTypeLabel.position = CGPoint(x: 36.039, y: 208.493)
-        totalBGTypeLabel.zPosition = 10
-        totalBGTypeLabel.fontColor = UIColor.black
-        totalBGTypeLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        self.addChild(totalBGTypeLabel)
+        totalCorrectByBgTypeLabel.text = "5. # correct by background type"
+        totalCorrectByBgTypeLabel.fontSize = 20
+        totalCorrectByBgTypeLabel.position = CGPoint(x: 36.039, y: 208.493)
+        totalCorrectByBgTypeLabel.zPosition = 10
+        totalCorrectByBgTypeLabel.fontColor = UIColor.black
+        totalCorrectByBgTypeLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        self.addChild(totalCorrectByBgTypeLabel)
         
         // place correct score in simple bg type
         simpleBGLabel.text = "Simple: \(simpleCorrectFT) / 6"
@@ -128,40 +135,21 @@ class ScoreScene: SKScene {
         // place list of scenes with correct first time
         let correctFTjoined = correctFirstTriesArray.joined(separator: ", ")
         if correctFirstTriesArray.count > 0 {
-            correctFirstTriesArrayLabel.text = "1. Scenes w/ correct first time: \(correctFTjoined)"
+            totalCorrectFTLabel.text = "1. Scenes w/ correct first time: \(correctFTjoined)"
         }
         else {
-            correctFirstTriesArrayLabel.text = "1. Scenes w/ correct first time: n/a"
+            totalCorrectFTLabel.text = "1. Scenes w/ correct first time: n/a"
         }
-        correctFirstTriesArrayLabel.fontSize = 20
-        correctFirstTriesArrayLabel.position = CGPoint(x: -379, y: -67)
-        correctFirstTriesArrayLabel.zPosition = 10
-        correctFirstTriesArrayLabel.fontColor = UIColor.black
-        correctFirstTriesArrayLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        correctFirstTriesArrayLabel.preferredMaxLayoutWidth = 850
-        correctFirstTriesArrayLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-        correctFirstTriesArrayLabel.numberOfLines = 0
-        correctFirstTriesArrayLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.top
-        self.addChild(correctFirstTriesArrayLabel)
-        
-        // place list of scenes correct
-        let correctJoined = correctTouchesArray.joined(separator: ", ")
-        if correctTouchesArray.count > 0 {
-            correctTouchesArrayLabel.text = "2. Scenes correct: \(correctJoined)"
-        }
-        else {
-            correctTouchesArrayLabel.text = "2. Scenes correct: n/a"
-        }
-        correctTouchesArrayLabel.fontSize = 20
-        correctTouchesArrayLabel.position = CGPoint(x: -379, y: -125.739)
-        correctTouchesArrayLabel.zPosition = 10
-        correctTouchesArrayLabel.fontColor = UIColor.black
-        correctTouchesArrayLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        correctTouchesArrayLabel.preferredMaxLayoutWidth = 850
-        correctTouchesArrayLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-        correctTouchesArrayLabel.numberOfLines = 0
-        correctTouchesArrayLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.top
-        self.addChild(correctTouchesArrayLabel)
+        totalCorrectFTLabel.fontSize = 20
+        totalCorrectFTLabel.position = CGPoint(x: -379, y: -67)
+        totalCorrectFTLabel.zPosition = 10
+        totalCorrectFTLabel.fontColor = UIColor.black
+        totalCorrectFTLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        totalCorrectFTLabel.preferredMaxLayoutWidth = 850
+        totalCorrectFTLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        totalCorrectFTLabel.numberOfLines = 0
+        totalCorrectFTLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.top
+        self.addChild(totalCorrectFTLabel)
         
         // place dictionary of incorrect touches per scene
         var printedDictionary = "3. # of incorrect touches per scene: "
@@ -195,112 +183,7 @@ class ScoreScene: SKScene {
         numIncorrectPerSceneLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.top
         self.addChild(numIncorrectPerSceneLabel)
         
-        setSizeBreakdownLabel.text = "4. Correct scenes by scene size"
-        setSizeBreakdownLabel.fontSize = 20
-        setSizeBreakdownLabel.position = CGPoint(x: -379, y: -272.028)
-        setSizeBreakdownLabel.zPosition = 10
-        setSizeBreakdownLabel.fontColor = UIColor.black
-        setSizeBreakdownLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        self.addChild(setSizeBreakdownLabel)
-        
-        // place list of size 2 correct
-        let size2Joined = correctSetSize2.joined(separator: ", ")
-        if correctSetSize2.count > 0 {
-            correctSetSize2Label.text = "2: \(size2Joined)"
-        }
-        else {
-            correctSetSize2Label.text = "2: n/a"
-        }
-        correctSetSize2Label.fontSize = 20
-        correctSetSize2Label.position = CGPoint(x: -350, y: -297.028)
-        correctSetSize2Label.zPosition = 10
-        correctSetSize2Label.fontColor = UIColor.black
-        correctSetSize2Label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        self.addChild(correctSetSize2Label)
-        
-        // place list of size 3 correct
-        let size3Joined = correctSetSize3.joined(separator: ", ")
-        if correctSetSize3.count > 0 {
-            correctSetSize3Label.text = "3: \(size3Joined)"
-        }
-        else {
-            correctSetSize3Label.text = "3: n/a"
-        }
-        correctSetSize3Label.fontSize = 20
-        correctSetSize3Label.position = CGPoint(x: -350, y: -335.918)
-        correctSetSize3Label.zPosition = 10
-        correctSetSize3Label.fontColor = UIColor.black
-        correctSetSize3Label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        self.addChild(correctSetSize3Label)
-        
-        // place list of size 4 correct
-        let size4Joined = correctSetSize4.joined(separator: ", ")
-        if correctSetSize4.count > 0 {
-            correctSetSize4Label.text = "4: \(size4Joined)"
-        }
-        else {
-            correctSetSize4Label.text = "4: n/a"
-        }
-        correctSetSize4Label.fontSize = 20
-        correctSetSize4Label.position = CGPoint(x: -350, y: -375.403)
-        correctSetSize4Label.zPosition = 10
-        correctSetSize4Label.fontColor = UIColor.black
-        correctSetSize4Label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        self.addChild(correctSetSize4Label)
-        
-        bgTypeBreakdownLabel.text = "5. Correct scenes by background type: "
-        bgTypeBreakdownLabel.fontSize = 20
-        bgTypeBreakdownLabel.position = CGPoint(x: 36.039, y: -272.028)
-        bgTypeBreakdownLabel.zPosition = 10
-        bgTypeBreakdownLabel.fontColor = UIColor.black
-        bgTypeBreakdownLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        self.addChild(bgTypeBreakdownLabel)
-        
-        // place list of bg simple correct
-        let bgSimpleJoined = correctBGSimple.joined(separator: ", ")
-        if correctBGSimple.count > 0 {
-            correctBGSimpleLabel.text = "Simple: \(bgSimpleJoined)"
-        }
-        else {
-            correctBGSimpleLabel.text = "Simple: n/a"
-        }
-        correctBGSimpleLabel.fontSize = 20
-        correctBGSimpleLabel.position = CGPoint(x: 61.039, y: -297.028)
-        correctBGSimpleLabel.zPosition = 10
-        correctBGSimpleLabel.fontColor = UIColor.black
-        correctBGSimpleLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        self.addChild(correctBGSimpleLabel)
-        
-        // place list of bg line correct
-        let bgLineJoined = correctBGLine.joined(separator: ", ")
-        if correctBGLine.count > 0 {
-            correctBGLineLabel.text = "Line: \(bgLineJoined)"
-        }
-        else {
-            correctBGLineLabel.text = "Line: n/a"
-        }
-        correctBGLineLabel.fontSize = 20
-        correctBGLineLabel.position = CGPoint(x: 61.039, y: -335.919)
-        correctBGLineLabel.zPosition = 10
-        correctBGLineLabel.fontColor = UIColor.black
-        correctBGLineLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        self.addChild(correctBGLineLabel)
-        
-        // place list of bg scene correct
-        let bgSceneJoined = correctBGScene.joined(separator: ", ")
-        if correctBGScene.count > 0 {
-            correctBGSceneLabel.text = "Scene: \(bgSceneJoined)"
-        }
-        else {
-            correctBGSceneLabel.text = "Scene: n/a"
-        }
-        correctBGSceneLabel.fontSize = 20
-        correctBGSceneLabel.position = CGPoint(x: 61.039, y: -375.403)
-        correctBGSceneLabel.zPosition = 10
-        correctBGSceneLabel.fontColor = UIColor.black
-        correctBGSceneLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        self.addChild(correctBGSceneLabel)
-    }
+
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // variable for play again button
@@ -324,16 +207,13 @@ class ScoreScene: SKScene {
             sceneCorrectFT = 0
             
             correctFirstTriesArray.removeAll()
-            correctTouchesArray.removeAll()
+            for (scene, numCorrect) in numCorrectPerScene {
+                numCorrectPerScene[scene] = 0
+            }
             for (scene, numIncorrect) in numIncorrectPerScene {
                 numIncorrectPerScene[scene] = 0
             }
-            correctSetSize2.removeAll()
-            correctSetSize3.removeAll()
-            correctSetSize4.removeAll()
-            correctBGSimple.removeAll()
-            correctBGLine.removeAll()
-            correctBGScene.removeAll()
+
             //////////////////////////////////////////////////
             ///////////////// END ////////////////////////////
             //////////////////////////////////////////////////
