@@ -86,7 +86,7 @@ class MoonScene: SKScene {
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (moon_incorrectTouches == 0) {
-                    numOfCorrectFirstTry += 1
+                    totalCorrectFT += 1
                     lineCorrectFT += 1
                     twoItemCorrectFT += 1
                     

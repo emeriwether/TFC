@@ -86,7 +86,7 @@ class RainScene: SKScene {
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (rain_incorrectTouches == 0) {
-                    numOfCorrectFirstTry += 1
+                    totalCorrectFT += 1
                     simpleCorrectFT += 1
                     fourItemCorrectFT += 1
                     

@@ -86,7 +86,7 @@ class RockScene: SKScene {
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (rock_incorrectTouches == 0) {
-                    numOfCorrectFirstTry += 1
+                    totalCorrectFT += 1
                     simpleCorrectFT += 1
                     twoItemCorrectFT += 1
                     
@@ -119,7 +119,6 @@ class RockScene: SKScene {
             }
             else {
                 rock_incorrectTouches += 1
-                incorrectTouches += 1
                 numIncorrectPerScene["rock"] = numIncorrectPerScene["rock"]! + 1
                 
                 // Play wrong noise

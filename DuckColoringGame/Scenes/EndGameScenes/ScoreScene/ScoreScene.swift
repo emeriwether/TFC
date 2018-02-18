@@ -8,27 +8,33 @@
 
 import SpriteKit
 
-// public variables to keep track of statistics
-///// Totals
-var numOfCorrectFirstTry = 0
-//var correctTouches = 0
-//var incorrectTouches = 0
-var twoItemCorrectFT = 0
-var threeItemCorrectFT = 0
-var fourItemCorrectFT = 0
-var simpleCorrectFT = 0
-var lineCorrectFT = 0
-var sceneCorrectFT = 0
-////// Scene Breakdowns
-var correctFirstTriesArray = [String]()
-var correctTouchesArray = [String]()
-var numIncorrectPerScene: [String:Int] = ["rock": 0, "lamp": 0, "cat": 0, "lion": 0, "hand": 0, "rain": 0, "duck": 0, "moon": 0, "cow": 0, "trash": 0, "airplane": 0, "shoes": 0, "cake": 0, "stroller": 0, "toast": 0, "hat": 0, "cookie": 0, "mouse": 0]
-var correctSetSize2 = [String]()
-var correctSetSize3 = [String]()
-var correctSetSize4 = [String]()
-var correctBGSimple = [String]()
-var correctBGLine = [String]()
-var correctBGScene = [String]()
+/////////////////////////////////////////////////////////////////
+//********PUBLIC VARIABLES TO KEEP TRACK OF STATISTICS*********//
+/////////////////////////////////////////////////////////////////
+    ///// Totals ////////////////
+    var totalCorrectFT = 0
+    //var incorrectTouches = 0
+    var twoItemCorrectFT = 0
+    var threeItemCorrectFT = 0
+    var fourItemCorrectFT = 0
+    var simpleCorrectFT = 0
+    var lineCorrectFT = 0
+    var sceneCorrectFT = 0
+
+    ////// Scene Breakdowns ////////////////
+    var correctFirstTriesArray = [String]()
+    //var correctTouchesArray = [String]()
+    var numCorrectPerScene: [String:Int] = ["rock": 0, "lamp": 0, "cat": 0, "lion": 0, "hand": 0, "rain": 0, "duck": 0, "moon": 0, "cow": 0, "trash": 0, "airplane": 0, "shoes": 0, "cake": 0, "stroller": 0, "toast": 0, "hat": 0, "cookie": 0, "mouse": 0]
+    var numIncorrectPerScene: [String:Int] = ["rock": 0, "lamp": 0, "cat": 0, "lion": 0, "hand": 0, "rain": 0, "duck": 0, "moon": 0, "cow": 0, "trash": 0, "airplane": 0, "shoes": 0, "cake": 0, "stroller": 0, "toast": 0, "hat": 0, "cookie": 0, "mouse": 0]
+    //var correctSetSize2 = [String]()
+    //var correctSetSize3 = [String]()
+    //var correctSetSize4 = [String]()
+    //var correctBGSimple = [String]()
+    //var correctBGLine = [String]()
+    //var correctBGScene = [String]()
+/////////////////////////////////////////////////////////////////
+//////////********************END********************////////////
+/////////////////////////////////////////////////////////////////
 
 class ScoreScene: SKScene {
     // local variables
@@ -59,7 +65,7 @@ class ScoreScene: SKScene {
     override func didMove(to view: SKView) {
         
         // place correct first try screens  
-        correctFirstTryLabel.text = "1. Number of scenes with correct first time: \(numOfCorrectFirstTry) / 18"
+        correctFirstTryLabel.text = "1. Number of scenes with correct first time: \(totalCorrectFT) / 18"
         correctFirstTryLabel.fontSize = 20
         correctFirstTryLabel.position = CGPoint(x: -379, y: 335.618)
         correctFirstTryLabel.zPosition = 10
@@ -147,7 +153,7 @@ class ScoreScene: SKScene {
         self.addChild(lineBGLabel)
         
         // place correct score in scene bg type
-        sceneBGLabel.text = "Scene: \(numOfCorrectSceneBG) / 6"
+        sceneBGLabel.text = "Scene: \(sceneCorrectFT) / 6"
         sceneBGLabel.fontSize = 20
         sceneBGLabel.position = CGPoint(x: 79.039, y: 116.257)
         sceneBGLabel.zPosition = 10
@@ -342,16 +348,18 @@ class ScoreScene: SKScene {
         // if retry button is touched
         if playAgainButton!.contains(touch.location(in: self)) {
             
-            // reset all game-wide stats
+            //////////////////////////////////////////////////
+            //////// RESET ALL GAMEWIDE STATS ////////////////
+            //////////////////////////////////////////////////
+            totalCorrectFT = 0
             twoItemCorrectFT = 0
             threeItemCorrectFT = 0
             fourItemCorrectFT = 0
             simpleCorrectFT = 0
             lineCorrectFT = 0
-            numOfCorrectSceneBG = 0
-            incorrectTouches = 0
-            correctTouches = 0
-            numOfCorrectFirstTry = 0
+            sceneCorrectFT = 0
+            //incorrectTouches = 0
+
             
             correctFirstTriesArray.removeAll()
             correctTouchesArray.removeAll()
@@ -364,6 +372,9 @@ class ScoreScene: SKScene {
             correctBGSimple.removeAll()
             correctBGLine.removeAll()
             correctBGScene.removeAll()
+            //////////////////////////////////////////////////
+            ///////////////// END ////////////////////////////
+            //////////////////////////////////////////////////
             
             // transition scene back to start
             let startScene = SKScene(fileNamed: "StartScene")
