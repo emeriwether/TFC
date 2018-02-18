@@ -214,7 +214,7 @@ class ScoreScene: SKScene {
         numIncorrectPerSceneLabel.numberOfLines = 0
         numIncorrectPerSceneLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.top
         self.addChild(numIncorrectPerSceneLabel)
-        
+    }
 
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -245,7 +245,6 @@ class ScoreScene: SKScene {
             for (scene, numIncorrect) in numIncorrectPerScene {
                 numIncorrectPerScene[scene] = 0
             }
-
             //////////////////////////////////////////////////
             ///////////////// END ////////////////////////////
             //////////////////////////////////////////////////
