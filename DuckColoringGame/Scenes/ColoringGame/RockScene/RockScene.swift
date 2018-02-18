@@ -82,17 +82,14 @@ class RockScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == rock?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 rock_correctTouches += 1
+                numCorrectPerScene["rock"] = numCorrectPerScene["rock"]! + 1
                 
-                // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
+                // if there weren't any incorrect touches, add to game-wide stats for first try
                 if (rock_incorrectTouches == 0) {
                     totalCorrectFT += 1
                     simpleCorrectFT += 1
                     twoItemCorrectFT += 1
-                    
                     correctFirstTriesArray.append("rock")
-                    correctTouchesArray.append("rock")
-                    correctSetSize2.append("rock")
-                    correctBGSimple.append("rock")
                 }
                 
                 // Change sprite to colored rock

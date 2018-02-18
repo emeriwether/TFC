@@ -82,17 +82,14 @@ class CatScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == cat?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 cat_correctTouches += 1
+                numCorrectPerScene["cat"] = numCorrectPerScene["cat"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (cat_incorrectTouches == 0) {
                     totalCorrectFT += 1
                     simpleCorrectFT += 1
                     threeItemCorrectFT += 1
-                    
                     correctFirstTriesArray.append("cat")
-                    correctTouchesArray.append("cat")
-                    correctSetSize3.append("cat")
-                    correctBGSimple.append("cat")
                 }
                 
                 // Change sprite to colored cat
@@ -118,7 +115,6 @@ class CatScene: SKScene {
             }
             else {
                 cat_incorrectTouches += 1
-                incorrectTouches += 1
                 numIncorrectPerScene["cat"] = numIncorrectPerScene["cat"]! + 1
                 
                 // Play wrong noise
