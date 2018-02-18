@@ -82,7 +82,6 @@ class CookieScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == cookie?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 cookie_correctTouches += 1
-                correctTouches += 1
 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (cookie_incorrectTouches == 0) {

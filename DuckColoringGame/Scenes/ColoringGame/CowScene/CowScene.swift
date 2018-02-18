@@ -82,7 +82,6 @@ class CowScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == cow?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 cow_correctTouches += 1
-                correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (cow_incorrectTouches == 0) {

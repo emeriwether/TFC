@@ -82,7 +82,6 @@ class CakeScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == cake?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 cake_correctTouches += 1
-                correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (cake_incorrectTouches == 0) {

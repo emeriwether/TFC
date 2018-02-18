@@ -82,7 +82,6 @@ class RockScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == rock?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 rock_correctTouches += 1
-                correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (rock_incorrectTouches == 0) {

@@ -82,7 +82,6 @@ class HandScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == hand?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 hand_correctTouches += 1
-                correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (hand_incorrectTouches == 0) {

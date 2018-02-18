@@ -82,7 +82,6 @@ class LampScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == lamp?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 lamp_correctTouches += 1
-                correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (lamp_incorrectTouches == 0) {

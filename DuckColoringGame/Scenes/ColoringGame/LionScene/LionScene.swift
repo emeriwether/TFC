@@ -82,7 +82,6 @@ class LionScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == lion?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 lion_correctTouches += 1
-                correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (lion_incorrectTouches == 0) {

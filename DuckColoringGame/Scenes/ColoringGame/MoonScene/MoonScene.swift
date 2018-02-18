@@ -82,7 +82,6 @@ class MoonScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == moon?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 moon_correctTouches += 1
-                correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (moon_incorrectTouches == 0) {

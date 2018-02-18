@@ -82,7 +82,6 @@ class TrashScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == trash?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 trash_correctTouches += 1
-                correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (trash_incorrectTouches == 0) {

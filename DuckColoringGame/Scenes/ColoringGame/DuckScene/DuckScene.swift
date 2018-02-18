@@ -82,7 +82,6 @@ class DuckScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == duck?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 duck_correctTouches += 1
-                correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (duck_incorrectTouches == 0) {

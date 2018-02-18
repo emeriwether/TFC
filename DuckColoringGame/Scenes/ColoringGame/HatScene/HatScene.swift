@@ -82,7 +82,6 @@ class HatScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == hat?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 hat_correctTouches += 1
-                correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (hat_incorrectTouches == 0) {

@@ -82,7 +82,6 @@ class AirplaneScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == airplane?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 airplane_correctTouches += 1
-                correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (airplane_incorrectTouches == 0) {

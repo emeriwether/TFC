@@ -13,7 +13,6 @@ import SpriteKit
 /////////////////////////////////////////////////////////////////
     ///// Totals ////////////////
     var totalCorrectFT = 0
-    //var incorrectTouches = 0
     var twoItemCorrectFT = 0
     var threeItemCorrectFT = 0
     var fourItemCorrectFT = 0
@@ -23,15 +22,8 @@ import SpriteKit
 
     ////// Scene Breakdowns ////////////////
     var correctFirstTriesArray = [String]()
-    //var correctTouchesArray = [String]()
     var numCorrectPerScene: [String:Int] = ["rock": 0, "lamp": 0, "cat": 0, "lion": 0, "hand": 0, "rain": 0, "duck": 0, "moon": 0, "cow": 0, "trash": 0, "airplane": 0, "shoes": 0, "cake": 0, "stroller": 0, "toast": 0, "hat": 0, "cookie": 0, "mouse": 0]
     var numIncorrectPerScene: [String:Int] = ["rock": 0, "lamp": 0, "cat": 0, "lion": 0, "hand": 0, "rain": 0, "duck": 0, "moon": 0, "cow": 0, "trash": 0, "airplane": 0, "shoes": 0, "cake": 0, "stroller": 0, "toast": 0, "hat": 0, "cookie": 0, "mouse": 0]
-    //var correctSetSize2 = [String]()
-    //var correctSetSize3 = [String]()
-    //var correctSetSize4 = [String]()
-    //var correctBGSimple = [String]()
-    //var correctBGLine = [String]()
-    //var correctBGScene = [String]()
 /////////////////////////////////////////////////////////////////
 //////////********************END********************////////////
 /////////////////////////////////////////////////////////////////
@@ -39,8 +31,6 @@ import SpriteKit
 class ScoreScene: SKScene {
     // local variables
     let correctFirstTryLabel = SKLabelNode(fontNamed:"Calibri")
-    let incorrectScoreLabel = SKLabelNode(fontNamed: "Calibri")
-    let correctScoreLabel = SKLabelNode(fontNamed: "Calibri")
     let totalSetSizeLabel = SKLabelNode(fontNamed: "Calibri")
     let setSize2Label = SKLabelNode(fontNamed: "Calibri")
     let setSize3Label = SKLabelNode(fontNamed: "Calibri")
@@ -51,16 +41,8 @@ class ScoreScene: SKScene {
     let sceneBGLabel = SKLabelNode(fontNamed: "Calibri")
     
     let correctFirstTriesArrayLabel = SKLabelNode(fontNamed:"Calibri")
-    let correctTouchesArrayLabel = SKLabelNode(fontNamed: "Calibri")
+    let numCorrectPerSceneLabel = SKLabelNode(fontNamed: "Calibri")
     let numIncorrectPerSceneLabel = SKLabelNode(fontNamed: "Calibri")
-    let setSizeBreakdownLabel = SKLabelNode(fontNamed: "Calibri")
-    let correctSetSize2Label = SKLabelNode(fontNamed: "Calibri")
-    let correctSetSize3Label = SKLabelNode(fontNamed: "Calibri")
-    let correctSetSize4Label = SKLabelNode(fontNamed: "Calibri")
-    let bgTypeBreakdownLabel = SKLabelNode(fontNamed: "Calibri")
-    let correctBGSimpleLabel = SKLabelNode(fontNamed: "Calibri")
-    let correctBGLineLabel = SKLabelNode(fontNamed: "Calibri")
-    let correctBGSceneLabel = SKLabelNode(fontNamed: "Calibri")
 
     override func didMove(to view: SKView) {
         
@@ -72,26 +54,8 @@ class ScoreScene: SKScene {
         correctFirstTryLabel.fontColor = UIColor.black
         correctFirstTryLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(correctFirstTryLabel)
-
-        // place correct score on screen
-        correctScoreLabel.text = "2. Number of scenes correct: \(correctTouches) / 18"
-        correctScoreLabel.fontSize = 20
-        correctScoreLabel.position = CGPoint(x: -379, y: 295.618)
-        correctScoreLabel.zPosition = 10
-        correctScoreLabel.fontColor = UIColor.black
-        correctScoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        self.addChild(correctScoreLabel)
         
-        // place incorrect score on screen
-        incorrectScoreLabel.text = "3. Number of incorrect touches: \(incorrectTouches)"
-        incorrectScoreLabel.fontSize = 20
-        incorrectScoreLabel.position = CGPoint(x: -379, y: 257.11)
-        incorrectScoreLabel.zPosition = 10
-        incorrectScoreLabel.fontColor = UIColor.black
-        incorrectScoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        self.addChild(incorrectScoreLabel)
-        
-        totalSetSizeLabel.text = "4. # correct by scene size"
+        totalSetSizeLabel.text = "2. # correct by scene size"
         totalSetSizeLabel.fontSize = 20
         totalSetSizeLabel.position = CGPoint(x: -379, y: 208.493)
         totalSetSizeLabel.zPosition = 10
@@ -358,8 +322,6 @@ class ScoreScene: SKScene {
             simpleCorrectFT = 0
             lineCorrectFT = 0
             sceneCorrectFT = 0
-            //incorrectTouches = 0
-
             
             correctFirstTriesArray.removeAll()
             correctTouchesArray.removeAll()

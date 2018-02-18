@@ -83,7 +83,6 @@ class MouseScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == mouse?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 mouse_correctTouches += 1
-                correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (mouse_incorrectTouches == 0) {

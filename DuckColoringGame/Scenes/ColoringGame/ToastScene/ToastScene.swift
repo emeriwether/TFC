@@ -82,7 +82,6 @@ class ToastScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == toast?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 toast_correctTouches += 1
-                correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (toast_incorrectTouches == 0) {

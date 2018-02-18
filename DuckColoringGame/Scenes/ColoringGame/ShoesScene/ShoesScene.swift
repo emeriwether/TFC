@@ -83,7 +83,6 @@ class ShoesScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == shoes?.physicsBody)  && (sceneOver == false) {
                 sceneOver = true
                 shoes_correctTouches += 1
-                correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (shoes_incorrectTouches == 0) {

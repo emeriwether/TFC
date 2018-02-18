@@ -82,7 +82,6 @@ class RainScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == rain?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 rain_correctTouches += 1
-                correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (rain_incorrectTouches == 0) {

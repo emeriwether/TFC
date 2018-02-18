@@ -82,7 +82,6 @@ class StrollerScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == stroller?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 stroller_correctTouches += 1
-                correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (stroller_incorrectTouches == 0) {
