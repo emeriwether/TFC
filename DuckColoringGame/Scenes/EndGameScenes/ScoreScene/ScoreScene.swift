@@ -9,16 +9,17 @@
 import SpriteKit
 
 // public variables to keep track of statistics
+///// Totals
 var numOfCorrectFirstTry = 0
-var correctTouches = 0
-var incorrectTouches = 0
-var numOfCorrectSetSize2 = 0
-var numOfCorrectSetSize3 = 0
-var numOfCorrectSetSize4 = 0
-var numOfCorrectSimpleBG = 0
-var numOfCorrectLineBG = 0
-var numOfCorrectSceneBG = 0
-
+//var correctTouches = 0
+//var incorrectTouches = 0
+var twoItemCorrectFT = 0
+var threeItemCorrectFT = 0
+var fourItemCorrectFT = 0
+var simpleCorrectFT = 0
+var lineCorrectFT = 0
+var sceneCorrectFT = 0
+////// Scene Breakdowns
 var correctFirstTriesArray = [String]()
 var correctTouchesArray = [String]()
 var numIncorrectPerScene: [String:Int] = ["rock": 0, "lamp": 0, "cat": 0, "lion": 0, "hand": 0, "rain": 0, "duck": 0, "moon": 0, "cow": 0, "trash": 0, "airplane": 0, "shoes": 0, "cake": 0, "stroller": 0, "toast": 0, "hat": 0, "cookie": 0, "mouse": 0]
@@ -93,7 +94,7 @@ class ScoreScene: SKScene {
         self.addChild(totalSetSizeLabel)
         
         // place correct score in set size 2 on screen
-        setSize2Label.text = "2: \(numOfCorrectSetSize2) / 6"
+        setSize2Label.text = "2: \(twoItemCorrectFT) / 6"
         setSize2Label.fontSize = 20
         setSize2Label.position = CGPoint(x: -336, y: 181)
         setSize2Label.zPosition = 10
@@ -102,7 +103,7 @@ class ScoreScene: SKScene {
         self.addChild(setSize2Label)
         
         // place correct score in set size 3 on screen
-        setSize3Label.text = "3: \(numOfCorrectSetSize3) / 6"
+        setSize3Label.text = "3: \(threeItemCorrectFT) / 6"
         setSize3Label.fontSize = 20
         setSize3Label.position = CGPoint(x: -336, y: 149)
         setSize3Label.zPosition = 10
@@ -111,7 +112,7 @@ class ScoreScene: SKScene {
         self.addChild(setSize3Label)
 
         // place correct score in set size 4 on screen
-        setSize4Label.text = "4: \(numOfCorrectSetSize4) / 6"
+        setSize4Label.text = "4: \(fourItemCorrectFT) / 6"
         setSize4Label.fontSize = 20
         setSize4Label.position = CGPoint(x: -336, y: 116.257)
         setSize4Label.zPosition = 10
@@ -128,7 +129,7 @@ class ScoreScene: SKScene {
         self.addChild(totalBGTypeLabel)
         
         // place correct score in simple bg type
-        simpleBGLabel.text = "Simple: \(numOfCorrectSimpleBG) / 6"
+        simpleBGLabel.text = "Simple: \(simpleCorrectFT) / 6"
         simpleBGLabel.fontSize = 20
         simpleBGLabel.position = CGPoint(x: 79.039, y: 181)
         simpleBGLabel.zPosition = 10
@@ -137,7 +138,7 @@ class ScoreScene: SKScene {
         self.addChild(simpleBGLabel)
         
         // place correct score in line bg type
-        lineBGLabel.text = "Line:     \(numOfCorrectLineBG) / 6"
+        lineBGLabel.text = "Line:     \(lineCorrectFT) / 6"
         lineBGLabel.fontSize = 20
         lineBGLabel.position = CGPoint(x: 79.039, y: 149)
         lineBGLabel.zPosition = 10
@@ -214,7 +215,7 @@ class ScoreScene: SKScene {
         printedDictionary.append("mouse: \(numIncorrectPerScene["mouse"]!), ")
         numIncorrectPerSceneLabel.text = printedDictionary
         numIncorrectPerSceneLabel.fontSize = 20
-        numIncorrectPerSceneLabel.position = CGPoint(x: -379, y: -205)
+        numIncorrectPerSceneLabel.position = CGPoint(x: -379, y: -180)
         numIncorrectPerSceneLabel.zPosition = 10
         numIncorrectPerSceneLabel.fontColor = UIColor.black
         numIncorrectPerSceneLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -342,11 +343,11 @@ class ScoreScene: SKScene {
         if playAgainButton!.contains(touch.location(in: self)) {
             
             // reset all game-wide stats
-            numOfCorrectSetSize2 = 0
-            numOfCorrectSetSize3 = 0
-            numOfCorrectSetSize4 = 0
-            numOfCorrectSimpleBG = 0
-            numOfCorrectLineBG = 0
+            twoItemCorrectFT = 0
+            threeItemCorrectFT = 0
+            fourItemCorrectFT = 0
+            simpleCorrectFT = 0
+            lineCorrectFT = 0
             numOfCorrectSceneBG = 0
             incorrectTouches = 0
             correctTouches = 0

@@ -88,7 +88,7 @@ class StrollerScene: SKScene {
                 if (stroller_incorrectTouches == 0) {
                     numOfCorrectFirstTry += 1
                     numOfCorrectSceneBG += 1
-                    numOfCorrectSetSize2 += 1
+                    twoItemCorrectFT += 1
                     
                     correctFirstTriesArray.append("stroller")
                     correctTouchesArray.append("stroller")

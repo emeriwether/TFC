@@ -88,8 +88,8 @@ class ShoesScene: SKScene {
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (shoes_incorrectTouches == 0) {
                     numOfCorrectFirstTry += 1
-                    numOfCorrectLineBG += 1
-                    numOfCorrectSetSize4 += 1
+                    lineCorrectFT += 1
+                    fourItemCorrectFT += 1
                     
                     correctFirstTriesArray.append("shoes")
                     correctTouchesArray.append("shoes")

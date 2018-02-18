@@ -88,7 +88,7 @@ class ToastScene: SKScene {
                 if (toast_incorrectTouches == 0) {
                     numOfCorrectFirstTry += 1
                     numOfCorrectSceneBG += 1
-                    numOfCorrectSetSize3 += 1
+                    threeItemCorrectFT += 1
                     
                     correctFirstTriesArray.append("toast")
                     correctTouchesArray.append("toast")

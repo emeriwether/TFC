@@ -87,8 +87,8 @@ class HandScene: SKScene {
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (hand_incorrectTouches == 0) {
                     numOfCorrectFirstTry += 1
-                    numOfCorrectSimpleBG += 1
-                    numOfCorrectSetSize4 += 1
+                    simpleCorrectFT += 1
+                    fourItemCorrectFT += 1
                     
                     correctFirstTriesArray.append("hand")
                     correctTouchesArray.append("hand")

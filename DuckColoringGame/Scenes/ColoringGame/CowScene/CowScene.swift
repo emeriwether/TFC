@@ -87,8 +87,8 @@ class CowScene: SKScene {
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (cow_incorrectTouches == 0) {
                     numOfCorrectFirstTry += 1
-                    numOfCorrectLineBG += 1
-                    numOfCorrectSetSize3 += 1
+                    lineCorrectFT += 1
+                    threeItemCorrectFT += 1
                     
                     correctFirstTriesArray.append("cow")
                     correctTouchesArray.append("cow")

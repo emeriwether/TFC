@@ -87,8 +87,8 @@ class LampScene: SKScene {
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (lamp_incorrectTouches == 0) {
                     numOfCorrectFirstTry += 1
-                    numOfCorrectSimpleBG += 1
-                    numOfCorrectSetSize2 += 1
+                    simpleCorrectFT += 1
+                    twoItemCorrectFT += 1
                     
                     correctFirstTriesArray.append("lamp")
                     correctTouchesArray.append("lamp")

@@ -88,7 +88,7 @@ class CookieScene: SKScene {
                 if (cookie_incorrectTouches == 0) {
                     numOfCorrectFirstTry += 1
                     numOfCorrectSceneBG += 1
-                    numOfCorrectSetSize4 += 1
+                    fourItemCorrectFT += 1
                     
                     correctFirstTriesArray.append("cookie")
                     correctTouchesArray.append("cookie")

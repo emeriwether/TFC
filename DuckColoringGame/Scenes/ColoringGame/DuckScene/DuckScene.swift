@@ -87,8 +87,8 @@ class DuckScene: SKScene {
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (duck_incorrectTouches == 0) {
                     numOfCorrectFirstTry += 1
-                    numOfCorrectLineBG += 1
-                    numOfCorrectSetSize2 += 1
+                    lineCorrectFT += 1
+                    twoItemCorrectFT += 1
                     
                     correctFirstTriesArray.append("duck")
                     correctTouchesArray.append("duck")

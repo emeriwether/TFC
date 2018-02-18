@@ -89,7 +89,7 @@ class MouseScene: SKScene {
                 if (mouse_incorrectTouches == 0) {
                     numOfCorrectFirstTry += 1
                     numOfCorrectSceneBG += 1
-                    numOfCorrectSetSize4 += 1
+                    fourItemCorrectFT += 1
                     
                     correctFirstTriesArray.append("mouse")
                     correctTouchesArray.append("mouse")

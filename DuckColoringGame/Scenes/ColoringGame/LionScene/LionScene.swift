@@ -87,8 +87,8 @@ class LionScene: SKScene {
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (lion_incorrectTouches == 0) {
                     numOfCorrectFirstTry += 1
-                    numOfCorrectSimpleBG += 1
-                    numOfCorrectSetSize3 += 1
+                    simpleCorrectFT += 1
+                    threeItemCorrectFT += 1
                     
                     correctFirstTriesArray.append("lion")
                     correctTouchesArray.append("lion")
