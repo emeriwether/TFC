@@ -9,6 +9,15 @@
 import SpriteKit
 
 //PUBLIC VARIABLES TO KEEP TRACK OF STATISTICS//
+// scenes completed
+var numOfScenesCompleted = 0.0
+var twoItemCompleted = 0.0
+var threeItemCompleted = 0.0
+var fourItemCompleted = 0.0
+var simplebgCompleted = 0.0
+var linebgCompleted = 0.0
+var scenebgCompleted = 0.0
+
 ///// Totals ///////////
 var totalCorrectFT = 0
 var twoItemCorrectFT = 0
@@ -17,7 +26,14 @@ var fourItemCorrectFT = 0
 var simpleCorrectFT = 0
 var lineCorrectFT = 0
 var sceneCorrectFT = 0
+
 var totalAccuracy = 0.0
+var twoItemAccuracy = 0.0
+var threeItemAccuracy = 0.0
+var fourItemAccuracy = 0.0
+var simpleAccuracy = 0.0
+var lineAccuracy = 0.0
+var sceneAccuracy = 0.0
 
 ////// Scene Breakdowns ////////////////
 var correctFirstTriesArray = [String]()
@@ -37,7 +53,16 @@ class ScoreScene: SKScene {
     let simpleBGLabel = SKLabelNode(fontNamed: "Calibri")
     let lineBGLabel = SKLabelNode(fontNamed: "Calibri")
     let sceneBGLabel = SKLabelNode(fontNamed: "Calibri")
+    
     let totalAccuracyLabel = SKLabelNode(fontNamed: "Calibri")
+    let accuracyByItemCountLabel = SKLabelNode(fontNamed: "Calibri")
+    let twoItemAccuracyLabel = SKLabelNode(fontNamed: "Calibri")
+    let threeItemAccuracyLabel = SKLabelNode(fontNamed: "Calibri")
+    let fourItemAccuracyLabel = SKLabelNode(fontNamed: "Calibri")
+    let accuracyByBgTypeLabel = SKLabelNode(fontNamed: "Calibri")
+    let simpleAccuracyLabel = SKLabelNode(fontNamed: "Calibri")
+    let lineAccuracyLabel = SKLabelNode(fontNamed: "Calibri")
+    let sceneAccuracyLabel = SKLabelNode(fontNamed: "Calibri")
 
     ////// Scene Breakdowns ////////////////
     let listCorrectFTLabel = SKLabelNode(fontNamed:"Calibri")
@@ -48,7 +73,6 @@ class ScoreScene: SKScene {
     override func didMove(to view: SKView) {
         
         // Calculations for accuracy per scene
-        
         // if user skipped scene (no correct touch), (0%)
         if (numCorrectPerScene["rock"]! == 0) { accuracyPerScene["rock"] = 0 }
         // else if user made no incorrect touches (correct first try), (100%)
@@ -160,7 +184,6 @@ class ScoreScene: SKScene {
             accuracyPerScene["mouse"] = round((Double(numCorrectPerScene["mouse"]!) / Double(numIncorrectPerScene["mouse"]! + numCorrectPerScene["mouse"]!)) * 100)
         }
         
-        
         // place label for total scenes with correct first try
         totalCorrectFTLabel.text = "1. Number of scenes with correct first time: \(totalCorrectFT) / 18"
         totalCorrectFTLabel.fontSize = 20
@@ -242,10 +265,13 @@ class ScoreScene: SKScene {
         
         // calculate and place total average accuracy label
         for (scene, accuracy) in accuracyPerScene {
-            totalAccuracy += accuracy
+            if (accuracyPerScene[scene]! > 0) {
+                totalAccuracy += accuracy
+                numOfScenesCompleted += 1
+            }
         }
-        totalAccuracy = totalAccuracy / 18
-        totalAccuracyLabel.text = "Total accuracy: \(Int(round(totalAccuracy)))%"
+        totalAccuracy = totalAccuracy / numOfScenesCompleted
+        totalAccuracyLabel.text = "4. Total accuracy: \(Int(round(totalAccuracy)))%"
         totalAccuracyLabel.fontSize = 20
         totalAccuracyLabel.position = CGPoint(x: -457, y: 95)
         totalAccuracyLabel.zPosition = 10
@@ -253,14 +279,134 @@ class ScoreScene: SKScene {
         totalAccuracyLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(totalAccuracyLabel)
         
-        
         // place accuracy by item count label
+        //accuracyByItemCountLabel.text = "5. Accuracy by item count"
+        //accuracyByItemCountLabel.fontSize = 20
+        //accuracyByItemCountLabel.position = CGPoint(x: -457, y: 45)
+        //accuracyByItemCountLabel.zPosition = 10
+        //accuracyByItemCountLabel.fontColor = UIColor.black
+        //accuracyByItemCountLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        //self.addChild(accuracyByItemCountLabel)
         
-        // place 2 item accuracy label
+        printLabel (label: accuracyByItemCountLabel, words: "5. Accuracy by item count", xCoord: -457, yCoord: 45)
+
         
-        // place 3 item accuracy label
+        // calculate and place 2 item accuracy label
+        if (accuracyPerScene["rock"]! > 0) {
+            twoItemAccuracy += accuracyPerScene["rock"]!
+            twoItemCompleted += 1
+        }
+        if (accuracyPerScene["lamp"]! > 0) {
+            twoItemAccuracy += accuracyPerScene["lamp"]!
+            twoItemCompleted += 1
+        }
+        if (accuracyPerScene["duck"]! > 0) {
+            twoItemAccuracy += accuracyPerScene["duck"]!
+            twoItemCompleted += 1
+        }
+        if (accuracyPerScene["moon"]! > 0) {
+            twoItemAccuracy += accuracyPerScene["moon"]!
+            twoItemCompleted += 1
+        }
+        if (accuracyPerScene["cake"]! > 0) {
+            twoItemAccuracy += accuracyPerScene["cake"]!
+            twoItemCompleted += 1
+        }
+        if (accuracyPerScene["stroller"]! > 0) {
+            twoItemAccuracy += accuracyPerScene["stroller"]!
+            twoItemCompleted += 1
+        }
+        
+        twoItemAccuracy = twoItemAccuracy / twoItemCompleted
+        if twoItemCompleted > 0 {
+            twoItemAccuracyLabel.text = "2 items: \(Int(round(twoItemAccuracy)))%"
+        } else {
+            twoItemAccuracyLabel.text = "2 items: none completed"
+        }
+        twoItemAccuracyLabel.fontSize = 20
+        twoItemAccuracyLabel.position = CGPoint(x: -410, y: 15)
+        twoItemAccuracyLabel.zPosition = 10
+        twoItemAccuracyLabel.fontColor = UIColor.black
+        twoItemAccuracyLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        self.addChild(twoItemAccuracyLabel)
+        
+        // calculate and place 3 item accuracy label
+        if (accuracyPerScene["cat"]! > 0) {
+            threeItemAccuracy += accuracyPerScene["cat"]!
+            threeItemCompleted += 1
+        }
+        if (accuracyPerScene["lion"]! > 0) {
+            threeItemAccuracy += accuracyPerScene["lion"]!
+            threeItemCompleted += 1
+        }
+        if (accuracyPerScene["cow"]! > 0) {
+            threeItemAccuracy += accuracyPerScene["cow"]!
+            threeItemCompleted += 1
+        }
+        if (accuracyPerScene["trash"]! > 0) {
+            threeItemAccuracy += accuracyPerScene["trash"]!
+            threeItemCompleted += 1
+        }
+        if (accuracyPerScene["toast"]! > 0) {
+            threeItemAccuracy += accuracyPerScene["toast"]!
+            threeItemCompleted += 1
+        }
+        if (accuracyPerScene["hat"]! > 0) {
+            threeItemAccuracy += accuracyPerScene["hat"]!
+            threeItemCompleted += 1
+        }
+        
+        threeItemAccuracy = threeItemAccuracy / threeItemCompleted
+        if threeItemCompleted > 0 {
+            threeItemAccuracyLabel.text = "3 items: \(Int(round(threeItemAccuracy)))%"
+        } else {
+            threeItemAccuracyLabel.text = "3 items: none completed"
+        }
+        threeItemAccuracyLabel.fontSize = 20
+        threeItemAccuracyLabel.position = CGPoint(x: -410, y: -15)
+        threeItemAccuracyLabel.zPosition = 10
+        threeItemAccuracyLabel.fontColor = UIColor.black
+        threeItemAccuracyLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        self.addChild(threeItemAccuracyLabel)
         
         // place 4 item accuracy label
+        if (accuracyPerScene["hand"]! > 0) {
+            fourItemAccuracy += accuracyPerScene["hand"]!
+            fourItemCompleted += 1
+        }
+        if (accuracyPerScene["rain"]! > 0) {
+            fourItemAccuracy += accuracyPerScene["rain"]!
+            fourItemCompleted += 1
+        }
+        if (accuracyPerScene["airplane"]! > 0) {
+            fourItemAccuracy += accuracyPerScene["airplane"]!
+            fourItemCompleted += 1
+        }
+        if (accuracyPerScene["shoes"]! > 0) {
+            fourItemAccuracy += accuracyPerScene["shoes"]!
+            fourItemCompleted += 1
+        }
+        if (accuracyPerScene["cookie"]! > 0) {
+            fourItemAccuracy += accuracyPerScene["cookie"]!
+            fourItemCompleted += 1
+        }
+        if (accuracyPerScene["mouse"]! > 0) {
+            fourItemAccuracy += accuracyPerScene["mouse"]!
+            fourItemCompleted += 1
+        }
+        
+        fourItemAccuracy = fourItemAccuracy / fourItemCompleted
+        if fourItemCompleted > 0 {
+            fourItemAccuracyLabel.text = "4 items: \(Int(round(fourItemAccuracy)))%"
+        } else {
+            fourItemAccuracyLabel.text = "4 items: none completed"
+        }
+        fourItemAccuracyLabel.fontSize = 20
+        fourItemAccuracyLabel.position = CGPoint(x: -410, y: -35)
+        fourItemAccuracyLabel.zPosition = 10
+        fourItemAccuracyLabel.fontColor = UIColor.black
+        fourItemAccuracyLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        self.addChild(fourItemAccuracyLabel)
         
         // place accuracy by background type label
         
@@ -273,10 +419,10 @@ class ScoreScene: SKScene {
         // place list of scenes with correct first time
         let correctFTjoined = correctFirstTriesArray.joined(separator: ", ")
         if correctFirstTriesArray.count > 0 {
-            listCorrectFTLabel.text = "4. Scenes w/ correct first time: \(correctFTjoined)"
+            listCorrectFTLabel.text = "7. Scenes w/ correct first time: \(correctFTjoined)"
         }
         else {
-            listCorrectFTLabel.text = "4. Scenes w/ correct first time: n/a"
+            listCorrectFTLabel.text = "7. Scenes w/ correct first time: none"
         }
         listCorrectFTLabel.fontSize = 20
         listCorrectFTLabel.position = CGPoint(x: -457, y: -50)
@@ -290,7 +436,7 @@ class ScoreScene: SKScene {
         self.addChild(listCorrectFTLabel)
         
         // place dictionary of correct touches per scene
-        var correctDictionary = "5. # of correct touches per scene: "
+        var correctDictionary = "8. # of correct touches per scene: "
         correctDictionary.append("rock: \(numCorrectPerScene["rock"]!), ")
         correctDictionary.append("lamp: \(numCorrectPerScene["lamp"]!), ")
         correctDictionary.append("cat: \(numCorrectPerScene["cat"]!), ")
@@ -322,7 +468,7 @@ class ScoreScene: SKScene {
         self.addChild(numCorrectPerSceneLabel)
         
         // place dictionary of incorrect touches per scene
-        var incorrectDictionary = "6. # of incorrect touches per scene: "
+        var incorrectDictionary = "9. # of incorrect touches per scene: "
         incorrectDictionary.append("rock: \(numIncorrectPerScene["rock"]!), ")
         incorrectDictionary.append("lamp: \(numIncorrectPerScene["lamp"]!), ")
         incorrectDictionary.append("cat: \(numIncorrectPerScene["cat"]!), ")
@@ -399,6 +545,14 @@ class ScoreScene: SKScene {
             //////////////////////////////////////////////////
             //////// RESET ALL GAMEWIDE STATS ////////////////
             //////////////////////////////////////////////////
+            numOfScenesCompleted = 0.0
+            twoItemCompleted = 0.0
+            threeItemCompleted = 0.0
+            fourItemCompleted = 0.0
+            simplebgCompleted = 0.0
+            linebgCompleted = 0.0
+            scenebgCompleted = 0.0
+            
             totalCorrectFT = 0
             twoItemCorrectFT = 0
             threeItemCorrectFT = 0
@@ -407,12 +561,23 @@ class ScoreScene: SKScene {
             lineCorrectFT = 0
             sceneCorrectFT = 0
             
+            totalAccuracy = 0.0
+            twoItemAccuracy = 0.0
+            threeItemAccuracy = 0.0
+            fourItemAccuracy = 0.0
+            simpleAccuracy = 0.0
+            lineAccuracy = 0.0
+            sceneAccuracy = 0.0
+            
             correctFirstTriesArray.removeAll()
             for (scene, numCorrect) in numCorrectPerScene {
                 numCorrectPerScene[scene] = 0
             }
             for (scene, numIncorrect) in numIncorrectPerScene {
                 numIncorrectPerScene[scene] = 0
+            }
+            for (scene, accuracy) in accuracyPerScene {
+                accuracyPerScene[scene] = 0
             }
             //////////////////////////////////////////////////
             ///////////////// END ////////////////////////////
@@ -424,6 +589,16 @@ class ScoreScene: SKScene {
             let fade = SKTransition.fade(withDuration: 0.5)
             self.scene!.view?.presentScene(startScene!, transition: fade)
         }
+    }
+    
+    func printLabel (label: SKLabelNode, words: String, xCoord: Double, yCoord: Double) {
+        label.text = words
+        label.fontSize = 20
+        label.position = CGPoint(x: xCoord, y: yCoord)
+        label.zPosition = 10
+        label.fontColor = UIColor.black
+        label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        self.addChild(label)
     }
 }
 
