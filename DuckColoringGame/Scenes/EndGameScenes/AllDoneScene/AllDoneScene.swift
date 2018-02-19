@@ -12,7 +12,6 @@ class AllDoneScene: SKScene {
   
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // variables for retry & stats buttons
-        let playAgainButton = self.childNode(withName: "play again button")
         let viewStatsButton = self.childNode(withName: "view stats button")
 
         // variable to keep track of touch

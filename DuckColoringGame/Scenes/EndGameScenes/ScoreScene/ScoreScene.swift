@@ -8,48 +8,38 @@
 
 import SpriteKit
 
-/////////////////////////////////////////////////////////////////
-//********PUBLIC VARIABLES TO KEEP TRACK OF STATISTICS*********//
-/////////////////////////////////////////////////////////////////
-    ///// Totals ///////////
-    var totalCorrectFT = 0
-    var twoItemCorrectFT = 0
-    var threeItemCorrectFT = 0
-    var fourItemCorrectFT = 0
-    var simpleCorrectFT = 0
-    var lineCorrectFT = 0
-    var sceneCorrectFT = 0
+//PUBLIC VARIABLES TO KEEP TRACK OF STATISTICS//
+///// Totals ///////////
+var totalCorrectFT = 0
+var twoItemCorrectFT = 0
+var threeItemCorrectFT = 0
+var fourItemCorrectFT = 0
+var simpleCorrectFT = 0
+var lineCorrectFT = 0
+var sceneCorrectFT = 0
 
-    ////// Scene Breakdowns ////////////////
-    var correctFirstTriesArray = [String]()
-    var numCorrectPerScene: [String:Int] = ["rock": 0, "lamp": 0, "cat": 0, "lion": 0, "hand": 0, "rain": 0, "duck": 0, "moon": 0, "cow": 0, "trash": 0, "airplane": 0, "shoes": 0, "cake": 0, "stroller": 0, "toast": 0, "hat": 0, "cookie": 0, "mouse": 0]
-    var numIncorrectPerScene: [String:Int] = ["rock": 0, "lamp": 0, "cat": 0, "lion": 0, "hand": 0, "rain": 0, "duck": 0, "moon": 0, "cow": 0, "trash": 0, "airplane": 0, "shoes": 0, "cake": 0, "stroller": 0, "toast": 0, "hat": 0, "cookie": 0, "mouse": 0]
-/////////////////////////////////////////////////////////////////
-//////////********************END********************////////////
-/////////////////////////////////////////////////////////////////
+////// Scene Breakdowns ////////////////
+var correctFirstTriesArray = [String]()
+var numCorrectPerScene: [String:Int] = ["rock": 0, "lamp": 0, "cat": 0, "lion": 0, "hand": 0, "rain": 0, "duck": 0, "moon": 0, "cow": 0, "trash": 0, "airplane": 0, "shoes": 0, "cake": 0, "stroller": 0, "toast": 0, "hat": 0, "cookie": 0, "mouse": 0]
+var numIncorrectPerScene: [String:Int] = ["rock": 0, "lamp": 0, "cat": 0, "lion": 0, "hand": 0, "rain": 0, "duck": 0, "moon": 0, "cow": 0, "trash": 0, "airplane": 0, "shoes": 0, "cake": 0, "stroller": 0, "toast": 0, "hat": 0, "cookie": 0, "mouse": 0]
 
 class ScoreScene: SKScene {
-    /////////////////////////////////////////////////////////////////
-    //////////********LOCAL VARIABLES FOR LABELS*********////////////
-    /////////////////////////////////////////////////////////////////
-        ///// Totals ///////////
-        let totalCorrectFTLabel = SKLabelNode(fontNamed:"Calibri")
-        let totalCorrectBySetSizeLabel = SKLabelNode(fontNamed: "Calibri")
-        let setSize2Label = SKLabelNode(fontNamed: "Calibri")
-        let setSize3Label = SKLabelNode(fontNamed: "Calibri")
-        let setSize4Label = SKLabelNode(fontNamed: "Calibri")
-        let totalCorrectByBgTypeLabel = SKLabelNode(fontNamed: "Calibri")
-        let simpleBGLabel = SKLabelNode(fontNamed: "Calibri")
-        let lineBGLabel = SKLabelNode(fontNamed: "Calibri")
-        let sceneBGLabel = SKLabelNode(fontNamed: "Calibri")
-    
-        ////// Scene Breakdowns ////////////////
-        let listCorrectFTLabel = SKLabelNode(fontNamed:"Calibri")
-        let numCorrectPerSceneLabel = SKLabelNode(fontNamed: "Calibri")
-        let numIncorrectPerSceneLabel = SKLabelNode(fontNamed: "Calibri")
-    /////////////////////////////////////////////////////////////////
-    //////////////////////********END*********///////////////////////
-    /////////////////////////////////////////////////////////////////
+    //LOCAL VARIABLES FOR LABELS//
+    ///// Totals ///////////
+    let totalCorrectFTLabel = SKLabelNode(fontNamed:"Calibri")
+    let totalCorrectBySetSizeLabel = SKLabelNode(fontNamed: "Calibri")
+    let setSize2Label = SKLabelNode(fontNamed: "Calibri")
+    let setSize3Label = SKLabelNode(fontNamed: "Calibri")
+    let setSize4Label = SKLabelNode(fontNamed: "Calibri")
+    let totalCorrectByBgTypeLabel = SKLabelNode(fontNamed: "Calibri")
+    let simpleBGLabel = SKLabelNode(fontNamed: "Calibri")
+    let lineBGLabel = SKLabelNode(fontNamed: "Calibri")
+    let sceneBGLabel = SKLabelNode(fontNamed: "Calibri")
+
+    ////// Scene Breakdowns ////////////////
+    let listCorrectFTLabel = SKLabelNode(fontNamed:"Calibri")
+    let numCorrectPerSceneLabel = SKLabelNode(fontNamed: "Calibri")
+    let numIncorrectPerSceneLabel = SKLabelNode(fontNamed: "Calibri")
 
     override func didMove(to view: SKView) {
         
@@ -135,21 +125,21 @@ class ScoreScene: SKScene {
         // place list of scenes with correct first time
         let correctFTjoined = correctFirstTriesArray.joined(separator: ", ")
         if correctFirstTriesArray.count > 0 {
-            totalCorrectFTLabel.text = "1. Scenes w/ correct first time: \(correctFTjoined)"
+            listCorrectFTLabel.text = "1. Scenes w/ correct first time: \(correctFTjoined)"
         }
         else {
-            totalCorrectFTLabel.text = "1. Scenes w/ correct first time: n/a"
+            listCorrectFTLabel.text = "1. Scenes w/ correct first time: n/a"
         }
-        totalCorrectFTLabel.fontSize = 20
-        totalCorrectFTLabel.position = CGPoint(x: -457, y: -78.049)
-        totalCorrectFTLabel.zPosition = 10
-        totalCorrectFTLabel.fontColor = UIColor.black
-        totalCorrectFTLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        totalCorrectFTLabel.preferredMaxLayoutWidth = 850
-        totalCorrectFTLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-        totalCorrectFTLabel.numberOfLines = 0
-        totalCorrectFTLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.top
-        self.addChild(totalCorrectFTLabel)
+        listCorrectFTLabel.fontSize = 20
+        listCorrectFTLabel.position = CGPoint(x: -457, y: -78.049)
+        listCorrectFTLabel.zPosition = 10
+        listCorrectFTLabel.fontColor = UIColor.black
+        listCorrectFTLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        listCorrectFTLabel.preferredMaxLayoutWidth = 850
+        listCorrectFTLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        listCorrectFTLabel.numberOfLines = 0
+        listCorrectFTLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.top
+        self.addChild(listCorrectFTLabel)
         
         // place dictionary of correct touches per scene
         var correctDictionary = "3. # of incorrect touches per scene: "

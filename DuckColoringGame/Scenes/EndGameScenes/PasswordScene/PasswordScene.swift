@@ -52,6 +52,8 @@ class PasswordScene: SKScene, UITextFieldDelegate {
         passwordInput?.endEditing(true)
         saveText()
         
+        print(correctPassword)
+        
         if (okButton!.contains(touch.location(in:self))) && (correctPassword == true) {
             let scoreScene = SKScene(fileNamed: "ScoreScene")
             scoreScene?.scaleMode = SKSceneScaleMode.aspectFill
