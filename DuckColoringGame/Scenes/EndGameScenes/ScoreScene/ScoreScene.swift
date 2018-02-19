@@ -22,7 +22,7 @@ var sceneCorrectFT = 0
 var correctFirstTriesArray = [String]()
 var numCorrectPerScene: [String:Int] = ["rock": 0, "lamp": 0, "cat": 0, "lion": 0, "hand": 0, "rain": 0, "duck": 0, "moon": 0, "cow": 0, "trash": 0, "airplane": 0, "shoes": 0, "cake": 0, "stroller": 0, "toast": 0, "hat": 0, "cookie": 0, "mouse": 0]
 var numIncorrectPerScene: [String:Int] = ["rock": 0, "lamp": 0, "cat": 0, "lion": 0, "hand": 0, "rain": 0, "duck": 0, "moon": 0, "cow": 0, "trash": 0, "airplane": 0, "shoes": 0, "cake": 0, "stroller": 0, "toast": 0, "hat": 0, "cookie": 0, "mouse": 0]
-var accuracyPerScene: [String:Int] = ["rock": 0, "lamp": 0, "cat": 0, "lion": 0, "hand": 0, "rain": 0, "duck": 0, "moon": 0, "cow": 0, "trash": 0, "airplane": 0, "shoes": 0, "cake": 0, "stroller": 0, "toast": 0, "hat": 0, "cookie": 0, "mouse": 0]
+var accuracyPerScene: [String:Double] = ["rock": 0, "lamp": 0, "cat": 0, "lion": 0, "hand": 0, "rain": 0, "duck": 0, "moon": 0, "cow": 0, "trash": 0, "airplane": 0, "shoes": 0, "cake": 0, "stroller": 0, "toast": 0, "hat": 0, "cookie": 0, "mouse": 0]
 
 class ScoreScene: SKScene {
     //LOCAL VARIABLES FOR LABELS//
@@ -208,45 +208,98 @@ class ScoreScene: SKScene {
         self.addChild(numIncorrectPerSceneLabel)
         
         // Calculations for accuracy per scene
-        accuracyPerScene["rock"] = numCorrectPerScene["rock"]!/numIncorrectPerScene["rock"]!
-        accuracyPerScene["lamp"] = numCorrectPerScene["lamp"]!/numIncorrectPerScene["lamp"]!
-        accuracyPerScene["cat"] = numCorrectPerScene["cat"]!/numIncorrectPerScene["cat"]!
-        accuracyPerScene["lion"] = numCorrectPerScene["lion"]!/numIncorrectPerScene["lion"]!
-        accuracyPerScene["hand"] = numCorrectPerScene["hand"]!/numIncorrectPerScene["hand"]!
-        accuracyPerScene["rain"] = numCorrectPerScene["rain"]!/numIncorrectPerScene["rain"]!
-        accuracyPerScene["duck"] = numCorrectPerScene["duck"]!/numIncorrectPerScene["duck"]!
-        accuracyPerScene["moon"] = numCorrectPerScene["moon"]!/numIncorrectPerScene["moon"]!
-        accuracyPerScene["cow"] = numCorrectPerScene["cow"]!/numIncorrectPerScene["cow"]!
-        accuracyPerScene["trash"] = numCorrectPerScene["trash"]!/numIncorrectPerScene["trash"]!
-        accuracyPerScene["airplane"] = numCorrectPerScene["airplane"]!/numIncorrectPerScene["airplane"]!
-        accuracyPerScene["shoes"] = numCorrectPerScene["shoes"]!/numIncorrectPerScene["shoes"]!
-        accuracyPerScene["cake"] = numCorrectPerScene["cake"]!/numIncorrectPerScene["cake"]!
-        accuracyPerScene["stoller"] = numCorrectPerScene["stroller"]!/numIncorrectPerScene["stroller"]!
-        accuracyPerScene["toast"] = numCorrectPerScene["toast"]!/numIncorrectPerScene["toast"]!
-        accuracyPerScene["hat"] = numCorrectPerScene["hat"]!/numIncorrectPerScene["hat"]!
-        accuracyPerScene["cookie"] = numCorrectPerScene["cookie"]!/numIncorrectPerScene["cookie"]!
-        accuracyPerScene["mouse"] = numCorrectPerScene["mouse"]!/numIncorrectPerScene["mouse"]!
+        if (numIncorrectPerScene["rock"]! > 0) {
+            accuracyPerScene["rock"] = round((Double(numCorrectPerScene["rock"]!) / Double(numIncorrectPerScene["rock"]!)) * 100)
+        } else { accuracyPerScene["rock"] = 100 }
+        
+        if (numIncorrectPerScene["lamp"]! > 0) {
+            accuracyPerScene["lamp"] = round((Double(numCorrectPerScene["lamp"]!) / Double(numIncorrectPerScene["lamp"]!)) * 100)
+        } else { accuracyPerScene["lamp"] = 100 }
+        
+        if (numIncorrectPerScene["cat"]! > 0) {
+            accuracyPerScene["cat"] = round((Double(numCorrectPerScene["cat"]!) / Double(numIncorrectPerScene["cat"]!)) * 100)
+        } else { accuracyPerScene["cat"] = 100 }
+        
+        if (numIncorrectPerScene["lion"]! > 0) {
+            accuracyPerScene["lion"] = round((Double(numCorrectPerScene["lion"]!) / Double(numIncorrectPerScene["lion"]!)) * 100)
+        } else { accuracyPerScene["lion"] = 100 }
+        
+        if (numIncorrectPerScene["hand"]! > 0) {
+            accuracyPerScene["hand"] = round((Double(numCorrectPerScene["hand"]!) / Double(numIncorrectPerScene["hand"]!)) * 100)
+        } else { accuracyPerScene["hand"] = 100 }
+        
+        if (numIncorrectPerScene["rain"]! > 0) {
+            accuracyPerScene["rain"] = round((Double(numCorrectPerScene["rain"]!) / Double(numIncorrectPerScene["rain"]!)) * 100)
+        } else { accuracyPerScene["rain"] = 100 }
+        
+        if (numIncorrectPerScene["duck"]! > 0) {
+            accuracyPerScene["duck"] = round((Double(numCorrectPerScene["duck"]!) / Double(numIncorrectPerScene["duck"]!)) * 100)
+        } else { accuracyPerScene["duck"] = 100 }
+        
+        if (numIncorrectPerScene["moon"]! > 0) {
+            accuracyPerScene["moon"] = round((Double(numCorrectPerScene["moon"]!) / Double(numIncorrectPerScene["moon"]!)) * 100)
+        } else { accuracyPerScene["moon"] = 100 }
+        
+        if (numIncorrectPerScene["cow"]! > 0) {
+            accuracyPerScene["cow"] = round((Double(numCorrectPerScene["cow"]!) / Double(numIncorrectPerScene["cow"]!)) * 100)
+        } else { accuracyPerScene["cow"] = 100 }
+        
+        if (numIncorrectPerScene["trash"]! > 0) {
+            accuracyPerScene["trash"] = round((Double(numCorrectPerScene["trash"]!) / Double(numIncorrectPerScene["trash"]!)) * 100)
+        } else { accuracyPerScene["trash"] = 100 }
+        
+        if (numIncorrectPerScene["airplane"]! > 0) {
+            accuracyPerScene["airplane"] = round((Double(numCorrectPerScene["airplane"]!) / Double(numIncorrectPerScene["airplane"]!)) * 100)
+        } else { accuracyPerScene["airplane"] = 100 }
+        
+        if (numIncorrectPerScene["shoes"]! > 0) {
+            accuracyPerScene["shoes"] = round((Double(numCorrectPerScene["shoes"]!) / Double(numIncorrectPerScene["shoes"]!)) * 100)
+        } else { accuracyPerScene["shoes"] = 100 }
+        
+        if (numIncorrectPerScene["cake"]! > 0) {
+            accuracyPerScene["cake"] = round((Double(numCorrectPerScene["cake"]!) / Double(numIncorrectPerScene["cake"]!)) * 100)
+        } else { accuracyPerScene["cake"] = 100 }
+        
+        if (numIncorrectPerScene["stroller"]! > 0) {
+            accuracyPerScene["stroller"] = round((Double(numCorrectPerScene["stroller"]!) / Double(numIncorrectPerScene["stroller"]!)) * 100)
+        } else { accuracyPerScene["stroller"] = 100 }
+        
+        if (numIncorrectPerScene["toast"]! > 0) {
+            accuracyPerScene["toast"] = round((Double(numCorrectPerScene["toast"]!) / Double(numIncorrectPerScene["toast"]!)) * 100)
+        } else { accuracyPerScene["toast"] = 100 }
+        
+        if (numIncorrectPerScene["hat"]! > 0) {
+            accuracyPerScene["hat"] = round((Double(numCorrectPerScene["hat"]!) / Double(numIncorrectPerScene["hat"]!)) * 100)
+        } else { accuracyPerScene["hat"] = 100 }
+        
+        if (numIncorrectPerScene["cookie"]! > 0) {
+            accuracyPerScene["cookie"] = round((Double(numCorrectPerScene["cookie"]!) / Double(numIncorrectPerScene["cookie"]!)) * 100)
+        } else { accuracyPerScene["cookie"] = 100 }
+        
+        if (numIncorrectPerScene["mouse"]! > 0) {
+            accuracyPerScene["mouse"] = round((Double(numCorrectPerScene["mouse"]!) / Double(numIncorrectPerScene["mouse"]!)) * 100)
+        } else { accuracyPerScene["mouse"] = 100 }
         
         // place label for accuracy per scene dictionary
         var accuracyDictionary = "7. Accuracy per scene: "
-        accuracyDictionary.append("rock: \(accuracyPerScene["rock"]!), ")
-        accuracyDictionary.append("lamp: \(accuracyPerScene["lamp"]!), ")
-        accuracyDictionary.append("cat: \(accuracyPerScene["cat"]!), ")
-        accuracyDictionary.append("lion: \(accuracyPerScene["lion"]!), ")
-        accuracyDictionary.append("hand: \(accuracyPerScene["hand"]!), ")
-        accuracyDictionary.append("rain: \(accuracyPerScene["rain"]!), ")
-        accuracyDictionary.append("duck: \(accuracyPerScene["duck"]!), ")
-        accuracyDictionary.append("moon: \(accuracyPerScene["moon"]!), ")
-        accuracyDictionary.append("cow: \(accuracyPerScene["cow"]!), ")
-        accuracyDictionary.append("trash: \(accuracyPerScene["trash"]!), ")
-        accuracyDictionary.append("airplane: \(accuracyPerScene["airplane"]!), ")
-        accuracyDictionary.append("shoes: \(accuracyPerScene["shoes"]!), ")
-        accuracyDictionary.append("cake: \(accuracyPerScene["cake"]!), ")
-        accuracyDictionary.append("stroller: \(accuracyPerScene["stroller"]!), ")
-        accuracyDictionary.append("toast: \(accuracyPerScene["toast"]!), ")
-        accuracyDictionary.append("hat: \(accuracyPerScene["hat"]!), ")
-        accuracyDictionary.append("cookie: \(accuracyPerScene["cookie"]!), ")
-        accuracyDictionary.append("mouse: \(accuracyPerScene["mouse"]!) ")
+        accuracyDictionary.append("rock: \(accuracyPerScene["rock"]!)%, ")
+        accuracyDictionary.append("lamp: \(accuracyPerScene["lamp"]!)%, ")
+        accuracyDictionary.append("cat: \(accuracyPerScene["cat"]!)%, ")
+        accuracyDictionary.append("lion: \(accuracyPerScene["lion"]!)%, ")
+        accuracyDictionary.append("hand: \(accuracyPerScene["hand"]!)%, ")
+        accuracyDictionary.append("rain: \(accuracyPerScene["rain"]!)%, ")
+        accuracyDictionary.append("duck: \(accuracyPerScene["duck"]!)%, ")
+        accuracyDictionary.append("moon: \(accuracyPerScene["moon"]!)%, ")
+        accuracyDictionary.append("cow: \(accuracyPerScene["cow"]!)%, ")
+        accuracyDictionary.append("trash: \(accuracyPerScene["trash"]!)%, ")
+        accuracyDictionary.append("airplane: \(accuracyPerScene["airplane"]!)%, ")
+        accuracyDictionary.append("shoes: \(accuracyPerScene["shoes"]!)%, ")
+        accuracyDictionary.append("cake: \(accuracyPerScene["cake"]!)%, ")
+        accuracyDictionary.append("stroller: \(accuracyPerScene["stroller"]!)%, ")
+        accuracyDictionary.append("toast: \(accuracyPerScene["toast"]!)%, ")
+        accuracyDictionary.append("hat: \(accuracyPerScene["hat"]!)%, ")
+        accuracyDictionary.append("cookie: \(accuracyPerScene["cookie"]!)%, ")
+        accuracyDictionary.append("mouse: \(accuracyPerScene["mouse"]!)% ")
         accuracyPerSceneLabel.text = accuracyDictionary
         accuracyPerSceneLabel.fontSize = 20
         accuracyPerSceneLabel.position = CGPoint(x: -457, y: -225)
