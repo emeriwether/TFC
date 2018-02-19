@@ -76,61 +76,89 @@ class ScoreScene: SKScene {
             accuracyPerScene["lion"] = round((Double(numCorrectPerScene["lion"]!) / Double(numIncorrectPerScene["lion"]! + numCorrectPerScene["lion"]!)) * 100)
         }
         
-        if (numIncorrectPerScene["hand"]! > 0) && (numCorrectPerScene["hand"]! > 0)  {
+        if (numCorrectPerScene["hand"]! == 0) { accuracyPerScene["hand"] = 0 }
+        else if (numIncorrectPerScene["hand"]! == 0) {accuracyPerScene["hand"] = 100 }
+        else {
             accuracyPerScene["hand"] = round((Double(numCorrectPerScene["hand"]!) / Double(numIncorrectPerScene["hand"]! + numCorrectPerScene["hand"]!)) * 100)
-        } else { accuracyPerScene["hand"] = 100 }
+        }
         
-        if (numIncorrectPerScene["rain"]! > 0) && (numCorrectPerScene["rain"]! > 0)  {
+        if (numCorrectPerScene["rain"]! == 0) { accuracyPerScene["rain"] = 0 }
+        else if (numIncorrectPerScene["rain"]! == 0) {accuracyPerScene["rain"] = 100 }
+        else {
             accuracyPerScene["rain"] = round((Double(numCorrectPerScene["rain"]!) / Double(numIncorrectPerScene["rain"]! + numCorrectPerScene["rain"]!)) * 100)
-        } else { accuracyPerScene["rain"] = 100 }
+        }
         
-        if (numIncorrectPerScene["duck"]! > 0) && (numCorrectPerScene["duck"]! > 0)  {
+        if (numCorrectPerScene["duck"]! == 0) { accuracyPerScene["duck"] = 0 }
+        else if (numIncorrectPerScene["duck"]! == 0) {accuracyPerScene["duck"] = 100 }
+        else {
             accuracyPerScene["duck"] = round((Double(numCorrectPerScene["duck"]!) / Double(numIncorrectPerScene["duck"]! + numCorrectPerScene["duck"]!)) * 100)
-        } else { accuracyPerScene["duck"] = 100 }
+        }
         
-        if (numIncorrectPerScene["moon"]! > 0) && (numCorrectPerScene["moon"]! > 0)  {
+        if (numCorrectPerScene["moon"]! == 0) { accuracyPerScene["moon"] = 0 }
+        else if (numIncorrectPerScene["moon"]! == 0) {accuracyPerScene["moon"] = 100 }
+        else {
             accuracyPerScene["moon"] = round((Double(numCorrectPerScene["moon"]!) / Double(numIncorrectPerScene["moon"]! + numCorrectPerScene["moon"]!)) * 100)
-        } else { accuracyPerScene["moon"] = 100 }
+        }
         
-        if (numIncorrectPerScene["cow"]! > 0) && (numCorrectPerScene["cow"]! > 0)  {
+        if (numCorrectPerScene["cow"]! == 0) { accuracyPerScene["cow"] = 0 }
+        else if (numIncorrectPerScene["cow"]! == 0) {accuracyPerScene["cow"] = 100 }
+        else {
             accuracyPerScene["cow"] = round((Double(numCorrectPerScene["cow"]!) / Double(numIncorrectPerScene["cow"]! + numCorrectPerScene["cow"]!)) * 100)
-        } else { accuracyPerScene["cow"] = 100 }
+        }
         
-        if (numIncorrectPerScene["trash"]! > 0) && (numCorrectPerScene["trash"]! > 0)  {
+        if (numCorrectPerScene["trash"]! == 0) { accuracyPerScene["trash"] = 0 }
+        else if (numIncorrectPerScene["trash"]! == 0) {accuracyPerScene["trash"] = 100 }
+        else {
             accuracyPerScene["trash"] = round((Double(numCorrectPerScene["trash"]!) / Double(numIncorrectPerScene["trash"]! + numCorrectPerScene["trash"]!)) * 100)
-        } else { accuracyPerScene["trash"] = 100 }
+        }
         
-        if (numIncorrectPerScene["airplane"]! > 0) && (numCorrectPerScene["airplane"]! > 0)  {
+        if (numCorrectPerScene["airplane"]! == 0) { accuracyPerScene["airplane"] = 0 }
+        else if (numIncorrectPerScene["airplane"]! == 0) {accuracyPerScene["airplane"] = 100 }
+        else {
             accuracyPerScene["airplane"] = round((Double(numCorrectPerScene["airplane"]!) / Double(numIncorrectPerScene["airplane"]! + numCorrectPerScene["airplane"]!)) * 100)
-        } else { accuracyPerScene["airplane"] = 100 }
+        }
         
-        if (numIncorrectPerScene["shoes"]! > 0) && (numCorrectPerScene["shoes"]! > 0)  {
+        if (numCorrectPerScene["shoes"]! == 0) { accuracyPerScene["shoes"] = 0 }
+        else if (numIncorrectPerScene["shoes"]! == 0) {accuracyPerScene["shoes"] = 100 }
+        else {
             accuracyPerScene["shoes"] = round((Double(numCorrectPerScene["shoes"]!) / Double(numIncorrectPerScene["shoes"]! + numCorrectPerScene["shoes"]!)) * 100)
-        } else { accuracyPerScene["shoes"] = 100 }
+        }
         
-        if (numIncorrectPerScene["cake"]! > 0) && (numCorrectPerScene["cake"]! > 0)  {
+        if (numCorrectPerScene["cake"]! == 0) { accuracyPerScene["cake"] = 0 }
+        else if (numIncorrectPerScene["cake"]! == 0) {accuracyPerScene["cake"] = 100 }
+        else {
             accuracyPerScene["cake"] = round((Double(numCorrectPerScene["cake"]!) / Double(numIncorrectPerScene["cake"]! + numCorrectPerScene["cake"]!)) * 100)
-        } else { accuracyPerScene["cake"] = 100 }
+        }
         
-        if (numIncorrectPerScene["stroller"]! > 0) && (numCorrectPerScene["stroller"]! > 0)  {
+        if (numCorrectPerScene["stroller"]! == 0) { accuracyPerScene["stroller"] = 0 }
+        else if (numIncorrectPerScene["stroller"]! == 0) {accuracyPerScene["stroller"] = 100 }
+        else {
             accuracyPerScene["stroller"] = round((Double(numCorrectPerScene["stroller"]!) / Double(numIncorrectPerScene["stroller"]! + numCorrectPerScene["stroller"]!)) * 100)
-        } else { accuracyPerScene["stroller"] = 100 }
+        }
         
-        if (numIncorrectPerScene["toast"]! > 0) && (numCorrectPerScene["toast"]! > 0)  {
+        if (numCorrectPerScene["toast"]! == 0) { accuracyPerScene["toast"] = 0 }
+        else if (numIncorrectPerScene["toast"]! == 0) {accuracyPerScene["toast"] = 100 }
+        else {
             accuracyPerScene["toast"] = round((Double(numCorrectPerScene["toast"]!) / Double(numIncorrectPerScene["toast"]! + numCorrectPerScene["toast"]!)) * 100)
-        } else { accuracyPerScene["toast"] = 100 }
+        }
         
-        if (numIncorrectPerScene["hat"]! > 0) && (numCorrectPerScene["hat"]! > 0)  {
+        if (numCorrectPerScene["hat"]! == 0) { accuracyPerScene["hat"] = 0 }
+        else if (numIncorrectPerScene["hat"]! == 0) {accuracyPerScene["hat"] = 100 }
+        else {
             accuracyPerScene["hat"] = round((Double(numCorrectPerScene["hat"]!) / Double(numIncorrectPerScene["hat"]! + numCorrectPerScene["hat"]!)) * 100)
-        } else { accuracyPerScene["hat"] = 100 }
+        }
         
-        if (numIncorrectPerScene["cookie"]! > 0) && (numCorrectPerScene["cookie"]! > 0)  {
+        if (numCorrectPerScene["cookie"]! == 0) { accuracyPerScene["cookie"] = 0 }
+        else if (numIncorrectPerScene["cookie"]! == 0) {accuracyPerScene["cookie"] = 100 }
+        else {
             accuracyPerScene["cookie"] = round((Double(numCorrectPerScene["cookie"]!) / Double(numIncorrectPerScene["cookie"]! + numCorrectPerScene["cookie"]!)) * 100)
-        } else { accuracyPerScene["cookie"] = 100 }
+        }
         
-        if (numIncorrectPerScene["mouse"]! > 0) && (numCorrectPerScene["mouse"]! > 0)  {
+        if (numCorrectPerScene["mouse"]! == 0) { accuracyPerScene["mouse"] = 0 }
+        else if (numIncorrectPerScene["mouse"]! == 0) {accuracyPerScene["mouse"] = 100 }
+        else {
             accuracyPerScene["mouse"] = round((Double(numCorrectPerScene["mouse"]!) / Double(numIncorrectPerScene["mouse"]! + numCorrectPerScene["mouse"]!)) * 100)
-        } else { accuracyPerScene["mouse"] = 100 }
+        }
         
         
         // place label for total scenes with correct first try
