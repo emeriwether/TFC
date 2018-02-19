@@ -271,26 +271,12 @@ class ScoreScene: SKScene {
             }
         }
         totalAccuracy = totalAccuracy / numOfScenesCompleted
-        totalAccuracyLabel.text = "4. Total accuracy: \(Int(round(totalAccuracy)))%"
-        totalAccuracyLabel.fontSize = 20
-        totalAccuracyLabel.position = CGPoint(x: -457, y: 95)
-        totalAccuracyLabel.zPosition = 10
-        totalAccuracyLabel.fontColor = UIColor.black
-        totalAccuracyLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        self.addChild(totalAccuracyLabel)
+        let string = "4. Total accuracy: \(Int(round(totalAccuracy)))%"
+        printLabel(label: totalAccuracyLabel, words: string, xCoord: -457, yCoord: 95)
         
         // place accuracy by item count label
-        //accuracyByItemCountLabel.text = "5. Accuracy by item count"
-        //accuracyByItemCountLabel.fontSize = 20
-        //accuracyByItemCountLabel.position = CGPoint(x: -457, y: 45)
-        //accuracyByItemCountLabel.zPosition = 10
-        //accuracyByItemCountLabel.fontColor = UIColor.black
-        //accuracyByItemCountLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        //self.addChild(accuracyByItemCountLabel)
-        
-        printLabel (label: accuracyByItemCountLabel, words: "5. Accuracy by item count", xCoord: -457, yCoord: 45)
+        printLabel(label: accuracyByItemCountLabel, words: "5. Accuracy by item count", xCoord: -457, yCoord: 45)
 
-        
         // calculate and place 2 item accuracy label
         if (accuracyPerScene["rock"]! > 0) {
             twoItemAccuracy += accuracyPerScene["rock"]!
