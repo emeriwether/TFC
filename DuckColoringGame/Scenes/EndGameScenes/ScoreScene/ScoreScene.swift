@@ -202,66 +202,32 @@ class ScoreScene: SKScene {
         self.addChild(totalCorrectBySetSizeLabel)
         
         // place correct score in set size 2 on screen
-        setSize2Label.text = "2: \(twoItemCorrectFT) / 6"
-        setSize2Label.fontSize = 20
-        setSize2Label.position = CGPoint(x: -410, y: 345)
-        setSize2Label.zPosition = 10
-        setSize2Label.fontColor = UIColor.black
-        setSize2Label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        self.addChild(setSize2Label)
+        let setSize2String = "4: \(twoItemCorrectFT) / 6"
+        printLabel(label: setSize2Label, words: setSize2String, xCoord: -410, yCoord: 345)
         
         // place correct score in set size 3 on screen
-        setSize3Label.text = "3: \(threeItemCorrectFT) / 6"
-        setSize3Label.fontSize = 20
-        setSize3Label.position = CGPoint(x: -410, y: 315)
-        setSize3Label.zPosition = 10
-        setSize3Label.fontColor = UIColor.black
-        setSize3Label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        self.addChild(setSize3Label)
-
+        let setSize3String = "4: \(threeItemCorrectFT) / 6"
+        printLabel(label: setSize3Label, words: setSize3String, xCoord: -410, yCoord: 315)
+        
         // place correct score in set size 4 on screen
-        setSize4Label.text = "4: \(fourItemCorrectFT) / 6"
-        setSize4Label.fontSize = 20
-        setSize4Label.position = CGPoint(x: -410, y: 285)
-        setSize4Label.zPosition = 10
-        setSize4Label.fontColor = UIColor.black
-        setSize4Label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        self.addChild(setSize4Label)
-        
-        totalCorrectByBgTypeLabel.text = "3. Scenes with correct first time, by background type"
-        totalCorrectByBgTypeLabel.fontSize = 20
-        totalCorrectByBgTypeLabel.position = CGPoint(x: -457, y: 235)
-        totalCorrectByBgTypeLabel.zPosition = 10
-        totalCorrectByBgTypeLabel.fontColor = UIColor.black
-        totalCorrectByBgTypeLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        self.addChild(totalCorrectByBgTypeLabel)
-        
+        let setSize4String = "4: \(fourItemCorrectFT) / 6"
+        printLabel(label: setSize4Label, words: setSize4String, xCoord: -410, yCoord: 285)
+
+        // place totalCorrectByBG label
+        printLabel(label: totalCorrectByBgTypeLabel, words: "3. Scenes with correct first time, by background type", xCoord: -457, yCoord: 235)
+
         // place correct score in simple bg type
-        simpleBGLabel.text = "Simple: \(simpleCorrectFT)/6"
-        simpleBGLabel.fontSize = 20
-        simpleBGLabel.position = CGPoint(x: -410, y: 205)
-        simpleBGLabel.zPosition = 10
-        simpleBGLabel.fontColor = UIColor.black
-        simpleBGLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        self.addChild(simpleBGLabel)
+        let simpleBGString = "Simple: \(simpleCorrectFT)/6"
+        printLabel(label: simpleBGLabel, words: simpleBGString, xCoord: -410, yCoord: 205)
         
         // place correct score in line bg type
-        lineBGLabel.text = "Line:      \(lineCorrectFT)/6"
-        lineBGLabel.fontSize = 20
-        lineBGLabel.position = CGPoint(x: -410, y: 175)
-        lineBGLabel.zPosition = 10
-        lineBGLabel.fontColor = UIColor.black
-        lineBGLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        self.addChild(lineBGLabel)
-        
+        let lineBGString = "Line:      \(lineCorrectFT)/6"
+        printLabel(label: lineBGLabel, words: lineBGString, xCoord: -410, yCoord: 175)
+
         // place correct score in scene bg type
-        sceneBGLabel.text = "Scene:   \(sceneCorrectFT)/6"
-        sceneBGLabel.fontSize = 20
-        sceneBGLabel.position = CGPoint(x: -410, y: 145)
-        sceneBGLabel.zPosition = 10
-        sceneBGLabel.fontColor = UIColor.black
-        sceneBGLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        self.addChild(sceneBGLabel)
+        let sceneBGString = "Scene:   \(sceneCorrectFT)/6"
+        printLabel(label: sceneBGLabel, words: sceneBGString, xCoord: -410, yCoord: 145)
+
         
         // calculate and place total average accuracy label
         for (scene, accuracy) in accuracyPerScene {
@@ -271,8 +237,8 @@ class ScoreScene: SKScene {
             }
         }
         totalAccuracy = totalAccuracy / numOfScenesCompleted
-        let string = "4. Total accuracy: \(Int(round(totalAccuracy)))%"
-        printLabel(label: totalAccuracyLabel, words: string, xCoord: -457, yCoord: 95)
+        let totalAccuracyString = "4. Total accuracy: \(Int(round(totalAccuracy)))%"
+        printLabel(label: totalAccuracyLabel, words: totalAccuracyString, xCoord: -457, yCoord: 95)
         
         // place accuracy by item count label
         printLabel(label: accuracyByItemCountLabel, words: "5. Accuracy by item count", xCoord: -457, yCoord: 45)
