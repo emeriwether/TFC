@@ -47,6 +47,92 @@ class ScoreScene: SKScene {
 
     override func didMove(to view: SKView) {
         
+        // Calculations for accuracy per scene
+        
+        // if user skipped scene (no correct touch), (0%)
+        if (numCorrectPerScene["rock"]! == 0) { accuracyPerScene["rock"] = 0 }
+        // else if user made no incorrect touches (correct first try), (100%)
+        else if (numIncorrectPerScene["rock"]! == 0) {accuracyPerScene["rock"] = 100 }
+        // else if user touched correct, but made mistakes (1-99%)
+        else {
+            accuracyPerScene["rock"] = round((Double(numCorrectPerScene["rock"]!) / Double(numIncorrectPerScene["rock"]! + numCorrectPerScene["rock"]!)) * 100)
+        }
+
+        if (numCorrectPerScene["lamp"]! == 0) { accuracyPerScene["lamp"] = 0 }
+        else if (numIncorrectPerScene["lamp"]! == 0) {accuracyPerScene["lamp"] = 100 }
+        else {
+            accuracyPerScene["lamp"] = round((Double(numCorrectPerScene["lamp"]!) / Double(numIncorrectPerScene["lamp"]! + numCorrectPerScene["lamp"]!)) * 100)
+        }
+        
+        if (numCorrectPerScene["cat"]! == 0) { accuracyPerScene["cat"] = 0 }
+        else if (numIncorrectPerScene["cat"]! == 0) {accuracyPerScene["cat"] = 100 }
+        else {
+            accuracyPerScene["cat"] = round((Double(numCorrectPerScene["cat"]!) / Double(numIncorrectPerScene["cat"]! + numCorrectPerScene["cat"]!)) * 100)
+        }
+        
+        if (numCorrectPerScene["lion"]! == 0) { accuracyPerScene["lion"] = 0 }
+        else if (numIncorrectPerScene["lion"]! == 0) {accuracyPerScene["lion"] = 100 }
+        else {
+            accuracyPerScene["lion"] = round((Double(numCorrectPerScene["lion"]!) / Double(numIncorrectPerScene["lion"]! + numCorrectPerScene["lion"]!)) * 100)
+        }
+        
+        if (numIncorrectPerScene["hand"]! > 0) && (numCorrectPerScene["hand"]! > 0)  {
+            accuracyPerScene["hand"] = round((Double(numCorrectPerScene["hand"]!) / Double(numIncorrectPerScene["hand"]! + numCorrectPerScene["hand"]!)) * 100)
+        } else { accuracyPerScene["hand"] = 100 }
+        
+        if (numIncorrectPerScene["rain"]! > 0) && (numCorrectPerScene["rain"]! > 0)  {
+            accuracyPerScene["rain"] = round((Double(numCorrectPerScene["rain"]!) / Double(numIncorrectPerScene["rain"]! + numCorrectPerScene["rain"]!)) * 100)
+        } else { accuracyPerScene["rain"] = 100 }
+        
+        if (numIncorrectPerScene["duck"]! > 0) && (numCorrectPerScene["duck"]! > 0)  {
+            accuracyPerScene["duck"] = round((Double(numCorrectPerScene["duck"]!) / Double(numIncorrectPerScene["duck"]! + numCorrectPerScene["duck"]!)) * 100)
+        } else { accuracyPerScene["duck"] = 100 }
+        
+        if (numIncorrectPerScene["moon"]! > 0) && (numCorrectPerScene["moon"]! > 0)  {
+            accuracyPerScene["moon"] = round((Double(numCorrectPerScene["moon"]!) / Double(numIncorrectPerScene["moon"]! + numCorrectPerScene["moon"]!)) * 100)
+        } else { accuracyPerScene["moon"] = 100 }
+        
+        if (numIncorrectPerScene["cow"]! > 0) && (numCorrectPerScene["cow"]! > 0)  {
+            accuracyPerScene["cow"] = round((Double(numCorrectPerScene["cow"]!) / Double(numIncorrectPerScene["cow"]! + numCorrectPerScene["cow"]!)) * 100)
+        } else { accuracyPerScene["cow"] = 100 }
+        
+        if (numIncorrectPerScene["trash"]! > 0) && (numCorrectPerScene["trash"]! > 0)  {
+            accuracyPerScene["trash"] = round((Double(numCorrectPerScene["trash"]!) / Double(numIncorrectPerScene["trash"]! + numCorrectPerScene["trash"]!)) * 100)
+        } else { accuracyPerScene["trash"] = 100 }
+        
+        if (numIncorrectPerScene["airplane"]! > 0) && (numCorrectPerScene["airplane"]! > 0)  {
+            accuracyPerScene["airplane"] = round((Double(numCorrectPerScene["airplane"]!) / Double(numIncorrectPerScene["airplane"]! + numCorrectPerScene["airplane"]!)) * 100)
+        } else { accuracyPerScene["airplane"] = 100 }
+        
+        if (numIncorrectPerScene["shoes"]! > 0) && (numCorrectPerScene["shoes"]! > 0)  {
+            accuracyPerScene["shoes"] = round((Double(numCorrectPerScene["shoes"]!) / Double(numIncorrectPerScene["shoes"]! + numCorrectPerScene["shoes"]!)) * 100)
+        } else { accuracyPerScene["shoes"] = 100 }
+        
+        if (numIncorrectPerScene["cake"]! > 0) && (numCorrectPerScene["cake"]! > 0)  {
+            accuracyPerScene["cake"] = round((Double(numCorrectPerScene["cake"]!) / Double(numIncorrectPerScene["cake"]! + numCorrectPerScene["cake"]!)) * 100)
+        } else { accuracyPerScene["cake"] = 100 }
+        
+        if (numIncorrectPerScene["stroller"]! > 0) && (numCorrectPerScene["stroller"]! > 0)  {
+            accuracyPerScene["stroller"] = round((Double(numCorrectPerScene["stroller"]!) / Double(numIncorrectPerScene["stroller"]! + numCorrectPerScene["stroller"]!)) * 100)
+        } else { accuracyPerScene["stroller"] = 100 }
+        
+        if (numIncorrectPerScene["toast"]! > 0) && (numCorrectPerScene["toast"]! > 0)  {
+            accuracyPerScene["toast"] = round((Double(numCorrectPerScene["toast"]!) / Double(numIncorrectPerScene["toast"]! + numCorrectPerScene["toast"]!)) * 100)
+        } else { accuracyPerScene["toast"] = 100 }
+        
+        if (numIncorrectPerScene["hat"]! > 0) && (numCorrectPerScene["hat"]! > 0)  {
+            accuracyPerScene["hat"] = round((Double(numCorrectPerScene["hat"]!) / Double(numIncorrectPerScene["hat"]! + numCorrectPerScene["hat"]!)) * 100)
+        } else { accuracyPerScene["hat"] = 100 }
+        
+        if (numIncorrectPerScene["cookie"]! > 0) && (numCorrectPerScene["cookie"]! > 0)  {
+            accuracyPerScene["cookie"] = round((Double(numCorrectPerScene["cookie"]!) / Double(numIncorrectPerScene["cookie"]! + numCorrectPerScene["cookie"]!)) * 100)
+        } else { accuracyPerScene["cookie"] = 100 }
+        
+        if (numIncorrectPerScene["mouse"]! > 0) && (numCorrectPerScene["mouse"]! > 0)  {
+            accuracyPerScene["mouse"] = round((Double(numCorrectPerScene["mouse"]!) / Double(numIncorrectPerScene["mouse"]! + numCorrectPerScene["mouse"]!)) * 100)
+        } else { accuracyPerScene["mouse"] = 100 }
+        
+        
         // place label for total scenes with correct first try
         totalCorrectFTLabel.text = "1. Number of scenes with correct first time: \(totalCorrectFT) / 18"
         totalCorrectFTLabel.fontSize = 20
@@ -56,7 +142,7 @@ class ScoreScene: SKScene {
         totalCorrectFTLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(totalCorrectFTLabel)
         
-        totalCorrectBySetSizeLabel.text = "2. # correct by item count"
+        totalCorrectBySetSizeLabel.text = "2. Scenes with correct first time, by item count"
         totalCorrectBySetSizeLabel.fontSize = 20
         totalCorrectBySetSizeLabel.position = CGPoint(x: -457, y: 375)
         totalCorrectBySetSizeLabel.zPosition = 10
@@ -67,7 +153,7 @@ class ScoreScene: SKScene {
         // place correct score in set size 2 on screen
         setSize2Label.text = "2: \(twoItemCorrectFT) / 6"
         setSize2Label.fontSize = 20
-        setSize2Label.position = CGPoint(x: -410, y: 325)
+        setSize2Label.position = CGPoint(x: -410, y: 345)
         setSize2Label.zPosition = 10
         setSize2Label.fontColor = UIColor.black
         setSize2Label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -76,7 +162,7 @@ class ScoreScene: SKScene {
         // place correct score in set size 3 on screen
         setSize3Label.text = "3: \(threeItemCorrectFT) / 6"
         setSize3Label.fontSize = 20
-        setSize3Label.position = CGPoint(x: -410, y: 295)
+        setSize3Label.position = CGPoint(x: -410, y: 315)
         setSize3Label.zPosition = 10
         setSize3Label.fontColor = UIColor.black
         setSize3Label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -85,24 +171,24 @@ class ScoreScene: SKScene {
         // place correct score in set size 4 on screen
         setSize4Label.text = "4: \(fourItemCorrectFT) / 6"
         setSize4Label.fontSize = 20
-        setSize4Label.position = CGPoint(x: -410, y: 265)
+        setSize4Label.position = CGPoint(x: -410, y: 285)
         setSize4Label.zPosition = 10
         setSize4Label.fontColor = UIColor.black
         setSize4Label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(setSize4Label)
         
-        totalCorrectByBgTypeLabel.text = "3. # correct by background type"
+        totalCorrectByBgTypeLabel.text = "3. Scenes with correct first time, by background type"
         totalCorrectByBgTypeLabel.fontSize = 20
-        totalCorrectByBgTypeLabel.position = CGPoint(x: -457, y: 215)
+        totalCorrectByBgTypeLabel.position = CGPoint(x: -457, y: 235)
         totalCorrectByBgTypeLabel.zPosition = 10
         totalCorrectByBgTypeLabel.fontColor = UIColor.black
         totalCorrectByBgTypeLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(totalCorrectByBgTypeLabel)
         
         // place correct score in simple bg type
-        simpleBGLabel.text = "Simple: \(simpleCorrectFT) / 6"
+        simpleBGLabel.text = "Simple: \(simpleCorrectFT)/6"
         simpleBGLabel.fontSize = 20
-        simpleBGLabel.position = CGPoint(x: -410, y: 185)
+        simpleBGLabel.position = CGPoint(x: -410, y: 205)
         simpleBGLabel.zPosition = 10
         simpleBGLabel.fontColor = UIColor.black
         simpleBGLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -111,7 +197,7 @@ class ScoreScene: SKScene {
         // place correct score in line bg type
         lineBGLabel.text = "Line:      \(lineCorrectFT)/6"
         lineBGLabel.fontSize = 20
-        lineBGLabel.position = CGPoint(x: -410, y: 155)
+        lineBGLabel.position = CGPoint(x: -410, y: 175)
         lineBGLabel.zPosition = 10
         lineBGLabel.fontColor = UIColor.black
         lineBGLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -120,19 +206,20 @@ class ScoreScene: SKScene {
         // place correct score in scene bg type
         sceneBGLabel.text = "Scene:   \(sceneCorrectFT)/6"
         sceneBGLabel.fontSize = 20
-        sceneBGLabel.position = CGPoint(x: -410, y: 125)
+        sceneBGLabel.position = CGPoint(x: -410, y: 145)
         sceneBGLabel.zPosition = 10
         sceneBGLabel.fontColor = UIColor.black
         sceneBGLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(sceneBGLabel)
         
-        // place total accuracy label
+        // calculate and place total average accuracy label
         for (scene, accuracy) in accuracyPerScene {
             totalAccuracy += accuracy
         }
+        totalAccuracy = totalAccuracy / 18
         totalAccuracyLabel.text = "Total accuracy: \(Int(round(totalAccuracy)))%"
         totalAccuracyLabel.fontSize = 20
-        totalAccuracyLabel.position = CGPoint(x: -410, y: 75)
+        totalAccuracyLabel.position = CGPoint(x: -457, y: 95)
         totalAccuracyLabel.zPosition = 10
         totalAccuracyLabel.fontColor = UIColor.black
         totalAccuracyLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -237,80 +324,7 @@ class ScoreScene: SKScene {
         numIncorrectPerSceneLabel.numberOfLines = 0
         numIncorrectPerSceneLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.top
         self.addChild(numIncorrectPerSceneLabel)
-        
-        // Calculations for accuracy per scene
-        if (numIncorrectPerScene["rock"]! > 0) {
-            accuracyPerScene["rock"] = round((Double(numCorrectPerScene["rock"]!) / Double(numIncorrectPerScene["rock"]! + numCorrectPerScene["rock"]!)) * 100)
-        } else { accuracyPerScene["rock"] = 100 }
-        
-        if (numIncorrectPerScene["lamp"]! > 0) {
-            accuracyPerScene["lamp"] = round((Double(numCorrectPerScene["lamp"]!) / Double(numIncorrectPerScene["lamp"]! + numCorrectPerScene["lamp"]!)) * 100)
-        } else { accuracyPerScene["lamp"] = 100 }
-        
-        if (numIncorrectPerScene["cat"]! > 0) {
-            accuracyPerScene["cat"] = round((Double(numCorrectPerScene["cat"]!) / Double(numIncorrectPerScene["cat"]! + numCorrectPerScene["cat"]!)) * 100)
-        } else { accuracyPerScene["cat"] = 100 }
-        
-        if (numIncorrectPerScene["lion"]! > 0) {
-            accuracyPerScene["lion"] = round((Double(numCorrectPerScene["lion"]!) / Double(numIncorrectPerScene["lion"]! + numCorrectPerScene["lion"]!)) * 100)
-        } else { accuracyPerScene["lion"] = 100 }
-        
-        if (numIncorrectPerScene["hand"]! > 0) {
-            accuracyPerScene["hand"] = round((Double(numCorrectPerScene["hand"]!) / Double(numIncorrectPerScene["hand"]! + numCorrectPerScene["hand"]!)) * 100)
-        } else { accuracyPerScene["hand"] = 100 }
-        
-        if (numIncorrectPerScene["rain"]! > 0) {
-            accuracyPerScene["rain"] = round((Double(numCorrectPerScene["rain"]!) / Double(numIncorrectPerScene["rain"]! + numCorrectPerScene["rain"]!)) * 100)
-        } else { accuracyPerScene["rain"] = 100 }
-        
-        if (numIncorrectPerScene["duck"]! > 0) {
-            accuracyPerScene["duck"] = round((Double(numCorrectPerScene["duck"]!) / Double(numIncorrectPerScene["duck"]! + numCorrectPerScene["duck"]!)) * 100)
-        } else { accuracyPerScene["duck"] = 100 }
-        
-        if (numIncorrectPerScene["moon"]! > 0) {
-            accuracyPerScene["moon"] = round((Double(numCorrectPerScene["moon"]!) / Double(numIncorrectPerScene["moon"]! + numCorrectPerScene["moon"]!)) * 100)
-        } else { accuracyPerScene["moon"] = 100 }
-        
-        if (numIncorrectPerScene["cow"]! > 0) {
-            accuracyPerScene["cow"] = round((Double(numCorrectPerScene["cow"]!) / Double(numIncorrectPerScene["cow"]! + numCorrectPerScene["cow"]!)) * 100)
-        } else { accuracyPerScene["cow"] = 100 }
-        
-        if (numIncorrectPerScene["trash"]! > 0) {
-            accuracyPerScene["trash"] = round((Double(numCorrectPerScene["trash"]!) / Double(numIncorrectPerScene["trash"]! + numCorrectPerScene["trash"]!)) * 100)
-        } else { accuracyPerScene["trash"] = 100 }
-        
-        if (numIncorrectPerScene["airplane"]! > 0) {
-            accuracyPerScene["airplane"] = round((Double(numCorrectPerScene["airplane"]!) / Double(numIncorrectPerScene["airplane"]! + numCorrectPerScene["airplane"]!)) * 100)
-        } else { accuracyPerScene["airplane"] = 100 }
-        
-        if (numIncorrectPerScene["shoes"]! > 0) {
-            accuracyPerScene["shoes"] = round((Double(numCorrectPerScene["shoes"]!) / Double(numIncorrectPerScene["shoes"]! + numCorrectPerScene["shoes"]!)) * 100)
-        } else { accuracyPerScene["shoes"] = 100 }
-        
-        if (numIncorrectPerScene["cake"]! > 0) {
-            accuracyPerScene["cake"] = round((Double(numCorrectPerScene["cake"]!) / Double(numIncorrectPerScene["cake"]! + numCorrectPerScene["cake"]!)) * 100)
-        } else { accuracyPerScene["cake"] = 100 }
-        
-        if (numIncorrectPerScene["stroller"]! > 0) {
-            accuracyPerScene["stroller"] = round((Double(numCorrectPerScene["stroller"]!) / Double(numIncorrectPerScene["stroller"]! + numCorrectPerScene["stroller"]!)) * 100)
-        } else { accuracyPerScene["stroller"] = 100 }
-        
-        if (numIncorrectPerScene["toast"]! > 0) {
-            accuracyPerScene["toast"] = round((Double(numCorrectPerScene["toast"]!) / Double(numIncorrectPerScene["toast"]! + numCorrectPerScene["toast"]!)) * 100)
-        } else { accuracyPerScene["toast"] = 100 }
-        
-        if (numIncorrectPerScene["hat"]! > 0) {
-            accuracyPerScene["hat"] = round((Double(numCorrectPerScene["hat"]!) / Double(numIncorrectPerScene["hat"]! + numCorrectPerScene["hat"]!)) * 100)
-        } else { accuracyPerScene["hat"] = 100 }
-        
-        if (numIncorrectPerScene["cookie"]! > 0) {
-            accuracyPerScene["cookie"] = round((Double(numCorrectPerScene["cookie"]!) / Double(numIncorrectPerScene["cookie"]! + numCorrectPerScene["cookie"]!)) * 100)
-        } else { accuracyPerScene["cookie"] = 100 }
-        
-        if (numIncorrectPerScene["mouse"]! > 0) {
-            accuracyPerScene["mouse"] = round((Double(numCorrectPerScene["mouse"]!) / Double(numIncorrectPerScene["mouse"]! + numCorrectPerScene["mouse"]!)) * 100)
-        } else { accuracyPerScene["mouse"] = 100 }
-        
+
         // place label for accuracy per scene dictionary
         var accuracyDictionary = "7. Accuracy per scene: "
         accuracyDictionary.append("rock: \(Int(accuracyPerScene["rock"]!))%, ")
