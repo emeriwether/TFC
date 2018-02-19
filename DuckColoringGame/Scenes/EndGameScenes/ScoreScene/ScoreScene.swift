@@ -17,6 +17,7 @@ var fourItemCorrectFT = 0
 var simpleCorrectFT = 0
 var lineCorrectFT = 0
 var sceneCorrectFT = 0
+var totalAccuracy = 0.0
 
 ////// Scene Breakdowns ////////////////
 var correctFirstTriesArray = [String]()
@@ -36,6 +37,7 @@ class ScoreScene: SKScene {
     let simpleBGLabel = SKLabelNode(fontNamed: "Calibri")
     let lineBGLabel = SKLabelNode(fontNamed: "Calibri")
     let sceneBGLabel = SKLabelNode(fontNamed: "Calibri")
+    let totalAccuracyLabel = SKLabelNode(fontNamed: "Calibri")
 
     ////// Scene Breakdowns ////////////////
     let listCorrectFTLabel = SKLabelNode(fontNamed:"Calibri")
@@ -48,15 +50,15 @@ class ScoreScene: SKScene {
         // place label for total scenes with correct first try
         totalCorrectFTLabel.text = "1. Number of scenes with correct first time: \(totalCorrectFT) / 18"
         totalCorrectFTLabel.fontSize = 20
-        totalCorrectFTLabel.position = CGPoint(x: -457, y: 321)
+        totalCorrectFTLabel.position = CGPoint(x: -457, y: 425)
         totalCorrectFTLabel.zPosition = 10
         totalCorrectFTLabel.fontColor = UIColor.black
         totalCorrectFTLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(totalCorrectFTLabel)
         
-        totalCorrectBySetSizeLabel.text = "2. # correct by scene size"
+        totalCorrectBySetSizeLabel.text = "2. # correct by item count"
         totalCorrectBySetSizeLabel.fontSize = 20
-        totalCorrectBySetSizeLabel.position = CGPoint(x: -457, y: 271.343)
+        totalCorrectBySetSizeLabel.position = CGPoint(x: -457, y: 375)
         totalCorrectBySetSizeLabel.zPosition = 10
         totalCorrectBySetSizeLabel.fontColor = UIColor.black
         totalCorrectBySetSizeLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -65,7 +67,7 @@ class ScoreScene: SKScene {
         // place correct score in set size 2 on screen
         setSize2Label.text = "2: \(twoItemCorrectFT) / 6"
         setSize2Label.fontSize = 20
-        setSize2Label.position = CGPoint(x: -410, y: 244.874)
+        setSize2Label.position = CGPoint(x: -410, y: 325)
         setSize2Label.zPosition = 10
         setSize2Label.fontColor = UIColor.black
         setSize2Label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -74,7 +76,7 @@ class ScoreScene: SKScene {
         // place correct score in set size 3 on screen
         setSize3Label.text = "3: \(threeItemCorrectFT) / 6"
         setSize3Label.fontSize = 20
-        setSize3Label.position = CGPoint(x: -410, y: 211.611)
+        setSize3Label.position = CGPoint(x: -410, y: 295)
         setSize3Label.zPosition = 10
         setSize3Label.fontColor = UIColor.black
         setSize3Label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -83,7 +85,7 @@ class ScoreScene: SKScene {
         // place correct score in set size 4 on screen
         setSize4Label.text = "4: \(fourItemCorrectFT) / 6"
         setSize4Label.fontSize = 20
-        setSize4Label.position = CGPoint(x: -410, y: 173)
+        setSize4Label.position = CGPoint(x: -410, y: 265)
         setSize4Label.zPosition = 10
         setSize4Label.fontColor = UIColor.black
         setSize4Label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -91,7 +93,7 @@ class ScoreScene: SKScene {
         
         totalCorrectByBgTypeLabel.text = "3. # correct by background type"
         totalCorrectByBgTypeLabel.fontSize = 20
-        totalCorrectByBgTypeLabel.position = CGPoint(x: -457, y: 143.56)
+        totalCorrectByBgTypeLabel.position = CGPoint(x: -457, y: 215)
         totalCorrectByBgTypeLabel.zPosition = 10
         totalCorrectByBgTypeLabel.fontColor = UIColor.black
         totalCorrectByBgTypeLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -100,29 +102,58 @@ class ScoreScene: SKScene {
         // place correct score in simple bg type
         simpleBGLabel.text = "Simple: \(simpleCorrectFT) / 6"
         simpleBGLabel.fontSize = 20
-        simpleBGLabel.position = CGPoint(x: -410, y: 117.56)
+        simpleBGLabel.position = CGPoint(x: -410, y: 185)
         simpleBGLabel.zPosition = 10
         simpleBGLabel.fontColor = UIColor.black
         simpleBGLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(simpleBGLabel)
         
         // place correct score in line bg type
-        lineBGLabel.text = "Line:      \(lineCorrectFT) / 6"
+        lineBGLabel.text = "Line:      \(lineCorrectFT)/6"
         lineBGLabel.fontSize = 20
-        lineBGLabel.position = CGPoint(x: -410, y: 80.676)
+        lineBGLabel.position = CGPoint(x: -410, y: 155)
         lineBGLabel.zPosition = 10
         lineBGLabel.fontColor = UIColor.black
         lineBGLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(lineBGLabel)
         
         // place correct score in scene bg type
-        sceneBGLabel.text = "Scene:   \(sceneCorrectFT) / 6"
+        sceneBGLabel.text = "Scene:   \(sceneCorrectFT)/6"
         sceneBGLabel.fontSize = 20
-        sceneBGLabel.position = CGPoint(x: -410, y: 42)
+        sceneBGLabel.position = CGPoint(x: -410, y: 125)
         sceneBGLabel.zPosition = 10
         sceneBGLabel.fontColor = UIColor.black
         sceneBGLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(sceneBGLabel)
+        
+        // place total accuracy label
+        for (scene, accuracy) in accuracyPerScene {
+            totalAccuracy += accuracy
+        }
+        totalAccuracyLabel.text = "Total accuracy: \(Int(round(totalAccuracy)))%"
+        totalAccuracyLabel.fontSize = 20
+        totalAccuracyLabel.position = CGPoint(x: -410, y: 75)
+        totalAccuracyLabel.zPosition = 10
+        totalAccuracyLabel.fontColor = UIColor.black
+        totalAccuracyLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        self.addChild(totalAccuracyLabel)
+        
+        
+        // place accuracy by item count label
+        
+        // place 2 item accuracy label
+        
+        // place 3 item accuracy label
+        
+        // place 4 item accuracy label
+        
+        // place accuracy by background type label
+        
+        // place simple bg accuracy label
+        
+        // place line bg accuracy level
+        
+        // place scene bg accuracy level
         
         // place list of scenes with correct first time
         let correctFTjoined = correctFirstTriesArray.joined(separator: ", ")
@@ -133,7 +164,7 @@ class ScoreScene: SKScene {
             listCorrectFTLabel.text = "4. Scenes w/ correct first time: n/a"
         }
         listCorrectFTLabel.fontSize = 20
-        listCorrectFTLabel.position = CGPoint(x: -457, y: 0)
+        listCorrectFTLabel.position = CGPoint(x: -457, y: -50)
         listCorrectFTLabel.zPosition = 10
         listCorrectFTLabel.fontColor = UIColor.black
         listCorrectFTLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -165,7 +196,7 @@ class ScoreScene: SKScene {
         correctDictionary.append("mouse: \(numCorrectPerScene["mouse"]!) ")
         numCorrectPerSceneLabel.text = correctDictionary
         numCorrectPerSceneLabel.fontSize = 20
-        numCorrectPerSceneLabel.position = CGPoint(x: -457, y: -75)
+        numCorrectPerSceneLabel.position = CGPoint(x: -457, y: -125)
         numCorrectPerSceneLabel.zPosition = 10
         numCorrectPerSceneLabel.fontColor = UIColor.black
         numCorrectPerSceneLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -197,7 +228,7 @@ class ScoreScene: SKScene {
         incorrectDictionary.append("mouse: \(numIncorrectPerScene["mouse"]!) ")
         numIncorrectPerSceneLabel.text = incorrectDictionary
         numIncorrectPerSceneLabel.fontSize = 20
-        numIncorrectPerSceneLabel.position = CGPoint(x: -457, y: -150)
+        numIncorrectPerSceneLabel.position = CGPoint(x: -457, y: -200)
         numIncorrectPerSceneLabel.zPosition = 10
         numIncorrectPerSceneLabel.fontColor = UIColor.black
         numIncorrectPerSceneLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
@@ -302,7 +333,7 @@ class ScoreScene: SKScene {
         accuracyDictionary.append("mouse: \(Int(accuracyPerScene["mouse"]!))% ")
         accuracyPerSceneLabel.text = accuracyDictionary
         accuracyPerSceneLabel.fontSize = 20
-        accuracyPerSceneLabel.position = CGPoint(x: -457, y: -225)
+        accuracyPerSceneLabel.position = CGPoint(x: -457, y: -275)
         accuracyPerSceneLabel.zPosition = 10
         accuracyPerSceneLabel.fontColor = UIColor.black
         accuracyPerSceneLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
