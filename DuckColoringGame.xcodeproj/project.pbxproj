@@ -80,10 +80,10 @@
 		06427F3F1FDA0213009C07ED /* MouseScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06427F3E1FDA0213009C07ED /* MouseScene.sks */; };
 		0643D67F202E131D000FA53D /* D.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0643D67C202E131C000FA53D /* D.wav */; };
 		0643D681202E131D000FA53D /* B.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0643D67E202E131D000FA53D /* B.wav */; };
-		0643D68A202E133C000FA53D /* melody 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0643D684202E133A000FA53D /* melody 2.wav */; };
-		0643D68B202E133C000FA53D /* melody 3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0643D685202E133A000FA53D /* melody 3.wav */; };
-		0643D68C202E133C000FA53D /* melody 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0643D686202E133B000FA53D /* melody 1.wav */; };
-		0643D68D202E133C000FA53D /* melody 4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0643D687202E133B000FA53D /* melody 4.wav */; };
+		0643D68A202E133C000FA53D /* correctAudio5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0643D684202E133A000FA53D /* correctAudio5.wav */; };
+		0643D68B202E133C000FA53D /* correctAudio6.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0643D685202E133A000FA53D /* correctAudio6.wav */; };
+		0643D68C202E133C000FA53D /* correctAudio4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0643D686202E133B000FA53D /* correctAudio4.wav */; };
+		0643D68D202E133C000FA53D /* correctAudio7.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0643D687202E133B000FA53D /* correctAudio7.wav */; };
 		0643D68E202E133C000FA53D /* G.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0643D688202E133B000FA53D /* G.wav */; };
 		0643D691202E13F4000FA53D /* DuckScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0643D690202E13F4000FA53D /* DuckScene.swift */; };
 		0643D693202E140A000FA53D /* DuckScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0643D692202E140A000FA53D /* DuckScene.sks */; };
@@ -229,10 +229,10 @@
 		06427F3E1FDA0213009C07ED /* MouseScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MouseScene.sks; sourceTree = "<group>"; };
 		0643D67C202E131C000FA53D /* D.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = D.wav; sourceTree = "<group>"; };
 		0643D67E202E131D000FA53D /* B.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = B.wav; sourceTree = "<group>"; };
-		0643D684202E133A000FA53D /* melody 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melody 2.wav"; sourceTree = "<group>"; };
-		0643D685202E133A000FA53D /* melody 3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melody 3.wav"; sourceTree = "<group>"; };
-		0643D686202E133B000FA53D /* melody 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melody 1.wav"; sourceTree = "<group>"; };
-		0643D687202E133B000FA53D /* melody 4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "melody 4.wav"; sourceTree = "<group>"; };
+		0643D684202E133A000FA53D /* correctAudio5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correctAudio5.wav; sourceTree = "<group>"; };
+		0643D685202E133A000FA53D /* correctAudio6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correctAudio6.wav; sourceTree = "<group>"; };
+		0643D686202E133B000FA53D /* correctAudio4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correctAudio4.wav; sourceTree = "<group>"; };
+		0643D687202E133B000FA53D /* correctAudio7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correctAudio7.wav; sourceTree = "<group>"; };
 		0643D688202E133B000FA53D /* G.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = G.wav; sourceTree = "<group>"; };
 		0643D690202E13F4000FA53D /* DuckScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckScene.swift; sourceTree = "<group>"; };
 		0643D692202E140A000FA53D /* DuckScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DuckScene.sks; sourceTree = "<group>"; };
@@ -449,10 +449,10 @@
 				065E9C222043D8B100E9C8EC /* instructions_piano2.wav */,
 				065E9C232043D8B100E9C8EC /* instructions_piano3.wav */,
 				0643D688202E133B000FA53D /* G.wav */,
-				0643D686202E133B000FA53D /* melody 1.wav */,
-				0643D684202E133A000FA53D /* melody 2.wav */,
-				0643D685202E133A000FA53D /* melody 3.wav */,
-				0643D687202E133B000FA53D /* melody 4.wav */,
+				0643D686202E133B000FA53D /* correctAudio4.wav */,
+				0643D684202E133A000FA53D /* correctAudio5.wav */,
+				0643D685202E133A000FA53D /* correctAudio6.wav */,
+				0643D687202E133B000FA53D /* correctAudio7.wav */,
 				0643D67E202E131D000FA53D /* B.wav */,
 				0643D67C202E131C000FA53D /* D.wav */,
 				060A67E5202AA120005F7323 /* instructions_piano8.wav */,
@@ -1091,7 +1091,7 @@
 				06E34BCA203105870027CE82 /* cat.mp3 in Resources */,
 				060A6829202AA8BA005F7323 /* mouse.wav in Resources */,
 				06E34BCF203106A60027CE82 /* LionScene.sks in Resources */,
-				0643D68D202E133C000FA53D /* melody 4.wav in Resources */,
+				0643D68D202E133C000FA53D /* correctAudio7.wav in Resources */,
 				0643D68E202E133C000FA53D /* G.wav in Resources */,
 				060A6813202AA81D005F7323 /* crunch.wav in Resources */,
 				060A681D202AA895005F7323 /* shoes.wav in Resources */,
@@ -1105,7 +1105,7 @@
 				06C819E0202F6D21002F838E /* AllDoneScene.sks in Resources */,
 				0BCA0AA9201BCE0000488E8E /* Monster_T2.sks in Resources */,
 				060A6817202AA883005F7323 /* reminder_airplane.wav in Resources */,
-				0643D68C202E133C000FA53D /* melody 1.wav in Resources */,
+				0643D68C202E133C000FA53D /* correctAudio4.wav in Resources */,
 				0B3B5A1920315B7E002B6805 /* instructions_apple3.mp3 in Resources */,
 				066DB6331FAE8F1500C68B36 /* Main.storyboard in Resources */,
 				0630356E202FD3A30003CAE9 /* Calibri.ttf in Resources */,
@@ -1132,7 +1132,7 @@
 				060A67F7202AA123005F7323 /* instructions_piano9.wav in Resources */,
 				062B1BFE202D1DD9002DECBB /* CakeScene.sks in Resources */,
 				062D7D4B1FD125E600575A5B /* AirplaneScene.sks in Resources */,
-				0643D68B202E133C000FA53D /* melody 3.wav in Resources */,
+				0643D68B202E133C000FA53D /* correctAudio6.wav in Resources */,
 				069DE7C620045B0F00465399 /* ToastScene.sks in Resources */,
 				065E9C272043D8B100E9C8EC /* instructions_piano1.wav in Resources */,
 				06CD961320334FEF0097D766 /* stroller2.wav in Resources */,
@@ -1173,7 +1173,7 @@
 				06B3C6E51FBCD46C00252DB6 /* Assets.xcassets in Resources */,
 				060A682A202AA8BA005F7323 /* reminder_mouse.wav in Resources */,
 				06C90F6E20310FC800F318AD /* hand.wav in Resources */,
-				0643D68A202E133C000FA53D /* melody 2.wav in Resources */,
+				0643D68A202E133C000FA53D /* correctAudio5.wav in Resources */,
 				060A67F5202AA123005F7323 /* instructions_piano8.wav in Resources */,
 				06427F241FD9F8AD009C07ED /* PianoScene8.sks in Resources */,
 				060A67D7202AA0DD005F7323 /* instructions_drink.mp3 in Resources */,

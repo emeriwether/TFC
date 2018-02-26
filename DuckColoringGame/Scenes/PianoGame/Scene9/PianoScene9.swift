@@ -55,7 +55,7 @@ class PianoScene9: SKScene {
                 piano9_correctTouches += 1
                 correctTouches += 1
                 // Play audio feedback for the correct touch
-                let correctTouch = SKAction.playSoundFileNamed("correctAudio9", waitForCompletion: true)
+                let correctTouch = SKAction.playSoundFileNamed("correctAudio7", waitForCompletion: true)
                 self.run(correctTouch, completion: { self.reminderComplete = true} )
                 
                 // Variables to switch screens
