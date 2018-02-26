@@ -90,6 +90,8 @@
 		06476DC51FC93F4C00B55906 /* CookieScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06476DC41FC93F4C00B55906 /* CookieScene.swift */; };
 		06476DD41FC9458E00B55906 /* ScoreScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06476DD31FC9458E00B55906 /* ScoreScene.sks */; };
 		06476DD61FC945F200B55906 /* ScoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06476DD51FC945F200B55906 /* ScoreScene.swift */; };
+		064C82932044A41C00EFB2E8 /* NameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064C82922044A41C00EFB2E8 /* NameScene.swift */; };
+		064C82952044A43000EFB2E8 /* NameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 064C82942044A43000EFB2E8 /* NameScene.sks */; };
 		065E9C252043D8B100E9C8EC /* instructions_piano2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 065E9C222043D8B100E9C8EC /* instructions_piano2.wav */; };
 		065E9C262043D8B100E9C8EC /* instructions_piano3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 065E9C232043D8B100E9C8EC /* instructions_piano3.wav */; };
 		065E9C272043D8B100E9C8EC /* instructions_piano1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 065E9C242043D8B100E9C8EC /* instructions_piano1.wav */; };
@@ -239,6 +241,8 @@
 		06476DC41FC93F4C00B55906 /* CookieScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieScene.swift; sourceTree = "<group>"; };
 		06476DD31FC9458E00B55906 /* ScoreScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ScoreScene.sks; sourceTree = "<group>"; };
 		06476DD51FC945F200B55906 /* ScoreScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreScene.swift; sourceTree = "<group>"; };
+		064C82922044A41C00EFB2E8 /* NameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameScene.swift; sourceTree = "<group>"; };
+		064C82942044A43000EFB2E8 /* NameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NameScene.sks; sourceTree = "<group>"; };
 		065E9C1B2043CB1800E9C8EC /* CalibriBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CalibriBold.ttf; sourceTree = "<group>"; };
 		065E9C222043D8B100E9C8EC /* instructions_piano2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = instructions_piano2.wav; sourceTree = "<group>"; };
 		065E9C232043D8B100E9C8EC /* instructions_piano3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = instructions_piano3.wav; sourceTree = "<group>"; };
@@ -714,6 +718,24 @@
 			path = ScoreScene;
 			sourceTree = "<group>";
 		};
+		064C82962044A43600EFB2E8 /* NameScene */ = {
+			isa = PBXGroup;
+			children = (
+				064C82922044A41C00EFB2E8 /* NameScene.swift */,
+				064C82942044A43000EFB2E8 /* NameScene.sks */,
+			);
+			path = NameScene;
+			sourceTree = "<group>";
+		};
+		064C82972044A43E00EFB2E8 /* StartScenes */ = {
+			isa = PBXGroup;
+			children = (
+				06476DC11FC93C7100B55906 /* StartScene */,
+				064C82962044A43600EFB2E8 /* NameScene */,
+			);
+			path = StartScenes;
+			sourceTree = "<group>";
+		};
 		0657C65F1FC1F7F3002FC12D /* Audio */ = {
 			isa = PBXGroup;
 			children = (
@@ -780,7 +802,7 @@
 		06BD2F3C202BC37E00AC0A54 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				06476DC11FC93C7100B55906 /* StartScene */,
+				064C82972044A43E00EFB2E8 /* StartScenes */,
 				0B28BEE0200C895D00B1D01E /* ColoringGame_Trainer */,
 				06427EFF1FD9F453009C07ED /* ColoringGame */,
 				0BCA0AA1201BCE0000488E8E /* MonsterGame_Trainer */,
@@ -1177,6 +1199,7 @@
 				060A67F5202AA123005F7323 /* instructions_piano8.wav in Resources */,
 				06427F241FD9F8AD009C07ED /* PianoScene8.sks in Resources */,
 				060A67D7202AA0DD005F7323 /* instructions_drink.mp3 in Resources */,
+				064C82952044A43000EFB2E8 /* NameScene.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1188,6 +1211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BCA0AAD201BCE0000488E8E /* Monster_T2.swift in Sources */,
+				064C82932044A41C00EFB2E8 /* NameScene.swift in Sources */,
 				06C819DE202F6D15002F838E /* AllDoneScene.swift in Sources */,
 				0BCA0A9B201BCC2100488E8E /* Trainer_Bread.swift in Sources */,
 				0BCA0AAF201BCE0000488E8E /* Monster_T1.swift in Sources */,
