@@ -72,51 +72,43 @@ class ScoreScene: SKScene {
 
     override func didMove(to view: SKView) {
         
+        // CALCULATE ACCURACY FOR EACH SCENE
         for (item, _) in accuracyPerScene {
             calculateAccuracy(scene: item)
         }
         
-        // place label for total scenes with correct first try
-        totalCorrectFTLabel.text = "1. Number of scenes with correct first time: \(totalCorrectFT) / 18"
-        totalCorrectFTLabel.fontSize = 20
-        totalCorrectFTLabel.position = CGPoint(x: -457, y: 425)
-        totalCorrectFTLabel.zPosition = 10
-        totalCorrectFTLabel.fontColor = UIColor.black
-        totalCorrectFTLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        self.addChild(totalCorrectFTLabel)
+        // PLACE TOTAL-CORRECT-FT LABEL
+        let totalCorrectFtText = "1. Number of scenes with correct first time: \(totalCorrectFT) / 18"
+        printLabel(label: totalCorrectFTLabel, words: totalCorrectFtText, xCoord: -457, yCoord: 425)
+
         
-        totalCorrectBySetSizeLabel.text = "2. Scenes with correct first time, by item count"
-        totalCorrectBySetSizeLabel.fontSize = 20
-        totalCorrectBySetSizeLabel.position = CGPoint(x: -457, y: 375)
-        totalCorrectBySetSizeLabel.zPosition = 10
-        totalCorrectBySetSizeLabel.fontColor = UIColor.black
-        totalCorrectBySetSizeLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        self.addChild(totalCorrectBySetSizeLabel)
+        // PLACE CORRECT-FT-BY-ITEM-COUNT LABEL
+        printLabel(label: totalCorrectBySetSizeLabel, words: "2. Scenes with correct first time, by item count", xCoord: -457, yCoord: 375)
         
-        // place correct score in set size 2 on screen
+        // PLACE 2-ITEM-CORRECT-FT LABEL
         let setSize2String = "2: \(twoItemCorrectFT) / 6"
         printLabel(label: setSize2Label, words: setSize2String, xCoord: -410, yCoord: 345)
         
-        // place correct score in set size 3 on screen
+        // PLACE 3-ITEM-CORRECT-FT LABEL
         let setSize3String = "3: \(threeItemCorrectFT) / 6"
         printLabel(label: setSize3Label, words: setSize3String, xCoord: -410, yCoord: 315)
         
-        // place correct score in set size 4 on screen
+        // PLACE 4-ITEM-CORRECT-FT LABEL
         let setSize4String = "4: \(fourItemCorrectFT) / 6"
         printLabel(label: setSize4Label, words: setSize4String, xCoord: -410, yCoord: 285)
 
-        // place totalCorrectByBG label
+        // PLACE CORRECT-FT-BY-BG-TYPE LABEL
         printLabel(label: totalCorrectByBgTypeLabel, words: "3. Scenes with correct first time, by background type", xCoord: -457, yCoord: 235)
 
-        // place correct score in simple bg type
+        // PLACE SIMPLE-BG-CORRECT-FT LABEL
         let simpleBGString = "Simple: \(simpleCorrectFT)/6"
         printLabel(label: simpleBGLabel, words: simpleBGString, xCoord: -410, yCoord: 205)
         
-        // place correct score in line bg type
+        // PLACE LINE-BG-CORRECT-FT LABEL
         let lineBGString = "Line:      \(lineCorrectFT)/6"
         printLabel(label: lineBGLabel, words: lineBGString, xCoord: -410, yCoord: 175)
 
-        // place correct score in scene bg type
+        // PLACE SCENE-BG-CORRECT-FT LABEL
         let sceneBGString = "Scene:   \(sceneCorrectFT)/6"
         printLabel(label: sceneBGLabel, words: sceneBGString, xCoord: -410, yCoord: 145)
 
@@ -195,26 +187,18 @@ class ScoreScene: SKScene {
         
         // place scene bg accuracy level
         
-        // place list of scenes with correct first time
+        // PLACE LIST OF SCENES WITH CORRECT-FT LABEL
         let correctFTjoined = correctFirstTriesArray.joined(separator: ", ")
+        var correctFTArrayText: String
         if correctFirstTriesArray.count > 0 {
-            listCorrectFTLabel.text = "7. Scenes w/ correct first time: \(correctFTjoined)"
+            correctFTArrayText = "7. Scenes w/ correct first time: \(correctFTjoined)"
         }
         else {
-            listCorrectFTLabel.text = "7. Scenes w/ correct first time: none"
+            correctFTArrayText = "7. Scenes w/ correct first time: none"
         }
-        listCorrectFTLabel.fontSize = 20
-        listCorrectFTLabel.position = CGPoint(x: -457, y: -50)
-        listCorrectFTLabel.zPosition = 10
-        listCorrectFTLabel.fontColor = UIColor.black
-        listCorrectFTLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        listCorrectFTLabel.preferredMaxLayoutWidth = 850
-        listCorrectFTLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-        listCorrectFTLabel.numberOfLines = 0
-        listCorrectFTLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.top
-        self.addChild(listCorrectFTLabel)
-        
-        // place dictionary of correct touches per scene
+        printListLabel (label: listCorrectFTLabel, words: correctFTArrayText, xCoord: -457, yCoord: -50)
+
+        // PLACE DICTIONARY OF CORRECT TOUCHES PER SCENE LABEL
         var correctDictionary = "8. # of correct touches per scene: "
         correctDictionary.append("rock: \(numCorrectPerScene["rock"]!), ")
         correctDictionary.append("lamp: \(numCorrectPerScene["lamp"]!), ")
@@ -234,19 +218,9 @@ class ScoreScene: SKScene {
         correctDictionary.append("hat: \(numCorrectPerScene["hat"]!), ")
         correctDictionary.append("cookie: \(numCorrectPerScene["cookie"]!), ")
         correctDictionary.append("mouse: \(numCorrectPerScene["mouse"]!) ")
-        numCorrectPerSceneLabel.text = correctDictionary
-        numCorrectPerSceneLabel.fontSize = 20
-        numCorrectPerSceneLabel.position = CGPoint(x: -457, y: -125)
-        numCorrectPerSceneLabel.zPosition = 10
-        numCorrectPerSceneLabel.fontColor = UIColor.black
-        numCorrectPerSceneLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        numCorrectPerSceneLabel.preferredMaxLayoutWidth = 850
-        numCorrectPerSceneLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-        numCorrectPerSceneLabel.numberOfLines = 0
-        numCorrectPerSceneLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.top
-        self.addChild(numCorrectPerSceneLabel)
+        printListLabel (label: numCorrectPerSceneLabel, words: correctDictionary, xCoord: -457, yCoord: -125)
         
-        // place dictionary of incorrect touches per scene
+        // PLACE DICTIONARY OF INCORRECT TOUCHES PER SCENE
         var incorrectDictionary = "9. # of incorrect touches per scene: "
         incorrectDictionary.append("rock: \(numIncorrectPerScene["rock"]!), ")
         incorrectDictionary.append("lamp: \(numIncorrectPerScene["lamp"]!), ")
@@ -266,17 +240,7 @@ class ScoreScene: SKScene {
         incorrectDictionary.append("hat: \(numIncorrectPerScene["hat"]!), ")
         incorrectDictionary.append("cookie: \(numIncorrectPerScene["cookie"]!), ")
         incorrectDictionary.append("mouse: \(numIncorrectPerScene["mouse"]!) ")
-        numIncorrectPerSceneLabel.text = incorrectDictionary
-        numIncorrectPerSceneLabel.fontSize = 20
-        numIncorrectPerSceneLabel.position = CGPoint(x: -457, y: -200)
-        numIncorrectPerSceneLabel.zPosition = 10
-        numIncorrectPerSceneLabel.fontColor = UIColor.black
-        numIncorrectPerSceneLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        numIncorrectPerSceneLabel.preferredMaxLayoutWidth = 850
-        numIncorrectPerSceneLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-        numIncorrectPerSceneLabel.numberOfLines = 0
-        numIncorrectPerSceneLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.top
-        self.addChild(numIncorrectPerSceneLabel)
+        printListLabel (label: numIncorrectPerSceneLabel, words: incorrectDictionary, xCoord: -457, yCoord: -200)
 
         // place label for accuracy per scene dictionary
         var accuracyDictionary = "7. Accuracy per scene: "
@@ -298,17 +262,8 @@ class ScoreScene: SKScene {
         accuracyDictionary.append("hat: \(Int(accuracyPerScene["hat"]!))%, ")
         accuracyDictionary.append("cookie: \(Int(accuracyPerScene["cookie"]!))%, ")
         accuracyDictionary.append("mouse: \(Int(accuracyPerScene["mouse"]!))% ")
-        accuracyPerSceneLabel.text = accuracyDictionary
-        accuracyPerSceneLabel.fontSize = 20
-        accuracyPerSceneLabel.position = CGPoint(x: -457, y: -275)
-        accuracyPerSceneLabel.zPosition = 10
-        accuracyPerSceneLabel.fontColor = UIColor.black
-        accuracyPerSceneLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        accuracyPerSceneLabel.preferredMaxLayoutWidth = 850
-        accuracyPerSceneLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-        accuracyPerSceneLabel.numberOfLines = 0
-        accuracyPerSceneLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.top
-        self.addChild(accuracyPerSceneLabel)
+        printListLabel (label: accuracyPerSceneLabel, words: accuracyDictionary, xCoord: -457, yCoord: -275)
+
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -377,6 +332,20 @@ class ScoreScene: SKScene {
         label.zPosition = 10
         label.fontColor = UIColor.black
         label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        self.addChild(label)
+    }
+    
+    func printListLabel (label: SKLabelNode, words: String, xCoord: Double, yCoord: Double) {
+        label.text = words
+        label.fontSize = 20
+        label.position = CGPoint(x: xCoord, y: yCoord)
+        label.zPosition = 10
+        label.fontColor = UIColor.black
+        label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+        label.preferredMaxLayoutWidth = 850
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
+        label.numberOfLines = 0
+        label.verticalAlignmentMode = SKLabelVerticalAlignmentMode.top
         self.addChild(label)
     }
     
