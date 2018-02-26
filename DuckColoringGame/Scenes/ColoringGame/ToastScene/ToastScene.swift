@@ -93,15 +93,20 @@ class ToastScene: SKScene {
                 }
                 
                 // Color toast
-                let coloredtoast:SKTexture = SKTexture(imageNamed: "toastScene_toast_colored")
+                let coloredtoast:SKTexture = SKTexture(imageNamed: "toastScene_toast_colored_1")
                 let changeToColored:SKAction = SKAction.animate(with: [coloredtoast], timePerFrame: 0.0001)
                 toast!.run(changeToColored)
                 
-                // Play toast noise
+                // Variables for crunch noise
                 let crunch = SKAction.playSoundFileNamed("crunch", waitForCompletion: true)
-
+                
+                // Variables for bite action
+                let biteOne = SKTexture(imageNamed: "toastScene_toast_colored_2")
+                let animationBite = SKAction.animate(with: [biteOne], timePerFrame: 0.5)
+                
+                // Run all actions
                 toast!.run(crunch)
-
+                toast!.run(animationBite)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)

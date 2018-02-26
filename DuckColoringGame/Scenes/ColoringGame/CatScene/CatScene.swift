@@ -100,8 +100,16 @@ class CatScene: SKScene {
                 //Variables for cat audio
                 let meow = SKAction.playSoundFileNamed("cat", waitForCompletion: true)
                 
+                // Variables for whisker animation
+                let whiskers2 = SKTexture(imageNamed: "catScene_cat_colored_2")
+                let whiskers3 = SKTexture(imageNamed: "catScene_cat_colored_3")
+                let animationWhiskers = SKAction.animate(with: [whiskers2, coloredcat, whiskers3], timePerFrame: 0.1)
+                let animationWhiskersRepeat = SKAction.repeat(animationWhiskers, count: 4)
+                
                 //Run all actions
                 cat!.run(meow)
+                cat!.run(animationWhiskersRepeat)
+
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)

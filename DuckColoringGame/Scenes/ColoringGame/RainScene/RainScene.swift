@@ -100,8 +100,16 @@ class RainScene: SKScene {
                 //Variables for rain audio
                 let rainstick = SKAction.playSoundFileNamed("rain", waitForCompletion: true)
                 
+                // Variables to animate rain
+                let rain2 = SKTexture(imageNamed: "rainScene_rain_colored_2")
+                let rain3 = SKTexture(imageNamed: "rainScene_rain_colored_3")
+                let rain4 = SKTexture(imageNamed: "rainScene_rain_colored_4")
+                let animationRain = SKAction.animate(with: [rain2, rain3, rain4, coloredrain], timePerFrame: 0.1)
+                let animationRainRepeat = SKAction.repeat(animationRain, count: 8)
+                
                 //Run all actions
                 rain!.run(rainstick)
+                rain!.run(animationRainRepeat)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:3)

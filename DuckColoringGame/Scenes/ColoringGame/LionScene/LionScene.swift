@@ -100,9 +100,14 @@ class LionScene: SKScene {
                 //Variables for lion audio
                 let roar = SKAction.playSoundFileNamed("lion", waitForCompletion: true)
                 
+                // Variables for roar action
+                let roarAction = SKTexture(imageNamed: "lionScene_lion_colored_openMouth")
+                let animationRoar = SKAction.animate(with: [roarAction, coloredlion], timePerFrame: 0.08)
+                
                 //Run all actions
                 lion!.run(roar)
-                
+                lion!.run(animationRoar)
+
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
                 let wait2 = SKAction.wait(forDuration: 2)
