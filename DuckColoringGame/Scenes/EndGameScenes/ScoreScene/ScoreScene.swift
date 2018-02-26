@@ -81,7 +81,7 @@ class ScoreScene: SKScene {
 
     ////////////////////////////////////////////////////////////////////////////////////////////
         // PLACE CORRECT-FT-BY-ITEM-COUNT LABEL
-        printLabel(label: totalCorrectBySetSizeLabel, words: "2. Scenes with correct first time, by item count", xCoord: -550, yCoord: 375)
+        printLabel(label: totalCorrectBySetSizeLabel, words: "2. Scenes with correct first time, by item count", xCoord: -550, yCoord: 385)
         
         // PLACE 2-ITEM-CORRECT-FT LABEL
         let setSize2String = "2: \(twoItemCorrectFT) / 6"
@@ -98,19 +98,19 @@ class ScoreScene: SKScene {
     
     ////////////////////////////////////////////////////////////////////////////////////////////
         // PLACE CORRECT-FT-BY-BG-TYPE LABEL
-        printLabel(label: totalCorrectByBgTypeLabel, words: "3. Scenes with correct first time, by background type", xCoord: -550, yCoord: 265)
+        printLabel(label: totalCorrectByBgTypeLabel, words: "3. Scenes with correct first time, by background type", xCoord: -550, yCoord: 275)
 
         // PLACE SIMPLE-BG-CORRECT-FT LABEL
         let simpleBGString = "Simple: \(simpleCorrectFT)/6"
-        printLabel(label: simpleBGLabel, words: simpleBGString, xCoord: -500, yCoord: 245)
+        printLabel(label: simpleBGLabel, words: simpleBGString, xCoord: -500, yCoord: 255)
         
         // PLACE LINE-BG-CORRECT-FT LABEL
         let lineBGString = "Line:      \(lineCorrectFT)/6"
-        printLabel(label: lineBGLabel, words: lineBGString, xCoord: -500, yCoord: 225)
+        printLabel(label: lineBGLabel, words: lineBGString, xCoord: -500, yCoord: 235)
 
         // PLACE SCENE-BG-CORRECT-FT LABEL
-        let sceneBGString = "Scene:   \(sceneCorrectFT)/6"
-        printLabel(label: sceneBGLabel, words: sceneBGString, xCoord: -500, yCoord: 205)
+        let sceneBGString = "Scene:  \(sceneCorrectFT)/6"
+        printLabel(label: sceneBGLabel, words: sceneBGString, xCoord: -500, yCoord: 215)
     ////////////////////////////////////////////////////////////////////////////////////////////
 
     ////////////////////////////////////////////////////////////////////////////////////////////
@@ -123,12 +123,12 @@ class ScoreScene: SKScene {
         }
         totalAccuracy = totalAccuracy / numOfScenesCompleted
         let totalAccuracyString = "4. Average accuracy: \(Int(round(totalAccuracy)))%"
-        printLabel(label: totalAccuracyLabel, words: totalAccuracyString, xCoord: -550, yCoord: 155)
+        printLabel(label: totalAccuracyLabel, words: totalAccuracyString, xCoord: -550, yCoord: 165)
     ////////////////////////////////////////////////////////////////////////////////////////////
 
     ////////////////////////////////////////////////////////////////////////////////////////////
         // PLASE ACCURACY-BY-ITEM-COUNT LABEL
-        printLabel(label: accuracyByItemCountLabel, words: "5. Accuracy by item count", xCoord: -550, yCoord: 105)
+        printLabel(label: accuracyByItemCountLabel, words: "5. Accuracy by item count", xCoord: -550, yCoord: 115)
 
         // CALCULATE AND PLACE 2-ITEM ACCURACY LABEL
         let twoItemArray: [String] = ["rock", "lamp", "duck", "moon", "cake", "stroller"]
@@ -145,7 +145,7 @@ class ScoreScene: SKScene {
         } else {
             twoItemAccuracyText = "2: none completed"
         }
-        printLabel(label: twoItemAccuracyLabel, words: twoItemAccuracyText, xCoord: -500, yCoord: 85)
+        printLabel(label: twoItemAccuracyLabel, words: twoItemAccuracyText, xCoord: -500, yCoord: 95)
 
         // CALCULATE AND PLACE 3-ITEM ACCURACY LABEL
         let threeItemArray: [String] = ["cat", "lion", "cow", "trash", "toast", "hat"]
@@ -162,7 +162,7 @@ class ScoreScene: SKScene {
         } else {
             threeItemAccuracyText = "3: none completed"
         }
-        printLabel(label: threeItemAccuracyLabel, words: threeItemAccuracyText, xCoord: -500, yCoord: 65)
+        printLabel(label: threeItemAccuracyLabel, words: threeItemAccuracyText, xCoord: -500, yCoord: 75)
         
         // CALCULATE AND PLACE 4-ITEM ACCURACY LABEL
         let fourItemArray: [String] = ["hand", "rain", "airplane", "shoes", "cookie", "mouse"]
@@ -179,12 +179,12 @@ class ScoreScene: SKScene {
         } else {
             fourItemAccuracyText = "4: none completed"
         }
-        printLabel(label: fourItemAccuracyLabel, words: fourItemAccuracyText, xCoord: -500, yCoord: 45)
+        printLabel(label: fourItemAccuracyLabel, words: fourItemAccuracyText, xCoord: -500, yCoord: 55)
     ////////////////////////////////////////////////////////////////////////////////////////////
         
     ////////////////////////////////////////////////////////////////////////////////////////////
         // PLASE ACCURACY-BY-BG-TYPE LABEL
-        printLabel(label: accuracyByBgTypeLabel, words: "6. Accuracy by bg type", xCoord: -550, yCoord: -5)
+        printLabel(label: accuracyByBgTypeLabel, words: "6. Accuracy by bg type", xCoord: -550, yCoord: 5)
         
         // CALCULATE AND PLACE SIMPLE-BG ACCURACY LABEL
         let simpleBgArray: [String] = ["rock", "lamp", "cat", "shoes", "lion", "hand"]
@@ -201,7 +201,7 @@ class ScoreScene: SKScene {
         } else {
             simpleAccuracyText = "Simple: none completed"
         }
-        printLabel(label: simpleAccuracyLabel, words: simpleAccuracyText, xCoord: -500, yCoord: -25)
+        printLabel(label: simpleAccuracyLabel, words: simpleAccuracyText, xCoord: -500, yCoord: -15)
         
         // CALCULATE AND PLACE LINE-BG ACCURACY LABEL
         let lineBgArray: [String] = ["duck", "moon", "cow", "trash", "airplane", "shoes"]
@@ -214,11 +214,11 @@ class ScoreScene: SKScene {
         lineAccuracy = lineAccuracy / linebgCompleted
         var lineAccuracyText:String
         if linebgCompleted > 0 {
-            lineAccuracyText = "Line: \(Int(round(lineAccuracy)))%"
+            lineAccuracyText = "Line:    \(Int(round(lineAccuracy)))%"
         } else {
-            lineAccuracyText = "Line: none completed"
+            lineAccuracyText = "Line:    none completed"
         }
-        printLabel(label: lineAccuracyLabel, words: lineAccuracyText, xCoord: -500, yCoord: -45)
+        printLabel(label: lineAccuracyLabel, words: lineAccuracyText, xCoord: -500, yCoord: -35)
         
         // CALCULATE AND PLACE LINE-BG ACCURACY LABEL
         let sceneBgArray: [String] = ["cake", "stroller", "toast", "hat", "cookie", "mouse"]
@@ -231,11 +231,11 @@ class ScoreScene: SKScene {
         sceneAccuracy = sceneAccuracy / scenebgCompleted
         var sceneAccuracyText:String
         if linebgCompleted > 0 {
-            sceneAccuracyText = "Scene: \(Int(round(sceneAccuracy)))%"
+            sceneAccuracyText = "Scene:  \(Int(round(sceneAccuracy)))%"
         } else {
-            sceneAccuracyText = "Scene: none completed"
+            sceneAccuracyText = "Scene:  none completed"
         }
-        printLabel(label: sceneAccuracyLabel, words: sceneAccuracyText, xCoord: -500, yCoord: -65)
+        printLabel(label: sceneAccuracyLabel, words: sceneAccuracyText, xCoord: -500, yCoord: -55)
     ////////////////////////////////////////////////////////////////////////////////////////////
         
     ////////////////////////////////////////////////////////////////////////////////////////////
@@ -248,7 +248,7 @@ class ScoreScene: SKScene {
         else {
             correctFTArrayText = "7. Scenes w/ correct first time: none"
         }
-        printListLabel (label: listCorrectFTLabel, words: correctFTArrayText, xCoord: -550, yCoord: -115)
+        printListLabel (label: listCorrectFTLabel, words: correctFTArrayText, xCoord: -550, yCoord: -95)
     ////////////////////////////////////////////////////////////////////////////////////////////
 
     ////////////////////////////////////////////////////////////////////////////////////////////
@@ -258,14 +258,21 @@ class ScoreScene: SKScene {
         var accuracyDictionary = "10. Accuracy per scene: "
         
         for (item, _) in accuracyPerScene {
-            correctDictionary.append("\(item): \(numCorrectPerScene[item]!), ")
-            incorrectDictionary.append("\(item): \(numIncorrectPerScene[item]!), ")
-            accuracyDictionary.append("\(item): \(accuracyPerScene[item]!), ")
+            if item != "mouse" {
+                correctDictionary.append("\(item): \(numCorrectPerScene[item]!), ")
+                incorrectDictionary.append("\(item): \(numIncorrectPerScene[item]!), ")
+                accuracyDictionary.append("\(item): \(Int(round(accuracyPerScene[item]!)))%, ")
+            }
+            else {
+                correctDictionary.append("\(item): \(numCorrectPerScene[item]!)")
+                incorrectDictionary.append("\(item): \(numIncorrectPerScene[item]!)")
+                accuracyDictionary.append("\(item): \(Int(round(accuracyPerScene[item]!)))%")
+            }
         }
         
-        printListLabel (label: numCorrectPerSceneLabel, words: correctDictionary, xCoord: -550, yCoord: -165)
-        printListLabel (label: numIncorrectPerSceneLabel, words: incorrectDictionary, xCoord: -550, yCoord: -240)
-        printListLabel (label: accuracyPerSceneLabel, words: accuracyDictionary, xCoord: -550, yCoord: -315)
+        printListLabel (label: numCorrectPerSceneLabel, words: correctDictionary, xCoord: -550, yCoord: -145)
+        printListLabel (label: numIncorrectPerSceneLabel, words: incorrectDictionary, xCoord: -550, yCoord: -220)
+        printListLabel (label: accuracyPerSceneLabel, words: accuracyDictionary, xCoord: -550, yCoord: -295)
     ////////////////////////////////////////////////////////////////////////////////////////////
     }
 

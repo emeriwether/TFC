@@ -245,6 +245,7 @@
 		06476DC41FC93F4C00B55906 /* CookieScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieScene.swift; sourceTree = "<group>"; };
 		06476DD31FC9458E00B55906 /* ScoreScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ScoreScene.sks; sourceTree = "<group>"; };
 		06476DD51FC945F200B55906 /* ScoreScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreScene.swift; sourceTree = "<group>"; };
+		065E9C1B2043CB1800E9C8EC /* CalibriBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CalibriBold.ttf; sourceTree = "<group>"; };
 		0669B8EB2004046E002D8CAC /* TrashScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashScene.swift; sourceTree = "<group>"; };
 		0669B8ED20040486002D8CAC /* TrashScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TrashScene.sks; sourceTree = "<group>"; };
 		066DB6241FAE8F1500C68B36 /* DuckColoringGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuckColoringGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -521,6 +522,7 @@
 		0630356D202FD0850003CAE9 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				065E9C1B2043CB1800E9C8EC /* CalibriBold.ttf */,
 				06884BB02030BCA4009C6E1D /* CooperBlack */,
 				0630356C202FD0810003CAE9 /* Calibri.ttf */,
 			);

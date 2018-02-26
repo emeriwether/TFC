@@ -102,7 +102,7 @@ class LionScene: SKScene {
                 
                 // Variables for roar action
                 let roarAction = SKTexture(imageNamed: "lionScene_lion_colored_openMouth")
-                let animationRoar = SKAction.animate(with: [roarAction, coloredlion], timePerFrame: 0.04)
+                let animationRoar = SKAction.animate(with: [roarAction, coloredlion], timePerFrame: 0.01)
                 
                 //Run all actions
                 lion!.run(roar)
