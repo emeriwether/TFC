@@ -72,17 +72,7 @@ class ScoreScene: SKScene {
 
     override func didMove(to view: SKView) {
         
-        // Calculations for accuracy per scene
-        // if user skipped scene (no correct touch), (0%)
-        if (numCorrectPerScene["rock"]! == 0) { accuracyPerScene["rock"] = 0 }
-        // else if user made no incorrect touches (correct first try), (100%)
-        else if (numIncorrectPerScene["rock"]! == 0) {accuracyPerScene["rock"] = 100 }
-        // else if user touched correct, but made mistakes (1-99%)
-        else {
-            accuracyPerScene["rock"] = round((Double(numCorrectPerScene["rock"]!) / Double(numIncorrectPerScene["rock"]! + numCorrectPerScene["rock"]!)) * 100)
-        }
-        
-        for (item, score) in accuracyPerScene {
+        for (item, _) in accuracyPerScene {
             calculateAccuracy(scene: item)
         }
         
@@ -130,7 +120,7 @@ class ScoreScene: SKScene {
         let sceneBGString = "Scene:   \(sceneCorrectFT)/6"
         printLabel(label: sceneBGLabel, words: sceneBGString, xCoord: -410, yCoord: 145)
 
-        // calculate and place total average accuracy label
+        // CALCULATE AND PLACE AVERAGE-ACCURACY LABEL
         for (scene, accuracy) in accuracyPerScene {
             if (accuracyPerScene[scene]! > 0) {
                 totalAccuracy += accuracy
@@ -141,7 +131,7 @@ class ScoreScene: SKScene {
         let totalAccuracyString = "4. Average accuracy: \(Int(round(totalAccuracy)))%"
         printLabel(label: totalAccuracyLabel, words: totalAccuracyString, xCoord: -457, yCoord: 95)
         
-        // place accuracy by item count label
+        // PLASE ACCURACY-BY-ITEM LABEL
         printLabel(label: accuracyByItemCountLabel, words: "5. Accuracy by item count", xCoord: -457, yCoord: 45)
 
         // CALCULATE AND PLACE 2-ITEM ACCURACY LABEL
@@ -359,13 +349,13 @@ class ScoreScene: SKScene {
             sceneAccuracy = 0.0
             
             correctFirstTriesArray.removeAll()
-            for (scene, numCorrect) in numCorrectPerScene {
+            for (scene, _) in numCorrectPerScene {
                 numCorrectPerScene[scene] = 0
             }
-            for (scene, numIncorrect) in numIncorrectPerScene {
+            for (scene, _) in numIncorrectPerScene {
                 numIncorrectPerScene[scene] = 0
             }
-            for (scene, accuracy) in accuracyPerScene {
+            for (scene, _) in accuracyPerScene {
                 accuracyPerScene[scene] = 0
             }
             //////////////////////////////////////////////////
