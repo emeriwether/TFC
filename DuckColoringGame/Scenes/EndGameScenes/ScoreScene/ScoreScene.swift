@@ -122,7 +122,12 @@ class ScoreScene: SKScene {
             }
         }
         totalAccuracy = totalAccuracy / numOfScenesCompleted
-        let totalAccuracyString = "4. Average accuracy: \(Int(round(totalAccuracy)))%"
+        var totalAccuracyString:String
+        if (totalAccuracy > 0.0 ) {
+            totalAccuracyString = "4. Average accuracy: \(Int(round(totalAccuracy)))%"
+        } else {
+            totalAccuracyString = "4. Average accuracy: 0%"
+        }
         printLabel(label: totalAccuracyLabel, words: totalAccuracyString, xCoord: -550, yCoord: 165)
     ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -214,9 +219,9 @@ class ScoreScene: SKScene {
         lineAccuracy = lineAccuracy / linebgCompleted
         var lineAccuracyText:String
         if linebgCompleted > 0 {
-            lineAccuracyText = "Line:    \(Int(round(lineAccuracy)))%"
+            lineAccuracyText = "Line:     \(Int(round(lineAccuracy)))%"
         } else {
-            lineAccuracyText = "Line:    none completed"
+            lineAccuracyText = "Line:     none completed"
         }
         printLabel(label: lineAccuracyLabel, words: lineAccuracyText, xCoord: -500, yCoord: -35)
         

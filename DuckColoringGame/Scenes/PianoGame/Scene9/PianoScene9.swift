@@ -26,7 +26,7 @@ class PianoScene9: SKScene {
         self.targetItem = self.childNode(withName: "targetItem") as? SKSpriteNode
         
         // Run the introductory instructions
-        let instructions = SKAction.playSoundFileNamed("instructions_piano8", waitForCompletion: true)
+        let instructions = SKAction.playSoundFileNamed("instructions_piano9", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
         
         // If the scene has not been touched for 10 seconds, play the reminder instructions; repeat forever
