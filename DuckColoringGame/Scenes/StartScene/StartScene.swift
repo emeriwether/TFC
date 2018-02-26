@@ -10,7 +10,9 @@ import SpriteKit
 
 class StartScene: SKScene {
     // local variable for coloring game button
-    let startColor = SKSpriteNode(imageNamed: "ColorStartButton")
+    //let startColor = SKSpriteNode(imageNamed: "ColorStartButton")
+    let startColor = self.childNode(withName: "colorStartButton")
+
     
     // local variable for piano game button
     let startMonster = SKSpriteNode(imageNamed: "FeedMonsterButton")
