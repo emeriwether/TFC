@@ -82,14 +82,18 @@ class CatScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == cat?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 cat_correctTouches += 1
-                numCorrectPerScene["cat"] = numCorrectPerScene["cat"]! + 1
+                correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (cat_incorrectTouches == 0) {
-                    totalCorrectFT += 1
-                    simpleCorrectFT += 1
-                    threeItemCorrectFT += 1
+                    numOfCorrectFirstTry += 1
+                    numOfCorrectSimpleBG += 1
+                    numOfCorrectSetSize3 += 1
+                    
                     correctFirstTriesArray.append("cat")
+                    correctTouchesArray.append("cat")
+                    correctSetSize3.append("cat")
+                    correctBGSimple.append("cat")
                 }
                 
                 // Change sprite to colored cat
@@ -100,16 +104,8 @@ class CatScene: SKScene {
                 //Variables for cat audio
                 let meow = SKAction.playSoundFileNamed("cat", waitForCompletion: true)
                 
-                // Variables for whisker animation
-                let whiskers2 = SKTexture(imageNamed: "catScene_cat_colored_2")
-                let whiskers3 = SKTexture(imageNamed: "catScene_cat_colored_3")
-                let animationWhiskers = SKAction.animate(with: [whiskers2, coloredcat, whiskers3], timePerFrame: 0.1)
-                let animationWhiskersRepeat = SKAction.repeat(animationWhiskers, count: 4)
-                
                 //Run all actions
                 cat!.run(meow)
-                cat!.run(animationWhiskersRepeat)
-
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
@@ -123,7 +119,7 @@ class CatScene: SKScene {
             }
             else {
                 cat_incorrectTouches += 1
-                numIncorrectPerScene["cat"] = numIncorrectPerScene["cat"]! + 1
+                incorrectTouches += 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

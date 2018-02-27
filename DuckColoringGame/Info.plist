@@ -24,7 +24,6 @@
 	<array>
 		<string>CooperBlack</string>
 		<string>Calibri.ttf</string>
-		<string>CalibriBold.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

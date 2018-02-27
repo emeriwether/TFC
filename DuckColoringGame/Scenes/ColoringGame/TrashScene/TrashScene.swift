@@ -82,14 +82,18 @@ class TrashScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == trash?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 trash_correctTouches += 1
-                numCorrectPerScene["trash"] = numCorrectPerScene["trash"]! + 1
+                correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (trash_incorrectTouches == 0) {
-                    totalCorrectFT += 1
-                    lineCorrectFT += 1
-                    threeItemCorrectFT += 1
+                    numOfCorrectFirstTry += 1
+                    numOfCorrectLineBG += 1
+                    numOfCorrectSetSize3 += 1
+                    
                     correctFirstTriesArray.append("trash")
+                    correctTouchesArray.append("trash")
+                    correctSetSize3.append("trash")
+                    correctBGLine.append("trash")
                 }
                 
                 // Color trash
@@ -122,7 +126,7 @@ class TrashScene: SKScene {
             }
             else {
                 trash_incorrectTouches += 1
-                numIncorrectPerScene["trash"] = numIncorrectPerScene["trash"]! + 1
+                incorrectTouches += 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

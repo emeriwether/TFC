@@ -39,7 +39,6 @@ class PasswordScene: SKScene, UITextFieldDelegate {
             wrongPW!.text = ""
             wrongPWShowing = false
         }
-        
         if (passwordInput!.text == "Password") {
             correctPassword = true
         }
@@ -52,7 +51,7 @@ class PasswordScene: SKScene, UITextFieldDelegate {
         
         passwordInput?.endEditing(true)
         saveText()
-                
+        
         if (okButton!.contains(touch.location(in:self))) && (correctPassword == true) {
             let scoreScene = SKScene(fileNamed: "ScoreScene")
             scoreScene?.scaleMode = SKSceneScaleMode.aspectFill

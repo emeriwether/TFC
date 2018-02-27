@@ -82,14 +82,18 @@ class DuckScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == duck?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 duck_correctTouches += 1
-                numCorrectPerScene["duck"] = numCorrectPerScene["duck"]! + 1
+                correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (duck_incorrectTouches == 0) {
-                    totalCorrectFT += 1
-                    lineCorrectFT += 1
-                    twoItemCorrectFT += 1
+                    numOfCorrectFirstTry += 1
+                    numOfCorrectLineBG += 1
+                    numOfCorrectSetSize2 += 1
+                    
                     correctFirstTriesArray.append("duck")
+                    correctTouchesArray.append("duck")
+                    correctSetSize2.append("duck")
+                    correctBGLine.append("duck")
                 }
                 
                 // Change sprite to colored duck
@@ -128,7 +132,7 @@ class DuckScene: SKScene {
             }
             else {
                 duck_incorrectTouches += 1
-                numIncorrectPerScene["duck"] = numIncorrectPerScene["duck"]! + 1
+                incorrectTouches += 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

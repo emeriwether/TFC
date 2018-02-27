@@ -82,14 +82,18 @@ class CookieScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == cookie?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 cookie_correctTouches += 1
-                numCorrectPerScene["cookie"] = numCorrectPerScene["cookie"]! + 1
+                correctTouches += 1
 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (cookie_incorrectTouches == 0) {
-                    totalCorrectFT += 1
-                    sceneCorrectFT += 1
-                    fourItemCorrectFT += 1
+                    numOfCorrectFirstTry += 1
+                    numOfCorrectSceneBG += 1
+                    numOfCorrectSetSize4 += 1
+                    
                     correctFirstTriesArray.append("cookie")
+                    correctTouchesArray.append("cookie")
+                    correctSetSize4.append("cookie")
+                    correctBGScene.append("cookie")
                 }
                 
                 // Change sprite to colored cookie
@@ -121,7 +125,7 @@ class CookieScene: SKScene {
             }
             else {
                 cookie_incorrectTouches += 1
-                numIncorrectPerScene["cookie"] = numIncorrectPerScene["cookie"]! + 1
+                incorrectTouches += 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)
