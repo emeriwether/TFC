@@ -26,7 +26,7 @@ class PianoScene9: SKScene {
         self.targetItem = self.childNode(withName: "targetItem") as? SKSpriteNode
         
         // Run the introductory instructions
-        let instructions = SKAction.playSoundFileNamed("instructions_piano8", waitForCompletion: true)
+        let instructions = SKAction.playSoundFileNamed("instructions_piano9", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
         
         // If the scene has not been touched for 10 seconds, play the reminder instructions; repeat forever
@@ -55,7 +55,7 @@ class PianoScene9: SKScene {
                 piano9_correctTouches += 1
                 correctTouches += 1
                 // Play audio feedback for the correct touch
-                let correctTouch = SKAction.playSoundFileNamed("correctAudio9", waitForCompletion: true)
+                let correctTouch = SKAction.playSoundFileNamed("correctAudio7", waitForCompletion: true)
                 self.run(correctTouch, completion: { self.reminderComplete = true} )
                 
                 // Variables to switch screens
@@ -64,9 +64,9 @@ class PianoScene9: SKScene {
                 // Scene Transition
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let piano1 = SKScene(fileNamed: "PianoScene1")
-                    piano1?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(piano1!)
+                    let allDone = SKScene(fileNamed: "AllDoneScene")
+                    allDone?.scaleMode = SKSceneScaleMode.aspectFill
+                    self.scene!.view?.presentScene(allDone!)
                 }
                 
             }
