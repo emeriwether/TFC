@@ -82,18 +82,14 @@ class AirplaneScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == airplane?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 airplane_correctTouches += 1
-                correctTouches += 1
+                numCorrectPerScene["airplane"] = numCorrectPerScene["airplane"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (airplane_incorrectTouches == 0) {
-                    numOfCorrectFirstTry += 1
-                    numOfCorrectLineBG += 1
-                    numOfCorrectSetSize4 += 1
-                    
+                    totalCorrectFT += 1
+                    lineCorrectFT += 1
+                    fourItemCorrectFT += 1
                     correctFirstTriesArray.append("airplane")
-                    correctTouchesArray.append("airplane")
-                    correctSetSize4.append("airplane")
-                    correctBGLine.append("airplane")
                 }
                 
                 // Color airplane
@@ -121,7 +117,7 @@ class AirplaneScene: SKScene {
             }
             else {
                 airplane_incorrectTouches += 1
-                incorrectTouches += 1
+                numIncorrectPerScene["airplane"] = numIncorrectPerScene["airplane"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)
