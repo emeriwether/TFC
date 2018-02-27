@@ -82,18 +82,14 @@ class HandScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == hand?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 hand_correctTouches += 1
-                correctTouches += 1
+                numCorrectPerScene["hand"] = numCorrectPerScene["hand"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (hand_incorrectTouches == 0) {
-                    numOfCorrectFirstTry += 1
-                    numOfCorrectSimpleBG += 1
-                    numOfCorrectSetSize4 += 1
-                    
+                    totalCorrectFT += 1
+                    simpleCorrectFT += 1
+                    fourItemCorrectFT += 1
                     correctFirstTriesArray.append("hand")
-                    correctTouchesArray.append("hand")
-                    correctSetSize4.append("hand")
-                    correctBGSimple.append("hand")
                 }
                 
                 // Change sprite to colored hand
@@ -119,7 +115,7 @@ class HandScene: SKScene {
             }
             else {
                 hand_incorrectTouches += 1
-                incorrectTouches += 1
+                numIncorrectPerScene["hand"] = numIncorrectPerScene["hand"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

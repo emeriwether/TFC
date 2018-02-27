@@ -82,18 +82,14 @@ class LampScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == lamp?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 lamp_correctTouches += 1
-                correctTouches += 1
+                numCorrectPerScene["lamp"] = numCorrectPerScene["lamp"]! + 1
                 
-                // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
+                // if there weren't any incorrect touches, add to game-wide stats for first try
                 if (lamp_incorrectTouches == 0) {
-                    numOfCorrectFirstTry += 1
-                    numOfCorrectSimpleBG += 1
-                    numOfCorrectSetSize2 += 1
-                    
+                    totalCorrectFT += 1
+                    simpleCorrectFT += 1
+                    twoItemCorrectFT += 1
                     correctFirstTriesArray.append("lamp")
-                    correctTouchesArray.append("lamp")
-                    correctSetSize2.append("lamp")
-                    correctBGSimple.append("lamp")
                 }
                 
                 // Change sprite to colored lamp
@@ -102,7 +98,7 @@ class LampScene: SKScene {
                 lamp!.run(changeToColored)
                 
                 //Variables for lamp audio
-                let correct = SKAction.playSoundFileNamed("correct", waitForCompletion: true)
+                let correct = SKAction.playSoundFileNamed("correct2", waitForCompletion: true)
                 
                 //Run all actions
                 lamp!.run(correct)
@@ -119,7 +115,7 @@ class LampScene: SKScene {
             }
             else {
                 lamp_incorrectTouches += 1
-                incorrectTouches += 1
+                numIncorrectPerScene["lamp"] = numIncorrectPerScene["lamp"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)
