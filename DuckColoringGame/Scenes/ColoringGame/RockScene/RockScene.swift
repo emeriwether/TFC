@@ -82,14 +82,18 @@ class RockScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == rock?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 rock_correctTouches += 1
-                numCorrectPerScene["rock"] = numCorrectPerScene["rock"]! + 1
+                correctTouches += 1
                 
-                // if there weren't any incorrect touches, add to game-wide stats for first try
+                // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (rock_incorrectTouches == 0) {
-                    totalCorrectFT += 1
-                    simpleCorrectFT += 1
-                    twoItemCorrectFT += 1
+                    numOfCorrectFirstTry += 1
+                    numOfCorrectSimpleBG += 1
+                    numOfCorrectSetSize2 += 1
+                    
                     correctFirstTriesArray.append("rock")
+                    correctTouchesArray.append("rock")
+                    correctSetSize2.append("rock")
+                    correctBGSimple.append("rock")
                 }
                 
                 // Change sprite to colored rock
@@ -98,7 +102,7 @@ class RockScene: SKScene {
                 rock!.run(changeToColored)
                 
                 //Variables for correct audio
-                let correct = SKAction.playSoundFileNamed("correct2", waitForCompletion: true)
+                let correct = SKAction.playSoundFileNamed("correct", waitForCompletion: true)
                 
                 //Run all actions
                 rock!.run(correct)
@@ -115,7 +119,7 @@ class RockScene: SKScene {
             }
             else {
                 rock_incorrectTouches += 1
-                numIncorrectPerScene["rock"] = numIncorrectPerScene["rock"]! + 1
+                incorrectTouches += 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

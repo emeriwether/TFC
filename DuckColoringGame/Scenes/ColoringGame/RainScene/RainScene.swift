@@ -82,14 +82,18 @@ class RainScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == rain?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 rain_correctTouches += 1
-                numCorrectPerScene["rain"] = numCorrectPerScene["rain"]! + 1
+                correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (rain_incorrectTouches == 0) {
-                    totalCorrectFT += 1
-                    simpleCorrectFT += 1
-                    fourItemCorrectFT += 1
+                    numOfCorrectFirstTry += 1
+                    numOfCorrectSimpleBG += 1
+                    numOfCorrectSetSize4 += 1
+                    
                     correctFirstTriesArray.append("rain")
+                    correctTouchesArray.append("rain")
+                    correctSetSize4.append("rain")
+                    correctBGSimple.append("rain")
                 }
                 
                 // Change sprite to colored rain
@@ -100,16 +104,8 @@ class RainScene: SKScene {
                 //Variables for rain audio
                 let rainstick = SKAction.playSoundFileNamed("rain", waitForCompletion: true)
                 
-                // Variables to animate rain
-                let rain2 = SKTexture(imageNamed: "rainScene_rain_colored_2")
-                let rain3 = SKTexture(imageNamed: "rainScene_rain_colored_3")
-                let rain4 = SKTexture(imageNamed: "rainScene_rain_colored_4")
-                let animationRain = SKAction.animate(with: [rain2, rain3, rain4, coloredrain], timePerFrame: 0.1)
-                let animationRainRepeat = SKAction.repeat(animationRain, count: 8)
-                
                 //Run all actions
                 rain!.run(rainstick)
-                rain!.run(animationRainRepeat)
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:3)
@@ -123,7 +119,7 @@ class RainScene: SKScene {
             }
             else {
                 rain_incorrectTouches += 1
-                numIncorrectPerScene["rain"] = numIncorrectPerScene["rain"]! + 1
+                incorrectTouches += 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

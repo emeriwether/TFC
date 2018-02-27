@@ -82,14 +82,18 @@ class LionScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == lion?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 lion_correctTouches += 1
-                numCorrectPerScene["lion"] = numCorrectPerScene["lion"]! + 1
+                correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (lion_incorrectTouches == 0) {
-                    totalCorrectFT += 1
-                    simpleCorrectFT += 1
-                    threeItemCorrectFT += 1
+                    numOfCorrectFirstTry += 1
+                    numOfCorrectSimpleBG += 1
+                    numOfCorrectSetSize3 += 1
+                    
                     correctFirstTriesArray.append("lion")
+                    correctTouchesArray.append("lion")
+                    correctSetSize3.append("lion")
+                    correctBGSimple.append("lion")
                 }
                 
                 // Change sprite to colored lion
@@ -100,14 +104,9 @@ class LionScene: SKScene {
                 //Variables for lion audio
                 let roar = SKAction.playSoundFileNamed("lion", waitForCompletion: true)
                 
-                // Variables for roar action
-                let roarAction = SKTexture(imageNamed: "lionScene_lion_colored_openMouth")
-                let animationRoar = SKAction.animate(with: [roarAction, coloredlion], timePerFrame: 0.01)
-                
                 //Run all actions
                 lion!.run(roar)
-                lion!.run(animationRoar)
-
+                
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
                 let wait2 = SKAction.wait(forDuration: 2)
@@ -120,7 +119,7 @@ class LionScene: SKScene {
             }
             else {
                 lion_incorrectTouches += 1
-                numIncorrectPerScene["lion"] = numIncorrectPerScene["lion"]! + 1
+                incorrectTouches += 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

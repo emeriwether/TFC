@@ -83,14 +83,18 @@ class MouseScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == mouse?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 mouse_correctTouches += 1
-                numCorrectPerScene["mouse"] = numCorrectPerScene["mouse"]! + 1
+                correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (mouse_incorrectTouches == 0) {
-                    totalCorrectFT += 1
-                    sceneCorrectFT += 1
-                    fourItemCorrectFT += 1
+                    numOfCorrectFirstTry += 1
+                    numOfCorrectSceneBG += 1
+                    numOfCorrectSetSize4 += 1
+                    
                     correctFirstTriesArray.append("mouse")
+                    correctTouchesArray.append("mouse")
+                    correctSetSize3.append("mouse")
+                    correctBGScene.append("mouse")
                 }
                 
                 // Color mouse
@@ -116,7 +120,7 @@ class MouseScene: SKScene {
             }
             else {
                 mouse_incorrectTouches += 1
-                numIncorrectPerScene["mouse"] = numIncorrectPerScene["mouse"]! + 1
+                incorrectTouches += 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

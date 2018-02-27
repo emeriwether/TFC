@@ -82,14 +82,18 @@ class CakeScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == cake?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 cake_correctTouches += 1
-                numCorrectPerScene["cake"] = numCorrectPerScene["cake"]! + 1
+                correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (cake_incorrectTouches == 0) {
-                    totalCorrectFT += 1
-                    sceneCorrectFT += 1
-                    twoItemCorrectFT += 1
+                    numOfCorrectFirstTry += 1
+                    numOfCorrectSceneBG += 1
+                    numOfCorrectSetSize2 += 1
+                    
                     correctFirstTriesArray.append("cake")
+                    correctTouchesArray.append("cake")
+                    correctSetSize2.append("cake")
+                    correctBGScene.append("cake")
                 }
                 
                 // Change sprite to colored cake
@@ -115,7 +119,7 @@ class CakeScene: SKScene {
             }
             else {
                 cake_incorrectTouches += 1
-                numIncorrectPerScene["cake"] = numIncorrectPerScene["cake"]! + 1
+                incorrectTouches += 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

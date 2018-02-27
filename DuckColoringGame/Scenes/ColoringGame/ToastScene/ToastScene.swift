@@ -82,31 +82,30 @@ class ToastScene: SKScene {
             if (physicsWorld.body(at: touch.location(in: self)) == toast?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
                 toast_correctTouches += 1
-                numCorrectPerScene["toast"] = numCorrectPerScene["toast"]! + 1
+                correctTouches += 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (toast_incorrectTouches == 0) {
-                    totalCorrectFT += 1
-                    sceneCorrectFT += 1
-                    threeItemCorrectFT += 1
+                    numOfCorrectFirstTry += 1
+                    numOfCorrectSceneBG += 1
+                    numOfCorrectSetSize3 += 1
+                    
                     correctFirstTriesArray.append("toast")
+                    correctTouchesArray.append("toast")
+                    correctSetSize3.append("toast")
+                    correctBGScene.append("toast")
                 }
                 
                 // Color toast
-                let coloredtoast:SKTexture = SKTexture(imageNamed: "toastScene_toast_colored_1")
+                let coloredtoast:SKTexture = SKTexture(imageNamed: "toastScene_toast_colored")
                 let changeToColored:SKAction = SKAction.animate(with: [coloredtoast], timePerFrame: 0.0001)
                 toast!.run(changeToColored)
                 
-                // Variables for crunch noise
+                // Play toast noise
                 let crunch = SKAction.playSoundFileNamed("crunch", waitForCompletion: true)
-                
-                // Variables for bite action
-                let biteOne = SKTexture(imageNamed: "toastScene_toast_colored_2")
-                let animationBite = SKAction.animate(with: [biteOne], timePerFrame: 0.5)
-                
-                // Run all actions
+
                 toast!.run(crunch)
-                toast!.run(animationBite)
+
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
@@ -120,7 +119,7 @@ class ToastScene: SKScene {
             }
             else {
                 toast_incorrectTouches += 1
-                numIncorrectPerScene["toast"] = numIncorrectPerScene["toast"]! + 1
+                incorrectTouches += 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)
