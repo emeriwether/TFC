@@ -9,15 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-<<<<<<< HEAD:DuckColoringGame/Scenes/MonsterGame/JuiceScene.swift
 class JuiceScene: SKScene {
-=======
-// I added these two vars in here, because I deleted them from the score scene, because we don't need to track them for the coloring game, but I didn't want to mess up your code. -EM (2/18)
-var correctTouches = 0
-var incorrectTouches = 0
-
-class DrinkScene: SKScene {
->>>>>>> 613e17093967a448979c1113cce802c570e0772c:DuckColoringGame/Scenes/MonsterGame/DrinkScene.swift
     
     // Variables for tracking nodes on screen
     private var item1Node:SKNode?
