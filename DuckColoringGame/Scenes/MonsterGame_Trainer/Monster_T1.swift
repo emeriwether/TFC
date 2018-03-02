@@ -19,6 +19,7 @@ class Monster_T1: SKScene {
     private var selectedNode:SKNode?
     private var nodeIsSelected:Bool?
     private var defaultNodePosition:CGPoint?
+    private var firstTouch:Bool?
     
     // Variables to track if audio is running
     var instructionsComplete:Bool = false
@@ -33,8 +34,16 @@ class Monster_T1: SKScene {
         self.appleNode = self.childNode(withName: "apple") as? SKSpriteNode
         self.basketNode = self.childNode(withName: "basket") as? SKSpriteNode
         defaultNodePosition = appleNode?.position
+        selectedNode = nil
+        nodeIsSelected = false
+        firstTouch = false
         
         let instructions = SKAction.playSoundFileNamed("instructions_apple1", waitForCompletion: true)
+        let waitTimer = SKAction.wait(forDuration: 10.0)
+        
+        while firstTouch == false {
+            run(SKAction.sequence([instructions, waitTimer]))
+        }
         basketNode?.run(instructions, completion: {self.instructionsComplete = true})
         
 //        /////////////////////////////////
@@ -106,7 +115,7 @@ class Monster_T1: SKScene {
             let touch = touches.first
             if ((self.atPoint((touch?.location(in: self))!)).name  == "basket") && (selectedNode?.name == "apple"){
                 apple_correctTouches += 1
-                correctTouches += 1
+                //correctTouches += 1
                 selectedNode?.removeFromParent()
                 basketNode?.texture = SKTexture(imageNamed: "BasketApple")
                 selectedNode = nil
@@ -125,13 +134,13 @@ class Monster_T1: SKScene {
                 selectedNode = nil
                 nodeIsSelected = false
                 apple_incorrectTouches += 1
-                incorrectTouches += 1
+                //incorrectTouches += 1
             }
         }else{
             selectedNode = nil
             nodeIsSelected = false
             apple_incorrectTouches += 1
-            incorrectTouches += 1
+            //incorrectTouches += 1
         }
         
 //        if (apple_incorrectTouches % 3 == 0) && (apple_correctTouches < 1) && (!(basketNode?.hasActions())!){
@@ -139,6 +148,6 @@ class Monster_T1: SKScene {
 //            let apple_reminder = SKAction.playSoundFileNamed("reminder_apple1", waitForCompletion: true)
 //            self.basketNode?.run(apple_reminder, completion: { self.reminderComplete = true} )
 //        }
-        totalTouches = apple_correctTouches + apple_incorrectTouches
+        //totalTouches = apple_correctTouches + apple_incorrectTouches
     }
 }

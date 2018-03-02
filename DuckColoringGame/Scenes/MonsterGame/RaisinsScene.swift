@@ -43,7 +43,7 @@ class RaisinsScene: SKScene {
         item3Node = self.childNode(withName: "item3")
         
         // run the introductory instructions, then flag instructionsComplete as true
-        let instructions = SKAction.playSoundFileNamed("instructions_bug", waitForCompletion: true)
+        let instructions = SKAction.playSoundFileNamed("instructions_raisins", waitForCompletion: true)
         monsterNode?.run(instructions, completion: { self.instructionsComplete = true })
         
         //        /////////////////////////////////
@@ -137,7 +137,7 @@ class RaisinsScene: SKScene {
             if (selectedNode == item1Node){
                 // Award points for correct touch
                 bug_correctTouches += 1
-                correctTouches += 1
+                //correctTouches += 1
                 // Remove the selected object from the screen
                 selectedNode?.removeFromParent()
                 selectedNode = nil
@@ -169,25 +169,25 @@ class RaisinsScene: SKScene {
                 selectedNode = nil
                 nodeIsSelected = false
                 bug_incorrectTouches += 1
-                incorrectTouches += 1
+                //incorrectTouches += 1
             }else if (selectedNode == item3Node){
                 selectedNode?.position = defaultNodePosition!
                 selectedNode = nil
                 nodeIsSelected = false
                 bug_incorrectTouches += 1
-                incorrectTouches += 1
+                //incorrectTouches += 1
             }
         } else if (nodeIsSelected == true) && (sceneOver == false) && (self.atPoint((touch?.location(in: self))!).name != "Monster"){
             selectedNode?.position = defaultNodePosition!
             selectedNode = nil
             nodeIsSelected = false
             bug_incorrectTouches += 1
-            incorrectTouches += 1
+            //incorrectTouches += 1
         }else{
             selectedNode = nil
             nodeIsSelected = false
             bug_incorrectTouches += 1
-            incorrectTouches += 1
+            //incorrectTouches += 1
         }
         
         //        // play reminder instructions if user has touched screen 3 times incorrectly

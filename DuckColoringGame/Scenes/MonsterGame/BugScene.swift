@@ -9,15 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-<<<<<<< HEAD:DuckColoringGame/Scenes/MonsterGame/BugScene.swift
 class BugScene: SKScene {
-=======
-// I added these two vars in here, because I deleted them from the score scene, because we don't need to track them for the coloring game, but I didn't want to mess up your code. -EM (2/18)
-var correctTouches = 0
-var incorrectTouches = 0
-
-class DrinkScene: SKScene {
->>>>>>> 613e17093967a448979c1113cce802c570e0772c:DuckColoringGame/Scenes/MonsterGame/DrinkScene.swift
     
     // Variables for tracking nodes on screen
     private var item1Node:SKNode?
@@ -138,7 +130,7 @@ class DrinkScene: SKScene {
             if (selectedNode == item1Node){
                 // Award points for correct touch
                 bug_correctTouches += 1
-                correctTouches += 1
+                //correctTouches += 1
                 // Remove the selected object from the screen
                 selectedNode?.removeFromParent()
                 selectedNode = nil
@@ -170,19 +162,19 @@ class DrinkScene: SKScene {
                 selectedNode = nil
                 nodeIsSelected = false
                 bug_incorrectTouches += 1
-                incorrectTouches += 1
+                //incorrectTouches += 1
             }
         } else if (nodeIsSelected == true) && (sceneOver == false) && (self.atPoint((touch?.location(in: self))!).name != "Monster"){
             selectedNode?.position = defaultNodePosition!
             selectedNode = nil
             nodeIsSelected = false
             bug_incorrectTouches += 1
-            incorrectTouches += 1
+            //incorrectTouches += 1
         }else{
             selectedNode = nil
             nodeIsSelected = false
             bug_incorrectTouches += 1
-            incorrectTouches += 1
+            //incorrectTouches += 1
         }
         
 //        // play reminder instructions if user has touched screen 3 times incorrectly

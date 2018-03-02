@@ -106,7 +106,7 @@ class Monster_T3: SKScene {
             let touch = touches.first
             if ((self.atPoint((touch?.location(in: self))!)).name  == "basket") && (selectedNode?.name == "apple"){
                 apple_correctTouches += 1
-                correctTouches += 1
+                //correctTouches += 1
                 selectedNode?.removeFromParent()
                 basketNode?.texture = SKTexture(imageNamed: "BasketApple")
                 selectedNode = nil
@@ -124,13 +124,13 @@ class Monster_T3: SKScene {
                 selectedNode = nil
                 nodeIsSelected = false
                 apple_incorrectTouches += 1
-                incorrectTouches += 1
+                //incorrectTouches += 1
             }
         }else{
             selectedNode = nil
             nodeIsSelected = false
             apple_incorrectTouches += 1
-            incorrectTouches += 1
+            //incorrectTouches += 1
         }
         
 //        if (apple_incorrectTouches % 3 == 0) && (apple_correctTouches < 1) && (!(basketNode?.hasActions())!){

@@ -135,7 +135,7 @@ class JuiceScene: SKScene {
                 print("Is item 1")
                 // Award points for correct touch
                 juice_correctTouches += 1
-                correctTouches += 1
+                //correctTouches += 1
                 // Remove the selected object from the screen
                 selectedNode?.removeFromParent()
                 selectedNode = nil
@@ -168,19 +168,19 @@ class JuiceScene: SKScene {
                 selectedNode = nil
                 nodeIsSelected = false
                 juice_incorrectTouches += 1
-                incorrectTouches += 1
+                //incorrectTouches += 1
             }
         } else if (nodeIsSelected == true) && (sceneOver == false) && (self.atPoint((touch?.location(in: self))!).name != "Monster"){
             selectedNode?.position = defaultNodePosition!
             selectedNode = nil
             nodeIsSelected = false
             juice_incorrectTouches += 1
-            incorrectTouches += 1
+            //incorrectTouches += 1
         }else{
             selectedNode = nil
             nodeIsSelected = false
             juice_incorrectTouches += 1
-            incorrectTouches += 1
+            //incorrectTouches += 1
         }
         
 //        // play reminder instructions if user has touched screen 3 times incorrectly
