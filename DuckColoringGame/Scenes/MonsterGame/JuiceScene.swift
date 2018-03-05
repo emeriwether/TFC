@@ -36,9 +36,9 @@ class JuiceScene: SKScene {
     
     override func didMove(to view: SKView) {
         // Link SKS to appropriate variables
-        monsterNode = self.childNode(withName: "Monster")
         item1Node = self.childNode(withName: "item1")
         item2Node = self.childNode(withName: "item2")
+        monsterNode = self.childNode(withName: "Monster")
         
         // run the introductory instructions, then flag instructionsComplete as true
         let instructions = SKAction.playSoundFileNamed("instructions_juice", waitForCompletion: true)
@@ -113,7 +113,7 @@ class JuiceScene: SKScene {
         }
         //totalTouches = juice_correctTouches + juice_incorrectTouches
     }
-    
+    //Track first attempt. 
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         // If an item is selected, no audio is playing, and the scene is not over...
         if (nodeIsSelected == true) && (sceneOver == false) && (instructionsComplete == true) && (reminderComplete == true){
@@ -130,9 +130,7 @@ class JuiceScene: SKScene {
         // If, at the point the user releases their touch, contains the Monster object, and item is selcted,
         // and the selected object is item1 (the correct item)...
         if (self.atPoint((touch?.location(in: self))!).name == "Monster") && (nodeIsSelected == true) && (sceneOver == false){
-            print("Is on top of Monster")
             if (selectedNode == item1Node){
-                print("Is item 1")
                 // Award points for correct touch
                 juice_correctTouches += 1
                 //correctTouches += 1
