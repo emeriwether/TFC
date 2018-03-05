@@ -130,6 +130,7 @@
 		06C90F84203129A800F318AD /* crunch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F83203129A800F318AD /* crunch.wav */; };
 		06CD961120334DD70097D766 /* stroller.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06CD961020334DD60097D766 /* stroller.wav */; };
 		06CD961320334FEF0097D766 /* stroller2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06CD961220334FEF0097D766 /* stroller2.wav */; };
+		06DC64622045C75100D756B9 /* introSong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06DC64612045C75100D756B9 /* introSong.wav */; };
 		06E34BBA2030F8490027CE82 /* wrong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BB92030F8490027CE82 /* wrong.wav */; };
 		06E34BC12030FB420027CE82 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BC02030FB420027CE82 /* correct.mp3 */; };
 		06E34BC3203102800027CE82 /* CatScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E34BC2203102800027CE82 /* CatScene.swift */; };
@@ -286,6 +287,7 @@
 		06C90F83203129A800F318AD /* crunch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = crunch.wav; sourceTree = "<group>"; };
 		06CD961020334DD60097D766 /* stroller.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = stroller.wav; sourceTree = "<group>"; };
 		06CD961220334FEF0097D766 /* stroller2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = stroller2.wav; sourceTree = "<group>"; };
+		06DC64612045C75100D756B9 /* introSong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = introSong.wav; sourceTree = "<group>"; };
 		06E34BB92030F8490027CE82 /* wrong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wrong.wav; sourceTree = "<group>"; };
 		06E34BC02030FB420027CE82 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
 		06E34BC2203102800027CE82 /* CatScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatScene.swift; sourceTree = "<group>"; };
@@ -753,6 +755,7 @@
 		0657C65F1FC1F7F3002FC12D /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				06DC64612045C75100D756B9 /* introSong.wav */,
 				06E34BB92030F8490027CE82 /* wrong.wav */,
 				060A67D5202AA0B0005F7323 /* ColoringGameTrainer */,
 				060A67CA202AA07A005F7323 /* ColoringGame */,
@@ -1110,6 +1113,7 @@
 				06C819DB202E2B62002F838E /* instructions_hamburger.mp3 in Resources */,
 				06C90F6B20310DD200F318AD /* HandScene.sks in Resources */,
 				065E9C262043D8B100E9C8EC /* instructions_piano3.wav in Resources */,
+				06DC64622045C75100D756B9 /* introSong.wav in Resources */,
 				060A67A1202A9EB5005F7323 /* DrinkScene.sks in Resources */,
 				061F1BD72004885500A05E8E /* CowScene.sks in Resources */,
 				06E34BC12030FB420027CE82 /* correct.mp3 in Resources */,
