@@ -1,5 +1,5 @@
 //
-//  CandyScene.swift
+//  ToothScene.swift
 //  DuckColoringGame
 //
 //  Created by Gustavo C Figueroa on 3/5/18.
@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class CandyScene: SKScene {
+class ToothScene: SKScene {
     
     private var foodNode1:SKNode?
     private var foodNode2:SKNode?
@@ -18,8 +18,8 @@ class CandyScene: SKScene {
     private var selectedNode:SKNode?
     private var nodeIsSelected:Bool?
     
-    var candy_incorrectTouches = 0
-    var candy_correctTouches = 0
+    var tooth_incorrectTouches = 0
+    var tooth_correctTouches = 0
     
     var instructionsComplete:Bool = false
     var feedbackComplete:Bool = true
@@ -27,10 +27,10 @@ class CandyScene: SKScene {
     var sceneOver = false
     
     override func didMove(to view: SKView) {
-        foodNode1 = self.childNode(withName: "carrot")
-        foodNode2 = self.childNode(withName: "candy")
+        foodNode1 = self.childNode(withName: "tooth")
+        foodNode2 = self.childNode(withName: "plant")
         monsterNode = self.childNode(withName: "Monster")
-        playInstructionsWithName(audioName: "instructions_candy")
+        playInstructionsWithName(audioName: "instructions_tooth")
     }
     
     ////////////////////////////
@@ -73,10 +73,10 @@ class CandyScene: SKScene {
         if (instructionsComplete == true) && (feedbackComplete == true) && (sceneOver == false){
             let touch = touches.first!
             let touchLocation = touch.location(in: self)
-            if (self.atPoint(touchLocation).name == "carrot"){
+            if (self.atPoint(touchLocation).name == "tooth"){
                 selectedNode = foodNode1
                 nodeIsSelected = true
-            } else if (self.atPoint(touchLocation).name == "candy"){
+            } else if (self.atPoint(touchLocation).name == "plant"){
                 selectedNode = foodNode2
                 nodeIsSelected = true
             }else{
@@ -102,15 +102,15 @@ class CandyScene: SKScene {
             
             for items in self.nodes(at: touchLocation){
                 if items.name == "Monster"{
-                    if (selectedNode?.name == "candy"){
-                        candy_correctTouches += 1
+                    if (selectedNode?.name == "tooth"){
+                        tooth_correctTouches += 1
                         selectedNode?.removeFromParent()
                         sceneOver = true
                         animateMonster(withAudio: "Sound_Biting")
-                        nextScene(sceneName: "OrangeScene")
+                        nextScene(sceneName: "FlowerScene")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
-                        candy_incorrectTouches += 1
+                        tooth_incorrectTouches += 1
                     }
                 }
             }
