@@ -37,11 +37,13 @@ class OrangeScene: SKScene {
     /////Helper Functions///////
     ////////////////////////////
     func playInstructionsWithName(audioName:String){
+        instructionsComplete = false
         let instructions = SKAction.playSoundFileNamed(audioName, waitForCompletion: true)
         self.run(instructions, completion: { self.instructionsComplete = true })
     }
     
     func playFeedbackWithName(audioName:String){
+        feedbackComplete = false
         let instructions = SKAction.playSoundFileNamed(audioName, waitForCompletion: true)
         monsterNode!.run(instructions, completion: { self.feedbackComplete = true })
     }

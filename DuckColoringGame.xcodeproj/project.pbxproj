@@ -151,11 +151,7 @@
 		0B3EFEDC2046336600F5932F /* instructions_piano2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0B3EFEC82046336600F5932F /* instructions_piano2.wav */; };
 		0B3EFEDD2046336600F5932F /* instructions_piano3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0B3EFEC92046336600F5932F /* instructions_piano3.wav */; };
 		0B3EFEDE2046336600F5932F /* correctMelody3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0B3EFECA2046336600F5932F /* correctMelody3.wav */; };
-		0B3EFEE62046341D00F5932F /* instructions_raisins.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3EFEE12046341D00F5932F /* instructions_raisins.mp3 */; };
 		0B3EFEE72046341D00F5932F /* Sound_Chewing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3EFEE22046341D00F5932F /* Sound_Chewing.mp3 */; };
-		0B3EFEE82046341D00F5932F /* drinking.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3EFEE32046341D00F5932F /* drinking.mp3 */; };
-		0B3EFEE92046341D00F5932F /* instructions_juice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3EFEE42046341D00F5932F /* instructions_juice.mp3 */; };
-		0B3EFEEA2046341D00F5932F /* instructions_bug.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3EFEE52046341D00F5932F /* instructions_bug.mp3 */; };
 		0BBE9840204D3A890064C98E /* Sound_Biting.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BBE983F204D3A890064C98E /* Sound_Biting.mp3 */; };
 		0BBE9842204D3FC30064C98E /* instructions_candy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BBE9841204D3FC30064C98E /* instructions_candy.mp3 */; };
 		0BBE9844204D49360064C98E /* instructions_orange.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BBE9843204D49360064C98E /* instructions_orange.mp3 */; };
@@ -321,11 +317,7 @@
 		0B3EFEC92046336600F5932F /* instructions_piano3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = instructions_piano3.wav; sourceTree = "<group>"; };
 		0B3EFECA2046336600F5932F /* correctMelody3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correctMelody3.wav; sourceTree = "<group>"; };
 		0B3EFEDF204633EB00F5932F /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = correct.mp3; path = DuckColoringGame/Audio/ColoringGameTrainer/correct.mp3; sourceTree = SOURCE_ROOT; };
-		0B3EFEE12046341D00F5932F /* instructions_raisins.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_raisins.mp3; sourceTree = "<group>"; };
 		0B3EFEE22046341D00F5932F /* Sound_Chewing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sound_Chewing.mp3; sourceTree = "<group>"; };
-		0B3EFEE32046341D00F5932F /* drinking.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = drinking.mp3; sourceTree = "<group>"; };
-		0B3EFEE42046341D00F5932F /* instructions_juice.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_juice.mp3; sourceTree = "<group>"; };
-		0B3EFEE52046341D00F5932F /* instructions_bug.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_bug.mp3; sourceTree = "<group>"; };
 		0BBE983F204D3A890064C98E /* Sound_Biting.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sound_Biting.mp3; sourceTree = "<group>"; };
 		0BBE9841204D3FC30064C98E /* instructions_candy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_candy.mp3; sourceTree = "<group>"; };
 		0BBE9843204D49360064C98E /* instructions_orange.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_orange.mp3; sourceTree = "<group>"; };
@@ -475,10 +467,6 @@
 			children = (
 				0BBE9841204D3FC30064C98E /* instructions_candy.mp3 */,
 				0BBE9843204D49360064C98E /* instructions_orange.mp3 */,
-				0B3EFEE32046341D00F5932F /* drinking.mp3 */,
-				0B3EFEE52046341D00F5932F /* instructions_bug.mp3 */,
-				0B3EFEE42046341D00F5932F /* instructions_juice.mp3 */,
-				0B3EFEE12046341D00F5932F /* instructions_raisins.mp3 */,
 				0BBE983F204D3A890064C98E /* Sound_Biting.mp3 */,
 				0B3EFEE22046341D00F5932F /* Sound_Chewing.mp3 */,
 			);
@@ -1163,19 +1151,16 @@
 				06C819DC202E2B62002F838E /* instructions_pizza.mp3 in Resources */,
 				06C90F782031196300F318AD /* moon.wav in Resources */,
 				06427F201FD9F8A0009C07ED /* PianoScene7.sks in Resources */,
-				0B3EFEE82046341D00F5932F /* drinking.mp3 in Resources */,
 				0B3EFEA520461D4300F5932F /* OrangeScene.sks in Resources */,
 				06C819D7202E2B43002F838E /* instructions_bread.mp3 in Resources */,
 				060A6830202AA954005F7323 /* reminder_toast.wav in Resources */,
 				0B3B5A1A20315B7E002B6805 /* reminder_apple1.mp3 in Resources */,
 				0643D698202E1F8C000FA53D /* RockScene.sks in Resources */,
 				06E34BCA203105870027CE82 /* cat.mp3 in Resources */,
-				0B3EFEE62046341D00F5932F /* instructions_raisins.mp3 in Resources */,
 				0BBE9842204D3FC30064C98E /* instructions_candy.mp3 in Resources */,
 				0B3EFEDC2046336600F5932F /* instructions_piano2.wav in Resources */,
 				060A6829202AA8BA005F7323 /* mouse.wav in Resources */,
 				06E34BCF203106A60027CE82 /* LionScene.sks in Resources */,
-				0B3EFEE92046341D00F5932F /* instructions_juice.mp3 in Resources */,
 				060A6813202AA81D005F7323 /* crunch.wav in Resources */,
 				060A681D202AA895005F7323 /* shoes.wav in Resources */,
 				06427F171FD9F88E009C07ED /* PianoScene5.sks in Resources */,
@@ -1241,7 +1226,6 @@
 				06C819D8202E2B43002F838E /* instructions_egg.mp3 in Resources */,
 				06427F311FD9FD59009C07ED /* ShoesScene.sks in Resources */,
 				060A681F202AA895005F7323 /* reminder_shoes.wav in Resources */,
-				0B3EFEEA2046341D00F5932F /* instructions_bug.mp3 in Resources */,
 				0B3EFEA320461D4300F5932F /* Cake2Scene.sks in Resources */,
 				0B3B5A1820315B7E002B6805 /* reminder_apple2.mp3 in Resources */,
 				0BCA0A9A201BCC2100488E8E /* LampScene.sks in Resources */,

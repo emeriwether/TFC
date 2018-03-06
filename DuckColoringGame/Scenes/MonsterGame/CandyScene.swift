@@ -37,11 +37,13 @@ class CandyScene: SKScene {
     /////Helper Functions///////
     ////////////////////////////
     func playInstructionsWithName(audioName:String){
+        instructionsComplete = false
         let instructions = SKAction.playSoundFileNamed(audioName, waitForCompletion: true)
         self.run(instructions, completion: { self.instructionsComplete = true })
     }
     
     func playFeedbackWithName(audioName:String){
+        feedbackComplete = false
         let instructions = SKAction.playSoundFileNamed(audioName, waitForCompletion: true)
         monsterNode!.run(instructions, completion: { self.feedbackComplete = true })
     }
@@ -78,8 +80,7 @@ class CandyScene: SKScene {
                 selectedNode = foodNode2
                 nodeIsSelected = true
             }else{
-                let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)
-                self.run(wrong, completion: {self.feedbackComplete = true})
+                playFeedbackWithName(audioName: "wrong")
                 selectedNode = nil
                 nodeIsSelected = false
             }
@@ -104,16 +105,8 @@ class CandyScene: SKScene {
                     if (selectedNode?.name == "candy"){
                         candy_correctTouches += 1
                         selectedNode?.removeFromParent()
-                        
-                        let openMouth = SKTexture(imageNamed: "monsterScene_stillMonster")
-                        let closedMouth = SKTexture(imageNamed: "monsterScene_chewingMonster")
-                        let animation = SKAction.animate(with: [openMouth, closedMouth], timePerFrame: 0.2)
-                        let openMouthAction = SKAction.repeat(animation, count: 5)
-                        let chewing = SKAction.playSoundFileNamed("Sound_Chewing", waitForCompletion: true)
-                        monsterNode!.run(openMouthAction)
-                        monsterNode!.run(chewing)
                         sceneOver = true
-                        animateMonster(withAudio: "Sound_Chewing")
+                        animateMonster(withAudio: "Sound_Biting")
                         nextScene(sceneName: "OrangeScene")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
