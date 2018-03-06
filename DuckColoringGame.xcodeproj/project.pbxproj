@@ -92,8 +92,6 @@
 		06476DD61FC945F200B55906 /* ScoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06476DD51FC945F200B55906 /* ScoreScene.swift */; };
 		064C82932044A41C00EFB2E8 /* NameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064C82922044A41C00EFB2E8 /* NameScene.swift */; };
 		064C82952044A43000EFB2E8 /* NameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 064C82942044A43000EFB2E8 /* NameScene.sks */; };
-		064C82992044CCB800EFB2E8 /* TitleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064C82982044CCB800EFB2E8 /* TitleScene.swift */; };
-		064C829B2044CCC400EFB2E8 /* TitleScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 064C829A2044CCC400EFB2E8 /* TitleScene.sks */; };
 		065E9C252043D8B100E9C8EC /* instructions_piano2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 065E9C222043D8B100E9C8EC /* instructions_piano2.wav */; };
 		065E9C262043D8B100E9C8EC /* instructions_piano3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 065E9C232043D8B100E9C8EC /* instructions_piano3.wav */; };
 		065E9C272043D8B100E9C8EC /* instructions_piano1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 065E9C242043D8B100E9C8EC /* instructions_piano1.wav */; };
@@ -245,8 +243,6 @@
 		06476DD51FC945F200B55906 /* ScoreScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreScene.swift; sourceTree = "<group>"; };
 		064C82922044A41C00EFB2E8 /* NameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameScene.swift; sourceTree = "<group>"; };
 		064C82942044A43000EFB2E8 /* NameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NameScene.sks; sourceTree = "<group>"; };
-		064C82982044CCB800EFB2E8 /* TitleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleScene.swift; sourceTree = "<group>"; };
-		064C829A2044CCC400EFB2E8 /* TitleScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TitleScene.sks; sourceTree = "<group>"; };
 		065E9C1B2043CB1800E9C8EC /* CalibriBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CalibriBold.ttf; sourceTree = "<group>"; };
 		065E9C222043D8B100E9C8EC /* instructions_piano2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = instructions_piano2.wav; sourceTree = "<group>"; };
 		065E9C232043D8B100E9C8EC /* instructions_piano3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = instructions_piano3.wav; sourceTree = "<group>"; };
@@ -734,20 +730,10 @@
 		064C82972044A43E00EFB2E8 /* StartScenes */ = {
 			isa = PBXGroup;
 			children = (
-				064C829C2044CCD000EFB2E8 /* TitleScene */,
-				064C82962044A43600EFB2E8 /* NameScene */,
 				06476DC11FC93C7100B55906 /* StartScene */,
+				064C82962044A43600EFB2E8 /* NameScene */,
 			);
 			path = StartScenes;
-			sourceTree = "<group>";
-		};
-		064C829C2044CCD000EFB2E8 /* TitleScene */ = {
-			isa = PBXGroup;
-			children = (
-				064C82982044CCB800EFB2E8 /* TitleScene.swift */,
-				064C829A2044CCC400EFB2E8 /* TitleScene.sks */,
-			);
-			path = TitleScene;
 			sourceTree = "<group>";
 		};
 		0657C65F1FC1F7F3002FC12D /* Audio */ = {
@@ -1146,7 +1132,6 @@
 				0630356E202FD3A30003CAE9 /* Calibri.ttf in Resources */,
 				06427F281FD9F8BA009C07ED /* PianoScene9.sks in Resources */,
 				06C90F75203111FB00F318AD /* RainScene.sks in Resources */,
-				064C829B2044CCC400EFB2E8 /* TitleScene.sks in Resources */,
 				060A682B202AA8BA005F7323 /* instructions_mouse.wav in Resources */,
 				060A680C202AA7DB005F7323 /* reminder_duck.wav in Resources */,
 				06476DD41FC9458E00B55906 /* ScoreScene.sks in Resources */,
@@ -1230,7 +1215,6 @@
 				06C819DE202F6D15002F838E /* AllDoneScene.swift in Sources */,
 				0BCA0A9B201BCC2100488E8E /* Trainer_Bread.swift in Sources */,
 				0BCA0AAF201BCE0000488E8E /* Monster_T1.swift in Sources */,
-				064C82992044CCB800EFB2E8 /* TitleScene.swift in Sources */,
 				06427F1F1FD9F8A0009C07ED /* PianoScene7.swift in Sources */,
 				06427F0F1FD9F876009C07ED /* PianoScene3.swift in Sources */,
 				06427F181FD9F88E009C07ED /* PianoScene5.swift in Sources */,
