@@ -19,7 +19,7 @@ class NameScene: SKScene, UITextFieldDelegate {
     var noAgeShowing = true
     
     override func didMove(to view: SKView) {
-        nameInput = UITextField(frame: CGRect(x:75, y:205, width:635, height: 50))
+        nameInput = UITextField(frame: CGRect(x:45, y:175, width:635, height: 50))
         nameInput!.borderStyle = UITextBorderStyle.roundedRect
         nameInput!.backgroundColor = UIColor.lightGray
         nameInput!.placeholder = "Enter name here"
@@ -29,7 +29,7 @@ class NameScene: SKScene, UITextFieldDelegate {
         self.view?.addSubview(nameInput!)
         nameInput!.delegate = self
         
-        ageInput = UITextField(frame: CGRect(x:75, y:445, width:635, height: 50))
+        ageInput = UITextField(frame: CGRect(x:45, y:465, width:635, height: 50))
         ageInput!.borderStyle = UITextBorderStyle.roundedRect
         ageInput!.backgroundColor = UIColor.lightGray
         ageInput!.placeholder = "Enter age here"
@@ -48,11 +48,13 @@ class NameScene: SKScene, UITextFieldDelegate {
     }
     
     func saveText() {
-        if let nameText = nameInput!.text, !nameText.isEmpty {
+        if (nameInput!.text != "") {
             noNameShowing = false
+            noName!.text = ""
         }
-        if let ageText = ageInput!.text, !ageText.isEmpty {
+        if (ageInput!.text != "") {
             noAgeShowing = false
+            noAge!.text = ""
         }
     }
     
@@ -78,7 +80,7 @@ class NameScene: SKScene, UITextFieldDelegate {
                 noName!.text = "Please enter a username."
                 noName!.fontSize = 30
                 noName!.fontColor = UIColor.red
-                noName!.position = CGPoint (x:-550, y:140)
+                noName!.position = CGPoint (x:-600, y:180)
                 noName!.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
                 self.addChild(noName!)
             }
@@ -88,7 +90,7 @@ class NameScene: SKScene, UITextFieldDelegate {
                 noAge!.text = "Please enter an age for the user."
                 noAge!.fontSize = 30
                 noAge!.fontColor = UIColor.red
-                noAge!.position = CGPoint (x:-550, y:-185)
+                noAge!.position = CGPoint (x:-600, y:-210)
                 noAge!.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
                 self.addChild(noAge!)
             }
