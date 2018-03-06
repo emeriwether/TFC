@@ -1,11 +1,10 @@
 //
-//  Monster_T1.swift
+//  CandyScene.swift
 //  DuckColoringGame
 //
-//  Created by Gustavo C Figueroa on 1/21/18.
+//  Created by Gustavo C Figueroa on 3/5/18.
 //  Copyright © 2018 Eleanor Meriwether. All rights reserved.
 //
-
 import SpriteKit
 import GameplayKit
 
@@ -30,11 +29,46 @@ class CandyScene: SKScene {
         foodNode1 = self.childNode(withName: "carrot")
         foodNode2 = self.childNode(withName: "candy")
         monsterNode = self.childNode(withName: "Monster")
-        
-        let instructions = SKAction.playSoundFileNamed("instructions_candy", waitForCompletion: true)
+        playInstructionsWithName(audioName: "instructions_candy")
+    }
+    
+    ////////////////////////////
+    /////Helper Functions///////
+    ////////////////////////////
+    func playInstructionsWithName(audioName:String){
+        let instructions = SKAction.playSoundFileNamed(audioName, waitForCompletion: true)
         self.run(instructions, completion: { self.instructionsComplete = true })
     }
-
+    
+<<<<<<< HEAD
+    func playFeedbackWithName(audioName:String){
+        let instructions = SKAction.playSoundFileNamed(audioName, waitForCompletion: true)
+        monsterNode!.run(instructions, completion: { self.feedbackComplete = true })
+    }
+    
+    func animateMonster(withAudio:String) {
+        let openMouth = SKTexture(imageNamed: "monsterScene_stillMonster")
+        let closedMouth = SKTexture(imageNamed: "monsterScene_chewingMonster")
+        let animation = SKAction.animate(with: [openMouth, closedMouth], timePerFrame: 0.2)
+        let openMouthAction = SKAction.repeat(animation, count: 10)
+        monsterNode!.run(openMouthAction)
+        playFeedbackWithName(audioName: withAudio)
+    }
+    
+    func nextScene(sceneName:String){
+        let fadeOut = SKAction.fadeOut(withDuration:1)
+        let wait2 = SKAction.wait(forDuration: 1)
+        let sequenceFade = SKAction.sequence([wait2, fadeOut])
+        run(sequenceFade) {
+            let sceneToLoad = SKScene(fileNamed: sceneName)
+            sceneToLoad?.scaleMode = SKSceneScaleMode.aspectFill
+            self.scene!.view?.presentScene(sceneToLoad!)}
+    }
+    ////////////////////////////
+    ////////////////////////////
+    
+=======
+>>>>>>> 05628836da1d6e07b604571451b29fba9a40d052
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if (instructionsComplete == true) && (feedbackComplete == true) && (sceneOver == false){
             let touch = touches.first!
@@ -46,8 +80,7 @@ class CandyScene: SKScene {
                 selectedNode = foodNode2
                 nodeIsSelected = true
             }else{
-                let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)
-                self.run(wrong, completion: {self.feedbackComplete = true})
+                playFeedbackWithName(audioName: "wrong")
                 selectedNode = nil
                 nodeIsSelected = false
             }
@@ -72,19 +105,14 @@ class CandyScene: SKScene {
                     if (selectedNode?.name == "candy"){
                         candy_correctTouches += 1
                         selectedNode?.removeFromParent()
-                        
-                        let openMouth = SKTexture(imageNamed: "monsterScene_stillMonster")
-                        let closedMouth = SKTexture(imageNamed: "monsterScene_chewingMonster")
-                        let animation = SKAction.animate(with: [openMouth, closedMouth], timePerFrame: 0.2)
-                        let openMouthAction = SKAction.repeat(animation, count: 5)
-                        let chewing = SKAction.playSoundFileNamed("Sound_Chewing", waitForCompletion: true)
-                        monsterNode!.run(openMouthAction)
-                        monsterNode!.run(chewing)
-                        
                         sceneOver = true
-//                        feedbackComplete = false
-//                        let correct = SKAction.playSoundFileNamed("correct", waitForCompletion: true)
-//                        self.run(correct, completion: {self.feedbackComplete = true})
+<<<<<<< HEAD
+                        animateMonster(withAudio: "Sound_Biting")
+                        nextScene(sceneName: "OrangeScene")
+=======
+                        //                        feedbackComplete = false
+                        //                        let correct = SKAction.playSoundFileNamed("correct", waitForCompletion: true)
+                        //                        self.run(correct, completion: {self.feedbackComplete = true})
                         let fadeOut = SKAction.fadeOut(withDuration:1)
                         let wait2 = SKAction.wait(forDuration: 1)
                         let sequenceFade = SKAction.sequence([wait2, fadeOut])
@@ -92,11 +120,15 @@ class CandyScene: SKScene {
                             let monsterSceneT2 = SKScene(fileNamed: "OrangeScene")
                             monsterSceneT2?.scaleMode = SKSceneScaleMode.aspectFill
                             self.scene!.view?.presentScene(monsterSceneT2!)}
+>>>>>>> 05628836da1d6e07b604571451b29fba9a40d052
                     }else{
-                        candy_incorrectTouches += 1
+                        //orange_incorrectTouches += 1
+                        playFeedbackWithName(audioName: "wrong")
                     }
                 }
             }
+            selectedNode = nil
+            nodeIsSelected = false
             
         }
     }

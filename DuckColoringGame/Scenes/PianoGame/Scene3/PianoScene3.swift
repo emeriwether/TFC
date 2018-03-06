@@ -53,7 +53,7 @@ class PianoScene3: SKScene {
             if (targetItem?.contains(touch.location(in: self)))! {
                 // Award points for correctness
                 piano3_correctTouches += 1
-                //correctTouches += 1
+                correctTouches += 1
                 // Play audio feedback for the correct touch
                 let correctTouch = SKAction.playSoundFileNamed("correctAudio3", waitForCompletion: true)
                 self.run(correctTouch, completion: { self.reminderComplete = true} )
@@ -73,7 +73,7 @@ class PianoScene3: SKScene {
             else {
                 // Else, award points for incorrect touch
                 piano3_incorrectTouches += 1
-                //incorrectTouches += 1
+                incorrectTouches += 1
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly

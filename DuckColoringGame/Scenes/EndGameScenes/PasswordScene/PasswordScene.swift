@@ -39,7 +39,6 @@ class PasswordScene: SKScene, UITextFieldDelegate {
             wrongPW!.text = ""
             wrongPWShowing = false
         }
-        
         if (passwordInput!.text == "Password") {
             correctPassword = true
         }

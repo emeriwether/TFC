@@ -5,7 +5,6 @@
 //  Created by Gustavo C Figueroa on 2/16/18.
 //  Copyright © 2018 Eleanor Meriwether. All rights reserved.
 //
-
 import SpriteKit
 import GameplayKit
 
@@ -200,4 +199,3 @@ class RaisinsScene: SKScene {
         //        totalTouches = bug_correctTouches + bug_incorrectTouches
     }
 }
-
