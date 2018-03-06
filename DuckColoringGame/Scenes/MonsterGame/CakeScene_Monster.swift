@@ -1,5 +1,5 @@
 //
-//  RaisinsScene.swift
+//  CakeScene_Monster.swift
 //  DuckColoringGame
 //
 //  Created by Gustavo C Figueroa on 3/6/18.
@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class RaisinsScene: SKScene {
+class CakeScene_Monster: SKScene {
     
     private var foodNode1:SKNode?
     private var foodNode2:SKNode?
@@ -19,8 +19,8 @@ class RaisinsScene: SKScene {
     private var selectedNode:SKNode?
     private var nodeIsSelected:Bool?
     
-    var raisins_incorrectTouches = 0
-    var raisins_correctTouches = 0
+    var cake_incorrectTouches = 0
+    var cake_correctTouches = 0
     
     var instructionsComplete:Bool = false
     var feedbackComplete:Bool = true
@@ -28,11 +28,11 @@ class RaisinsScene: SKScene {
     var sceneOver = false
     
     override func didMove(to view: SKView) {
-        foodNode1 = self.childNode(withName: "tomato")
-        foodNode2 = self.childNode(withName: "raisin")
-        foodNode3 = self.childNode(withName: "egg")
+        foodNode1 = self.childNode(withName: "tree")
+        foodNode2 = self.childNode(withName: "cake")
+        foodNode3 = self.childNode(withName: "umbrella")
         monsterNode = self.childNode(withName: "Monster")
-        playInstructionsWithName(audioName: "instructions_raisins")
+        playInstructionsWithName(audioName: "instructions_cake_monster")
     }
     
     ////////////////////////////
@@ -75,13 +75,13 @@ class RaisinsScene: SKScene {
         if (instructionsComplete == true) && (feedbackComplete == true) && (sceneOver == false){
             let touch = touches.first!
             let touchLocation = touch.location(in: self)
-            if (self.atPoint(touchLocation).name == "tomato"){
+            if (self.atPoint(touchLocation).name == "tree"){
                 selectedNode = foodNode1
                 nodeIsSelected = true
-            } else if (self.atPoint(touchLocation).name == "raisin"){
+            } else if (self.atPoint(touchLocation).name == "cake"){
                 selectedNode = foodNode2
                 nodeIsSelected = true
-            }else if (self.atPoint(touchLocation).name == "egg"){
+            }else if (self.atPoint(touchLocation).name == "umbrella"){
                 selectedNode = foodNode3
                 nodeIsSelected = true
             }else{
@@ -107,15 +107,15 @@ class RaisinsScene: SKScene {
             
             for items in self.nodes(at: touchLocation){
                 if items.name == "Monster"{
-                    if (selectedNode?.name == "raisins"){
-                        raisins_correctTouches += 1
+                    if (selectedNode?.name == "cake"){
+                        cake_correctTouches += 1
                         selectedNode?.removeFromParent()
                         sceneOver = true
                         animateMonster(withAudio: "Sound_Chewing")
-                        nextScene(sceneName: "CakeScene_Monster")
+                        nextScene(sceneName: "BalloonScene")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
-                        raisins_incorrectTouches += 1
+                        cake_incorrectTouches += 1
                     }
                 }
             }
