@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class Monster_T3: SKScene {
+class Monster_T4: SKScene {
     
     private var foodNode:SKSpriteNode?
     private var basketNode:SKSpriteNode?
@@ -82,9 +82,9 @@ class Monster_T3: SKScene {
                         let wait2 = SKAction.wait(forDuration: 1)
                         let sequenceFade = SKAction.sequence([wait2, fadeOut])
                         run(sequenceFade) {
-                            let candyscene = SKScene(fileNamed: "CandyScene")
-                            candyscene?.scaleMode = SKSceneScaleMode.aspectFill
-                            self.scene!.view?.presentScene(candyscene!)}
+                            let juicescene = SKScene(fileNamed: "JuiceScene")
+                            juicescene?.scaleMode = SKSceneScaleMode.aspectFill
+                            self.scene!.view?.presentScene(juicescene!)}
                     }else{
                         selectedNode = nil
                         nodeIsSelected = false
@@ -97,5 +97,6 @@ class Monster_T3: SKScene {
         }
     }
 }
+
 
 
