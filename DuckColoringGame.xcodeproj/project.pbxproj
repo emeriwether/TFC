@@ -503,9 +503,7 @@
 				0B35083E204F4DB800BD1AD8 /* instructions_pen.mp3 */,
 				0B350844204F513F00BD1AD8 /* instructions_raisins.mp3 */,
 				0B35084A204F579000BD1AD8 /* instructions_cake_monster.mp3 */,
-				0BBE983F204D3A890064C98E /* Sound_Biting.mp3 */,
-				0B3EFEE22046341D00F5932F /* Sound_Chewing.mp3 */,
-				0B350836204F32D000BD1AD8 /* Sound_Munching.mp3 */,
+				0B350854204F5ABE00BD1AD8 /* Sound Effects */,
 			);
 			path = MonsterGame;
 			sourceTree = "<group>";
@@ -980,6 +978,88 @@
 			path = ColoringGame_Trainer;
 			sourceTree = "<group>";
 		};
+		0B35084C204F5A5900BD1AD8 /* CandyScene */ = {
+			isa = PBXGroup;
+			children = (
+				0B3EFE9A20461D4300F5932F /* CandyScene.swift */,
+				0B3EFE9820461D4300F5932F /* CandyScene.sks */,
+			);
+			path = CandyScene;
+			sourceTree = "<group>";
+		};
+		0B35084D204F5A6600BD1AD8 /* OrangeScene */ = {
+			isa = PBXGroup;
+			children = (
+				0B3EFE9620461D4300F5932F /* OrangeScene.swift */,
+				0B3EFE9D20461D4300F5932F /* OrangeScene.sks */,
+			);
+			path = OrangeScene;
+			sourceTree = "<group>";
+		};
+		0B35084E204F5A6F00BD1AD8 /* ToothScene */ = {
+			isa = PBXGroup;
+			children = (
+				0B35082A204F2CC000BD1AD8 /* ToothScene.swift */,
+				0B35082C204F2CCE00BD1AD8 /* ToothScene.sks */,
+			);
+			path = ToothScene;
+			sourceTree = "<group>";
+		};
+		0B35084F204F5A7800BD1AD8 /* FlowerScene */ = {
+			isa = PBXGroup;
+			children = (
+				0B350830204F31CE00BD1AD8 /* FlowerScene.swift */,
+				0B350832204F31DD00BD1AD8 /* FlowerScene.sks */,
+			);
+			path = FlowerScene;
+			sourceTree = "<group>";
+		};
+		0B350850204F5A8200BD1AD8 /* CupScene */ = {
+			isa = PBXGroup;
+			children = (
+				0B350838204F344D00BD1AD8 /* CupScene.swift */,
+				0B35083A204F345D00BD1AD8 /* CupScene.sks */,
+			);
+			path = CupScene;
+			sourceTree = "<group>";
+		};
+		0B350851204F5A9400BD1AD8 /* PenScene */ = {
+			isa = PBXGroup;
+			children = (
+				0B350840204F4DC600BD1AD8 /* PenScene.swift */,
+				0B350842204F4DDA00BD1AD8 /* PenScene.sks */,
+			);
+			path = PenScene;
+			sourceTree = "<group>";
+		};
+		0B350852204F5A9B00BD1AD8 /* RaisinsScene */ = {
+			isa = PBXGroup;
+			children = (
+				0B3EFE9C20461D4300F5932F /* RaisinsScene.swift */,
+				0B3EFE9920461D4300F5932F /* RaisinsScene.sks */,
+			);
+			path = RaisinsScene;
+			sourceTree = "<group>";
+		};
+		0B350853204F5AA900BD1AD8 /* CakeScene_Monster */ = {
+			isa = PBXGroup;
+			children = (
+				0B350846204F562700BD1AD8 /* CakeScene_Monster.swift */,
+				0B350848204F563900BD1AD8 /* CakeScene_Monster.sks */,
+			);
+			path = CakeScene_Monster;
+			sourceTree = "<group>";
+		};
+		0B350854204F5ABE00BD1AD8 /* Sound Effects */ = {
+			isa = PBXGroup;
+			children = (
+				0BBE983F204D3A890064C98E /* Sound_Biting.mp3 */,
+				0B3EFEE22046341D00F5932F /* Sound_Chewing.mp3 */,
+				0B350836204F32D000BD1AD8 /* Sound_Munching.mp3 */,
+			);
+			path = "Sound Effects";
+			sourceTree = "<group>";
+		};
 		0B3B5A0F203159BB002B6805 /* MonsterGameTrainer */ = {
 			isa = PBXGroup;
 			children = (
@@ -996,22 +1076,14 @@
 		0B3EFE9520461D4300F5932F /* MonsterGame */ = {
 			isa = PBXGroup;
 			children = (
-				0B3EFE9A20461D4300F5932F /* CandyScene.swift */,
-				0B3EFE9820461D4300F5932F /* CandyScene.sks */,
-				0B3EFE9620461D4300F5932F /* OrangeScene.swift */,
-				0B3EFE9D20461D4300F5932F /* OrangeScene.sks */,
-				0B35082A204F2CC000BD1AD8 /* ToothScene.swift */,
-				0B35082C204F2CCE00BD1AD8 /* ToothScene.sks */,
-				0B350830204F31CE00BD1AD8 /* FlowerScene.swift */,
-				0B350832204F31DD00BD1AD8 /* FlowerScene.sks */,
-				0B350838204F344D00BD1AD8 /* CupScene.swift */,
-				0B35083A204F345D00BD1AD8 /* CupScene.sks */,
-				0B350840204F4DC600BD1AD8 /* PenScene.swift */,
-				0B350842204F4DDA00BD1AD8 /* PenScene.sks */,
-				0B3EFE9C20461D4300F5932F /* RaisinsScene.swift */,
-				0B3EFE9920461D4300F5932F /* RaisinsScene.sks */,
-				0B350846204F562700BD1AD8 /* CakeScene_Monster.swift */,
-				0B350848204F563900BD1AD8 /* CakeScene_Monster.sks */,
+				0B35084C204F5A5900BD1AD8 /* CandyScene */,
+				0B35084D204F5A6600BD1AD8 /* OrangeScene */,
+				0B35084E204F5A6F00BD1AD8 /* ToothScene */,
+				0B35084F204F5A7800BD1AD8 /* FlowerScene */,
+				0B350850204F5A8200BD1AD8 /* CupScene */,
+				0B350851204F5A9400BD1AD8 /* PenScene */,
+				0B350852204F5A9B00BD1AD8 /* RaisinsScene */,
+				0B350853204F5AA900BD1AD8 /* CakeScene_Monster */,
 			);
 			path = MonsterGame;
 			sourceTree = "<group>";
