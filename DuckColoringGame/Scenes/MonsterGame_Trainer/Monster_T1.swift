@@ -5,6 +5,7 @@
 //  Created by Gustavo C Figueroa on 1/21/18.
 //  Copyright © 2018 Eleanor Meriwether. All rights reserved.
 //
+
 import SpriteKit
 import GameplayKit
 
@@ -37,60 +38,60 @@ class Monster_T1: SKScene {
         
         let instructions = SKAction.playSoundFileNamed("instructions_apple1", waitForCompletion: true)
         self.run(instructions, completion: {self.instructionsComplete = true})
-        //        let waitTimer = SKAction.wait(forDuration: 5.0)
-        //
-        //        basketNode?.run(SKAction.sequence([instructions, waitTimer,instructions, waitTimer]),completion: {self.instructionsComplete = true})
-        //        let audioR = SKAction.run{
-        //            if (self.counter % 10 == 0) && (self.apple_incorrectTouches + self.apple_correctTouches == 0){
-        //                self.instructionsComplete = false
-        //
-        //            }else{
-        //                self.run(SKAction.wait(forDuration: 1.0))
-        //                self.counter += 1
-        //            }
-        //        }
-        //        self.run(SKAction.repeatForever(audioR))
+//        let waitTimer = SKAction.wait(forDuration: 5.0)
+//
+//        basketNode?.run(SKAction.sequence([instructions, waitTimer,instructions, waitTimer]),completion: {self.instructionsComplete = true})
+//        let audioR = SKAction.run{
+//            if (self.counter % 10 == 0) && (self.apple_incorrectTouches + self.apple_correctTouches == 0){
+//                self.instructionsComplete = false
+//
+//            }else{
+//                self.run(SKAction.wait(forDuration: 1.0))
+//                self.counter += 1
+//            }
+//        }
+//        self.run(SKAction.repeatForever(audioR))
         //basketNode?.run(instructions, completion: {self.instructionsComplete = true})
         
-        //        /////////////////////////////////
-        //        ////// IDLE REMINDER TIMER //////
-        //        /////////////////////////////////
-        //        let oneSecTimer = SKAction.wait(forDuration: 1.0)
-        //        var timerCount = 1
-        //        var currentTouches = 0
-        //
-        //        // set up sequence for if the scene has not been touched for 10 seconds: play the idle reminder
-        //        let reminderIfIdle = SKAction.run {
-        //            self.reminderComplete = false
-        //            let apple_reminder = SKAction.playSoundFileNamed("instructions_apple1", waitForCompletion: true)
-        //            self.basketNode?.run(apple_reminder, completion: { self.reminderComplete = true} )
-        //        }
-        //
-        //        // for every one second, do this action:
-        //        let timerAction = SKAction.run {
-        //            // if no touch...
-        //            if (self.totalTouches - currentTouches == 0) {
-        //                // ...timer progresses one second...
-        //                timerCount += 1
-        //            }
-        //                // ... else if a touch...
-        //            else {
-        //                // ... increase touch count...
-        //                currentTouches += 1
-        //                // ... and start timer over...
-        //                timerCount = 1
-        //            }
-        //            // if timer seconds are divisable by 10 ...
-        //            if (timerCount % 10 == 0) {
-        //                // ... play the reminder.
-        //                self.run(reminderIfIdle)
-        //            }
-        //        }
-        //        // set up sequence: run 1s timer, then play action
-        //        let timerActionSequence = SKAction.sequence([oneSecTimer, timerAction])
-        //        // repeat the timer forever
-        //        let repeatTimerActionSequence = SKAction.repeatForever(timerActionSequence)
-        //        run(repeatTimerActionSequence)
+//        /////////////////////////////////
+//        ////// IDLE REMINDER TIMER //////
+//        /////////////////////////////////
+//        let oneSecTimer = SKAction.wait(forDuration: 1.0)
+//        var timerCount = 1
+//        var currentTouches = 0
+//
+//        // set up sequence for if the scene has not been touched for 10 seconds: play the idle reminder
+//        let reminderIfIdle = SKAction.run {
+//            self.reminderComplete = false
+//            let apple_reminder = SKAction.playSoundFileNamed("instructions_apple1", waitForCompletion: true)
+//            self.basketNode?.run(apple_reminder, completion: { self.reminderComplete = true} )
+//        }
+//
+//        // for every one second, do this action:
+//        let timerAction = SKAction.run {
+//            // if no touch...
+//            if (self.totalTouches - currentTouches == 0) {
+//                // ...timer progresses one second...
+//                timerCount += 1
+//            }
+//                // ... else if a touch...
+//            else {
+//                // ... increase touch count...
+//                currentTouches += 1
+//                // ... and start timer over...
+//                timerCount = 1
+//            }
+//            // if timer seconds are divisable by 10 ...
+//            if (timerCount % 10 == 0) {
+//                // ... play the reminder.
+//                self.run(reminderIfIdle)
+//            }
+//        }
+//        // set up sequence: run 1s timer, then play action
+//        let timerActionSequence = SKAction.sequence([oneSecTimer, timerAction])
+//        // repeat the timer forever
+//        let repeatTimerActionSequence = SKAction.repeatForever(timerActionSequence)
+//        run(repeatTimerActionSequence)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -117,7 +118,7 @@ class Monster_T1: SKScene {
             }
         }
     }
-    
+
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if (instructionsComplete == true) && (sceneOver == false) && (nodeIsSelected == true) && (feedbackComplete == true){
             let touch = touches.first!
@@ -152,11 +153,11 @@ class Monster_T1: SKScene {
             }
             
         }
-        //        if (apple_incorrectTouches % 3 == 0) && (apple_correctTouches < 1) && (!(basketNode?.hasActions())!){
-        //            reminderComplete = false
-        //            let apple_reminder = SKAction.playSoundFileNamed("reminder_apple1", waitForCompletion: true)
-        //            self.basketNode?.run(apple_reminder, completion: { self.reminderComplete = true} )
-        //        }
+//        if (apple_incorrectTouches % 3 == 0) && (apple_correctTouches < 1) && (!(basketNode?.hasActions())!){
+//            reminderComplete = false
+//            let apple_reminder = SKAction.playSoundFileNamed("reminder_apple1", waitForCompletion: true)
+//            self.basketNode?.run(apple_reminder, completion: { self.reminderComplete = true} )
+//        }
         //totalTouches = apple_correctTouches + apple_incorrectTouches
     }
 }

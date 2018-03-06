@@ -1,10 +1,11 @@
 //
-//  Orange.swift
+//  Monster_T1.swift
 //  DuckColoringGame
 //
-//  Created by Gustavo C Figueroa on 3/5/18.
+//  Created by Gustavo C Figueroa on 1/21/18.
 //  Copyright © 2018 Eleanor Meriwether. All rights reserved.
 //
+
 import SpriteKit
 import GameplayKit
 
@@ -16,10 +17,17 @@ class OrangeScene: SKScene {
 
     private var selectedNode:SKNode?
     private var nodeIsSelected:Bool?
+<<<<<<< HEAD
 
     var orange_incorrectTouches = 0
     var orange_correctTouches = 0
 
+=======
+    
+    var candy_incorrectTouches = 0
+    var candy_correctTouches = 0
+    
+>>>>>>> parent of 9013a91... Addition of Tooth, flower, and cup scene
     var instructionsComplete:Bool = false
     var feedbackComplete:Bool = true
 
@@ -29,6 +37,7 @@ class OrangeScene: SKScene {
         foodNode1 = self.childNode(withName: "bug")
         foodNode2 = self.childNode(withName: "orange")
         monsterNode = self.childNode(withName: "Monster")
+<<<<<<< HEAD
         playInstructionsWithName(audioName: "instructions_orange")
     }
 
@@ -66,6 +75,13 @@ class OrangeScene: SKScene {
     ////////////////////////////
     ////////////////////////////
 
+=======
+        
+        let instructions = SKAction.playSoundFileNamed("instructions_orange", waitForCompletion: true)
+        self.run(instructions, completion: { self.instructionsComplete = true })
+    }
+    
+>>>>>>> parent of 9013a91... Addition of Tooth, flower, and cup scene
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if (instructionsComplete == true) && (feedbackComplete == true) && (sceneOver == false){
             let touch = touches.first!
@@ -77,7 +93,8 @@ class OrangeScene: SKScene {
                 selectedNode = foodNode2
                 nodeIsSelected = true
             }else{
-                playFeedbackWithName(audioName: "wrong")
+                let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)
+                self.run(wrong, completion: {self.feedbackComplete = true})
                 selectedNode = nil
                 nodeIsSelected = false
             }
@@ -100,15 +117,30 @@ class OrangeScene: SKScene {
             for items in self.nodes(at: touchLocation){
                 if items.name == "Monster"{
                     if (selectedNode?.name == "orange"){
-                        orange_correctTouches += 1
+                        candy_correctTouches += 1
                         selectedNode?.removeFromParent()
+                        
+                        let openMouth = SKTexture(imageNamed: "monsterScene_stillMonster")
+                        let closedMouth = SKTexture(imageNamed: "monsterScene_chewingMonster")
+                        let animation = SKAction.animate(with: [openMouth, closedMouth], timePerFrame: 0.2)
+                        let openMouthAction = SKAction.repeat(animation, count: 5)
+                        let chewing = SKAction.playSoundFileNamed("Sound_Chewing", waitForCompletion: true)
+                        monsterNode!.run(openMouthAction)
+                        monsterNode!.run(chewing)
+                        
                         sceneOver = true
+<<<<<<< HEAD
 
                         animateMonster(withAudio: "Sound_Chewing")
                         nextScene(sceneName: "ToothScene")
                         //                        feedbackComplete = false
                         //                        let correct = SKAction.playSoundFileNamed("correct", waitForCompletion: true)
                         //                        self.run(correct, completion: {self.feedbackComplete = true})
+=======
+//                        feedbackComplete = false
+//                        let correct = SKAction.playSoundFileNamed("correct", waitForCompletion: true)
+//                        self.run(correct, completion: {self.feedbackComplete = true})
+>>>>>>> parent of 9013a91... Addition of Tooth, flower, and cup scene
                         let fadeOut = SKAction.fadeOut(withDuration:1)
                         let wait2 = SKAction.wait(forDuration: 1)
                         let sequenceFade = SKAction.sequence([wait2, fadeOut])
@@ -117,14 +149,17 @@ class OrangeScene: SKScene {
                             monsterSceneT2?.scaleMode = SKSceneScaleMode.aspectFill
                             self.scene!.view?.presentScene(monsterSceneT2!)}
                     }else{
-                        //orange_incorrectTouches += 1
-                        playFeedbackWithName(audioName: "wrong")
+                        candy_incorrectTouches += 1
                     }
                 }
             }
+<<<<<<< HEAD
             selectedNode = nil
             nodeIsSelected = false
 
+=======
+            
+>>>>>>> parent of 9013a91... Addition of Tooth, flower, and cup scene
         }
     }
 }
