@@ -475,11 +475,11 @@
 			children = (
 				0BBE9841204D3FC30064C98E /* instructions_candy.mp3 */,
 				0BBE9843204D49360064C98E /* instructions_orange.mp3 */,
-				0BBE983F204D3A890064C98E /* Sound_Biting.mp3 */,
 				0B3EFEE32046341D00F5932F /* drinking.mp3 */,
 				0B3EFEE52046341D00F5932F /* instructions_bug.mp3 */,
 				0B3EFEE42046341D00F5932F /* instructions_juice.mp3 */,
 				0B3EFEE12046341D00F5932F /* instructions_raisins.mp3 */,
+				0BBE983F204D3A890064C98E /* Sound_Biting.mp3 */,
 				0B3EFEE22046341D00F5932F /* Sound_Chewing.mp3 */,
 			);
 			path = MonsterGame;

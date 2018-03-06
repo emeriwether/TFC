@@ -1,5 +1,5 @@
 //
-//  Monster_T1.swift
+//  Monster_T3.swift
 //  DuckColoringGame
 //
 //  Created by Gustavo C Figueroa on 1/21/18.
@@ -14,27 +14,53 @@ class Monster_T3: SKScene {
     private var foodNode:SKSpriteNode?
     private var basketNode:SKSpriteNode?
     
-    private var selectedNode:SKNode?
+    private var selectedNode:SKSpriteNode?
     private var nodeIsSelected:Bool?
-    //private var defaultNodePosition:CGPoint?
-    
-    var instructionsComplete:Bool = false
-    var feedbackComplete:Bool = true
-    var sceneOver = false
     
     var apple_incorrectTouches = 0
     var apple_correctTouches = 0
     
+    var instructionsComplete:Bool = false
+    var feedbackComplete:Bool = true
+    
+    var sceneOver = false
+    
     override func didMove(to view: SKView) {
-        self.foodNode = self.childNode(withName: "apple") as? SKSpriteNode
-        self.basketNode = self.childNode(withName: "basket") as? SKSpriteNode
-        
-        selectedNode = nil
-        nodeIsSelected = false
-        
-        let instructions = SKAction.playSoundFileNamed("instructions_apple3", waitForCompletion: true)
-        self.run(instructions, completion: {self.instructionsComplete = true})
+        foodNode = (self.childNode(withName: "apple") as! SKSpriteNode)
+        basketNode = (self.childNode(withName: "basket") as! SKSpriteNode)
+        playInstructionsWithName(audioName: "instructions_apple3")
     }
+    
+    ////////////////////////////
+    /////Helper Functions///////
+    ////////////////////////////
+    func playInstructionsWithName(audioName:String){
+        instructionsComplete = false
+        let instructions = SKAction.playSoundFileNamed(audioName, waitForCompletion: true)
+        self.run(instructions, completion: { self.instructionsComplete = true })
+    }
+    
+    func playFeedbackWithName(audioName:String){
+        feedbackComplete = false
+        let instructions = SKAction.playSoundFileNamed(audioName, waitForCompletion: true)
+        basketNode!.run(instructions, completion: { self.feedbackComplete = true })
+    }
+    
+    func changeBasket(){
+        basketNode?.texture = SKTexture(imageNamed: "BasketApple")
+    }
+    
+    func nextScene(sceneName:String){
+        let fadeOut = SKAction.fadeOut(withDuration:1)
+        let wait2 = SKAction.wait(forDuration: 1)
+        let sequenceFade = SKAction.sequence([wait2, fadeOut])
+        run(sequenceFade) {
+            let sceneToLoad = SKScene(fileNamed: sceneName)
+            sceneToLoad?.scaleMode = SKSceneScaleMode.aspectFill
+            self.scene!.view?.presentScene(sceneToLoad!)}
+    }
+    ////////////////////////////
+    ////////////////////////////
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if (instructionsComplete == true) && (feedbackComplete == true) && (sceneOver == false){
@@ -43,15 +69,13 @@ class Monster_T3: SKScene {
             if (self.atPoint(touchLocation).name == "apple"){
                 selectedNode = foodNode
                 nodeIsSelected = true
-            } else{
-                let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)
-                self.run(wrong, completion: {self.feedbackComplete = true})
+            }else{
+                playFeedbackWithName(audioName: "wrong")
                 selectedNode = nil
                 nodeIsSelected = false
             }
         }
     }
-    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if  (instructionsComplete == true) && (sceneOver == false) && (nodeIsSelected == true) && (feedbackComplete == true) {
             for touch in touches{
@@ -71,29 +95,18 @@ class Monster_T3: SKScene {
                     if (selectedNode?.name == "apple"){
                         apple_correctTouches += 1
                         selectedNode?.removeFromParent()
-                        basketNode?.texture = SKTexture(imageNamed: "BasketApple")
-                        selectedNode = nil
-                        nodeIsSelected = false
                         sceneOver = true
-                        feedbackComplete = false
-                        let correct = SKAction.playSoundFileNamed("correct", waitForCompletion: true)
-                        self.run(correct, completion: {self.feedbackComplete = true})
-                        let fadeOut = SKAction.fadeOut(withDuration:1)
-                        let wait2 = SKAction.wait(forDuration: 1)
-                        let sequenceFade = SKAction.sequence([wait2, fadeOut])
-                        run(sequenceFade) {
-                            let candyscene = SKScene(fileNamed: "CandyScene")
-                            candyscene?.scaleMode = SKSceneScaleMode.aspectFill
-                            self.scene!.view?.presentScene(candyscene!)}
+                        changeBasket()
+                        playFeedbackWithName(audioName: "correct")
+                        nextScene(sceneName: "CandyScene")
                     }else{
-                        selectedNode = nil
-                        nodeIsSelected = false
+                        playFeedbackWithName(audioName: "wrong")
                         apple_incorrectTouches += 1
-                        //incorrectTouches += 1
                     }
                 }
             }
-            
+            selectedNode = nil
+            nodeIsSelected = false
         }
     }
 }
