@@ -120,15 +120,8 @@ class RainScene: SKScene {
                 rain!.run(rainstick)
                 rain!.run(animationRainRepeat)
                 
-                //Variables to switch screens
-                let fadeOut = SKAction.fadeOut(withDuration:3)
-                let wait2 = SKAction.wait(forDuration: 3)
-                let sequenceFade = SKAction.sequence([wait2, fadeOut])
-                run(sequenceFade) {
-                    let duckScene = SKScene(fileNamed: "DuckScene")
-                    duckScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(duckScene!)
-                }
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "DuckScene")
             }
             else {
                 rain_incorrectTouches += 1

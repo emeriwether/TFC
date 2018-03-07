@@ -78,6 +78,15 @@ class CowScene: SKScene {
         if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false) {
             let touch = touches.first!
             
+            // If user makes too many incorrect touches, just move on (move on during the 15th touch)
+            // incorrect touches starts at 0, so it's offset by 1
+            if cow_incorrectTouches > 13 {
+                sceneOver = true
+                
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "TrashScene")
+            }
+            
             //If cow sprite is touched...
             if (physicsWorld.body(at: touch.location(in: self)) == cow?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
@@ -114,15 +123,8 @@ class CowScene: SKScene {
                 cow!.run(move)
                 cow!.run(animationWalkRepeat)
                 
-                //Variables to switch screens
-                let fadeOut = SKAction.fadeOut(withDuration:2)
-                let wait2 = SKAction.wait(forDuration: 2)
-                let sequenceFade = SKAction.sequence([wait2, fadeOut])
-                run(sequenceFade) {
-                    let trashScene = SKScene(fileNamed: "TrashScene")
-                    trashScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(trashScene!)
-                }
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "TrashScene")
             }
             else {
                 cow_incorrectTouches += 1
@@ -133,8 +135,8 @@ class CowScene: SKScene {
                 cow?.run(wrong)
             }
             
-            // play reminder instructions if user has touched screen 3 times incorrectly
-            if (cow_incorrectTouches % 3 == 0) && cow_correctTouches < 1 {
+            // play reminder instructions if user has touched screen 3 times incorrectly (don't play for 15th touch - just move on)
+            if (cow_incorrectTouches % 3 == 0) && cow_correctTouches < 1 && cow_incorrectTouches < 14 {
                 reminderComplete = false
                 let cowReminder = SKAction.playSoundFileNamed("reminder_cow", waitForCompletion: true)
                 run(cowReminder, completion: { self.reminderComplete = true} )

@@ -78,6 +78,15 @@ class AirplaneScene: SKScene {
         if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false) {
             let touch = touches.first!
             
+            // If user makes too many incorrect touches, just move on (move on during the 15th touch)
+            // incorrect touches starts at 0, so it's offset by 1
+            if airplane_incorrectTouches > 13 {
+                sceneOver = true
+                
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "ShoesScene")
+            }
+            
             //If airplane sprite is touched...   
             if (physicsWorld.body(at: touch.location(in: self)) == airplane?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
@@ -105,15 +114,8 @@ class AirplaneScene: SKScene {
                 airplane!.run(moveRight)
                 airplane!.run(moveUp)
                 
-                //Variables to switch screens
-                let fadeOut = SKAction.fadeOut(withDuration:2)
-                let wait2 = SKAction.wait(forDuration: 2)
-                let sequenceFade = SKAction.sequence([wait2, fadeOut])
-                run(sequenceFade) {
-                    let shoesScene = SKScene(fileNamed: "ShoesScene")
-                    shoesScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(shoesScene!)
-                }
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "ShoesScene")
             }
             else {
                 airplane_incorrectTouches += 1
@@ -124,8 +126,8 @@ class AirplaneScene: SKScene {
                 airplane?.run(wrong)
             }
             
-            // play reminder instructions if user has touched screen 3 times incorrectly
-            if (airplane_incorrectTouches % 3 == 0) && airplane_correctTouches < 1 {
+            // play reminder instructions if user has touched screen 3 times incorrectly (don't play for 15th touch - just move on)
+            if (airplane_incorrectTouches % 3 == 0) && airplane_correctTouches < 1  && airplane_incorrectTouches < 14 {
                 reminderComplete = false
                 let airplaneReminder = SKAction.playSoundFileNamed("reminder_airplane", waitForCompletion: true)
                 run(airplaneReminder, completion: { self.reminderComplete = true} )

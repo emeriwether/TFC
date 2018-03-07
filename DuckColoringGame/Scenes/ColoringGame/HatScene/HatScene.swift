@@ -74,6 +74,15 @@ class HatScene: SKScene {
         // local variable for hat sprite
         let hat = self.childNode(withName: "hat_bw")
         
+        // If user makes too many incorrect touches, just move on (move on during the 15th touch)
+        // incorrect touches starts at 0, so it's offset by 1
+        if hat_incorrectTouches > 13 {
+            sceneOver = true
+            
+            // transitionScene function declared on Trainer_Balloon.swift in coloring game
+            transitionScene (currentScene: self, sceneString: "CookieScene")
+        }
+        
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false){
             let touch = touches.first!
@@ -95,15 +104,8 @@ class HatScene: SKScene {
                 // play correct hatFlip animation (function declared on HatScene.swift in coloring game)
                 hatFlip(node: hat!, coloredImg: "hatScene_hat_colored", correctSound: "hat")
                 
-                //Variables to switch screens
-                let fadeOut = SKAction.fadeOut(withDuration:3)
-                let wait2 = SKAction.wait(forDuration: 3)
-                let sequenceFade = SKAction.sequence([wait2, fadeOut])
-                run(sequenceFade) {
-                    let cookieScene = SKScene(fileNamed: "CookieScene")
-                    cookieScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(cookieScene!)
-                }
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "CookieScene")
             }
             else {
                 hat_incorrectTouches += 1
@@ -114,8 +116,8 @@ class HatScene: SKScene {
                 hat?.run(wrong)
             }
             
-            // play reminder instructions if user has touched screen 3 times incorrectly
-            if (hat_incorrectTouches % 3 == 0) && hat_correctTouches < 1 {
+            // play reminder instructions if user has touched screen 3 times incorrectly (don't play for 15th touch - just move on)
+            if (hat_incorrectTouches % 3 == 0) && hat_correctTouches < 1 && hat_incorrectTouches < 14 {
                 reminderComplete = false
                 let hat_reminder = SKAction.playSoundFileNamed("reminder_hat", waitForCompletion: true)
                 run(hat_reminder, completion: { self.reminderComplete = true} )

@@ -104,15 +104,8 @@ class LampScene: SKScene {
                 // play correct scale&wiggle animation (function declared on Trainer_Balloon.swift in coloring game)
                 animateNode(node: lamp!, coloredImg: "lampScene_lamp_colored", correctSound: "correct2")
                 
-                //Variables to switch screens
-                let fadeOut = SKAction.fadeOut(withDuration:2)
-                let wait2 = SKAction.wait(forDuration: 2)
-                let sequenceFade = SKAction.sequence([wait2, fadeOut])
-                run(sequenceFade) {
-                    let catScene = SKScene(fileNamed: "CatScene")
-                    catScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(catScene!)
-                }
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "CatScene")
             }
             else {
                 lamp_incorrectTouches += 1

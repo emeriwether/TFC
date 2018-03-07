@@ -104,15 +104,8 @@ class HandScene: SKScene {
                 // play correct wiggleOnly animation (function declared on HandScene.swift in coloring game)
                 wiggleOnly(node: hand!, coloredImg: "handScene_hand_colored", correctSound: "hand")
                 
-                //Variables to switch screens
-                let fadeOut = SKAction.fadeOut(withDuration:2)
-                let wait2 = SKAction.wait(forDuration: 2)
-                let sequenceFade = SKAction.sequence([wait2, fadeOut])
-                run(sequenceFade) {
-                    let rainScene = SKScene(fileNamed: "RainScene")
-                    rainScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(rainScene!)
-                }
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "RainScene")
             }
             else {
                 hand_incorrectTouches += 1

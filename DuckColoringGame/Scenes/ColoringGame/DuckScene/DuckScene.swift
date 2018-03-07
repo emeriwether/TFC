@@ -84,7 +84,7 @@ class DuckScene: SKScene {
                 sceneOver = true
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "Moon")
+                transitionScene (currentScene: self, sceneString: "MoonScene")
             }
             
             //If duck sprite's alpha mask is touched...
@@ -125,15 +125,8 @@ class DuckScene: SKScene {
                 duck!.run(quack)
                 duck!.run(sequenceDuck)
                 
-                //Variables to switch screens
-                let fadeOut = SKAction.fadeOut(withDuration:2)
-                let wait2 = SKAction.wait(forDuration: 2)
-                let sequenceFade = SKAction.sequence([wait2, fadeOut])
-                run(sequenceFade) {
-                    let moonScene = SKScene(fileNamed: "MoonScene")
-                    moonScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(moonScene!)
-                }
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "MoonScene")
             }
             else {
                 duck_incorrectTouches += 1
@@ -144,8 +137,8 @@ class DuckScene: SKScene {
                 duck?.run(wrong)
             }
             
-            // play reminder instructions if user has touched screen 3 times incorrectly
-            if (duck_incorrectTouches % 3 == 0) && duck_correctTouches < 1 {
+            // play reminder instructions if user has touched screen 3 times incorrectly (don't play for 15th touch - just move on)
+            if (duck_incorrectTouches % 3 == 0) && duck_correctTouches < 1 && duck_incorrectTouches < 14 {
                 reminderComplete = false
                 let duck_reminder = SKAction.playSoundFileNamed("reminder_duck", waitForCompletion: true)
                 run(duck_reminder, completion: { self.reminderComplete = true} )

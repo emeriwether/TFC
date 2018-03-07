@@ -78,6 +78,15 @@ class TrashScene: SKScene {
         if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false) {
             let touch = touches.first!
             
+            // If user makes too many incorrect touches, just move on (move on during the 15th touch)
+            // incorrect touches starts at 0, so it's offset by 1
+            if trash_incorrectTouches > 13 {
+                sceneOver = true
+                
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "AirplaneScene")
+            }
+            
             //If trash sprite is touched...
             if (physicsWorld.body(at: touch.location(in: self)) == trash?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
@@ -110,15 +119,8 @@ class TrashScene: SKScene {
                 trash!.run(animationLidRepeat)
                 trash!.run(trashNoise)
                 
-                //Variables to switch screens
-                let fadeOut = SKAction.fadeOut(withDuration:2)
-                let wait2 = SKAction.wait(forDuration: 2)
-                let sequenceFade = SKAction.sequence([wait2, fadeOut])
-                run(sequenceFade) {
-                    let airplaneScene = SKScene(fileNamed: "AirplaneScene")
-                    airplaneScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(airplaneScene!)
-                }
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "AirplaneScene")
             }
             else {
                 trash_incorrectTouches += 1
@@ -129,8 +131,8 @@ class TrashScene: SKScene {
                 trash?.run(wrong)
             }
             
-            // play reminder instructions if user has touched screen 3 times incorrectly
-            if (trash_incorrectTouches % 3 == 0) && trash_correctTouches < 1 {
+            // play reminder instructions if user has touched screen 3 times incorrectly (don't play for 15th touch - just move on)
+            if (trash_incorrectTouches % 3 == 0) && trash_correctTouches < 1 && trash_incorrectTouches < 14 {
                 reminderComplete = false
                 let trashReminder = SKAction.playSoundFileNamed("reminder_trash", waitForCompletion: true)
                 run(trashReminder, completion: { self.reminderComplete = true} )

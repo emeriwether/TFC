@@ -117,15 +117,8 @@ class LionScene: SKScene {
                 lion!.run(roar)
                 lion!.run(animationRoar)
 
-                //Variables to switch screens
-                let fadeOut = SKAction.fadeOut(withDuration:2)
-                let wait2 = SKAction.wait(forDuration: 2)
-                let sequenceFade = SKAction.sequence([wait2, fadeOut])
-                run(sequenceFade) {
-                    let handScene = SKScene(fileNamed: "HandScene")
-                    handScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(handScene!)
-                }
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "HandScene")
             }
             else {
                 lion_incorrectTouches += 1

@@ -105,7 +105,7 @@ class RockScene: SKScene {
                 animateNode(node: rock!, coloredImg: "rockScene_rock_colored", correctSound: "correct2")
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "ScoreScene")
+                transitionScene (currentScene: self, sceneString: "LampScene")
             }
             else {
                 rock_incorrectTouches += 1

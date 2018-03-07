@@ -119,16 +119,8 @@ class CatScene: SKScene {
                 cat!.run(meow)
                 cat!.run(animationWhiskersRepeat)
 
-                
-                //Variables to switch screens
-                let fadeOut = SKAction.fadeOut(withDuration:2)
-                let wait2 = SKAction.wait(forDuration: 2)
-                let sequenceFade = SKAction.sequence([wait2, fadeOut])
-                run(sequenceFade) {
-                    let lionScene = SKScene(fileNamed: "LionScene")
-                    lionScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(lionScene!)
-                }
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "LionScene")
             }
             else {
                 cat_incorrectTouches += 1
