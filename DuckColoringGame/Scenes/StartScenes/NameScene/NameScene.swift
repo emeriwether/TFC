@@ -8,13 +8,14 @@
 
 import SpriteKit
 
+var nameInput:UITextField?
+var ageInput:UITextField?
+
 class NameScene: SKScene, UITextFieldDelegate {
   
-    var nameInput:UITextField?
     var noName:SKLabelNode?
     var noNameShowing = true
     
-    var ageInput:UITextField?
     var noAge:SKLabelNode?
     var noAgeShowing = true
     

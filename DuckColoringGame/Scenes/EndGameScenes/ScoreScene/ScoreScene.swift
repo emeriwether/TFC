@@ -43,6 +43,9 @@ var accuracyPerScene: [String:Double] = ["rock": 0, "lamp": 0, "cat": 0, "lion":
 
 class ScoreScene: SKScene {
     // LOCAL VARIABLES FOR LABELS
+    let nameLabel = SKLabelNode(fontNamed:"Calibri")
+    let ageLabel = SKLabelNode(fontNamed:"Calibri")
+    
     let totalCorrectFTLabel = SKLabelNode(fontNamed:"Calibri")
     let totalCorrectBySetSizeLabel = SKLabelNode(fontNamed: "Calibri")
     let setSize2Label = SKLabelNode(fontNamed: "Calibri")
@@ -72,6 +75,13 @@ class ScoreScene: SKScene {
         
         // CALCULATE ACCURACY FOR EACH SCENE
         for (item, _) in accuracyPerScene { calculateAccuracy(scene: item) }
+        
+    ////////////////////////////////////////////////////////////////////////////////////////////
+        // PLACE NAME & AGE LABELS
+        printLabel (label: nameLabel, words: nameInput, xCoord: -550, yCoord: 485)
+        printLabel (label: ageLabel, words: nameInput, xCoord: -550, yCoord: 445)
+    ////////////////////////////////////////////////////////////////////////////////////////////
+
         
     ////////////////////////////////////////////////////////////////////////////////////////////
         // PLACE TOTAL-CORRECT-FT LABEL
