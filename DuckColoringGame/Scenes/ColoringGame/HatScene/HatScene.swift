@@ -137,11 +137,11 @@ func hatFlip(node: SKNode, coloredImg: String, correctSound: String) {
     let correct = SKAction.playSoundFileNamed(correctSound, waitForCompletion: true)
     
     // Variables for fly up & fly back down
-    let flyUp = SKAction.moveTo(y: (node.position.y + 100), duration: 0.3)
-    let flyDown = SKAction.moveTo(y: (node.position.y), duration: 0.3)
+    let flyUp = SKAction.moveTo(y: (node.position.y + 200), duration: 0.3)
+    let flyDown = SKAction.moveTo(y: (node.position.y), duration: 0.7)
     
     // Variables for rotate animation
-    let rotate = SKAction.rotate(byAngle: .pi * 2, duration: 0.5)
+    let rotate = SKAction.rotate(byAngle: .pi * 2, duration: 0.7)
     
     // Variable for animation sequence
     let animationSequence = SKAction.sequence([flyUp, rotate, flyDown])
