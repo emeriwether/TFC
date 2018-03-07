@@ -26,7 +26,7 @@ class MoonScene: SKScene {
         self.physicsBody = nil
         
         // run the introductory instructions, then flag instructionsComplete as true
-        let instructions = SKAction.playSoundFileNamed("instructions_duck", waitForCompletion: true)
+        let instructions = SKAction.playSoundFileNamed("instructions_moon", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
         
         /////////////////////////////////
@@ -39,7 +39,7 @@ class MoonScene: SKScene {
         // set up sequence for if the scene has not been touched for 10 seconds: play the idle reminder
         let reminderIfIdle = SKAction.run {
             self.reminderComplete = false
-            let moon_reminder = SKAction.playSoundFileNamed("reminder_duck", waitForCompletion: true)
+            let moon_reminder = SKAction.playSoundFileNamed("reminder_moon", waitForCompletion: true)
             self.run(moon_reminder, completion: { self.reminderComplete = true} )
         }
         
@@ -125,7 +125,7 @@ class MoonScene: SKScene {
             // play reminder instructions if user has touched screen 3 times incorrectly
             if (moon_incorrectTouches % 3 == 0) && moon_correctTouches < 1 {
                 reminderComplete = false
-                let moon_reminder = SKAction.playSoundFileNamed("reminder_duck", waitForCompletion: true)
+                let moon_reminder = SKAction.playSoundFileNamed("reminder_moon", waitForCompletion: true)
                 run(moon_reminder, completion: { self.reminderComplete = true} )
             }
         }

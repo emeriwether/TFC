@@ -26,7 +26,7 @@ class LionScene: SKScene {
         self.physicsBody = nil
         
         // run the introductory instructions, then flag instructionsComplete as true
-        let instructions = SKAction.playSoundFileNamed("instructions_hamburger", waitForCompletion: true)
+        let instructions = SKAction.playSoundFileNamed("instructions_lion", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
         
         /////////////////////////////////
@@ -39,7 +39,7 @@ class LionScene: SKScene {
         // set up sequence for if the scene has not been touched for 10 seconds: play the idle reminder
         let reminderIfIdle = SKAction.run {
             self.reminderComplete = false
-            let lion_reminder = SKAction.playSoundFileNamed("instructions_hamburger", waitForCompletion: true)
+            let lion_reminder = SKAction.playSoundFileNamed("reminder_lion", waitForCompletion: true)
             self.run(lion_reminder, completion: { self.reminderComplete = true} )
         }
         
@@ -130,7 +130,7 @@ class LionScene: SKScene {
             // play reminder instructions if user has touched screen 3 times incorrectly
             if (lion_incorrectTouches % 3 == 0) && lion_correctTouches < 1 {
                 reminderComplete = false
-                let lion_reminder = SKAction.playSoundFileNamed("instructions_hamburger", waitForCompletion: true)
+                let lion_reminder = SKAction.playSoundFileNamed("reminder_lion", waitForCompletion: true)
                 run(lion_reminder, completion: { self.reminderComplete = true} )
             }
         }

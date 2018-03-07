@@ -26,7 +26,7 @@ class CatScene: SKScene {
         self.physicsBody = nil
         
         // run the introductory instructions, then flag instructionsComplete as true
-        let instructions = SKAction.playSoundFileNamed("instructions_hamburger", waitForCompletion: true)
+        let instructions = SKAction.playSoundFileNamed("instructions_cat", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
         
         /////////////////////////////////
@@ -39,7 +39,7 @@ class CatScene: SKScene {
         // set up sequence for if the scene has not been touched for 10 seconds: play the idle reminder
         let reminderIfIdle = SKAction.run {
             self.reminderComplete = false
-            let cat_reminder = SKAction.playSoundFileNamed("instructions_hamburger", waitForCompletion: true)
+            let cat_reminder = SKAction.playSoundFileNamed("reminder_cat", waitForCompletion: true)
             self.run(cat_reminder, completion: { self.reminderComplete = true} )
         }
         
@@ -133,7 +133,7 @@ class CatScene: SKScene {
             // play reminder instructions if user has touched screen 3 times incorrectly
             if (cat_incorrectTouches % 3 == 0) && cat_correctTouches < 1 {
                 reminderComplete = false
-                let cat_reminder = SKAction.playSoundFileNamed("instructions_hamburger", waitForCompletion: true)
+                let cat_reminder = SKAction.playSoundFileNamed("reminder_cat", waitForCompletion: true)
                 run(cat_reminder, completion: { self.reminderComplete = true} )
             }
         }
