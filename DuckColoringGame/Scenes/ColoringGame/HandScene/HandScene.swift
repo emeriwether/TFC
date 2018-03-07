@@ -142,13 +142,10 @@ func handWaving(node: SKNode, coloredImg: String, correctSound: String) {
     let cycle = SKAction.sequence([rotR, rotL, rotL, rotR])
     let wiggle = SKAction.repeat(cycle, count: 2)
     
-    // Variable for sequenced animation
-    let animationSequence = SKAction.group([wiggle, scaleActionSequence])
-    
     //Run all actions
     node.run(changeToColored)
     node.run(correct)
-    node.run(animationSequence)
+    node.run(wiggle)
 }
 
 
