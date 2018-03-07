@@ -8,14 +8,16 @@
 
 import SpriteKit
 
-var nameInput:UITextField?
-var ageInput:UITextField?
+var userName:String = "No name provided"
+var userAge:String = "No age provided"
 
 class NameScene: SKScene, UITextFieldDelegate {
   
+    var nameInput:UITextField?
     var noName:SKLabelNode?
     var noNameShowing = true
     
+    var ageInput:UITextField?
     var noAge:SKLabelNode?
     var noAgeShowing = true
     
@@ -51,9 +53,11 @@ class NameScene: SKScene, UITextFieldDelegate {
     func saveText() {
         if let nameText = nameInput!.text, !nameText.isEmpty {
             noNameShowing = false
+            userName = nameText
         }
         if let ageText = ageInput!.text, !ageText.isEmpty {
             noAgeShowing = false
+            userAge = ageText
         }
     }
     

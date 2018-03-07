@@ -78,19 +78,8 @@ class ScoreScene: SKScene {
         
     ////////////////////////////////////////////////////////////////////////////////////////////
         // PLACE NAME & AGE LABELS
-        let name = nameInput!.text
-        let age = ageInput!.text
-        
-        let nameString:String
-        let ageString:String
-        
-        if name != "" { nameString = "Name: \(name)"
-        } else { nameString = "Name: No name provided" }
-        if age != "" { ageString = "Age: \(age)"
-        } else { ageString = "Age: No age provided" }
-        
-        printLabel (label: nameLabel, words: nameString, xCoord: 450, yCoord: 485)
-        printLabel (label: ageLabel, words: ageString, xCoord: 450, yCoord: 465)
+        printLabel (label: nameLabel, words: "Name: \(userName)", xCoord: 400, yCoord: 485)
+        printLabel (label: ageLabel, words: "Age: \(userAge)", xCoord: 400, yCoord: 465)
     ////////////////////////////////////////////////////////////////////////////////////////////
         
     ////////////////////////////////////////////////////////////////////////////////////////////

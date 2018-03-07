@@ -97,7 +97,7 @@ class Trainer_Bread: SKScene {
                 let wait2 = SKAction.wait(forDuration: 1)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let rockScene = SKScene(fileNamed: "RockScene")
+                    let rockScene = SKScene(fileNamed: "AllDoneScene")
                     rockScene?.scaleMode = SKSceneScaleMode.aspectFill
                     self.scene!.view?.presentScene(rockScene!)
                 }
