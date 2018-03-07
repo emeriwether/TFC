@@ -78,13 +78,17 @@ class ScoreScene: SKScene {
         
     ////////////////////////////////////////////////////////////////////////////////////////////
         // PLACE NAME & AGE LABELS
-        let nameString = "Name: \(nameInput?.text)"
-        let ageString = "Age: \(ageInput?.text)"
+        let nameString:String
+        let ageString:String
+        
+        if nameInput!.text != "" { nameString = "Name: \(nameInput!.text)"
+        } else { nameString = "Name: No name provided" }
+        if ageInput!.text != "" { ageString = "Age: \(ageInput!.text)"
+        } else { ageString = "Age: No age provided" }
         
         printLabel (label: nameLabel, words: nameString, xCoord: -550, yCoord: 485)
         printLabel (label: ageLabel, words: ageString, xCoord: -550, yCoord: 445)
     ////////////////////////////////////////////////////////////////////////////////////////////
-
         
     ////////////////////////////////////////////////////////////////////////////////////////////
         // PLACE TOTAL-CORRECT-FT LABEL
