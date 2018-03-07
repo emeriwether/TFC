@@ -107,7 +107,7 @@ class CowScene: SKScene {
                 let rightStep = SKTexture(imageNamed: "cowScene_cow_colored_right")
                 let leftStep = SKTexture(imageNamed: "cowScene_cow_colored_left")
                 let animationWalk = SKAction.animate(with: [rightStep, coloredCow, leftStep], timePerFrame: 0.1)
-                let animationWalkRepeat = SKAction.repeat(animationWalk, count: 8)
+                let animationWalkRepeat = SKAction.repeat(animationWalk, count: 10)
                 
                 //Run all actions
                 cow!.run(moo)
