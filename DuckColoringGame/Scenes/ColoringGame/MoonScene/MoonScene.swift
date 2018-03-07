@@ -92,16 +92,8 @@ class MoonScene: SKScene {
                     correctFirstTriesArray.append("moon")
                 }
                 
-                // Change sprite to colored duck
-                let coloredmoon:SKTexture = SKTexture(imageNamed: "moonScene_moon_colored")
-                let changeToColored:SKAction = SKAction.animate(with: [coloredmoon], timePerFrame: 0.0001)
-                moon!.run(changeToColored)
-            
-                //Variables for moon audio
-                let nightTime = SKAction.playSoundFileNamed("moon", waitForCompletion: true)
-
-                //Run all actions
-                moon!.run(nightTime)
+                // play correct scale&wiggle animation (function declared on Trainer_Balloon.swift in coloring game)
+                animateNode(node: moon!, coloredImg: "moonScene_moon_colored", correctSound: "moon")
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:3)

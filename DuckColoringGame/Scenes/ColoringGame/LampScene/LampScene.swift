@@ -92,16 +92,8 @@ class LampScene: SKScene {
                     correctFirstTriesArray.append("lamp")
                 }
                 
-                // Change sprite to colored lamp
-                let coloredlamp:SKTexture = SKTexture(imageNamed: "lampScene_lamp_colored")
-                let changeToColored:SKAction = SKAction.animate(with: [coloredlamp], timePerFrame: 0.0001)
-                lamp!.run(changeToColored)
-                
-                //Variables for lamp audio
-                let correct = SKAction.playSoundFileNamed("correct2", waitForCompletion: true)
-                
-                //Run all actions
-                lamp!.run(correct)
+                // play correct scale&wiggle animation (function declared on Trainer_Balloon.swift in coloring game)
+                animateNode(node: lamp!, coloredImg: "lampScene_lamp_colored", correctSound: "correct2")
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
@@ -133,6 +125,3 @@ class LampScene: SKScene {
         totalTouches = lamp_correctTouches + lamp_incorrectTouches
     }
 }
-
-
-

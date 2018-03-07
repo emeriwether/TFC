@@ -92,16 +92,8 @@ class RockScene: SKScene {
                     correctFirstTriesArray.append("rock")
                 }
                 
-                // Change sprite to colored rock
-                let coloredrock:SKTexture = SKTexture(imageNamed: "rockScene_rock_colored")
-                let changeToColored:SKAction = SKAction.animate(with: [coloredrock], timePerFrame: 0.0001)
-                rock!.run(changeToColored)
-                
-                //Variables for correct audio
-                let correct = SKAction.playSoundFileNamed("correct2", waitForCompletion: true)
-                
-                //Run all actions
-                rock!.run(correct)
+                // play correct scale&wiggle animation (function declared on Trainer_Balloon.swift in coloring game)
+                animateNode(node: rock!, coloredImg: "rockScene_rock_colored", correctSound: "correct2")
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)

@@ -92,16 +92,8 @@ class HandScene: SKScene {
                     correctFirstTriesArray.append("hand")
                 }
                 
-                // Change sprite to colored hand
-                let coloredhand:SKTexture = SKTexture(imageNamed: "handScene_hand_colored")
-                let changeToColored:SKAction = SKAction.animate(with: [coloredhand], timePerFrame: 0.0001)
-                hand!.run(changeToColored)
-                
-                //Variables for hand audio
-                let clap = SKAction.playSoundFileNamed("hand", waitForCompletion: true)
-                
-                //Run all actions
-                hand!.run(clap)
+                // play correct scale&wiggle animation (function declared on Trainer_Balloon.swift in coloring game)
+                animateNode(node: hand!, coloredImg: "handScene_hand_colored", correctSound: "hand")
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
@@ -134,7 +126,30 @@ class HandScene: SKScene {
     }
 }
 
-
+// animation for waving hand: color, play sound, wave left and right
+func handWaving(node: SKNode, coloredImg: String, correctSound: String) {
+    // Change sprite to colored lamp
+    let coloredNode:SKTexture = SKTexture(imageNamed: coloredImg)
+    let changeToColored:SKAction = SKAction.animate(with: [coloredNode], timePerFrame: 0.0001)
+    node.run(changeToColored)
+    
+    // Variables for lamp audio
+    let correct = SKAction.playSoundFileNamed(correctSound, waitForCompletion: true)
+    
+    // Variables for wiggle animation
+    let rotR = SKAction.rotate(byAngle: 0.20, duration: 0.3)
+    let rotL = SKAction.rotate(byAngle: -0.20, duration: 0.3)
+    let cycle = SKAction.sequence([rotR, rotL, rotL, rotR])
+    let wiggle = SKAction.repeat(cycle, count: 2)
+    
+    // Variable for sequenced animation
+    let animationSequence = SKAction.group([wiggle, scaleActionSequence])
+    
+    //Run all actions
+    node.run(changeToColored)
+    node.run(correct)
+    node.run(animationSequence)
+}
 
 
 

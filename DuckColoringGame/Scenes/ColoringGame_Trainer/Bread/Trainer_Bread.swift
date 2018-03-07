@@ -83,21 +83,15 @@ class Trainer_Bread: SKScene {
                 sceneOver = true
                 bread_correctTouches += 1
                 
-                // Change sprite to colored rock
-                let coloredbread:SKTexture = SKTexture(imageNamed: "colorTrainer_bread_colored")
-                let changeToColored:SKAction = SKAction.animate(with: [coloredbread], timePerFrame: 0.0001)
-                bread!.run(changeToColored)
-                
-                // Play correct noise
-                let correct = SKAction.playSoundFileNamed("correct", waitForCompletion: true)
-                bread?.run(correct)
+                // play correct scale&wiggle animation (function declared on Trainer_Balloon.swift in coloring game)
+                animateNode(node: bread!, coloredImg: "colorTrainer_bread_colored", correctSound: "correct")
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:1)
                 let wait2 = SKAction.wait(forDuration: 1)
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let rockScene = SKScene(fileNamed: "AllDoneScene")
+                    let rockScene = SKScene(fileNamed: "RockScene")
                     rockScene?.scaleMode = SKSceneScaleMode.aspectFill
                     self.scene!.view?.presentScene(rockScene!)
                 }

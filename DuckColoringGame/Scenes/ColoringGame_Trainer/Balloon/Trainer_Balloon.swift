@@ -83,14 +83,8 @@ class Trainer_Balloon: SKScene {
                 sceneOver = true
                 balloon_correctTouches += 1
                 
-                // Change sprite to colored balloon
-                let coloredballoon:SKTexture = SKTexture(imageNamed: "colorTrainer_balloon_colored")
-                let changeToColored:SKAction = SKAction.animate(with: [coloredballoon], timePerFrame: 0.0001)
-                balloon!.run(changeToColored)
-                
-                // Play correct noise
-                let correct = SKAction.playSoundFileNamed("correct", waitForCompletion: true)
-                balloon?.run(correct)
+                // play correct scale&wiggle animation (function declared on Trainer_Balloon.swift in coloring game)
+                animateNode(node: balloon!, coloredImg: "colorTrainer_balloon_colored", correctSound: "correct")
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:1)
@@ -120,4 +114,43 @@ class Trainer_Balloon: SKScene {
         // update totalTouches variable for idle reminder
         totalTouches = balloon_correctTouches + balloon_incorrectTouches
     }
+}
+
+// generic correct animation: color, play sound, wiggle and grow/shrink
+func animateNode(node: SKNode, coloredImg: String, correctSound: String) {
+    // Change sprite to colored lamp
+    let coloredNode:SKTexture = SKTexture(imageNamed: coloredImg)
+    let changeToColored:SKAction = SKAction.animate(with: [coloredNode], timePerFrame: 0.0001)
+    node.run(changeToColored)
+    
+    // Variables for lamp audio
+    let correct = SKAction.playSoundFileNamed(correctSound, waitForCompletion: true)
+    
+    // Variables for wiggle animation
+    let rotR = SKAction.rotate(byAngle: 0.10, duration: 0.1)
+    let rotL = SKAction.rotate(byAngle: -0.10, duration: 0.1)
+    let cycle = SKAction.sequence([rotR, rotL, rotL, rotR])
+    let wiggle = SKAction.repeat(cycle, count: 2)
+    
+    // Variables for scale animation
+    let nodeScaleX = node.xScale
+    let nodeScaleY = node.yScale
+    let scaleUpActionX = SKAction.scaleX(to: (nodeScaleX + 0.5), duration: 0.3)
+    let scaleUpActionY = SKAction.scaleY(to: (nodeScaleY + 0.5), duration: 0.3)
+    let scaleUpAction = SKAction.group([scaleUpActionX, scaleUpActionY])
+    let scaleDownActionX = SKAction.scaleX(to: (nodeScaleX - 0.5), duration: 0.3)
+    let scaleDownActionY = SKAction.scaleY(to: (nodeScaleY - 0.5), duration: 0.3)
+    let scaleDownAction = SKAction.group([scaleDownActionX, scaleDownActionY])
+    let scaleToRegularX = SKAction.scaleX(to: nodeScaleX, duration: 0.3)
+    let scaleToRegularY = SKAction.scaleY(to: nodeScaleY, duration: 0.3)
+    let scaleToRegularAction = SKAction.group([scaleToRegularX, scaleToRegularY])
+    let scaleActionSequence = SKAction.sequence([scaleUpAction, scaleDownAction, scaleToRegularAction])
+    
+    // Variable for sequenced animation
+    let animationSequence = SKAction.group([wiggle, scaleActionSequence])
+    
+    //Run all actions
+    node.run(changeToColored)
+    node.run(correct)
+    node.run(animationSequence)
 }
