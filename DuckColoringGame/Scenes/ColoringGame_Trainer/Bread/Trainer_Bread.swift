@@ -33,7 +33,7 @@ class Trainer_Bread: SKScene {
         let reminderIfIdle = SKAction.run {
             if self.bread_correctTouches == 0 && self.bread_incorrectTouches == 0 {
                 self.reminderComplete = false
-                let bread_reminder = SKAction.playSoundFileNamed("instructions_bread", waitForCompletion: true)
+                let bread_reminder = SKAction.playSoundFileNamed("reminder_bread", waitForCompletion: true)
                 self.run(bread_reminder, completion: { self.reminderComplete = true} )
             }
         }
@@ -79,7 +79,7 @@ class Trainer_Bread: SKScene {
             // play reminder instructions if user has touched screen 3 times incorrectly
             if bread_incorrectTouches == 3 && bread_correctTouches < 1 {
                 reminderComplete = false
-                let bread_reminder = SKAction.playSoundFileNamed("instructions_bread", waitForCompletion: true)
+                let bread_reminder = SKAction.playSoundFileNamed("reminder_bread", waitForCompletion: true)
                 run(bread_reminder, completion: { self.reminderComplete = true} )
             }
         }
