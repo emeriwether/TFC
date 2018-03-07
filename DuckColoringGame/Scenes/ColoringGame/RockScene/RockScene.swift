@@ -78,6 +78,15 @@ class RockScene: SKScene {
         if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false) {
             let touch = touches.first!
             
+            // If user makes too many incorrect touches, just move on (move on during the 15th touch)
+            // incorrect touches starts at 0, so it's offset by 1
+            if rock_incorrectTouches > 13 {
+                sceneOver = true
+                
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "LampScene")
+            }
+            
             //If rock sprite's alpha mask is touched...
             if (physicsWorld.body(at: touch.location(in: self)) == rock?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
@@ -95,15 +104,8 @@ class RockScene: SKScene {
                 // play correct scale&wiggle animation (function declared on Trainer_Balloon.swift in coloring game)
                 animateNode(node: rock!, coloredImg: "rockScene_rock_colored", correctSound: "correct2")
                 
-                //Variables to switch screens
-                let fadeOut = SKAction.fadeOut(withDuration:2)
-                let wait2 = SKAction.wait(forDuration: 2)
-                let sequenceFade = SKAction.sequence([wait2, fadeOut])
-                run(sequenceFade) {
-                    let lampScene = SKScene(fileNamed: "LampScene")
-                    lampScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(lampScene!)
-                }
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "ScoreScene")
             }
             else {
                 rock_incorrectTouches += 1
@@ -114,10 +116,10 @@ class RockScene: SKScene {
                 rock?.run(wrong)
             }
             
-            // play reminder instructions if user has touched screen 3 times incorrectly
-            if (rock_incorrectTouches % 3 == 0) && rock_correctTouches < 1 {
+            // play reminder instructions if user has touched screen 3 times incorrectly (don't play for 15th touch - just move on)
+            if (rock_incorrectTouches % 3 == 0) && rock_correctTouches < 1 && rock_incorrectTouches < 14 {
                 reminderComplete = false
-                let rock_reminder = SKAction.playSoundFileNamed("instructions_pizza", waitForCompletion: true)
+                let rock_reminder = SKAction.playSoundFileNamed("reminder_rock", waitForCompletion: true)
                 run(rock_reminder, completion: { self.reminderComplete = true} )
             }
         }
@@ -125,7 +127,3 @@ class RockScene: SKScene {
         totalTouches = rock_correctTouches + rock_incorrectTouches
     }
 }
-
-
-
-

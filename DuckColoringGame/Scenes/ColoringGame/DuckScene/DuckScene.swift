@@ -78,6 +78,15 @@ class DuckScene: SKScene {
         if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false){
             let touch = touches.first!
             
+            // If user makes too many incorrect touches, just move on (move on during the 15th touch)
+            // incorrect touches starts at 0, so it's offset by 1
+            if duck_incorrectTouches > 13 {
+                sceneOver = true
+                
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "Moon")
+            }
+            
             //If duck sprite's alpha mask is touched...
             if (physicsWorld.body(at: touch.location(in: self)) == duck?.physicsBody) && (sceneOver == false) {
                 sceneOver = true

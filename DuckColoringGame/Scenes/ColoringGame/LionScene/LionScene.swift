@@ -74,6 +74,15 @@ class LionScene: SKScene {
         // local variable for lion sprite
         let lion = self.childNode(withName: "lion_bw")
         
+        // If user makes too many incorrect touches, just move on (move on during the 15th touch)
+        // incorrect touches starts at 0, so it's offset by 1
+        if lion_incorrectTouches > 13 {
+            sceneOver = true
+            
+            // transitionScene function declared on Trainer_Balloon.swift in coloring game
+            transitionScene (currentScene: self, sceneString: "HandScene")
+        }
+        
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false){
             let touch = touches.first!
@@ -127,8 +136,8 @@ class LionScene: SKScene {
                 lion?.run(wrong)
             }
             
-            // play reminder instructions if user has touched screen 3 times incorrectly
-            if (lion_incorrectTouches % 3 == 0) && lion_correctTouches < 1 {
+            // play reminder instructions if user has touched screen 3 times incorrectly (don't play for 15th touch - just move on)
+            if (lion_incorrectTouches % 3 == 0) && lion_correctTouches < 1 && lion_incorrectTouches < 14 {
                 reminderComplete = false
                 let lion_reminder = SKAction.playSoundFileNamed("reminder_lion", waitForCompletion: true)
                 run(lion_reminder, completion: { self.reminderComplete = true} )

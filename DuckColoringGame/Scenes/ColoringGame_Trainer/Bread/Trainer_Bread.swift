@@ -77,6 +77,15 @@ class Trainer_Bread: SKScene {
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false) {
             let touch = touches.first!
+                        
+            // If user makes too many incorrect touches, just move on (move on during the 15th touch)
+            // incorrect touches starts at 0, so it's offset by 1
+            if bread_incorrectTouches > 13 {
+                sceneOver = true
+                
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "RockScene")
+            }
             
             //If bread sprite is touched...
             if (physicsWorld.body(at: touch.location(in: self)) == bread?.physicsBody) && (sceneOver == false) {
@@ -86,15 +95,8 @@ class Trainer_Bread: SKScene {
                 // play correct scale&wiggle animation (function declared on Trainer_Balloon.swift in coloring game)
                 animateNode(node: bread!, coloredImg: "colorTrainer_bread_colored", correctSound: "correct")
                 
-                //Variables to switch screens
-                let fadeOut = SKAction.fadeOut(withDuration:1)
-                let wait2 = SKAction.wait(forDuration: 1)
-                let sequenceFade = SKAction.sequence([wait2, fadeOut])
-                run(sequenceFade) {
-                    let rockScene = SKScene(fileNamed: "RockScene")
-                    rockScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(rockScene!)
-                }
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "RockScene")
             }
             else {
                 bread_incorrectTouches += 1
@@ -104,8 +106,8 @@ class Trainer_Bread: SKScene {
                 bread?.run(wrong)
             }
             
-            // play reminder instructions if user has touched screen 3 times incorrectly
-            if bread_incorrectTouches % 3 == 0 && bread_correctTouches < 1 {
+            // play reminder instructions if user has touched screen 3 times incorrectly (don't play for 15th touch - just move on)
+            if bread_incorrectTouches % 3 == 0 && bread_correctTouches < 1  && bread_incorrectTouches < 14 {
                 reminderComplete = false
                 let bread_reminder = SKAction.playSoundFileNamed("reminder_bread", waitForCompletion: true)
                 run(bread_reminder, completion: { self.reminderComplete = true} )

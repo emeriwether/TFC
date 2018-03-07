@@ -78,6 +78,15 @@ class HandScene: SKScene {
         if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false){
             let touch = touches.first!
             
+            // If user makes too many incorrect touches, just move on (move on during the 15th touch)
+            // incorrect touches starts at 0, so it's offset by 1
+            if hand_incorrectTouches > 13 {
+                sceneOver = true
+                
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "RainScene")
+            }
+            
             //If hand sprite's alpha mask is touched...
             if (physicsWorld.body(at: touch.location(in: self)) == hand?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
@@ -114,8 +123,8 @@ class HandScene: SKScene {
                 hand?.run(wrong)
             }
             
-            // play reminder instructions if user has touched screen 3 times incorrectly
-            if (hand_incorrectTouches % 3 == 0) && hand_correctTouches < 1 {
+            // play reminder instructions if user has touched screen 3 times incorrectly (don't play for 15th touch - just move on)
+            if (hand_incorrectTouches % 3 == 0) && hand_correctTouches < 1 && hand_incorrectTouches < 14 {
                 reminderComplete = false
                 let hand_reminder = SKAction.playSoundFileNamed("reminder_hand", waitForCompletion: true)
                 run(hand_reminder, completion: { self.reminderComplete = true} )

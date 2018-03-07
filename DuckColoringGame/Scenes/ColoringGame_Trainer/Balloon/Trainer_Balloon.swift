@@ -77,6 +77,15 @@ class Trainer_Balloon: SKScene {
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false) {
             let touch = touches.first!
+                        
+            // If user makes too many incorrect touches, just move on (move on during the 15th touch)
+            // incorrect touches starts at 0, so it's offset by 1
+            if balloon_incorrectTouches > 13 {
+                sceneOver = true
+                
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "Trainer_Bread")
+            }
             
             //If balloon sprite is touched...
             if (physicsWorld.body(at: touch.location(in: self)) == balloon?.physicsBody) && (sceneOver == false) {
@@ -85,16 +94,10 @@ class Trainer_Balloon: SKScene {
                 
                 // play correct scale&wiggle animation (function declared on Trainer_Balloon.swift in coloring game)
                 animateNode(node: balloon!, coloredImg: "colorTrainer_balloon_colored", correctSound: "correct")
-                
-                //Variables to switch screens
-                let fadeOut = SKAction.fadeOut(withDuration:1)
-                let wait2 = SKAction.wait(forDuration: 1)
-                let sequenceFade = SKAction.sequence([wait2, fadeOut])
-                run(sequenceFade) {
-                    let breadScene = SKScene(fileNamed: "Trainer_Bread")
-                    breadScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(breadScene!)
-                }
+            
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "Trainer_Bread")
+
             }
             else {
                 balloon_incorrectTouches += 1
@@ -104,8 +107,8 @@ class Trainer_Balloon: SKScene {
                 balloon?.run(wrong)
             }
             
-            // play reminder instructions if user has touched screen 3 times incorrectly
-            if balloon_incorrectTouches % 3 == 0 && balloon_correctTouches < 1 {
+            // play reminder instructions if user has touched screen 3 times incorrectly (don't play for 15th touch - just move on)
+            if balloon_incorrectTouches % 3 == 0 && balloon_correctTouches < 1  && balloon_incorrectTouches < 14 {
                 reminderComplete = false
                 let balloon_reminder = SKAction.playSoundFileNamed("reminder_balloon", waitForCompletion: true)
                 run(balloon_reminder, completion: { self.reminderComplete = true} )
@@ -153,4 +156,17 @@ func animateNode(node: SKNode, coloredImg: String, correctSound: String) {
     node.run(changeToColored)
     node.run(correct)
     node.run(animationSequence)
+}
+
+
+func transitionScene (currentScene: SKScene, sceneString: String) {
+    //Variables to switch screens
+    let fadeOut = SKAction.fadeOut(withDuration:1)
+    let wait2 = SKAction.wait(forDuration: 1)
+    let sequenceFade = SKAction.sequence([wait2, fadeOut])
+    currentScene.run(sequenceFade) {
+        let nextScene = SKScene(fileNamed: sceneString)
+        nextScene!.scaleMode = SKSceneScaleMode.aspectFill
+        currentScene.scene!.view?.presentScene(nextScene)
+    }
 }
