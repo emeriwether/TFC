@@ -105,7 +105,7 @@ class Trainer_Balloon: SKScene {
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly
-            if balloon_incorrectTouches == 3 && balloon_correctTouches < 1 {
+            if balloon_incorrectTouches % 3 == 0 && balloon_correctTouches < 1 {
                 reminderComplete = false
                 let balloon_reminder = SKAction.playSoundFileNamed("reminder_balloon", waitForCompletion: true)
                 run(balloon_reminder, completion: { self.reminderComplete = true} )
