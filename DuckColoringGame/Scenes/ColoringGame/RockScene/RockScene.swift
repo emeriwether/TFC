@@ -75,7 +75,7 @@ class RockScene: SKScene {
         let rock = self.childNode(withName: "rock_bw")
         
         // if no instructions are playing
-        if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false){
+        if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false) {
             let touch = touches.first!
             
             //If rock sprite's alpha mask is touched...

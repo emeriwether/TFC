@@ -2,8 +2,8 @@
 //  Trainer_Bread.swift
 //  DuckColoringGame
 //
-//  Created by Gustavo C Figueroa on 1/14/18.
-//  Copyright © 2018 Gustavo C Figueroa. All rights reserved.
+//  Created by Eleanor Meriwether and Gustavo C Figueroa on 1/14/18.
+//  Copyright © 2018 Eleanor Meriwether and Gustavo C Figueroa. All rights reserved.
 //
 
 import SpriteKit
