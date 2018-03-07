@@ -91,17 +91,9 @@ class HatScene: SKScene {
                     threeItemCorrectFT += 1
                     correctFirstTriesArray.append("hat")
                 }
-                
-                // Change sprite to colored hat
-                let coloredHat:SKTexture = SKTexture(imageNamed: "hatScene_hat_colored")
-                let changeToColored:SKAction = SKAction.animate(with: [coloredHat], timePerFrame: 0.0001)
-                hat!.run(changeToColored)
-                
-                //Variables for hat audio
-                let western = SKAction.playSoundFileNamed("hat", waitForCompletion: true)
-                
-                //Run all actions
-                hat!.run(western)
+
+                // play correct hatFlip animation (function declared on HatScene.swift in coloring game)
+                hatFlip(node: hat!, coloredImg: "hatScene_hat_colored", correctSound: "hat")
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:3)
@@ -132,5 +124,31 @@ class HatScene: SKScene {
         // update totalTouches variable for idle reminder
         totalTouches = hat_correctTouches + hat_incorrectTouches
     }
+}
+
+// animation for hat flip: color, play sound, move up then rotate 360 then move back down
+func hatFlip(node: SKNode, coloredImg: String, correctSound: String) {
+    // Change sprite to colored node
+    let coloredNode:SKTexture = SKTexture(imageNamed: coloredImg)
+    let changeToColored:SKAction = SKAction.animate(with: [coloredNode], timePerFrame: 0.0001)
+    node.run(changeToColored)
+    
+    // Variables for correct audio
+    let correct = SKAction.playSoundFileNamed(correctSound, waitForCompletion: true)
+    
+    // Variables for fly up & fly back down
+    let flyUp = SKAction.moveTo(y: (node.position.y + 100), duration: 0.3)
+    let flyDown = SKAction.moveTo(y: (node.position.y), duration: 0.3)
+    
+    // Variables for rotate animation
+    let rotate = SKAction.rotate(byAngle: .pi * 2, duration: 0.5)
+    
+    // Variable for animation sequence
+    let animationSequence = SKAction.sequence([flyUp, rotate, flyDown])
+    
+    //Run all actions
+    node.run(changeToColored)
+    node.run(correct)
+    node.run(animationSequence)
 }
 

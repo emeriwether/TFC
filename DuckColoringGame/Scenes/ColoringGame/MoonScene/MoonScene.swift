@@ -92,8 +92,8 @@ class MoonScene: SKScene {
                     correctFirstTriesArray.append("moon")
                 }
                 
-                // play correct scale&wiggle animation (function declared on Trainer_Balloon.swift in coloring game)
-                animateNode(node: moon!, coloredImg: "moonScene_moon_colored", correctSound: "moon")
+                // play correct wiggleOnly animation (function declared on HandScene.swift in coloring game)
+                wiggleOnly(node: moon!, coloredImg: "moonScene_moon_colored", correctSound: "moon")
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:3)

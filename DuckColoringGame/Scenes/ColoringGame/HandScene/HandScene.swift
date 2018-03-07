@@ -92,8 +92,8 @@ class HandScene: SKScene {
                     correctFirstTriesArray.append("hand")
                 }
                 
-                // play correct scale&wiggle animation (function declared on Trainer_Balloon.swift in coloring game)
-                animateNode(node: hand!, coloredImg: "handScene_hand_colored", correctSound: "hand")
+                // play correct wiggleOnly animation (function declared on HandScene.swift in coloring game)
+                wiggleOnly(node: hand!, coloredImg: "handScene_hand_colored", correctSound: "hand")
                 
                 //Variables to switch screens
                 let fadeOut = SKAction.fadeOut(withDuration:2)
@@ -126,14 +126,14 @@ class HandScene: SKScene {
     }
 }
 
-// animation for waving hand: color, play sound, wave left and right
-func handWaving(node: SKNode, coloredImg: String, correctSound: String) {
-    // Change sprite to colored lamp
+// animation for wiggleOnly (moon & hand): color, play sound, wave left and right
+func wiggleOnly(node: SKNode, coloredImg: String, correctSound: String) {
+    // Change sprite to colored node
     let coloredNode:SKTexture = SKTexture(imageNamed: coloredImg)
     let changeToColored:SKAction = SKAction.animate(with: [coloredNode], timePerFrame: 0.0001)
     node.run(changeToColored)
     
-    // Variables for lamp audio
+    // Variables for correct audio
     let correct = SKAction.playSoundFileNamed(correctSound, waitForCompletion: true)
     
     // Variables for wiggle animation

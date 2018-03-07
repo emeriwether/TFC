@@ -118,12 +118,12 @@ class Trainer_Balloon: SKScene {
 
 // generic correct animation: color, play sound, wiggle and grow/shrink
 func animateNode(node: SKNode, coloredImg: String, correctSound: String) {
-    // Change sprite to colored lamp
+    // Change sprite to colored node
     let coloredNode:SKTexture = SKTexture(imageNamed: coloredImg)
     let changeToColored:SKAction = SKAction.animate(with: [coloredNode], timePerFrame: 0.0001)
     node.run(changeToColored)
     
-    // Variables for lamp audio
+    // Variables for correct audio
     let correct = SKAction.playSoundFileNamed(correctSound, waitForCompletion: true)
     
     // Variables for wiggle animation
