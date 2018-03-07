@@ -78,8 +78,8 @@ class ScoreScene: SKScene {
         
     ////////////////////////////////////////////////////////////////////////////////////////////
         // PLACE NAME & AGE LABELS
-        let nameString = "Name: \(nameInput?.text?)"
-        let ageString = "Age: \(ageInput?.text?)"
+        let nameString = "Name: \(nameInput?.text)"
+        let ageString = "Age: \(ageInput?.text)"
         
         printLabel (label: nameLabel, words: nameString, xCoord: -550, yCoord: 485)
         printLabel (label: ageLabel, words: ageString, xCoord: -550, yCoord: 445)
