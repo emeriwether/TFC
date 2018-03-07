@@ -9,50 +9,84 @@
 import SpriteKit
 
 class Trainer_Bread: SKScene {
-    //local variable for SpriteNode that will be over the training object
-    private var bread:SKSpriteNode?
+    // local variables to keep track of touches for this scene
+    var bread_incorrectTouches = 0
+    var bread_correctTouches = 0
+    var totalTouches = 0
     
     // local variables to keep track of whether instructions are playing
     var instructionsComplete:Bool = false
     var reminderComplete:Bool = true
     
-    // local variables to keep track of touches for this scene
-    var bread_incorrectTouches = 0
-    var bread_correctTouches = 0
+    // local variable to keep track of whether correct sprite has been touched
+    var sceneOver = false
     
     override func didMove(to view: SKView) {
-        //Connect variable with .sks file
-        self.bread = self.childNode(withName: "bread") as? SKSpriteNode
+        // remove scene's physics body, so alpha mask on target sprite is accessible
+        self.physicsBody = nil
         
         // run the introductory instructions
         let instructions = SKAction.playSoundFileNamed("instructions_bread", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
         
-        // if the scene has not been touched for 10 seconds, play the reminder instructions; repeat forever
-        let timer = SKAction.wait(forDuration: 10.0)
+        /////////////////////////////////
+        ////// IDLE REMINDER TIMER //////
+        /////////////////////////////////
+        let oneSecTimer = SKAction.wait(forDuration: 1.0)
+        var timerCount = 1
+        var currentTouches = 0
+        
+        // set up sequence for if the scene has not been touched for 10 seconds: play the idle reminder
         let reminderIfIdle = SKAction.run {
-            if self.bread_correctTouches == 0 && self.bread_incorrectTouches == 0 {
-                self.reminderComplete = false
-                let bread_reminder = SKAction.playSoundFileNamed("reminder_bread", waitForCompletion: true)
-                self.run(bread_reminder, completion: { self.reminderComplete = true} )
+            self.reminderComplete = false
+            let bread_reminder = SKAction.playSoundFileNamed("reminder_bread", waitForCompletion: true)
+            self.run(bread_reminder, completion: { self.reminderComplete = true} )
+        }
+        
+        // for every one second, do this action:
+        let timerAction = SKAction.run {
+            // if no touch...
+            if (self.totalTouches - currentTouches == 0) {
+                // ...timer progresses one second...
+                timerCount += 1
+            }
+                // ... else if a touch...
+            else {
+                // ... increase touch count...
+                currentTouches += 1
+                // ... and start timer over...
+                timerCount = 1
+            }
+            // if timer seconds are divisable by 10 ...
+            if (timerCount % 10 == 0) {
+                // ... play the reminder.
+                self.run(reminderIfIdle)
             }
         }
-        let idleSequence = SKAction.sequence([timer, reminderIfIdle])
-        let repeatIdleSequence = SKAction.repeatForever(idleSequence)
-        run(repeatIdleSequence)
+        // set up sequence: run 1s timer, then play action
+        let timerActionSequence = SKAction.sequence([oneSecTimer, timerAction])
+        // repeat the timer forever
+        let repeatTimerActionSequence = SKAction.repeatForever(timerActionSequence)
+        run(repeatTimerActionSequence)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // local variable for rock sprite
+        let bread = self.childNode(withName: "bread")
+
         // if no instructions are playing
-        if (instructionsComplete == true) && (reminderComplete == true) {
+        if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false) {
             let touch = touches.first!
             
             //If bread sprite is touched...
-            if (bread?.contains(touch.location(in: self)))! {
+            if (physicsWorld.body(at: touch.location(in: self)) == bread?.physicsBody) && (sceneOver == false) {
+                sceneOver = true
                 bread_correctTouches += 1
                 
-                // Color bread
-                bread?.texture = SKTexture(imageNamed: "colorTrainer_bread_colored")
+                // Change sprite to colored rock
+                let coloredbread:SKTexture = SKTexture(imageNamed: "colorTrainer_bread_colored")
+                let changeToColored:SKAction = SKAction.animate(with: [coloredbread], timePerFrame: 0.0001)
+                bread!.run(changeToColored)
                 
                 // Play correct noise
                 let correct = SKAction.playSoundFileNamed("correct", waitForCompletion: true)
@@ -83,6 +117,8 @@ class Trainer_Bread: SKScene {
                 run(bread_reminder, completion: { self.reminderComplete = true} )
             }
         }
+        // update totalTouches variable for idle reminder
+        totalTouches = bread_correctTouches + bread_incorrectTouches
     }
 }
 
