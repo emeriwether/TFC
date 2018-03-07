@@ -78,8 +78,8 @@ class ScoreScene: SKScene {
         
     ////////////////////////////////////////////////////////////////////////////////////////////
         // PLACE NAME & AGE LABELS
-        printLabel (label: nameLabel, words: nameInput, xCoord: -550, yCoord: 485)
-        printLabel (label: ageLabel, words: nameInput, xCoord: -550, yCoord: 445)
+        printLabel (label: nameLabel, words: nameInput?.text, xCoord: -550, yCoord: 485)
+        printLabel (label: ageLabel, words: nameInput?.text, xCoord: -550, yCoord: 445)
     ////////////////////////////////////////////////////////////////////////////////////////////
 
         
