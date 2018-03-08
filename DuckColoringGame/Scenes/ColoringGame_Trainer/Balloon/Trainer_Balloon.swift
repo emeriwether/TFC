@@ -69,7 +69,7 @@ class Trainer_Balloon: SKScene {
                 self.sceneOver = true
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "Trainer_Bread")
+                transitionScene (currentScene: self, sceneString: "Trainer_Bread", waitTime: 2)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -93,7 +93,7 @@ class Trainer_Balloon: SKScene {
                 sceneOver = true
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "Trainer_Bread")
+                transitionScene (currentScene: self, sceneString: "Trainer_Bread", waitTime: 2)
             }
             
             //If balloon sprite is touched...
@@ -105,7 +105,7 @@ class Trainer_Balloon: SKScene {
                 animateNode(node: balloon!, coloredImg: "colorTrainer_balloon_colored", correctSound: "correct")
             
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "Trainer_Bread")
+                transitionScene (currentScene: self, sceneString: "Trainer_Bread", waitTime: 2)
 
             } else {
                 balloon_incorrectTouches += 1

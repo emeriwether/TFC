@@ -69,7 +69,7 @@ class RainScene: SKScene {
                 self.sceneOver = true
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "DuckScene")
+                transitionScene (currentScene: self, sceneString: "DuckScene", waitTime: 2)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -93,7 +93,7 @@ class RainScene: SKScene {
                 sceneOver = true
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "DuckScene")
+                transitionScene (currentScene: self, sceneString: "DuckScene", waitTime: 2)
             }
             
             //If rain sprite's alpha mask is touched...
@@ -130,7 +130,7 @@ class RainScene: SKScene {
                 rain!.run(animationRainRepeat)
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "DuckScene")
+                transitionScene (currentScene: self, sceneString: "DuckScene", waitTime: 2)
             }
             else {
                 rain_incorrectTouches += 1

@@ -380,6 +380,6 @@ class ScoreScene: SKScene {
             accuracyPerScene[scene] = round((Double(numCorrectPerScene[scene]!) / Double(numIncorrectPerScene[scene]! + numCorrectPerScene[scene]!)) * 100)
         }
     }
-    
 }
+
 

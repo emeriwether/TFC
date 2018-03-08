@@ -47,10 +47,10 @@ func animateNode(node: SKNode, coloredImg: String, correctSound: String) {
     node.run(animationSequence)
 }
 
-func transitionScene (currentScene: SKScene, sceneString: String) {
+func transitionScene (currentScene: SKScene, sceneString: String, waitTime: Double) {
     //Variables to switch screens
     let fadeOut = SKAction.fadeOut(withDuration:1)
-    let wait2 = SKAction.wait(forDuration: 2)
+    let wait2 = SKAction.wait(forDuration: waitTime)
     let sequenceFade = SKAction.sequence([wait2, fadeOut])
     currentScene.run(sequenceFade) {
         let nextScene = SKScene(fileNamed: sceneString)

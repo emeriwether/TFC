@@ -69,7 +69,7 @@ class RockScene: SKScene {
                 self.sceneOver = true
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "LampScene")
+                transitionScene (currentScene: self, sceneString: "LampScene", waitTime: 2)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -93,7 +93,7 @@ class RockScene: SKScene {
                 sceneOver = true
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "LampScene")
+                transitionScene (currentScene: self, sceneString: "LampScene", waitTime: 2)
             }
             
             //If rock sprite's alpha mask is touched...
@@ -114,7 +114,7 @@ class RockScene: SKScene {
                 animateNode(node: rock!, coloredImg: "rockScene_rock_colored", correctSound: "correct2")
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "LampScene")
+                transitionScene (currentScene: self, sceneString: "LampScene", waitTime: 2)
             }
             else {
                 rock_incorrectTouches += 1

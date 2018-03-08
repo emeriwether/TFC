@@ -69,7 +69,7 @@ class HandScene: SKScene {
                 self.sceneOver = true
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "RainScene")
+                transitionScene (currentScene: self, sceneString: "RainScene", waitTime: 2)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -93,7 +93,7 @@ class HandScene: SKScene {
                 sceneOver = true
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "RainScene")
+                transitionScene (currentScene: self, sceneString: "RainScene", waitTime: 2)
             }
             
             //If hand sprite's alpha mask is touched...
@@ -114,7 +114,7 @@ class HandScene: SKScene {
                 wiggleOnly(node: hand!, coloredImg: "handScene_hand_colored", correctSound: "hand")
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "RainScene")
+                transitionScene (currentScene: self, sceneString: "RainScene", waitTime: 2)
             }
             else {
                 hand_incorrectTouches += 1

@@ -69,7 +69,7 @@ class TrashScene: SKScene {
                 self.sceneOver = true
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "AirplaneScene")
+                transitionScene (currentScene: self, sceneString: "AirplaneScene", waitTime: 2)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -93,7 +93,7 @@ class TrashScene: SKScene {
                 sceneOver = true
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "AirplaneScene")
+                transitionScene (currentScene: self, sceneString: "AirplaneScene", waitTime: 2)
             }
             
             //If trash sprite is touched...
@@ -129,7 +129,7 @@ class TrashScene: SKScene {
                 trash!.run(trashNoise)
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "AirplaneScene")
+                transitionScene (currentScene: self, sceneString: "AirplaneScene", waitTime: 2)
             }
             else {
                 trash_incorrectTouches += 1

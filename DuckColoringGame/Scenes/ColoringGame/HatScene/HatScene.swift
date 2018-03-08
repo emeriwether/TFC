@@ -69,7 +69,7 @@ class HatScene: SKScene {
                 self.sceneOver = true
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "CookieScene")
+                transitionScene (currentScene: self, sceneString: "CookieScene", waitTime: 2)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -89,7 +89,7 @@ class HatScene: SKScene {
             sceneOver = true
             
             // transitionScene function declared on Trainer_Balloon.swift in coloring game
-            transitionScene (currentScene: self, sceneString: "CookieScene")
+            transitionScene (currentScene: self, sceneString: "CookieScene", waitTime: 2)
         }
         
         // if no instructions are playing
@@ -114,7 +114,7 @@ class HatScene: SKScene {
                 hatFlip(node: hat!, coloredImg: "hatScene_hat_colored", correctSound: "hat")
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "CookieScene")
+                transitionScene (currentScene: self, sceneString: "CookieScene", waitTime: 2)
             }
             else {
                 hat_incorrectTouches += 1

@@ -69,7 +69,7 @@ class CookieScene: SKScene {
                 self.sceneOver = true
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "MouseScene")
+                transitionScene (currentScene: self, sceneString: "MouseScene", waitTime: 2)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -93,7 +93,7 @@ class CookieScene: SKScene {
                 sceneOver = true
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "MouseScene")
+                transitionScene (currentScene: self, sceneString: "MouseScene", waitTime: 2)
             }
             
             //If cookie sprite is touched...
@@ -128,7 +128,7 @@ class CookieScene: SKScene {
                 cookie!.run(crunch)
 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "MouseScene")
+                transitionScene (currentScene: self, sceneString: "MouseScene", waitTime: 2)
             }
             else {
                 cookie_incorrectTouches += 1

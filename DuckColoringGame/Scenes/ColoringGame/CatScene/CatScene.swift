@@ -69,7 +69,7 @@ class CatScene: SKScene {
                 self.sceneOver = true
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "LionScene")
+                transitionScene (currentScene: self, sceneString: "LionScene", waitTime: 2)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -93,7 +93,7 @@ class CatScene: SKScene {
                 sceneOver = true
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "LionScene")
+                transitionScene (currentScene: self, sceneString: "LionScene", waitTime: 2)
             }
             
             //If cat sprite's alpha mask is touched...
@@ -129,7 +129,7 @@ class CatScene: SKScene {
                 cat!.run(animationWhiskersRepeat)
 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "LionScene")
+                transitionScene (currentScene: self, sceneString: "LionScene", waitTime: 2)
             }
             else {
                 cat_incorrectTouches += 1

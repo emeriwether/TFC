@@ -69,7 +69,7 @@ class CakeScene: SKScene {
                 self.sceneOver = true
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "StrollerScene")
+                transitionScene (currentScene: self, sceneString: "StrollerScene", waitTime: 2)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -93,7 +93,7 @@ class CakeScene: SKScene {
                 sceneOver = true
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "StrollerScene")
+                transitionScene (currentScene: self, sceneString: "StrollerScene", waitTime: 2)
             }
             
             //If cake sprite's alpha mask is touched...
@@ -122,7 +122,7 @@ class CakeScene: SKScene {
                 cake!.run(happyBirthday)
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "StrollerScene")
+                transitionScene (currentScene: self, sceneString: "StrollerScene", waitTime: 2)
             }
             else {
                 cake_incorrectTouches += 1
