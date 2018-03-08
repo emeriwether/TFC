@@ -40,7 +40,7 @@ class PasswordScene: SKScene, UITextFieldDelegate {
             wrongPWShowing = false
         }
         
-        if (passwordInput!.text == "Password") {
+        if (passwordInput!.text == "Password" || passwordInput!.text == "password" || passwordInput!.text == "Password " ) {
             correctPassword = true
         }
     }

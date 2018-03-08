@@ -864,6 +864,7 @@
 		06BD2F3C202BC37E00AC0A54 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0613CCE62050A69400FEC3F4 /* GlobalFunctions.swift */,
 				0B3EFEA620461E8D00F5932F /* StartScenes */,
 				0B28BEE0200C895D00B1D01E /* ColoringGame_Trainer */,
 				06427EFF1FD9F453009C07ED /* ColoringGame */,
@@ -871,7 +872,6 @@
 				0B3EFE9520461D4300F5932F /* MonsterGame */,
 				06C819E3202F7276002F838E /* EndGameScenes */,
 				06427F001FD9F461009C07ED /* PianoGame */,
-				0613CCE62050A69400FEC3F4 /* GlobalFunctions.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
