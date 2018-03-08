@@ -68,7 +68,8 @@ class CowScene: SKScene {
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
-                transitionScene (currentScene: self, sceneString: "AllDoneScene", waitTime: 2)
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "TrashScene", waitTime: 2)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -91,7 +92,8 @@ class CowScene: SKScene {
             if cow_incorrectTouches > 13 {
                 sceneOver = true
                 
-                transitionScene (currentScene: self, sceneString: "AllDoneScene", waitTime: 2)
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "TrashScene", waitTime: 2)
             }
             
             //If cow sprite is touched...
@@ -130,7 +132,8 @@ class CowScene: SKScene {
                 cow!.run(move)
                 cow!.run(animationWalkRepeat)
                 
-                transitionScene (currentScene: self, sceneString: "AllDoneScene", waitTime: 2)
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "TrashScene", waitTime: 2)
             }
             else {
                 cow_incorrectTouches += 1
