@@ -35,6 +35,7 @@ class CowScene: SKScene {
         let oneSecTimer = SKAction.wait(forDuration: 1.0)
         var timerCount = 1
         var currentTouches = 0
+        var totalTimerCount = 0
         
         // set up sequence for if the scene has not been touched for 10 seconds: play the idle reminder
         let reminderIfIdle = SKAction.run {
@@ -49,6 +50,7 @@ class CowScene: SKScene {
             if (self.totalTouches - currentTouches == 0) {
                 // ...timer progresses one second...
                 timerCount += 1
+                totalTimerCount += 1
             }
             // ... else if a touch...
             else {
@@ -57,10 +59,17 @@ class CowScene: SKScene {
                 // ... and start timer over...
                 timerCount = 1
             }
-            // if timer seconds are divisable by 10 ...
-            if (timerCount % 10 == 0) {
+            // if timer seconds are divisable by 10 and totalTimerCount is less than one minute...
+            if (timerCount % 10 == 0) && totalTimerCount <= 58  {
                 // ... play the reminder.
                 self.run(reminderIfIdle)
+            }
+            // if idleReminer has played 6 times in a row, move on to next scene
+            if totalTimerCount > 59 {
+                self.sceneOver = true
+                
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "TrashScene")
             }
         }
         // set up sequence: run 1s timer, then play action
