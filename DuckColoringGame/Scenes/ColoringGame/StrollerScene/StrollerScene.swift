@@ -69,7 +69,7 @@ class StrollerScene: SKScene {
                 self.sceneOver = true
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "ToastScene", waitTime: 2)
+                transitionScene (currentScene: self, sceneString: "ToastScene", waitTime: 3)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -93,7 +93,7 @@ class StrollerScene: SKScene {
                 sceneOver = true
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "ToastScene", waitTime: 2)
+                transitionScene (currentScene: self, sceneString: "ToastScene", waitTime: 3)
             }
             
             //If stroller sprite's alpha mask is touched...
@@ -113,18 +113,22 @@ class StrollerScene: SKScene {
                 // Change sprite to colored stroller
                 let coloredstroller:SKTexture = SKTexture(imageNamed: "strollerScene_stroller_colored")
                 let changeToColored:SKAction = SKAction.animate(with: [coloredstroller], timePerFrame: 0.0001)
-                stroller!.run(changeToColored)
                 
                 //Variables for stroller audio
                 let giggles = SKAction.playSoundFileNamed("stroller", waitForCompletion: true)
                 let birds = SKAction.playSoundFileNamed("stroller2", waitForCompletion: true)
                 
+                // Variable for move action
+                let move = SKAction.moveTo(x: -900, duration: 3.0)
+                
                 //Run all actions
+                stroller!.run(changeToColored)
                 stroller!.run(giggles)
                 stroller!.run(birds)
+                stroller!.run(move)
 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "ToastScene", waitTime: 2)
+                transitionScene (currentScene: self, sceneString: "ToastScene", waitTime: 3)
             }
             else {
                 stroller_incorrectTouches += 1

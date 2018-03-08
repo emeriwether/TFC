@@ -69,7 +69,7 @@ class ToastScene: SKScene {
                 self.sceneOver = true
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "HatScene", waitTime: 2)
+                transitionScene (currentScene: self, sceneString: "HatScene", waitTime: 3)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -93,7 +93,7 @@ class ToastScene: SKScene {
                 sceneOver = true
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "HatScene", waitTime: 2)
+                transitionScene (currentScene: self, sceneString: "HatScene", waitTime: 3)
             }
             
             //If toast sprite is touched...
@@ -127,7 +127,7 @@ class ToastScene: SKScene {
                 toast!.run(animationBite)
                 
                 // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "HatScene", waitTime: 2)
+                transitionScene (currentScene: self, sceneString: "HatScene", waitTime: 3)
             }
             else {
                 toast_incorrectTouches += 1
