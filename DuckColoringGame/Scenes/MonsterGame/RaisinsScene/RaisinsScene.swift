@@ -107,7 +107,7 @@ class RaisinsScene: SKScene {
             
             for items in self.nodes(at: touchLocation){
                 if items.name == "Monster"{
-                    if (selectedNode?.name == "raisins"){
+                    if (selectedNode?.name == "raisin"){
                         raisins_correctTouches += 1
                         selectedNode?.removeFromParent()
                         sceneOver = true

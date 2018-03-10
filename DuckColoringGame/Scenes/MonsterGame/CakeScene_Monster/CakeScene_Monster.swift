@@ -112,7 +112,7 @@ class CakeScene_Monster: SKScene {
                         selectedNode?.removeFromParent()
                         sceneOver = true
                         animateMonster(withAudio: "Sound_Chewing")
-                        nextScene(sceneName: "BalloonScene")
+                        nextScene(sceneName: "ScoreScene")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         cake_incorrectTouches += 1
