@@ -35,6 +35,7 @@ class CakeScene: SKScene {
         let oneSecTimer = SKAction.wait(forDuration: 1.0)
         var timerCount = 1
         var currentTouches = 0
+        var totalTimerCount = 0
         
         // set up sequence for if the scene has not been touched for 10 seconds: play the idle reminder
         let reminderIfIdle = SKAction.run {
@@ -49,6 +50,7 @@ class CakeScene: SKScene {
             if (self.totalTouches - currentTouches == 0) {
                 // ...timer progresses one second...
                 timerCount += 1
+                totalTimerCount += 1
             }
                 // ... else if a touch...
             else {
@@ -57,10 +59,17 @@ class CakeScene: SKScene {
                 // ... and start timer over...
                 timerCount = 1
             }
-            // if timer seconds are divisable by 10 ...
-            if (timerCount % 10 == 0) {
+            // if timer seconds are divisable by 10 and totalTimerCount is less than one minute...
+            if (timerCount % 10 == 0) && totalTimerCount <= 58  {
                 // ... play the reminder.
                 self.run(reminderIfIdle)
+            }
+            // if idleReminer has played 6 times in a row, move on to next scene
+            if totalTimerCount > 59 {
+                self.sceneOver = true
+                
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "StrollerScene", waitTime: 5)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -77,6 +86,15 @@ class CakeScene: SKScene {
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false){
             let touch = touches.first!
+            
+            // If user makes too many incorrect touches, just move on (move on during the 15th touch)
+            // incorrect touches starts at 0, so it's offset by 1
+            if cake_incorrectTouches > 13 {
+                sceneOver = true
+                
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "StrollerScene", waitTime: 5)
+            }
             
             //If cake sprite's alpha mask is touched...
             if (physicsWorld.body(at: touch.location(in: self)) == cake?.physicsBody) && (sceneOver == false) {
@@ -103,15 +121,8 @@ class CakeScene: SKScene {
                 //Run all actions
                 cake!.run(happyBirthday)
                 
-                //Variables to switch screens
-                let fadeOut = SKAction.fadeOut(withDuration:4)
-                let wait2 = SKAction.wait(forDuration: 4)
-                let sequenceFade = SKAction.sequence([wait2, fadeOut])
-                run(sequenceFade) {
-                    let strollerScene = SKScene(fileNamed: "StrollerScene")
-                    strollerScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(strollerScene!)
-                }
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "StrollerScene", waitTime: 5)
             }
             else {
                 cake_incorrectTouches += 1
@@ -122,8 +133,8 @@ class CakeScene: SKScene {
                 cake?.run(wrong)
             }
             
-            // play reminder instructions if user has touched screen 3 times incorrectly
-            if (cake_incorrectTouches % 3 == 0) && cake_correctTouches < 1 {
+            // play reminder instructions if user has touched screen 3 times incorrectly (don't play for 15th touch - just move on)
+            if (cake_incorrectTouches % 3 == 0) && cake_correctTouches < 1 && cake_incorrectTouches < 14 {
                 reminderComplete = false
                 let cake_reminder = SKAction.playSoundFileNamed("reminder_cake", waitForCompletion: true)
                 run(cake_reminder, completion: { self.reminderComplete = true} )

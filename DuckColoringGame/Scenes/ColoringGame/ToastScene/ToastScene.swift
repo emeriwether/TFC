@@ -35,6 +35,7 @@ class ToastScene: SKScene {
         let oneSecTimer = SKAction.wait(forDuration: 1.0)
         var timerCount = 1
         var currentTouches = 0
+        var totalTimerCount = 0
         
         // set up sequence for if the scene has not been touched for 10 seconds: play the idle reminder
         let reminderIfIdle = SKAction.run {
@@ -49,6 +50,7 @@ class ToastScene: SKScene {
             if (self.totalTouches - currentTouches == 0) {
                 // ...timer progresses one second...
                 timerCount += 1
+                totalTimerCount += 1
             }
                 // ... else if a touch...
             else {
@@ -57,10 +59,17 @@ class ToastScene: SKScene {
                 // ... and start timer over...
                 timerCount = 1
             }
-            // if timer seconds are divisable by 10 ...
-            if (timerCount % 10 == 0) {
+            // if timer seconds are divisable by 10 and totalTimerCount is less than one minute...
+            if (timerCount % 10 == 0) && totalTimerCount <= 58  {
                 // ... play the reminder.
                 self.run(reminderIfIdle)
+            }
+            // if idleReminer has played 6 times in a row, move on to next scene
+            if totalTimerCount > 59 {
+                self.sceneOver = true
+                
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "HatScene", waitTime: 3)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -77,6 +86,15 @@ class ToastScene: SKScene {
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false) {
             let touch = touches.first!
+            
+            // If user makes too many incorrect touches, just move on (move on during the 15th touch)
+            // incorrect touches starts at 0, so it's offset by 1
+            if toast_incorrectTouches > 13 {
+                sceneOver = true
+                
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "HatScene", waitTime: 3)
+            }
             
             //If toast sprite is touched...
             if (physicsWorld.body(at: touch.location(in: self)) == toast?.physicsBody) && (sceneOver == false) {
@@ -108,15 +126,8 @@ class ToastScene: SKScene {
                 toast!.run(crunch)
                 toast!.run(animationBite)
                 
-                //Variables to switch screens
-                let fadeOut = SKAction.fadeOut(withDuration:2)
-                let wait2 = SKAction.wait(forDuration: 2)
-                let sequenceFade = SKAction.sequence([wait2, fadeOut])
-                run(sequenceFade) {
-                    let hatScene = SKScene(fileNamed: "HatScene")
-                    hatScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(hatScene!)
-                }
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "HatScene", waitTime: 3)
             }
             else {
                 toast_incorrectTouches += 1
@@ -127,8 +138,8 @@ class ToastScene: SKScene {
                 toast?.run(wrong)
             }
             
-            // play reminder instructions if user has touched screen 3 times incorrectly
-            if (toast_incorrectTouches & 3 == 0) && toast_correctTouches < 1 {
+            // play reminder instructions if user has touched screen 3 times incorrectly (don't play for 15th touch - just move on)
+            if (toast_incorrectTouches & 3 == 0) && toast_correctTouches < 1 && toast_incorrectTouches < 14 {
                 reminderComplete = false
                 let toastReminder = SKAction.playSoundFileNamed("reminder_toast", waitForCompletion: true)
                 run(toastReminder, completion: { self.reminderComplete = true} )

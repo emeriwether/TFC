@@ -63,6 +63,7 @@
 		0613CCE2205054FF00FEC3F4 /* NameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0613CCE0205054FE00FEC3F4 /* NameScene.sks */; };
 		0613CCE3205054FF00FEC3F4 /* NameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0613CCE1205054FF00FEC3F4 /* NameScene.swift */; };
 		0613CCE52050553B00FEC3F4 /* introSong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0613CCE42050553A00FEC3F4 /* introSong.wav */; };
+		0613CCE72050A69400FEC3F4 /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0613CCE62050A69400FEC3F4 /* GlobalFunctions.swift */; };
 		061F1BD52004884000A05E8E /* CowScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061F1BD42004884000A05E8E /* CowScene.swift */; };
 		061F1BD72004885500A05E8E /* CowScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 061F1BD62004885500A05E8E /* CowScene.sks */; };
 		062B1BF7202D1847002DECBB /* HatScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 062B1BF6202D1847002DECBB /* HatScene.sks */; };
@@ -264,6 +265,7 @@
 		0613CCE0205054FE00FEC3F4 /* NameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = NameScene.sks; sourceTree = "<group>"; };
 		0613CCE1205054FF00FEC3F4 /* NameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameScene.swift; sourceTree = "<group>"; };
 		0613CCE42050553A00FEC3F4 /* introSong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = introSong.wav; sourceTree = "<group>"; };
+		0613CCE62050A69400FEC3F4 /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		061F1BD42004884000A05E8E /* CowScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CowScene.swift; sourceTree = "<group>"; };
 		061F1BD62004885500A05E8E /* CowScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CowScene.sks; sourceTree = "<group>"; };
 		062B1BF6202D1847002DECBB /* HatScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HatScene.sks; sourceTree = "<group>"; };
@@ -862,6 +864,7 @@
 		06BD2F3C202BC37E00AC0A54 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				0613CCE62050A69400FEC3F4 /* GlobalFunctions.swift */,
 				0B3EFEA620461E8D00F5932F /* StartScenes */,
 				0B28BEE0200C895D00B1D01E /* ColoringGame_Trainer */,
 				06427EFF1FD9F453009C07ED /* ColoringGame */,
@@ -1485,6 +1488,7 @@
 				0BCA0AAD201BCE0000488E8E /* Monster_T2.swift in Sources */,
 				06C819DE202F6D15002F838E /* AllDoneScene.swift in Sources */,
 				0BCA0A9B201BCC2100488E8E /* Trainer_Bread.swift in Sources */,
+				0613CCE72050A69400FEC3F4 /* GlobalFunctions.swift in Sources */,
 				0BCA0AAF201BCE0000488E8E /* Monster_T1.swift in Sources */,
 				06427F1F1FD9F8A0009C07ED /* PianoScene7.swift in Sources */,
 				06427F0F1FD9F876009C07ED /* PianoScene3.swift in Sources */,

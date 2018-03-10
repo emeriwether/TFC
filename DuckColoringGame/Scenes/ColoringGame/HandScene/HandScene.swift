@@ -35,6 +35,7 @@ class HandScene: SKScene {
         let oneSecTimer = SKAction.wait(forDuration: 1.0)
         var timerCount = 1
         var currentTouches = 0
+        var totalTimerCount = 0
         
         // set up sequence for if the scene has not been touched for 10 seconds: play the idle reminder
         let reminderIfIdle = SKAction.run {
@@ -49,6 +50,7 @@ class HandScene: SKScene {
             if (self.totalTouches - currentTouches == 0) {
                 // ...timer progresses one second...
                 timerCount += 1
+                totalTimerCount += 1
             }
                 // ... else if a touch...
             else {
@@ -57,10 +59,17 @@ class HandScene: SKScene {
                 // ... and start timer over...
                 timerCount = 1
             }
-            // if timer seconds are divisable by 10 ...
-            if (timerCount % 10 == 0) {
+            // if timer seconds are divisable by 10 and totalTimerCount is less than one minute...
+            if (timerCount % 10 == 0) && totalTimerCount <= 58  {
                 // ... play the reminder.
                 self.run(reminderIfIdle)
+            }
+            // if idleReminer has played 6 times in a row, move on to next scene
+            if totalTimerCount > 59 {
+                self.sceneOver = true
+                
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "RainScene", waitTime: 2.5)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -78,6 +87,15 @@ class HandScene: SKScene {
         if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false){
             let touch = touches.first!
             
+            // If user makes too many incorrect touches, just move on (move on during the 15th touch)
+            // incorrect touches starts at 0, so it's offset by 1
+            if hand_incorrectTouches > 13 {
+                sceneOver = true
+                
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "RainScene", waitTime: 2.5)
+            }
+            
             //If hand sprite's alpha mask is touched...
             if (physicsWorld.body(at: touch.location(in: self)) == hand?.physicsBody) && (sceneOver == false) {
                 sceneOver = true
@@ -92,26 +110,11 @@ class HandScene: SKScene {
                     correctFirstTriesArray.append("hand")
                 }
                 
-                // Change sprite to colored hand
-                let coloredhand:SKTexture = SKTexture(imageNamed: "handScene_hand_colored")
-                let changeToColored:SKAction = SKAction.animate(with: [coloredhand], timePerFrame: 0.0001)
-                hand!.run(changeToColored)
+                // play correct wiggleOnly animation (function declared on HandScene.swift in coloring game)
+                wiggleOnly(node: hand!, coloredImg: "handScene_hand_colored", correctSound: "hand")
                 
-                //Variables for hand audio
-                let clap = SKAction.playSoundFileNamed("hand", waitForCompletion: true)
-                
-                //Run all actions
-                hand!.run(clap)
-                
-                //Variables to switch screens
-                let fadeOut = SKAction.fadeOut(withDuration:2)
-                let wait2 = SKAction.wait(forDuration: 2)
-                let sequenceFade = SKAction.sequence([wait2, fadeOut])
-                run(sequenceFade) {
-                    let rainScene = SKScene(fileNamed: "RainScene")
-                    rainScene?.scaleMode = SKSceneScaleMode.aspectFill
-                    self.scene!.view?.presentScene(rainScene!)
-                }
+                // transitionScene function declared on Trainer_Balloon.swift in coloring game
+                transitionScene (currentScene: self, sceneString: "RainScene", waitTime: 2.5)
             }
             else {
                 hand_incorrectTouches += 1
@@ -122,8 +125,8 @@ class HandScene: SKScene {
                 hand?.run(wrong)
             }
             
-            // play reminder instructions if user has touched screen 3 times incorrectly
-            if (hand_incorrectTouches % 3 == 0) && hand_correctTouches < 1 {
+            // play reminder instructions if user has touched screen 3 times incorrectly (don't play for 15th touch - just move on)
+            if (hand_incorrectTouches % 3 == 0) && hand_correctTouches < 1 && hand_incorrectTouches < 14 {
                 reminderComplete = false
                 let hand_reminder = SKAction.playSoundFileNamed("reminder_hand", waitForCompletion: true)
                 run(hand_reminder, completion: { self.reminderComplete = true} )
@@ -134,7 +137,27 @@ class HandScene: SKScene {
     }
 }
 
-
+// animation for wiggleOnly (moon & hand): color, play sound, wave left and right
+func wiggleOnly(node: SKNode, coloredImg: String, correctSound: String) {
+    // Change sprite to colored node
+    let coloredNode:SKTexture = SKTexture(imageNamed: coloredImg)
+    let changeToColored:SKAction = SKAction.animate(with: [coloredNode], timePerFrame: 0.0001)
+    node.run(changeToColored)
+    
+    // Variables for correct audio
+    let correct = SKAction.playSoundFileNamed(correctSound, waitForCompletion: true)
+    
+    // Variables for wiggle animation
+    let rotR = SKAction.rotate(byAngle: 0.20, duration: 0.3)
+    let rotL = SKAction.rotate(byAngle: -0.20, duration: 0.3)
+    let cycle = SKAction.sequence([rotR, rotL, rotL, rotR])
+    let wiggle = SKAction.repeat(cycle, count: 2)
+    
+    //Run all actions
+    node.run(changeToColored)
+    node.run(correct)
+    node.run(wiggle)
+}
 
 
 
