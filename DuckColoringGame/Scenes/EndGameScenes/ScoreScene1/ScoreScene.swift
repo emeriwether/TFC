@@ -142,7 +142,7 @@ class ScoreScene: SKScene {
         } else {
             twoItemAccuracyText = "2: none completed"
         }
-        printLabel(label: twoItemAccuracyLabel, words: twoItemAccuracyText, xCoord: -525, yCoord: -12.659, fontSize: 30)
+        printLabel(label: twoItemAccuracyLabel, words: twoItemAccuracyText, xCoord: -490, yCoord: -12.659, fontSize: 30)
 
         // CALCULATE AND PLACE 3-ITEM ACCURACY LABEL
         let threeItemArray: [String] = ["cat", "lion", "cow", "trash", "toast", "hat"]
@@ -159,7 +159,7 @@ class ScoreScene: SKScene {
         } else {
             threeItemAccuracyText = "3: none completed"
         }
-        printLabel(label: threeItemAccuracyLabel, words: threeItemAccuracyText, xCoord: -525, yCoord: -50.659, fontSize: 30)
+        printLabel(label: threeItemAccuracyLabel, words: threeItemAccuracyText, xCoord: -490, yCoord: -50.659, fontSize: 30)
         
         // CALCULATE AND PLACE 4-ITEM ACCURACY LABEL
         let fourItemArray: [String] = ["hand", "rain", "airplane", "shoes", "cookie", "mouse"]
@@ -176,7 +176,7 @@ class ScoreScene: SKScene {
         } else {
             fourItemAccuracyText = "4: none completed"
         }
-        printLabel(label: fourItemAccuracyLabel, words: fourItemAccuracyText, xCoord: -525, yCoord: -85.66, fontSize: 30)
+        printLabel(label: fourItemAccuracyLabel, words: fourItemAccuracyText, xCoord: -490, yCoord: -85.66, fontSize: 30)
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
         // CALCULATE AND PLACE SIMPLE-BG ACCURACY LABEL
