@@ -90,8 +90,26 @@ class ScoreScene2: SKScene {
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
         //CALCULATE AND PLACE ACCURACY LABELS
-        
-        
+        for (scene, accuracy) in accuracyPerScene {
+            accuracyLabels (scene: self, sceneString: scene, word: "rock", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "lamp", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "duck", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "moon", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "cake", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "stroller", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "cat", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "lion", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "cow", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "trash", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "toast", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "hat", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "hand", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "rain", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "airplane", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "shoes", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "cookie", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "mouse", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
+        }
     ////////////////////////////////////////////////////////////////////////////////////////////
     }
     
@@ -118,12 +136,13 @@ class ScoreScene2: SKScene {
     }
 }
 
-func incorrectTouchesLabels (scene: SKScene, sceneString: String, word: String, numIncorrect: Int, xCoord: Double, yCoord: Double) {
+
+func accuracyLabels (scene: SKScene, sceneString: String, word: String, accuracy: Double, xCoord: Double, yCoord: Double) {
     let label = SKLabelNode(fontNamed:"Montserrat-SemiBold")
     let copiedLabel = label.copy() as! SKLabelNode
-    let numIncorrect = String(numIncorrect)
+    let accuracy = String(accuracy)
     
     if sceneString == word {
-        printLabel (scene: scene, label: copiedLabel, words: numIncorrect, xCoord: xCoord, yCoord: yCoord, fontSize: 28)
+        printLabel (scene: scene, label: copiedLabel, words: accuracy, xCoord: xCoord, yCoord: yCoord, fontSize: 28)
     }
 }

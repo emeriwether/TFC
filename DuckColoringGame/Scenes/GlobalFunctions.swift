@@ -212,3 +212,13 @@ func checkOrX_firstTry (scene: SKScene, dictWord: String, word: String, firstTry
         }
     }
 }
+
+func incorrectTouchesLabels (scene: SKScene, sceneString: String, word: String, numIncorrect: Int, xCoord: Double, yCoord: Double) {
+    let label = SKLabelNode(fontNamed:"Montserrat-SemiBold")
+    let copiedLabel = label.copy() as! SKLabelNode
+    let numIncorrect = String(numIncorrect)
+    
+    if sceneString == word {
+        printLabel (scene: scene, label: copiedLabel, words: numIncorrect, xCoord: xCoord, yCoord: yCoord, fontSize: 28)
+    }
+}
