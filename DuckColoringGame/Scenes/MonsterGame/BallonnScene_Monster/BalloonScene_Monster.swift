@@ -112,7 +112,7 @@ class BalloonScene_Monster: SKScene {
                         selectedNode?.removeFromParent()
                         sceneOver = true
                         animateMonster(withAudio: "Sound_Munching")
-                        nextScene(sceneName: "ScoreScene")
+                        nextScene(sceneName: "StarScene")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         balloon_incorrectTouches += 1
