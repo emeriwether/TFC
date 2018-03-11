@@ -1,15 +1,15 @@
 //
-//  CakeScene_Monster.swift
+//  StarScene.swift
 //  DuckColoringGame
 //
-//  Created by Gustavo C Figueroa on 3/6/18.
+//  Created by Gustavo C Figueroa on 3/10/18.
 //  Copyright © 2018 Eleanor Meriwether. All rights reserved.
 //
 
 import SpriteKit
 import GameplayKit
 
-class CakeScene_Monster: SKScene {
+class StarScene: SKScene {
     
     private var foodNode1:SKNode?
     private var foodNode2:SKNode?
@@ -19,8 +19,8 @@ class CakeScene_Monster: SKScene {
     private var selectedNode:SKNode?
     private var nodeIsSelected:Bool?
     
-    var cake_incorrectTouches = 0
-    var cake_correctTouches = 0
+    var star_incorrectTouches = 0
+    var star_correctTouches = 0
     
     var instructionsComplete:Bool = false
     var feedbackComplete:Bool = true
@@ -28,11 +28,11 @@ class CakeScene_Monster: SKScene {
     var sceneOver = false
     
     override func didMove(to view: SKView) {
-        foodNode1 = self.childNode(withName: "tree")
-        foodNode2 = self.childNode(withName: "cake")
-        foodNode3 = self.childNode(withName: "umbrella")
+        foodNode1 = self.childNode(withName: "bread")
+        foodNode2 = self.childNode(withName: "shorts")
+        foodNode3 = self.childNode(withName: "star")
         monsterNode = self.childNode(withName: "Monster")
-        playInstructionsWithName(audioName: "instructions_cake_monster")
+        playInstructionsWithName(audioName: "instructions_star")
     }
     
     ////////////////////////////
@@ -75,13 +75,13 @@ class CakeScene_Monster: SKScene {
         if (instructionsComplete == true) && (feedbackComplete == true) && (sceneOver == false){
             let touch = touches.first!
             let touchLocation = touch.location(in: self)
-            if (self.atPoint(touchLocation).name == "tree"){
+            if (self.atPoint(touchLocation).name == "bread"){
                 selectedNode = foodNode1
                 nodeIsSelected = true
-            } else if (self.atPoint(touchLocation).name == "cake"){
+            } else if (self.atPoint(touchLocation).name == "shorts"){
                 selectedNode = foodNode2
                 nodeIsSelected = true
-            }else if (self.atPoint(touchLocation).name == "umbrella"){
+            }else if (self.atPoint(touchLocation).name == "star"){
                 selectedNode = foodNode3
                 nodeIsSelected = true
             }else{
@@ -107,15 +107,15 @@ class CakeScene_Monster: SKScene {
             
             for items in self.nodes(at: touchLocation){
                 if items.name == "Monster"{
-                    if (selectedNode?.name == "cake"){
-                        cake_correctTouches += 1
+                    if (selectedNode?.name == "star"){
+                        star_correctTouches += 1
                         selectedNode?.removeFromParent()
                         sceneOver = true
                         animateMonster(withAudio: "Sound_Chewing")
-                        nextScene(sceneName: "BalloonScene_Monster")
+                        nextScene(sceneName: "ScoreScene")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
-                        cake_incorrectTouches += 1
+                        star_incorrectTouches += 1
                     }
                 }
             }
@@ -124,3 +124,4 @@ class CakeScene_Monster: SKScene {
         }
     }
 }
+
