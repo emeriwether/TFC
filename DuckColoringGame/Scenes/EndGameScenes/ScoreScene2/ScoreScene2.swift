@@ -16,7 +16,38 @@ class ScoreScene2: SKScene {
     let accuracyPerSceneLabel = SKLabelNode(fontNamed: "Montserrat-Regular")
 
     override func didMove(to view: SKView) {
+        let checkMark = SKSpriteNode(imageNamed: "check")
+        let xMark = SKSpriteNode(imageNamed: "incorrect")
 
+    ////////////////////////////////////////////////////////////////////////////////////////////
+        //CALCULATE AND PLACE COMPLETED LABELS
+        for (scene, correct) in numCorrectPerScene {
+            if scene == "rock" {
+                if correct == 1 {
+                    checkMark.position = CGPointMake(x: -259.663, y: 207.027)
+                    self.add(checkmark)
+                } else if correct == 0 {
+                    xMark.position = CGPointMake(x: -259.663, y: 207.027)
+                    self.add(xMark)
+                }
+            }
+            if scene == "lamp" {
+                if correct == 1 {
+                    checkMark.position = CGPointMake(x: -259.663, y: 172.027)
+                    self.add(checkmark)
+                } else if correct == 0 {
+                    xMark.position = CGPointMake(x: -259.663, y: 172.027)
+                    self.add(xMark)
+                }
+            }
+            
+            
+            
+            
+        }
+    ////////////////////////////////////////////////////////////////////////////////////////////
+
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
