@@ -68,8 +68,7 @@ class StrollerScene: SKScene {
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "ToastScene", waitTime: 3)
+                transitionScene (currentScene: self, sceneString: "ToastScene", waitTime: 3, fadeTime: 1)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -92,8 +91,7 @@ class StrollerScene: SKScene {
             if stroller_incorrectTouches > 13 {
                 sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "ToastScene", waitTime: 3)
+                transitionScene (currentScene: self, sceneString: "ToastScene", waitTime: 3, fadeTime: 1)
             }
             
             //If stroller sprite's alpha mask is touched...
@@ -127,8 +125,7 @@ class StrollerScene: SKScene {
                 stroller!.run(birds)
                 stroller!.run(move)
 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "ToastScene", waitTime: 3)
+                transitionScene (currentScene: self, sceneString: "ToastScene", waitTime: 3, fadeTime: 1)
             }
             else {
                 stroller_incorrectTouches += 1

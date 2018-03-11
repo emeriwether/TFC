@@ -68,8 +68,7 @@ class CakeScene: SKScene {
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "StrollerScene", waitTime: 5)
+                transitionScene (currentScene: self, sceneString: "StrollerScene", waitTime: 5, fadeTime: 1)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -92,8 +91,7 @@ class CakeScene: SKScene {
             if cake_incorrectTouches > 13 {
                 sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "StrollerScene", waitTime: 5)
+                transitionScene (currentScene: self, sceneString: "StrollerScene", waitTime: 5, fadeTime: 1)
             }
             
             //If cake sprite's alpha mask is touched...
@@ -121,8 +119,7 @@ class CakeScene: SKScene {
                 //Run all actions
                 cake!.run(happyBirthday)
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "StrollerScene", waitTime: 5)
+                transitionScene (currentScene: self, sceneString: "StrollerScene", waitTime: 5, fadeTime: 1)
             }
             else {
                 cake_incorrectTouches += 1

@@ -69,8 +69,7 @@ class ShoesScene: SKScene {
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "CakeScene", waitTime: 2)
+                transitionScene (currentScene: self, sceneString: "CakeScene", waitTime: 2, fadeTime: 1)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -93,8 +92,7 @@ class ShoesScene: SKScene {
             if shoes_incorrectTouches > 13 {
                 sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "CakeScene", waitTime: 2)
+                transitionScene (currentScene: self, sceneString: "CakeScene", waitTime: 2, fadeTime: 1)
             }
             
             //If shoes sprite is touched...
@@ -133,8 +131,7 @@ class ShoesScene: SKScene {
                 shoes!.run(animationWalkRepeat)
                 shoes!.run(moveLeft)
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "CakeScene", waitTime: 2)
+                transitionScene (currentScene: self, sceneString: "CakeScene", waitTime: 2, fadeTime: 1)
             }
             else {
                 shoes_incorrectTouches += 1

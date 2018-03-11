@@ -68,8 +68,7 @@ class HatScene: SKScene {
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "CookieScene", waitTime: 2)
+                transitionScene (currentScene: self, sceneString: "CookieScene", waitTime: 2, fadeTime: 1)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -88,8 +87,7 @@ class HatScene: SKScene {
         if hat_incorrectTouches > 13 {
             sceneOver = true
             
-            // transitionScene function declared on Trainer_Balloon.swift in coloring game
-            transitionScene (currentScene: self, sceneString: "CookieScene", waitTime: 2)
+            transitionScene (currentScene: self, sceneString: "CookieScene", waitTime: 2, fadeTime: 1)
         }
         
         // if no instructions are playing
@@ -113,8 +111,7 @@ class HatScene: SKScene {
                 // play correct hatFlip animation (function declared on HatScene.swift in coloring game)
                 hatFlip(node: hat!, coloredImg: "hatScene_hat_colored", correctSound: "hat")
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "CookieScene", waitTime: 2)
+                transitionScene (currentScene: self, sceneString: "CookieScene", waitTime: 2, fadeTime: 1)
             }
             else {
                 hat_incorrectTouches += 1

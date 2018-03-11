@@ -69,8 +69,7 @@ class MouseScene: SKScene {
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "AllDoneScene", waitTime: 2)
+                transitionScene (currentScene: self, sceneString: "AllDoneScene", waitTime: 2, fadeTime: 1)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -93,8 +92,7 @@ class MouseScene: SKScene {
             if mouse_incorrectTouches > 13 {
                 sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "AllDoneScene", waitTime: 2)
+                transitionScene (currentScene: self, sceneString: "AllDoneScene", waitTime: 2, fadeTime: 1)
             }
             
             //If mouse sprite is touched...
@@ -122,8 +120,7 @@ class MouseScene: SKScene {
                 mouse!.run(mouseNoise)
                 mouse!.run(moveDown)
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "AllDoneScene", waitTime: 2)
+                transitionScene (currentScene: self, sceneString: "AllDoneScene", waitTime: 2, fadeTime: 1)
             }
             else {
                 mouse_incorrectTouches += 1

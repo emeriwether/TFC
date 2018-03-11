@@ -206,13 +206,13 @@ class ScoreScene: SKScene {
         
         // if next button is touched
         if nextButton!.contains(touch.location(in:self)){
-            transitionScene (currentScene: self, sceneString: "ScoreScene2", waitTime: 0)
+            transitionScene (currentScene: self, sceneString: "ScoreScene2", waitTime: 0, fadeTime: 0)
         }
         
         // if retry button is touched
         if playAgainButton!.contains(touch.location(in: self)) {
             resetAllGameStats_coloring()
-            transitionScene (currentScene: self, sceneString: "StartScene", waitTime: 1)
+            transitionScene (currentScene: self, sceneString: "StartScene", waitTime: 1, fadeTime: 0)
         }
     }
 }

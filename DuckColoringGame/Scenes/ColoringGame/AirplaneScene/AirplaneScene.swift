@@ -68,8 +68,7 @@ class AirplaneScene: SKScene {
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "ShoesScene", waitTime: 2)
+                transitionScene (currentScene: self, sceneString: "ShoesScene", waitTime: 2, fadeTime: 1)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -92,8 +91,7 @@ class AirplaneScene: SKScene {
             if airplane_incorrectTouches > 13 {
                 sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "ShoesScene", waitTime: 2)
+                transitionScene (currentScene: self, sceneString: "ShoesScene", waitTime: 2, fadeTime: 1)
             }
             
             //If airplane sprite is touched...   
@@ -123,8 +121,7 @@ class AirplaneScene: SKScene {
                 airplane!.run(moveRight)
                 airplane!.run(moveUp)
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "ShoesScene", waitTime: 2)
+                transitionScene (currentScene: self, sceneString: "ShoesScene", waitTime: 2, fadeTime: 1)
             }
             else {
                 airplane_incorrectTouches += 1

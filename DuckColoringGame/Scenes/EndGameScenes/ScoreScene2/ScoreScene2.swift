@@ -29,13 +29,13 @@ class ScoreScene2: SKScene {
         
         // if next button is touched
         if nextButton!.contains(touch.location(in:self)){
-            transitionScene (currentScene: self, sceneString: "ScoreScene3", waitTime: 0)
+            transitionScene (currentScene: self, sceneString: "ScoreScene3", waitTime: 0, fadeTime: 0)
         }
         
         // if back button is touched
         if backButton!.contains(touch.location(in: self)) {
             resetAllGameStats_coloring()
-            transitionScene (currentScene: self, sceneString: "ScoreScene", waitTime: 0)
+            transitionScene (currentScene: self, sceneString: "ScoreScene", waitTime: 0, fadeTime: 0)
         }
     }
 }
