@@ -236,7 +236,7 @@ class ScoreScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // variable for buttons
         let viewSceneBreakdownButton = self.childNode(withName: "view scene breakdown")
-        let playAgainButton = self.childNode(withName: "play again button")
+        let playAgainButton = self.childNode(withName: "playagain")
         
         // variable to keep track of touch
         let touch = touches.first!
@@ -252,7 +252,7 @@ class ScoreScene: SKScene {
             breakdownButtonTouched = true
             
             breakdownByItemsButton.position = CGPoint(x: 3.883, y: -354.36)
-            breakdownByItemsButton.zPosition = 2
+            breakdownByItemsButton.zPosition = 3
             breakdownByItemsButton.size = CGSize(width: 1199.768, height: 68.719)
             self.addChild(breakdownByItemsButton)
             if breakdownByItemsButton.contains(touch.location(in:self)) {
@@ -260,7 +260,7 @@ class ScoreScene: SKScene {
             }
             
             breakdownByBGButton.position = CGPoint(x: 5.192, y: -412.37)
-            breakdownByBGButton.zPosition = 2
+            breakdownByBGButton.zPosition = 3
             breakdownByBGButton.size = CGSize(width: 1202.768, height: 47.302)
             self.addChild(breakdownByBGButton)
             if breakdownByBGButton.contains(touch.location(in:self)) {
@@ -268,7 +268,7 @@ class ScoreScene: SKScene {
             }
             
             breakdownByComboButton.position = CGPoint(x: 3.478, y: -463.867)
-            breakdownByComboButton.zPosition = 2
+            breakdownByComboButton.zPosition = 3
             breakdownByComboButton.size = CGSize(width: 1200.958, height: 55.692)
             self.addChild(breakdownByComboButton)
             if breakdownByComboButton.contains(touch.location(in:self)) {
@@ -283,7 +283,6 @@ class ScoreScene: SKScene {
             breakdownByComboButton.removeFromParent()
         }
 
-        
         
         // if retry button is touched
         if playAgainButton!.contains(touch.location(in: self)) {
