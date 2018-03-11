@@ -85,28 +85,28 @@ class ScoreScene: SKScene {
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
         // PLACE 2-ITEM-CORRECT-FT LABEL
-        let setSize2String = "2: \(twoItemCorrectFT) / 6"
+        let setSize2String = "\(twoItemCorrectFT) / 6"
         printLabel(label: setSize2Label, words: setSize2String, xCoord: 136, yCoord: -14.482, fontSize: 28)
         
         // PLACE 3-ITEM-CORRECT-FT LABEL
-        let setSize3String = "3: \(threeItemCorrectFT) / 6"
+        let setSize3String = "\(threeItemCorrectFT) / 6"
         printLabel(label: setSize3Label, words: setSize3String, xCoord: 136, yCoord: -48.659, fontSize: 28)
         
         // PLACE 4-ITEM-CORRECT-FT LABEL
-        let setSize4String = "4: \(fourItemCorrectFT) / 6"
+        let setSize4String = "\(fourItemCorrectFT) / 6"
         printLabel(label: setSize4Label, words: setSize4String, xCoord: 136, yCoord: -83.483, fontSize: 28)
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
         // PLACE SIMPLE-BG-CORRECT-FT LABEL
-        let simpleBGString = "Simple: \(simpleCorrectFT)/6"
+        let simpleBGString = "\(simpleCorrectFT)/6"
         printLabel(label: simpleBGLabel, words: simpleBGString, xCoord: 217, yCoord: -166.828, fontSize: 28)
         
         // PLACE LINE-BG-CORRECT-FT LABEL
-        let lineBGString = "Line:      \(lineCorrectFT)/6"
+        let lineBGString = "\(lineCorrectFT)/6"
         printLabel(label: lineBGLabel, words: lineBGString, xCoord: 217, yCoord: -200.828, fontSize: 28)
 
         // PLACE SCENE-BG-CORRECT-FT LABEL
-        let sceneBGString = "Scene:  \(sceneCorrectFT)/6"
+        let sceneBGString = "\(sceneCorrectFT)/6"
         printLabel(label: sceneBGLabel, words: sceneBGString, xCoord: 217, yCoord: -235.829, fontSize: 28)
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
@@ -138,9 +138,9 @@ class ScoreScene: SKScene {
         twoItemAccuracy = twoItemAccuracy / twoItemCompleted
         var twoItemAccuracyText:String
         if twoItemCompleted > 0 {
-            twoItemAccuracyText = "2: \(Int(round(twoItemAccuracy)))%"
+            twoItemAccuracyText = "\(Int(round(twoItemAccuracy)))%"
         } else {
-            twoItemAccuracyText = "2: none completed"
+            twoItemAccuracyText = "none completed"
         }
         printLabel(label: twoItemAccuracyLabel, words: twoItemAccuracyText, xCoord: -490, yCoord: -14.482, fontSize: 28)
 
@@ -155,9 +155,9 @@ class ScoreScene: SKScene {
         threeItemAccuracy = threeItemAccuracy / threeItemCompleted
         var threeItemAccuracyText:String
         if threeItemCompleted > 0 {
-            threeItemAccuracyText = "3: \(Int(round(threeItemAccuracy)))%"
+            threeItemAccuracyText = "\(Int(round(threeItemAccuracy)))%"
         } else {
-            threeItemAccuracyText = "3: none completed"
+            threeItemAccuracyText = "none completed"
         }
         printLabel(label: threeItemAccuracyLabel, words: threeItemAccuracyText, xCoord: -490, yCoord: -48.659, fontSize: 28)
         
@@ -172,9 +172,9 @@ class ScoreScene: SKScene {
         fourItemAccuracy = fourItemAccuracy / fourItemCompleted
         var fourItemAccuracyText:String
         if fourItemCompleted > 0 {
-            fourItemAccuracyText = "4: \(Int(round(fourItemAccuracy)))%"
+            fourItemAccuracyText = "\(Int(round(fourItemAccuracy)))%"
         } else {
-            fourItemAccuracyText = "4: none completed"
+            fourItemAccuracyText = "none completed"
         }
         printLabel(label: fourItemAccuracyLabel, words: fourItemAccuracyText, xCoord: -490, yCoord: -83.483, fontSize: 28)
     ////////////////////////////////////////////////////////////////////////////////////////////
@@ -190,9 +190,9 @@ class ScoreScene: SKScene {
         simpleAccuracy = simpleAccuracy / simplebgCompleted
         var simpleAccuracyText:String
         if simplebgCompleted > 0 {
-            simpleAccuracyText = "Simple: \(Int(round(simpleAccuracy)))%"
+            simpleAccuracyText = "\(Int(round(simpleAccuracy)))%"
         } else {
-            simpleAccuracyText = "Simple: none completed"
+            simpleAccuracyText = "none completed"
         }
         printLabel(label: simpleAccuracyLabel, words: simpleAccuracyText, xCoord: -404, yCoord: -166.828, fontSize: 28)
         
@@ -207,9 +207,9 @@ class ScoreScene: SKScene {
         lineAccuracy = lineAccuracy / linebgCompleted
         var lineAccuracyText:String
         if linebgCompleted > 0 {
-            lineAccuracyText = "Line:     \(Int(round(lineAccuracy)))%"
+            lineAccuracyText = "\(Int(round(lineAccuracy)))%"
         } else {
-            lineAccuracyText = "Line:     none completed"
+            lineAccuracyText = "none completed"
         }
         printLabel(label: lineAccuracyLabel, words: lineAccuracyText, xCoord: -404, yCoord: -200.828, fontSize: 28)
         
@@ -224,9 +224,9 @@ class ScoreScene: SKScene {
         sceneAccuracy = sceneAccuracy / scenebgCompleted
         var sceneAccuracyText:String
         if linebgCompleted > 0 {
-            sceneAccuracyText = "Scene:  \(Int(round(sceneAccuracy)))%"
+            sceneAccuracyText = "\(Int(round(sceneAccuracy)))%"
         } else {
-            sceneAccuracyText = "Scene:  none completed"
+            sceneAccuracyText = "none completed"
         }
         printLabel(label: sceneAccuracyLabel, words: sceneAccuracyText, xCoord: -404, yCoord: -235.829, fontSize: 28)
     ////////////////////////////////////////////////////////////////////////////////////////////
@@ -250,6 +250,7 @@ class ScoreScene: SKScene {
         
         if viewSceneBreakdownButton!.contains(touch.location(in:self)) && breakdownButtonTouched == false {
             breakdownButtonTouched = true
+            print("\(breakdownButtonTouched)")
             
             breakdownByItemsButton.position = CGPoint(x: 3.883, y: -354.36)
             breakdownByItemsButton.zPosition = 3
@@ -277,6 +278,7 @@ class ScoreScene: SKScene {
         }
         else if viewSceneBreakdownButton!.contains(touch.location(in:self)) && breakdownButtonTouched == true {
             breakdownButtonTouched = false
+            print("\(breakdownButtonTouched)")
             
             breakdownByItemsButton.removeFromParent()
             breakdownByBGButton.removeFromParent()
