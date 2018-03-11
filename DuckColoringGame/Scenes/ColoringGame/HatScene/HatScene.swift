@@ -81,18 +81,19 @@ class HatScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // local variable for hat sprite
         let hat = self.childNode(withName: "hat_bw")
-        
-        // If user makes too many incorrect touches, just move on (move on during the 15th touch)
-        // incorrect touches starts at 0, so it's offset by 1
-        if hat_incorrectTouches > 13 {
-            sceneOver = true
-            
-            transitionScene (currentScene: self, sceneString: "CookieScene", waitTime: 2, fadeTime: 1)
-        }
+
         
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false){
             let touch = touches.first!
+            
+            // If user makes too many incorrect touches, just move on (move on during the 15th touch)
+            // incorrect touches starts at 0, so it's offset by 1
+            if hat_incorrectTouches > 13 {
+                sceneOver = true
+                
+                transitionScene (currentScene: self, sceneString: "CookieScene", waitTime: 0, fadeTime: 2)
+            }
             
             //If hat sprite's alpha mask is touched...
             if (physicsWorld.body(at: touch.location(in: self)) == hat?.physicsBody) && (sceneOver == false) {

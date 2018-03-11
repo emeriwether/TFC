@@ -68,7 +68,7 @@ class CowScene: SKScene {
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
-                transitionScene (currentScene: self, sceneString: "TrashScene", waitTime: 2, fadeTime: 1)
+                transitionScene (currentScene: self, sceneString: "TrashScene", waitTime: 0, fadeTime: 2)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -91,7 +91,7 @@ class CowScene: SKScene {
             if cow_incorrectTouches > 13 {
                 sceneOver = true
                 
-                transitionScene (currentScene: self, sceneString: "TrashScene", waitTime: 2, fadeTime: 1)
+                transitionScene (currentScene: self, sceneString: "TrashScene", waitTime: 0, fadeTime: 2)
             }
             
             //If cow sprite is touched...

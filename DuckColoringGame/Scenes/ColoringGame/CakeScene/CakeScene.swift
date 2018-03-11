@@ -68,7 +68,7 @@ class CakeScene: SKScene {
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
-                transitionScene (currentScene: self, sceneString: "StrollerScene", waitTime: 5, fadeTime: 1)
+                transitionScene (currentScene: self, sceneString: "StrollerScene", waitTime: 0, fadeTime: 2)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -91,7 +91,7 @@ class CakeScene: SKScene {
             if cake_incorrectTouches > 13 {
                 sceneOver = true
                 
-                transitionScene (currentScene: self, sceneString: "StrollerScene", waitTime: 5, fadeTime: 1)
+                transitionScene (currentScene: self, sceneString: "StrollerScene", waitTime: 0, fadeTime: 2)
             }
             
             //If cake sprite's alpha mask is touched...

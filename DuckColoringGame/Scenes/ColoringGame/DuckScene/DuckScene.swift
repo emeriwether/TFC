@@ -68,8 +68,7 @@ class DuckScene: SKScene {
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "MoonScene", waitTime: 2, fadeTime: 1)
+                transitionScene (currentScene: self, sceneString: "MoonScene", waitTime: 0, fadeTime: 2)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -92,8 +91,7 @@ class DuckScene: SKScene {
             if duck_incorrectTouches > 13 {
                 sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "MoonScene", waitTime: 2, fadeTime: 1)
+                transitionScene (currentScene: self, sceneString: "MoonScene", waitTime: 0, fadeTime: 2)
             }
             
             //If duck sprite's alpha mask is touched...
@@ -134,7 +132,6 @@ class DuckScene: SKScene {
                 duck!.run(quack)
                 duck!.run(sequenceDuck)
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
                 transitionScene (currentScene: self, sceneString: "MoonScene", waitTime: 2, fadeTime: 1)
             }
             else {

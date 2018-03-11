@@ -69,7 +69,7 @@ class ShoesScene: SKScene {
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
-                transitionScene (currentScene: self, sceneString: "CakeScene", waitTime: 2, fadeTime: 1)
+                transitionScene (currentScene: self, sceneString: "CakeScene", waitTime: 0, fadeTime: 2)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -92,7 +92,7 @@ class ShoesScene: SKScene {
             if shoes_incorrectTouches > 13 {
                 sceneOver = true
                 
-                transitionScene (currentScene: self, sceneString: "CakeScene", waitTime: 2, fadeTime: 1)
+                transitionScene (currentScene: self, sceneString: "CakeScene", waitTime: 0, fadeTime: 2)
             }
             
             //If shoes sprite is touched...

@@ -10,13 +10,7 @@ import SpriteKit
 
 class ScoreScene2: SKScene {
 
-    let listCorrectFTLabel = SKLabelNode(fontNamed:"Montserrat-Regular")
-    let numCorrectPerSceneLabel = SKLabelNode(fontNamed: "Montserrat-Regular")
-    let numIncorrectPerSceneLabel = SKLabelNode(fontNamed: "Montserrat-Regular")
-    let accuracyPerSceneLabel = SKLabelNode(fontNamed: "Montserrat-Regular")
-
     override func didMove(to view: SKView) {
-
     ////////////////////////////////////////////////////////////////////////////////////////////
         //CALCULATE AND PLACE COMPLETED LABELS
         for (scene, correct) in numCorrectPerScene {
@@ -92,23 +86,23 @@ class ScoreScene2: SKScene {
         //CALCULATE AND PLACE ACCURACY LABELS
         for (scene, accuracy) in accuracyPerScene {
             accuracyLabels (scene: self, sceneString: scene, word: "rock", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
-            accuracyLabels (scene: self, sceneString: scene, word: "lamp", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
-            accuracyLabels (scene: self, sceneString: scene, word: "duck", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
-            accuracyLabels (scene: self, sceneString: scene, word: "moon", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
-            accuracyLabels (scene: self, sceneString: scene, word: "cake", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
-            accuracyLabels (scene: self, sceneString: scene, word: "stroller", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
-            accuracyLabels (scene: self, sceneString: scene, word: "cat", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
-            accuracyLabels (scene: self, sceneString: scene, word: "lion", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
-            accuracyLabels (scene: self, sceneString: scene, word: "cow", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
-            accuracyLabels (scene: self, sceneString: scene, word: "trash", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
-            accuracyLabels (scene: self, sceneString: scene, word: "toast", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
-            accuracyLabels (scene: self, sceneString: scene, word: "hat", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
-            accuracyLabels (scene: self, sceneString: scene, word: "hand", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
-            accuracyLabels (scene: self, sceneString: scene, word: "rain", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
-            accuracyLabels (scene: self, sceneString: scene, word: "airplane", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
-            accuracyLabels (scene: self, sceneString: scene, word: "shoes", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
-            accuracyLabels (scene: self, sceneString: scene, word: "cookie", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
-            accuracyLabels (scene: self, sceneString: scene, word: "mouse", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "lamp", accuracy: accuracy, xCoord: 415.72, yCoord: 172.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "duck", accuracy: accuracy, xCoord: 415.72, yCoord: 137.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "moon", accuracy: accuracy, xCoord: 415.72, yCoord: 102.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "cake", accuracy: accuracy, xCoord: 415.72, yCoord: 67.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "stroller", accuracy: accuracy, xCoord: 415.72, yCoord: 32.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "cat", accuracy: accuracy, xCoord: 415.72, yCoord: -7.411)
+            accuracyLabels (scene: self, sceneString: scene, word: "lion", accuracy: accuracy, xCoord: 415.72, yCoord: -42.411)
+            accuracyLabels (scene: self, sceneString: scene, word: "cow", accuracy: accuracy, xCoord: 415.72, yCoord: -77.411)
+            accuracyLabels (scene: self, sceneString: scene, word: "trash", accuracy: accuracy, xCoord: 415.72, yCoord: -112.411)
+            accuracyLabels (scene: self, sceneString: scene, word: "toast", accuracy: accuracy, xCoord: 415.72, yCoord: -147.411)
+            accuracyLabels (scene: self, sceneString: scene, word: "hat", accuracy: accuracy, xCoord: 415.72, yCoord: -182.411)
+            accuracyLabels (scene: self, sceneString: scene, word: "hand", accuracy: accuracy, xCoord: 415.72, yCoord: -219.49)
+            accuracyLabels (scene: self, sceneString: scene, word: "rain", accuracy: accuracy, xCoord: 415.72, yCoord: -254.49)
+            accuracyLabels (scene: self, sceneString: scene, word: "airplane", accuracy: accuracy, xCoord: 415.72, yCoord: -289.49)
+            accuracyLabels (scene: self, sceneString: scene, word: "shoes", accuracy: accuracy, xCoord: 415.72, yCoord: -324.49)
+            accuracyLabels (scene: self, sceneString: scene, word: "cookie", accuracy: accuracy, xCoord: 415.72, yCoord: -359.489)
+            accuracyLabels (scene: self, sceneString: scene, word: "mouse", accuracy: accuracy, xCoord: 415.72, yCoord: -394.489)
         }
     ////////////////////////////////////////////////////////////////////////////////////////////
     }
@@ -136,11 +130,10 @@ class ScoreScene2: SKScene {
     }
 }
 
-
 func accuracyLabels (scene: SKScene, sceneString: String, word: String, accuracy: Double, xCoord: Double, yCoord: Double) {
     let label = SKLabelNode(fontNamed:"Montserrat-SemiBold")
     let copiedLabel = label.copy() as! SKLabelNode
-    let accuracy = String(accuracy)
+    let accuracy = "\(Int(round(accuracy)))%"
     
     if sceneString == word {
         printLabel (scene: scene, label: copiedLabel, words: accuracy, xCoord: xCoord, yCoord: yCoord, fontSize: 28)

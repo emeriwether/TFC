@@ -68,7 +68,7 @@ class StrollerScene: SKScene {
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
-                transitionScene (currentScene: self, sceneString: "ToastScene", waitTime: 3, fadeTime: 1)
+                transitionScene (currentScene: self, sceneString: "ToastScene", waitTime: 0, fadeTime: 2)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -91,7 +91,7 @@ class StrollerScene: SKScene {
             if stroller_incorrectTouches > 13 {
                 sceneOver = true
                 
-                transitionScene (currentScene: self, sceneString: "ToastScene", waitTime: 3, fadeTime: 1)
+                transitionScene (currentScene: self, sceneString: "ToastScene", waitTime: 0, fadeTime: 2)
             }
             
             //If stroller sprite's alpha mask is touched...

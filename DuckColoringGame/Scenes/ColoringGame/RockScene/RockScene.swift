@@ -67,9 +67,8 @@ class RockScene: SKScene {
             // if idleReminer has played 6 times in a row, move on to next scene
             if totalTimerCount > 59 {
                 self.sceneOver = true
-                
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "LampScene", waitTime: 2.5, fadeTime: 1)
+            
+                transitionScene (currentScene: self, sceneString: "LampScene", waitTime: 0, fadeTime: 2)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -92,8 +91,7 @@ class RockScene: SKScene {
             if rock_incorrectTouches > 13 {
                 sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "LampScene", waitTime: 2.5, fadeTime: 1)
+                transitionScene (currentScene: self, sceneString: "LampScene", waitTime: 0, fadeTime: 2)
             }
             
             //If rock sprite's alpha mask is touched...
@@ -110,10 +108,8 @@ class RockScene: SKScene {
                     correctFirstTries["rock"] = true
                 }
                 
-                // play correct scale&wiggle animation (function declared on Trainer_Balloon.swift in coloring game)
                 animateNode(node: rock!, coloredImg: "rockScene_rock_colored", correctSound: "correct2")
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
                 transitionScene (currentScene: self, sceneString: "LampScene", waitTime: 2.5, fadeTime: 1)
             }
             else {

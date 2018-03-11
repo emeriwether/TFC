@@ -68,7 +68,7 @@ class TrashScene: SKScene {
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
-                transitionScene (currentScene: self, sceneString: "AirplaneScene", waitTime: 2, fadeTime: 1)
+                transitionScene (currentScene: self, sceneString: "AirplaneScene", waitTime: 0, fadeTime: 2)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -91,7 +91,7 @@ class TrashScene: SKScene {
             if trash_incorrectTouches > 13 {
                 sceneOver = true
                 
-                transitionScene (currentScene: self, sceneString: "AirplaneScene", waitTime: 2, fadeTime: 1)
+                transitionScene (currentScene: self, sceneString: "AirplaneScene", waitTime: 0, fadeTime: 2)
             }
             
             //If trash sprite is touched...

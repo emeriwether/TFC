@@ -68,8 +68,7 @@ class LionScene: SKScene {
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "HandScene", waitTime: 2, fadeTime: 1)
+                transitionScene (currentScene: self, sceneString: "HandScene", waitTime: 0, fadeTime: 2)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -88,8 +87,7 @@ class LionScene: SKScene {
         if lion_incorrectTouches > 13 {
             sceneOver = true
             
-            // transitionScene function declared on Trainer_Balloon.swift in coloring game
-            transitionScene (currentScene: self, sceneString: "HandScene", waitTime: 2, fadeTime: 1)
+            transitionScene (currentScene: self, sceneString: "HandScene", waitTime: 0, fadeTime: 2)
         }
         
         // if no instructions are playing
@@ -126,7 +124,6 @@ class LionScene: SKScene {
                 lion!.run(roar)
                 lion!.run(animationRoar)
 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
                 transitionScene (currentScene: self, sceneString: "HandScene", waitTime: 2, fadeTime: 1)
             }
             else {

@@ -68,8 +68,7 @@ class LampScene: SKScene {
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "CatScene", waitTime: 2.5, fadeTime: 1)
+                transitionScene (currentScene: self, sceneString: "CatScene", waitTime: 0, fadeTime: 2)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -92,8 +91,7 @@ class LampScene: SKScene {
             if lamp_incorrectTouches > 13 {
                 sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "CatScene", waitTime: 2.5, fadeTime: 1)
+                transitionScene (currentScene: self, sceneString: "CatScene", waitTime: 0, fadeTime: 2)
             }
             
             //If lamp sprite's alpha mask is touched...
@@ -110,11 +108,9 @@ class LampScene: SKScene {
                     correctFirstTries["lamp"] = true
                 }
                 
-                // play correct scale&wiggle animation (function declared on Trainer_Balloon.swift in coloring game)
                 animateNode(node: lamp!, coloredImg: "lampScene_lamp_colored", correctSound: "correct2")
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "CatScene", waitTime: 2.5, fadeTime: 1)
+                transitionScene (currentScene: self, sceneString: "CatScene", waitTime: 2, fadeTime: 1)
             }
             else {
                 lamp_incorrectTouches += 1

@@ -69,7 +69,7 @@ class MouseScene: SKScene {
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
-                transitionScene (currentScene: self, sceneString: "AllDoneScene", waitTime: 2, fadeTime: 1)
+                transitionScene (currentScene: self, sceneString: "AllDoneScene", waitTime: 0, fadeTime: 2)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -92,7 +92,7 @@ class MouseScene: SKScene {
             if mouse_incorrectTouches > 13 {
                 sceneOver = true
                 
-                transitionScene (currentScene: self, sceneString: "AllDoneScene", waitTime: 2, fadeTime: 1)
+                transitionScene (currentScene: self, sceneString: "AllDoneScene", waitTime: 0, fadeTime: 2)
             }
             
             //If mouse sprite is touched...

@@ -68,8 +68,7 @@ class HandScene: SKScene {
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "RainScene", waitTime: 2.5, fadeTime: 1)
+                transitionScene (currentScene: self, sceneString: "RainScene", waitTime: 0, fadeTime: 2)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -92,8 +91,7 @@ class HandScene: SKScene {
             if hand_incorrectTouches > 13 {
                 sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "RainScene", waitTime: 2.5, fadeTime: 1)
+                transitionScene (currentScene: self, sceneString: "RainScene", waitTime: 0, fadeTime: 2)
             }
             
             //If hand sprite's alpha mask is touched...
@@ -113,7 +111,6 @@ class HandScene: SKScene {
                 // play correct wiggleOnly animation (function declared on HandScene.swift in coloring game)
                 wiggleOnly(node: hand!, coloredImg: "handScene_hand_colored", correctSound: "hand")
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
                 transitionScene (currentScene: self, sceneString: "RainScene", waitTime: 2.5, fadeTime: 1)
             }
             else {
