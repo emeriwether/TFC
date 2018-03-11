@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "nexbutton.png",
+      "filename" : "nextbuttonpressed.png",
       "scale" : "1x"
     },
     {
