@@ -154,7 +154,10 @@ func resetAllGameStats_coloring () {
     lineAccuracy = 0.0
     sceneAccuracy = 0.0
     
-    correctFirstTriesArray.removeAll()
+    for (scene, _) in correctFirstTries {
+        correctFirstTries[scene] = false
+    }
+    
     for (scene, _) in numCorrectPerScene {
         numCorrectPerScene[scene] = 0
     }
