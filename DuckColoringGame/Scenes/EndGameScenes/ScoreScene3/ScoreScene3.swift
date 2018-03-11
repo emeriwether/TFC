@@ -6,4 +6,11 @@
 //  Copyright © 2018 Eleanor Meriwether. All rights reserved.
 //
 
-import Foundation
+import SpriteKit
+
+class ScoreScene3: SKScene {
+    
+    override func didMove(to view: SKView) {
+        
+    }
+}

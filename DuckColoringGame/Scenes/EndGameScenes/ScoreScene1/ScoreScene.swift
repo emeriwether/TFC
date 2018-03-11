@@ -266,26 +266,22 @@ class ScoreScene: SKScene {
         self.addChild(breakdownByComboButton)
         
         if viewSceneBreakdownButton!.contains(touch.location(in:self)){
+            playAgainButton.isHidden = true
+            
             breakdownByItemsButton.isHidden = false
             breakdownByBGButton.isHidden = false
             breakdownByComboButton.isHidden = false
-
-            if viewSceneBreakdownButton!.contains(touch.location(in:self)) {
-                breakdownByItemsButton.isHidden = true
-                breakdownByBGButton.isHidden = true
-                breakdownByComboButton.isHidden = true
-            }
             
             if breakdownByItemsButton.contains(touch.location(in:self)) {
-                transitionScene(currentScene: self, sceneString: "ScoreScene2", waitTime: 1)
+                transitionScene(currentScene: self, sceneString: "ScoreScene2", waitTime: 0)
             }
             
             if breakdownByBGButton.contains(touch.location(in:self)) {
-                transitionScene(currentScene: self, sceneString: "ScoreScene3", waitTime: 1)
+                transitionScene(currentScene: self, sceneString: "ScoreScene3", waitTime: 0)
             }
             
             if breakdownByComboButton.contains(touch.location(in:self)) {
-                transitionScene(currentScene: self, sceneString: "ScoreScene4", waitTime: 1)
+                transitionScene(currentScene: self, sceneString: "ScoreScene4", waitTime: 0)
             }
 
         }
