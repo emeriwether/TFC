@@ -113,7 +113,6 @@
 		066DB6301FAE8F1500C68B36 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066DB62F1FAE8F1500C68B36 /* GameViewController.swift */; };
 		066DB6331FAE8F1500C68B36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 066DB6311FAE8F1500C68B36 /* Main.storyboard */; };
 		066DB6381FAE8F1500C68B36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 066DB6361FAE8F1500C68B36 /* LaunchScreen.storyboard */; };
-		06884BB12030BCA4009C6E1D /* CooperBlack in Resources */ = {isa = PBXBuildFile; fileRef = 06884BB02030BCA4009C6E1D /* CooperBlack */; };
 		069DE7C420045B0100465399 /* ToastScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069DE7C320045B0100465399 /* ToastScene.swift */; };
 		069DE7C620045B0F00465399 /* ToastScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 069DE7C520045B0F00465399 /* ToastScene.sks */; };
 		06B3C6E51FBCD46C00252DB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06B3C6E41FBCD46C00252DB6 /* Assets.xcassets */; };
@@ -317,9 +316,11 @@
 		066DB6321FAE8F1500C68B36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		066DB6371FAE8F1500C68B36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		066DB6391FAE8F1500C68B36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		06884BB02030BCA4009C6E1D /* CooperBlack */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CooperBlack; sourceTree = "<group>"; };
 		069DE7C320045B0100465399 /* ToastScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastScene.swift; sourceTree = "<group>"; };
 		069DE7C520045B0F00465399 /* ToastScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ToastScene.sks; sourceTree = "<group>"; };
+		06ABE2E62054C08600749589 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		06ABE2E72054C08600749589 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		06ABE2E82054C09300749589 /* CalibriBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CalibriBold.ttf; sourceTree = "<group>"; };
 		06B3C6E41FBCD46C00252DB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06BD2F49202BE6C100AC0A54 /* MoonScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoonScene.swift; sourceTree = "<group>"; };
 		06BD2F4B202BE6D200AC0A54 /* MoonScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MoonScene.sks; sourceTree = "<group>"; };
@@ -614,7 +615,9 @@
 		0630356D202FD0850003CAE9 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				06884BB02030BCA4009C6E1D /* CooperBlack */,
+				06ABE2E82054C09300749589 /* CalibriBold.ttf */,
+				06ABE2E62054C08600749589 /* Montserrat-Regular.ttf */,
+				06ABE2E72054C08600749589 /* Montserrat-SemiBold.ttf */,
 				0630356C202FD0810003CAE9 /* Calibri.ttf */,
 			);
 			path = Fonts;
@@ -1401,7 +1404,6 @@
 				06427F1B1FD9F898009C07ED /* PianoScene6.sks in Resources */,
 				0613CCB7205045AF00FEC3F4 /* reminder_lion.mp3 in Resources */,
 				06E34BBA2030F8490027CE82 /* wrong.wav in Resources */,
-				06884BB12030BCA4009C6E1D /* CooperBlack in Resources */,
 				0B35083D204F3D3D00BD1AD8 /* instructions_cup.mp3 in Resources */,
 				0613CCAE2050450200FEC3F4 /* correct2.wav in Resources */,
 				0613CCD72050485900FEC3F4 /* instructions_raisins.mp3 in Resources */,
