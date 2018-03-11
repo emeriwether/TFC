@@ -37,7 +37,7 @@ var lineAccuracy = 0.0
 var sceneAccuracy = 0.0
 
 ////// Scene Breakdowns ////////////////
-var correctFirstTriesArray = [String]()
+var correctFirstTries: [String:Bool] = ["rock": false, "lamp": false, "cat": false, "lion": false, "hand": false, "rain": false, "duck": false, "moon": false, "cow": false, "trash": false, "airplane": false, "shoes": false, "cake": false, "stroller": false, "toast": false, "hat": false, "cookie": false, "mouse": false]
 var numCorrectPerScene: [String:Int] = ["rock": 0, "lamp": 0, "cat": 0, "lion": 0, "hand": 0, "rain": 0, "duck": 0, "moon": 0, "cow": 0, "trash": 0, "airplane": 0, "shoes": 0, "cake": 0, "stroller": 0, "toast": 0, "hat": 0, "cookie": 0, "mouse": 0]
 var numIncorrectPerScene: [String:Int] = ["rock": 0, "lamp": 0, "cat": 0, "lion": 0, "hand": 0, "rain": 0, "duck": 0, "moon": 0, "cow": 0, "trash": 0, "airplane": 0, "shoes": 0, "cake": 0, "stroller": 0, "toast": 0, "hat": 0, "cookie": 0, "mouse": 0]
 var accuracyPerScene: [String:Double] = ["rock": 0, "lamp": 0, "cat": 0, "lion": 0, "hand": 0, "rain": 0, "duck": 0, "moon": 0, "cow": 0, "trash": 0, "airplane": 0, "shoes": 0, "cake": 0, "stroller": 0, "toast": 0, "hat": 0, "cookie": 0, "mouse": 0]

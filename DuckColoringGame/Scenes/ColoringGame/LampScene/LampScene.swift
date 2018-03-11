@@ -107,7 +107,7 @@ class LampScene: SKScene {
                     totalCorrectFT += 1
                     simpleCorrectFT += 1
                     twoItemCorrectFT += 1
-                    correctFirstTriesArray.append("lamp")
+                    correctFirstTries["lamp"] = true
                 }
                 
                 // play correct scale&wiggle animation (function declared on Trainer_Balloon.swift in coloring game)
