@@ -81,8 +81,7 @@ class ScoreScene3: SKScene {
             checkOrX_completed (scene: self, dictWord: scene, word: "mouse", correct: correct, xCoord: -259.663, yCoord: -394.489)
         }
     ////////////////////////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////////////////////////////////////////////
-        //CALCULATE AND PLACE ACCURACY LABELS
+    ////////////////////////////////////////////////////////////////////////////////////////////
         //CALCULATE AND PLACE ACCURACY LABELS
         for (scene, accuracy) in accuracyPerScene {
             accuracyLabels (scene: self, sceneString: scene, word: "rock", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)

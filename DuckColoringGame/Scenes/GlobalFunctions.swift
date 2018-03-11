@@ -164,7 +164,6 @@ func resetAllGameStats_coloring () {
     for (scene, _) in correctFirstTries {
         correctFirstTries[scene] = false
     }
-    
     for (scene, _) in numCorrectPerScene {
         numCorrectPerScene[scene] = 0
     }
@@ -242,7 +241,7 @@ func incorrectTouchesLabels (scene: SKScene, sceneString: String, word: String, 
     }
 }
 
-func checkOrX_firstTry_twoItems (scene: SKScene, dictWord: String, word: String, firstTry: Bool, xCoord: Double, yCoord: Double) {
+func checkOrX_completed_twoItems (scene: SKScene, dictItem: String, category: String, correct: Int, xCoord: Double, yCoord: Double) {
     let checkMark = SKSpriteNode(imageNamed: "check")
     let xMark = SKSpriteNode(imageNamed: "incorrect")
     
@@ -253,11 +252,33 @@ func checkOrX_firstTry_twoItems (scene: SKScene, dictWord: String, word: String,
     copiedX.setScale(0.25)
     copiedX.zPosition = 2
     
-    if dictWord == word {
-        if firstTry == true {
+    if dictItem == category {
+        if correct == 2 {
             copiedCheck.position = CGPoint(x: xCoord, y: yCoord)
             scene.addChild(copiedCheck)
-        } else if firstTry == false {
+        } else if correct < 2 {
+            copiedX.position = CGPoint(x: xCoord, y: yCoord)
+            scene.addChild(copiedX)
+        }
+    }
+}
+
+func checkOrX_firstTry_twoItems (scene: SKScene, dictItem: String, category: String, firstTry: Int, xCoord: Double, yCoord: Double) {
+    let checkMark = SKSpriteNode(imageNamed: "check")
+    let xMark = SKSpriteNode(imageNamed: "incorrect")
+    
+    let copiedCheck = checkMark.copy() as! SKSpriteNode
+    copiedCheck.setScale(0.25)
+    copiedCheck.zPosition = 2
+    let copiedX = xMark.copy() as! SKSpriteNode
+    copiedX.setScale(0.25)
+    copiedX.zPosition = 2
+    
+    if dictItem == category {
+        if firstTry == 2 {
+            copiedCheck.position = CGPoint(x: xCoord, y: yCoord)
+            scene.addChild(copiedCheck)
+        } else if firstTry < 2 {
             copiedX.position = CGPoint(x: xCoord, y: yCoord)
             scene.addChild(copiedX)
         }
