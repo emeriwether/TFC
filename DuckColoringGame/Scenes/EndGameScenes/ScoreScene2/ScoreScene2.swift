@@ -45,20 +45,20 @@ class ScoreScene2: SKScene {
         for (sceneString, numIncorrect) in numIncorrectPerScene {
             incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "rock", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: 207.027)
             incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "lamp", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: 172.027)
-            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "cat", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: 137.027)
-            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "lion", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: 102.027)
-            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "hand", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: 67.027)
-            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "rain", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: 32.027)
-            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "duck", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: -7.411)
-            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "moon", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: -42.411)
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "duck", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: 137.027)
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "moon", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: 102.027)
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "cake", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: 67.027)
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "stroller", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: 32.027)
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "cat", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: -7.411)
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "lion", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: -42.411)
             incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "cow", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: -77.411)
             incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "trash", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: -112.411)
-            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "airplane", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: -147.411)
-            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "shoes", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: -182.411)
-            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "cake", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: -219.49)
-            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "stroller", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: -254.49)
-            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "toast", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: -289.49)
-            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "hat", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: -324.49)
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "toast", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: -147.411)
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "hat", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: -182.411)
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "hand", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: -219.49)
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "rain", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: -254.49)
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "airplane", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: -289.49)
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "shoes", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: -324.49)
             incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "cookie", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: -359.489)
             incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "mouse", numIncorrect: numIncorrect, xCoord: -20.398, yCoord: -394.489)
         }
@@ -89,7 +89,7 @@ class ScoreScene2: SKScene {
         }
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
-        //CALCULATE AND PLACE INCORRECT-TOUCHES LABELS
+        //CALCULATE AND PLACE ACCURACY LABELS
         
         
     ////////////////////////////////////////////////////////////////////////////////////////////
