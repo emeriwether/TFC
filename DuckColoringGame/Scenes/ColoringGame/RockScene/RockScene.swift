@@ -106,6 +106,7 @@ class RockScene: SKScene {
                     simpleCorrectFT += 1
                     twoItemCorrectFT += 1
                     correctFirstTries["rock"] = true
+                    
                 }
                 
                 animateNode(node: rock!, coloredImg: "rockScene_rock_colored", correctSound: "correct2")

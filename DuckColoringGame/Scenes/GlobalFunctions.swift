@@ -41,6 +41,13 @@ var correctFirstTries: [String:Bool] = ["rock": false, "lamp": false, "cat": fal
 var numCorrectPerScene: [String:Int] = ["rock": 0, "lamp": 0, "cat": 0, "lion": 0, "hand": 0, "rain": 0, "duck": 0, "moon": 0, "cow": 0, "trash": 0, "airplane": 0, "shoes": 0, "cake": 0, "stroller": 0, "toast": 0, "hat": 0, "cookie": 0, "mouse": 0]
 var numIncorrectPerScene: [String:Int] = ["rock": 0, "lamp": 0, "cat": 0, "lion": 0, "hand": 0, "rain": 0, "duck": 0, "moon": 0, "cow": 0, "trash": 0, "airplane": 0, "shoes": 0, "cake": 0, "stroller": 0, "toast": 0, "hat": 0, "cookie": 0, "mouse": 0]
 var accuracyPerScene: [String:Double] = ["rock": 0, "lamp": 0, "cat": 0, "lion": 0, "hand": 0, "rain": 0, "duck": 0, "moon": 0, "cow": 0, "trash": 0, "airplane": 0, "shoes": 0, "cake": 0, "stroller": 0, "toast": 0, "hat": 0, "cookie": 0, "mouse": 0]
+
+////// Combo breakdowns /////////////////
+var comboCompletedDict: [String:Int] = ["twoItemSimple": 0, "twoItemLine": 0, "twoItemScene": 0, "threeItemSimple": 0, "threeItemLine": 0, "threeItemScene": 0, "fourItemSimple": 0, "fourItemLine": 0, "fourItemScene": 0]
+var comboNumIncorrectDict: [String:Int] = ["twoItemSimple": 0, "twoItemLine": 0, "twoItemScene": 0, "threeItemSimple": 0, "threeItemLine": 0, "threeItemScene": 0, "fourItemSimple": 0, "fourItemLine": 0, "fourItemScene": 0]
+var comboNumFTDict: [String:Int] = ["twoItemSimple": 0, "twoItemLine": 0, "twoItemScene": 0, "threeItemSimple": 0, "threeItemLine": 0, "threeItemScene": 0, "fourItemSimple": 0, "fourItemLine": 0, "fourItemScene": 0]
+var comboAccuracyDict: [String:Double] = ["twoItemSimple": 0.0, "twoItemLine": 0.0, "twoItemScene": 0.0, "threeItemSimple": 0.0, "threeItemLine": 0.0, "threeItemScene": 0.0, "fourItemSimple": 0.0, "fourItemLine": 0.0, "fourItemScene": 0.0]
+
 ////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////
 //PUBLIC FUNCTIONS
@@ -167,6 +174,18 @@ func resetAllGameStats_coloring () {
     for (scene, _) in accuracyPerScene {
         accuracyPerScene[scene] = 0
     }
+    for (scene, _) in comboCompletedDict {
+        accuracyPerScene[scene] = 0
+    }
+    for (scene, _) in comboNumFTDict {
+        accuracyPerScene[scene] = 0
+    }
+    for (scene, _) in comboAccuracyDict {
+        accuracyPerScene[scene] = 0
+    }
+    for (scene, _) in comboNumIncorrectDict {
+        accuracyPerScene[scene] = 0
+    }
 }
 
 func checkOrX_completed (scene: SKScene, dictWord: String, word: String, correct: Int, xCoord: Double, yCoord: Double) {
@@ -220,5 +239,40 @@ func incorrectTouchesLabels (scene: SKScene, sceneString: String, word: String, 
     
     if sceneString == word {
         printLabel (scene: scene, label: copiedLabel, words: numIncorrect, xCoord: xCoord, yCoord: yCoord, fontSize: 28)
+    }
+}
+
+func checkOrX_firstTry_twoItems (scene: SKScene, dictWord: String, word: String, firstTry: Bool, xCoord: Double, yCoord: Double) {
+    let checkMark = SKSpriteNode(imageNamed: "check")
+    let xMark = SKSpriteNode(imageNamed: "incorrect")
+    
+    let copiedCheck = checkMark.copy() as! SKSpriteNode
+    copiedCheck.setScale(0.25)
+    copiedCheck.zPosition = 2
+    let copiedX = xMark.copy() as! SKSpriteNode
+    copiedX.setScale(0.25)
+    copiedX.zPosition = 2
+    
+    if dictWord == word {
+        if firstTry == true {
+            copiedCheck.position = CGPoint(x: xCoord, y: yCoord)
+            scene.addChild(copiedCheck)
+        } else if firstTry == false {
+            copiedX.position = CGPoint(x: xCoord, y: yCoord)
+            scene.addChild(copiedX)
+        }
+    }
+}
+
+func incorrectTouchesLabels_twoItems (scene: SKScene, sceneString1: String, word1: String, sceneString2: String, word2: String, numIncorrect1: Int, numIncorrect2: Int, xCoord: Double, yCoord: Double) {
+    let label = SKLabelNode(fontNamed:"Montserrat-SemiBold")
+    let copiedLabel = label.copy() as! SKLabelNode
+    
+    let numIncorrect1 = numIncorrect1
+    let numIncorrect2 = numIncorrect2
+    let numIncorrectSum = String(numIncorrect1 + numIncorrect2)
+    
+    if sceneString1 == word1 && sceneString2 == word2 {
+        printLabel (scene: scene, label: copiedLabel, words: numIncorrectSum, xCoord: xCoord, yCoord: yCoord, fontSize: 28)
     }
 }

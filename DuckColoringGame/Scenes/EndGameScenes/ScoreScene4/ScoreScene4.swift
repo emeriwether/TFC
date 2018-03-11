@@ -9,9 +9,30 @@
 import SpriteKit
 
 class ScoreScene4: SKScene {
+
     
     override func didMove(to view: SKView) {
-        
+        for (scene, num) in numIncorrectPerScene {
+            if scene == "rock" { comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["twoItemSimple"]! + num }
+            if scene == "lamp" { comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["twoItemSimple"]! + num }
+            if scene == "cat" { comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["threeItemSimple"]! + num }
+            if scene == "lion" { comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["threeItemSimple"]! + num }
+            if scene == "hand" { comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["fourItemSimple"]! + num }
+            if scene == "rain" { comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["fourItemSimple"]! + num }
+            if scene == "duck" { comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["twoItemLine"]! + num }
+            if scene == "moon" { comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["twoItemLine"]! + num }
+            if scene == "cow" { comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["threeItemLine"]! + num }
+            if scene == "trash" { comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["threeItemLine"]! + num }
+            if scene == "airplane" { comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["fourItemLine"]! + num }
+            if scene == "shoes" { comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["fourItemLine"]! + num }
+            if scene == "cake" { comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["twoItemScene"]! + num }
+            if scene == "stroller" { comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["twoItemScene"]! + num }
+            if scene == "toast" { comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["threeItemScene"]! + num }
+            if scene == "hat" { comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["threeItemScene"]! + num }
+            if scene == "cookie" { comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["fourItemScene"]! + num }
+            if scene == "mouse" { comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["fourItemScene"]! + num }
+        }
+
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

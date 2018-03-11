@@ -106,6 +106,7 @@ class LampScene: SKScene {
                     simpleCorrectFT += 1
                     twoItemCorrectFT += 1
                     correctFirstTries["lamp"] = true
+                    
                 }
                 
                 animateNode(node: lamp!, coloredImg: "lampScene_lamp_colored", correctSound: "correct2")

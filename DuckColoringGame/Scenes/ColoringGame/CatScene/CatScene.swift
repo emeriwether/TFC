@@ -106,6 +106,7 @@ class CatScene: SKScene {
                     simpleCorrectFT += 1
                     threeItemCorrectFT += 1
                     correctFirstTries["cat"] = true
+                    
                 }
                 
                 // Change sprite to colored cat
