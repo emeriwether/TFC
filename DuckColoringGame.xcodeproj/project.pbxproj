@@ -870,6 +870,7 @@
 				06427EFF1FD9F453009C07ED /* ColoringGame */,
 				0BCA0AA1201BCE0000488E8E /* MonsterGame_Trainer */,
 				0B3EFE9520461D4300F5932F /* MonsterGame */,
+				0B279E972054E60B00ABAA57 /* BallonnScene_Monster */,
 				06C819E3202F7276002F838E /* EndGameScenes */,
 				06427F001FD9F461009C07ED /* PianoGame */,
 			);
@@ -1039,6 +1040,13 @@
 				06C90F6320310BB600F318AD /* lion.wav */,
 			);
 			path = Lion;
+			sourceTree = "<group>";
+		};
+		0B279E972054E60B00ABAA57 /* BallonnScene_Monster */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BallonnScene_Monster;
 			sourceTree = "<group>";
 		};
 		0B28BEE0200C895D00B1D01E /* ColoringGame_Trainer */ = {
