@@ -22,9 +22,10 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>CooperBlack</string>
 		<string>Calibri.ttf</string>
 		<string>CalibriBold.ttf</string>
+		<string>Montserrat-Regular.ttf</string>
+		<string>Montserrat-SemiBold.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

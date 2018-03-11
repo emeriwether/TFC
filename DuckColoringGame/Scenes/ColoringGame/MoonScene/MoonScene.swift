@@ -68,8 +68,7 @@ class MoonScene: SKScene {
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "CowScene", waitTime: 4)
+                transitionScene (currentScene: self, sceneString: "CookieScene", waitTime: 4)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -92,8 +91,7 @@ class MoonScene: SKScene {
             if moon_incorrectTouches > 13 {
                 sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "CowScene", waitTime: 4)
+                transitionScene (currentScene: self, sceneString: "CookieScene", waitTime: 4)
             }
             
             //If moon sprite's alpha mask is touched...
@@ -113,8 +111,7 @@ class MoonScene: SKScene {
                 // play correct wiggleOnly animation (function declared on HandScene.swift in coloring game)
                 wiggleOnly(node: moon!, coloredImg: "moonScene_moon_colored", correctSound: "moon")
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "CowScene", waitTime: 4)
+                transitionScene (currentScene: self, sceneString: "CookieScene", waitTime: 4)
             }
             else {
                 moon_incorrectTouches += 1
