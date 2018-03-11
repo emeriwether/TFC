@@ -68,8 +68,7 @@ class Trainer_Bread: SKScene {
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "RockScene", waitTime: 2)
+                transitionScene (currentScene: self, sceneString: "RockScene", waitTime: 2, fadeTime: 1)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -92,8 +91,7 @@ class Trainer_Bread: SKScene {
             if bread_incorrectTouches > 13 {
                 sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "RockScene", waitTime: 2)
+                transitionScene (currentScene: self, sceneString: "RockScene", waitTime: 2, fadeTime: 1)
             }
             
             //If bread sprite is touched...
@@ -104,8 +102,7 @@ class Trainer_Bread: SKScene {
                 // play correct scale&wiggle animation (function declared on Trainer_Balloon.swift in coloring game)
                 animateNode(node: bread!, coloredImg: "colorTrainer_bread_colored", correctSound: "correct")
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "RockScene", waitTime: 2)
+                transitionScene (currentScene: self, sceneString: "RockScene", waitTime: 2, fadeTime: 1)
             }
             else {
                 bread_incorrectTouches += 1
