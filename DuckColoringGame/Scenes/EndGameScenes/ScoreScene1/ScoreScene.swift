@@ -82,11 +82,7 @@ class ScoreScene: SKScene {
         //UPDATED
     ////////////////////////////////////////////////////////////////////////////////////////////
         // PLACE TOTAL-CORRECT-FT LABEL
-        if (totalCorrectFT > 0) {
-            let totalCorrectFtText = "\(totalCorrectFT) / 18"
-        } else {
-            let totalCorrectFtText = "0 / 18"
-        }
+        let totalCorrectFtText = "\(totalCorrectFT) / 18"
         printLabel(label: totalCorrectFTLabel, words: totalCorrectFtText, xCoord: 320, yCoord: 211, fontSize: 150)
     ////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -308,7 +304,7 @@ class ScoreScene: SKScene {
         }
     }
     
-    func printLabel (label: SKLabelNode, words: String, xCoord: Double, yCoord: Double, fontSize: Int) {
+    func printLabel (label: SKLabelNode, words: String, xCoord: Double, yCoord: Double, fontSize: CGFloat) {
         label.text = words
         label.fontSize = fontSize
         label.position = CGPoint(x: xCoord, y: yCoord)
