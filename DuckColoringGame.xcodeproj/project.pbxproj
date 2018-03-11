@@ -113,6 +113,12 @@
 		066DB6301FAE8F1500C68B36 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066DB62F1FAE8F1500C68B36 /* GameViewController.swift */; };
 		066DB6331FAE8F1500C68B36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 066DB6311FAE8F1500C68B36 /* Main.storyboard */; };
 		066DB6381FAE8F1500C68B36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 066DB6361FAE8F1500C68B36 /* LaunchScreen.storyboard */; };
+		068ED91D205594E40054ED9B /* ScoreScene2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068ED91C205594E40054ED9B /* ScoreScene2.swift */; };
+		068ED91F205594EE0054ED9B /* ScoreScene3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068ED91E205594EE0054ED9B /* ScoreScene3.swift */; };
+		068ED921205594F90054ED9B /* ScoreScene4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068ED920205594F90054ED9B /* ScoreScene4.swift */; };
+		068ED923205595030054ED9B /* ScoreScene2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 068ED922205595030054ED9B /* ScoreScene2.sks */; };
+		068ED9252055950E0054ED9B /* ScoreScene3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 068ED9242055950E0054ED9B /* ScoreScene3.sks */; };
+		068ED927205595190054ED9B /* ScoreScene4.sks in Resources */ = {isa = PBXBuildFile; fileRef = 068ED926205595190054ED9B /* ScoreScene4.sks */; };
 		069DE7C420045B0100465399 /* ToastScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069DE7C320045B0100465399 /* ToastScene.swift */; };
 		069DE7C620045B0F00465399 /* ToastScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 069DE7C520045B0F00465399 /* ToastScene.sks */; };
 		06ABE2E92054C41800749589 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06ABE2E62054C08600749589 /* Montserrat-Regular.ttf */; };
@@ -331,6 +337,12 @@
 		066DB6321FAE8F1500C68B36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		066DB6371FAE8F1500C68B36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		066DB6391FAE8F1500C68B36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		068ED91C205594E40054ED9B /* ScoreScene2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreScene2.swift; sourceTree = "<group>"; };
+		068ED91E205594EE0054ED9B /* ScoreScene3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreScene3.swift; sourceTree = "<group>"; };
+		068ED920205594F90054ED9B /* ScoreScene4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreScene4.swift; sourceTree = "<group>"; };
+		068ED922205595030054ED9B /* ScoreScene2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ScoreScene2.sks; sourceTree = "<group>"; };
+		068ED9242055950E0054ED9B /* ScoreScene3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ScoreScene3.sks; sourceTree = "<group>"; };
+		068ED926205595190054ED9B /* ScoreScene4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ScoreScene4.sks; sourceTree = "<group>"; };
 		069DE7C320045B0100465399 /* ToastScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastScene.swift; sourceTree = "<group>"; };
 		069DE7C520045B0F00465399 /* ToastScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ToastScene.sks; sourceTree = "<group>"; };
 		06ABE2E62054C08600749589 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
@@ -886,6 +898,33 @@
 			path = DuckColoringGame;
 			sourceTree = "<group>";
 		};
+		068ED928205595200054ED9B /* ScoreScene2 */ = {
+			isa = PBXGroup;
+			children = (
+				068ED91C205594E40054ED9B /* ScoreScene2.swift */,
+				068ED922205595030054ED9B /* ScoreScene2.sks */,
+			);
+			path = ScoreScene2;
+			sourceTree = "<group>";
+		};
+		068ED929205595290054ED9B /* ScoreScene3 */ = {
+			isa = PBXGroup;
+			children = (
+				068ED91E205594EE0054ED9B /* ScoreScene3.swift */,
+				068ED9242055950E0054ED9B /* ScoreScene3.sks */,
+			);
+			path = ScoreScene3;
+			sourceTree = "<group>";
+		};
+		068ED92A205595310054ED9B /* ScoreScene4 */ = {
+			isa = PBXGroup;
+			children = (
+				068ED920205594F90054ED9B /* ScoreScene4.swift */,
+				068ED926205595190054ED9B /* ScoreScene4.sks */,
+			);
+			path = ScoreScene4;
+			sourceTree = "<group>";
+		};
 		069DE7C720045B1500465399 /* ToastScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -934,6 +973,9 @@
 				06C819E1202F6DBA002F838E /* AllDoneScene */,
 				0630356B202F930C0003CAE9 /* PasswordScene */,
 				06476DD71FC945F600B55906 /* ScoreScene1 */,
+				068ED928205595200054ED9B /* ScoreScene2 */,
+				068ED929205595290054ED9B /* ScoreScene3 */,
+				068ED92A205595310054ED9B /* ScoreScene4 */,
 			);
 			path = EndGameScenes;
 			sourceTree = "<group>";
@@ -1510,6 +1552,7 @@
 				06C90F6420310BB600F318AD /* lion.wav in Resources */,
 				060A6811202AA81D005F7323 /* reminder_cookie.wav in Resources */,
 				0613CCDF205054CD00FEC3F4 /* TitleScene.sks in Resources */,
+				068ED923205595030054ED9B /* ScoreScene2.sks in Resources */,
 				0613CCC72050467C00FEC3F4 /* instructions_shoes.mp3 in Resources */,
 				0BCA0AAA201BCE0000488E8E /* Monster_T3.sks in Resources */,
 				0613CCE52050553B00FEC3F4 /* introSong.wav in Resources */,
@@ -1533,6 +1576,7 @@
 				060A6809202AA763005F7323 /* instructions_duck.wav in Resources */,
 				06476DC31FC93F3E00B55906 /* CookieScene.sks in Resources */,
 				0B3EFED42046336600F5932F /* instructions_piano7.wav in Resources */,
+				068ED9252055950E0054ED9B /* ScoreScene3.sks in Resources */,
 				0B35082D204F2CCE00BD1AD8 /* ToothScene.sks in Resources */,
 				060A6825202AA8A9005F7323 /* cow.wav in Resources */,
 				0B3EFEDE2046336600F5932F /* correctMelody3.wav in Resources */,
@@ -1556,6 +1600,7 @@
 				0B350843204F4DDA00BD1AD8 /* PenScene.sks in Resources */,
 				0B3EFEDB2046336600F5932F /* correctMelody2.wav in Resources */,
 				0613CCAF2050450200FEC3F4 /* reminder_lamp.mp3 in Resources */,
+				068ED927205595190054ED9B /* ScoreScene4.sks in Resources */,
 				06C90F6E20310FC800F318AD /* hand.wav in Resources */,
 				0613CCE2205054FF00FEC3F4 /* NameScene.sks in Resources */,
 				06427F241FD9F8AD009C07ED /* PianoScene8.sks in Resources */,
@@ -1587,12 +1632,14 @@
 				06BD2F4A202BE6C100AC0A54 /* MoonScene.swift in Sources */,
 				0B3EFE9E20461D4300F5932F /* OrangeScene.swift in Sources */,
 				062B1BFC202D1DCD002DECBB /* CakeScene.swift in Sources */,
+				068ED921205594F90054ED9B /* ScoreScene4.swift in Sources */,
 				06427EFD1FD9F421009C07ED /* PianoScene1.swift in Sources */,
 				06427F0B1FD9F868009C07ED /* PianoScene2.swift in Sources */,
 				0B350831204F31CE00BD1AD8 /* FlowerScene.swift in Sources */,
 				06303568202F92E90003CAE9 /* PasswordScene.swift in Sources */,
 				062D7D4D1FD125FB00575A5B /* AirplaneScene.swift in Sources */,
 				0B3EFEA220461D4300F5932F /* CandyScene.swift in Sources */,
+				068ED91F205594EE0054ED9B /* ScoreScene3.swift in Sources */,
 				06427F271FD9F8BA009C07ED /* PianoScene9.swift in Sources */,
 				06C90F6920310DC600F318AD /* HandScene.swift in Sources */,
 				0613CCE3205054FF00FEC3F4 /* NameScene.swift in Sources */,
@@ -1611,6 +1658,7 @@
 				0BCA0A99201BCC2100488E8E /* LampScene.swift in Sources */,
 				06476DC51FC93F4C00B55906 /* CookieScene.swift in Sources */,
 				0B279EA62055099300ABAA57 /* ChairScene.swift in Sources */,
+				068ED91D205594E40054ED9B /* ScoreScene2.swift in Sources */,
 				0B3EFEA420461D4300F5932F /* RaisinsScene.swift in Sources */,
 				06427F1C1FD9F898009C07ED /* PianoScene6.swift in Sources */,
 				062B1BF9202D1859002DECBB /* HatScene.swift in Sources */,
