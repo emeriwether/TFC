@@ -244,26 +244,43 @@ class ScoreScene: SKScene {
         // Functionality for viewSceneBreakdownButton
         var breakdownButtonTouched = false
         
+        let breakdownByItemsButton = SKSpriteNode(imageNamed: "ViewSceneBreakdownButtonPressed_items")
+        let breakdownByBGButton = SKSpriteNode(imageNamed: "ViewSceneBreakdownButtonPressed_bg")
+        let breakdownByComboButton = SKSpriteNode(imageNamed: "ViewSceneBreakdownButtonPressed_combo")
+        
         if viewSceneBreakdownButton!.contains(touch.location(in:self)) && breakdownButtonTouched == false {
             breakdownButtonTouched = true
             
-            let breakdownByItemsButton = SKSpriteNode(imageNamed: "ViewSceneBreakdownButtonPressed_items")
-            breakdownByItemsButton.position = CGPoint(x: 0, y: 0)
+            breakdownByItemsButton.position = CGPoint(x: 3.883, y: -354.36)
             breakdownByItemsButton.zPosition = 2
+            breakdownByItemsButton.size = CGSize(width: 1199.768, height: 68.719)
             self.addChild(breakdownByItemsButton)
+            if breakdownByItemsButton!.contains(touch.location(in:self)) {
+                transitionScene(currentScene: self, sceneString: "ScoreScene2", waitTime: Double1)
+            }
             
-            let breakdownByBGButton = SKSpriteNode(imageNamed: "ViewSceneBreakdownButtonPressed_bg")
-            breakdownByBGButton.position = CGPoint(x: 0, y: 0)
+            breakdownByBGButton.position = CGPoint(x: 5.192, y: -412.37)
             breakdownByBGButton.zPosition = 2
+            breakdownByBGButton.size = CGSize(width: 1202.768, height: 47.302)
             self.addChild(breakdownByBGButton)
+            if breakdownByBGButton!.contains(touch.location(in:self)) {
+                transitionScene(currentScene: self, sceneString: "ScoreScene3", waitTime: Double1)
+            }
             
-            let breakdownByComboButton = SKSpriteNode(imageNamed: "ViewSceneBreakdownButtonPressed_combo")
-            breakdownByComboButton.position = CGPoint(x: 0, y: 0)
+            breakdownByComboButton.position = CGPoint(x: 3.478, y: -463.867)
             breakdownByComboButton.zPosition = 2
+            breakdownByComboButton.size = CGSize(width: 1200.958, height: 55.692)
             self.addChild(breakdownByComboButton)
-        } else if viewSceneBreakdownButton!.contains(touch.location(in:self)) && breakdownButtonTouched == true {
-            breakdownByItemsButton.removeFromParent()
+            if breakdownByComboButton!.contains(touch.location(in:self)) {
+                transitionScene(currentScene: self, sceneString: "ScoreScene3", waitTime: Double1)
+            }
+        }
+        else if viewSceneBreakdownButton!.contains(touch.location(in:self)) && breakdownButtonTouched == true {
+            breakdownButtonTouched = false
             
+            breakdownByItemsButton.removeFromParent()
+            breakdownByBGButton.removeFromParent()
+            breakdownByComboButton.removeFromParent()
         }
 
         
