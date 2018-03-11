@@ -68,8 +68,7 @@ class RainScene: SKScene {
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "DuckScene", waitTime: 2.5)
+                transitionScene (currentScene: self, sceneString: "CookieScene", waitTime: 2.5)
             }
         }
         // set up sequence: run 1s timer, then play action
@@ -92,8 +91,7 @@ class RainScene: SKScene {
             if rain_incorrectTouches > 13 {
                 sceneOver = true
                 
-                // transitionScene function declared on Trainer_Balloon.swift in coloring game
-                transitionScene (currentScene: self, sceneString: "DuckScene", waitTime: 2.5)
+                transitionScene (currentScene: self, sceneString: "CookieScene", waitTime: 2.5)
             }
             
             //If rain sprite's alpha mask is touched...

@@ -787,13 +787,13 @@
 			path = CookieScene;
 			sourceTree = "<group>";
 		};
-		06476DD71FC945F600B55906 /* ScoreScene */ = {
+		06476DD71FC945F600B55906 /* ScoreScene1 */ = {
 			isa = PBXGroup;
 			children = (
 				06476DD51FC945F200B55906 /* ScoreScene.swift */,
 				06476DD31FC9458E00B55906 /* ScoreScene.sks */,
 			);
-			path = ScoreScene;
+			path = ScoreScene1;
 			sourceTree = "<group>";
 		};
 		0657C65F1FC1F7F3002FC12D /* Audio */ = {
@@ -899,7 +899,7 @@
 			children = (
 				06C819E1202F6DBA002F838E /* AllDoneScene */,
 				0630356B202F930C0003CAE9 /* PasswordScene */,
-				06476DD71FC945F600B55906 /* ScoreScene */,
+				06476DD71FC945F600B55906 /* ScoreScene1 */,
 			);
 			path = EndGameScenes;
 			sourceTree = "<group>";
