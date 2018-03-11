@@ -234,11 +234,17 @@ class ScoreScene: SKScene {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // variable for play again button
+        // variable for buttons
+        let viewSceneBreakdownButton = self.childNode(withName: "view scene breakdown")
         let playAgainButton = self.childNode(withName: "play again button")
         
         // variable to keep track of touch
         let touch = touches.first!
+        
+        if viewSceneBreakdownButton!.contains(touch.location(in:self)) {
+            
+        }
+        
         
         // if retry button is touched
         if playAgainButton!.contains(touch.location(in: self)) {
@@ -285,10 +291,7 @@ class ScoreScene: SKScene {
             //////////////////////////////////////////////////
             
             // transition scene back to start
-            let startScene = SKScene(fileNamed: "StartScene")
-            startScene?.scaleMode = SKSceneScaleMode.aspectFill
-            let fade = SKTransition.fade(withDuration: 0.5)
-            self.scene!.view?.presentScene(startScene!, transition: fade)
+            transitionScene (currentScene: self, sceneString: "StartScene", waitTime: 1)
         }
     }
     
