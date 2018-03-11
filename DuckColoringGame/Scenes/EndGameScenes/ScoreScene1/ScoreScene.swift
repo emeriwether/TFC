@@ -236,55 +236,60 @@ class ScoreScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // variable for buttons
         let viewSceneBreakdownButton = self.childNode(withName: "view scene breakdown")
+
         let playAgainButton = self.childNode(withName: "playagain")
         
         // variable to keep track of touch
         let touch = touches.first!
         
         // Functionality for viewSceneBreakdownButton
-        var breakdownButtonTouched = false
         
         let breakdownByItemsButton = SKSpriteNode(imageNamed: "ViewSceneBreakdownButtonPressed_items")
-        let breakdownByBGButton = SKSpriteNode(imageNamed: "ViewSceneBreakdownButtonPressed_bg")
-        let breakdownByComboButton = SKSpriteNode(imageNamed: "ViewSceneBreakdownButtonPressed_combo")
+        breakdownByItemsButton.position = CGPoint(x: 3.883, y: -354.36)
+        breakdownByItemsButton.zPosition = 3
+        breakdownByItemsButton.size = CGSize(width: 1199.768, height: 68.719)
+        breakdownByItemsButton.isHidden = true
+        self.addChild(breakdownByItemsButton)
         
-        if viewSceneBreakdownButton!.contains(touch.location(in:self)) && breakdownButtonTouched == false {
-            breakdownButtonTouched = true
-            print("\(breakdownButtonTouched)")
+        let breakdownByBGButton = SKSpriteNode(imageNamed: "ViewSceneBreakdownButtonPressed_bg")
+        breakdownByBGButton.position = CGPoint(x: 5.192, y: -412.37)
+        breakdownByBGButton.zPosition = 3
+        breakdownByBGButton.size = CGSize(width: 1202.768, height: 47.302)
+        breakdownByBGButton.isHidden = true
+        self.addChild(breakdownByBGButton)
+        
+        let breakdownByComboButton = SKSpriteNode(imageNamed: "ViewSceneBreakdownButtonPressed_combo")
+        breakdownByComboButton.position = CGPoint(x: 3.478, y: -463.867)
+        breakdownByComboButton.zPosition = 3
+        breakdownByComboButton.size = CGSize(width: 1200.958, height: 55.692)
+        breakdownByComboButton.isHidden = true
+        self.addChild(breakdownByComboButton)
+        
+        if viewSceneBreakdownButton!.contains(touch.location(in:self)){
+            breakdownByItemsButton.isHidden = false
+            breakdownByBGButton.isHidden = false
+            breakdownByComboButton.isHidden = false
+
+            if viewSceneBreakdownButton!.contains(touch.location(in:self)) {
+                breakdownByItemsButton.isHidden = true
+                breakdownByBGButton.isHidden = true
+                breakdownByComboButton.isHidden = true
+            }
             
-            breakdownByItemsButton.position = CGPoint(x: 3.883, y: -354.36)
-            breakdownByItemsButton.zPosition = 3
-            breakdownByItemsButton.size = CGSize(width: 1199.768, height: 68.719)
-            self.addChild(breakdownByItemsButton)
             if breakdownByItemsButton.contains(touch.location(in:self)) {
                 transitionScene(currentScene: self, sceneString: "ScoreScene2", waitTime: 1)
             }
             
-            breakdownByBGButton.position = CGPoint(x: 5.192, y: -412.37)
-            breakdownByBGButton.zPosition = 3
-            breakdownByBGButton.size = CGSize(width: 1202.768, height: 47.302)
-            self.addChild(breakdownByBGButton)
             if breakdownByBGButton.contains(touch.location(in:self)) {
                 transitionScene(currentScene: self, sceneString: "ScoreScene3", waitTime: 1)
             }
             
-            breakdownByComboButton.position = CGPoint(x: 3.478, y: -463.867)
-            breakdownByComboButton.zPosition = 3
-            breakdownByComboButton.size = CGSize(width: 1200.958, height: 55.692)
-            self.addChild(breakdownByComboButton)
             if breakdownByComboButton.contains(touch.location(in:self)) {
                 transitionScene(currentScene: self, sceneString: "ScoreScene4", waitTime: 1)
             }
-        }
-        else if viewSceneBreakdownButton!.contains(touch.location(in:self)) && breakdownButtonTouched == true {
-            breakdownButtonTouched = false
-            print("\(breakdownButtonTouched)")
-            
-            breakdownByItemsButton.removeFromParent()
-            breakdownByBGButton.removeFromParent()
-            breakdownByComboButton.removeFromParent()
-        }
 
+        }
+        
         
         // if retry button is touched
         if playAgainButton!.contains(touch.location(in: self)) {
