@@ -82,17 +82,17 @@ class LionScene: SKScene {
         // local variable for lion sprite
         let lion = self.childNode(withName: "lion_bw")
         
-        // If user makes too many incorrect touches, just move on (move on during the 15th touch)
-        // incorrect touches starts at 0, so it's offset by 1
-        if lion_incorrectTouches > 13 {
-            sceneOver = true
-            
-            transitionScene (currentScene: self, sceneString: "HandScene", waitTime: 0, fadeTime: 2)
-        }
-        
         // if no instructions are playing
         if (instructionsComplete == true) && (reminderComplete == true) && (sceneOver == false){
             let touch = touches.first!
+            
+            // If user makes too many incorrect touches, just move on (move on during the 15th touch)
+            // incorrect touches starts at 0, so it's offset by 1
+            if lion_incorrectTouches > 13 {
+                sceneOver = true
+                
+                transitionScene (currentScene: self, sceneString: "HandScene", waitTime: 0, fadeTime: 2)
+            }
             
             //If lion sprite's alpha mask is touched...
             if (physicsWorld.body(at: touch.location(in: self)) == lion?.physicsBody) && (sceneOver == false) {
