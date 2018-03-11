@@ -142,6 +142,7 @@
 		06E34BCA203105870027CE82 /* cat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BC9203105870027CE82 /* cat.mp3 */; };
 		06E34BCD203106980027CE82 /* LionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E34BCC203106980027CE82 /* LionScene.swift */; };
 		06E34BCF203106A60027CE82 /* LionScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06E34BCE203106A50027CE82 /* LionScene.sks */; };
+		0B279E992054E95400ABAA57 /* BalloonScene_Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B279E982054E95400ABAA57 /* BalloonScene_Monster.swift */; };
 		0B35082B204F2CC000BD1AD8 /* ToothScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B35082A204F2CC000BD1AD8 /* ToothScene.swift */; };
 		0B35082D204F2CCE00BD1AD8 /* ToothScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0B35082C204F2CCE00BD1AD8 /* ToothScene.sks */; };
 		0B35082F204F2D7800BD1AD8 /* instructions_tooth.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B35082E204F2D7800BD1AD8 /* instructions_tooth.mp3 */; };
@@ -348,6 +349,7 @@
 		06E34BC9203105870027CE82 /* cat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cat.mp3; sourceTree = "<group>"; };
 		06E34BCC203106980027CE82 /* LionScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LionScene.swift; sourceTree = "<group>"; };
 		06E34BCE203106A50027CE82 /* LionScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LionScene.sks; sourceTree = "<group>"; };
+		0B279E982054E95400ABAA57 /* BalloonScene_Monster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonScene_Monster.swift; sourceTree = "<group>"; };
 		0B35082A204F2CC000BD1AD8 /* ToothScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToothScene.swift; sourceTree = "<group>"; };
 		0B35082C204F2CCE00BD1AD8 /* ToothScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ToothScene.sks; sourceTree = "<group>"; };
 		0B35082E204F2D7800BD1AD8 /* instructions_tooth.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_tooth.mp3; sourceTree = "<group>"; };
@@ -876,7 +878,6 @@
 				06427EFF1FD9F453009C07ED /* ColoringGame */,
 				0BCA0AA1201BCE0000488E8E /* MonsterGame_Trainer */,
 				0B3EFE9520461D4300F5932F /* MonsterGame */,
-				0B279E972054E60B00ABAA57 /* BallonnScene_Monster */,
 				06C819E3202F7276002F838E /* EndGameScenes */,
 				06427F001FD9F461009C07ED /* PianoGame */,
 			);
@@ -1051,6 +1052,7 @@
 		0B279E972054E60B00ABAA57 /* BallonnScene_Monster */ = {
 			isa = PBXGroup;
 			children = (
+				0B279E982054E95400ABAA57 /* BalloonScene_Monster.swift */,
 			);
 			path = BallonnScene_Monster;
 			sourceTree = "<group>";
@@ -1170,6 +1172,7 @@
 				0B350851204F5A9400BD1AD8 /* PenScene */,
 				0B350852204F5A9B00BD1AD8 /* RaisinsScene */,
 				0B350853204F5AA900BD1AD8 /* CakeScene_Monster */,
+				0B279E972054E60B00ABAA57 /* BallonnScene_Monster */,
 			);
 			path = MonsterGame;
 			sourceTree = "<group>";
@@ -1548,6 +1551,7 @@
 				06427F231FD9F8AD009C07ED /* PianoScene8.swift in Sources */,
 				0B350847204F562700BD1AD8 /* CakeScene_Monster.swift in Sources */,
 				0BCA0AB5201BDFB300488E8E /* Trainer_Balloon.swift in Sources */,
+				0B279E992054E95400ABAA57 /* BalloonScene_Monster.swift in Sources */,
 				0643D691202E13F4000FA53D /* DuckScene.swift in Sources */,
 				0B3EFEB520461E8D00F5932F /* StartScene.swift in Sources */,
 			);
