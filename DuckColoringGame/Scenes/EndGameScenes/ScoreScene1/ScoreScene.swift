@@ -241,9 +241,31 @@ class ScoreScene: SKScene {
         // variable to keep track of touch
         let touch = touches.first!
         
-        if viewSceneBreakdownButton!.contains(touch.location(in:self)) {
+        // Functionality for viewSceneBreakdownButton
+        var breakdownButtonTouched = false
+        
+        if viewSceneBreakdownButton!.contains(touch.location(in:self)) && breakdownButtonTouched == false {
+            breakdownButtonTouched = true
+            
+            let breakdownByItemsButton = SKSpriteNode(imageNamed: "ViewSceneBreakdownButtonPressed_items")
+            breakdownByItemsButton.position = CGPoint(x: 0, y: 0)
+            breakdownByItemsButton.zPosition = 2
+            self.addChild(breakdownByItemsButton)
+            
+            let breakdownByBGButton = SKSpriteNode(imageNamed: "ViewSceneBreakdownButtonPressed_bg")
+            breakdownByBGButton.position = CGPoint(x: 0, y: 0)
+            breakdownByBGButton.zPosition = 2
+            self.addChild(breakdownByBGButton)
+            
+            let breakdownByComboButton = SKSpriteNode(imageNamed: "ViewSceneBreakdownButtonPressed_combo")
+            breakdownByComboButton.position = CGPoint(x: 0, y: 0)
+            breakdownByComboButton.zPosition = 2
+            self.addChild(breakdownByComboButton)
+        } else if viewSceneBreakdownButton!.contains(touch.location(in:self)) && breakdownButtonTouched == true {
+            breakdownByItemsButton.removeFromParent()
             
         }
+
         
         
         // if retry button is touched
