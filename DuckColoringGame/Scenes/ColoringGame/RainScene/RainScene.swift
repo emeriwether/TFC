@@ -105,7 +105,7 @@ class RainScene: SKScene {
                     totalCorrectFT += 1
                     simpleCorrectFT += 1
                     fourItemCorrectFT += 1
-                    correctFirstTriesArray.append("rain")
+                    correctFirstTries["rain"] = true
                 }
                 
                 // Change sprite to colored rain

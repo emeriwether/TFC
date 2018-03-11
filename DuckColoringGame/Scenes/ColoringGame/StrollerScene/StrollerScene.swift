@@ -105,7 +105,7 @@ class StrollerScene: SKScene {
                     totalCorrectFT += 1
                     sceneCorrectFT += 1
                     twoItemCorrectFT += 1
-                    correctFirstTriesArray.append("stroller")
+                    correctFirstTries["stroller"] = true
                 }
                 
                 // Change sprite to colored stroller

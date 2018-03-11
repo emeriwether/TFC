@@ -107,7 +107,7 @@ class DuckScene: SKScene {
                     totalCorrectFT += 1
                     lineCorrectFT += 1
                     twoItemCorrectFT += 1
-                    correctFirstTriesArray.append("duck")
+                    correctFirstTries["duck"] = true
                 }
                 
                 // Change sprite to colored duck

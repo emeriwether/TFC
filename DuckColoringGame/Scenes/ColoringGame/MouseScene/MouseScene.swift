@@ -106,7 +106,7 @@ class MouseScene: SKScene {
                     totalCorrectFT += 1
                     sceneCorrectFT += 1
                     fourItemCorrectFT += 1
-                    correctFirstTriesArray.append("mouse")
+                    correctFirstTries["mouse"] = true
                 }
                 
                 // Color mouse

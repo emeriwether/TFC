@@ -105,7 +105,7 @@ class AirplaneScene: SKScene {
                     totalCorrectFT += 1
                     lineCorrectFT += 1
                     fourItemCorrectFT += 1
-                    correctFirstTriesArray.append("airplane")
+                    correctFirstTries["airplane"] = true
                 }
                 
                 // Color airplane

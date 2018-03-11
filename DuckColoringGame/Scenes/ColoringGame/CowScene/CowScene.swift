@@ -105,7 +105,7 @@ class CowScene: SKScene {
                     totalCorrectFT += 1
                     lineCorrectFT += 1
                     threeItemCorrectFT += 1
-                    correctFirstTriesArray.append("cow")
+                    correctFirstTries["cow"] = true
                 }
                 
                 // Change sprite to colored cow

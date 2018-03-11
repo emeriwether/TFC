@@ -105,7 +105,7 @@ class MoonScene: SKScene {
                     totalCorrectFT += 1
                     lineCorrectFT += 1
                     twoItemCorrectFT += 1
-                    correctFirstTriesArray.append("moon")
+                    correctFirstTries["moon"] = true
                 }
                 
                 // play correct wiggleOnly animation (function declared on HandScene.swift in coloring game)

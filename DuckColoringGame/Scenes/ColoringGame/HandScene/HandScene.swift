@@ -107,7 +107,7 @@ class HandScene: SKScene {
                     totalCorrectFT += 1
                     simpleCorrectFT += 1
                     fourItemCorrectFT += 1
-                    correctFirstTriesArray.append("hand")
+                    correctFirstTries["hand"] = true
                 }
                 
                 // play correct wiggleOnly animation (function declared on HandScene.swift in coloring game)

@@ -107,7 +107,7 @@ class LionScene: SKScene {
                     totalCorrectFT += 1
                     simpleCorrectFT += 1
                     threeItemCorrectFT += 1
-                    correctFirstTriesArray.append("lion")
+                    correctFirstTries["lion"] = true
                 }
                 
                 // Change sprite to colored lion

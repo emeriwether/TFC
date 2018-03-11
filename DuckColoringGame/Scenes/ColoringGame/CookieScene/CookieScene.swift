@@ -105,7 +105,7 @@ class CookieScene: SKScene {
                     totalCorrectFT += 1
                     sceneCorrectFT += 1
                     fourItemCorrectFT += 1
-                    correctFirstTriesArray.append("cookie")
+                    correctFirstTries["cookie"] = true
                 }
                 
                 // Change sprite to colored cookie

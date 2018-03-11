@@ -105,7 +105,7 @@ class HatScene: SKScene {
                     totalCorrectFT += 1
                     sceneCorrectFT += 1
                     threeItemCorrectFT += 1
-                    correctFirstTriesArray.append("hat")
+                    correctFirstTries["hat"] = true
                 }
 
                 // play correct hatFlip animation (function declared on HatScene.swift in coloring game)

@@ -106,7 +106,7 @@ class ShoesScene: SKScene {
                     totalCorrectFT += 1
                     lineCorrectFT += 1
                     fourItemCorrectFT += 1
-                    correctFirstTriesArray.append("shoes")
+                    correctFirstTries["shoes"] = true
                 }
                 
                 // Color shoes

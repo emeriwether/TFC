@@ -105,7 +105,7 @@ class CakeScene: SKScene {
                     totalCorrectFT += 1
                     sceneCorrectFT += 1
                     twoItemCorrectFT += 1
-                    correctFirstTriesArray.append("cake")
+                    correctFirstTries["cake"] = true
                 }
                 
                 // Change sprite to colored cake

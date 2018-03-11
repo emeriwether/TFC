@@ -105,7 +105,7 @@ class TrashScene: SKScene {
                     totalCorrectFT += 1
                     lineCorrectFT += 1
                     threeItemCorrectFT += 1
-                    correctFirstTriesArray.append("trash")
+                    correctFirstTries["trash"] = true
                 }
                 
                 // Color trash

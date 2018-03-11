@@ -105,7 +105,7 @@ class ToastScene: SKScene {
                     totalCorrectFT += 1
                     sceneCorrectFT += 1
                     threeItemCorrectFT += 1
-                    correctFirstTriesArray.append("toast")
+                    correctFirstTries["toast"] = true
                 }
                 
                 // Color toast
