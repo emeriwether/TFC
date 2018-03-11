@@ -237,7 +237,7 @@ class ScoreScene: SKScene {
         // variable for buttons
         let viewSceneBreakdownButton = self.childNode(withName: "view scene breakdown")
 
-        let playAgainButton = self.childNode(withName: "playagain")
+        var playAgainButton = self.childNode(withName: "playagain")
         
         // variable to keep track of touch
         let touch = touches.first!
@@ -266,7 +266,7 @@ class ScoreScene: SKScene {
         self.addChild(breakdownByComboButton)
         
         if viewSceneBreakdownButton!.contains(touch.location(in:self)){
-            playAgainButton.isHidden = true
+            playAgainButton!.removeFromParent()
             
             breakdownByItemsButton.isHidden = false
             breakdownByBGButton.isHidden = false
@@ -286,6 +286,7 @@ class ScoreScene: SKScene {
 
         }
         
+        playAgainButton = self.childNode(withName: "playagain")
         
         // if retry button is touched
         if playAgainButton!.contains(touch.location(in: self)) {
