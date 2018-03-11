@@ -43,32 +43,32 @@ var accuracyPerScene: [String:Double] = ["rock": 0, "lamp": 0, "cat": 0, "lion":
 
 class ScoreScene: SKScene {
     // LOCAL VARIABLES FOR LABELS
-    let nameLabel = SKLabelNode(fontNamed:"Calibri")
-    let ageLabel = SKLabelNode(fontNamed:"Calibri")
+    let nameLabel = SKLabelNode(fontNamed:"Montserrat-Regular")
+    let ageLabel = SKLabelNode(fontNamed:"Montserrat-Regular")
     
-    let totalCorrectFTLabel = SKLabelNode(fontNamed:"Calibri")
-    let setSize2Label = SKLabelNode(fontNamed: "Calibri")
-    let setSize3Label = SKLabelNode(fontNamed: "Calibri")
-    let setSize4Label = SKLabelNode(fontNamed: "Calibri")
-    let simpleBGLabel = SKLabelNode(fontNamed: "Calibri")
-    let lineBGLabel = SKLabelNode(fontNamed: "Calibri")
-    let sceneBGLabel = SKLabelNode(fontNamed: "Calibri")
+    let totalCorrectFTLabel = SKLabelNode(fontNamed:"Montserrat-SemiBold")
+    let setSize2Label = SKLabelNode(fontNamed: "Montserrat-Regular")
+    let setSize3Label = SKLabelNode(fontNamed: "Montserrat-Regular")
+    let setSize4Label = SKLabelNode(fontNamed: "Montserrat-Regular")
+    let simpleBGLabel = SKLabelNode(fontNamed: "Montserrat-Regular")
+    let lineBGLabel = SKLabelNode(fontNamed: "Montserrat-Regular")
+    let sceneBGLabel = SKLabelNode(fontNamed: "Montserrat-Regular")
     
-    let totalAccuracyLabel = SKLabelNode(fontNamed: "Calibri")
-    let twoItemAccuracyLabel = SKLabelNode(fontNamed: "Calibri")
-    let threeItemAccuracyLabel = SKLabelNode(fontNamed: "Calibri")
-    let fourItemAccuracyLabel = SKLabelNode(fontNamed: "Calibri")
-    let simpleAccuracyLabel = SKLabelNode(fontNamed: "Calibri")
-    let lineAccuracyLabel = SKLabelNode(fontNamed: "Calibri")
-    let sceneAccuracyLabel = SKLabelNode(fontNamed: "Calibri")
+    let totalAccuracyLabel = SKLabelNode(fontNamed: "Montserrat-SemiBold")
+    let twoItemAccuracyLabel = SKLabelNode(fontNamed: "Montserrat-Regular")
+    let threeItemAccuracyLabel = SKLabelNode(fontNamed: "Montserrat-Regular")
+    let fourItemAccuracyLabel = SKLabelNode(fontNamed: "Montserrat-Regular")
+    let simpleAccuracyLabel = SKLabelNode(fontNamed: "Montserrat-Regular")
+    let lineAccuracyLabel = SKLabelNode(fontNamed: "Montserrat-Regular")
+    let sceneAccuracyLabel = SKLabelNode(fontNamed: "Montserrat-Regular")
 
-    let listCorrectFTLabel = SKLabelNode(fontNamed:"Calibri")
-    let numCorrectPerSceneLabel = SKLabelNode(fontNamed: "Calibri")
-    let numIncorrectPerSceneLabel = SKLabelNode(fontNamed: "Calibri")
-    let accuracyPerSceneLabel = SKLabelNode(fontNamed: "Calibri")
+    let listCorrectFTLabel = SKLabelNode(fontNamed:"Montserrat-Regular")
+    let numCorrectPerSceneLabel = SKLabelNode(fontNamed: "Montserrat-Regular")
+    let numIncorrectPerSceneLabel = SKLabelNode(fontNamed: "Montserrat-Regular")
+    let accuracyPerSceneLabel = SKLabelNode(fontNamed: "Montserrat-Regular")
 
     override func didMove(to view: SKView) {
-        
+
         // CALCULATE ACCURACY FOR EACH SCENE
         for (item, _) in accuracyPerScene { calculateAccuracy(scene: item) }
         

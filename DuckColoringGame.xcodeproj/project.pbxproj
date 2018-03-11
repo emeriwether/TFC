@@ -115,6 +115,9 @@
 		066DB6381FAE8F1500C68B36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 066DB6361FAE8F1500C68B36 /* LaunchScreen.storyboard */; };
 		069DE7C420045B0100465399 /* ToastScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069DE7C320045B0100465399 /* ToastScene.swift */; };
 		069DE7C620045B0F00465399 /* ToastScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 069DE7C520045B0F00465399 /* ToastScene.sks */; };
+		06ABE2E92054C41800749589 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06ABE2E62054C08600749589 /* Montserrat-Regular.ttf */; };
+		06ABE2EA2054C41B00749589 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06ABE2E72054C08600749589 /* Montserrat-SemiBold.ttf */; };
+		06ABE2EB2054C41D00749589 /* CalibriBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06ABE2E82054C09300749589 /* CalibriBold.ttf */; };
 		06B3C6E51FBCD46C00252DB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06B3C6E41FBCD46C00252DB6 /* Assets.xcassets */; };
 		06BD2F4A202BE6C100AC0A54 /* MoonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BD2F49202BE6C100AC0A54 /* MoonScene.swift */; };
 		06BD2F4C202BE6D200AC0A54 /* MoonScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06BD2F4B202BE6D200AC0A54 /* MoonScene.sks */; };
@@ -1330,6 +1333,7 @@
 			files = (
 				0613CCA12050444400FEC3F4 /* correct2.wav in Resources */,
 				06CD961120334DD70097D766 /* stroller.wav in Resources */,
+				06ABE2EB2054C41D00749589 /* CalibriBold.ttf in Resources */,
 				0B3EFED02046336600F5932F /* correctAudio5.wav in Resources */,
 				0B3EFED62046336600F5932F /* correctMelody4.wav in Resources */,
 				06C90F6B20310DD200F318AD /* HandScene.sks in Resources */,
@@ -1404,6 +1408,7 @@
 				06427F1B1FD9F898009C07ED /* PianoScene6.sks in Resources */,
 				0613CCB7205045AF00FEC3F4 /* reminder_lion.mp3 in Resources */,
 				06E34BBA2030F8490027CE82 /* wrong.wav in Resources */,
+				06ABE2EA2054C41B00749589 /* Montserrat-SemiBold.ttf in Resources */,
 				0B35083D204F3D3D00BD1AD8 /* instructions_cup.mp3 in Resources */,
 				0613CCAE2050450200FEC3F4 /* correct2.wav in Resources */,
 				0613CCD72050485900FEC3F4 /* instructions_raisins.mp3 in Resources */,
@@ -1466,6 +1471,7 @@
 				06E34BC52031028E0027CE82 /* CatScene.sks in Resources */,
 				06B3C6E51FBCD46C00252DB6 /* Assets.xcassets in Resources */,
 				060A682A202AA8BA005F7323 /* reminder_mouse.wav in Resources */,
+				06ABE2E92054C41800749589 /* Montserrat-Regular.ttf in Resources */,
 				0B350837204F32D000BD1AD8 /* Sound_Munching.mp3 in Resources */,
 				0B3EFEB420461E8D00F5932F /* StartScene.sks in Resources */,
 				0613CCD2205046F900FEC3F4 /* reminder_hat.mp3 in Resources */,
