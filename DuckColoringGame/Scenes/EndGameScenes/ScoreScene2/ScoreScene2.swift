@@ -39,26 +39,60 @@ class ScoreScene2: SKScene {
             checkOrX_completed (scene: self, dictWord: scene, word: "cookie", correct: correct, xCoord: -259.663, yCoord: -359.489)
             checkOrX_completed (scene: self, dictWord: scene, word: "mouse", correct: correct, xCoord: -259.663, yCoord: -394.489)
         }
+    ////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////
+        //CALCULATE AND PLACE INCORRECT-TOUCHES LABELS
+        for (sceneString, numIncorrect) in numIncorrectPerScene {
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "rock", numIncorrect: numIncorrect, xCoord: , yCoord: )
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "lamp", numIncorrect: numIncorrect, xCoord: , yCoord: )
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "cat", numIncorrect: numIncorrect, xCoord: , yCoord: )
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "lion", numIncorrect: numIncorrect, xCoord: , yCoord: )
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "hand", numIncorrect: numIncorrect, xCoord: , yCoord: )
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "rock", numIncorrect: numIncorrect, xCoord: , yCoord: )
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "rock", numIncorrect: numIncorrect, xCoord: , yCoord: )
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "rock", numIncorrect: numIncorrect, xCoord: , yCoord: )
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "rock", numIncorrect: numIncorrect, xCoord: , yCoord: )
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "rock", numIncorrect: numIncorrect, xCoord: , yCoord: )
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "rock", numIncorrect: numIncorrect, xCoord: , yCoord: )
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "rock", numIncorrect: numIncorrect, xCoord: , yCoord: )
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "rock", numIncorrect: numIncorrect, xCoord: , yCoord: )
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "rock", numIncorrect: numIncorrect, xCoord: , yCoord: )
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "rock", numIncorrect: numIncorrect, xCoord: , yCoord: )
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "rock", numIncorrect: numIncorrect, xCoord: , yCoord: )
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "rock", numIncorrect: numIncorrect, xCoord: , yCoord: )
+            incorrectTouchesLabels (scene: self, sceneString: sceneString, word: "rock", numIncorrect: numIncorrect, xCoord: , yCoord: )
+
+        }
+        
+    ////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////
+        //CALCULATE AND PLACE FIRST-TRY LABELS
+
         for (scene, firstTry) in correctFirstTries {
             checkOrX_firstTry (scene: self, dictWord: scene, word: "rock", firstTry: firstTry, xCoord: 197.198, yCoord: 207.027)
             checkOrX_firstTry (scene: self, dictWord: scene, word: "lamp", firstTry: firstTry, xCoord: 197.198, yCoord: 172.027)
-            checkOrX_firstTry (scene: self, dictWord: scene, word: "cat", firstTry: firstTry, xCoord: 197.198, yCoord: 137.027)
-            checkOrX_firstTry (scene: self, dictWord: scene, word: "lion", firstTry: firstTry, xCoord: 197.198, yCoord: 102.027)
-            checkOrX_firstTry (scene: self, dictWord: scene, word: "hand", firstTry: firstTry, xCoord: 197.198, yCoord: 67.027)
-            checkOrX_firstTry (scene: self, dictWord: scene, word: "rain", firstTry: firstTry, xCoord: 197.198, yCoord: 32.027)
-            checkOrX_firstTry (scene: self, dictWord: scene, word: "duck", firstTry: firstTry, xCoord: 197.198, yCoord: -7.411)
-            checkOrX_firstTry (scene: self, dictWord: scene, word: "moon", firstTry: firstTry, xCoord: 197.198, yCoord: -42.411)
+            checkOrX_firstTry (scene: self, dictWord: scene, word: "duck", firstTry: firstTry, xCoord: 197.198, yCoord: 137.027)
+            checkOrX_firstTry (scene: self, dictWord: scene, word: "moon", firstTry: firstTry, xCoord: 197.198, yCoord: 102.027)
+            checkOrX_firstTry (scene: self, dictWord: scene, word: "cake", firstTry: firstTry, xCoord: 197.198, yCoord: 67.027)
+            checkOrX_firstTry (scene: self, dictWord: scene, word: "stroller", firstTry: firstTry, xCoord: 197.198, yCoord: 32.027)
+            checkOrX_firstTry (scene: self, dictWord: scene, word: "cat", firstTry: firstTry, xCoord: 197.198, yCoord: -7.411)
+            checkOrX_firstTry (scene: self, dictWord: scene, word: "lion", firstTry: firstTry, xCoord: 197.198, yCoord: -42.411)
             checkOrX_firstTry (scene: self, dictWord: scene, word: "cow", firstTry: firstTry, xCoord: 197.198, yCoord: -77.411)
             checkOrX_firstTry (scene: self, dictWord: scene, word: "trash", firstTry: firstTry, xCoord: 197.198, yCoord: -112.411)
-            checkOrX_firstTry (scene: self, dictWord: scene, word: "airplane", firstTry: firstTry, xCoord: 197.198, yCoord: -147.411)
-            checkOrX_firstTry (scene: self, dictWord: scene, word: "shoes", firstTry: firstTry, xCoord: 197.198, yCoord: -182.411)
-            checkOrX_firstTry (scene: self, dictWord: scene, word: "cake", firstTry: firstTry, xCoord: 197.198, yCoord: -219.49)
-            checkOrX_firstTry (scene: self, dictWord: scene, word: "stroller", firstTry: firstTry, xCoord: 197.198, yCoord: -254.49)
-            checkOrX_firstTry (scene: self, dictWord: scene, word: "toast", firstTry: firstTry, xCoord: 197.198, yCoord: -289.49)
-            checkOrX_firstTry (scene: self, dictWord: scene, word: "hat", firstTry: firstTry, xCoord: 197.198, yCoord: -324.49)
+            checkOrX_firstTry (scene: self, dictWord: scene, word: "toast", firstTry: firstTry, xCoord: 197.198, yCoord: -147.411)
+            checkOrX_firstTry (scene: self, dictWord: scene, word: "hat", firstTry: firstTry, xCoord: 197.198, yCoord: -182.411)
+            checkOrX_firstTry (scene: self, dictWord: scene, word: "hand", firstTry: firstTry, xCoord: 197.198, yCoord: -219.49)
+            checkOrX_firstTry (scene: self, dictWord: scene, word: "rain", firstTry: firstTry, xCoord: 197.198, yCoord: -254.49)
+            checkOrX_firstTry (scene: self, dictWord: scene, word: "airplane", firstTry: firstTry, xCoord: 197.198, yCoord: -289.49)
+            checkOrX_firstTry (scene: self, dictWord: scene, word: "shoes", firstTry: firstTry, xCoord: 197.198, yCoord: -324.49)
             checkOrX_firstTry (scene: self, dictWord: scene, word: "cookie", firstTry: firstTry, xCoord: 197.198, yCoord: -359.489)
             checkOrX_firstTry (scene: self, dictWord: scene, word: "mouse", firstTry: firstTry, xCoord: 197.198, yCoord: -394.489)
         }
+    ////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////
+        //CALCULATE AND PLACE INCORRECT-TOUCHES LABELS
+        
+        
     ////////////////////////////////////////////////////////////////////////////////////////////
     }
     
@@ -85,42 +119,12 @@ class ScoreScene2: SKScene {
     }
 }
 
-func checkOrX_completed (scene: SKScene, dictWord: String, word: String, correct: Int, xCoord: Double, yCoord: Double) {
-    let checkMark = SKSpriteNode(imageNamed: "check")
-    let xMark = SKSpriteNode(imageNamed: "incorrect")
+func incorrectTouchesLabels (scene: SKScene, sceneString: String, word: String, numIncorrect: Int, xCoord: Double, yCoord: Double) {
+    let label = SKLabelNode(fontNamed:"Montserrat-SemiBold")
+    let copiedLabel = label.copy() as! SKLabelNode
+    let numIncorrect = String(numIncorrect)
     
-    let copiedCheck = checkMark.copy() as! SKSpriteNode
-    copiedCheck.setScale(0.25)
-    let copiedX = xMark.copy() as! SKSpriteNode
-    copiedX.setScale(0.25)
-
-    if dictWord == word {
-        if correct == 1 {
-            copiedCheck.position = CGPoint(x: xCoord, y: yCoord)
-            scene.addChild(copiedCheck)
-        } else if correct == 0 {
-            copiedX.position = CGPoint(x: xCoord, y: yCoord)
-            scene.addChild(copiedX)
-        }
-    }
-}
-
-func checkOrX_firstTry (scene: SKScene, dictWord: String, word: String, firstTry: Bool, xCoord: Double, yCoord: Double) {
-    let checkMark = SKSpriteNode(imageNamed: "check")
-    let xMark = SKSpriteNode(imageNamed: "incorrect")
-    
-    let copiedCheck = checkMark.copy() as! SKSpriteNode
-    copiedCheck.setScale(0.25)
-    let copiedX = xMark.copy() as! SKSpriteNode
-    copiedX.setScale(0.25)
-    
-    if dictWord == word {
-        if firstTry == true {
-            copiedCheck.position = CGPoint(x: xCoord, y: yCoord)
-            scene.addChild(copiedCheck)
-        } else if firstTry == false {
-            copiedX.position = CGPoint(x: xCoord, y: yCoord)
-            scene.addChild(copiedX)
-        }
+    if sceneString == word {
+        printLabel (scene: scene, label: copiedLabel, words: numIncorrect, xCoord: xCoord, yCoord: yCoord, fontSize: 28)
     }
 }

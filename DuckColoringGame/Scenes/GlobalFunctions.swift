@@ -168,3 +168,47 @@ func resetAllGameStats_coloring () {
         accuracyPerScene[scene] = 0
     }
 }
+
+func checkOrX_completed (scene: SKScene, dictWord: String, word: String, correct: Int, xCoord: Double, yCoord: Double) {
+    let checkMark = SKSpriteNode(imageNamed: "check")
+    let xMark = SKSpriteNode(imageNamed: "incorrect")
+    
+    let copiedCheck = checkMark.copy() as! SKSpriteNode
+    copiedCheck.setScale(0.25)
+    copiedCheck.zPosition = 2
+    let copiedX = xMark.copy() as! SKSpriteNode
+    copiedX.setScale(0.25)
+    copiedX.zPosition = 2
+    
+    if dictWord == word {
+        if correct == 1 {
+            copiedCheck.position = CGPoint(x: xCoord, y: yCoord)
+            scene.addChild(copiedCheck)
+        } else if correct == 0 {
+            copiedX.position = CGPoint(x: xCoord, y: yCoord)
+            scene.addChild(copiedX)
+        }
+    }
+}
+
+func checkOrX_firstTry (scene: SKScene, dictWord: String, word: String, firstTry: Bool, xCoord: Double, yCoord: Double) {
+    let checkMark = SKSpriteNode(imageNamed: "check")
+    let xMark = SKSpriteNode(imageNamed: "incorrect")
+    
+    let copiedCheck = checkMark.copy() as! SKSpriteNode
+    copiedCheck.setScale(0.25)
+    copiedCheck.zPosition = 2
+    let copiedX = xMark.copy() as! SKSpriteNode
+    copiedX.setScale(0.25)
+    copiedX.zPosition = 2
+    
+    if dictWord == word {
+        if firstTry == true {
+            copiedCheck.position = CGPoint(x: xCoord, y: yCoord)
+            scene.addChild(copiedCheck)
+        } else if firstTry == false {
+            copiedX.position = CGPoint(x: xCoord, y: yCoord)
+            scene.addChild(copiedX)
+        }
+    }
+}
