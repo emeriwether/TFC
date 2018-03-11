@@ -72,51 +72,42 @@ class ScoreScene: SKScene {
         // CALCULATE ACCURACY FOR EACH SCENE
         for (item, _) in accuracyPerScene { calculateAccuracy(scene: item) }
         
-        //UPDATED
     ////////////////////////////////////////////////////////////////////////////////////////////
         // PLACE NAME & AGE LABELS
         printLabel (label: nameLabel, words: "\(userName)", xCoord: 164, yCoord: -469.413, fontSize: 30)
         printLabel (label: ageLabel, words: "\(userAge)", xCoord: 540, yCoord: -469.413, fontSize: 30)
     ////////////////////////////////////////////////////////////////////////////////////////////
-        
-        //UPDATED
     ////////////////////////////////////////////////////////////////////////////////////////////
         // PLACE TOTAL-CORRECT-FT LABEL
         let totalCorrectFtText = "\(totalCorrectFT) / 18"
-        printLabel(label: totalCorrectFTLabel, words: totalCorrectFtText, xCoord: 320, yCoord: 211, fontSize: 150)
+        printLabel(label: totalCorrectFTLabel, words: totalCorrectFtText, xCoord: 150, yCoord: 211, fontSize: 150)
     ////////////////////////////////////////////////////////////////////////////////////////////
-
-        //UPDATED
     ////////////////////////////////////////////////////////////////////////////////////////////
         // PLACE 2-ITEM-CORRECT-FT LABEL
         let setSize2String = "2: \(twoItemCorrectFT) / 6"
-        printLabel(label: setSize2Label, words: setSize2String, xCoord: 83, yCoord: -12.482, fontSize: 30)
+        printLabel(label: setSize2Label, words: setSize2String, xCoord: 90, yCoord: -12.482, fontSize: 30)
         
         // PLACE 3-ITEM-CORRECT-FT LABEL
         let setSize3String = "3: \(threeItemCorrectFT) / 6"
-        printLabel(label: setSize3Label, words: setSize3String, xCoord: 83, yCoord: -50.483, fontSize: 30)
+        printLabel(label: setSize3Label, words: setSize3String, xCoord: 90, yCoord: -50.483, fontSize: 30)
         
         // PLACE 4-ITEM-CORRECT-FT LABEL
         let setSize4String = "4: \(fourItemCorrectFT) / 6"
-        printLabel(label: setSize4Label, words: setSize4String, xCoord: 83, yCoord: -85.483, fontSize: 30)
+        printLabel(label: setSize4Label, words: setSize4String, xCoord: 90, yCoord: -85.483, fontSize: 30)
     ////////////////////////////////////////////////////////////////////////////////////////////
-    
-        //UPDATED
     ////////////////////////////////////////////////////////////////////////////////////////////
         // PLACE SIMPLE-BG-CORRECT-FT LABEL
         let simpleBGString = "Simple: \(simpleCorrectFT)/6"
-        printLabel(label: simpleBGLabel, words: simpleBGString, xCoord: 83, yCoord: -162.828, fontSize: 30)
+        printLabel(label: simpleBGLabel, words: simpleBGString, xCoord: 90, yCoord: -162.828, fontSize: 30)
         
         // PLACE LINE-BG-CORRECT-FT LABEL
         let lineBGString = "Line:      \(lineCorrectFT)/6"
-        printLabel(label: lineBGLabel, words: lineBGString, xCoord: 83, yCoord: -200.828, fontSize: 30)
+        printLabel(label: lineBGLabel, words: lineBGString, xCoord: 90, yCoord: -200.828, fontSize: 30)
 
         // PLACE SCENE-BG-CORRECT-FT LABEL
         let sceneBGString = "Scene:  \(sceneCorrectFT)/6"
-        printLabel(label: sceneBGLabel, words: sceneBGString, xCoord: 83, yCoord: -235.829, fontSize: 30)
+        printLabel(label: sceneBGLabel, words: sceneBGString, xCoord: 90, yCoord: -235.829, fontSize: 30)
     ////////////////////////////////////////////////////////////////////////////////////////////
-
-        //UPDATED
     ////////////////////////////////////////////////////////////////////////////////////////////
         // CALCULATE AND PLACE AVERAGE-ACCURACY LABEL
         for (scene, accuracy) in accuracyPerScene {
@@ -132,10 +123,8 @@ class ScoreScene: SKScene {
         } else {
             totalAccuracyString = "0%"
         }
-        printLabel(label: totalAccuracyLabel, words: totalAccuracyString, xCoord: -332, yCoord: 211, fontSize: 150)
+        printLabel(label: totalAccuracyLabel, words: totalAccuracyString, xCoord: -475, yCoord: 211, fontSize: 150)
     ////////////////////////////////////////////////////////////////////////////////////////////
-
-        //UPDATED
     ////////////////////////////////////////////////////////////////////////////////////////////
         // CALCULATE AND PLACE 2-ITEM ACCURACY LABEL
         let twoItemArray: [String] = ["rock", "lamp", "duck", "moon", "cake", "stroller"]
@@ -188,8 +177,6 @@ class ScoreScene: SKScene {
         }
         printLabel(label: fourItemAccuracyLabel, words: fourItemAccuracyText, xCoord: -525, yCoord: -85.66, fontSize: 30)
     ////////////////////////////////////////////////////////////////////////////////////////////
-        
-        //UPDATED
     ////////////////////////////////////////////////////////////////////////////////////////////
         // CALCULATE AND PLACE SIMPLE-BG ACCURACY LABEL
         let simpleBgArray: [String] = ["rock", "lamp", "cat", "shoes", "lion", "hand"]
@@ -309,6 +296,7 @@ class ScoreScene: SKScene {
         label.fontSize = fontSize
         label.position = CGPoint(x: xCoord, y: yCoord)
         label.zPosition = 10
+        label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         label.fontColor = UIColor.black
         label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
         self.addChild(label)

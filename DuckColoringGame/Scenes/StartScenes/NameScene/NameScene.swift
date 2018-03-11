@@ -8,8 +8,8 @@
 
 import SpriteKit
 
-var userName:String = "No name provided"
-var userAge:String = "No age provided"
+var userName:String = "No name"
+var userAge:String = "No age"
 
 class NameScene: SKScene, UITextFieldDelegate {
   
