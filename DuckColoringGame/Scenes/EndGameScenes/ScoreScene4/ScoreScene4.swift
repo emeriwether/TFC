@@ -58,12 +58,12 @@ class ScoreScene4: SKScene {
     ////////////////////////////////////////////////////////////////////////////////////////////
         //PRINT LABELS FOR COMBO DICTIONARIES
         for (item, num) in comboCompletedDict {
-            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "twoItemSimple", correct: num, xCoord: 197.198, yCoord: 207.027)
-            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "threeItemSimple", correct: num, xCoord: 197.198, yCoord: 137.027)
-            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "fourItemSimple", correct: num, xCoord: 197.198, yCoord: 67.027)
-            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "twoItemLine", correct: num, xCoord: 197.198, yCoord: -7.411)
-            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "threeItemLine", correct: num, xCoord: 197.198, yCoord: -77.411)
-            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "fourItemLine", correct: num,  xCoord: 197.198, yCoord: -147.411)
+            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "twoItemSimple", correct: num, xCoord: 197.198, yCoord: 222.044)
+            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "threeItemSimple", correct: num, xCoord: 197.198, yCoord: 150)
+            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "fourItemSimple", correct: num, xCoord: 197.198, yCoord: 76.904)
+            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "twoItemLine", correct: num, xCoord: 197.198, yCoord: 3)
+            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "threeItemLine", correct: num, xCoord: 197.198, yCoord: -69.742)
+            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "fourItemLine", correct: num,  xCoord: 197.198, yCoord: -141.09)
             checkOrX_completed_twoItems (scene: self, dictItem: item, category: "twoItemScene", correct: num,  xCoord: 197.198, yCoord: -219.49)
             checkOrX_completed_twoItems (scene: self, dictItem: item, category: "threeItemScene", correct: num,  xCoord: 197.198, yCoord: -289.49)
             checkOrX_completed_twoItems (scene: self, dictItem: item, category: "fourItemScene", correct: num,  xCoord: 197.198, yCoord: -394.489)
