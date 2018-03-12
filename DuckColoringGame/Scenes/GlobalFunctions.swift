@@ -241,6 +241,17 @@ func incorrectTouchesLabels (scene: SKScene, sceneString: String, word: String, 
     }
 }
 
+func accuracyLabels (scene: SKScene, sceneString: String, word: String, accuracy: Double, xCoord: Double, yCoord: Double) {
+    let label = SKLabelNode(fontNamed:"Montserrat-SemiBold")
+    let copiedLabel = label.copy() as! SKLabelNode
+    let accuracy = "\(Int(round(accuracy)))%"
+    
+    if sceneString == word {
+        printLabel (scene: scene, label: copiedLabel, words: accuracy, xCoord: xCoord, yCoord: yCoord, fontSize: 28)
+    }
+}
+
+//FUNCTION TO CALCULATE WHETHER BOTH SCENES IN A CATEGORY WERE COMPLETED//
 func checkOrX_completed_twoItems (scene: SKScene, dictItem: String, category: String, correct: Int, xCoord: Double, yCoord: Double) {
     let checkMark = SKSpriteNode(imageNamed: "check")
     let xMark = SKSpriteNode(imageNamed: "incorrect")
@@ -253,20 +264,18 @@ func checkOrX_completed_twoItems (scene: SKScene, dictItem: String, category: St
     copiedX.zPosition = 2
     
     if dictItem == category {
-        print("category: \(category), correct: \(correct)")
         if correct == 2 {
-            print("correct")
             copiedCheck.position = CGPoint(x: xCoord, y: yCoord)
             scene.addChild(copiedCheck)
         }
         else if correct < 2 {
-            print("incorrect")
             copiedX.position = CGPoint(x: xCoord, y: yCoord)
             scene.addChild(copiedX)
         }
     }
 }
 
+//FUNCTION TO CALCULATE WHETHER BOTH SCENES IN A CATEGORY WERE CORRECT-FIRST-TIME//
 func checkOrX_firstTry_twoItems (scene: SKScene, dictItem: String, category: String, firstTry: Int, xCoord: Double, yCoord: Double) {
     let checkMark = SKSpriteNode(imageNamed: "check")
     let xMark = SKSpriteNode(imageNamed: "incorrect")
@@ -289,15 +298,23 @@ func checkOrX_firstTry_twoItems (scene: SKScene, dictItem: String, category: Str
     }
 }
 
-func incorrectTouchesLabels_twoItems (scene: SKScene, sceneString1: String, word1: String, sceneString2: String, word2: String, numIncorrect1: Int, numIncorrect2: Int, xCoord: Double, yCoord: Double) {
+func incorrectTouchesLabels_twoItems (scene: SKScene, dictItem: String, category: String, numIncorrect: Int, xCoord: Double, yCoord: Double) {
     let label = SKLabelNode(fontNamed:"Montserrat-SemiBold")
     let copiedLabel = label.copy() as! SKLabelNode
     
-    let numIncorrect1 = numIncorrect1
-    let numIncorrect2 = numIncorrect2
-    let numIncorrectSum = String(numIncorrect1 + numIncorrect2)
+    let printNum = String(numIncorrect)
     
-    if sceneString1 == word1 && sceneString2 == word2 {
-        printLabel (scene: scene, label: copiedLabel, words: numIncorrectSum, xCoord: xCoord, yCoord: yCoord, fontSize: 28)
+    if dictItem == category {
+        printLabel (scene: scene, label: copiedLabel, words: printNum, xCoord: xCoord, yCoord: yCoord, fontSize: 28)
+    }
+}
+
+func accuracyLabels_twoItems (scene: SKScene, sceneString: String, word: String, accuracy: Double, xCoord: Double, yCoord: Double) {
+    let label = SKLabelNode(fontNamed:"Montserrat-SemiBold")
+    let copiedLabel = label.copy() as! SKLabelNode
+    let accuracy = "\(Int(round(accuracy)))%"
+    
+    if sceneString == word {
+        printLabel (scene: scene, label: copiedLabel, words: accuracy, xCoord: xCoord, yCoord: yCoord, fontSize: 28)
     }
 }

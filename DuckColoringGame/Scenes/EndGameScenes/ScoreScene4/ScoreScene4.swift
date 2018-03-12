@@ -54,6 +54,46 @@ class ScoreScene4: SKScene {
             if scene == "cookie" { comboNumIncorrectDict["fourItemScene"] = comboNumIncorrectDict["fourItemScene"]! + num }
             if scene == "mouse" { comboNumIncorrectDict["fourItemScene"] = comboNumIncorrectDict["fourItemScene"]! + num }
         }
+        
+        for (scene, firstTry) in correctFirstTries {
+            if scene == "rock" {
+                if firstTry == true { comboNumFTDict["twoItemSimple"] = comboNumFTDict["twoItemSimple"]! + 1} }
+            if scene == "lamp" {
+                if firstTry == true { comboNumFTDict["twoItemSimple"] = comboNumFTDict["twoItemSimple"]! + 1} }
+            if scene == "cat" {
+                if firstTry == true { comboNumFTDict["threeItemSimple"] = comboNumFTDict["threeItemSimple"]! + 1} }
+            if scene == "lion" {
+                if firstTry == true { comboNumFTDict["threeItemSimple"] = comboNumFTDict["threeItemSimple"]! + 1} }
+            if scene == "hand" {
+                if firstTry == true { comboNumFTDict["fourItemSimple"] = comboNumFTDict["fourItemSimple"]! + 1} }
+            if scene == "rain" {
+                if firstTry == true { comboNumFTDict["fourItemSimple"] = comboNumFTDict["fourItemSimple"]! + 1} }
+            if scene == "duck" {
+                if firstTry == true { comboNumFTDict["twoItemLine"] = comboNumFTDict["twoItemLine"]! + 1} }
+            if scene == "moon" {
+                if firstTry == true { comboNumFTDict["twoItemLine"] = comboNumFTDict["twoItemLine"]! + 1} }
+            if scene == "cow" {
+                if firstTry == true { comboNumFTDict["threeItemLine"] = comboNumFTDict["threeItemLine"]! + 1} }
+            if scene == "trash" {
+                if firstTry == true { comboNumFTDict["threeItemLine"] = comboNumFTDict["threeItemLine"]! + 1} }
+            if scene == "airplane" {
+                if firstTry == true { comboNumFTDict["fourItemLine"] = comboNumFTDict["fourItemLine"]! + 1} }
+            if scene == "shoes" {
+                if firstTry == true { comboNumFTDict["fourItemLine"] = comboNumFTDict["fourItemLine"]! + 1} }
+            if scene == "cake" {
+                if firstTry == true { comboNumFTDict["twoItemScene"] = comboNumFTDict["twoItemScene"]! + 1} }
+            if scene == "stroller" {
+                if firstTry == true { comboNumFTDict["twoItemScene"] = comboNumFTDict["twoItemScene"]! + 1} }
+            if scene == "toast" {
+                if firstTry == true { comboNumFTDict["threeItemScene"] = comboNumFTDict["threeItemScene"]! + 1} }
+            if scene == "hat" {
+                if firstTry == true { comboNumFTDict["threeItemScene"] = comboNumFTDict["threeItemScene"]! + 1} }
+            if scene == "cookie" {
+                if firstTry == true { comboNumFTDict["fourItemScene"] = comboNumFTDict["fourItemScene"]! + 1} }
+            if scene == "mouse" {
+                if firstTry == true { comboNumFTDict["fourItemScene"] = comboNumFTDict["fourItemScene"]! + 1} }
+            
+        }
 
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
@@ -69,8 +109,22 @@ class ScoreScene4: SKScene {
             checkOrX_completed_twoItems (scene: self, dictItem: item, category: "threeItemScene", correct: numCompleted, xCoord: -259.663, yCoord: -276.45)
             checkOrX_completed_twoItems (scene: self, dictItem: item, category: "fourItemScene", correct: numCompleted, xCoord: -259.663, yCoord: -352)
         }
-        /*for (item, num) in comboNumFTDict {
-            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "twoItemSimple", firstTry: num, xCoord: 197.198, yCoord: 222.044)
+        
+        for (item, numIncorrect) in numIncorrectPerScene {
+            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "twoItemSimple", numIncorrect: numIncorrect, xCoord: 0, yCoord: 232.044)
+            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "threeItemSimple", numIncorrect: numIncorrect, xCoord: 0, yCoord: 160)
+            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "fourItemSimple", numIncorrect: numIncorrect, xCoord: 0, yCoord: 86.904)
+            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "twoItemLine", numIncorrect: numIncorrect, xCoord: 0, yCoord: 13)
+            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "threeItemLine", numIncorrect: numIncorrect, xCoord: 0, yCoord: -59.742)
+            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "fourItemLine", numIncorrect: numIncorrect, xCoord: 0, yCoord: -131.09)
+            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "twoItemScene", numIncorrect: numIncorrect, xCoord: 0, yCoord: -206.253)
+            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "threeItemScene", numIncorrect: numIncorrect, xCoord: 0, yCoord: -276.45)
+            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "fourItemScene", numIncorrect: numIncorrect, xCoord: 0, yCoord: -352)
+
+        }
+        
+        for (item, num) in comboNumFTDict {
+            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "twoItemSimple", firstTry: num, xCoord: 197.198, yCoord: 232.044)
             checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "threeItemSimple", firstTry: num, xCoord: 197.198, yCoord: 150)
             checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "fourItemSimple", firstTry: num, xCoord: 197.198, yCoord: 76.904)
             checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "twoItemLine", firstTry: num, xCoord: 197.198, yCoord: 3)
@@ -79,7 +133,7 @@ class ScoreScene4: SKScene {
             checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "twoItemScene", firstTry: num,  xCoord: 197.198, yCoord: -216.253)
             checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "threeItemScene", firstTry: num,  xCoord: 197.198, yCoord: -286.45)
             checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "fourItemScene", firstTry: num,  xCoord: 197.198, yCoord: -362)
-        }*/
+        }
 
     }
     

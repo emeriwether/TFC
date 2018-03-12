@@ -129,13 +129,3 @@ class ScoreScene2: SKScene {
         }
     }
 }
-
-func accuracyLabels (scene: SKScene, sceneString: String, word: String, accuracy: Double, xCoord: Double, yCoord: Double) {
-    let label = SKLabelNode(fontNamed:"Montserrat-SemiBold")
-    let copiedLabel = label.copy() as! SKLabelNode
-    let accuracy = "\(Int(round(accuracy)))%"
-    
-    if sceneString == word {
-        printLabel (scene: scene, label: copiedLabel, words: accuracy, xCoord: xCoord, yCoord: yCoord, fontSize: 28)
-    }
-}
