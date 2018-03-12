@@ -112,6 +112,7 @@ class FlowerScene: SKScene {
                         playFeedbackWithName(audioName: "wrong")
                         flower_incorrectTouches += 1
                         if flower_incorrectTouches > 10{
+                            sceneOver = true
                             nextScene(sceneName: "CupScene")
                         }
                     }

@@ -117,6 +117,7 @@ class BalloonScene_Monster: SKScene {
                         playFeedbackWithName(audioName: "wrong")
                         balloon_incorrectTouches += 1
                         if balloon_incorrectTouches > 10{
+                            sceneOver = true
                             nextScene(sceneName: "StarScene")
                         }
                     }

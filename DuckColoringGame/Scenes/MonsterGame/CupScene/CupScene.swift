@@ -112,6 +112,7 @@ class CupScene: SKScene {
                         playFeedbackWithName(audioName: "wrong")
                         cup_incorrectTouches += 1
                         if cup_incorrectTouches > 10{
+                            sceneOver = true
                             nextScene(sceneName: "PenScene")
                         }
                     }

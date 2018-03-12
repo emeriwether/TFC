@@ -117,6 +117,7 @@ class ChairScene: SKScene {
                         playFeedbackWithName(audioName: "wrong")
                         chair_incorrectTouches += 1
                         if chair_incorrectTouches > 10{
+                            sceneOver = true
                             nextScene(sceneName: "PhoneScene")
                         }
                     }

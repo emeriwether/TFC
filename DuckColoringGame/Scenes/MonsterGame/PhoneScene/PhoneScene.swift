@@ -117,6 +117,7 @@ class PhoneScene: SKScene {
                         playFeedbackWithName(audioName: "wrong")
                         phone_incorrectTouches += 1
                         if phone_incorrectTouches > 10{
+                            sceneOver = true
                             nextScene(sceneName: "AppleScene")
                         }
                     }

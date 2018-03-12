@@ -117,6 +117,7 @@ class CakeScene_Monster: SKScene {
                         playFeedbackWithName(audioName: "wrong")
                         cake_incorrectTouches += 1
                         if cake_incorrectTouches > 10{
+                            sceneOver = true
                             nextScene(sceneName: "BalloonScene_Monster")
                         }
                     }

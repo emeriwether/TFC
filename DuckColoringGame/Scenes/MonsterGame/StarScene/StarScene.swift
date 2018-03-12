@@ -117,6 +117,7 @@ class StarScene: SKScene {
                         playFeedbackWithName(audioName: "wrong")
                         star_incorrectTouches += 1
                         if star_incorrectTouches > 10{
+                            sceneOver = true
                             nextScene(sceneName: "ChairScene")
                         }
                     }

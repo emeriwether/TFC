@@ -122,6 +122,7 @@ class MoonScene_Monster: SKScene {
                         playFeedbackWithName(audioName: "wrong")
                         moon_incorrectTouches += 1
                         if moon_incorrectTouches > 10{
+                            sceneOver = true
                             nextScene(sceneName: "DishScene")
                         }
                     }
