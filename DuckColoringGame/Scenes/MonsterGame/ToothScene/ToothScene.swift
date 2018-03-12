@@ -111,6 +111,9 @@ class ToothScene: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         tooth_incorrectTouches += 1
+                        if tooth_incorrectTouches > 10{
+                            nextScene(sceneName: "FlowerScene")
+                        }
                     }
                 }
             }

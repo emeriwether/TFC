@@ -121,6 +121,9 @@ class DiaperScene: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         diaper_incorrectTouches += 1
+                        if diaper_incorrectTouches > 10{
+                            nextScene(sceneName: "MoonScene_Monster")
+                        }
                     }
                 }
             }

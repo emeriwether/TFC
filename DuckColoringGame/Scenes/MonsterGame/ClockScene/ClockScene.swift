@@ -122,6 +122,9 @@ class ClockScene: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         clock_incorrectTouches += 1
+                        if clock_incorrectTouches > 10{
+                            nextScene(sceneName: "ScoreScene")
+                        }
                     }
                 }
             }

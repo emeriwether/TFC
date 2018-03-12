@@ -111,6 +111,9 @@ class PenScene: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         pen_incorrectTouches += 1
+                        if pen_incorrectTouches > 10{
+                            nextScene(sceneName: "RaisinsScene")
+                        }
                     }
                 }
             }

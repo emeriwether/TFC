@@ -111,6 +111,9 @@ class CandyScene: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         candy_incorrectTouches += 1
+                        if candy_incorrectTouches > 10{
+                            nextScene(sceneName: "OrangeScene")
+                        }
                     }
                 }
             }

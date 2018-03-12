@@ -116,6 +116,9 @@ class BalloonScene_Monster: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         balloon_incorrectTouches += 1
+                        if balloon_incorrectTouches > 10{
+                            nextScene(sceneName: "StarScene")
+                        }
                     }
                 }
             }

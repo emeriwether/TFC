@@ -116,6 +116,9 @@ class PhoneScene: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         phone_incorrectTouches += 1
+                        if phone_incorrectTouches > 10{
+                            nextScene(sceneName: "AppleScene")
+                        }
                     }
                 }
             }

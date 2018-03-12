@@ -111,6 +111,9 @@ class OrangeScene: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         orange_incorrectTouches += 1
+                        if orange_incorrectTouches > 10{
+                            nextScene(sceneName: "ToothScene")
+                        }
                     }
                 }
             }

@@ -18,8 +18,8 @@ class CupScene: SKScene {
     private var selectedNode:SKNode?
     private var nodeIsSelected:Bool?
     
-    var pen_incorrectTouches = 0
-    var pen_correctTouches = 0
+    var cup_incorrectTouches = 0
+    var cup_correctTouches = 0
     
     var instructionsComplete:Bool = false
     var feedbackComplete:Bool = true
@@ -103,14 +103,17 @@ class CupScene: SKScene {
             for items in self.nodes(at: touchLocation){
                 if items.name == "Monster"{
                     if (selectedNode?.name == "cup"){
-                        pen_correctTouches += 1
+                        cup_correctTouches += 1
                         selectedNode?.removeFromParent()
                         sceneOver = true
                         animateMonster(withAudio: "Sound_Biting")
                         nextScene(sceneName: "PenScene")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
-                        pen_incorrectTouches += 1
+                        cup_incorrectTouches += 1
+                        if cup_incorrectTouches > 10{
+                            nextScene(sceneName: "PenScene")
+                        }
                     }
                 }
             }

@@ -121,6 +121,9 @@ class DishScene: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         dish_incorrectTouches += 1
+                        if dish_incorrectTouches > 10{
+                            nextScene(sceneName: "ClockScene")
+                        }
                     }
                 }
             }

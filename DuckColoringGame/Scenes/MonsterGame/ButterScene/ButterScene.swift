@@ -121,6 +121,9 @@ class ButterScene: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         butter_incorrectTouches += 1
+                        if butter_incorrectTouches > 10{
+                            nextScene(sceneName: "DiaperScene")
+                        }
                     }
                 }
             }
