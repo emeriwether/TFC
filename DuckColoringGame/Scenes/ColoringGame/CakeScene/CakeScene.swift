@@ -116,8 +116,16 @@ class CakeScene: SKScene {
                 //Variables for cake audio
                 let happyBirthday = SKAction.playSoundFileNamed("cake", waitForCompletion: true)
                 
+                //Variables for open mouth animation
+                let candle1 = SKTexture(imageNamed: "cakeScene_cake_colored2")
+                let candle2 = SKTexture(imageNamed: "cakeScene_cake_colored3")
+                let candle3 = SKTexture(imageNamed: "cakeScene_cake_colored4")
+                let animation = SKAction.animate(with: [candle1, candle2, candle3], timePerFrame: 0.1)
+                //let openMouthAction = SKAction.repeat(animation, count: 5)
+                
                 //Run all actions
                 cake!.run(happyBirthday)
+                cake!.run(animation)
                 
                 transitionScene (currentScene: self, sceneString: "StrollerScene", waitTime: 5, fadeTime: 1)
             }
