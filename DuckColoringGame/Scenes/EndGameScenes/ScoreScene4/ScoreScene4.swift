@@ -35,6 +35,8 @@ class ScoreScene4: SKScene {
         }
         
         for (scene, num) in numIncorrectPerScene {
+            print("scene: \(scene), num: \(num)")
+
             if scene == "rock" { comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["twoItemSimple"]! + num }
             if scene == "lamp" { comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["twoItemSimple"]! + num }
             if scene == "cat" { comboNumIncorrectDict["threeItemSimple"] = comboNumIncorrectDict["threeItemSimple"]! + num }

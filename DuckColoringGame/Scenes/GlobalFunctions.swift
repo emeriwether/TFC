@@ -234,6 +234,8 @@ func checkOrX_firstTry (scene: SKScene, dictWord: String, word: String, firstTry
 func incorrectTouchesLabels (scene: SKScene, sceneString: String, word: String, numIncorrect: Int, xCoord: Double, yCoord: Double) {
     let label = SKLabelNode(fontNamed:"Montserrat-SemiBold")
     let copiedLabel = label.copy() as! SKLabelNode
+    copiedLabel.zPosition = 2
+
     let numIncorrect = String(numIncorrect)
     
     if sceneString == word {
@@ -244,6 +246,8 @@ func incorrectTouchesLabels (scene: SKScene, sceneString: String, word: String, 
 func accuracyLabels (scene: SKScene, sceneString: String, word: String, accuracy: Double, xCoord: Double, yCoord: Double) {
     let label = SKLabelNode(fontNamed:"Montserrat-SemiBold")
     let copiedLabel = label.copy() as! SKLabelNode
+    copiedLabel.zPosition = 2
+
     let accuracy = "\(Int(round(accuracy)))%"
     
     if sceneString == word {
@@ -301,6 +305,7 @@ func checkOrX_firstTry_twoItems (scene: SKScene, dictItem: String, category: Str
 func incorrectTouchesLabels_twoItems (scene: SKScene, dictItem: String, category: String, numIncorrect: Int, xCoord: Double, yCoord: Double) {
     let label = SKLabelNode(fontNamed:"Montserrat-SemiBold")
     let copiedLabel = label.copy() as! SKLabelNode
+    copiedLabel.zPosition = 2
     
     let printNum = String(numIncorrect)
     
@@ -312,6 +317,8 @@ func incorrectTouchesLabels_twoItems (scene: SKScene, dictItem: String, category
 func accuracyLabels_twoItems (scene: SKScene, sceneString: String, word: String, accuracy: Double, xCoord: Double, yCoord: Double) {
     let label = SKLabelNode(fontNamed:"Montserrat-SemiBold")
     let copiedLabel = label.copy() as! SKLabelNode
+    copiedLabel.zPosition = 2
+
     let accuracy = "\(Int(round(accuracy)))%"
     
     if sceneString == word {
