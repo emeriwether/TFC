@@ -194,6 +194,7 @@
 		0B350849204F563900BD1AD8 /* CakeScene_Monster.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0B350848204F563900BD1AD8 /* CakeScene_Monster.sks */; };
 		0B35084B204F579000BD1AD8 /* instructions_cake_monster.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B35084A204F579000BD1AD8 /* instructions_cake_monster.mp3 */; };
 		0B3ABCEA2057151A003FE80B /* instructions_butter.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3ABCE92057151A003FE80B /* instructions_butter.mp3 */; };
+		0B3ABCEC205717CA003FE80B /* instructions_candy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3ABCEB205717CA003FE80B /* instructions_candy.mp3 */; };
 		0B3B5A1620315B7E002B6805 /* instructions_apple1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3B5A1020315B7D002B6805 /* instructions_apple1.mp3 */; };
 		0B3B5A1720315B7E002B6805 /* instructions_apple2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3B5A1120315B7D002B6805 /* instructions_apple2.mp3 */; };
 		0B3B5A1820315B7E002B6805 /* reminder_apple2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3B5A1220315B7D002B6805 /* reminder_apple2.mp3 */; };
@@ -230,7 +231,6 @@
 		0B3EFEDE2046336600F5932F /* correctMelody3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0B3EFECA2046336600F5932F /* correctMelody3.wav */; };
 		0B3EFEE72046341D00F5932F /* Sound_Chewing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3EFEE22046341D00F5932F /* Sound_Chewing.mp3 */; };
 		0BBE9840204D3A890064C98E /* Sound_Biting.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BBE983F204D3A890064C98E /* Sound_Biting.mp3 */; };
-		0BBE9842204D3FC30064C98E /* instructions_candy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BBE9841204D3FC30064C98E /* instructions_candy.mp3 */; };
 		0BBE9844204D49360064C98E /* instructions_orange.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BBE9843204D49360064C98E /* instructions_orange.mp3 */; };
 		0BCA0A99201BCC2100488E8E /* LampScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA0A8E201BCC2100488E8E /* LampScene.swift */; };
 		0BCA0A9A201BCC2100488E8E /* LampScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0BCA0A8F201BCC2100488E8E /* LampScene.sks */; };
@@ -436,6 +436,7 @@
 		0B350848204F563900BD1AD8 /* CakeScene_Monster.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CakeScene_Monster.sks; sourceTree = "<group>"; };
 		0B35084A204F579000BD1AD8 /* instructions_cake_monster.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_cake_monster.mp3; sourceTree = "<group>"; };
 		0B3ABCE92057151A003FE80B /* instructions_butter.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_butter.mp3; sourceTree = "<group>"; };
+		0B3ABCEB205717CA003FE80B /* instructions_candy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = instructions_candy.mp3; path = ../../../../../../Downloads/instructions_candy.mp3; sourceTree = "<group>"; };
 		0B3B5A1020315B7D002B6805 /* instructions_apple1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_apple1.mp3; sourceTree = "<group>"; };
 		0B3B5A1120315B7D002B6805 /* instructions_apple2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_apple2.mp3; sourceTree = "<group>"; };
 		0B3B5A1220315B7D002B6805 /* reminder_apple2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = reminder_apple2.mp3; sourceTree = "<group>"; };
@@ -473,7 +474,6 @@
 		0B3EFEDF204633EB00F5932F /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = correct.mp3; path = DuckColoringGame/Audio/correct.mp3; sourceTree = SOURCE_ROOT; };
 		0B3EFEE22046341D00F5932F /* Sound_Chewing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sound_Chewing.mp3; sourceTree = "<group>"; };
 		0BBE983F204D3A890064C98E /* Sound_Biting.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sound_Biting.mp3; sourceTree = "<group>"; };
-		0BBE9841204D3FC30064C98E /* instructions_candy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_candy.mp3; sourceTree = "<group>"; };
 		0BBE9843204D49360064C98E /* instructions_orange.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_orange.mp3; sourceTree = "<group>"; };
 		0BCA0A8E201BCC2100488E8E /* LampScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LampScene.swift; sourceTree = "<group>"; };
 		0BCA0A8F201BCC2100488E8E /* LampScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LampScene.sks; sourceTree = "<group>"; };
@@ -620,7 +620,7 @@
 		060A6802202AA127005F7323 /* MonsterGame */ = {
 			isa = PBXGroup;
 			children = (
-				0BBE9841204D3FC30064C98E /* instructions_candy.mp3 */,
+				0B3ABCEB205717CA003FE80B /* instructions_candy.mp3 */,
 				0BBE9843204D49360064C98E /* instructions_orange.mp3 */,
 				0B35082E204F2D7800BD1AD8 /* instructions_tooth.mp3 */,
 				0B350834204F325C00BD1AD8 /* instructions_flower.mp3 */,
@@ -1565,7 +1565,6 @@
 				06E34BCA203105870027CE82 /* cat.mp3 in Resources */,
 				0B350835204F325C00BD1AD8 /* instructions_flower.mp3 in Resources */,
 				0613CCB22050454A00FEC3F4 /* instructions_cat.mp3 in Resources */,
-				0BBE9842204D3FC30064C98E /* instructions_candy.mp3 in Resources */,
 				0B350849204F563900BD1AD8 /* CakeScene_Monster.sks in Resources */,
 				0613CCAD2050450200FEC3F4 /* instructions_lamp.mp3 in Resources */,
 				0613CCCB2050469F00FEC3F4 /* reminder_cake.mp3 in Resources */,
@@ -1594,6 +1593,7 @@
 				060A6817202AA883005F7323 /* reminder_airplane.wav in Resources */,
 				0B3B5A1920315B7E002B6805 /* instructions_apple3.mp3 in Resources */,
 				066DB6331FAE8F1500C68B36 /* Main.storyboard in Resources */,
+				0B3ABCEC205717CA003FE80B /* instructions_candy.mp3 in Resources */,
 				0B279EBD205620FB00ABAA57 /* ButterScene.sks in Resources */,
 				0B3EFED92046336600F5932F /* correctMelody1.wav in Resources */,
 				0B3EFED22046336600F5932F /* correctAudio7.wav in Resources */,

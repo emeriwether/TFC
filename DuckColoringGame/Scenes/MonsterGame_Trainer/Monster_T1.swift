@@ -102,6 +102,10 @@ class Monster_T1: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         apple_incorrectTouches += 1
+                        if apple_incorrectTouches > 10{
+                            sceneOver = true
+                            nextScene(sceneName: "Monster_T2")
+                        }
                     }
                 }
             }
