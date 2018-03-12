@@ -1,38 +1,40 @@
 //
-//  PhoneScene.swift
+//  AppleScene.swift
 //  DuckColoringGame
 //
-//  Created by Gustavo C Figueroa on 3/10/18.
+//  Created by Gustavo C Figueroa on 3/11/18.
 //  Copyright © 2018 Eleanor Meriwether. All rights reserved.
 //
 
 import SpriteKit
 import GameplayKit
 
-class PhoneScene: SKScene {
+class AppleScene: SKScene {
     
     private var foodNode1:SKNode?
     private var foodNode2:SKNode?
     private var foodNode3:SKNode?
+    private var foodNode4:SKNode?
     private var monsterNode:SKNode?
     
     private var selectedNode:SKNode?
     private var nodeIsSelected:Bool?
     
-    var phone_incorrectTouches = 0
-    var phone_correctTouches = 0
+    private var phone_incorrectTouches = 0
+    private var phone_correctTouches = 0
     
-    var instructionsComplete:Bool = false
-    var feedbackComplete:Bool = true
+    private var instructionsComplete:Bool = false
+    private var feedbackComplete:Bool = true
     
-    var sceneOver = false
+    private var sceneOver = false
     
     override func didMove(to view: SKView) {
-        foodNode1 = self.childNode(withName: "frog")
-        foodNode2 = self.childNode(withName: "phone")
-        foodNode3 = self.childNode(withName: "pizza")
+        foodNode1 = self.childNode(withName: "toast")
+        foodNode2 = self.childNode(withName: "apple")
+        foodNode3 = self.childNode(withName: "ice cream")
+        foodNode4 = self.childNode(withName: "fish")
         monsterNode = self.childNode(withName: "Monster")
-        playInstructionsWithName(audioName: "instructions_phone")
+        playInstructionsWithName(audioName: "instructions_apple")
     }
     
     ////////////////////////////
@@ -75,13 +77,16 @@ class PhoneScene: SKScene {
         if (instructionsComplete == true) && (feedbackComplete == true) && (sceneOver == false){
             let touch = touches.first!
             let touchLocation = touch.location(in: self)
-            if (self.atPoint(touchLocation).name == "frog"){
+            if (self.atPoint(touchLocation).name == "toast"){
                 selectedNode = foodNode1
                 nodeIsSelected = true
-            } else if (self.atPoint(touchLocation).name == "phone"){
+            } else if (self.atPoint(touchLocation).name == "apple"){
                 selectedNode = foodNode2
                 nodeIsSelected = true
-            }else if (self.atPoint(touchLocation).name == "pizza"){
+            }else if (self.atPoint(touchLocation).name == "ice cream"){
+                selectedNode = foodNode3
+                nodeIsSelected = true
+            }else if (self.atPoint(touchLocation).name == "fish"){
                 selectedNode = foodNode3
                 nodeIsSelected = true
             }else{
@@ -107,12 +112,12 @@ class PhoneScene: SKScene {
             
             for items in self.nodes(at: touchLocation){
                 if items.name == "Monster"{
-                    if (selectedNode?.name == "phone"){
+                    if (selectedNode?.name == "apple"){
                         phone_correctTouches += 1
                         selectedNode?.removeFromParent()
                         sceneOver = true
-                        animateMonster(withAudio: "Sound_Biting")
-                        nextScene(sceneName: "AppleScene")
+                        animateMonster(withAudio: "Sound_Chewing")
+                        nextScene(sceneName: "ScoreScene")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         phone_incorrectTouches += 1
@@ -124,6 +129,7 @@ class PhoneScene: SKScene {
         }
     }
 }
+
 
 
 
