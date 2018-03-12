@@ -120,7 +120,7 @@ class CakeScene: SKScene {
                 let candle1 = SKTexture(imageNamed: "cakeScene_cake_colored2")
                 let candle2 = SKTexture(imageNamed: "cakeScene_cake_colored3")
                 let candle3 = SKTexture(imageNamed: "cakeScene_cake_colored4")
-                let animation = SKAction.animate(with: [candle1, candle2, candle3], timePerFrame: 0.1)
+                let animation = SKAction.animate(with: [candle1, candle2, candle3], timePerFrame: 0.5)
                 //let openMouthAction = SKAction.repeat(animation, count: 5)
                 
                 //Run all actions
