@@ -255,10 +255,12 @@ func checkOrX_completed_twoItems (scene: SKScene, dictItem: String, category: St
     if dictItem == category {
         print("category: \(category), correct: \(correct)")
         if correct == 2 {
+            print("correct")
             copiedCheck.position = CGPoint(x: xCoord, y: yCoord)
             scene.addChild(copiedCheck)
-        } else if correct < 2 {
-            print("\(correct)")
+        }
+        else if correct < 2 {
+            print("incorrect")
             copiedX.position = CGPoint(x: xCoord, y: yCoord)
             scene.addChild(copiedX)
         }

@@ -33,6 +33,7 @@ class ScoreScene4: SKScene {
             if scene == "cookie" { comboCompletedDict["fourItemScene"] = comboCompletedDict["fourItemScene"]! + num }
             if scene == "mouse" { comboCompletedDict["fourItemScene"] = comboCompletedDict["fourItemScene"]! + num }
         }
+        
         for (scene, num) in numIncorrectPerScene {
             if scene == "rock" { comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["twoItemSimple"]! + num }
             if scene == "lamp" { comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["twoItemSimple"]! + num }
@@ -57,28 +58,28 @@ class ScoreScene4: SKScene {
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
         //PRINT LABELS FOR COMBO DICTIONARIES
-        for (item, num) in comboCompletedDict {
-            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "twoItemSimple", correct: num, xCoord: 197.198, yCoord: 222.044)
-            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "threeItemSimple", correct: num, xCoord: 197.198, yCoord: 150)
-            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "fourItemSimple", correct: num, xCoord: 197.198, yCoord: 76.904)
-            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "twoItemLine", correct: num, xCoord: 197.198, yCoord: 3)
-            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "threeItemLine", correct: num, xCoord: 197.198, yCoord: -69.742)
-            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "fourItemLine", correct: num,  xCoord: 197.198, yCoord: -141.09)
-            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "twoItemScene", correct: num,  xCoord: 197.198, yCoord: -216.253)
-            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "threeItemScene", correct: num,  xCoord: 197.198, yCoord: -286.45)
-            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "fourItemScene", correct: num,  xCoord: 197.198, yCoord: -362)
+        for (item, numCompleted) in comboCompletedDict {
+            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "twoItemSimple", correct: numCompleted, xCoord: -259.663, yCoord: 232.044)
+            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "threeItemSimple", correct: numCompleted, xCoord: -259.663, yCoord: 160)
+            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "fourItemSimple", correct: numCompleted, xCoord: -259.663, yCoord: 86.904)
+            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "twoItemLine", correct: numCompleted, xCoord: -259.663, yCoord: 13)
+            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "threeItemLine", correct: numCompleted, xCoord: -259.663, yCoord: -59.742)
+            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "fourItemLine", correct: numCompleted, xCoord: -259.663, yCoord: -131.09)
+            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "twoItemScene", correct: numCompleted, xCoord: -259.663, yCoord: -206.253)
+            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "threeItemScene", correct: numCompleted, xCoord: -259.663, yCoord: -276.45)
+            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "fourItemScene", correct: numCompleted, xCoord: -259.663, yCoord: -352)
         }
-        for (item, num) in comboNumFTDict {
-            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "twoItemSimple", firstTry: num, xCoord: -259.663, yCoord: 222.044)
-            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "threeItemSimple", firstTry: num, xCoord: -259.663, yCoord: 150)
-            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "fourItemSimple", firstTry: num, xCoord: -259.663, yCoord: 76.904)
-            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "twoItemLine", firstTry: num, xCoord: -259.663, yCoord: 3)
-            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "threeItemLine", firstTry: num, xCoord: -259.663, yCoord: -69.742)
-            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "fourItemLine", firstTry: num,  xCoord: -259.663, yCoord: -141.09)
-            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "twoItemScene", firstTry: num,  xCoord: -259.663, yCoord: -216.253)
-            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "threeItemScene", firstTry: num,  xCoord: -259.663, yCoord: -286.45)
-            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "fourItemScene", firstTry: num,  xCoord: -259.663, yCoord: -362)
-        }
+        /*for (item, num) in comboNumFTDict {
+            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "twoItemSimple", firstTry: num, xCoord: 197.198, yCoord: 222.044)
+            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "threeItemSimple", firstTry: num, xCoord: 197.198, yCoord: 150)
+            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "fourItemSimple", firstTry: num, xCoord: 197.198, yCoord: 76.904)
+            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "twoItemLine", firstTry: num, xCoord: 197.198, yCoord: 3)
+            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "threeItemLine", firstTry: num, xCoord: 197.198, yCoord: -69.742)
+            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "fourItemLine", firstTry: num,  xCoord: 197.198, yCoord: -141.09)
+            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "twoItemScene", firstTry: num,  xCoord: 197.198, yCoord: -216.253)
+            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "threeItemScene", firstTry: num,  xCoord: 197.198, yCoord: -286.45)
+            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "fourItemScene", firstTry: num,  xCoord: 197.198, yCoord: -362)
+        }*/
 
     }
     
