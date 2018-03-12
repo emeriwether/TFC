@@ -34,7 +34,7 @@ class DishScene: SKScene {
         foodNode3 = self.childNode(withName: "crib")
         foodNode4 = self.childNode(withName: "motorcycle")
         monsterNode = self.childNode(withName: "Monster")
-        playInstructionsWithName(audioName: "instructions_motorcycle")
+        playInstructionsWithName(audioName: "instructions_dish")
     }
     
     ////////////////////////////

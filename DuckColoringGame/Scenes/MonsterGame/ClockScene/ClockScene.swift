@@ -118,13 +118,13 @@ class ClockScene: SKScene {
                         selectedNode?.removeFromParent()
                         sceneOver = true
                         animateMonster(withAudio: "Sound_Biting")
-                        nextScene(sceneName: "ClockScene")
+                        nextScene(sceneName: "StartScene")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         clock_incorrectTouches += 1
                         if clock_incorrectTouches > 10{
                             sceneOver = true
-                            nextScene(sceneName: "ScoreScene")
+                            nextScene(sceneName: "StartScene")
                         }
                     }
                 }
