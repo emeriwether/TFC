@@ -194,7 +194,6 @@
 		0B350849204F563900BD1AD8 /* CakeScene_Monster.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0B350848204F563900BD1AD8 /* CakeScene_Monster.sks */; };
 		0B35084B204F579000BD1AD8 /* instructions_cake_monster.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B35084A204F579000BD1AD8 /* instructions_cake_monster.mp3 */; };
 		0B3ABCEA2057151A003FE80B /* instructions_butter.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3ABCE92057151A003FE80B /* instructions_butter.mp3 */; };
-		0B3ABCEC205717CA003FE80B /* instructions_candy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3ABCEB205717CA003FE80B /* instructions_candy.mp3 */; };
 		0B3B5A1620315B7E002B6805 /* instructions_apple1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3B5A1020315B7D002B6805 /* instructions_apple1.mp3 */; };
 		0B3B5A1720315B7E002B6805 /* instructions_apple2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3B5A1120315B7D002B6805 /* instructions_apple2.mp3 */; };
 		0B3B5A1820315B7E002B6805 /* reminder_apple2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3B5A1220315B7D002B6805 /* reminder_apple2.mp3 */; };
@@ -436,7 +435,6 @@
 		0B350848204F563900BD1AD8 /* CakeScene_Monster.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CakeScene_Monster.sks; sourceTree = "<group>"; };
 		0B35084A204F579000BD1AD8 /* instructions_cake_monster.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_cake_monster.mp3; sourceTree = "<group>"; };
 		0B3ABCE92057151A003FE80B /* instructions_butter.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_butter.mp3; sourceTree = "<group>"; };
-		0B3ABCEB205717CA003FE80B /* instructions_candy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = instructions_candy.mp3; path = ../../../../../../Downloads/instructions_candy.mp3; sourceTree = "<group>"; };
 		0B3B5A1020315B7D002B6805 /* instructions_apple1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_apple1.mp3; sourceTree = "<group>"; };
 		0B3B5A1120315B7D002B6805 /* instructions_apple2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_apple2.mp3; sourceTree = "<group>"; };
 		0B3B5A1220315B7D002B6805 /* reminder_apple2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = reminder_apple2.mp3; sourceTree = "<group>"; };
@@ -620,7 +618,6 @@
 		060A6802202AA127005F7323 /* MonsterGame */ = {
 			isa = PBXGroup;
 			children = (
-				0B3ABCEB205717CA003FE80B /* instructions_candy.mp3 */,
 				0BBE9843204D49360064C98E /* instructions_orange.mp3 */,
 				0B35082E204F2D7800BD1AD8 /* instructions_tooth.mp3 */,
 				0B350834204F325C00BD1AD8 /* instructions_flower.mp3 */,
@@ -1514,7 +1511,7 @@
 				TargetAttributes = {
 					066DB6231FAE8F1500C68B36 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = 2A6YQM3SZ4;
+						DevelopmentTeam = U4CECW6YBS;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
@@ -1593,7 +1590,6 @@
 				060A6817202AA883005F7323 /* reminder_airplane.wav in Resources */,
 				0B3B5A1920315B7E002B6805 /* instructions_apple3.mp3 in Resources */,
 				066DB6331FAE8F1500C68B36 /* Main.storyboard in Resources */,
-				0B3ABCEC205717CA003FE80B /* instructions_candy.mp3 in Resources */,
 				0B279EBD205620FB00ABAA57 /* ButterScene.sks in Resources */,
 				0B3EFED92046336600F5932F /* correctMelody1.wav in Resources */,
 				0B3EFED22046336600F5932F /* correctAudio7.wav in Resources */,
@@ -1925,7 +1921,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2A6YQM3SZ4;
+				DEVELOPMENT_TEAM = U4CECW6YBS;
 				INFOPLIST_FILE = DuckColoringGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1941,7 +1937,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 2A6YQM3SZ4;
+				DEVELOPMENT_TEAM = U4CECW6YBS;
 				INFOPLIST_FILE = DuckColoringGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

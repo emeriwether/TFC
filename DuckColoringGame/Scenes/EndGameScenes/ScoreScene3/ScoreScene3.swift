@@ -61,47 +61,47 @@ class ScoreScene3: SKScene {
     ////////////////////////////////////////////////////////////////////////////////////////////
         //CALCULATE AND PLACE FIRST-TRY LABELS
         for (scene, correct) in numCorrectPerScene {
-            checkOrX_completed (scene: self, dictWord: scene, word: "rock", correct: correct, xCoord: -259.663, yCoord: 207.027)
-            checkOrX_completed (scene: self, dictWord: scene, word: "lamp", correct: correct, xCoord: -259.663, yCoord: 172.027)
-            checkOrX_completed (scene: self, dictWord: scene, word: "cat", correct: correct, xCoord: -259.663, yCoord: 137.027)
-            checkOrX_completed (scene: self, dictWord: scene, word: "lion", correct: correct, xCoord: -259.663, yCoord: 102.027)
-            checkOrX_completed (scene: self, dictWord: scene, word: "hand", correct: correct, xCoord: -259.663, yCoord: 67.027)
-            checkOrX_completed (scene: self, dictWord: scene, word: "rain", correct: correct, xCoord: -259.663, yCoord: 32.027)
-            checkOrX_completed (scene: self, dictWord: scene, word: "duck", correct: correct, xCoord: -259.663, yCoord: -7.411)
-            checkOrX_completed (scene: self, dictWord: scene, word: "moon", correct: correct, xCoord: -259.663, yCoord: -42.411)
-            checkOrX_completed (scene: self, dictWord: scene, word: "cow", correct: correct, xCoord: -259.663, yCoord: -77.411)
-            checkOrX_completed (scene: self, dictWord: scene, word: "trash", correct: correct, xCoord: -259.663, yCoord: -112.411)
-            checkOrX_completed (scene: self, dictWord: scene, word: "airplane", correct: correct, xCoord: -259.663, yCoord: -147.411)
-            checkOrX_completed (scene: self, dictWord: scene, word: "shoes", correct: correct, xCoord: -259.663, yCoord: -182.411)
-            checkOrX_completed (scene: self, dictWord: scene, word: "cake", correct: correct, xCoord: -259.663, yCoord: -219.49)
-            checkOrX_completed (scene: self, dictWord: scene, word: "stroller", correct: correct, xCoord: -259.663, yCoord: -254.49)
-            checkOrX_completed (scene: self, dictWord: scene, word: "toast", correct: correct, xCoord: -259.663, yCoord: -289.49)
-            checkOrX_completed (scene: self, dictWord: scene, word: "hat", correct: correct, xCoord: -259.663, yCoord: -324.49)
-            checkOrX_completed (scene: self, dictWord: scene, word: "cookie", correct: correct, xCoord: -259.663, yCoord: -359.489)
-            checkOrX_completed (scene: self, dictWord: scene, word: "mouse", correct: correct, xCoord: -259.663, yCoord: -394.489)
+            checkOrX_completed (scene: self, dictWord: scene, word: "rock", correct: correct, xCoord: -259.663, yCoord: 217.027)
+            checkOrX_completed (scene: self, dictWord: scene, word: "lamp", correct: correct, xCoord: -259.663, yCoord: 182.027)
+            checkOrX_completed (scene: self, dictWord: scene, word: "cat", correct: correct, xCoord: -259.663, yCoord: 147.027)
+            checkOrX_completed (scene: self, dictWord: scene, word: "lion", correct: correct, xCoord: -259.663, yCoord: 112.027)
+            checkOrX_completed (scene: self, dictWord: scene, word: "hand", correct: correct, xCoord: -259.663, yCoord: 77.027)
+            checkOrX_completed (scene: self, dictWord: scene, word: "rain", correct: correct, xCoord: -259.663, yCoord: 42.027)
+            checkOrX_completed (scene: self, dictWord: scene, word: "duck", correct: correct, xCoord: -259.663, yCoord: 7.411)
+            checkOrX_completed (scene: self, dictWord: scene, word: "moon", correct: correct, xCoord: -259.663, yCoord: -32.411)
+            checkOrX_completed (scene: self, dictWord: scene, word: "cow", correct: correct, xCoord: -259.663, yCoord: -67.411)
+            checkOrX_completed (scene: self, dictWord: scene, word: "trash", correct: correct, xCoord: -259.663, yCoord: -102.411)
+            checkOrX_completed (scene: self, dictWord: scene, word: "airplane", correct: correct, xCoord: -259.663, yCoord: -137.411)
+            checkOrX_completed (scene: self, dictWord: scene, word: "shoes", correct: correct, xCoord: -259.663, yCoord: -172.411)
+            checkOrX_completed (scene: self, dictWord: scene, word: "cake", correct: correct, xCoord: -259.663, yCoord: -209.49)
+            checkOrX_completed (scene: self, dictWord: scene, word: "stroller", correct: correct, xCoord: -259.663, yCoord: -244.49)
+            checkOrX_completed (scene: self, dictWord: scene, word: "toast", correct: correct, xCoord: -259.663, yCoord: -279.49)
+            checkOrX_completed (scene: self, dictWord: scene, word: "hat", correct: correct, xCoord: -259.663, yCoord: -314.49)
+            checkOrX_completed (scene: self, dictWord: scene, word: "cookie", correct: correct, xCoord: -259.663, yCoord: -349.489)
+            checkOrX_completed (scene: self, dictWord: scene, word: "mouse", correct: correct, xCoord: -259.663, yCoord: -384.489)
         }
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
         //CALCULATE AND PLACE ACCURACY LABELS
         for (scene, accuracy) in accuracyPerScene {
-            accuracyLabels (scene: self, sceneString: scene, word: "rock", accuracy: accuracy, xCoord: 415.72, yCoord: 207.027)
-            accuracyLabels (scene: self, sceneString: scene, word: "lamp", accuracy: accuracy, xCoord: 415.72, yCoord: 172.027)
-            accuracyLabels (scene: self, sceneString: scene, word: "cat", accuracy: accuracy, xCoord: 415.72, yCoord: 137.027)
-            accuracyLabels (scene: self, sceneString: scene, word: "lion", accuracy: accuracy, xCoord: 415.72, yCoord: 102.027)
-            accuracyLabels (scene: self, sceneString: scene, word: "hand", accuracy: accuracy, xCoord: 415.72, yCoord: 67.027)
-            accuracyLabels (scene: self, sceneString: scene, word: "rain", accuracy: accuracy, xCoord: 415.72, yCoord: 32.027)
-            accuracyLabels (scene: self, sceneString: scene, word: "duck", accuracy: accuracy, xCoord: 415.72, yCoord: -7.411)
-            accuracyLabels (scene: self, sceneString: scene, word: "moon", accuracy: accuracy, xCoord: 415.72, yCoord: -42.411)
-            accuracyLabels (scene: self, sceneString: scene, word: "cow", accuracy: accuracy, xCoord: 415.72, yCoord: -77.411)
-            accuracyLabels (scene: self, sceneString: scene, word: "trash", accuracy: accuracy, xCoord: 415.72, yCoord: -112.411)
-            accuracyLabels (scene: self, sceneString: scene, word: "airplane", accuracy: accuracy, xCoord: 415.72, yCoord: -147.411)
-            accuracyLabels (scene: self, sceneString: scene, word: "shoes", accuracy: accuracy, xCoord: 415.72, yCoord: -182.411)
-            accuracyLabels (scene: self, sceneString: scene, word: "cake", accuracy: accuracy, xCoord: 415.72, yCoord: -219.49)
-            accuracyLabels (scene: self, sceneString: scene, word: "stroller", accuracy: accuracy, xCoord: 415.72, yCoord: -254.49)
-            accuracyLabels (scene: self, sceneString: scene, word: "toast", accuracy: accuracy, xCoord: 415.72, yCoord: -289.49)
-            accuracyLabels (scene: self, sceneString: scene, word: "hat", accuracy: accuracy, xCoord: 415.72, yCoord: -324.49)
-            accuracyLabels (scene: self, sceneString: scene, word: "cookie", accuracy: accuracy, xCoord: 415.72, yCoord: -359.489)
-            accuracyLabels (scene: self, sceneString: scene, word: "mouse", accuracy: accuracy, xCoord: 415.72, yCoord: -394.489)
+            accuracyLabels (scene: self, sceneString: scene, word: "rock", accuracy: accuracy, xCoord: 415.72, yCoord: 217.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "lamp", accuracy: accuracy, xCoord: 415.72, yCoord: 182.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "cat", accuracy: accuracy, xCoord: 415.72, yCoord: 147.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "lion", accuracy: accuracy, xCoord: 415.72, yCoord: 112.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "hand", accuracy: accuracy, xCoord: 415.72, yCoord: 77.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "rain", accuracy: accuracy, xCoord: 415.72, yCoord: 42.027)
+            accuracyLabels (scene: self, sceneString: scene, word: "duck", accuracy: accuracy, xCoord: 415.72, yCoord: 7.411)
+            accuracyLabels (scene: self, sceneString: scene, word: "moon", accuracy: accuracy, xCoord: 415.72, yCoord: -32.411)
+            accuracyLabels (scene: self, sceneString: scene, word: "cow", accuracy: accuracy, xCoord: 415.72, yCoord: -67.411)
+            accuracyLabels (scene: self, sceneString: scene, word: "trash", accuracy: accuracy, xCoord: 415.72, yCoord: -102.411)
+            accuracyLabels (scene: self, sceneString: scene, word: "airplane", accuracy: accuracy, xCoord: 415.72, yCoord: -137.411)
+            accuracyLabels (scene: self, sceneString: scene, word: "shoes", accuracy: accuracy, xCoord: 415.72, yCoord: -172.411)
+            accuracyLabels (scene: self, sceneString: scene, word: "cake", accuracy: accuracy, xCoord: 415.72, yCoord: -209.49)
+            accuracyLabels (scene: self, sceneString: scene, word: "stroller", accuracy: accuracy, xCoord: 415.72, yCoord: -244.49)
+            accuracyLabels (scene: self, sceneString: scene, word: "toast", accuracy: accuracy, xCoord: 415.72, yCoord: -279.49)
+            accuracyLabels (scene: self, sceneString: scene, word: "hat", accuracy: accuracy, xCoord: 415.72, yCoord: -314.49)
+            accuracyLabels (scene: self, sceneString: scene, word: "cookie", accuracy: accuracy, xCoord: 415.72, yCoord: -349.489)
+            accuracyLabels (scene: self, sceneString: scene, word: "mouse", accuracy: accuracy, xCoord: 415.72, yCoord: -384.489)
         }
     ////////////////////////////////////////////////////////////////////////////////////////////
 }
@@ -121,7 +121,6 @@ class ScoreScene3: SKScene {
         
         // if back button is touched
         if backButton!.contains(touch.location(in: self)) {
-            resetAllGameStats_coloring()
             transitionScene (currentScene: self, sceneString: "ScoreScene2", waitTime: 0, fadeTime: 0)
         }
     }
