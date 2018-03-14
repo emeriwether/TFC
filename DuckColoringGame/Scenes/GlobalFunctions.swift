@@ -129,14 +129,16 @@ func printListLabel (scene: SKScene, label: SKLabelNode, words: String, xCoord: 
 }
 
 func calculateAccuracy (currentScene: SKScene, scene: String) {
-    if (numCorrectPerScene[scene]! == 0) {
-        if let _ = accuracyPerScene[scene] {
-            accuracyPerScene[scene] = 0
+    if let _ = numCorrectPerScene[scene] {
+        if (numCorrectPerScene[scene]! == 0) {
+            if let _ = accuracyPerScene[scene] {
+                accuracyPerScene[scene] = 0
+            }
         }
-    }
-    else if (numIncorrectPerScene[scene]! == 0) {accuracyPerScene[scene] = 100 }
-    else {
-        accuracyPerScene[scene] = round((Double(numCorrectPerScene[scene]!) / Double(numIncorrectPerScene[scene]! + numCorrectPerScene[scene]!)) * 100)
+        else if (numIncorrectPerScene[scene]! == 0) {accuracyPerScene[scene] = 100 }
+        else {
+            accuracyPerScene[scene] = round((Double(numCorrectPerScene[scene]!) / Double(numIncorrectPerScene[scene]! + numCorrectPerScene[scene]!)) * 100)
+        }
     }
 }
 
