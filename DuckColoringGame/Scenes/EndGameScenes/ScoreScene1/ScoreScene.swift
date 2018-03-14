@@ -33,7 +33,7 @@ class ScoreScene: SKScene {
     override func didMove(to view: SKView) {
     ////////////////////////////////////////////////////////////////////////////////////////////
         // CALCULATE ACCURACY FOR EACH SCENE
-        for (item, _) in accuracyPerScene { calculateAccuracy(scene: item) }
+        for (item, _) in accuracyPerScene { calculateAccuracy(currentScene: self, scene: item) }
     ////////////////////////////////////////////////////////////////////////////////////////////
         
         
