@@ -99,6 +99,7 @@ class CatScene: SKScene {
                 sceneOver = true
                 cat_correctTouches += 1
                 numCorrectPerScene["cat"] = numCorrectPerScene["cat"]! + 1
+                comboCompletedDict["threeItemSimple"] = comboCompletedDict["threeItemSimple"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (cat_incorrectTouches == 0) {
@@ -106,7 +107,7 @@ class CatScene: SKScene {
                     simpleCorrectFT += 1
                     threeItemCorrectFT += 1
                     correctFirstTries["cat"] = true
-                    
+                    comboNumFTDict["threeItemSimple"] = comboNumFTDict["threeItemSimple"]! + 1
                 }
                 
                 // Change sprite to colored cat
@@ -132,6 +133,7 @@ class CatScene: SKScene {
             else {
                 cat_incorrectTouches += 1
                 numIncorrectPerScene["cat"] = numIncorrectPerScene["cat"]! + 1
+                comboNumIncorrectDict["threeItemSimple"] = comboNumIncorrectDict["threeItemSimple"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

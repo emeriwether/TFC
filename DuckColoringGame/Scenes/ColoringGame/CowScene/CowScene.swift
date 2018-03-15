@@ -99,6 +99,7 @@ class CowScene: SKScene {
                 sceneOver = true
                 cow_correctTouches += 1
                 numCorrectPerScene["cow"] = numCorrectPerScene["cow"]! + 1
+                comboCompletedDict["threeItemLine"] = comboCompletedDict["threeItemLine"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (cow_incorrectTouches == 0) {
@@ -106,6 +107,7 @@ class CowScene: SKScene {
                     lineCorrectFT += 1
                     threeItemCorrectFT += 1
                     correctFirstTries["cow"] = true
+                    comboNumFTDict["threeItemLine"] = comboNumFTDict["threeItemLine"]! + 1
                 }
                 
                 // Change sprite to colored cow
@@ -135,6 +137,7 @@ class CowScene: SKScene {
             else {
                 cow_incorrectTouches += 1
                 numIncorrectPerScene["cow"] = numIncorrectPerScene["cow"]! + 1
+                comboNumIncorrectDict["threeItemLine"] = comboNumIncorrectDict["threeItemLine"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

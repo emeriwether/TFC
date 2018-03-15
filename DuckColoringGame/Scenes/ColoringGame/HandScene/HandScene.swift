@@ -99,6 +99,7 @@ class HandScene: SKScene {
                 sceneOver = true
                 hand_correctTouches += 1
                 numCorrectPerScene["hand"] = numCorrectPerScene["hand"]! + 1
+                comboCompletedDict["fourItemSimple"] = comboCompletedDict["fourItemSimple"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (hand_incorrectTouches == 0) {
@@ -106,6 +107,7 @@ class HandScene: SKScene {
                     simpleCorrectFT += 1
                     fourItemCorrectFT += 1
                     correctFirstTries["hand"] = true
+                    comboNumFTDict["fourItemSimple"] = comboNumFTDict["fourItemSimple"]! + 1
                 }
                 
                 // play correct wiggleOnly animation (function declared on HandScene.swift in coloring game)
@@ -116,6 +118,7 @@ class HandScene: SKScene {
             else {
                 hand_incorrectTouches += 1
                 numIncorrectPerScene["hand"] = numIncorrectPerScene["hand"]! + 1
+                comboNumIncorrectDict["fourItemSimple"] = comboNumIncorrectDict["fourItemSimple"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

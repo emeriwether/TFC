@@ -99,6 +99,7 @@ class LampScene: SKScene {
                 sceneOver = true
                 lamp_correctTouches += 1
                 numCorrectPerScene["lamp"] = numCorrectPerScene["lamp"]! + 1
+                comboCompletedDict["twoItemSimple"] = comboCompletedDict["twoItemSimple"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide stats for first try
                 if (lamp_incorrectTouches == 0) {
@@ -106,7 +107,7 @@ class LampScene: SKScene {
                     simpleCorrectFT += 1
                     twoItemCorrectFT += 1
                     correctFirstTries["lamp"] = true
-                    
+                    comboNumFTDict["twoItemSimple"] = comboNumFTDict["twoItemSimple"]! + 1
                 }
                 
                 animateNode(node: lamp!, coloredImg: "lampScene_lamp_colored", correctSound: "correct2")
@@ -116,6 +117,7 @@ class LampScene: SKScene {
             else {
                 lamp_incorrectTouches += 1
                 numIncorrectPerScene["lamp"] = numIncorrectPerScene["lamp"]! + 1
+                comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["twoItemSimple"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

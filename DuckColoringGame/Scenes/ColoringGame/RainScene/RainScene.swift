@@ -99,6 +99,7 @@ class RainScene: SKScene {
                 sceneOver = true
                 rain_correctTouches += 1
                 numCorrectPerScene["rain"] = numCorrectPerScene["rain"]! + 1
+                comboCompletedDict["fourItemSimple"] = comboCompletedDict["fourItemSimple"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (rain_incorrectTouches == 0) {
@@ -106,6 +107,7 @@ class RainScene: SKScene {
                     simpleCorrectFT += 1
                     fourItemCorrectFT += 1
                     correctFirstTries["rain"] = true
+                    comboNumFTDict["fourItemSimple"] = comboNumFTDict["fourItemSimple"]! + 1
                 }
                 
                 // Change sprite to colored rain
@@ -132,6 +134,7 @@ class RainScene: SKScene {
             else {
                 rain_incorrectTouches += 1
                 numIncorrectPerScene["rain"] = numIncorrectPerScene["rain"]! + 1
+                comboNumIncorrectDict["fourItemSimple"] = comboNumIncorrectDict["fourItemSimple"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

@@ -99,6 +99,7 @@ class DuckScene: SKScene {
                 sceneOver = true
                 duck_correctTouches += 1
                 numCorrectPerScene["duck"] = numCorrectPerScene["duck"]! + 1
+                comboCompletedDict["twoItemLine"] = comboCompletedDict["twoItemLine"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (duck_incorrectTouches == 0) {
@@ -106,6 +107,7 @@ class DuckScene: SKScene {
                     lineCorrectFT += 1
                     twoItemCorrectFT += 1
                     correctFirstTries["duck"] = true
+                    comboNumFTDict["twoItemLine"] = comboNumFTDict["twoItemLine"]! + 1
                 }
                 
                 // Change sprite to colored duck
@@ -137,6 +139,7 @@ class DuckScene: SKScene {
             else {
                 duck_incorrectTouches += 1
                 numIncorrectPerScene["duck"] = numIncorrectPerScene["duck"]! + 1
+                comboNumIncorrectDict["twoItemLine"] = comboNumIncorrectDict["twoItemLine"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

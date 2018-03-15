@@ -99,6 +99,7 @@ class MoonScene: SKScene {
                 sceneOver = true
                 moon_correctTouches += 1
                 numCorrectPerScene["moon"] = numCorrectPerScene["moon"]! + 1
+                comboCompletedDict["twoItemLine"] = comboCompletedDict["twoItemLine"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (moon_incorrectTouches == 0) {
@@ -106,6 +107,7 @@ class MoonScene: SKScene {
                     lineCorrectFT += 1
                     twoItemCorrectFT += 1
                     correctFirstTries["moon"] = true
+                    comboNumFTDict["twoItemLine"] = comboNumFTDict["twoItemLine"]! + 1
                 }
                 
                 // play correct wiggleOnly animation (function declared on HandScene.swift in coloring game)
@@ -116,6 +118,7 @@ class MoonScene: SKScene {
             else {
                 moon_incorrectTouches += 1
                 numIncorrectPerScene["moon"] = numIncorrectPerScene["moon"]! + 1
+                comboNumIncorrectDict["twoItemLine"] = comboNumIncorrectDict["twoItemLine"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

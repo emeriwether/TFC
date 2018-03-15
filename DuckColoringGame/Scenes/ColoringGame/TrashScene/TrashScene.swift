@@ -99,6 +99,7 @@ class TrashScene: SKScene {
                 sceneOver = true
                 trash_correctTouches += 1
                 numCorrectPerScene["trash"] = numCorrectPerScene["trash"]! + 1
+                comboCompletedDict["threeItemLine"] = comboCompletedDict["threeItemLine"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (trash_incorrectTouches == 0) {
@@ -106,6 +107,7 @@ class TrashScene: SKScene {
                     lineCorrectFT += 1
                     threeItemCorrectFT += 1
                     correctFirstTries["trash"] = true
+                    comboNumFTDict["threeItemLine"] = comboNumFTDict["threeItemLine"]! + 1
                 }
                 
                 // Color trash
@@ -131,6 +133,7 @@ class TrashScene: SKScene {
             else {
                 trash_incorrectTouches += 1
                 numIncorrectPerScene["trash"] = numIncorrectPerScene["trash"]! + 1
+                comboNumIncorrectDict["threeItemLine"] = comboNumIncorrectDict["threeItemLine"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

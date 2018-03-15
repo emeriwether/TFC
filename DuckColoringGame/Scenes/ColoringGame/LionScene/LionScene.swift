@@ -99,6 +99,7 @@ class LionScene: SKScene {
                 sceneOver = true
                 lion_correctTouches += 1
                 numCorrectPerScene["lion"] = numCorrectPerScene["lion"]! + 1
+                comboCompletedDict["threeItemSimple"] = comboCompletedDict["threeItemSimple"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (lion_incorrectTouches == 0) {
@@ -106,6 +107,7 @@ class LionScene: SKScene {
                     simpleCorrectFT += 1
                     threeItemCorrectFT += 1
                     correctFirstTries["lion"] = true
+                    comboNumFTDict["threeItemSimple"] = comboNumFTDict["threeItemSimple"]! + 1
                 }
                 
                 // Change sprite to colored lion
@@ -129,6 +131,7 @@ class LionScene: SKScene {
             else {
                 lion_incorrectTouches += 1
                 numIncorrectPerScene["lion"] = numIncorrectPerScene["lion"]! + 1
+                comboNumIncorrectDict["threeItemSimple"] = comboNumIncorrectDict["threeItemSimple"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)
