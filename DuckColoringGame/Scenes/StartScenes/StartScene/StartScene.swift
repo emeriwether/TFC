@@ -22,7 +22,7 @@ class StartScene: SKScene {
         
         // if the start color button is touched, move to balloon trainer scene
         if startColor!.contains(touch.location(in: self)) {
-            let colorTrainer1 = SKScene(fileNamed: "RockScene")
+            let colorTrainer1 = SKScene(fileNamed: "Trainer_Balloon")
             colorTrainer1?.scaleMode = SKSceneScaleMode.aspectFill
             self.scene!.view?.presentScene(colorTrainer1!, transition: fade)
         }
