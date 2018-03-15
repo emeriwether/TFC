@@ -99,6 +99,7 @@ class AirplaneScene: SKScene {
                 sceneOver = true
                 airplane_correctTouches += 1
                 numCorrectPerScene["airplane"] = numCorrectPerScene["airplane"]! + 1
+                comboCompletedDict["fourItemLine"] = comboCompletedDict["fourItemLine"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (airplane_incorrectTouches == 0) {
@@ -106,6 +107,7 @@ class AirplaneScene: SKScene {
                     lineCorrectFT += 1
                     fourItemCorrectFT += 1
                     correctFirstTries["airplane"] = true
+                    comboNumFTDict["fourItemLine"] = comboNumFTDict["fourItemLine"]! + 1
                 }
                 
                 // Color airplane
@@ -126,6 +128,7 @@ class AirplaneScene: SKScene {
             else {
                 airplane_incorrectTouches += 1
                 numIncorrectPerScene["airplane"] = numIncorrectPerScene["airplane"]! + 1
+                comboNumIncorrectDict["fourItemLine"] = comboNumIncorrectDict["fourItemLine"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

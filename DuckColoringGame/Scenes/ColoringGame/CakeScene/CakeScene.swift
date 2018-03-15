@@ -99,6 +99,7 @@ class CakeScene: SKScene {
                 sceneOver = true
                 cake_correctTouches += 1
                 numCorrectPerScene["cake"] = numCorrectPerScene["cake"]! + 1
+                comboCompletedDict["twoItemScene"] = comboCompletedDict["twoItemScene"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (cake_incorrectTouches == 0) {
@@ -106,6 +107,7 @@ class CakeScene: SKScene {
                     sceneCorrectFT += 1
                     twoItemCorrectFT += 1
                     correctFirstTries["cake"] = true
+                    comboNumFTDict["twoItemScene"] = comboNumFTDict["twoItemScene"]! + 1
                 }
                 
                 // Change sprite to colored cake
@@ -132,6 +134,7 @@ class CakeScene: SKScene {
             else {
                 cake_incorrectTouches += 1
                 numIncorrectPerScene["cake"] = numIncorrectPerScene["cake"]! + 1
+                comboNumIncorrectDict["twoItemScene"] = comboNumIncorrectDict["twoItemScene"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

@@ -99,6 +99,7 @@ class StrollerScene: SKScene {
                 sceneOver = true
                 stroller_correctTouches += 1
                 numCorrectPerScene["stroller"] = numCorrectPerScene["stroller"]! + 1
+                comboCompletedDict["twoItemScene"] = comboCompletedDict["twoItemScene"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (stroller_incorrectTouches == 0) {
@@ -106,6 +107,7 @@ class StrollerScene: SKScene {
                     sceneCorrectFT += 1
                     twoItemCorrectFT += 1
                     correctFirstTries["stroller"] = true
+                    comboNumFTDict["twoItemScene"] = comboNumFTDict["twoItemScene"]! + 1
                 }
                 
                 // Change sprite to colored stroller
@@ -130,6 +132,7 @@ class StrollerScene: SKScene {
             else {
                 stroller_incorrectTouches += 1
                 numIncorrectPerScene["stroller"] = numIncorrectPerScene["stroller"]! + 1
+                comboNumIncorrectDict["twoItemScene"] = comboNumIncorrectDict["twoItemScene"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

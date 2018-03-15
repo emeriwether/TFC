@@ -100,6 +100,7 @@ class HatScene: SKScene {
                 sceneOver = true
                 hat_correctTouches += 1
                 numCorrectPerScene["hat"] = numCorrectPerScene["hat"]! + 1
+                comboCompletedDict["threeItemScene"] = comboCompletedDict["threeItemScene"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (hat_incorrectTouches == 0) {
@@ -107,6 +108,7 @@ class HatScene: SKScene {
                     sceneCorrectFT += 1
                     threeItemCorrectFT += 1
                     correctFirstTries["hat"] = true
+                    comboNumFTDict["threeItemScene"] = comboNumFTDict["threeItemScene"]! + 1
                 }
 
                 // play correct hatFlip animation (function declared on HatScene.swift in coloring game)
@@ -117,6 +119,7 @@ class HatScene: SKScene {
             else {
                 hat_incorrectTouches += 1
                 numIncorrectPerScene["hat"] = numIncorrectPerScene["hat"]! + 1
+                comboNumIncorrectDict["threeItemScene"] = comboNumIncorrectDict["threeItemScene"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

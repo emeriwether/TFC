@@ -100,6 +100,7 @@ class ShoesScene: SKScene {
                 sceneOver = true
                 shoes_correctTouches += 1
                 numCorrectPerScene["shoes"] = numCorrectPerScene["shoes"]! + 1
+                comboCompletedDict["fourItemLine"] = comboCompletedDict["fourItemLine"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (shoes_incorrectTouches == 0) {
@@ -107,6 +108,7 @@ class ShoesScene: SKScene {
                     lineCorrectFT += 1
                     fourItemCorrectFT += 1
                     correctFirstTries["shoes"] = true
+                    comboNumFTDict["fourItemLine"] = comboNumFTDict["fourItemLine"]! + 1
                 }
                 
                 // Color shoes
@@ -136,6 +138,7 @@ class ShoesScene: SKScene {
             else {
                 shoes_incorrectTouches += 1
                 numIncorrectPerScene["shoes"] = numIncorrectPerScene["shoes"]! + 1
+                comboNumIncorrectDict["fourItemLine"] = comboNumIncorrectDict["fourItemLine"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)

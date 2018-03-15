@@ -100,6 +100,7 @@ class MouseScene: SKScene {
                 sceneOver = true
                 mouse_correctTouches += 1
                 numCorrectPerScene["mouse"] = numCorrectPerScene["mouse"]! + 1
+                comboCompletedDict["fourItemScene"] = comboCompletedDict["fourItemScene"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide numOfCorrectFirstTry
                 if (mouse_incorrectTouches == 0) {
@@ -107,6 +108,7 @@ class MouseScene: SKScene {
                     sceneCorrectFT += 1
                     fourItemCorrectFT += 1
                     correctFirstTries["mouse"] = true
+                    comboNumFTDict["fourItemScene"] = comboNumFTDict["fourItemScene"]! + 1
                 }
                 
                 // Color mouse
@@ -125,6 +127,7 @@ class MouseScene: SKScene {
             else {
                 mouse_incorrectTouches += 1
                 numIncorrectPerScene["mouse"] = numIncorrectPerScene["mouse"]! + 1
+                comboNumIncorrectDict["fourItemScene"] = comboNumIncorrectDict["fourItemScene"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)
