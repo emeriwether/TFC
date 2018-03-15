@@ -23,6 +23,7 @@ class ScoreScene4: SKScene {
     ////////////////////////////////////////////////////////////////////////////////////////////
         //CALCULATE ACCURACY COMBO DICTIONARY
         comboAccuracyDict["twoItemSimple"] = Double(comboCompletedDict["twoItemSimple"]! / (comboCompletedDict["twoItemSimple"]! + comboNumIncorrectDict["twoItemSimple"]!))
+        print("twoItemSimple-Completed: \(comboCompletedDict["twoItemSimple"]), twoItemSimple-Incorrect: \(comboNumIncorrectDict["twoItemSimple"])")
         comboAccuracyDict["threeItemSimple"] = Double(comboCompletedDict["threeItemSimple"]! / (comboCompletedDict["threeItemSimple"]! + comboNumIncorrectDict["threeItemSimple"]!))
         comboAccuracyDict["fourItemSimple"] = Double(comboCompletedDict["fourItemSimple"]! / (comboCompletedDict["fourItemSimple"]! + comboNumIncorrectDict["fourItemSimple"]!))
         
@@ -76,6 +77,7 @@ class ScoreScene4: SKScene {
         }
         
         for (item, num) in comboAccuracyDict {
+            print("\(item)-AccuracyCombo: \(comboAccuracyDict[item])")
             accuracyLabels (scene: self, sceneString: item, word: "twoItemSimple", accuracy: num, xCoord: 474, yCoord: 232)
             accuracyLabels (scene: self, sceneString: item, word: "threeItemSimple", accuracy: num, xCoord: 474, yCoord: 160)
             accuracyLabels (scene: self, sceneString: item, word: "fourItemSimple", accuracy: num, xCoord: 474, yCoord: 87)
