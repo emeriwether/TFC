@@ -51,14 +51,14 @@ class ScoreScene4: SKScene {
         }
         
         for (item, numIncorrect) in comboNumIncorrectDict {
-            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "twoItemSimple", numIncorrect: numIncorrect, xCoord: 0, yCoord: 232.044)
+            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "twoItemSimple", numIncorrect: numIncorrect, xCoord: 0, yCoord: 232)
             incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "threeItemSimple", numIncorrect: numIncorrect, xCoord: 0, yCoord: 160)
-            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "fourItemSimple", numIncorrect: numIncorrect, xCoord: 0, yCoord: 86.904)
+            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "fourItemSimple", numIncorrect: numIncorrect, xCoord: 0, yCoord: 87)
             incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "twoItemLine", numIncorrect: numIncorrect, xCoord: 0, yCoord: 13)
-            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "threeItemLine", numIncorrect: numIncorrect, xCoord: 0, yCoord: -59.742)
-            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "fourItemLine", numIncorrect: numIncorrect, xCoord: 0, yCoord: -131.09)
-            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "twoItemScene", numIncorrect: numIncorrect, xCoord: 0, yCoord: -206.253)
-            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "threeItemScene", numIncorrect: numIncorrect, xCoord: 0, yCoord: -276.45)
+            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "threeItemLine", numIncorrect: numIncorrect, xCoord: 0, yCoord: -60)
+            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "fourItemLine", numIncorrect: numIncorrect, xCoord: 0, yCoord: -131)
+            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "twoItemScene", numIncorrect: numIncorrect, xCoord: 0, yCoord: -206)
+            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "threeItemScene", numIncorrect: numIncorrect, xCoord: 0, yCoord: -276)
             incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "fourItemScene", numIncorrect: numIncorrect, xCoord: 0, yCoord: -352)
 
         }
@@ -76,15 +76,15 @@ class ScoreScene4: SKScene {
         }
         
         for (item, num) in comboAccuracyDict {
-            accuracyLabels (scene: self, sceneString: item, word: "twoItemSimple", accuracy: Double, xCoord: Double, yCoord: Double)
-            accuracyLabels (scene: self, sceneString: item, word: "threeItemSimple", accuracy: Double, xCoord: Double, yCoord: Double)
-            accuracyLabels (scene: self, sceneString: item, word: "fourItemSimple", accuracy: Double, xCoord: Double, yCoord: Double)
-            accuracyLabels (scene: self, sceneString: item, word: "twoItemLine", accuracy: Double, xCoord: Double, yCoord: Double)
-            accuracyLabels (scene: self, sceneString: item, word: "threeItemLine", accuracy: Double, xCoord: Double, yCoord: Double)
-            accuracyLabels (scene: self, sceneString: item, word: "fourItemLine", accuracy: Double, xCoord: Double, yCoord: Double)
-            accuracyLabels (scene: self, sceneString: item, word: "twoItemScene", accuracy: Double, xCoord: Double, yCoord: Double)
-            accuracyLabels (scene: self, sceneString: item, word: "threeItemScene", accuracy: Double, xCoord: Double, yCoord: Double)
-            accuracyLabels (scene: self, sceneString: item, word: "fourItemScene", accuracy: Double, xCoord: Double, yCoord: Double)
+            accuracyLabels (scene: self, sceneString: item, word: "twoItemSimple", accuracy: num, xCoord: 474, yCoord: 232)
+            accuracyLabels (scene: self, sceneString: item, word: "threeItemSimple", accuracy: num, xCoord: 474, yCoord: 160)
+            accuracyLabels (scene: self, sceneString: item, word: "fourItemSimple", accuracy: num, xCoord: 474, yCoord: 87)
+            accuracyLabels (scene: self, sceneString: item, word: "twoItemLine", accuracy: num, xCoord: 474, yCoord: 13)
+            accuracyLabels (scene: self, sceneString: item, word: "threeItemLine", accuracy: num, xCoord: 474, yCoord: -60)
+            accuracyLabels (scene: self, sceneString: item, word: "fourItemLine", accuracy: num, xCoord: 474, yCoord: -131)
+            accuracyLabels (scene: self, sceneString: item, word: "twoItemScene", accuracy: num, xCoord: 474, yCoord: -206)
+            accuracyLabels (scene: self, sceneString: item, word: "threeItemScene", accuracy: num, xCoord: 474, yCoord: -276)
+            accuracyLabels (scene: self, sceneString: item, word: "fourItemScene", accuracy: num, xCoord: 474, yCoord: -362)
         }
 
     }
