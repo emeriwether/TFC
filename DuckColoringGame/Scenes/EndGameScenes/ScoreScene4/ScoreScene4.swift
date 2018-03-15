@@ -22,7 +22,7 @@ class ScoreScene4: SKScene {
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
         //CALCULATE COMBO DICTIONARIES
-        for (scene, num) in numCorrectPerScene {
+        /*for (scene, num) in numCorrectPerScene {
             if scene == "rock" { comboCompletedDict["twoItemSimple"] = comboCompletedDict["twoItemSimple"]! + num }
             if scene == "lamp" { comboCompletedDict["twoItemSimple"] = comboCompletedDict["twoItemSimple"]! + num }
             if scene == "cat" { comboCompletedDict["threeItemSimple"] = comboCompletedDict["threeItemSimple"]! + num }
@@ -104,7 +104,7 @@ class ScoreScene4: SKScene {
             if scene == "mouse" {
                 if firstTry == true { comboNumFTDict["fourItemScene"] = comboNumFTDict["fourItemScene"]! + 1} }
             
-        }
+        }*/
 
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
@@ -121,7 +121,7 @@ class ScoreScene4: SKScene {
             checkOrX_completed_twoItems (scene: self, dictItem: item, category: "fourItemScene", correct: numCompleted, xCoord: -259.663, yCoord: -352)
         }
         
-        for (item, numIncorrect) in numIncorrectPerScene {
+        for (item, numIncorrect) in comboNumIncorrectDict {
             incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "twoItemSimple", numIncorrect: numIncorrect, xCoord: 0, yCoord: 232.044)
             incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "threeItemSimple", numIncorrect: numIncorrect, xCoord: 0, yCoord: 160)
             incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "fourItemSimple", numIncorrect: numIncorrect, xCoord: 0, yCoord: 86.904)

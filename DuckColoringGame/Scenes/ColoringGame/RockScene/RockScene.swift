@@ -99,6 +99,7 @@ class RockScene: SKScene {
                 sceneOver = true
                 rock_correctTouches += 1
                 numCorrectPerScene["rock"] = numCorrectPerScene["rock"]! + 1
+                comboCompletedDict["twoItemSimple"] = comboCompletedDict["twoItemSimple"]! + 1
                 
                 // if there weren't any incorrect touches, add to game-wide stats for first try
                 if (rock_incorrectTouches == 0) {
@@ -106,7 +107,7 @@ class RockScene: SKScene {
                     simpleCorrectFT += 1
                     twoItemCorrectFT += 1
                     correctFirstTries["rock"] = true
-                    
+                    comboNumFTDict["twoItemSimple"] = comboNumFTDict["twoItemSimple"]! + 1
                 }
                 
                 animateNode(node: rock!, coloredImg: "rockScene_rock_colored", correctSound: "correct2")
@@ -116,6 +117,7 @@ class RockScene: SKScene {
             else {
                 rock_incorrectTouches += 1
                 numIncorrectPerScene["rock"] = numIncorrectPerScene["rock"]! + 1
+                comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["twoItemSimple"]! + 1
                 
                 // Play wrong noise
                 let wrong = SKAction.playSoundFileNamed("wrong", waitForCompletion: true)
