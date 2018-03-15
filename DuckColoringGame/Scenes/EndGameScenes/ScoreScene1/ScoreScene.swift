@@ -177,8 +177,7 @@ class ScoreScene: SKScene {
         }
         printLabel(scene: self, label: lineAccuracyLabel, words: lineAccuracyText, xCoord: -404, yCoord: -200.828, fontSize: 28)
         
-        // CALCULATE AND PLACE LINE-BG ACCURACY LABEL
-        //SUSPECT
+        // CALCULATE AND PLACE SCENE-BG ACCURACY LABEL
         let sceneBgArray: [String] = ["cake", "stroller", "toast", "hat", "cookie", "mouse"]
         for item in sceneBgArray {
             if accuracyPerScene[item]! > 0.0 {
@@ -188,7 +187,7 @@ class ScoreScene: SKScene {
         }
         sceneAccuracy = sceneAccuracy / scenebgCompleted
         var sceneAccuracyText:String
-        if linebgCompleted > 0 {
+        if scenebgCompleted > 0 {
             sceneAccuracyText = "\(Int(round(sceneAccuracy)))%"
         } else {
             sceneAccuracyText = "none completed"
