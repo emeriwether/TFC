@@ -17,8 +17,8 @@ class ScoreScene4: SKScene {
         let ageLabel = SKLabelNode(fontNamed:"Montserrat-Regular")
         
         // PLACE NAME & AGE LABELS
-        printLabel (scene: self, label: nameLabel, words: "\(userName)", xCoord: -115.64, yCoord: -486.239, fontSize: 28)
-        printLabel (scene: self, label: ageLabel, words: "\(userAge)", xCoord: 242, yCoord: -486.239, fontSize: 28)
+        printLabel (scene: self, label: nameLabel, words: "\(userName)", xCoord: -45.499, yCoord: -490.891, fontSize: 28)
+        printLabel (scene: self, label: ageLabel, words: "\(userAge)", xCoord: 312, yCoord: 491, fontSize: 28)
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
         //CALCULATE COMBO DICTIONARIES
