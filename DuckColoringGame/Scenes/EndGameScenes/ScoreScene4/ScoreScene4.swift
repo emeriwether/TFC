@@ -22,18 +22,17 @@ class ScoreScene4: SKScene {
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
         //CALCULATE ACCURACY COMBO DICTIONARY
-        comboAccuracyDict["twoItemSimple"] = Double(comboCompletedDict["twoItemSimple"]! / (comboCompletedDict["twoItemSimple"]! + comboNumIncorrectDict["twoItemSimple"]!))
-        print("twoItemSimple-Completed: \(comboCompletedDict["twoItemSimple"]), twoItemSimple-Incorrect: \(comboNumIncorrectDict["twoItemSimple"])")
-        comboAccuracyDict["threeItemSimple"] = Double(comboCompletedDict["threeItemSimple"]! / (comboCompletedDict["threeItemSimple"]! + comboNumIncorrectDict["threeItemSimple"]!))
-        comboAccuracyDict["fourItemSimple"] = Double(comboCompletedDict["fourItemSimple"]! / (comboCompletedDict["fourItemSimple"]! + comboNumIncorrectDict["fourItemSimple"]!))
+        comboAccuracyDict["twoItemSimple"] = (Double(comboCompletedDict["twoItemSimple"]!) / (Double(comboCompletedDict["twoItemSimple"]!) + Double(comboNumIncorrectDict["twoItemSimple"]!)) * 100)
+        comboAccuracyDict["threeItemSimple"] = (Double(comboCompletedDict["threeItemSimple"]!) / (Double(comboCompletedDict["threeItemSimple"]!) + Double(comboNumIncorrectDict["threeItemSimple"]!)) * 100)
+        comboAccuracyDict["fourItemSimple"] = (Double(comboCompletedDict["fourItemSimple"]!) / (Double(comboCompletedDict["fourItemSimple"]!) + Double(comboNumIncorrectDict["fourItemSimple"]!)) * 100)
         
-        comboAccuracyDict["twoItemLine"] = Double(comboCompletedDict["twoItemLine"]! / (comboCompletedDict["twoItemLine"]! + comboNumIncorrectDict["twoItemLine"]!))
-        comboAccuracyDict["threeItemLine"] = Double(comboCompletedDict["threeItemLine"]! / (comboCompletedDict["threeItemLine"]! + comboNumIncorrectDict["threeItemLine"]!))
-        comboAccuracyDict["fourItemLine"] = Double(comboCompletedDict["fourItemLine"]! / (comboCompletedDict["fourItemLine"]! + comboNumIncorrectDict["fourItemLine"]!))
+        comboAccuracyDict["twoItemLine"] = (Double(comboCompletedDict["twoItemLine"]!) / (Double(comboCompletedDict["twoItemLine"]!) + Double(comboNumIncorrectDict["twoItemLine"]!)) * 100)
+        comboAccuracyDict["threeItemLine"] = (Double(comboCompletedDict["threeItemLine"]!) / (Double(comboCompletedDict["threeItemLine"]!) + Double(comboNumIncorrectDict["threeItemLine"]!)) * 100)
+        comboAccuracyDict["fourItemLine"] = (Double(comboCompletedDict["fourItemLine"]!) / (Double(comboCompletedDict["fourItemLine"]!) + Double(comboNumIncorrectDict["fourItemLine"]!)) * 100)
         
-        comboAccuracyDict["twoItemScene"] = Double(comboCompletedDict["twoItemScene"]! / (comboCompletedDict["twoItemScene"]! + comboNumIncorrectDict["twoItemScene"]!))
-        comboAccuracyDict["threeItemScene"] = Double(comboCompletedDict["threeItemScene"]! / (comboCompletedDict["threeItemScene"]! + comboNumIncorrectDict["threeItemScene"]!))
-        comboAccuracyDict["fourItemScene"] = Double(comboCompletedDict["fourItemScene"]! / (comboCompletedDict["fourItemScene"]! + comboNumIncorrectDict["fourItemScene"]!))
+        comboAccuracyDict["twoItemScene"] = (Double(comboCompletedDict["twoItemScene"]!) / (Double(comboCompletedDict["twoItemScene"]!) + Double(comboNumIncorrectDict["twoItemScene"]!)) * 100)
+        comboAccuracyDict["threeItemScene"] = (Double(comboCompletedDict["threeItemScene"]!) / (Double(comboCompletedDict["threeItemScene"]!) + Double(comboNumIncorrectDict["threeItemScene"]!)) * 100)
+        comboAccuracyDict["fourItemScene"] = (Double(comboCompletedDict["fourItemScene"]!) / (Double(comboCompletedDict["fourItemScene"]!) + Double(comboNumIncorrectDict["fourItemScene"]!)) * 100)
 
         
     ////////////////////////////////////////////////////////////////////////////////////////////
@@ -41,51 +40,51 @@ class ScoreScene4: SKScene {
         //PRINT LABELS FOR COMBO DICTIONARIES
         for (item, numCompleted) in comboCompletedDict {
             checkOrX_completed_twoItems (scene: self, dictItem: item, category: "twoItemSimple", correct: numCompleted, xCoord: -259.663, yCoord: 232.044)
-            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "threeItemSimple", correct: numCompleted, xCoord: -259.663, yCoord: 160)
-            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "fourItemSimple", correct: numCompleted, xCoord: -259.663, yCoord: 86.904)
             checkOrX_completed_twoItems (scene: self, dictItem: item, category: "twoItemLine", correct: numCompleted, xCoord: -259.663, yCoord: 13)
-            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "threeItemLine", correct: numCompleted, xCoord: -259.663, yCoord: -59.742)
-            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "fourItemLine", correct: numCompleted, xCoord: -259.663, yCoord: -131.09)
             checkOrX_completed_twoItems (scene: self, dictItem: item, category: "twoItemScene", correct: numCompleted, xCoord: -259.663, yCoord: -206.253)
+            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "threeItemSimple", correct: numCompleted, xCoord: -259.663, yCoord: 160)
+            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "threeItemLine", correct: numCompleted, xCoord: -259.663, yCoord: -59.742)
             checkOrX_completed_twoItems (scene: self, dictItem: item, category: "threeItemScene", correct: numCompleted, xCoord: -259.663, yCoord: -276.45)
+            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "fourItemSimple", correct: numCompleted, xCoord: -259.663, yCoord: 86.904)
+            checkOrX_completed_twoItems (scene: self, dictItem: item, category: "fourItemLine", correct: numCompleted, xCoord: -259.663, yCoord: -131.09)
             checkOrX_completed_twoItems (scene: self, dictItem: item, category: "fourItemScene", correct: numCompleted, xCoord: -259.663, yCoord: -352)
         }
         
         for (item, numIncorrect) in comboNumIncorrectDict {
             incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "twoItemSimple", numIncorrect: numIncorrect, xCoord: 0, yCoord: 232)
-            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "threeItemSimple", numIncorrect: numIncorrect, xCoord: 0, yCoord: 160)
-            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "fourItemSimple", numIncorrect: numIncorrect, xCoord: 0, yCoord: 87)
             incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "twoItemLine", numIncorrect: numIncorrect, xCoord: 0, yCoord: 13)
-            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "threeItemLine", numIncorrect: numIncorrect, xCoord: 0, yCoord: -60)
-            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "fourItemLine", numIncorrect: numIncorrect, xCoord: 0, yCoord: -131)
             incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "twoItemScene", numIncorrect: numIncorrect, xCoord: 0, yCoord: -206)
+            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "threeItemSimple", numIncorrect: numIncorrect, xCoord: 0, yCoord: 160)
+            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "threeItemLine", numIncorrect: numIncorrect, xCoord: 0, yCoord: -60)
             incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "threeItemScene", numIncorrect: numIncorrect, xCoord: 0, yCoord: -276)
+            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "fourItemSimple", numIncorrect: numIncorrect, xCoord: 0, yCoord: 87)
+            incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "fourItemLine", numIncorrect: numIncorrect, xCoord: 0, yCoord: -131)
             incorrectTouchesLabels_twoItems (scene: self, dictItem: item, category: "fourItemScene", numIncorrect: numIncorrect, xCoord: 0, yCoord: -352)
 
         }
         
         for (item, num) in comboNumFTDict {
             checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "twoItemSimple", firstTry: num, xCoord: 197.198, yCoord: 232.044)
-            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "threeItemSimple", firstTry: num, xCoord: 197.198, yCoord: 150)
-            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "fourItemSimple", firstTry: num, xCoord: 197.198, yCoord: 76.904)
             checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "twoItemLine", firstTry: num, xCoord: 197.198, yCoord: 3)
-            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "threeItemLine", firstTry: num, xCoord: 197.198, yCoord: -69.742)
-            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "fourItemLine", firstTry: num,  xCoord: 197.198, yCoord: -141.09)
             checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "twoItemScene", firstTry: num,  xCoord: 197.198, yCoord: -216.253)
+            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "threeItemSimple", firstTry: num, xCoord: 197.198, yCoord: 150)
+            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "threeItemLine", firstTry: num, xCoord: 197.198, yCoord: -69.742)
             checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "threeItemScene", firstTry: num,  xCoord: 197.198, yCoord: -286.45)
+            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "fourItemSimple", firstTry: num, xCoord: 197.198, yCoord: 76.904)
+            checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "fourItemLine", firstTry: num,  xCoord: 197.198, yCoord: -141.09)
             checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "fourItemScene", firstTry: num,  xCoord: 197.198, yCoord: -362)
         }
         
         for (item, num) in comboAccuracyDict {
             print("\(item)-AccuracyCombo: \(comboAccuracyDict[item])")
             accuracyLabels (scene: self, sceneString: item, word: "twoItemSimple", accuracy: num, xCoord: 474, yCoord: 232)
-            accuracyLabels (scene: self, sceneString: item, word: "threeItemSimple", accuracy: num, xCoord: 474, yCoord: 160)
-            accuracyLabels (scene: self, sceneString: item, word: "fourItemSimple", accuracy: num, xCoord: 474, yCoord: 87)
             accuracyLabels (scene: self, sceneString: item, word: "twoItemLine", accuracy: num, xCoord: 474, yCoord: 13)
-            accuracyLabels (scene: self, sceneString: item, word: "threeItemLine", accuracy: num, xCoord: 474, yCoord: -60)
-            accuracyLabels (scene: self, sceneString: item, word: "fourItemLine", accuracy: num, xCoord: 474, yCoord: -131)
             accuracyLabels (scene: self, sceneString: item, word: "twoItemScene", accuracy: num, xCoord: 474, yCoord: -206)
+            accuracyLabels (scene: self, sceneString: item, word: "threeItemSimple", accuracy: num, xCoord: 474, yCoord: 160)
+            accuracyLabels (scene: self, sceneString: item, word: "threeItemLine", accuracy: num, xCoord: 474, yCoord: -60)
             accuracyLabels (scene: self, sceneString: item, word: "threeItemScene", accuracy: num, xCoord: 474, yCoord: -276)
+            accuracyLabels (scene: self, sceneString: item, word: "fourItemSimple", accuracy: num, xCoord: 474, yCoord: 87)
+            accuracyLabels (scene: self, sceneString: item, word: "fourItemLine", accuracy: num, xCoord: 474, yCoord: -131)
             accuracyLabels (scene: self, sceneString: item, word: "fourItemScene", accuracy: num, xCoord: 474, yCoord: -362)
         }
 
