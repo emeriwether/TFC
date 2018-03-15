@@ -21,91 +21,20 @@ class ScoreScene4: SKScene {
         printLabel (scene: self, label: ageLabel, words: "\(userAge)", xCoord: 320, yCoord: -490, fontSize: 28)
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
-        //CALCULATE COMBO DICTIONARIES
-        /*for (scene, num) in numCorrectPerScene {
-            if scene == "rock" { comboCompletedDict["twoItemSimple"] = comboCompletedDict["twoItemSimple"]! + num }
-            if scene == "lamp" { comboCompletedDict["twoItemSimple"] = comboCompletedDict["twoItemSimple"]! + num }
-            if scene == "cat" { comboCompletedDict["threeItemSimple"] = comboCompletedDict["threeItemSimple"]! + num }
-            if scene == "lion" { comboCompletedDict["threeItemSimple"] = comboCompletedDict["threeItemSimple"]! + num }
-            if scene == "hand" { comboCompletedDict["fourItemSimple"] = comboCompletedDict["fourItemSimple"]! + num }
-            if scene == "rain" { comboCompletedDict["fourItemSimple"] = comboCompletedDict["fourItemSimple"]! + num }
-            if scene == "duck" { comboCompletedDict["twoItemLine"] = comboCompletedDict["twoItemLine"]! + num }
-            if scene == "moon" { comboCompletedDict["twoItemLine"] = comboCompletedDict["twoItemLine"]! + num }
-            if scene == "cow" { comboCompletedDict["threeItemLine"] = comboCompletedDict["threeItemLine"]! + num }
-            if scene == "trash" { comboCompletedDict["threeItemLine"] = comboCompletedDict["threeItemLine"]! + num }
-            if scene == "airplane" { comboCompletedDict["fourItemLine"] = comboCompletedDict["fourItemLine"]! + num }
-            if scene == "shoes" { comboCompletedDict["fourItemLine"] = comboCompletedDict["fourItemLine"]! + num }
-            if scene == "cake" { comboCompletedDict["twoItemScene"] = comboCompletedDict["twoItemScene"]! + num }
-            if scene == "stroller" { comboCompletedDict["twoItemScene"] = comboCompletedDict["twoItemScene"]! + num }
-            if scene == "toast" { comboCompletedDict["threeItemScene"] = comboCompletedDict["threeItemScene"]! + num }
-            if scene == "hat" { comboCompletedDict["threeItemScene"] = comboCompletedDict["threeItemScene"]! + num }
-            if scene == "cookie" { comboCompletedDict["fourItemScene"] = comboCompletedDict["fourItemScene"]! + num }
-            if scene == "mouse" { comboCompletedDict["fourItemScene"] = comboCompletedDict["fourItemScene"]! + num }
-        }
+        //CALCULATE ACCURACY COMBO DICTIONARY
+        comboAccuracyDict["twoItemSimple"] = Double(comboCompletedDict["twoItemSimple"]! / (comboCompletedDict["twoItemSimple"]! + comboNumIncorrectDict["twoItemSimple"]!))
+        comboAccuracyDict["threeItemSimple"] = Double(comboCompletedDict["threeItemSimple"]! / (comboCompletedDict["threeItemSimple"]! + comboNumIncorrectDict["threeItemSimple"]!))
+        comboAccuracyDict["fourItemSimple"] = Double(comboCompletedDict["fourItemSimple"]! / (comboCompletedDict["fourItemSimple"]! + comboNumIncorrectDict["fourItemSimple"]!))
         
-        for (scene, num) in numIncorrectPerScene {
-            print("scene: \(scene), num: \(num)")
-
-            if scene == "rock" { comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["twoItemSimple"]! + num }
-            if scene == "lamp" { comboNumIncorrectDict["twoItemSimple"] = comboNumIncorrectDict["twoItemSimple"]! + num }
-            if scene == "cat" { comboNumIncorrectDict["threeItemSimple"] = comboNumIncorrectDict["threeItemSimple"]! + num }
-            if scene == "lion" { comboNumIncorrectDict["threeItemSimple"] = comboNumIncorrectDict["threeItemSimple"]! + num }
-            if scene == "hand" { comboNumIncorrectDict["fourItemSimple"] = comboNumIncorrectDict["fourItemSimple"]! + num }
-            if scene == "rain" { comboNumIncorrectDict["fourItemSimple"] = comboNumIncorrectDict["fourItemSimple"]! + num }
-            if scene == "duck" { comboNumIncorrectDict["twoItemLine"] = comboNumIncorrectDict["twoItemLine"]! + num }
-            if scene == "moon" { comboNumIncorrectDict["twoItemLine"] = comboNumIncorrectDict["twoItemLine"]! + num }
-            if scene == "cow" { comboNumIncorrectDict["threeItemLine"] = comboNumIncorrectDict["threeItemLine"]! + num }
-            if scene == "trash" { comboNumIncorrectDict["threeItemLine"] = comboNumIncorrectDict["threeItemLine"]! + num }
-            if scene == "airplane" { comboNumIncorrectDict["fourItemLine"] = comboNumIncorrectDict["fourItemLine"]! + num }
-            if scene == "shoes" { comboNumIncorrectDict["fourItemLine"] = comboNumIncorrectDict["fourItemLine"]! + num }
-            if scene == "cake" { comboNumIncorrectDict["twoItemScene"] = comboNumIncorrectDict["twoItemScene"]! + num }
-            if scene == "stroller" { comboNumIncorrectDict["twoItemScene"] = comboNumIncorrectDict["twoItemScene"]! + num }
-            if scene == "toast" { comboNumIncorrectDict["threeItemScene"] = comboNumIncorrectDict["threeItemScene"]! + num }
-            if scene == "hat" { comboNumIncorrectDict["threeItemScene"] = comboNumIncorrectDict["threeItemScene"]! + num }
-            if scene == "cookie" { comboNumIncorrectDict["fourItemScene"] = comboNumIncorrectDict["fourItemScene"]! + num }
-            if scene == "mouse" { comboNumIncorrectDict["fourItemScene"] = comboNumIncorrectDict["fourItemScene"]! + num }
-        }
+        comboAccuracyDict["twoItemLine"] = Double(comboCompletedDict["twoItemLine"]! / (comboCompletedDict["twoItemLine"]! + comboNumIncorrectDict["twoItemLine"]!))
+        comboAccuracyDict["threeItemLine"] = Double(comboCompletedDict["threeItemLine"]! / (comboCompletedDict["threeItemLine"]! + comboNumIncorrectDict["threeItemLine"]!))
+        comboAccuracyDict["fourItemLine"] = Double(comboCompletedDict["fourItemLine"]! / (comboCompletedDict["fourItemLine"]! + comboNumIncorrectDict["fourItemLine"]!))
         
-        for (scene, firstTry) in correctFirstTries {
-            if scene == "rock" {
-                if firstTry == true { comboNumFTDict["twoItemSimple"] = comboNumFTDict["twoItemSimple"]! + 1} }
-            if scene == "lamp" {
-                if firstTry == true { comboNumFTDict["twoItemSimple"] = comboNumFTDict["twoItemSimple"]! + 1} }
-            if scene == "cat" {
-                if firstTry == true { comboNumFTDict["threeItemSimple"] = comboNumFTDict["threeItemSimple"]! + 1} }
-            if scene == "lion" {
-                if firstTry == true { comboNumFTDict["threeItemSimple"] = comboNumFTDict["threeItemSimple"]! + 1} }
-            if scene == "hand" {
-                if firstTry == true { comboNumFTDict["fourItemSimple"] = comboNumFTDict["fourItemSimple"]! + 1} }
-            if scene == "rain" {
-                if firstTry == true { comboNumFTDict["fourItemSimple"] = comboNumFTDict["fourItemSimple"]! + 1} }
-            if scene == "duck" {
-                if firstTry == true { comboNumFTDict["twoItemLine"] = comboNumFTDict["twoItemLine"]! + 1} }
-            if scene == "moon" {
-                if firstTry == true { comboNumFTDict["twoItemLine"] = comboNumFTDict["twoItemLine"]! + 1} }
-            if scene == "cow" {
-                if firstTry == true { comboNumFTDict["threeItemLine"] = comboNumFTDict["threeItemLine"]! + 1} }
-            if scene == "trash" {
-                if firstTry == true { comboNumFTDict["threeItemLine"] = comboNumFTDict["threeItemLine"]! + 1} }
-            if scene == "airplane" {
-                if firstTry == true { comboNumFTDict["fourItemLine"] = comboNumFTDict["fourItemLine"]! + 1} }
-            if scene == "shoes" {
-                if firstTry == true { comboNumFTDict["fourItemLine"] = comboNumFTDict["fourItemLine"]! + 1} }
-            if scene == "cake" {
-                if firstTry == true { comboNumFTDict["twoItemScene"] = comboNumFTDict["twoItemScene"]! + 1} }
-            if scene == "stroller" {
-                if firstTry == true { comboNumFTDict["twoItemScene"] = comboNumFTDict["twoItemScene"]! + 1} }
-            if scene == "toast" {
-                if firstTry == true { comboNumFTDict["threeItemScene"] = comboNumFTDict["threeItemScene"]! + 1} }
-            if scene == "hat" {
-                if firstTry == true { comboNumFTDict["threeItemScene"] = comboNumFTDict["threeItemScene"]! + 1} }
-            if scene == "cookie" {
-                if firstTry == true { comboNumFTDict["fourItemScene"] = comboNumFTDict["fourItemScene"]! + 1} }
-            if scene == "mouse" {
-                if firstTry == true { comboNumFTDict["fourItemScene"] = comboNumFTDict["fourItemScene"]! + 1} }
-            
-        }*/
+        comboAccuracyDict["twoItemScene"] = Double(comboCompletedDict["twoItemScene"]! / (comboCompletedDict["twoItemScene"]! + comboNumIncorrectDict["twoItemScene"]!))
+        comboAccuracyDict["threeItemScene"] = Double(comboCompletedDict["threeItemScene"]! / (comboCompletedDict["threeItemScene"]! + comboNumIncorrectDict["threeItemScene"]!))
+        comboAccuracyDict["fourItemScene"] = Double(comboCompletedDict["fourItemScene"]! / (comboCompletedDict["fourItemScene"]! + comboNumIncorrectDict["fourItemScene"]!))
 
+        
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
         //PRINT LABELS FOR COMBO DICTIONARIES
@@ -144,6 +73,18 @@ class ScoreScene4: SKScene {
             checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "twoItemScene", firstTry: num,  xCoord: 197.198, yCoord: -216.253)
             checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "threeItemScene", firstTry: num,  xCoord: 197.198, yCoord: -286.45)
             checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "fourItemScene", firstTry: num,  xCoord: 197.198, yCoord: -362)
+        }
+        
+        for (item, num) in comboAccuracyDict {
+            accuracyLabels (scene: self, sceneString: item, word: "twoItemSimple", accuracy: Double, xCoord: Double, yCoord: Double)
+            accuracyLabels (scene: self, sceneString: item, word: "threeItemSimple", accuracy: Double, xCoord: Double, yCoord: Double)
+            accuracyLabels (scene: self, sceneString: item, word: "fourItemSimple", accuracy: Double, xCoord: Double, yCoord: Double)
+            accuracyLabels (scene: self, sceneString: item, word: "twoItemLine", accuracy: Double, xCoord: Double, yCoord: Double)
+            accuracyLabels (scene: self, sceneString: item, word: "threeItemLine", accuracy: Double, xCoord: Double, yCoord: Double)
+            accuracyLabels (scene: self, sceneString: item, word: "fourItemLine", accuracy: Double, xCoord: Double, yCoord: Double)
+            accuracyLabels (scene: self, sceneString: item, word: "twoItemScene", accuracy: Double, xCoord: Double, yCoord: Double)
+            accuracyLabels (scene: self, sceneString: item, word: "threeItemScene", accuracy: Double, xCoord: Double, yCoord: Double)
+            accuracyLabels (scene: self, sceneString: item, word: "fourItemScene", accuracy: Double, xCoord: Double, yCoord: Double)
         }
 
     }
