@@ -17,8 +17,8 @@ class ScoreScene2: SKScene {
         let ageLabel = SKLabelNode(fontNamed:"Montserrat-Regular")
         
         // PLACE NAME & AGE LABELS
-        printLabel (scene: self, label: nameLabel, words: "\(userName)", xCoord: -93.64, yCoord: -485.239, fontSize: 28)
-        printLabel (scene: self, label: ageLabel, words: "\(userAge)", xCoord: 275, yCoord: -485.239, fontSize: 28)
+        printLabel (scene: self, label: nameLabel, words: "\(userName)", xCoord: -115.64, yCoord: -486.239, fontSize: 28)
+        printLabel (scene: self, label: ageLabel, words: "\(userAge)", xCoord: 242, yCoord: -486.239, fontSize: 28)
     ////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////
         //CALCULATE COMPLETED LABELS
