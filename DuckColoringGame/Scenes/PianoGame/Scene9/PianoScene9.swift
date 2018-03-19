@@ -64,7 +64,7 @@ class PianoScene9: SKScene {
                 // Scene Transition
                 let sequenceFade = SKAction.sequence([wait2, fadeOut])
                 run(sequenceFade) {
-                    let allDone = SKScene(fileNamed: "AllDoneScene")
+                    let allDone = SKScene(fileNamed: "StartScene")
                     allDone?.scaleMode = SKSceneScaleMode.aspectFill
                     self.scene!.view?.presentScene(allDone!)
                 }
