@@ -39,6 +39,7 @@ class ScoreScene4: SKScene {
     ////////////////////////////////////////////////////////////////////////////////////////////
         //PRINT LABELS FOR COMBO DICTIONARIES
         for (item, numCompleted) in comboCompletedDict {
+            print("item: \(item), numCompleted: \(numCompleted)")
             checkOrX_completed_twoItems (scene: self, dictItem: item, category: "twoItemSimple", correct: numCompleted, xCoord: -259.663, yCoord: 236)
             checkOrX_completed_twoItems (scene: self, dictItem: item, category: "twoItemLine", correct: numCompleted, xCoord: -259.663, yCoord: 164)
             checkOrX_completed_twoItems (scene: self, dictItem: item, category: "twoItemScene", correct: numCompleted, xCoord: -259.663, yCoord: 90)
@@ -64,6 +65,7 @@ class ScoreScene4: SKScene {
         }
         
         for (item, num) in comboNumFTDict {
+            print("item: \(item), numFT: \(num)")
             checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "twoItemSimple", firstTry: num, xCoord: 197.198, yCoord: 236)
             checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "twoItemLine", firstTry: num, xCoord: 197.198, yCoord: 164)
             checkOrX_firstTry_twoItems (scene: self, dictItem: item, category: "twoItemScene", firstTry: num,  xCoord: 197.198, yCoord: 90)

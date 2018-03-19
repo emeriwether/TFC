@@ -83,9 +83,7 @@ class PianoScene9: SKScene {
                 let reminder_piano9 = SKAction.playSoundFileNamed("instructions_piano9", waitForCompletion: true)
                 run(reminder_piano9, completion: { self.reminderComplete = true} )
             }
-            
         }
-        
     }
 }
 

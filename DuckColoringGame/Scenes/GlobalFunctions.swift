@@ -180,16 +180,16 @@ func resetAllGameStats_coloring () {
         accuracyPerScene[scene] = 0
     }
     for (scene, _) in comboCompletedDict {
-        accuracyPerScene[scene] = 0
+        comboCompletedDict[scene] = 0
     }
     for (scene, _) in comboNumFTDict {
-        accuracyPerScene[scene] = 0
+        comboNumFTDict[scene] = 0
     }
     for (scene, _) in comboAccuracyDict {
-        accuracyPerScene[scene] = 0
+        comboAccuracyDict[scene] = 0
     }
     for (scene, _) in comboNumIncorrectDict {
-        accuracyPerScene[scene] = 0
+        comboAccuracyDict[scene] = 0
     }
 }
 
