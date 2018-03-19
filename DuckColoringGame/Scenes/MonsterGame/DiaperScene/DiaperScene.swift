@@ -31,7 +31,7 @@ class DiaperScene: SKScene {
     override func didMove(to view: SKView) {
         foodNode1 = self.childNode(withName: "diaper")
         foodNode2 = self.childNode(withName: "hair")
-        foodNode3 = self.childNode(withName: "peny")
+        foodNode3 = self.childNode(withName: "penny")
         foodNode4 = self.childNode(withName: "bat")
         monsterNode = self.childNode(withName: "Monster")
         playInstructionsWithName(audioName: "instructions_diaper")
