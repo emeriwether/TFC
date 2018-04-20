@@ -135,7 +135,6 @@
 		06C90F70203111B600F318AD /* rain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F6F203111B500F318AD /* rain.wav */; };
 		06C90F73203111EE00F318AD /* RainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C90F72203111EE00F318AD /* RainScene.swift */; };
 		06C90F75203111FB00F318AD /* RainScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F74203111FB00F318AD /* RainScene.sks */; };
-		06C90F782031196300F318AD /* moon.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F772031196300F318AD /* moon.wav */; };
 		06C90F7E2031261700F318AD /* cake.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F7D2031261600F318AD /* cake.wav */; };
 		06C90F812031275400F318AD /* hat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F802031275300F318AD /* hat.mp3 */; };
 		06C90F84203129A800F318AD /* crunch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 06C90F83203129A800F318AD /* crunch.wav */; };
@@ -230,6 +229,7 @@
 		0B3EFEDD2046336600F5932F /* instructions_piano3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0B3EFEC92046336600F5932F /* instructions_piano3.wav */; };
 		0B3EFEDE2046336600F5932F /* correctMelody3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0B3EFECA2046336600F5932F /* correctMelody3.wav */; };
 		0B3EFEE72046341D00F5932F /* Sound_Chewing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3EFEE22046341D00F5932F /* Sound_Chewing.mp3 */; };
+		0B7D1723208A7001001BD48A /* moon.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0B7D1722208A7001001BD48A /* moon.wav */; };
 		0BBE9840204D3A890064C98E /* Sound_Biting.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BBE983F204D3A890064C98E /* Sound_Biting.mp3 */; };
 		0BBE9844204D49360064C98E /* instructions_orange.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0BBE9843204D49360064C98E /* instructions_orange.mp3 */; };
 		0BCA0A99201BCC2100488E8E /* LampScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA0A8E201BCC2100488E8E /* LampScene.swift */; };
@@ -377,7 +377,6 @@
 		06C90F6F203111B500F318AD /* rain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rain.wav; sourceTree = "<group>"; };
 		06C90F72203111EE00F318AD /* RainScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainScene.swift; sourceTree = "<group>"; };
 		06C90F74203111FB00F318AD /* RainScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RainScene.sks; sourceTree = "<group>"; };
-		06C90F772031196300F318AD /* moon.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = moon.wav; sourceTree = "<group>"; };
 		06C90F7D2031261600F318AD /* cake.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cake.wav; sourceTree = "<group>"; };
 		06C90F802031275300F318AD /* hat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hat.mp3; sourceTree = "<group>"; };
 		06C90F83203129A800F318AD /* crunch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = crunch.wav; sourceTree = "<group>"; };
@@ -473,6 +472,7 @@
 		0B3EFECA2046336600F5932F /* correctMelody3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correctMelody3.wav; sourceTree = "<group>"; };
 		0B3EFEDF204633EB00F5932F /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = correct.mp3; path = DuckColoringGame/Audio/correct.mp3; sourceTree = SOURCE_ROOT; };
 		0B3EFEE22046341D00F5932F /* Sound_Chewing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sound_Chewing.mp3; sourceTree = "<group>"; };
+		0B7D1722208A7001001BD48A /* moon.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = moon.wav; sourceTree = "<group>"; };
 		0BBE983F204D3A890064C98E /* Sound_Biting.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sound_Biting.mp3; sourceTree = "<group>"; };
 		0BBE9843204D49360064C98E /* instructions_orange.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_orange.mp3; sourceTree = "<group>"; };
 		0BCA0A8E201BCC2100488E8E /* LampScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LampScene.swift; sourceTree = "<group>"; };
@@ -1065,7 +1065,7 @@
 			children = (
 				0613CCC12050464300FEC3F4 /* instructions_moon.mp3 */,
 				0613CCC02050464300FEC3F4 /* reminder_moon.mp3 */,
-				06C90F772031196300F318AD /* moon.wav */,
+				0B7D1722208A7001001BD48A /* moon.wav */,
 			);
 			path = Moon;
 			sourceTree = "<group>";
@@ -1557,7 +1557,6 @@
 				0B3EFEE72046341D00F5932F /* Sound_Chewing.mp3 in Resources */,
 				0B350833204F31DD00BD1AD8 /* FlowerScene.sks in Resources */,
 				0B35082F204F2D7800BD1AD8 /* instructions_tooth.mp3 in Resources */,
-				06C90F782031196300F318AD /* moon.wav in Resources */,
 				06427F201FD9F8A0009C07ED /* PianoScene7.sks in Resources */,
 				0B3EFEA520461D4300F5932F /* OrangeScene.sks in Resources */,
 				0B3B5A1A20315B7E002B6805 /* reminder_apple1.mp3 in Resources */,
@@ -1709,6 +1708,7 @@
 				0613CCD2205046F900FEC3F4 /* reminder_hat.mp3 in Resources */,
 				06C90F70203111B600F318AD /* rain.wav in Resources */,
 				0B3EFED52046336600F5932F /* instructions_piano6.wav in Resources */,
+				0B7D1723208A7001001BD48A /* moon.wav in Resources */,
 				0B350843204F4DDA00BD1AD8 /* PenScene.sks in Resources */,
 				0B3EFEDB2046336600F5932F /* correctMelody2.wav in Resources */,
 				0613CCAF2050450200FEC3F4 /* reminder_lamp.mp3 in Resources */,

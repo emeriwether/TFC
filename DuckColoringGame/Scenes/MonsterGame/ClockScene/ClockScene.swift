@@ -86,7 +86,7 @@ class ClockScene: SKScene {
             }else if (self.atPoint(touchLocation).name == "clock"){
                 selectedNode = foodNode3
                 nodeIsSelected = true
-            }else if (self.atPoint(touchLocation).name == "motorcycle"){
+            }else if (self.atPoint(touchLocation).name == "coffee"){
                 selectedNode = foodNode4
                 nodeIsSelected = true
             }else{

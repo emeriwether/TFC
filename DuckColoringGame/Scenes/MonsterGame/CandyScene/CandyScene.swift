@@ -11,21 +11,26 @@ import GameplayKit
 
 class CandyScene: SKScene {
     
+    //Variables for food and monster nodes
     private var foodNode1:SKNode?
     private var foodNode2:SKNode?
     private var monsterNode:SKNode?
     
+    //Variable for node dragging and tracking
     private var selectedNode:SKNode?
     private var nodeIsSelected:Bool?
     
+    //Score tracking Variables
     var candy_incorrectTouches = 0
     var candy_correctTouches = 0
     
+    //Audio Tracking Variables
     var instructionsComplete:Bool = false
     var feedbackComplete:Bool = true
     
     var sceneOver = false
     
+    //Set up all nodes on screen. Play instruction.
     override func didMove(to view: SKView) {
         foodNode1 = self.childNode(withName: "carrot")
         foodNode2 = self.childNode(withName: "candy")
