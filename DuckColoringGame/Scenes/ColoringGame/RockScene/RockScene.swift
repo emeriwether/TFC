@@ -110,7 +110,7 @@ class RockScene: SKScene {
                     comboNumFTDict["twoItemSimple"] = comboNumFTDict["twoItemSimple"]! + 1
                 }
                 
-                animateNode(node: rock!, coloredImg: "rockScene_rock_colored", correctSound: "correct2")
+                animateNode(node: rock!, coloredImg: "ballcolored", correctSound: "correct2")
                 
                 transitionScene (currentScene: self, sceneString: "LampScene", waitTime: 2.5, fadeTime: 1)
             }

@@ -10,7 +10,10 @@ import SpriteKit
 import GameplayKit
 
 class CakeScene_Monster: SKScene {
-    
+    //Timer Variables
+    var gameTimer: Timer!
+    var gameCounter = 0
+
     private var foodNode1:SKNode?
     private var foodNode2:SKNode?
     private var foodNode3:SKNode?
@@ -33,11 +36,23 @@ class CakeScene_Monster: SKScene {
         foodNode3 = self.childNode(withName: "umbrella")
         monsterNode = self.childNode(withName: "Monster")
         playInstructionsWithName(audioName: "instructions_cake_monster")
+        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTimedCode), userInfo: nil, repeats: true)
     }
     
     ////////////////////////////
     /////Helper Functions///////
     ////////////////////////////
+    @objc func runTimedCode(){
+        if gameCounter == 60{
+            nextScene(sceneName: "BalloonScene_Monster")
+        } else if gameCounter%20 == 0 && gameCounter != 0{
+            playInstructionsWithName(audioName: "instructions_candy")
+            gameCounter = gameCounter + 1
+        }else{
+            gameCounter = gameCounter + 1
+        }
+    }
+    
     func playInstructionsWithName(audioName:String){
         instructionsComplete = false
         let instructions = SKAction.playSoundFileNamed(audioName, waitForCompletion: true)

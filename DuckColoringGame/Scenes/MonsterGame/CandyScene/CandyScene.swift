@@ -10,6 +10,9 @@ import SpriteKit
 import GameplayKit
 
 class CandyScene: SKScene {
+    //Timer Variables
+    var gameTimer: Timer!
+    var gameCounter = 0
     
     //Variables for food and monster nodes
     private var foodNode1:SKNode?
@@ -32,15 +35,28 @@ class CandyScene: SKScene {
     
     //Set up all nodes on screen. Play instruction.
     override func didMove(to view: SKView) {
+        
         foodNode1 = self.childNode(withName: "carrot")
         foodNode2 = self.childNode(withName: "candy")
         monsterNode = self.childNode(withName: "Monster")
         playInstructionsWithName(audioName: "instructions_candy")
+        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTimedCode), userInfo: nil, repeats: true)
     }
     
     ////////////////////////////
     /////Helper Functions///////
     ////////////////////////////
+    @objc func runTimedCode(){
+        if gameCounter == 60{
+            nextScene(sceneName: "OrangeScene")
+        } else if gameCounter%20 == 0 && gameCounter != 0{
+            playInstructionsWithName(audioName: "instructions_candy")
+            gameCounter = gameCounter + 1
+        }else{
+            gameCounter = gameCounter + 1
+        }
+    }
+    
     func playInstructionsWithName(audioName:String){
         instructionsComplete = false
         let instructions = SKAction.playSoundFileNamed(audioName, waitForCompletion: true)
@@ -63,6 +79,7 @@ class CandyScene: SKScene {
     }
     
     func nextScene(sceneName:String){
+        gameTimer.invalidate()
         let fadeOut = SKAction.fadeOut(withDuration:1)
         let wait2 = SKAction.wait(forDuration: 1)
         let sequenceFade = SKAction.sequence([wait2, fadeOut])

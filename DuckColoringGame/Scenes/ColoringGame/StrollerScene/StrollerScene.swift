@@ -111,7 +111,7 @@ class StrollerScene: SKScene {
                 }
                 
                 // Change sprite to colored stroller
-                let coloredstroller:SKTexture = SKTexture(imageNamed: "strollerScene_stroller_colored")
+                let coloredstroller:SKTexture = SKTexture(imageNamed: "swing")
                 let changeToColored:SKAction = SKAction.animate(with: [coloredstroller], timePerFrame: 0.0001)
                 
                 //Variables for stroller audio

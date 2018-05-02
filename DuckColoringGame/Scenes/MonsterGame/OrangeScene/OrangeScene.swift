@@ -10,32 +10,52 @@ import SpriteKit
 import GameplayKit
 
 class OrangeScene: SKScene {
+    //Timer Variables
+    var gameTimer: Timer!
+    var gameCounter = 0
     
+    //Variables for food and monster nodes
     private var foodNode1:SKNode?
     private var foodNode2:SKNode?
     private var monsterNode:SKNode?
     
+    //Variable for node dragging and tracking
     private var selectedNode:SKNode?
     private var nodeIsSelected:Bool?
     
+    //Score tracking Variables
     var orange_incorrectTouches = 0
     var orange_correctTouches = 0
     
+    //Audio Tracking Variables
     var instructionsComplete:Bool = false
     var feedbackComplete:Bool = true
     
     var sceneOver = false
     
+    //Set up all nodes on screen. Play instruction.
     override func didMove(to view: SKView) {
         foodNode1 = self.childNode(withName: "bug")
         foodNode2 = self.childNode(withName: "orange")
         monsterNode = self.childNode(withName: "Monster")
         playInstructionsWithName(audioName: "instructions_orange")
+        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTimedCode), userInfo: nil, repeats: true)
     }
     
     ////////////////////////////
     /////Helper Functions///////
     ////////////////////////////
+    @objc func runTimedCode(){
+        if gameCounter == 60{
+            nextScene(sceneName: "ToothScene")
+        } else if gameCounter%20 == 0 && gameCounter != 0{
+            playInstructionsWithName(audioName: "instructions_candy")
+            gameCounter = gameCounter + 1
+        }else{
+            gameCounter = gameCounter + 1
+        }
+    }
+    
     func playInstructionsWithName(audioName:String){
         instructionsComplete = false
         let instructions = SKAction.playSoundFileNamed(audioName, waitForCompletion: true)
