@@ -44,7 +44,7 @@ class PenScene: SKScene {
         if gameCounter == 60{
             nextScene(sceneName: "RaisinsScene")
         } else if gameCounter%20 == 0 && gameCounter != 0{
-            playInstructionsWithName(audioName: "instructions_candy")
+            playInstructionsWithName(audioName: "reminder_pen")
             gameCounter = gameCounter + 1
         }else{
             gameCounter = gameCounter + 1
@@ -126,7 +126,7 @@ class PenScene: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         pen_incorrectTouches += 1
-                        if pen_incorrectTouches > 10{
+                        if pen_incorrectTouches > 15{
                             sceneOver = true
                             nextScene(sceneName: "RaisinsScene")
                         }

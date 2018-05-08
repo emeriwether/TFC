@@ -46,7 +46,7 @@ class RaisinsScene: SKScene {
         if gameCounter == 60{
             nextScene(sceneName: "CakeScene_Monster")
         } else if gameCounter%20 == 0 && gameCounter != 0{
-            playInstructionsWithName(audioName: "instructions_candy")
+            playInstructionsWithName(audioName: "reminder_raisins")
             gameCounter = gameCounter + 1
         }else{
             gameCounter = gameCounter + 1
@@ -131,7 +131,7 @@ class RaisinsScene: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         raisins_incorrectTouches += 1
-                        if raisins_incorrectTouches > 10{
+                        if raisins_incorrectTouches > 15{
                             sceneOver = true
                             nextScene(sceneName: "CakeScene_Monster")
                         }

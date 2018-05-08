@@ -48,7 +48,7 @@ class ButterScene: SKScene {
         if gameCounter == 60{
             nextScene(sceneName: "DiaperScene")
         } else if gameCounter%20 == 0 && gameCounter != 0{
-            playInstructionsWithName(audioName: "instructions_candy")
+            playInstructionsWithName(audioName: "reminder_butter")
             gameCounter = gameCounter + 1
         }else{
             gameCounter = gameCounter + 1
@@ -136,7 +136,7 @@ class ButterScene: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         butter_incorrectTouches += 1
-                        if butter_incorrectTouches > 10{
+                        if butter_incorrectTouches > 15{
                             sceneOver = true
                             nextScene(sceneName: "DiaperScene")
                         }

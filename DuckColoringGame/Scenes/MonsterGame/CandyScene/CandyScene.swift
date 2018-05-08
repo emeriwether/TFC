@@ -50,7 +50,7 @@ class CandyScene: SKScene {
         if gameCounter == 60{
             nextScene(sceneName: "OrangeScene")
         } else if gameCounter%20 == 0 && gameCounter != 0{
-            playInstructionsWithName(audioName: "instructions_candy")
+            playInstructionsWithName(audioName: "reminder_candy")
             gameCounter = gameCounter + 1
         }else{
             gameCounter = gameCounter + 1
@@ -133,7 +133,7 @@ class CandyScene: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         candy_incorrectTouches += 1
-                        if candy_incorrectTouches > 10{
+                        if candy_incorrectTouches > 15{
                             sceneOver = true
                             nextScene(sceneName: "OrangeScene")
                         }

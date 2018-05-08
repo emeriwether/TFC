@@ -46,7 +46,7 @@ class StarScene: SKScene {
         if gameCounter == 60{
             nextScene(sceneName: "ChairScene")
         } else if gameCounter%20 == 0 && gameCounter != 0{
-            playInstructionsWithName(audioName: "instructions_candy")
+            playInstructionsWithName(audioName: "reminder_star")
             gameCounter = gameCounter + 1
         }else{
             gameCounter = gameCounter + 1
@@ -131,7 +131,7 @@ class StarScene: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         star_incorrectTouches += 1
-                        if star_incorrectTouches > 10{
+                        if star_incorrectTouches > 15{
                             sceneOver = true
                             nextScene(sceneName: "ChairScene")
                         }

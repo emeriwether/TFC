@@ -48,7 +48,7 @@ class MoonScene_Monster: SKScene {
         if gameCounter == 60{
             nextScene(sceneName: "DishScene")
         } else if gameCounter%20 == 0 && gameCounter != 0{
-            playInstructionsWithName(audioName: "instructions_candy")
+            playInstructionsWithName(audioName: "reminder_moon_monster")
             gameCounter = gameCounter + 1
         }else{
             gameCounter = gameCounter + 1
@@ -136,7 +136,7 @@ class MoonScene_Monster: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         moon_incorrectTouches += 1
-                        if moon_incorrectTouches > 10{
+                        if moon_incorrectTouches > 15{
                             sceneOver = true
                             nextScene(sceneName: "DishScene")
                         }

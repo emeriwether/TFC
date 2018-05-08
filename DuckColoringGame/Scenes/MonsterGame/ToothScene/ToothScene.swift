@@ -44,7 +44,7 @@ class ToothScene: SKScene {
         if gameCounter == 60{
             nextScene(sceneName: "FlowerScene")
         } else if gameCounter%20 == 0 && gameCounter != 0{
-            playInstructionsWithName(audioName: "instructions_candy")
+            playInstructionsWithName(audioName: "reminder_tooth")
             gameCounter = gameCounter + 1
         }else{
             gameCounter = gameCounter + 1
@@ -126,7 +126,7 @@ class ToothScene: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         tooth_incorrectTouches += 1
-                        if tooth_incorrectTouches > 10{
+                        if tooth_incorrectTouches > 15{
                             sceneOver = true
                             nextScene(sceneName: "FlowerScene")
                         }

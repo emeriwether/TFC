@@ -48,7 +48,7 @@ class ClockScene: SKScene {
         if gameCounter == 60{
             nextScene(sceneName: "StartScene")
         } else if gameCounter%20 == 0 && gameCounter != 0{
-            playInstructionsWithName(audioName: "instructions_candy")
+            playInstructionsWithName(audioName: "reminder_clock")
             gameCounter = gameCounter + 1
         }else{
             gameCounter = gameCounter + 1
@@ -137,7 +137,7 @@ class ClockScene: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         clock_incorrectTouches += 1
-                        if clock_incorrectTouches > 10{
+                        if clock_incorrectTouches > 15{
                             sceneOver = true
                             nextScene(sceneName: "StartScene")
                         }

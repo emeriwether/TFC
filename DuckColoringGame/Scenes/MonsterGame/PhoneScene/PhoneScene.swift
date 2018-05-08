@@ -46,7 +46,7 @@ class PhoneScene: SKScene {
         if gameCounter == 60{
             nextScene(sceneName: "AppleScene")
         } else if gameCounter%20 == 0 && gameCounter != 0{
-            playInstructionsWithName(audioName: "instructions_candy")
+            playInstructionsWithName(audioName: "reminder_phone")
             gameCounter = gameCounter + 1
         }else{
             gameCounter = gameCounter + 1
@@ -131,7 +131,7 @@ class PhoneScene: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         phone_incorrectTouches += 1
-                        if phone_incorrectTouches > 10{
+                        if phone_incorrectTouches > 15{
                             sceneOver = true
                             nextScene(sceneName: "AppleScene")
                         }

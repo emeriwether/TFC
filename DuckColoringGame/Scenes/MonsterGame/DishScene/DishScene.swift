@@ -48,7 +48,7 @@ class DishScene: SKScene {
         if gameCounter == 60{
             nextScene(sceneName: "ClockScene")
         } else if gameCounter%20 == 0 && gameCounter != 0{
-            playInstructionsWithName(audioName: "instructions_candy")
+            playInstructionsWithName(audioName: "reminder_dish")
             gameCounter = gameCounter + 1
         }else{
             gameCounter = gameCounter + 1
@@ -136,7 +136,7 @@ class DishScene: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         dish_incorrectTouches += 1
-                        if dish_incorrectTouches > 10{
+                        if dish_incorrectTouches > 15{
                             sceneOver = true
                             nextScene(sceneName: "ClockScene")
                         }

@@ -48,7 +48,7 @@ class DiaperScene: SKScene {
         if gameCounter == 60{
             nextScene(sceneName: "MoonScene_Monster")
         } else if gameCounter%20 == 0 && gameCounter != 0{
-            playInstructionsWithName(audioName: "instructions_candy")
+            playInstructionsWithName(audioName: "reminder_diaper")
             gameCounter = gameCounter + 1
         }else{
             gameCounter = gameCounter + 1
@@ -136,7 +136,7 @@ class DiaperScene: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         diaper_incorrectTouches += 1
-                        if diaper_incorrectTouches > 10{
+                        if diaper_incorrectTouches > 15{
                             sceneOver = true
                             nextScene(sceneName: "MoonScene_Monster")
                         }

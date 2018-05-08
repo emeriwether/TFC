@@ -44,7 +44,7 @@ class FlowerScene: SKScene {
         if gameCounter == 60{
             nextScene(sceneName: "CupScene")
         } else if gameCounter%20 == 0 && gameCounter != 0{
-            playInstructionsWithName(audioName: "instructions_candy")
+            playInstructionsWithName(audioName: "reminder_flower")
             gameCounter = gameCounter + 1
         }else{
             gameCounter = gameCounter + 1
@@ -126,7 +126,7 @@ class FlowerScene: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         flower_incorrectTouches += 1
-                        if flower_incorrectTouches > 10{
+                        if flower_incorrectTouches > 15{
                             sceneOver = true
                             nextScene(sceneName: "CupScene")
                         }

@@ -46,7 +46,7 @@ class BalloonScene_Monster: SKScene {
         if gameCounter == 60{
             nextScene(sceneName: "StarScene")
         } else if gameCounter%20 == 0 && gameCounter != 0{
-            playInstructionsWithName(audioName: "instructions_candy")
+            playInstructionsWithName(audioName: "reminder_balloon_monster")
             gameCounter = gameCounter + 1
         }else{
             gameCounter = gameCounter + 1
@@ -131,7 +131,7 @@ class BalloonScene_Monster: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         balloon_incorrectTouches += 1
-                        if balloon_incorrectTouches > 10{
+                        if balloon_incorrectTouches > 15{
                             sceneOver = true
                             nextScene(sceneName: "StarScene")
                         }
