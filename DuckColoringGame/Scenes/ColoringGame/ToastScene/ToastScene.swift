@@ -59,12 +59,12 @@ class ToastScene: SKScene {
                 // ... and start timer over...
                 timerCount = 1
             }
-            // if timer seconds are divisable by 10 and totalTimerCount is less than one minute...
-            if (timerCount % 10 == 0) && totalTimerCount <= 58  {
+            // if timer seconds are divisable by 20 and totalTimerCount is less than one minute...
+            if (timerCount % 20 == 0) && totalTimerCount <= 58  {
                 // ... play the reminder.
                 self.run(reminderIfIdle)
             }
-            // if idleReminer has played 6 times in a row, move on to next scene
+            // if idleReminer has played 3 times in a row, move on to next scene
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
@@ -139,11 +139,11 @@ class ToastScene: SKScene {
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly (don't play for 15th touch - just move on)
-            if (toast_incorrectTouches & 3 == 0) && toast_correctTouches < 1 && toast_incorrectTouches < 14 {
-                reminderComplete = false
-                let toastReminder = SKAction.playSoundFileNamed("reminder_toast", waitForCompletion: true)
-                run(toastReminder, completion: { self.reminderComplete = true} )
-            }
+//            if (toast_incorrectTouches & 3 == 0) && toast_correctTouches < 1 && toast_incorrectTouches < 14 {
+//                reminderComplete = false
+//                let toastReminder = SKAction.playSoundFileNamed("reminder_toast", waitForCompletion: true)
+//                run(toastReminder, completion: { self.reminderComplete = true} )
+//            }
         }
         // update totalTouches variable for idle reminder
         totalTouches = toast_correctTouches + toast_incorrectTouches

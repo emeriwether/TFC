@@ -59,12 +59,12 @@ class TrashScene: SKScene {
                 // ... and start timer over...
                 timerCount = 1
             }
-            // if timer seconds are divisable by 10 and totalTimerCount is less than one minute...
-            if (timerCount % 10 == 0) && totalTimerCount <= 58  {
+            // if timer seconds are divisable by 20 and totalTimerCount is less than one minute...
+            if (timerCount % 20 == 0) && totalTimerCount <= 58  {
                 // ... play the reminder.
                 self.run(reminderIfIdle)
             }
-            // if idleReminer has played 6 times in a row, move on to next scene
+            // if idleReminer has played 3 times in a row, move on to next scene
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
@@ -141,11 +141,11 @@ class TrashScene: SKScene {
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly (don't play for 15th touch - just move on)
-            if (trash_incorrectTouches % 3 == 0) && trash_correctTouches < 1 && trash_incorrectTouches < 14 {
-                reminderComplete = false
-                let trashReminder = SKAction.playSoundFileNamed("reminder_trash", waitForCompletion: true)
-                run(trashReminder, completion: { self.reminderComplete = true} )
-            }
+//            if (trash_incorrectTouches % 3 == 0) && trash_correctTouches < 1 && trash_incorrectTouches < 14 {
+//                reminderComplete = false
+//                let trashReminder = SKAction.playSoundFileNamed("reminder_trash", waitForCompletion: true)
+//                run(trashReminder, completion: { self.reminderComplete = true} )
+//            }
         }
         // update totalTouches variable for idle reminder
         totalTouches = trash_correctTouches + trash_incorrectTouches

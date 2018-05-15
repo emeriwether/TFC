@@ -59,12 +59,12 @@ class CakeScene: SKScene {
                 // ... and start timer over...
                 timerCount = 1
             }
-            // if timer seconds are divisable by 10 and totalTimerCount is less than one minute...
-            if (timerCount % 10 == 0) && totalTimerCount <= 58  {
+            // if timer seconds are divisable by 20 and totalTimerCount is less than one minute...
+            if (timerCount % 20 == 0) && totalTimerCount <= 58  {
                 // ... play the reminder.
                 self.run(reminderIfIdle)
             }
-            // if idleReminer has played 6 times in a row, move on to next scene
+            // if idleReminer has played 3 times in a row, move on to next scene
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
@@ -142,11 +142,11 @@ class CakeScene: SKScene {
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly (don't play for 15th touch - just move on)
-            if (cake_incorrectTouches % 3 == 0) && cake_correctTouches < 1 && cake_incorrectTouches < 14 {
-                reminderComplete = false
-                let cake_reminder = SKAction.playSoundFileNamed("reminder_cake", waitForCompletion: true)
-                run(cake_reminder, completion: { self.reminderComplete = true} )
-            }
+//            if (cake_incorrectTouches % 3 == 0) && cake_correctTouches < 1 && cake_incorrectTouches < 14 {
+//                reminderComplete = false
+//                let cake_reminder = SKAction.playSoundFileNamed("reminder_cake", waitForCompletion: true)
+//                run(cake_reminder, completion: { self.reminderComplete = true} )
+//            }
         }
         // update totalTouches variable for idle reminder
         totalTouches = cake_correctTouches + cake_incorrectTouches

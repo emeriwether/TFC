@@ -60,12 +60,12 @@ class ShoesScene: SKScene {
                 // ... and start timer over...
                 timerCount = 1
             }
-            // if timer seconds are divisable by 10 and totalTimerCount is less than one minute...
-            if (timerCount % 10 == 0) && totalTimerCount <= 58  {
+            // if timer seconds are divisable by 20 and totalTimerCount is less than one minute...
+            if (timerCount % 20 == 0) && totalTimerCount <= 58  {
                 // ... play the reminder.
                 self.run(reminderIfIdle)
             }
-            // if idleReminer has played 6 times in a row, move on to next scene
+            // if idleReminer has played 3 times in a row, move on to next scene
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
@@ -146,11 +146,11 @@ class ShoesScene: SKScene {
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly (don't play for 15th touch - just move on)
-            if (shoes_incorrectTouches % 3 == 0) && shoes_correctTouches < 1 && shoes_incorrectTouches < 14 {
-                reminderComplete = false
-                let shoesReminder = SKAction.playSoundFileNamed("reminder_shoes", waitForCompletion: true)
-                run(shoesReminder, completion: { self.reminderComplete = true} )
-            }
+//            if (shoes_incorrectTouches % 3 == 0) && shoes_correctTouches < 1 && shoes_incorrectTouches < 14 {
+//                reminderComplete = false
+//                let shoesReminder = SKAction.playSoundFileNamed("reminder_shoes", waitForCompletion: true)
+//                run(shoesReminder, completion: { self.reminderComplete = true} )
+//            }
         }
         // update totalTouches variable for idle reminder
         totalTouches = shoes_correctTouches + shoes_incorrectTouches

@@ -60,12 +60,12 @@ class MouseScene: SKScene {
                 // ... and start timer over...
                 timerCount = 1
             }
-            // if timer seconds are divisable by 10 and totalTimerCount is less than one minute...
-            if (timerCount % 10 == 0) && totalTimerCount <= 58  {
+            // if timer seconds are divisable by 20 and totalTimerCount is less than one minute...
+            if (timerCount % 20 == 0) && totalTimerCount <= 58  {
                 // ... play the reminder.
                 self.run(reminderIfIdle)
             }
-            // if idleReminer has played 6 times in a row, move on to next scene
+            // if idleReminer has played 3 times in a row, move on to next scene
             if totalTimerCount > 59 {
                 self.sceneOver = true
                 
@@ -135,11 +135,11 @@ class MouseScene: SKScene {
             }
             
             // play reminder instructions if user has touched screen 3 times incorrectly (don't play for 15th touch - just move on)
-            if (mouse_incorrectTouches % 3 == 0) && mouse_correctTouches < 1 && mouse_incorrectTouches < 14 {
-                reminderComplete = false
-                let mouseReminder = SKAction.playSoundFileNamed("reminder_mouse", waitForCompletion: true)
-                run(mouseReminder, completion: { self.reminderComplete = true} )
-            }
+//            if (mouse_incorrectTouches % 3 == 0) && mouse_correctTouches < 1 && mouse_incorrectTouches < 14 {
+//                reminderComplete = false
+//                let mouseReminder = SKAction.playSoundFileNamed("reminder_mouse", waitForCompletion: true)
+//                run(mouseReminder, completion: { self.reminderComplete = true} )
+//            }
         }
         // update totalTouches variable for idle reminder
         totalTouches = mouse_correctTouches + mouse_incorrectTouches
