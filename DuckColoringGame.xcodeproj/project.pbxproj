@@ -180,10 +180,8 @@
 		0B350849204F563900BD1AD8 /* CakeScene_Monster.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0B350848204F563900BD1AD8 /* CakeScene_Monster.sks */; };
 		0B3B5A1620315B7E002B6805 /* instructions_apple1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3B5A1020315B7D002B6805 /* instructions_apple1.mp3 */; };
 		0B3B5A1720315B7E002B6805 /* instructions_apple2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3B5A1120315B7D002B6805 /* instructions_apple2.mp3 */; };
-		0B3B5A1820315B7E002B6805 /* reminder_apple2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3B5A1220315B7D002B6805 /* reminder_apple2.mp3 */; };
 		0B3B5A1920315B7E002B6805 /* instructions_apple3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3B5A1320315B7D002B6805 /* instructions_apple3.mp3 */; };
-		0B3B5A1A20315B7E002B6805 /* reminder_apple1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3B5A1420315B7D002B6805 /* reminder_apple1.mp3 */; };
-		0B3B5A1B20315B7E002B6805 /* reminder_apple3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3B5A1520315B7E002B6805 /* reminder_apple3.mp3 */; };
+		0B3B5A1A20315B7E002B6805 /* reminder_trainer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3B5A1420315B7D002B6805 /* reminder_trainer.mp3 */; };
 		0B3EFE9E20461D4300F5932F /* OrangeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EFE9620461D4300F5932F /* OrangeScene.swift */; };
 		0B3EFEA020461D4300F5932F /* CandyScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0B3EFE9820461D4300F5932F /* CandyScene.sks */; };
 		0B3EFEA120461D4300F5932F /* RaisinsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0B3EFE9920461D4300F5932F /* RaisinsScene.sks */; };
@@ -441,10 +439,8 @@
 		0B350848204F563900BD1AD8 /* CakeScene_Monster.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CakeScene_Monster.sks; sourceTree = "<group>"; };
 		0B3B5A1020315B7D002B6805 /* instructions_apple1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_apple1.mp3; sourceTree = "<group>"; };
 		0B3B5A1120315B7D002B6805 /* instructions_apple2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_apple2.mp3; sourceTree = "<group>"; };
-		0B3B5A1220315B7D002B6805 /* reminder_apple2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = reminder_apple2.mp3; sourceTree = "<group>"; };
 		0B3B5A1320315B7D002B6805 /* instructions_apple3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = instructions_apple3.mp3; sourceTree = "<group>"; };
-		0B3B5A1420315B7D002B6805 /* reminder_apple1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = reminder_apple1.mp3; sourceTree = "<group>"; };
-		0B3B5A1520315B7E002B6805 /* reminder_apple3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = reminder_apple3.mp3; sourceTree = "<group>"; };
+		0B3B5A1420315B7D002B6805 /* reminder_trainer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = reminder_trainer.mp3; sourceTree = "<group>"; };
 		0B3EFE9620461D4300F5932F /* OrangeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrangeScene.swift; sourceTree = "<group>"; };
 		0B3EFE9820461D4300F5932F /* CandyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CandyScene.sks; sourceTree = "<group>"; };
 		0B3EFE9920461D4300F5932F /* RaisinsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RaisinsScene.sks; sourceTree = "<group>"; };
@@ -1368,9 +1364,7 @@
 				0B3B5A1020315B7D002B6805 /* instructions_apple1.mp3 */,
 				0B3B5A1120315B7D002B6805 /* instructions_apple2.mp3 */,
 				0B3B5A1320315B7D002B6805 /* instructions_apple3.mp3 */,
-				0B3B5A1420315B7D002B6805 /* reminder_apple1.mp3 */,
-				0B3B5A1220315B7D002B6805 /* reminder_apple2.mp3 */,
-				0B3B5A1520315B7E002B6805 /* reminder_apple3.mp3 */,
+				0B3B5A1420315B7D002B6805 /* reminder_trainer.mp3 */,
 			);
 			path = MonsterGameTrainer;
 			sourceTree = "<group>";
@@ -1631,7 +1625,7 @@
 				0B350833204F31DD00BD1AD8 /* FlowerScene.sks in Resources */,
 				06427F201FD9F8A0009C07ED /* PianoScene7.sks in Resources */,
 				0B3EFEA520461D4300F5932F /* OrangeScene.sks in Resources */,
-				0B3B5A1A20315B7E002B6805 /* reminder_apple1.mp3 in Resources */,
+				0B3B5A1A20315B7E002B6805 /* reminder_trainer.mp3 in Resources */,
 				0643D698202E1F8C000FA53D /* RockScene.sks in Resources */,
 				06E34BCA203105870027CE82 /* cat.mp3 in Resources */,
 				0BAF650120A183E8008B7EB5 /* reminder_moon_monster.mp3 in Resources */,
@@ -1753,13 +1747,11 @@
 				0613CCD3205046F900FEC3F4 /* instructions_hat.mp3 in Resources */,
 				0613CC9F205043EF00FEC3F4 /* instructions_rock.mp3 in Resources */,
 				0BAF64E020A18364008B7EB5 /* instructions_balloon_monster.mp3 in Resources */,
-				0B3B5A1B20315B7E002B6805 /* reminder_apple3.mp3 in Resources */,
 				0BAF650E20A183E8008B7EB5 /* reminder_orange.mp3 in Resources */,
 				0BAF64E720A18378008B7EB5 /* instructions_clock.mp3 in Resources */,
 				06427F311FD9FD59009C07ED /* ShoesScene.sks in Resources */,
 				0BAF64DE20A18364008B7EB5 /* instructions_butter.mp3 in Resources */,
 				0BAF650720A183E8008B7EB5 /* reminder_diaper.mp3 in Resources */,
-				0B3B5A1820315B7E002B6805 /* reminder_apple2.mp3 in Resources */,
 				0BCA0A9A201BCC2100488E8E /* LampScene.sks in Resources */,
 				0BAF650920A183E8008B7EB5 /* reminder_apple.mp3 in Resources */,
 				060A6836202AA966005F7323 /* instructions_trash.wav in Resources */,

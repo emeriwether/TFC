@@ -40,7 +40,7 @@ class CandyScene: SKScene {
         foodNode2 = self.childNode(withName: "candy")
         monsterNode = self.childNode(withName: "Monster")
         playInstructionsWithName(audioName: "instructions_candy")
-        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTimedCode), userInfo: nil, repeats: true)
+        
     }
     
     ////////////////////////////
@@ -60,7 +60,11 @@ class CandyScene: SKScene {
     func playInstructionsWithName(audioName:String){
         instructionsComplete = false
         let instructions = SKAction.playSoundFileNamed(audioName, waitForCompletion: true)
-        self.run(instructions, completion: { self.instructionsComplete = true })
+        self.run(instructions, completion: {
+            self.instructionsComplete = true
+            self.gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.runTimedCode), userInfo: nil, repeats: true)
+            
+        })
     }
     
     func playFeedbackWithName(audioName:String){

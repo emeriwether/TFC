@@ -10,6 +10,10 @@ import SpriteKit
 import GameplayKit
 
 class Monster_T1: SKScene {
+    //Timer Variables
+    var gameTimer: Timer!
+    var gameCounter = 0
+    
     //Local variables for basket and apple nodes
     private var foodNode:SKSpriteNode?
     private var basketNode:SKSpriteNode?
@@ -33,11 +37,22 @@ class Monster_T1: SKScene {
         foodNode = (self.childNode(withName: "apple") as! SKSpriteNode)
         basketNode = (self.childNode(withName: "basket") as! SKSpriteNode)
         playInstructionsWithName(audioName: "instructions_apple1")
+        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTimedCode), userInfo: nil, repeats: true)
     }
     
     ////////////////////////////
     /////Helper Functions///////
     ////////////////////////////
+    @objc func runTimedCode(){
+        if gameCounter == 60{
+            nextScene(sceneName: "Monster_T2")
+        } else if gameCounter%20 == 0 && gameCounter != 0{
+            playInstructionsWithName(audioName: "reminder_trainer")
+            gameCounter = gameCounter + 1
+        }else{
+            gameCounter = gameCounter + 1
+        }
+    }
     
     //Plays audio with with specified audio file name, change appropriate variables for instructions
     func playInstructionsWithName(audioName:String){
