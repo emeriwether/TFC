@@ -184,9 +184,9 @@
 		0B3B5A1A20315B7E002B6805 /* reminder_trainer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0B3B5A1420315B7D002B6805 /* reminder_trainer.mp3 */; };
 		0B3EFE9E20461D4300F5932F /* OrangeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EFE9620461D4300F5932F /* OrangeScene.swift */; };
 		0B3EFEA020461D4300F5932F /* CandyScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0B3EFE9820461D4300F5932F /* CandyScene.sks */; };
-		0B3EFEA120461D4300F5932F /* RaisinsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0B3EFE9920461D4300F5932F /* RaisinsScene.sks */; };
+		0B3EFEA120461D4300F5932F /* TomatoScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0B3EFE9920461D4300F5932F /* TomatoScene.sks */; };
 		0B3EFEA220461D4300F5932F /* CandyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EFE9A20461D4300F5932F /* CandyScene.swift */; };
-		0B3EFEA420461D4300F5932F /* RaisinsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EFE9C20461D4300F5932F /* RaisinsScene.swift */; };
+		0B3EFEA420461D4300F5932F /* TomatoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EFE9C20461D4300F5932F /* TomatoScene.swift */; };
 		0B3EFEA520461D4300F5932F /* OrangeScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0B3EFE9D20461D4300F5932F /* OrangeScene.sks */; };
 		0B3EFEB420461E8D00F5932F /* StartScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0B3EFEAE20461E8D00F5932F /* StartScene.sks */; };
 		0B3EFEB520461E8D00F5932F /* StartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3EFEAF20461E8D00F5932F /* StartScene.swift */; };
@@ -443,9 +443,9 @@
 		0B3B5A1420315B7D002B6805 /* reminder_trainer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = reminder_trainer.mp3; sourceTree = "<group>"; };
 		0B3EFE9620461D4300F5932F /* OrangeScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrangeScene.swift; sourceTree = "<group>"; };
 		0B3EFE9820461D4300F5932F /* CandyScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CandyScene.sks; sourceTree = "<group>"; };
-		0B3EFE9920461D4300F5932F /* RaisinsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = RaisinsScene.sks; sourceTree = "<group>"; };
+		0B3EFE9920461D4300F5932F /* TomatoScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TomatoScene.sks; sourceTree = "<group>"; };
 		0B3EFE9A20461D4300F5932F /* CandyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandyScene.swift; sourceTree = "<group>"; };
-		0B3EFE9C20461D4300F5932F /* RaisinsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaisinsScene.swift; sourceTree = "<group>"; };
+		0B3EFE9C20461D4300F5932F /* TomatoScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TomatoScene.swift; sourceTree = "<group>"; };
 		0B3EFE9D20461D4300F5932F /* OrangeScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = OrangeScene.sks; sourceTree = "<group>"; };
 		0B3EFEAE20461E8D00F5932F /* StartScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = StartScene.sks; sourceTree = "<group>"; };
 		0B3EFEAF20461E8D00F5932F /* StartScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScene.swift; sourceTree = "<group>"; };
@@ -1330,13 +1330,13 @@
 			path = PenScene;
 			sourceTree = "<group>";
 		};
-		0B350852204F5A9B00BD1AD8 /* RaisinsScene */ = {
+		0B350852204F5A9B00BD1AD8 /* TomatoScene */ = {
 			isa = PBXGroup;
 			children = (
-				0B3EFE9C20461D4300F5932F /* RaisinsScene.swift */,
-				0B3EFE9920461D4300F5932F /* RaisinsScene.sks */,
+				0B3EFE9C20461D4300F5932F /* TomatoScene.swift */,
+				0B3EFE9920461D4300F5932F /* TomatoScene.sks */,
 			);
-			path = RaisinsScene;
+			path = TomatoScene;
 			sourceTree = "<group>";
 		};
 		0B350853204F5AA900BD1AD8 /* CakeScene_Monster */ = {
@@ -1378,7 +1378,7 @@
 				0B35084F204F5A7800BD1AD8 /* FlowerScene */,
 				0B350850204F5A8200BD1AD8 /* CupScene */,
 				0B350851204F5A9400BD1AD8 /* PenScene */,
-				0B350852204F5A9B00BD1AD8 /* RaisinsScene */,
+				0B350852204F5A9B00BD1AD8 /* TomatoScene */,
 				0B350853204F5AA900BD1AD8 /* CakeScene_Monster */,
 				0B279E972054E60B00ABAA57 /* BallonnScene_Monster */,
 				0B279EA22055039200ABAA57 /* StarScene */,
@@ -1657,7 +1657,7 @@
 				0BAF650B20A183E8008B7EB5 /* reminder_chair.mp3 in Resources */,
 				0BAF64D020A1832B008B7EB5 /* instructions_orange.mp3 in Resources */,
 				0613CCC62050467C00FEC3F4 /* reminder_shoes.mp3 in Resources */,
-				0B3EFEA120461D4300F5932F /* RaisinsScene.sks in Resources */,
+				0B3EFEA120461D4300F5932F /* TomatoScene.sks in Resources */,
 				060A6817202AA883005F7323 /* reminder_airplane.wav in Resources */,
 				0B3B5A1920315B7E002B6805 /* instructions_apple3.mp3 in Resources */,
 				066DB6331FAE8F1500C68B36 /* Main.storyboard in Resources */,
@@ -1863,7 +1863,7 @@
 				0B279EB520560CD200ABAA57 /* AppleScene.swift in Sources */,
 				0B279EA62055099300ABAA57 /* ChairScene.swift in Sources */,
 				068ED91D205594E40054ED9B /* ScoreScene2.swift in Sources */,
-				0B3EFEA420461D4300F5932F /* RaisinsScene.swift in Sources */,
+				0B3EFEA420461D4300F5932F /* TomatoScene.swift in Sources */,
 				06427F1C1FD9F898009C07ED /* PianoScene6.swift in Sources */,
 				062B1BF9202D1859002DECBB /* HatScene.swift in Sources */,
 				06427F331FD9FD6B009C07ED /* ShoesScene.swift in Sources */,

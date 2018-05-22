@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': '/Users/gustavocfigueroa/Documents/GitHub/TFC/build/Debug-iphoneos/SwiftCSVExport/SwiftCSVExport.framework/Modules'
+    'contents': [{
+      'type': 'file',
+      'name': 'module.modulemap',
+      'external-contents': '/Users/gustavocfigueroa/Documents/GitHub/TFC/build/Pods.build/Debug-iphoneos/SwiftCSVExport.build/unextended-module.modulemap',
+    }]
+  }]
+}

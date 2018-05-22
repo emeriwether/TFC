@@ -1,5 +1,5 @@
 //
-//  RaisinsScene.swift
+//  TomatoScene.swift
 //  DuckColoringGame
 //
 //  Created by Gustavo C Figueroa on 3/6/18.
@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class RaisinsScene: SKScene {
+class TomatoScene: SKScene {
     //Timer Variables
     var gameTimer: Timer!
     var gameCounter = 0
@@ -22,8 +22,8 @@ class RaisinsScene: SKScene {
     private var selectedNode:SKNode?
     private var nodeIsSelected:Bool?
     
-    var raisins_incorrectTouches = 0
-    var raisins_correctTouches = 0
+    var tomato_incorrectTouches = 0
+    var tomato_correctTouches = 0
     
     var instructionsComplete:Bool = false
     var feedbackComplete:Bool = true
@@ -36,7 +36,6 @@ class RaisinsScene: SKScene {
         foodNode3 = self.childNode(withName: "egg")
         monsterNode = self.childNode(withName: "Monster")
         playInstructionsWithName(audioName: "instructions_raisins")
-        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTimedCode), userInfo: nil, repeats: true)
     }
     
     ////////////////////////////
@@ -56,7 +55,10 @@ class RaisinsScene: SKScene {
     func playInstructionsWithName(audioName:String){
         instructionsComplete = false
         let instructions = SKAction.playSoundFileNamed(audioName, waitForCompletion: true)
-        self.run(instructions, completion: { self.instructionsComplete = true })
+        self.run(instructions, completion: {
+            self.instructionsComplete = true
+            self.gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.runTimedCode), userInfo: nil, repeats: true)
+        })
     }
     
     func playFeedbackWithName(audioName:String){
@@ -123,15 +125,15 @@ class RaisinsScene: SKScene {
             for items in self.nodes(at: touchLocation){
                 if items.name == "Monster"{
                     if (selectedNode?.name == "raisin"){
-                        raisins_correctTouches += 1
+                        tomato_correctTouches += 1
                         selectedNode?.removeFromParent()
                         sceneOver = true
                         animateMonster(withAudio: "Sound_Chewing")
                         nextScene(sceneName: "CakeScene_Monster")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
-                        raisins_incorrectTouches += 1
-                        if raisins_incorrectTouches > 15{
+                        tomato_incorrectTouches += 1
+                        if tomato_incorrectTouches > 15{
                             sceneOver = true
                             nextScene(sceneName: "CakeScene_Monster")
                         }
