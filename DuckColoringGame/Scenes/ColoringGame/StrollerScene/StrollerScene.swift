@@ -111,21 +111,23 @@ class StrollerScene: SKScene {
                 }
                 
                 // Change sprite to colored stroller
-                let coloredstroller:SKTexture = SKTexture(imageNamed: "swing")
-                let changeToColored:SKAction = SKAction.animate(with: [coloredstroller], timePerFrame: 0.0001)
+                let swingNeutral:SKTexture = SKTexture(imageNamed: "Swing_neutral")
+                let swingLeft:SKTexture = SKTexture(imageNamed: "Swing_left")
+                let swingRight:SKTexture = SKTexture(imageNamed: "Swing_right")
+                let changeToColored:SKAction = SKAction.animate(with: [swingLeft, swingNeutral, swingRight, swingNeutral, swingLeft, swingNeutral], timePerFrame: 0.5)
                 
                 //Variables for stroller audio
                 let giggles = SKAction.playSoundFileNamed("stroller", waitForCompletion: true)
                 let birds = SKAction.playSoundFileNamed("stroller2", waitForCompletion: true)
                 
                 // Variable for move action
-                let move = SKAction.moveTo(x: -900, duration: 3.0)
+                //let move = SKAction.moveTo(x: -900, duration: 3.0)
                 
                 //Run all actions
                 stroller!.run(changeToColored)
                 stroller!.run(giggles)
                 stroller!.run(birds)
-                stroller!.run(move)
+//                stroller!.run(move)
 
                 transitionScene (currentScene: self, sceneString: "ToastScene", waitTime: 3, fadeTime: 1)
             }

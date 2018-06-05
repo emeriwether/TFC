@@ -50,7 +50,7 @@ class CandyScene: SKScene {
         if gameCounter == 60{
             nextScene(sceneName: "OrangeScene")
         } else if gameCounter%20 == 0 && gameCounter != 0{
-            playInstructionsWithName(audioName: "reminder_candy")
+            playFeedbackWithName(audioName: "reminder_candy")
             gameCounter = gameCounter + 1
         }else{
             gameCounter = gameCounter + 1
@@ -80,6 +80,16 @@ class CandyScene: SKScene {
         let openMouthAction = SKAction.repeat(animation, count: 10)
         monsterNode!.run(openMouthAction)
         playFeedbackWithName(audioName: withAudio)
+    }
+    
+    func animateMonster_incorrect(){
+        let openMouth = SKTexture(imageNamed: "monsterScene_stillMonster")
+        let closedMouth = SKTexture(imageNamed: "monsterScene_chewingMonster")
+        let sadAnimate = SKAction.animate(with: [closedMouth], timePerFrame: 2)
+        let reset = SKAction.animate(with: [openMouth], timePerFrame: 0.5)
+        monsterNode!.run(sadAnimate)
+        //monsterNode!.run(<#T##action: SKAction##SKAction#>)
+        
     }
     
     func nextScene(sceneName:String){
@@ -136,6 +146,7 @@ class CandyScene: SKScene {
                         nextScene(sceneName: "OrangeScene")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
+                        animateMonster_incorrect()
                         candy_incorrectTouches += 1
                         if candy_incorrectTouches > 15{
                             sceneOver = true

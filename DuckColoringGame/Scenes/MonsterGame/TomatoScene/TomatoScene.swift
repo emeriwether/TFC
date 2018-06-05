@@ -45,7 +45,7 @@ class TomatoScene: SKScene {
         if gameCounter == 60{
             nextScene(sceneName: "CakeScene_Monster")
         } else if gameCounter%20 == 0 && gameCounter != 0{
-            playInstructionsWithName(audioName: "reminder_raisins")
+            playFeedbackWithName(audioName: "reminder_raisins")
             gameCounter = gameCounter + 1
         }else{
             gameCounter = gameCounter + 1

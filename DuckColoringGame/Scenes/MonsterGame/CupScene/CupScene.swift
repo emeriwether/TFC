@@ -44,7 +44,7 @@ class CupScene: SKScene {
         if gameCounter == 60{
             nextScene(sceneName: "PenScene")
         } else if gameCounter%20 == 0 && gameCounter != 0{
-            playInstructionsWithName(audioName: "reminder_cup")
+            playFeedbackWithName(audioName: "reminder_cup")
             gameCounter = gameCounter + 1
         }else{
             gameCounter = gameCounter + 1

@@ -36,7 +36,7 @@ class PhoneScene: SKScene {
         foodNode3 = self.childNode(withName: "pizza")
         monsterNode = self.childNode(withName: "Monster")
         playInstructionsWithName(audioName: "instructions_phone")
-        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTimedCode), userInfo: nil, repeats: true)
+        
     }
     
     ////////////////////////////
@@ -46,7 +46,7 @@ class PhoneScene: SKScene {
         if gameCounter == 60{
             nextScene(sceneName: "AppleScene")
         } else if gameCounter%20 == 0 && gameCounter != 0{
-            playInstructionsWithName(audioName: "reminder_phone")
+            playFeedbackWithName(audioName: "reminder_phone")
             gameCounter = gameCounter + 1
         }else{
             gameCounter = gameCounter + 1
@@ -56,7 +56,11 @@ class PhoneScene: SKScene {
     func playInstructionsWithName(audioName:String){
         instructionsComplete = false
         let instructions = SKAction.playSoundFileNamed(audioName, waitForCompletion: true)
-        self.run(instructions, completion: { self.instructionsComplete = true })
+        self.run(instructions, completion: {
+            self.instructionsComplete = true
+            self.gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.runTimedCode), userInfo: nil, repeats: true)
+            
+        })
     }
     
     func playFeedbackWithName(audioName:String){

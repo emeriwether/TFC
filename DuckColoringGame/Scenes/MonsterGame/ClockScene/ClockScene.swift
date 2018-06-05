@@ -38,7 +38,7 @@ class ClockScene: SKScene {
         foodNode4 = self.childNode(withName: "coffee")
         monsterNode = self.childNode(withName: "Monster")
         playInstructionsWithName(audioName: "instructions_clock")
-        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTimedCode), userInfo: nil, repeats: true)
+        
     }
     
     ////////////////////////////
@@ -48,7 +48,7 @@ class ClockScene: SKScene {
         if gameCounter == 60{
             nextScene(sceneName: "StartScene")
         } else if gameCounter%20 == 0 && gameCounter != 0{
-            playInstructionsWithName(audioName: "reminder_clock")
+            playFeedbackWithName(audioName: "reminder_clock")
             gameCounter = gameCounter + 1
         }else{
             gameCounter = gameCounter + 1
@@ -58,7 +58,11 @@ class ClockScene: SKScene {
     func playInstructionsWithName(audioName:String){
         instructionsComplete = false
         let instructions = SKAction.playSoundFileNamed(audioName, waitForCompletion: true)
-        self.run(instructions, completion: { self.instructionsComplete = true })
+        self.run(instructions, completion: {
+            self.instructionsComplete = true
+            self.gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.runTimedCode), userInfo: nil, repeats: true)
+            
+        })
     }
     
     func playFeedbackWithName(audioName:String){

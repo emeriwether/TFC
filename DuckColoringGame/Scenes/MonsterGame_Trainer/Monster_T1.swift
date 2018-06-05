@@ -37,7 +37,7 @@ class Monster_T1: SKScene {
         foodNode = (self.childNode(withName: "apple") as! SKSpriteNode)
         basketNode = (self.childNode(withName: "basket") as! SKSpriteNode)
         playInstructionsWithName(audioName: "instructions_apple1")
-        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTimedCode), userInfo: nil, repeats: true)
+        
     }
     
     ////////////////////////////
@@ -47,7 +47,7 @@ class Monster_T1: SKScene {
         if gameCounter == 60{
             nextScene(sceneName: "Monster_T2")
         } else if gameCounter%20 == 0 && gameCounter != 0{
-            playInstructionsWithName(audioName: "reminder_trainer")
+            playFeedbackWithName(audioName: "reminder_trainer")
             gameCounter = gameCounter + 1
         }else{
             gameCounter = gameCounter + 1
@@ -58,7 +58,11 @@ class Monster_T1: SKScene {
     func playInstructionsWithName(audioName:String){
         instructionsComplete = false
         let instructions = SKAction.playSoundFileNamed(audioName, waitForCompletion: true)
-        self.run(instructions, completion: { self.instructionsComplete = true })
+        self.run(instructions, completion: {
+            self.instructionsComplete = true
+            self.gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.runTimedCode), userInfo: nil, repeats: true)
+            
+        })
     }
     
     //Plays audio with with specified audio file name, change appropriate variables for feedback sounds
