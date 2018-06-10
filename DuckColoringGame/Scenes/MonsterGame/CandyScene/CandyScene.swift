@@ -18,6 +18,8 @@ class CandyScene: SKScene {
     private var foodNode1:SKNode?
     private var foodNode2:SKNode?
     private var monsterNode:SKNode?
+    private var node1Position:CGPoint?
+    private var node2Position:CGPoint?
     
     //Variable for node dragging and tracking
     private var selectedNode:SKNode?
@@ -38,6 +40,8 @@ class CandyScene: SKScene {
         
         foodNode1 = self.childNode(withName: "carrot")
         foodNode2 = self.childNode(withName: "candy")
+        node1Position = foodNode1?.position
+        node2Position = foodNode2?.position
         monsterNode = self.childNode(withName: "Monster")
         playInstructionsWithName(audioName: "instructions_candy")
         
@@ -84,9 +88,9 @@ class CandyScene: SKScene {
     
     func animateMonster_incorrect(){
         let openMouth = SKTexture(imageNamed: "monsterScene_stillMonster")
-        let closedMouth = SKTexture(imageNamed: "monsterScene_chewingMonster")
-        let sadAnimate = SKAction.animate(with: [closedMouth], timePerFrame: 2)
-        let reset = SKAction.animate(with: [openMouth], timePerFrame: 0.5)
+        let sadMouth = SKTexture(imageNamed: "sadMonster")
+        let sadAnimate = SKAction.animate(with: [sadMouth, openMouth], timePerFrame: 2)
+        //let reset = SKAction.animate(with: [openMouth], timePerFrame: 0.5)
         monsterNode!.run(sadAnimate)
         //monsterNode!.run(<#T##action: SKAction##SKAction#>)
         
@@ -147,6 +151,7 @@ class CandyScene: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         animateMonster_incorrect()
+                        foodNode1?.position = node1Position!
                         candy_incorrectTouches += 1
                         if candy_incorrectTouches > 15{
                             sceneOver = true

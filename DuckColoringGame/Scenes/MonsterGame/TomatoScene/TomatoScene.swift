@@ -2,7 +2,7 @@
 //  TomatoScene.swift
 //  DuckColoringGame
 //
-//  Created by Gustavo C Figueroa on 3/6/18.
+//  Created by Gustavo C Figueroa on 6/5/18.
 //  Copyright © 2018 Eleanor Meriwether. All rights reserved.
 //
 
@@ -95,7 +95,7 @@ class TomatoScene: SKScene {
             if (self.atPoint(touchLocation).name == "tomato"){
                 selectedNode = foodNode1
                 nodeIsSelected = true
-            } else if (self.atPoint(touchLocation).name == "raisin"){
+            } else if (self.atPoint(touchLocation).name == "broccoli"){
                 selectedNode = foodNode2
                 nodeIsSelected = true
             }else if (self.atPoint(touchLocation).name == "egg"){
