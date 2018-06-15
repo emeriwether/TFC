@@ -151,7 +151,7 @@ class CandyScene: SKScene {
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         animateMonster_incorrect()
-                        foodNode1?.position = node1Position!
+                        selectedNode?.position = node1Position!
                         candy_incorrectTouches += 1
                         if candy_incorrectTouches > 15{
                             sceneOver = true

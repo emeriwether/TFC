@@ -17,6 +17,8 @@ class ToothScene: SKScene {
     private var foodNode1:SKNode?
     private var foodNode2:SKNode?
     private var monsterNode:SKNode?
+    private var node1Position:CGPoint?
+    private var node2Position:CGPoint?
     
     private var selectedNode:SKNode?
     private var nodeIsSelected:Bool?
@@ -32,8 +34,10 @@ class ToothScene: SKScene {
     override func didMove(to view: SKView) {
         foodNode1 = self.childNode(withName: "tooth")
         foodNode2 = self.childNode(withName: "plant")
+        node1Position = foodNode1?.position
+        node2Position = foodNode2?.position
         monsterNode = self.childNode(withName: "Monster")
-        playInstructionsWithName(audioName: "instructions_tooth")
+        playInstructionsWithName(audioName: "instructions_hat_monster")
         
     }
     
@@ -44,7 +48,7 @@ class ToothScene: SKScene {
         if gameCounter == 60{
             nextScene(sceneName: "FlowerScene")
         } else if gameCounter%20 == 0 && gameCounter != 0{
-            playFeedbackWithName(audioName: "reminder_tooth")
+            playFeedbackWithName(audioName: "reminder_hat_monster")
             gameCounter = gameCounter + 1
         }else{
             gameCounter = gameCounter + 1
@@ -74,6 +78,16 @@ class ToothScene: SKScene {
         let openMouthAction = SKAction.repeat(animation, count: 10)
         monsterNode!.run(openMouthAction)
         playFeedbackWithName(audioName: withAudio)
+    }
+    
+    func animateMonster_incorrect(){
+        let openMouth = SKTexture(imageNamed: "monsterScene_stillMonster")
+        let sadMouth = SKTexture(imageNamed: "sadMonster")
+        let sadAnimate = SKAction.animate(with: [sadMouth, openMouth], timePerFrame: 2)
+        //let reset = SKAction.animate(with: [openMouth], timePerFrame: 0.5)
+        monsterNode!.run(sadAnimate)
+        //monsterNode!.run(<#T##action: SKAction##SKAction#>)
+        
     }
     
     func nextScene(sceneName:String){
@@ -129,6 +143,8 @@ class ToothScene: SKScene {
                         nextScene(sceneName: "FlowerScene")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
+                        animateMonster_incorrect()
+                        foodNode2?.position = node2Position!
                         tooth_incorrectTouches += 1
                         if tooth_incorrectTouches > 15{
                             sceneOver = true

@@ -19,6 +19,10 @@ class ButterScene: SKScene {
     private var foodNode3:SKNode?
     private var foodNode4:SKNode?
     private var monsterNode:SKNode?
+    private var node1Position:CGPoint?
+    private var node2Position:CGPoint?
+    private var node3Position:CGPoint?
+    private var node4Position:CGPoint?
     
     private var selectedNode:SKNode?
     private var nodeIsSelected:Bool?
@@ -36,8 +40,12 @@ class ButterScene: SKScene {
         foodNode2 = self.childNode(withName: "banana")
         foodNode3 = self.childNode(withName: "basket")
         foodNode4 = self.childNode(withName: "butter")
+        node1Position = foodNode1?.position
+        node2Position = foodNode2?.position
+        node3Position = foodNode3?.position
+        node4Position = foodNode4?.position
         monsterNode = self.childNode(withName: "Monster")
-        playInstructionsWithName(audioName: "instructions_butter")
+        playInstructionsWithName(audioName: "instructions_cheese")
         
     }
     
@@ -48,7 +56,7 @@ class ButterScene: SKScene {
         if gameCounter == 60{
             nextScene(sceneName: "DiaperScene")
         } else if gameCounter%20 == 0 && gameCounter != 0{
-            playFeedbackWithName(audioName: "reminder_butter")
+            playFeedbackWithName(audioName: "reminder_cheese")
             gameCounter = gameCounter + 1
         }else{
             gameCounter = gameCounter + 1
@@ -78,6 +86,16 @@ class ButterScene: SKScene {
         let openMouthAction = SKAction.repeat(animation, count: 10)
         monsterNode!.run(openMouthAction)
         playFeedbackWithName(audioName: withAudio)
+    }
+    
+    func animateMonster_incorrect(){
+        let openMouth = SKTexture(imageNamed: "monsterScene_stillMonster")
+        let sadMouth = SKTexture(imageNamed: "sadMonster")
+        let sadAnimate = SKAction.animate(with: [sadMouth, openMouth], timePerFrame: 2)
+        //let reset = SKAction.animate(with: [openMouth], timePerFrame: 0.5)
+        monsterNode!.run(sadAnimate)
+        //monsterNode!.run(<#T##action: SKAction##SKAction#>)
+        
     }
     
     func nextScene(sceneName:String){
@@ -139,6 +157,13 @@ class ButterScene: SKScene {
                         nextScene(sceneName: "DiaperScene")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
+                        if selectedNode == foodNode1{
+                            foodNode1?.position = node1Position!
+                        }else if selectedNode == foodNode3{
+                            foodNode3?.position = node3Position!
+                        }else{
+                            foodNode2?.position = node2Position!
+                        }
                         butter_incorrectTouches += 1
                         if butter_incorrectTouches > 15{
                             sceneOver = true

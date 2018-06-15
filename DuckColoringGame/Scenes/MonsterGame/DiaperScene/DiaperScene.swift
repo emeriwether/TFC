@@ -19,6 +19,10 @@ class DiaperScene: SKScene {
     private var foodNode3:SKNode?
     private var foodNode4:SKNode?
     private var monsterNode:SKNode?
+    private var node1Position:CGPoint?
+    private var node2Position:CGPoint?
+    private var node3Position:CGPoint?
+    private var node4Position:CGPoint?
     
     private var selectedNode:SKNode?
     private var nodeIsSelected:Bool?
@@ -36,8 +40,12 @@ class DiaperScene: SKScene {
         foodNode2 = self.childNode(withName: "hair")
         foodNode3 = self.childNode(withName: "penny")
         foodNode4 = self.childNode(withName: "bat")
+        node1Position = foodNode1?.position
+        node2Position = foodNode2?.position
+        node3Position = foodNode3?.position
+        node4Position = foodNode4?.position
         monsterNode = self.childNode(withName: "Monster")
-        playInstructionsWithName(audioName: "instructions_diaper")
+        playInstructionsWithName(audioName: "instructions_penny")
        
     }
     
@@ -48,7 +56,7 @@ class DiaperScene: SKScene {
         if gameCounter == 60{
             nextScene(sceneName: "MoonScene_Monster")
         } else if gameCounter%20 == 0 && gameCounter != 0{
-            playFeedbackWithName(audioName: "reminder_diaper")
+            playFeedbackWithName(audioName: "reminder_penny")
             gameCounter = gameCounter + 1
         }else{
             gameCounter = gameCounter + 1
@@ -78,6 +86,16 @@ class DiaperScene: SKScene {
         let openMouthAction = SKAction.repeat(animation, count: 10)
         monsterNode!.run(openMouthAction)
         playFeedbackWithName(audioName: withAudio)
+    }
+    
+    func animateMonster_incorrect(){
+        let openMouth = SKTexture(imageNamed: "monsterScene_stillMonster")
+        let sadMouth = SKTexture(imageNamed: "sadMonster")
+        let sadAnimate = SKAction.animate(with: [sadMouth, openMouth], timePerFrame: 2)
+        //let reset = SKAction.animate(with: [openMouth], timePerFrame: 0.5)
+        monsterNode!.run(sadAnimate)
+        //monsterNode!.run(<#T##action: SKAction##SKAction#>)
+        
     }
     
     func nextScene(sceneName:String){
@@ -131,7 +149,7 @@ class DiaperScene: SKScene {
             
             for items in self.nodes(at: touchLocation){
                 if items.name == "Monster"{
-                    if (selectedNode?.name == "diaper"){
+                    if (selectedNode?.name == "penny"){
                         diaper_correctTouches += 1
                         selectedNode?.removeFromParent()
                         sceneOver = true
@@ -139,6 +157,13 @@ class DiaperScene: SKScene {
                         nextScene(sceneName: "MoonScene_Monster")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
+                        if selectedNode == foodNode1{
+                            foodNode1?.position = node1Position!
+                        }else if selectedNode == foodNode2{
+                            foodNode2?.position = node3Position!
+                        }else{
+                            foodNode4?.position = node4Position!
+                        }
                         diaper_incorrectTouches += 1
                         if diaper_incorrectTouches > 15{
                             sceneOver = true

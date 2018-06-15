@@ -26,7 +26,7 @@ class StrollerScene: SKScene {
         self.physicsBody = nil
         
         // run the introductory instructions, then flag instructionsComplete as true
-        let instructions = SKAction.playSoundFileNamed("instructions_stroller", waitForCompletion: true)
+        let instructions = SKAction.playSoundFileNamed("instructions_swing", waitForCompletion: true)
         run(instructions, completion: { self.instructionsComplete = true })
         
         /////////////////////////////////
@@ -40,7 +40,7 @@ class StrollerScene: SKScene {
         // set up sequence for if the scene has not been touched for 10 seconds: play the idle reminder
         let reminderIfIdle = SKAction.run {
             self.reminderComplete = false
-            let stroller_reminder = SKAction.playSoundFileNamed("reminder_stroller", waitForCompletion: true)
+            let stroller_reminder = SKAction.playSoundFileNamed("reminder_swing", waitForCompletion: true)
             self.run(stroller_reminder, completion: { self.reminderComplete = true} )
         }
         
@@ -117,16 +117,14 @@ class StrollerScene: SKScene {
                 let changeToColored:SKAction = SKAction.animate(with: [swingLeft, swingNeutral, swingRight, swingNeutral, swingLeft, swingNeutral], timePerFrame: 0.5)
                 
                 //Variables for stroller audio
-                let giggles = SKAction.playSoundFileNamed("stroller", waitForCompletion: true)
-                let birds = SKAction.playSoundFileNamed("stroller2", waitForCompletion: true)
+                let swinging = SKAction.playSoundFileNamed("Swing effect", waitForCompletion: true)
                 
                 // Variable for move action
                 //let move = SKAction.moveTo(x: -900, duration: 3.0)
                 
                 //Run all actions
                 stroller!.run(changeToColored)
-                stroller!.run(giggles)
-                stroller!.run(birds)
+                stroller!.run(swinging)
 //                stroller!.run(move)
 
                 transitionScene (currentScene: self, sceneString: "ToastScene", waitTime: 3, fadeTime: 1)

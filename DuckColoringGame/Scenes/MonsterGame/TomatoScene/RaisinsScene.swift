@@ -9,7 +9,7 @@
 import SpriteKit
 import GameplayKit
 
-class TomatoScene: SKScene {
+class RaisinsScene: SKScene {
     //Timer Variables
     var gameTimer: Timer!
     var gameCounter = 0
@@ -32,10 +32,10 @@ class TomatoScene: SKScene {
     
     override func didMove(to view: SKView) {
         foodNode1 = self.childNode(withName: "tomato")
-        foodNode2 = self.childNode(withName: "raisin")
+        foodNode2 = self.childNode(withName: "broccoli")
         foodNode3 = self.childNode(withName: "egg")
         monsterNode = self.childNode(withName: "Monster")
-        playInstructionsWithName(audioName: "instructions_raisins")
+        playInstructionsWithName(audioName: "instructions_tomato")
     }
     
     ////////////////////////////
@@ -45,7 +45,7 @@ class TomatoScene: SKScene {
         if gameCounter == 60{
             nextScene(sceneName: "CakeScene_Monster")
         } else if gameCounter%20 == 0 && gameCounter != 0{
-            playFeedbackWithName(audioName: "reminder_raisins")
+            playFeedbackWithName(audioName: "reminder_tomato")
             gameCounter = gameCounter + 1
         }else{
             gameCounter = gameCounter + 1
@@ -124,7 +124,7 @@ class TomatoScene: SKScene {
             
             for items in self.nodes(at: touchLocation){
                 if items.name == "Monster"{
-                    if (selectedNode?.name == "raisin"){
+                    if (selectedNode?.name == "tomato"){
                         tomato_correctTouches += 1
                         selectedNode?.removeFromParent()
                         sceneOver = true

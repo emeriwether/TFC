@@ -19,6 +19,10 @@ class MoonScene_Monster: SKScene {
     private var foodNode3:SKNode?
     private var foodNode4:SKNode?
     private var monsterNode:SKNode?
+    private var node1Position:CGPoint?
+    private var node2Position:CGPoint?
+    private var node3Position:CGPoint?
+    private var node4Position:CGPoint?
     
     private var selectedNode:SKNode?
     private var nodeIsSelected:Bool?
@@ -36,6 +40,10 @@ class MoonScene_Monster: SKScene {
         foodNode2 = self.childNode(withName: "butter")
         foodNode3 = self.childNode(withName: "moon")
         foodNode4 = self.childNode(withName: "glasses")
+        node1Position = foodNode1?.position
+        node2Position = foodNode2?.position
+        node3Position = foodNode3?.position
+        node4Position = foodNode4?.position
         monsterNode = self.childNode(withName: "Monster")
         playInstructionsWithName(audioName: "instructions_moon_monster")
         
@@ -78,6 +86,16 @@ class MoonScene_Monster: SKScene {
         let openMouthAction = SKAction.repeat(animation, count: 10)
         monsterNode!.run(openMouthAction)
         playFeedbackWithName(audioName: withAudio)
+    }
+    
+    func animateMonster_incorrect(){
+        let openMouth = SKTexture(imageNamed: "monsterScene_stillMonster")
+        let sadMouth = SKTexture(imageNamed: "sadMonster")
+        let sadAnimate = SKAction.animate(with: [sadMouth, openMouth], timePerFrame: 2)
+        //let reset = SKAction.animate(with: [openMouth], timePerFrame: 0.5)
+        monsterNode!.run(sadAnimate)
+        //monsterNode!.run(<#T##action: SKAction##SKAction#>)
+        
     }
     
     func nextScene(sceneName:String){
@@ -139,6 +157,13 @@ class MoonScene_Monster: SKScene {
                         nextScene(sceneName: "DishScene")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
+                        if selectedNode == foodNode1{
+                            foodNode1?.position = node1Position!
+                        }else if selectedNode == foodNode2{
+                            foodNode2?.position = node3Position!
+                        }else{
+                            foodNode4?.position = node4Position!
+                        }
                         moon_incorrectTouches += 1
                         if moon_incorrectTouches > 15{
                             sceneOver = true

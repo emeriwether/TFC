@@ -18,6 +18,8 @@ class OrangeScene: SKScene {
     private var foodNode1:SKNode?
     private var foodNode2:SKNode?
     private var monsterNode:SKNode?
+    private var node1Position:CGPoint?
+    private var node2Position:CGPoint?
     
     //Variable for node dragging and tracking
     private var selectedNode:SKNode?
@@ -37,6 +39,8 @@ class OrangeScene: SKScene {
     override func didMove(to view: SKView) {
         foodNode1 = self.childNode(withName: "bug")
         foodNode2 = self.childNode(withName: "orange")
+        node1Position = foodNode1?.position
+        node2Position = foodNode2?.position
         monsterNode = self.childNode(withName: "Monster")
         playInstructionsWithName(audioName: "instructions_orange")
         
@@ -79,6 +83,16 @@ class OrangeScene: SKScene {
         let openMouthAction = SKAction.repeat(animation, count: 10)
         monsterNode!.run(openMouthAction)
         playFeedbackWithName(audioName: withAudio)
+    }
+    
+    func animateMonster_incorrect(){
+        let openMouth = SKTexture(imageNamed: "monsterScene_stillMonster")
+        let sadMouth = SKTexture(imageNamed: "sadMonster")
+        let sadAnimate = SKAction.animate(with: [sadMouth, openMouth], timePerFrame: 2)
+        //let reset = SKAction.animate(with: [openMouth], timePerFrame: 0.5)
+        monsterNode!.run(sadAnimate)
+        //monsterNode!.run(<#T##action: SKAction##SKAction#>)
+        
     }
     
     func nextScene(sceneName:String){
@@ -134,6 +148,8 @@ class OrangeScene: SKScene {
                         nextScene(sceneName: "ToothScene")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
+                        animateMonster_incorrect()
+                        foodNode1?.position = node1Position!
                         orange_incorrectTouches += 1
                         if orange_incorrectTouches > 15{
                             sceneOver = true

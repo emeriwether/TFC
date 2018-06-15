@@ -17,6 +17,8 @@ class PenScene: SKScene {
     private var foodNode1:SKNode?
     private var foodNode2:SKNode?
     private var monsterNode:SKNode?
+    private var node1Position:CGPoint?
+    private var node2Position:CGPoint?
     
     private var selectedNode:SKNode?
     private var nodeIsSelected:Bool?
@@ -33,8 +35,10 @@ class PenScene: SKScene {
         foodNode1 = self.childNode(withName: "cookie")
         foodNode2 = self.childNode(withName: "pen")
         monsterNode = self.childNode(withName: "Monster")
+        node1Position = foodNode1?.position
+        node2Position = foodNode2?.position
         playInstructionsWithName(audioName: "instructions_pen")
-        gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTimedCode), userInfo: nil, repeats: true)
+        
     }
     
     ////////////////////////////
@@ -54,7 +58,9 @@ class PenScene: SKScene {
     func playInstructionsWithName(audioName:String){
         instructionsComplete = false
         let instructions = SKAction.playSoundFileNamed(audioName, waitForCompletion: true)
-        self.run(instructions, completion: { self.instructionsComplete = true })
+        self.run(instructions, completion: { self.instructionsComplete = true
+            self.gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.self.runTimedCode), userInfo: nil, repeats: true)
+        })
     }
     
     func playFeedbackWithName(audioName:String){
@@ -70,6 +76,16 @@ class PenScene: SKScene {
         let openMouthAction = SKAction.repeat(animation, count: 10)
         monsterNode!.run(openMouthAction)
         playFeedbackWithName(audioName: withAudio)
+    }
+    
+    func animateMonster_incorrect(){
+        let openMouth = SKTexture(imageNamed: "monsterScene_stillMonster")
+        let sadMouth = SKTexture(imageNamed: "sadMonster")
+        let sadAnimate = SKAction.animate(with: [sadMouth, openMouth], timePerFrame: 2)
+        //let reset = SKAction.animate(with: [openMouth], timePerFrame: 0.5)
+        monsterNode!.run(sadAnimate)
+        //monsterNode!.run(<#T##action: SKAction##SKAction#>)
+        
     }
     
     func nextScene(sceneName:String){
@@ -122,13 +138,14 @@ class PenScene: SKScene {
                         selectedNode?.removeFromParent()
                         sceneOver = true
                         animateMonster(withAudio: "Sound_Biting")
-                        nextScene(sceneName: "RaisinsScene")
+                        nextScene(sceneName: "CakeScene_Monster")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
+                        foodNode2?.position = node2Position!
                         pen_incorrectTouches += 1
                         if pen_incorrectTouches > 15{
                             sceneOver = true
-                            nextScene(sceneName: "RaisinsScene")
+                            nextScene(sceneName: "CakeScene_Monster")
                         }
                     }
                 }
