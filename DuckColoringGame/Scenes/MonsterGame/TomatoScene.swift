@@ -2,14 +2,14 @@
 //  TomatoScene.swift
 //  DuckColoringGame
 //
-//  Created by Gustavo C Figueroa on 6/5/18.
+//  Created by Gustavo C Figueroa on 7/16/18.
 //  Copyright © 2018 Eleanor Meriwether. All rights reserved.
 //
 
 import SpriteKit
 import GameplayKit
 
-class RaisinsScene: SKScene {
+class TomatoScene: SKScene {
     //Timer Variables
     var gameTimer: Timer!
     var gameCounter = 0

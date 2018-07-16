@@ -46,7 +46,7 @@ class PenScene: SKScene {
     ////////////////////////////
     @objc func runTimedCode(){
         if gameCounter == 60{
-            nextScene(sceneName: "RaisinsScene")
+            nextScene(sceneName: "TomatoScene")
         } else if gameCounter%20 == 0 && gameCounter != 0{
             playFeedbackWithName(audioName: "reminder_pen")
             gameCounter = gameCounter + 1
@@ -138,14 +138,14 @@ class PenScene: SKScene {
                         selectedNode?.removeFromParent()
                         sceneOver = true
                         animateMonster(withAudio: "Sound_Biting")
-                        nextScene(sceneName: "CakeScene_Monster")
+                        nextScene(sceneName: "TomatoScene")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
                         foodNode2?.position = node2Position!
                         pen_incorrectTouches += 1
                         if pen_incorrectTouches > 15{
                             sceneOver = true
-                            nextScene(sceneName: "CakeScene_Monster")
+                            nextScene(sceneName: "TomatoScene")
                         }
                     }
                 }
