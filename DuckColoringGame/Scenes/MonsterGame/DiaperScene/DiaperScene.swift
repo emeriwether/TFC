@@ -155,6 +155,7 @@ class DiaperScene: SKScene {
                         nextScene(sceneName: "MoonScene_Monster")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
+                        animateMonster_incorrect()
                         if selectedNode == foodNode1{
                             foodNode1?.position = node1Position!
                         }else if selectedNode == foodNode2{

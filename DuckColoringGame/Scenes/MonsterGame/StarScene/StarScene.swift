@@ -147,6 +147,7 @@ class StarScene: SKScene {
                         nextScene(sceneName: "ChairScene")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
+                        animateMonster_incorrect()
                         if selectedNode == foodNode1{
                             foodNode1?.position = node1Position!
                         }else{

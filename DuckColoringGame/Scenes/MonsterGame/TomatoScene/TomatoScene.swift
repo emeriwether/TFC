@@ -76,6 +76,14 @@ class TomatoScene: SKScene {
         playFeedbackWithName(audioName: withAudio)
     }
     
+    func animateMonster_incorrect(){
+        let openMouth = SKTexture(imageNamed: "monsterScene_stillMonster")
+        let sadMouth = SKTexture(imageNamed: "monsterScene_sadMonster")
+        let sadAnimate = SKAction.animate(with: [sadMouth, openMouth], timePerFrame: 2)
+        //let reset = SKAction.animate(with: [openMouth], timePerFrame: 0.5)
+        monsterNode!.run(sadAnimate)
+    }
+    
     func nextScene(sceneName:String){
         let fadeOut = SKAction.fadeOut(withDuration:1)
         let wait2 = SKAction.wait(forDuration: 1)
@@ -132,6 +140,7 @@ class TomatoScene: SKScene {
                         nextScene(sceneName: "CakeScene_Monster")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
+                        animateMonster_incorrect()
                         tomato_incorrectTouches += 1
                         if tomato_incorrectTouches > 15{
                             sceneOver = true

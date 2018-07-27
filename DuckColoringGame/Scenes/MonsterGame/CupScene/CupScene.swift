@@ -139,6 +139,7 @@ class CupScene: SKScene {
                         nextScene(sceneName: "PenScene")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
+                        animateMonster_incorrect()
                         foodNode2?.position = node2Position!
                         cup_incorrectTouches += 1
                         if cup_incorrectTouches > 15{

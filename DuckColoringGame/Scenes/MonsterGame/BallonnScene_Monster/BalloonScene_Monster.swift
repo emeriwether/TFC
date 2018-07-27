@@ -148,6 +148,7 @@ class BalloonScene_Monster: SKScene {
                         nextScene(sceneName: "StarScene")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
+                        animateMonster_incorrect()
                         if selectedNode == foodNode1{
                             foodNode1?.position = node1Position!
                         }else{

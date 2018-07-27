@@ -155,6 +155,7 @@ class DishScene: SKScene {
                         nextScene(sceneName: "ClockScene")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
+                        animateMonster_incorrect()
                         if selectedNode == foodNode2{
                             foodNode1?.position = node2Position!
                         }else if selectedNode == foodNode3{

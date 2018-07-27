@@ -155,6 +155,7 @@ class ButterScene: SKScene {
                         nextScene(sceneName: "DiaperScene")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
+                        animateMonster_incorrect()
                         if selectedNode == foodNode1{
                             foodNode1?.position = node1Position!
                         }else if selectedNode == foodNode3{

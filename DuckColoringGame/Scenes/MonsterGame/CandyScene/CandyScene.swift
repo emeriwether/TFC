@@ -18,10 +18,12 @@ class CandyScene: SKScene {
     private var foodNode1:SKNode?
     private var foodNode2:SKNode?
     private var monsterNode:SKNode?
+    
+    //Variables for position reset
     private var node1Position:CGPoint?
     private var node2Position:CGPoint?
     
-    //Variable for node dragging and tracking
+    //Variables for node dragging and tracking
     private var selectedNode:SKNode?
     private var nodeIsSelected:Bool?
     
@@ -33,18 +35,20 @@ class CandyScene: SKScene {
     var instructionsComplete:Bool = false
     var feedbackComplete:Bool = true
     
+    //Scene Completion Variable
     var sceneOver = false
     
-    //Set up all nodes on screen. Play instruction.
+    //When Scene loads, set up all nodes on screen. Play instruction.
     override func didMove(to view: SKView) {
-        
+        //Link SKS file nodes with Swift file Variables
         foodNode1 = self.childNode(withName: "carrot")
         foodNode2 = self.childNode(withName: "candy")
+        monsterNode = self.childNode(withName: "Monster")
+        //Record original positions of food nodes
         node1Position = foodNode1?.position
         node2Position = foodNode2?.position
-        monsterNode = self.childNode(withName: "Monster")
+        //Play Scene instructions
         playInstructionsWithName(audioName: "instructions_candy")
-        
     }
     
     ////////////////////////////

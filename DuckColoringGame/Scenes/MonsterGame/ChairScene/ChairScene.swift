@@ -147,6 +147,7 @@ class ChairScene: SKScene {
                         nextScene(sceneName: "PhoneScene")
                     }else{
                         playFeedbackWithName(audioName: "wrong")
+                        animateMonster_incorrect()
                         if selectedNode == foodNode2{
                             foodNode2?.position = node2Position!
                         }else{
