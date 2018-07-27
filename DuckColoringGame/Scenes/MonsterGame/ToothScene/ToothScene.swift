@@ -82,12 +82,10 @@ class ToothScene: SKScene {
     
     func animateMonster_incorrect(){
         let openMouth = SKTexture(imageNamed: "monsterScene_stillMonster")
-        let sadMouth = SKTexture(imageNamed: "sadMonster")
+        let sadMouth = SKTexture(imageNamed: "monsterScene_sadMonster")
         let sadAnimate = SKAction.animate(with: [sadMouth, openMouth], timePerFrame: 2)
         //let reset = SKAction.animate(with: [openMouth], timePerFrame: 0.5)
         monsterNode!.run(sadAnimate)
-        //monsterNode!.run(<#T##action: SKAction##SKAction#>)
-        
     }
     
     func nextScene(sceneName:String){

@@ -1212,6 +1212,15 @@
 			path = Lion;
 			sourceTree = "<group>";
 		};
+		0B0DA3FD210B8E2500B1EBAE /* TomatoScene */ = {
+			isa = PBXGroup;
+			children = (
+				0BFD316420FD1F460036266B /* TomatoScene.swift */,
+				0BFD316620FD1F8A0036266B /* TomatoScene.sks */,
+			);
+			path = TomatoScene;
+			sourceTree = "<group>";
+		};
 		0B279E972054E60B00ABAA57 /* BallonnScene_Monster */ = {
 			isa = PBXGroup;
 			children = (
@@ -1398,8 +1407,7 @@
 		0B3EFE9520461D4300F5932F /* MonsterGame */ = {
 			isa = PBXGroup;
 			children = (
-				0BFD316420FD1F460036266B /* TomatoScene.swift */,
-				0BFD316620FD1F8A0036266B /* TomatoScene.sks */,
+				0B0DA3FD210B8E2500B1EBAE /* TomatoScene */,
 				0B35084C204F5A5900BD1AD8 /* CandyScene */,
 				0B35084D204F5A6600BD1AD8 /* OrangeScene */,
 				0B35084E204F5A6F00BD1AD8 /* ToothScene */,
